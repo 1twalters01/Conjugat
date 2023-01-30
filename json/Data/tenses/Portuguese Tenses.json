@@ -1,0 +1,178 @@
+[
+    {
+    "model": "verbs.romancetense",
+    "pk": 25,
+    "fields": {
+        "language": "2",
+        "tense": "Indicativo Presente"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 26,
+    "fields": {
+        "language": "2",
+        "tense": "Indicativo Pretérito Perfeito"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 27,
+    "fields": {
+        "language": "2",
+        "tense": "Indicativo Pretérito Imperfeito"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 28,
+    "fields": {
+        "language": "2",
+        "tense": "Indicativo Pretérito Mais-que-Perfeito"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 29,
+    "fields": {
+        "language": "2",
+        "tense": "Indicativo Pretérito Perfeito Composto"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 30,
+    "fields": {
+        "language": "2",
+        "tense": "Indicativo Pretérito Mais-que-Perfeito Composto"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 31,
+    "fields": {
+        "language": "2",
+        "tense": "Indicativo Pretérito Mais-que-Perfeito Anterior"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 32,
+    "fields": {
+        "language": "2",
+        "tense": "Indicativo Futuro do Presente Simples"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 33,
+    "fields": {
+        "language": "2",
+        "tense": "Indicativo Futuro do Presente Composto"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 34,
+    "fields": {
+        "language": "2",
+        "tense": "Conjuntivo / Subjuntivo Presente"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 35,
+    "fields": {
+        "language": "2",
+        "tense": "Conjuntivo / Subjuntivo Pretérito Perfeito"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 36,
+    "fields": {
+        "language": "2",
+        "tense": "Conjuntivo / Subjuntivo Pretérito Imperfeito"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 37,
+    "fields": {
+        "language": "2",
+        "tense": "Conjuntivo / Subjuntivo Pretérito Mais-que-Perfeito Composto"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 38,
+    "fields": {
+        "language": "2",
+        "tense": "Conjuntivo / Subjuntivo Futuro"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 39,
+    "fields": {
+        "language": "2",
+        "tense": "Conjuntivo / Subjuntivo Futuro Composto"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 40,
+    "fields": {
+        "language": "2",
+        "tense": "Condicional Futuro do Pretérito Simples"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 41,
+    "fields": {
+        "language": "2",
+        "tense": "Condicional Futuro do Pretérito Composto"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 42,
+    "fields": {
+        "language": "2",
+        "tense": "Gerúndio"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 43,
+    "fields": {
+        "language": "2",
+        "tense": "Infinitivo"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 44,
+    "fields": {
+        "language": "2",
+        "tense": "Imperativo"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 45,
+    "fields": {
+        "language": "2",
+        "tense": "Imperativo Negativo"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 46,
+    "fields": {
+        "language": "2",
+        "tense": "Particípio"
+    }
+    }
+    ]

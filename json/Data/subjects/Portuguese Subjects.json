@@ -1,0 +1,58 @@
+[
+    {
+    "model": "verbs.romancesubject",
+    "pk": 8,
+    "fields": {
+        "language": "2",
+        "subject": "eu"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 9,
+    "fields": {
+        "language": "2",
+        "subject": "tu"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 10,
+    "fields": {
+        "language": "2",
+        "subject": "ele/ela/você"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 11,
+    "fields": {
+        "language": "2",
+        "subject": "nós"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 12,
+    "fields": {
+        "language": "2",
+        "subject": "vós"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 13,
+    "fields": {
+        "language": "2",
+        "subject": "eles/elas/vocês"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 14,
+    "fields": {
+        "language": "2",
+        "subject": ""
+    }
+    }
+    ]

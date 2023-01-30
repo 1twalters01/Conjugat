@@ -1,0 +1,786 @@
+[
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 432,
+    "fields": {
+        "language": "5",
+        "auxiliary": ""
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 433,
+    "fields": {
+        "language": "5",
+        "auxiliary": "am"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 434,
+    "fields": {
+        "language": "5",
+        "auxiliary": "are"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 435,
+    "fields": {
+        "language": "5",
+        "auxiliary": "is"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 436,
+    "fields": {
+        "language": "5",
+        "auxiliary": "have"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 437,
+    "fields": {
+        "language": "5",
+        "auxiliary": "has"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 438,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 439,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will have"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 440,
+    "fields": {
+        "language": "5",
+        "auxiliary": "was"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 441,
+    "fields": {
+        "language": "5",
+        "auxiliary": "were"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 442,
+    "fields": {
+        "language": "5",
+        "auxiliary": "had"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 443,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will be"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 444,
+    "fields": {
+        "language": "5",
+        "auxiliary": "have been"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 445,
+    "fields": {
+        "language": "5",
+        "auxiliary": "has been"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 446,
+    "fields": {
+        "language": "5",
+        "auxiliary": "had been"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 447,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will have been"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 448,
+    "fields": {
+        "language": "5",
+        "auxiliary": "let's"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 449,
+    "fields": {
+        "language": "5",
+        "auxiliary": "to"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 450,
+    "fields": {
+        "language": "5",
+        "auxiliary": "having"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 451,
+    "fields": {
+        "language": "5",
+        "auxiliary": "it"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 452,
+    "fields": {
+        "language": "5",
+        "auxiliary": "it is"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 453,
+    "fields": {
+        "language": "5",
+        "auxiliary": "it has"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 454,
+    "fields": {
+        "language": "5",
+        "auxiliary": "it will have"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 455,
+    "fields": {
+        "language": "5",
+        "auxiliary": "it was"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 456,
+    "fields": {
+        "language": "5",
+        "auxiliary": "it had"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 457,
+    "fields": {
+        "language": "5",
+        "auxiliary": "it will be"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 458,
+    "fields": {
+        "language": "5",
+        "auxiliary": "it has been"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 459,
+    "fields": {
+        "language": "5",
+        "auxiliary": "it had been"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 460,
+    "fields": {
+        "language": "5",
+        "auxiliary": "it will have been"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 461,
+    "fields": {
+        "language": "5",
+        "auxiliary": "myself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 462,
+    "fields": {
+        "language": "5",
+        "auxiliary": "yourself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 463,
+    "fields": {
+        "language": "5",
+        "auxiliary": "himself/herself/itself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 464,
+    "fields": {
+        "language": "5",
+        "auxiliary": "ourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 465,
+    "fields": {
+        "language": "5",
+        "auxiliary": "yourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 466,
+    "fields": {
+        "language": "5",
+        "auxiliary": "themselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 467,
+    "fields": {
+        "language": "5",
+        "auxiliary": "am myself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 468,
+    "fields": {
+        "language": "5",
+        "auxiliary": "are yourself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 469,
+    "fields": {
+        "language": "5",
+        "auxiliary": "is himself/herself/itself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 470,
+    "fields": {
+        "language": "5",
+        "auxiliary": "are ourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 471,
+    "fields": {
+        "language": "5",
+        "auxiliary": "are yourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 472,
+    "fields": {
+        "language": "5",
+        "auxiliary": "are themselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 473,
+    "fields": {
+        "language": "5",
+        "auxiliary": "have myself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 474,
+    "fields": {
+        "language": "5",
+        "auxiliary": "have yourself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 475,
+    "fields": {
+        "language": "5",
+        "auxiliary": "has himself/herself/itself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 476,
+    "fields": {
+        "language": "5",
+        "auxiliary": "have ourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 477,
+    "fields": {
+        "language": "5",
+        "auxiliary": "have yourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 478,
+    "fields": {
+        "language": "5",
+        "auxiliary": "have themselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 479,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will myself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 480,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will yourself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 481,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will himself/herself/itself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 482,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will ourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 483,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will yourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 484,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will themselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 485,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will have myself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 486,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will have yourself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 487,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will have himself/herself/itself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 488,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will have ourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 489,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will have yourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 490,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will have themselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 491,
+    "fields": {
+        "language": "5",
+        "auxiliary": "was myself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 492,
+    "fields": {
+        "language": "5",
+        "auxiliary": "were yourself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 493,
+    "fields": {
+        "language": "5",
+        "auxiliary": "was himself/herself/itself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 494,
+    "fields": {
+        "language": "5",
+        "auxiliary": "were ourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 495,
+    "fields": {
+        "language": "5",
+        "auxiliary": "were yourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 496,
+    "fields": {
+        "language": "5",
+        "auxiliary": "were themselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 497,
+    "fields": {
+        "language": "5",
+        "auxiliary": "had myself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 498,
+    "fields": {
+        "language": "5",
+        "auxiliary": "had yourself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 499,
+    "fields": {
+        "language": "5",
+        "auxiliary": "had himself/herself/itself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 500,
+    "fields": {
+        "language": "5",
+        "auxiliary": "had ourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 501,
+    "fields": {
+        "language": "5",
+        "auxiliary": "had yourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 502,
+    "fields": {
+        "language": "5",
+        "auxiliary": "had themselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 503,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will be myself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 504,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will be yourself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 505,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will be himself/herself/itself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 506,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will be ourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 507,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will be yourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 508,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will be themselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 509,
+    "fields": {
+        "language": "5",
+        "auxiliary": "have been myself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 510,
+    "fields": {
+        "language": "5",
+        "auxiliary": "have been yourself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 511,
+    "fields": {
+        "language": "5",
+        "auxiliary": "has been himself/herself/itself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 512,
+    "fields": {
+        "language": "5",
+        "auxiliary": "have been ourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 513,
+    "fields": {
+        "language": "5",
+        "auxiliary": "have been yourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 514,
+    "fields": {
+        "language": "5",
+        "auxiliary": "have been themselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 515,
+    "fields": {
+        "language": "5",
+        "auxiliary": "had been myself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 516,
+    "fields": {
+        "language": "5",
+        "auxiliary": "had been yourself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 517,
+    "fields": {
+        "language": "5",
+        "auxiliary": "had been himself/herself/itself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 518,
+    "fields": {
+        "language": "5",
+        "auxiliary": "had been ourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 519,
+    "fields": {
+        "language": "5",
+        "auxiliary": "had been yourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 520,
+    "fields": {
+        "language": "5",
+        "auxiliary": "had been themselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 521,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will have been myself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 522,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will have been yourself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 523,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will have been himself/herself/itself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 524,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will have been ourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 525,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will have been yourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 526,
+    "fields": {
+        "language": "5",
+        "auxiliary": "will have been themselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 527,
+    "fields": {
+        "language": "5",
+        "auxiliary": "let's ourselves"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 528,
+    "fields": {
+        "language": "5",
+        "auxiliary": "to oneself"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 529,
+    "fields": {
+        "language": "5",
+        "auxiliary": "having oneself"
+    }
+    }
+    ]

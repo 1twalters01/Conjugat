@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Premium{% endblock %}
+{% block content %}
+    <h1>Premium</h1>
+    {% with premium as premium %}
+        {% if premium %}
+            {% if method == 'Stripe' %}
+                <form action="" method="POST">
+                <input type="hidden" id="session-id" name="session_id" value="" />
+                <button id="checkout-and-portal-button" type="submit">Manage your billing information</button>
+                {% csrf_token %}
+            </form>
+            {% elif method == 'Paypal' %}
+                {% if status == 'ACTIVE' %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Stop subscription" name="Stop">
+                    </form>
+                {% elif status == 'SUSPENDED' %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Restart subscription" name="Re-start">
+                    </form>
+                {% elif status == 'CANCELLED' %}
+                    <p>Subscription has been cancelled.</p>
+                {% endif %}
+            {% elif method == 'Coinbase' %}
+                <a href="{{ charge.hosted_url }}"><button>View Purchase</button></a>
+            {% endif%}
+        {% else %}
+            <p>Get premium <a href="{% url 'subscription:options' %}">here</a></p>
+        {% endif %}
+    {% endwith %}
+{% endblock %}

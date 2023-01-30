@@ -1,0 +1,60 @@
+{% load static %}
+
+<header>
+<!-- Logged In -->
+{% if navbar != False %}
+    {% if request.user.is_authenticated %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/navbar-authenticated.css' %}">
+        <nav>
+            <div class="permanent">
+                <!-- hamburger menu -->
+                <div class="image">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <a href="#"><p class="logo">Conjugat</p></a>
+            </div>
+            <div class="settings ul">
+                <a href="#"><p>settings</p></a>
+                <a href="#"><p>Language</p></a>
+                <a href="{% url 'subscription:options' %}"><p>Premium</p></a>
+            </div>
+            <a href="{% url 'logout' %}" class="ul"><div class="log-out">
+                <p>Log out</p>
+            </div></a>
+        </nav>
+
+    <!-- Not Logged In -->
+    {% else %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+        <script src="{% static 'js/navbar.js' %}" defer></script>
+        <nav>
+            <div class="permanent">
+                <!-- hamburger menu -->
+                <div class="image">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <a href="#"><p class="logo">Conjugat</p></a>
+            </div>
+
+            <div class="links ul">
+                <a href="{% url 'contact' %}"><p>Contact</p></a>
+                <a href="{% url 'faq' %}"><p>FAQ</p></a>
+                <a href="{% url 'privacy' %}"><p>Privacy</p></a>
+                <a href="{% url 'terms' %}"><p>Terms</p></a>
+            </div>
+
+            <div class="settings ul">
+                <a href="#"><p>Theme</p></a>
+                <a href="#"><p>Language</p></a>
+                <a href="#"><p>Premium</p></a>
+            </div>
+
+            <a href="{% url 'login' %}" class="ul"><div class="login">
+                <p>Log in</p>
+            </div></a>
+        </nav>
+    {% endif %}
+{% endif %}
+</header>

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Reset account{% endblock %}
+{% block content %}
+    <h1>Reset account</h1>
+    <p>This is permanent are you sure?</p>
+    <form action="" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="fieldWrapper">
+                {{ field.label }}{{ field }}
+            </div>
+        {% endfor %}
+        <p><input type="submit" value="Reset account"></p>
+    </form>
+{% endblock %}

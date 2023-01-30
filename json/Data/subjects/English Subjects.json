@@ -1,0 +1,50 @@
+[
+    {
+    "model": "verbs.romancesubject",
+    "pk": 40,
+    "fields": {
+        "language": "5",
+        "subject": "I"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 41,
+    "fields": {
+        "language": "5",
+        "subject": "you"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 42,
+    "fields": {
+        "language": "5",
+        "subject": "he/she/it"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 43,
+    "fields": {
+        "language": "5",
+        "subject": "we"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 44,
+    "fields": {
+        "language": "5",
+        "subject": "they"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 45,
+    "fields": {
+        "language": "5",
+        "subject": ""
+    }
+    }
+    ]

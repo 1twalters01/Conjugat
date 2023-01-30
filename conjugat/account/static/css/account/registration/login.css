@@ -1,0 +1,256 @@
+/* Alternate login */
+.alt-login .facebook{
+    /* https://developers.facebook.com/docs/facebook-login/userexperience/ */
+    background-color: #1A77F2;
+}
+.alt-login .google p{
+    background-color: #FFFFFF;
+    color: #000000;
+}
+.alt-login .google:active{
+    /* https://developers.google.com/identity/branding-guidelines */
+    /* Roboto Medium font size 24 */
+    background-color: #4285F4;
+}
+.alt-login .twitter{
+    background-color: #1DA1F2;
+}
+
+
+/* TV screens */
+@media only screen and (min-width: 1201px){
+    /* Containers */
+    .main-container{
+        max-width: 720px;
+        border-radius: 25px;
+        margin: auto;
+        margin-top: 2%;
+    }
+
+    /* Headings */
+    .headings{
+        text-align: center;
+        padding: 8% 0% 5% 0%;
+    }
+    .headings h1{
+        margin-bottom: 15px;
+    }
+
+    /* Links */
+    .links, .reset-username{
+        width: 50%;
+        display: grid;
+        justify-self: center;
+        align-self: center;
+        margin: auto;
+        padding-bottom: 90px;
+    }
+    .links{
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15%;
+    }
+    .register, .newsletter, .reset-username input[type="submit"]{
+        align-self: center;
+        text-align: center;
+        width: 100%;
+        border: 2px solid;
+        border-radius: 20px;
+        padding: 5px 0;
+        margin: auto;
+    }
+
+    /* login form */
+    .login-form{
+        display: grid;
+        margin: auto;
+    }
+    .login-form div{
+        width: 60%;
+        margin: auto;
+    }
+    .field{
+        margin-bottom: 15px;
+    }
+    p.field-text{
+        margin-bottom: 10px;
+    }
+    
+    input{
+        width: 100%;
+        display: block;
+        padding-left: 10px;
+    }
+    input[type="text"], input[type="password"]{
+        height: 25px;
+        border:none;
+        border-bottom: 1px solid;
+        outline: none;
+        margin-bottom: 50px;
+    }
+    .totp-div{
+        padding-top: 50px;
+    }
+    input[type="password"], .password-field input[type="text"]{
+        margin-bottom: 20px;
+    }
+    .remember-me{
+        display: grid;
+        grid-template-columns: 0.1fr 0.1fr;
+        grid-gap: 2%;
+        justify-content: center;
+        margin: auto;
+        padding-bottom: 15px;
+    }
+    .remember-me input[type="checkbox"]{
+        vertical-align: middle;
+        height: 15px;
+        width: 15px;
+    }
+    .remember-me p{
+        white-space: nowrap;
+    }
+    .password-reset{
+        text-align: center;
+        padding-bottom: 40px;
+    }    
+    .submit input[type="submit"]{
+        padding: 10px 50px;
+        border-radius: 15px;
+        margin-bottom: 60px;
+    }
+    .submit input[type="submit"]:hover{
+        cursor: pointer;
+    }
+
+    /* alternate login */
+    .alternatives{
+        width: 60%;
+        margin: auto;
+        padding-bottom: 25px;
+    }
+    .alternatives p{
+        margin-bottom: 20px;
+    }
+    .alt-login{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 4%;
+        justify-items: center;
+    }
+    .alt-login a{
+        width: 100%;
+        text-align: center;
+    }
+    .alt-login p{
+        padding: 8px;
+    }
+}
+
+/* PC */
+@media only screen and (max-width: 1200px) and (min-width: 1025px){
+    /* Containers */
+    .main-container{
+        height: 80%;
+        width: 60%;
+        border-radius: 25px;
+        position: absolute;
+        top: 0;
+        bottom: 10%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    /* Headings */
+    .headings{
+        text-align: center;
+        padding: 8% 0% 5% 0%;
+    }
+    .headings h1{
+        margin-bottom: 15px;
+    }
+
+    /* Links */
+    .links{
+        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15%;
+        justify-self: center;
+        align-self: center;
+        margin: auto;
+        padding-bottom: 80px;
+    }
+    .register, .newsletter{
+        align-self: center;
+        text-align: center;
+        width: 100%;
+        border: 2px solid;
+        border-radius: 20px;
+        padding: 5px 0;
+        margin: auto;
+    }
+
+    /* login form */
+    .login-form{
+        display: grid;
+        margin: auto;
+    }
+    .login-form div{
+        width: 60%;
+        margin: auto;
+    }
+    p.field-text{
+        margin-bottom: 15px;
+    }
+    
+    input{
+        width: 100%;
+        display: block;
+    }
+    input[type="text"]{
+        height: 20px;
+        border:none;
+        border-bottom: 1px solid;
+        padding: 0px 10px;
+        outline: none;
+        margin-bottom: 50px;
+    }
+    .submit input[type="submit"]{
+        padding: 10px 50px;
+        border-radius: 15px;
+        margin-bottom: 60px;
+    }
+
+    /* alternate login */
+    .alternatives{
+        width: 60%;
+        margin: auto;
+        padding-bottom: 25px;
+    }
+    .alternatives p{
+        margin-bottom: 20px;
+    }
+    .alt-login{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 4%;
+        justify-items: center;
+    }
+    .alt-login a{
+        width: 100%;
+        text-align: center;
+    }
+    .alt-login p{
+        padding: 8px;
+    }
+}
+
+/* Laptops */
+@media only screen and (max-width: 1024px) and (min-width: 769px){}
+
+/* Tablets */
+@media only screen and (max-width: 768px) and (min-width: 481px){}
+
+/* Mobiles */
+@media (max-width: 480px) and (min-width:320px){}

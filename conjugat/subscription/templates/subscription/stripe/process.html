@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Subscribe to conjugat{% endblock %}
+{% block content %}
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <div class="description">
+        <h3>Premium plan</h3>
+        <h5>$2.50 / month</h5>
+    </div>
+    <form method="POST">
+        <!-- Add a hidden field with the lookup_key of your Price -->
+        <input type="hidden" name="lookup_key" value="Conjugat Premium" />
+        <button id="checkout-and-portal-button" type="submit">Checkout</button>
+        {% csrf_token %}
+    </form>
+{% endblock %}

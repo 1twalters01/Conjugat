@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Newsletter Sign up{% endblock %}
+{% block content %}
+    <h1>Payment</h1>
+    {% if unsubscribe == True %}
+        You have successfully unsubscribed from the newsletter
+    {% else %}
+        Success! You are part of the newsletter
+    {% endif %}
+{% endblock %}

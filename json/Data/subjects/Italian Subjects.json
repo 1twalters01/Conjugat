@@ -1,0 +1,74 @@
+[
+    {
+    "model": "verbs.romancesubject",
+    "pk": 15,
+    "fields": {
+        "language": "3",
+        "subject": "io"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 16,
+    "fields": {
+        "language": "3",
+        "subject": "tu"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 17,
+    "fields": {
+        "language": "3",
+        "subject": "lei/lui"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 18,
+    "fields": {
+        "language": "3",
+        "subject": "noi"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 19,
+    "fields": {
+        "language": "3",
+        "subject": "voi"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 20,
+    "fields": {
+        "language": "3",
+        "subject": "loro"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 21,
+    "fields": {
+        "language": "3",
+        "subject": "lui"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 22,
+    "fields": {
+        "language": "3",
+        "subject": "lei"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 23,
+    "fields": {
+        "language": "3",
+        "subject": ""
+    }
+    }
+    ]

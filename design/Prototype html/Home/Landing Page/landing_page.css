@@ -1,0 +1,618 @@
+.get-started-mobile{
+    display: hidden;
+}
+a{
+    text-align: center;
+}
+
+/* PC */
+@media only screen and (min-width: 1024px){
+    /* Containers */
+    .background{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 3vh 0;
+    }
+    .main-container{
+        width: 95%;
+        border-radius: 30px;
+        position:absolute;
+        margin: auto;
+        padding-bottom: 10%;
+    }
+    
+
+    /* Nav bar */
+    nav{
+        width: 90%;
+        margin-top: 3%;
+        display: grid;
+        grid-template-columns: 0.8fr 1.7fr 1.4fr 1fr;
+        grid-gap: 8%;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 70px;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .logo, .links, .settings, .login{
+        align-self: center;
+    }
+    .links, .settings{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .login{
+        width: 60%;
+        border-radius: 8px;
+        padding: 5px 0;
+    }
+
+
+    /* Top container */
+    .top-container{
+        display: grid;
+        grid-template-columns: 40% 60%;
+        width: 85%;
+        margin: auto;
+        margin-bottom: 110px;
+    }
+
+
+    /* Left container */
+    .header{
+        margin-bottom: 10px;
+    }
+
+    .dot{
+        height: 13px;
+        width: 13px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-bottom: 60px;
+    }
+
+    .carousel-btns{
+        display: grid;
+        justify-content: center;
+        margin: auto;
+    }
+    .left-container .join{
+        display: grid;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .para{
+        margin-bottom: 10px;
+    }
+    .para p{
+        margin-bottom: 1rem;
+    }
+
+    .para-2{
+        display: none;
+    }
+
+
+    /* bottom container */
+    a .get-started{
+        padding: 10px 50px;
+        border-radius: 20px;
+    }
+
+    .bottom-container .top, .footer{
+        width: 85%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap:2.5em;
+        margin: auto;
+    }
+
+    .third p{
+        margin-bottom: 20px;
+    }
+    a .join-now{
+        padding: 10px 50px;
+        border-radius: 20px;
+    }
+}
+
+
+/* Laptops */
+@media only screen and (max-width: 1023px) and (min-width:768px){
+    /* Containers */
+    .background{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 3vh 0;
+    }
+    .main-container{
+        width: 95%;
+        border-radius: 25px;
+        position:absolute;
+        margin: auto;
+        padding-bottom: 10%;
+    }
+
+    /* Nav bar */
+    nav{
+        width: 85%;
+        margin-top: 3%;
+        display: grid;
+        grid-template-columns: 0.5fr 2.2fr 2.3fr 0.8fr;
+        grid-gap: 6%;
+        justify-content: center;
+        margin:auto;
+        margin-bottom: 50px;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .logo, .links, .settings, .login{
+        align-self: center;
+    }
+    .links, .settings{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .login{
+        width: 100%;
+        border-radius: 8px;
+        padding: 3px 0;
+    }
+
+    /* Top container */
+    .top-container{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 85%;
+        margin: auto;
+        margin-bottom: 90px;
+    }
+
+    /* Left container */
+    .header{
+        margin-bottom: 10px;
+    }
+
+    .para{
+        margin-bottom: 10px;
+    }
+    .para p{
+        margin-bottom: 1rem;
+    }
+
+    .carousel-btns{
+        display: grid;
+        justify-content: center;
+        margin: auto;
+    }
+    .left-container .join{
+        display: grid;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .dot{
+        height: 13px;
+        width: 13px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-bottom: 55px;
+    }
+
+    .para-2{
+        display: none;
+    }
+
+
+    /* bottom container */
+    a .get-started{
+        padding: 10px 50px;
+        border-radius: 20px;
+    }
+
+    .bottom-container .top, .footer{
+        width: 85%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap:2.5em;
+        margin: auto;
+    }
+
+    .third p{
+        margin-bottom: 30px;
+    }
+    a .join-now{
+        padding: 10px 50px;
+        border-radius: 20px;
+    }
+}
+
+
+/* Tablets */
+@media only screen and (max-width: 767px) and (min-width:550px){
+    /* Containers */
+    .background{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 3vh 0;
+    }
+    .main-container{
+        width: 95%;
+        border-radius: 15px;
+        position:absolute;
+        margin: auto;
+        padding-bottom: 10%;
+    }
+
+
+    /* Nav bar */
+    nav{
+        width: 95%;
+        margin-top: 7%;
+        display: grid;
+        grid-template-columns: 1.5fr 4fr 4fr 1.8fr;
+        grid-gap: 1.3%;
+        justify-content: center;
+        margin:auto;
+        margin-bottom: 40px;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .logo, .links, .settings, .login{
+        align-self: center;
+    }
+    .links, .settings{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .login{
+        width: 70%;
+        border-radius: 8px;
+        padding: 1px 0;
+    }
+
+    /* Top container */
+    .top-container{
+        width: 85%;
+        display: grid;
+        grid-template-rows: 1.6fr 1fr;
+        justify-content: center;
+        align-content: center;
+        margin: auto;
+    }
+    
+    /* Header */
+    .top-container .left-container .header{
+        position: absolute;
+        top: 6%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .header{
+        text-align: center;
+    }
+    .top-container .right-container{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        align-self: center;
+        justify-self: center;
+    }
+    .top-container .left-container{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .para{
+        width: 90%;
+        margin: auto;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .para p.first{
+        margin-bottom: 10px;
+    }
+
+    .para-2{
+        display: none;
+    }
+
+    .carousel-btns{
+        display: grid;
+        justify-content: center;
+        margin: auto;
+    }
+    .dot{
+        height: 13px;
+        width: 13px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-bottom: 25px;
+    }
+
+    .left-container .join{
+        display: grid;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+
+    /* bottom container */
+    .bottom-container{
+        width: 85%;
+        display: grid;
+        grid-template-columns: 0.8fr 0.2fr;
+        margin: auto;
+        overflow: hidden;
+    }
+    .bottom-container .top, .bottom-container .footer{
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+    }
+    .bottom-container .top .left{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        align-self: center;
+        margin-bottom: 50px;
+    }
+    .bottom-container .top .middle{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        align-self: center;
+        margin-bottom: 50px;
+    }
+    .bottom-container .top .right{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        align-self: center;
+        margin-bottom: 10%;
+    }
+    .bottom-container .footer .left{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        align-self: center;
+        justify-self: center;
+    }
+    .bottom-container .footer .right{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        align-self: center;
+        justify-self: center;
+    }
+    
+    a .get-started{
+        padding: 8px 5px;
+        border-radius: 20px;
+        white-space: nowrap;
+    }
+    a .join-now{
+        padding: 8px 5px;
+        border-radius: 20px;
+        white-space: nowrap;
+    }
+}
+
+
+@media (max-width: 549px){
+    /* Containers */
+    .background{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 3vh 0;
+    }
+    .main-container{
+        width: 95%;
+        border-radius: 15px;
+        position:absolute;
+        margin: auto;
+        padding-bottom: 10%;
+    }
+
+    /* Nav bar */
+    nav{
+        width: 95%;
+        margin-top: 7%;
+        display: grid;
+        grid-template-columns: 1.5fr 4fr 4fr 1.8fr;
+        grid-gap: 1.3%;
+        justify-content: center;
+        margin:auto;
+        margin-bottom: 40px;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .logo, .links, .settings, .login{
+        align-self: center;
+    }
+    .links, .settings{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .login{
+        width: 70%;
+        border-radius: 8px;
+        padding: 1px 0;
+    }
+
+    /* Top container */
+    .top-container{
+        width: 85%;
+        display: grid;
+        grid-template-rows: 1.05fr 1fr;
+        justify-content: center;
+        align-content: center;
+        margin: auto;
+    }
+    
+    /* Header */
+    .top-container .left-container .header{
+        position: absolute;
+        top: 6%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .header{
+        text-align: center;
+    }
+    .top-container .right-container{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        align-self: center;
+        justify-self: center;
+    }
+    .top-container .left-container{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .para{
+        width: 90%;
+        margin: auto;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .para p.first{
+        margin-bottom: 10px;
+    }
+
+    .para-2{
+        display: none;
+    }
+
+    .carousel-btns{
+        display: grid;
+        justify-content: center;
+        margin: auto;
+    }
+    .dot{
+        height: 13px;
+        width: 13px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-bottom: 25px;
+    }
+
+    .left-container .join{
+        display: grid;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+
+    /* bottom container */
+    .bottom-container{
+        width: 85%;
+        display: grid;
+        grid-template-rows: repeat(1, 1fr);
+        grid-template-columns: 1fr;
+        justify-items: center;
+        margin: auto;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    
+    .bottom-container .top .left{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        align-self: center;
+        margin-bottom: 15px;
+    }
+    .bottom-container .top .left-middle{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        align-self: center;
+        justify-self: center;
+        margin-bottom: 50px;
+    }
+    .bottom-container .top .middle{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        align-self: center;
+        margin-bottom: 50px;
+    }
+    .bottom-container .top .right{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 4;
+        grid-row-end: 4;
+        align-self: center;
+        margin-bottom: 15px;
+    }
+    .bottom-container .footer .right{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 5;
+        grid-row-end: 6;
+        align-self: center;
+        justify-self: center;
+    }
+    
+    a .get-started-mobile{
+        padding: 8px 5px;
+        border-radius: 20px;
+    }
+    a .join-now{
+        padding: 8px 5px;
+        border-radius: 20px;
+    }
+}
+
+@media only screen and (min-width: 550px){
+    .left-middle{
+        display: none;
+    }
+}
+
+@media (max-width: 549px){
+    a .get-started{
+        display: none;
+    }
+}

@@ -1,0 +1,399 @@
+/* Alternate login */
+.alt-login .facebook{
+    /* https://developers.facebook.com/docs/facebook-login/userexperience/ */
+    background-color: #1A77F2;
+}
+.alt-login .google p{
+    background-color: #FFFFFF;
+    color: #000000;
+}
+.alt-login .google:active{
+    /* https://developers.google.com/identity/branding-guidelines */
+    /* Roboto Medium font size 24 */
+    background-color: #4285F4;
+}
+.alt-login .twitter{
+    background-color: #1DA1F2;
+}
+
+
+/* TV screens */
+@media only screen and (min-width: 1201px){
+    /* Containers */
+    .main-container{
+        max-width: 720px;
+        border-radius: 25px;
+        margin: auto;
+        margin-top: 2%;
+    }
+
+    /* Headings */
+    .headings{
+        text-align: center;
+        padding: 8% 0% 5% 0%;
+    }
+    .headings h1{
+        margin-bottom: 15px;
+    }
+
+    /* Links */
+    .links{
+        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15%;
+        justify-self: center;
+        align-self: center;
+        margin: auto;
+        padding-bottom: 70px;
+    }
+    .register, .newsletter{
+        align-self: center;
+        text-align: center;
+        width: 100%;
+        border-radius: 20px;
+        padding: 5px 0;
+        margin: auto;
+    }
+
+    /* login form */
+    .login-form{
+        display: grid;
+        margin: auto;
+    }
+    .login-form div{
+        width: 60%;
+        margin: auto;
+    }
+    p.username-text{
+        margin-bottom: 20px;
+    }
+    
+    input{
+        width: 100%;
+        display: block;
+    }
+    input[type="text"]{
+        height: 25px;
+        border:none;
+        border-bottom: 1px solid;
+        padding: 0px 10px;
+        outline: none;
+        margin-bottom: 40px;
+    }
+    input[type="submit"]{
+        padding: 10px 50px;
+        border-radius: 15px;
+        margin-bottom: 60px;
+    }
+
+    /* alternate login */
+    .alternatives{
+        width: 60%;
+        margin: auto;
+    }
+    .alternatives p{
+        margin-bottom: 20px;
+    }
+    .alt-login{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 4%;
+        justify-items: center;
+    }
+    .alt-login a{
+        width: 100%;
+        text-align: center;
+    }
+    .alt-login p{
+        padding: 8px;
+        border-radius: 3px;
+    }
+}
+
+/* PC */
+@media only screen and (max-width: 1200px) and (min-width: 1025px){
+    /* Containers */
+    .main-container{
+        width: 60%;
+        border-radius: 25px;
+        margin: auto;
+        margin-top: 2%;
+    }
+
+    /* Headings */
+    .headings{
+        text-align: center;
+        padding: 8% 0% 5% 0%;
+    }
+    .headings h1{
+        margin-bottom: 15px;
+    }
+
+    /* Links */
+    .links{
+        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15%;
+        justify-self: center;
+        align-self: center;
+        margin: auto;
+        padding-bottom: 70px;
+    }
+    .register, .newsletter{
+        align-self: center;
+        text-align: center;
+        width: 100%;
+        border-radius: 20px;
+        padding: 5px 0;
+        margin: auto;
+    }
+
+    /* login form */
+    .login-form{
+        display: grid;
+        margin: auto;
+    }
+    .login-form div{
+        width: 60%;
+        margin: auto;
+    }
+    p.username-text{
+        margin-bottom: 20px;
+    }
+    
+    input{
+        width: 100%;
+        display: block;
+    }
+    input[type="text"]{
+        height: 25px;
+        border:none;
+        border-bottom: 1px solid;
+        padding: 0px 10px;
+        outline: none;
+        margin-bottom: 40px;
+    }
+    input[type="submit"]{
+        padding: 10px 50px;
+        border-radius: 15px;
+        margin-bottom: 60px;
+    }
+
+    /* alternate login */
+    .alternatives{
+        width: 60%;
+        margin: auto;
+    }
+    .alternatives p{
+        margin-bottom: 20px;
+    }
+    .alt-login{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 4%;
+        justify-items: center;
+    }
+    .alt-login a{
+        width: 100%;
+        text-align: center;
+    }
+    .alt-login .google{
+        padding: 8px;
+    }
+}
+
+/* Laptops */
+@media only screen and (max-width: 1024px) and (min-width: 769px){
+    /* Containers */
+    .main-container{
+        max-width: 720px;
+        border-radius: 25px;
+        margin: auto;
+        margin-top: 2%;
+    }
+
+    /* Headings */
+    .headings{
+        text-align: center;
+        padding: 8% 0% 5% 0%;
+    }
+    .headings h1{
+        margin-bottom: 15px;
+    }
+
+    /* Links */
+    .links{
+        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15%;
+        justify-self: center;
+        align-self: center;
+        margin: auto;
+        padding-bottom: 70px;
+    }
+    .register, .newsletter{
+        align-self: center;
+        text-align: center;
+        width: 100%;
+        border-radius: 20px;
+        padding: 5px 0;
+        margin: auto;
+    }
+
+    /* login form */
+    .login-form{
+        display: grid;
+        margin: auto;
+    }
+    .login-form div{
+        width: 60%;
+        margin: auto;
+    }
+    p.username-text{
+        margin-bottom: 20px;
+    }
+    
+    input{
+        width: 100%;
+        display: block;
+    }
+    input[type="text"]{
+        height: 25px;
+        border:none;
+        border-bottom: 1px solid;
+        padding: 0px 10px;
+        outline: none;
+        margin-bottom: 40px;
+    }
+    input[type="submit"]{
+        padding: 10px 50px;
+        border-radius: 15px;
+        margin-bottom: 60px;
+    }
+
+    /* alternate login */
+    .alternatives{
+        width: 60%;
+        margin: auto;
+    }
+    .alternatives p{
+        margin-bottom: 20px;
+    }
+    .alt-login{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 4%;
+        justify-items: center;
+    }
+    .alt-login a{
+        width: 100%;
+        text-align: center;
+    }
+    .alt-login p{
+        padding: 8px;
+        border-radius: 3px;
+    }
+}
+
+/* Tablets */
+@media only screen and (max-width: 768px) and (min-width: 481px){
+    /* main container */
+    .main-container{
+        margin: 2% 2.5%;
+        border-radius: 15px;
+    }
+
+    /* Headings */
+    .headings{
+        text-align: center;
+        padding: 8% 0% 5% 0%;
+    }
+    .headings h1{
+        margin-bottom: 15px;
+    }
+
+    /* Links */
+    .links{
+        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15%;
+        justify-self: center;
+        align-self: center;
+        margin: auto;
+        padding-bottom: 70px;
+    }
+    .register, .newsletter{
+        align-self: center;
+        text-align: center;
+        width: 100%;
+        border-radius: 20px;
+        padding: 5px 0;
+        margin: auto;
+    }
+
+    /* login form */
+    .login-form{
+        display: grid;
+        margin: auto;
+    }
+    .login-form div{
+        width: 60%;
+        margin: auto;
+    }
+    p.username-text{
+        margin-bottom: 20px;
+    }
+    
+    input{
+        width: 100%;
+        display: block;
+    }
+    input[type="text"]{
+        height: 25px;
+        border:none;
+        border-bottom: 1px solid;
+        padding: 0px 10px;
+        outline: none;
+        margin-bottom: 40px;
+    }
+    input[type="submit"]{
+        padding: 10px 50px;
+        border-radius: 15px;
+        margin-bottom: 60px;
+    }
+
+    /* alternate login */
+    .alternatives{
+        width: 60%;
+        margin: auto;
+    }
+    .alternatives p{
+        margin-bottom: 20px;
+    }
+    .alt-login{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 4%;
+        justify-items: center;
+    }
+    .alt-login a{
+        width: 100%;
+        text-align: center;
+    }
+    .alt-login p{
+        padding: 8px;
+        border-radius: 3px;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 480px){
+    .main-container{
+        margin: 2% 2.5%;
+        border-radius: 10px;
+    }
+}

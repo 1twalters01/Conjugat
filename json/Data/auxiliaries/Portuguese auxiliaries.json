@@ -1,0 +1,378 @@
+[
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 123,
+    "fields": {
+        "language": "2",
+        "auxiliary": ""
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 124,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tenho"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 125,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tens"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 126,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tem"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 127,
+    "fields": {
+        "language": "2",
+        "auxiliary": "temos"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 128,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tendes"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 129,
+    "fields": {
+        "language": "2",
+        "auxiliary": "têm"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 130,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tinha"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 131,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tinhas"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 132,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tínhamos"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 133,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tínheis"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 134,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tinham"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 135,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tivera"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 136,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tiveras"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 137,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tivéramos"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 138,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tivéreis"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 139,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tiveram"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 140,
+    "fields": {
+        "language": "2",
+        "auxiliary": "terei"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 141,
+    "fields": {
+        "language": "2",
+        "auxiliary": "terás"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 142,
+    "fields": {
+        "language": "2",
+        "auxiliary": "terá"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 143,
+    "fields": {
+        "language": "2",
+        "auxiliary": "teremos"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 144,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tereis"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 145,
+    "fields": {
+        "language": "2",
+        "auxiliary": "terão"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 146,
+    "fields": {
+        "language": "2",
+        "auxiliary": "que"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 147,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tenha"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 148,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tenhas"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 149,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tenhamos"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 150,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tenhais"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 151,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tenham"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 152,
+    "fields": {
+        "language": "2",
+        "auxiliary": "se"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 153,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tivesse"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 154,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tivesses"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 155,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tivéssemos"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 156,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tivésseis"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 157,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tivessem"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 158,
+    "fields": {
+        "language": "2",
+        "auxiliary": "quando"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 159,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tiver"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 160,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tiveres"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 161,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tivermos"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 162,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tiverdes"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 163,
+    "fields": {
+        "language": "2",
+        "auxiliary": "tiverem"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 164,
+    "fields": {
+        "language": "2",
+        "auxiliary": "teria"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 165,
+    "fields": {
+        "language": "2",
+        "auxiliary": "terias"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 166,
+    "fields": {
+        "language": "2",
+        "auxiliary": "teríamos"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 167,
+    "fields": {
+        "language": "2",
+        "auxiliary": "teríeis"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 168,
+    "fields": {
+        "language": "2",
+        "auxiliary": "teriam"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 169,
+    "fields": {
+        "language": "2",
+        "auxiliary": "não"
+    }
+    }
+    ]

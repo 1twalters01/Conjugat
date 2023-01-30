@@ -1,0 +1,9 @@
+body{
+    background-color: var(--primary-900);
+}
+.main-container{
+    background-color: var(--primary-800);
+}
+p, h1, h2, a, i{
+    color: white;
+}

@@ -1,0 +1,138 @@
+[
+    {
+    "model": "verbs.romancetense",
+    "pk": 89,
+    "fields": {
+        "language": "5",
+        "tense": "Indicative Present"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 90,
+    "fields": {
+        "language": "5",
+        "tense": "Indicative Preterite"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 91,
+    "fields": {
+        "language": "5",
+        "tense": "Indicative Present continuous"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 92,
+    "fields": {
+        "language": "5",
+        "tense": "Indicative Present perfect"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 93,
+    "fields": {
+        "language": "5",
+        "tense": "Indicative Future"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 94,
+    "fields": {
+        "language": "5",
+        "tense": "Indicative Future perfect"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 95,
+    "fields": {
+        "language": "5",
+        "tense": "Indicative Past continous"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 96,
+    "fields": {
+        "language": "5",
+        "tense": "Indicative Past perfect"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 97,
+    "fields": {
+        "language": "5",
+        "tense": "Indicative Future continuous"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 98,
+    "fields": {
+        "language": "5",
+        "tense": "Indicative Present perfect continuous"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 99,
+    "fields": {
+        "language": "5",
+        "tense": "Indicative Past perfect continuous"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 100,
+    "fields": {
+        "language": "5",
+        "tense": "Indicative Future perfect continuous"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 101,
+    "fields": {
+        "language": "5",
+        "tense": "Imperative"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 102,
+    "fields": {
+        "language": "5",
+        "tense": "Participle Present"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 103,
+    "fields": {
+        "language": "5",
+        "tense": "Participle Past"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 104,
+    "fields": {
+        "language": "5",
+        "tense": "Infinitive"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 105,
+    "fields": {
+        "language": "5",
+        "tense": "Perfect participle"
+    }
+    }
+    ]

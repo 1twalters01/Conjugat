@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Two Factor-Authentication{% endblock %}
+{% block content %}
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    
+    <h1>Two-Factor Authentication</h1>
+    
+    {% if confirmed != True %}
+        <p>Scan the code, enter your password and the 6 digit number below to add two factor-authentication to your account</p>
+    {% elif confirmed == True %}
+        <p>Add another device?</p>
+    {% endif %}
+
+    
+    <div id="qrcode" style="border: 1px solid white;display: inline-block;margin-left: 10px;"></div>
+
+    {% if confirmed == True %}
+        <p>Or reset your 2FA by entering your password and OTP</p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p><input type="submit" value="Enter your 6 digit number"></p>
+    </form>
+    
+    <script type="text/javascript">
+        new QRCode(document.getElementById("qrcode"), "{{qr_string}}");
+    </script>
+    
+{% endblock %}

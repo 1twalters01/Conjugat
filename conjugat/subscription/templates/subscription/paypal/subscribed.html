@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Payment successful{% endblock %}
+{% block content %}
+    <h1>Thank you for subscribing</h1>
+    {{ id }}
+    {% if status == 'ACTIVE' %}
+        <form method="post">
+            {% csrf_token %}
+            <input type="submit" value="Stop subscription" name="Stop">
+        </form>
+    {% elif status == 'SUSPENDED' %}
+        <form method="post">
+            {% csrf_token %}
+            <input type="submit" value="Restart subscription" name="Re-start">
+        </form>
+    {% elif status == 'CANCELLED' %}
+        <p>Subscription has been cancelled.</p>
+    {% endif %}
+{% endblock %}

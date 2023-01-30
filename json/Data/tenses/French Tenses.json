@@ -1,0 +1,178 @@
+[
+    {
+    "model": "verbs.romancetense",
+    "pk": 67,
+    "fields": {
+        "language": "4",
+        "tense": "Indicatif Présent"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 68,
+    "fields": {
+        "language": "4",
+        "tense": "Indicatif Imparfait"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 69,
+    "fields": {
+        "language": "4",
+        "tense": "Indicatif Futur"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 70,
+    "fields": {
+        "language": "4",
+        "tense": "Indicatif Passé simple"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 71,
+    "fields": {
+        "language": "4",
+        "tense": "Indicatif Passé composé"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 72,
+    "fields": {
+        "language": "4",
+        "tense": "Indicatif Plus-que-parfait"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 73,
+    "fields": {
+        "language": "4",
+        "tense": "Indicatif Passé antérieur"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 74,
+    "fields": {
+        "language": "4",
+        "tense": "Indicatif Futur antérieur"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 75,
+    "fields": {
+        "language": "4",
+        "tense": "Subjonctif Présent"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 76,
+    "fields": {
+        "language": "4",
+        "tense": "Subjonctif Imparfait"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 77,
+    "fields": {
+        "language": "4",
+        "tense": "Subjonctif Plus-que-parfait"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 78,
+    "fields": {
+        "language": "4",
+        "tense": "Subjonctif Passé"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 79,
+    "fields": {
+        "language": "4",
+        "tense": "Conditionnel Présent"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 80,
+    "fields": {
+        "language": "4",
+        "tense": "Conditionnel Passé première forme"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 81,
+    "fields": {
+        "language": "4",
+        "tense": "Conditionnel Passé deuxième forme"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 82,
+    "fields": {
+        "language": "4",
+        "tense": "Participe Présent"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 83,
+    "fields": {
+        "language": "4",
+        "tense": "Participe Passé composé"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 84,
+    "fields": {
+        "language": "4",
+        "tense": "Participe Passé"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 85,
+    "fields": {
+        "language": "4",
+        "tense": "Impératif Présent"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 86,
+    "fields": {
+        "language": "4",
+        "tense": "Impératif Passé"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 87,
+    "fields": {
+        "language": "4",
+        "tense": "Infinitif Présent"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 88,
+    "fields": {
+        "language": "4",
+        "tense": "Infinitif Passé"
+    }
+    }
+    ]

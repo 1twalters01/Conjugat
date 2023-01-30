@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Payment successful{% endblock %}
+{% block content %}
+    <script src="{% static 'stripe/client.js' %}" defer></script>
+    <h1>Your payment was successful</h1>
+    <p>Your payment has been processed successfully</p>
+
+    <form action="" method="POST">
+        <input type="hidden" id="session-id" name="session_id" value="" />
+        <button id="checkout-and-portal-button" type="submit">Manage your billing information</button>
+        {% csrf_token %}
+    </form>
+{% endblock %}

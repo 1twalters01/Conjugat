@@ -1,0 +1,1450 @@
+[
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 251,
+    "fields": {
+        "language": "4",
+        "auxiliary": ""
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 252,
+    "fields": {
+        "language": "4",
+        "auxiliary": "ai"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 253,
+    "fields": {
+        "language": "4",
+        "auxiliary": "as"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 254,
+    "fields": {
+        "language": "4",
+        "auxiliary": "a"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 255,
+    "fields": {
+        "language": "4",
+        "auxiliary": "avons"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 256,
+    "fields": {
+        "language": "4",
+        "auxiliary": "avez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 257,
+    "fields": {
+        "language": "4",
+        "auxiliary": "ont"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 258,
+    "fields": {
+        "language": "4",
+        "auxiliary": "avais"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 259,
+    "fields": {
+        "language": "4",
+        "auxiliary": "avait"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 260,
+    "fields": {
+        "language": "4",
+        "auxiliary": "avions"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 261,
+    "fields": {
+        "language": "4",
+        "auxiliary": "aviez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 262,
+    "fields": {
+        "language": "4",
+        "auxiliary": "avaient"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 263,
+    "fields": {
+        "language": "4",
+        "auxiliary": "eus"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 264,
+    "fields": {
+        "language": "4",
+        "auxiliary": "eut"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 265,
+    "fields": {
+        "language": "4",
+        "auxiliary": "eûmes"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 266,
+    "fields": {
+        "language": "4",
+        "auxiliary": "eûtes"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 267,
+    "fields": {
+        "language": "4",
+        "auxiliary": "eurent"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 268,
+    "fields": {
+        "language": "4",
+        "auxiliary": "aurai"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 269,
+    "fields": {
+        "language": "4",
+        "auxiliary": "auras"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 270,
+    "fields": {
+        "language": "4",
+        "auxiliary": "aura"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 271,
+    "fields": {
+        "language": "4",
+        "auxiliary": "aurons"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 272,
+    "fields": {
+        "language": "4",
+        "auxiliary": "aurez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 273,
+    "fields": {
+        "language": "4",
+        "auxiliary": "auront"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 274,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 275,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 276,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que eusse"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 277,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que eusses"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 278,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'eût"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 279,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que eussions"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 280,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que eussiez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 281,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'eussent"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 282,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que aie"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 283,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que aies"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 284,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'ait"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 285,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que ayons"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 286,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que ayez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 287,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'aient"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 288,
+    "fields": {
+        "language": "4",
+        "auxiliary": "aurais"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 289,
+    "fields": {
+        "language": "4",
+        "auxiliary": "aurait"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 290,
+    "fields": {
+        "language": "4",
+        "auxiliary": "aurions"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 291,
+    "fields": {
+        "language": "4",
+        "auxiliary": "auriez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 292,
+    "fields": {
+        "language": "4",
+        "auxiliary": "auraient"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 293,
+    "fields": {
+        "language": "4",
+        "auxiliary": "eusse"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 294,
+    "fields": {
+        "language": "4",
+        "auxiliary": "eusses"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 295,
+    "fields": {
+        "language": "4",
+        "auxiliary": "eût"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 296,
+    "fields": {
+        "language": "4",
+        "auxiliary": "eussions"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 297,
+    "fields": {
+        "language": "4",
+        "auxiliary": "eussiez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 298,
+    "fields": {
+        "language": "4",
+        "auxiliary": "eussent"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 299,
+    "fields": {
+        "language": "4",
+        "auxiliary": "ayant"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 300,
+    "fields": {
+        "language": "4",
+        "auxiliary": "aie"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 301,
+    "fields": {
+        "language": "4",
+        "auxiliary": "ayons"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 302,
+    "fields": {
+        "language": "4",
+        "auxiliary": "ayez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 303,
+    "fields": {
+        "language": "4",
+        "auxiliary": "avoir"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 304,
+    "fields": {
+        "language": "4",
+        "auxiliary": "suis"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 305,
+    "fields": {
+        "language": "4",
+        "auxiliary": "es"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 306,
+    "fields": {
+        "language": "4",
+        "auxiliary": "est"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 307,
+    "fields": {
+        "language": "4",
+        "auxiliary": "sommes"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 308,
+    "fields": {
+        "language": "4",
+        "auxiliary": "êtes"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 309,
+    "fields": {
+        "language": "4",
+        "auxiliary": "sont"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 310,
+    "fields": {
+        "language": "4",
+        "auxiliary": "étais"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 311,
+    "fields": {
+        "language": "4",
+        "auxiliary": "était"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 312,
+    "fields": {
+        "language": "4",
+        "auxiliary": "étions"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 313,
+    "fields": {
+        "language": "4",
+        "auxiliary": "étiez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 314,
+    "fields": {
+        "language": "4",
+        "auxiliary": "étaient"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 315,
+    "fields": {
+        "language": "4",
+        "auxiliary": "fus"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 316,
+    "fields": {
+        "language": "4",
+        "auxiliary": "fut"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 317,
+    "fields": {
+        "language": "4",
+        "auxiliary": "fûmes"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 318,
+    "fields": {
+        "language": "4",
+        "auxiliary": "fûtes"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 319,
+    "fields": {
+        "language": "4",
+        "auxiliary": "furent"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 320,
+    "fields": {
+        "language": "4",
+        "auxiliary": "serai"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 321,
+    "fields": {
+        "language": "4",
+        "auxiliary": "seras"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 322,
+    "fields": {
+        "language": "4",
+        "auxiliary": "sera"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 323,
+    "fields": {
+        "language": "4",
+        "auxiliary": "serons"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 324,
+    "fields": {
+        "language": "4",
+        "auxiliary": "serez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 325,
+    "fields": {
+        "language": "4",
+        "auxiliary": "seront"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 326,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que fusse"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 327,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que fusses"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 328,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'fût"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 329,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que fussions"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 330,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que fussiez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 331,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'fussent"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 332,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que sois"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 333,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'soit"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 334,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que soyons"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 335,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que soyez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 336,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'soient"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 337,
+    "fields": {
+        "language": "4",
+        "auxiliary": "serais"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 338,
+    "fields": {
+        "language": "4",
+        "auxiliary": "serait"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 339,
+    "fields": {
+        "language": "4",
+        "auxiliary": "serions"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 340,
+    "fields": {
+        "language": "4",
+        "auxiliary": "seriez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 341,
+    "fields": {
+        "language": "4",
+        "auxiliary": "seraient"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 342,
+    "fields": {
+        "language": "4",
+        "auxiliary": "fusse"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 343,
+    "fields": {
+        "language": "4",
+        "auxiliary": "fusses"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 344,
+    "fields": {
+        "language": "4",
+        "auxiliary": "fût"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 345,
+    "fields": {
+        "language": "4",
+        "auxiliary": "fussions"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 346,
+    "fields": {
+        "language": "4",
+        "auxiliary": "fussiez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 347,
+    "fields": {
+        "language": "4",
+        "auxiliary": "fussent"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 348,
+    "fields": {
+        "language": "4",
+        "auxiliary": "étant"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 349,
+    "fields": {
+        "language": "4",
+        "auxiliary": "sois"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 350,
+    "fields": {
+        "language": "4",
+        "auxiliary": "soyons"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 351,
+    "fields": {
+        "language": "4",
+        "auxiliary": "soyez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 352,
+    "fields": {
+        "language": "4",
+        "auxiliary": "être"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 353,
+    "fields": {
+        "language": "4",
+        "auxiliary": "il"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 354,
+    "fields": {
+        "language": "4",
+        "auxiliary": "il a"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 355,
+    "fields": {
+        "language": "4",
+        "auxiliary": "il avait"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 356,
+    "fields": {
+        "language": "4",
+        "auxiliary": "il eut"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 357,
+    "fields": {
+        "language": "4",
+        "auxiliary": "il aura"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 358,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'il"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 359,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'il eût"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 360,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'il ait"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 361,
+    "fields": {
+        "language": "4",
+        "auxiliary": "il aurait"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 362,
+    "fields": {
+        "language": "4",
+        "auxiliary": "il eût"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 363,
+    "fields": {
+        "language": "4",
+        "auxiliary": "m'"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 364,
+    "fields": {
+        "language": "4",
+        "auxiliary": "t'"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 365,
+    "fields": {
+        "language": "4",
+        "auxiliary": "s'"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 366,
+    "fields": {
+        "language": "4",
+        "auxiliary": "nous"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 367,
+    "fields": {
+        "language": "4",
+        "auxiliary": "vous"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 368,
+    "fields": {
+        "language": "4",
+        "auxiliary": "me suis"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 369,
+    "fields": {
+        "language": "4",
+        "auxiliary": "t'es"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 370,
+    "fields": {
+        "language": "4",
+        "auxiliary": "s'est"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 371,
+    "fields": {
+        "language": "4",
+        "auxiliary": "nous sommes"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 372,
+    "fields": {
+        "language": "4",
+        "auxiliary": "vous êtes"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 373,
+    "fields": {
+        "language": "4",
+        "auxiliary": "se sont"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 374,
+    "fields": {
+        "language": "4",
+        "auxiliary": "m'étais"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 375,
+    "fields": {
+        "language": "4",
+        "auxiliary": "t'étais"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 376,
+    "fields": {
+        "language": "4",
+        "auxiliary": "s'était"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 377,
+    "fields": {
+        "language": "4",
+        "auxiliary": "nous étions"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 378,
+    "fields": {
+        "language": "4",
+        "auxiliary": "vous étiez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 379,
+    "fields": {
+        "language": "4",
+        "auxiliary": "s'étaient"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 380,
+    "fields": {
+        "language": "4",
+        "auxiliary": "me fus"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 381,
+    "fields": {
+        "language": "4",
+        "auxiliary": "te fus"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 382,
+    "fields": {
+        "language": "4",
+        "auxiliary": "se fut"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 383,
+    "fields": {
+        "language": "4",
+        "auxiliary": "nous fûmes"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 384,
+    "fields": {
+        "language": "4",
+        "auxiliary": "vous fûtes"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 385,
+    "fields": {
+        "language": "4",
+        "auxiliary": "se furent"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 386,
+    "fields": {
+        "language": "4",
+        "auxiliary": "me serai"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 387,
+    "fields": {
+        "language": "4",
+        "auxiliary": "te seras"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 388,
+    "fields": {
+        "language": "4",
+        "auxiliary": "se sera"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 389,
+    "fields": {
+        "language": "4",
+        "auxiliary": "nous serons"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 390,
+    "fields": {
+        "language": "4",
+        "auxiliary": "vous serez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 391,
+    "fields": {
+        "language": "4",
+        "auxiliary": "se seront"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 392,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que m'"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 393,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que t'"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 394,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu's'"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 395,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que nous"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 396,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que vous"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 397,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que me fusse"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 398,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que te fusses"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 399,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'se fût"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 400,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que nous fussions"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 401,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que vous fussiez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 402,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'se fussent"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 403,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que me sois"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 404,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que te sois"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 405,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'se soit"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 406,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que nous soyons"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 407,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que vous soyez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 408,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'se soient"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 409,
+    "fields": {
+        "language": "4",
+        "auxiliary": "me serais"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 410,
+    "fields": {
+        "language": "4",
+        "auxiliary": "te serais"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 411,
+    "fields": {
+        "language": "4",
+        "auxiliary": "se serait"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 412,
+    "fields": {
+        "language": "4",
+        "auxiliary": "nous serions"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 413,
+    "fields": {
+        "language": "4",
+        "auxiliary": "vous seriez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 414,
+    "fields": {
+        "language": "4",
+        "auxiliary": "se seraient"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 415,
+    "fields": {
+        "language": "4",
+        "auxiliary": "me fusse"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 416,
+    "fields": {
+        "language": "4",
+        "auxiliary": "te fusses"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 417,
+    "fields": {
+        "language": "4",
+        "auxiliary": "se fût"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 418,
+    "fields": {
+        "language": "4",
+        "auxiliary": "nous fussions"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 419,
+    "fields": {
+        "language": "4",
+        "auxiliary": "vous fussiez"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 420,
+    "fields": {
+        "language": "4",
+        "auxiliary": "se fussent"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 421,
+    "fields": {
+        "language": "4",
+        "auxiliary": "s'étant"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 422,
+    "fields": {
+        "language": "4",
+        "auxiliary": "-toi"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 423,
+    "fields": {
+        "language": "4",
+        "auxiliary": "-nous"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 424,
+    "fields": {
+        "language": "4",
+        "auxiliary": "-vous"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 425,
+    "fields": {
+        "language": "4",
+        "auxiliary": "s'être"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 426,
+    "fields": {
+        "language": "4",
+        "auxiliary": "me"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 427,
+    "fields": {
+        "language": "4",
+        "auxiliary": "te"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 428,
+    "fields": {
+        "language": "4",
+        "auxiliary": "se"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 429,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que me"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 430,
+    "fields": {
+        "language": "4",
+        "auxiliary": "que te"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 431,
+    "fields": {
+        "language": "4",
+        "auxiliary": "qu'se"
+    }
+    }
+    ]

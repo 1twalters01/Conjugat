@@ -1,0 +1,9572 @@
+[
+    {
+    "model": "verbs.romancemain",
+    "pk": 1,
+    "fields": {
+        "rank": "1",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "201541"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 2,
+    "fields": {
+        "rank": "2",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "201542"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 3,
+    "fields": {
+        "rank": "3",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "201543"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 4,
+    "fields": {
+        "rank": "4",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "201544"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 5,
+    "fields": {
+        "rank": "5",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "201545"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 6,
+    "fields": {
+        "rank": "6",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "201541"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 7,
+    "fields": {
+        "rank": "7",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "201585"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 8,
+    "fields": {
+        "rank": "8",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "201586"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 9,
+    "fields": {
+        "rank": "9",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "201587"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 10,
+    "fields": {
+        "rank": "10",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "201588"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 11,
+    "fields": {
+        "rank": "11",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "201589"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 12,
+    "fields": {
+        "rank": "12",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "201590"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 13,
+    "fields": {
+        "rank": "13",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "201628"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 14,
+    "fields": {
+        "rank": "14",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "201629"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 15,
+    "fields": {
+        "rank": "15",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "201630"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 16,
+    "fields": {
+        "rank": "16",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "201631"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 17,
+    "fields": {
+        "rank": "17",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "201632"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 18,
+    "fields": {
+        "rank": "18",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "201633"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 19,
+    "fields": {
+        "rank": "19",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "201670"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 20,
+    "fields": {
+        "rank": "20",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "201671"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 21,
+    "fields": {
+        "rank": "21",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "201672"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 22,
+    "fields": {
+        "rank": "22",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "201673"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 23,
+    "fields": {
+        "rank": "23",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "201674"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 24,
+    "fields": {
+        "rank": "24",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "201675"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 25,
+    "fields": {
+        "rank": "25",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "201712"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 26,
+    "fields": {
+        "rank": "26",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "201713"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 27,
+    "fields": {
+        "rank": "27",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "201714"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 28,
+    "fields": {
+        "rank": "28",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "201715"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 29,
+    "fields": {
+        "rank": "29",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "201716"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 30,
+    "fields": {
+        "rank": "30",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "201717"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 31,
+    "fields": {
+        "rank": "31",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "201756"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 32,
+    "fields": {
+        "rank": "32",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "201757"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 33,
+    "fields": {
+        "rank": "33",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "201758"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 34,
+    "fields": {
+        "rank": "34",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "201759"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 35,
+    "fields": {
+        "rank": "35",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "201760"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 36,
+    "fields": {
+        "rank": "36",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "201761"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 37,
+    "fields": {
+        "rank": "37",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "201798"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 38,
+    "fields": {
+        "rank": "38",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "201799"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 39,
+    "fields": {
+        "rank": "39",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "201800"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 40,
+    "fields": {
+        "rank": "40",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "201801"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 41,
+    "fields": {
+        "rank": "41",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "201802"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 42,
+    "fields": {
+        "rank": "42",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "201803"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 43,
+    "fields": {
+        "rank": "43",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "201838"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 44,
+    "fields": {
+        "rank": "44",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "201839"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 45,
+    "fields": {
+        "rank": "45",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "201840"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 46,
+    "fields": {
+        "rank": "46",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "201841"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 47,
+    "fields": {
+        "rank": "47",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "201842"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 48,
+    "fields": {
+        "rank": "48",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "201843"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 49,
+    "fields": {
+        "rank": "49",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "201880"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 50,
+    "fields": {
+        "rank": "50",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "201881"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 51,
+    "fields": {
+        "rank": "51",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "201882"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 52,
+    "fields": {
+        "rank": "52",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "201883"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 53,
+    "fields": {
+        "rank": "53",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "201884"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 54,
+    "fields": {
+        "rank": "54",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "201885"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 55,
+    "fields": {
+        "rank": "55",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "201921"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 56,
+    "fields": {
+        "rank": "56",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "201922"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 57,
+    "fields": {
+        "rank": "57",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "201923"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 58,
+    "fields": {
+        "rank": "58",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "201924"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 59,
+    "fields": {
+        "rank": "59",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "201925"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 60,
+    "fields": {
+        "rank": "60",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "201926"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 61,
+    "fields": {
+        "rank": "61",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "201961"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 62,
+    "fields": {
+        "rank": "62",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "201962"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 63,
+    "fields": {
+        "rank": "63",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "201963"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 64,
+    "fields": {
+        "rank": "64",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "201964"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 65,
+    "fields": {
+        "rank": "65",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "201965"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 66,
+    "fields": {
+        "rank": "66",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "201966"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 67,
+    "fields": {
+        "rank": "67",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202002"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 68,
+    "fields": {
+        "rank": "68",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202003"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 69,
+    "fields": {
+        "rank": "69",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202004"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 70,
+    "fields": {
+        "rank": "70",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202005"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 71,
+    "fields": {
+        "rank": "71",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202006"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 72,
+    "fields": {
+        "rank": "72",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202007"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 73,
+    "fields": {
+        "rank": "73",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202042"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 74,
+    "fields": {
+        "rank": "74",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202043"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 75,
+    "fields": {
+        "rank": "75",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202044"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 76,
+    "fields": {
+        "rank": "76",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202045"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 77,
+    "fields": {
+        "rank": "77",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202046"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 78,
+    "fields": {
+        "rank": "78",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202047"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 79,
+    "fields": {
+        "rank": "79",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202083"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 80,
+    "fields": {
+        "rank": "80",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202084"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 81,
+    "fields": {
+        "rank": "81",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202085"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 82,
+    "fields": {
+        "rank": "82",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202086"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 83,
+    "fields": {
+        "rank": "83",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202087"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 84,
+    "fields": {
+        "rank": "84",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202088"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 85,
+    "fields": {
+        "rank": "85",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202124"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 86,
+    "fields": {
+        "rank": "86",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202125"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 87,
+    "fields": {
+        "rank": "87",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202126"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 88,
+    "fields": {
+        "rank": "88",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202127"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 89,
+    "fields": {
+        "rank": "89",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202128"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 90,
+    "fields": {
+        "rank": "90",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202129"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 91,
+    "fields": {
+        "rank": "91",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202164"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 92,
+    "fields": {
+        "rank": "92",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202165"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 93,
+    "fields": {
+        "rank": "93",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202166"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 94,
+    "fields": {
+        "rank": "94",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202167"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 95,
+    "fields": {
+        "rank": "95",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202168"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 96,
+    "fields": {
+        "rank": "96",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202169"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 97,
+    "fields": {
+        "rank": "97",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202204"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 98,
+    "fields": {
+        "rank": "98",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202205"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 99,
+    "fields": {
+        "rank": "99",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202206"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 100,
+    "fields": {
+        "rank": "100",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202207"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 101,
+    "fields": {
+        "rank": "101",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202208"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 102,
+    "fields": {
+        "rank": "102",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202209"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 103,
+    "fields": {
+        "rank": "103",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202244"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 104,
+    "fields": {
+        "rank": "104",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202245"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 105,
+    "fields": {
+        "rank": "105",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202246"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 106,
+    "fields": {
+        "rank": "106",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202247"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 107,
+    "fields": {
+        "rank": "107",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202248"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 108,
+    "fields": {
+        "rank": "108",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202249"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 109,
+    "fields": {
+        "rank": "109",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202286"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 110,
+    "fields": {
+        "rank": "110",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202287"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 111,
+    "fields": {
+        "rank": "111",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202288"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 112,
+    "fields": {
+        "rank": "112",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202289"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 113,
+    "fields": {
+        "rank": "113",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202290"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 114,
+    "fields": {
+        "rank": "114",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202291"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 115,
+    "fields": {
+        "rank": "115",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202327"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 116,
+    "fields": {
+        "rank": "116",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202328"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 117,
+    "fields": {
+        "rank": "117",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202329"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 118,
+    "fields": {
+        "rank": "118",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202330"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 119,
+    "fields": {
+        "rank": "119",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202331"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 120,
+    "fields": {
+        "rank": "120",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202332"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 121,
+    "fields": {
+        "rank": "121",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202367"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 122,
+    "fields": {
+        "rank": "122",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202368"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 123,
+    "fields": {
+        "rank": "123",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202369"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 124,
+    "fields": {
+        "rank": "124",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202370"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 125,
+    "fields": {
+        "rank": "125",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202371"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 126,
+    "fields": {
+        "rank": "126",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202372"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 127,
+    "fields": {
+        "rank": "127",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202407"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 128,
+    "fields": {
+        "rank": "128",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202408"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 129,
+    "fields": {
+        "rank": "129",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202409"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 130,
+    "fields": {
+        "rank": "130",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202410"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 131,
+    "fields": {
+        "rank": "131",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202411"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 132,
+    "fields": {
+        "rank": "132",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202412"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 133,
+    "fields": {
+        "rank": "133",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202451"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 134,
+    "fields": {
+        "rank": "134",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202452"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 135,
+    "fields": {
+        "rank": "135",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202453"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 136,
+    "fields": {
+        "rank": "136",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202454"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 137,
+    "fields": {
+        "rank": "137",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202455"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 138,
+    "fields": {
+        "rank": "138",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202456"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 139,
+    "fields": {
+        "rank": "139",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202491"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 140,
+    "fields": {
+        "rank": "140",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202492"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 141,
+    "fields": {
+        "rank": "141",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202493"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 142,
+    "fields": {
+        "rank": "142",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202494"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 143,
+    "fields": {
+        "rank": "143",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202495"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 144,
+    "fields": {
+        "rank": "144",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202496"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 145,
+    "fields": {
+        "rank": "145",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "247742"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 146,
+    "fields": {
+        "rank": "146",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202533"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 147,
+    "fields": {
+        "rank": "147",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202534"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 148,
+    "fields": {
+        "rank": "148",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202535"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 149,
+    "fields": {
+        "rank": "149",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202536"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 150,
+    "fields": {
+        "rank": "150",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202537"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 151,
+    "fields": {
+        "rank": "151",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202572"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 152,
+    "fields": {
+        "rank": "152",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202573"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 153,
+    "fields": {
+        "rank": "153",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202574"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 154,
+    "fields": {
+        "rank": "154",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202575"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 155,
+    "fields": {
+        "rank": "155",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202576"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 156,
+    "fields": {
+        "rank": "156",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202577"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 157,
+    "fields": {
+        "rank": "157",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202613"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 158,
+    "fields": {
+        "rank": "158",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202614"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 159,
+    "fields": {
+        "rank": "159",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202615"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 160,
+    "fields": {
+        "rank": "160",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202616"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 161,
+    "fields": {
+        "rank": "161",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202617"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 162,
+    "fields": {
+        "rank": "162",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202618"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 163,
+    "fields": {
+        "rank": "163",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202653"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 164,
+    "fields": {
+        "rank": "164",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202654"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 165,
+    "fields": {
+        "rank": "165",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202655"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 166,
+    "fields": {
+        "rank": "166",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202656"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 167,
+    "fields": {
+        "rank": "167",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202657"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 168,
+    "fields": {
+        "rank": "168",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202658"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 169,
+    "fields": {
+        "rank": "169",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202694"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 170,
+    "fields": {
+        "rank": "170",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202695"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 171,
+    "fields": {
+        "rank": "171",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202696"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 172,
+    "fields": {
+        "rank": "172",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202697"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 173,
+    "fields": {
+        "rank": "173",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202698"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 174,
+    "fields": {
+        "rank": "174",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202699"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 175,
+    "fields": {
+        "rank": "175",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202733"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 176,
+    "fields": {
+        "rank": "176",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202734"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 177,
+    "fields": {
+        "rank": "177",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202735"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 178,
+    "fields": {
+        "rank": "178",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202736"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 179,
+    "fields": {
+        "rank": "179",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202737"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 180,
+    "fields": {
+        "rank": "180",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202738"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 181,
+    "fields": {
+        "rank": "181",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202774"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 182,
+    "fields": {
+        "rank": "182",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202775"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 183,
+    "fields": {
+        "rank": "183",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202776"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 184,
+    "fields": {
+        "rank": "184",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202777"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 185,
+    "fields": {
+        "rank": "185",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202778"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 186,
+    "fields": {
+        "rank": "186",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202779"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 187,
+    "fields": {
+        "rank": "187",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202815"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 188,
+    "fields": {
+        "rank": "188",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202816"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 189,
+    "fields": {
+        "rank": "189",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202817"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 190,
+    "fields": {
+        "rank": "190",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202818"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 191,
+    "fields": {
+        "rank": "191",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202819"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 192,
+    "fields": {
+        "rank": "192",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202820"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 193,
+    "fields": {
+        "rank": "193",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202855"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 194,
+    "fields": {
+        "rank": "194",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202856"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 195,
+    "fields": {
+        "rank": "195",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202857"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 196,
+    "fields": {
+        "rank": "196",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202858"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 197,
+    "fields": {
+        "rank": "197",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202859"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 198,
+    "fields": {
+        "rank": "198",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202860"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 199,
+    "fields": {
+        "rank": "199",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202896"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 200,
+    "fields": {
+        "rank": "200",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202897"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 201,
+    "fields": {
+        "rank": "201",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202898"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 202,
+    "fields": {
+        "rank": "202",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202899"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 203,
+    "fields": {
+        "rank": "203",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202900"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 204,
+    "fields": {
+        "rank": "204",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202901"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 205,
+    "fields": {
+        "rank": "205",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202937"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 206,
+    "fields": {
+        "rank": "206",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202938"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 207,
+    "fields": {
+        "rank": "207",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202939"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 208,
+    "fields": {
+        "rank": "208",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202940"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 209,
+    "fields": {
+        "rank": "209",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202941"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 210,
+    "fields": {
+        "rank": "210",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202942"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 211,
+    "fields": {
+        "rank": "211",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203731"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 212,
+    "fields": {
+        "rank": "212",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "201609"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 213,
+    "fields": {
+        "rank": "213",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "201652"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 214,
+    "fields": {
+        "rank": "214",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "255310"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 215,
+    "fields": {
+        "rank": "215",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "201736"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 216,
+    "fields": {
+        "rank": "216",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "201780"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 217,
+    "fields": {
+        "rank": "217",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "201822"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 218,
+    "fields": {
+        "rank": "218",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "201862"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 219,
+    "fields": {
+        "rank": "219",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "201904"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 220,
+    "fields": {
+        "rank": "220",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "201945"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 221,
+    "fields": {
+        "rank": "221",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "201985"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 222,
+    "fields": {
+        "rank": "222",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202026"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 223,
+    "fields": {
+        "rank": "223",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202066"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 224,
+    "fields": {
+        "rank": "224",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202107"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 225,
+    "fields": {
+        "rank": "225",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202148"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 226,
+    "fields": {
+        "rank": "226",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202188"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 227,
+    "fields": {
+        "rank": "227",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202228"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 228,
+    "fields": {
+        "rank": "228",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "265751"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 229,
+    "fields": {
+        "rank": "229",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "237003"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 230,
+    "fields": {
+        "rank": "230",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202351"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 231,
+    "fields": {
+        "rank": "231",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202391"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 232,
+    "fields": {
+        "rank": "232",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202431"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 233,
+    "fields": {
+        "rank": "233",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202475"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 234,
+    "fields": {
+        "rank": "234",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202515"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 235,
+    "fields": {
+        "rank": "235",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202556"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 236,
+    "fields": {
+        "rank": "236",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202596"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 237,
+    "fields": {
+        "rank": "237",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202637"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 238,
+    "fields": {
+        "rank": "238",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202677"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 239,
+    "fields": {
+        "rank": "239",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202718"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 240,
+    "fields": {
+        "rank": "240",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202757"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 241,
+    "fields": {
+        "rank": "241",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "171",
+        "conjugation": "203731"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 242,
+    "fields": {
+        "rank": "242",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "172",
+        "conjugation": "203731"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 243,
+    "fields": {
+        "rank": "243",
+        "tense": "51",
+        "subject": "21",
+        "auxiliary": "173",
+        "conjugation": "203731"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 244,
+    "fields": {
+        "rank": "244",
+        "tense": "51",
+        "subject": "22",
+        "auxiliary": "173",
+        "conjugation": "203732"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 245,
+    "fields": {
+        "rank": "245",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "174",
+        "conjugation": "203733"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 246,
+    "fields": {
+        "rank": "246",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "175",
+        "conjugation": "203733"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 247,
+    "fields": {
+        "rank": "247",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "171",
+        "conjugation": "203733"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 248,
+    "fields": {
+        "rank": "248",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "171",
+        "conjugation": "203711"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 249,
+    "fields": {
+        "rank": "249",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "201609"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 250,
+    "fields": {
+        "rank": "250",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "201609"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 251,
+    "fields": {
+        "rank": "251",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "201609"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 252,
+    "fields": {
+        "rank": "252",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "201609"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 253,
+    "fields": {
+        "rank": "253",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "201609"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 254,
+    "fields": {
+        "rank": "254",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "201609"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 255,
+    "fields": {
+        "rank": "255",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "201652"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 256,
+    "fields": {
+        "rank": "256",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "201652"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 257,
+    "fields": {
+        "rank": "257",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "201652"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 258,
+    "fields": {
+        "rank": "258",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "201652"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 259,
+    "fields": {
+        "rank": "259",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "201652"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 260,
+    "fields": {
+        "rank": "260",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "201652"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 261,
+    "fields": {
+        "rank": "261",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "255310"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 262,
+    "fields": {
+        "rank": "262",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "255310"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 263,
+    "fields": {
+        "rank": "263",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "255310"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 264,
+    "fields": {
+        "rank": "264",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "255310"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 265,
+    "fields": {
+        "rank": "265",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "255310"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 266,
+    "fields": {
+        "rank": "266",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "255310"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 267,
+    "fields": {
+        "rank": "267",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "171",
+        "conjugation": "201736"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 268,
+    "fields": {
+        "rank": "268",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "172",
+        "conjugation": "201736"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 269,
+    "fields": {
+        "rank": "269",
+        "tense": "51",
+        "subject": "21",
+        "auxiliary": "173",
+        "conjugation": "201736"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 270,
+    "fields": {
+        "rank": "270",
+        "tense": "51",
+        "subject": "22",
+        "auxiliary": "173",
+        "conjugation": "201737"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 271,
+    "fields": {
+        "rank": "271",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "174",
+        "conjugation": "201738"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 272,
+    "fields": {
+        "rank": "272",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "175",
+        "conjugation": "201738"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 273,
+    "fields": {
+        "rank": "273",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "171",
+        "conjugation": "201738"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 274,
+    "fields": {
+        "rank": "274",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "171",
+        "conjugation": "201716"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 275,
+    "fields": {
+        "rank": "275",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "201780"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 276,
+    "fields": {
+        "rank": "276",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "201780"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 277,
+    "fields": {
+        "rank": "277",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "201780"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 278,
+    "fields": {
+        "rank": "278",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "201780"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 279,
+    "fields": {
+        "rank": "279",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "201780"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 280,
+    "fields": {
+        "rank": "280",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "201780"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 281,
+    "fields": {
+        "rank": "281",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "201822"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 282,
+    "fields": {
+        "rank": "282",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "201822"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 283,
+    "fields": {
+        "rank": "283",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "201822"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 284,
+    "fields": {
+        "rank": "284",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "201822"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 285,
+    "fields": {
+        "rank": "285",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "201822"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 286,
+    "fields": {
+        "rank": "286",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "201822"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 287,
+    "fields": {
+        "rank": "287",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "201862"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 288,
+    "fields": {
+        "rank": "288",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "201862"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 289,
+    "fields": {
+        "rank": "289",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "201862"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 290,
+    "fields": {
+        "rank": "290",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "201862"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 291,
+    "fields": {
+        "rank": "291",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "201862"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 292,
+    "fields": {
+        "rank": "292",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "201862"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 293,
+    "fields": {
+        "rank": "293",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "201904"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 294,
+    "fields": {
+        "rank": "294",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "201904"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 295,
+    "fields": {
+        "rank": "295",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "201904"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 296,
+    "fields": {
+        "rank": "296",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "201904"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 297,
+    "fields": {
+        "rank": "297",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "201904"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 298,
+    "fields": {
+        "rank": "298",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "201904"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 299,
+    "fields": {
+        "rank": "299",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "201945"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 300,
+    "fields": {
+        "rank": "300",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "201945"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 301,
+    "fields": {
+        "rank": "301",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "201945"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 302,
+    "fields": {
+        "rank": "302",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "201945"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 303,
+    "fields": {
+        "rank": "303",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "201945"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 304,
+    "fields": {
+        "rank": "304",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "201945"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 305,
+    "fields": {
+        "rank": "305",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "201985"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 306,
+    "fields": {
+        "rank": "306",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "201985"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 307,
+    "fields": {
+        "rank": "307",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "201985"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 308,
+    "fields": {
+        "rank": "308",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "201985"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 309,
+    "fields": {
+        "rank": "309",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "201985"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 310,
+    "fields": {
+        "rank": "310",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "201985"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 311,
+    "fields": {
+        "rank": "311",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202026"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 312,
+    "fields": {
+        "rank": "312",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202026"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 313,
+    "fields": {
+        "rank": "313",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202026"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 314,
+    "fields": {
+        "rank": "314",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202026"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 315,
+    "fields": {
+        "rank": "315",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202026"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 316,
+    "fields": {
+        "rank": "316",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202026"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 317,
+    "fields": {
+        "rank": "317",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202066"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 318,
+    "fields": {
+        "rank": "318",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202066"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 319,
+    "fields": {
+        "rank": "319",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202066"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 320,
+    "fields": {
+        "rank": "320",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202066"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 321,
+    "fields": {
+        "rank": "321",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202066"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 322,
+    "fields": {
+        "rank": "322",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202066"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 323,
+    "fields": {
+        "rank": "323",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202107"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 324,
+    "fields": {
+        "rank": "324",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202107"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 325,
+    "fields": {
+        "rank": "325",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202107"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 326,
+    "fields": {
+        "rank": "326",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202107"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 327,
+    "fields": {
+        "rank": "327",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202107"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 328,
+    "fields": {
+        "rank": "328",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202107"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 329,
+    "fields": {
+        "rank": "329",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202148"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 330,
+    "fields": {
+        "rank": "330",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202148"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 331,
+    "fields": {
+        "rank": "331",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202148"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 332,
+    "fields": {
+        "rank": "332",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202148"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 333,
+    "fields": {
+        "rank": "333",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202148"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 334,
+    "fields": {
+        "rank": "334",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202148"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 335,
+    "fields": {
+        "rank": "335",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202188"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 336,
+    "fields": {
+        "rank": "336",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202188"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 337,
+    "fields": {
+        "rank": "337",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202188"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 338,
+    "fields": {
+        "rank": "338",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202188"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 339,
+    "fields": {
+        "rank": "339",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202188"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 340,
+    "fields": {
+        "rank": "340",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202188"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 341,
+    "fields": {
+        "rank": "341",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202228"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 342,
+    "fields": {
+        "rank": "342",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202228"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 343,
+    "fields": {
+        "rank": "343",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202228"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 344,
+    "fields": {
+        "rank": "344",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202228"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 345,
+    "fields": {
+        "rank": "345",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202228"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 346,
+    "fields": {
+        "rank": "346",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202228"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 347,
+    "fields": {
+        "rank": "347",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "265751"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 348,
+    "fields": {
+        "rank": "348",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "265751"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 349,
+    "fields": {
+        "rank": "349",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "265751"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 350,
+    "fields": {
+        "rank": "350",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "265751"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 351,
+    "fields": {
+        "rank": "351",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "265751"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 352,
+    "fields": {
+        "rank": "352",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "265751"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 353,
+    "fields": {
+        "rank": "353",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "237003"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 354,
+    "fields": {
+        "rank": "354",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "237003"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 355,
+    "fields": {
+        "rank": "355",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "237003"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 356,
+    "fields": {
+        "rank": "356",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "237003"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 357,
+    "fields": {
+        "rank": "357",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "237003"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 358,
+    "fields": {
+        "rank": "358",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "237003"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 359,
+    "fields": {
+        "rank": "359",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202351"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 360,
+    "fields": {
+        "rank": "360",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202351"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 361,
+    "fields": {
+        "rank": "361",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202351"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 362,
+    "fields": {
+        "rank": "362",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202351"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 363,
+    "fields": {
+        "rank": "363",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202351"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 364,
+    "fields": {
+        "rank": "364",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202351"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 365,
+    "fields": {
+        "rank": "365",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202391"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 366,
+    "fields": {
+        "rank": "366",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202391"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 367,
+    "fields": {
+        "rank": "367",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202391"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 368,
+    "fields": {
+        "rank": "368",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202391"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 369,
+    "fields": {
+        "rank": "369",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202391"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 370,
+    "fields": {
+        "rank": "370",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202391"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 371,
+    "fields": {
+        "rank": "371",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "171",
+        "conjugation": "202431"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 372,
+    "fields": {
+        "rank": "372",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "172",
+        "conjugation": "202431"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 373,
+    "fields": {
+        "rank": "373",
+        "tense": "51",
+        "subject": "21",
+        "auxiliary": "173",
+        "conjugation": "202431"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 374,
+    "fields": {
+        "rank": "374",
+        "tense": "51",
+        "subject": "22",
+        "auxiliary": "173",
+        "conjugation": "202432"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 375,
+    "fields": {
+        "rank": "375",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "174",
+        "conjugation": "202433"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 376,
+    "fields": {
+        "rank": "376",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "175",
+        "conjugation": "202433"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 377,
+    "fields": {
+        "rank": "377",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "171",
+        "conjugation": "202433"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 378,
+    "fields": {
+        "rank": "378",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "171",
+        "conjugation": "202434"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 379,
+    "fields": {
+        "rank": "379",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202475"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 380,
+    "fields": {
+        "rank": "380",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202475"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 381,
+    "fields": {
+        "rank": "381",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202475"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 382,
+    "fields": {
+        "rank": "382",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202475"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 383,
+    "fields": {
+        "rank": "383",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202475"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 384,
+    "fields": {
+        "rank": "384",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202475"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 385,
+    "fields": {
+        "rank": "385",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202515"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 386,
+    "fields": {
+        "rank": "386",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202515"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 387,
+    "fields": {
+        "rank": "387",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202515"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 388,
+    "fields": {
+        "rank": "388",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202515"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 389,
+    "fields": {
+        "rank": "389",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202515"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 390,
+    "fields": {
+        "rank": "390",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202515"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 391,
+    "fields": {
+        "rank": "391",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202556"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 392,
+    "fields": {
+        "rank": "392",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202556"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 393,
+    "fields": {
+        "rank": "393",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202556"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 394,
+    "fields": {
+        "rank": "394",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202556"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 395,
+    "fields": {
+        "rank": "395",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202556"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 396,
+    "fields": {
+        "rank": "396",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202556"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 397,
+    "fields": {
+        "rank": "397",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202596"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 398,
+    "fields": {
+        "rank": "398",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202596"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 399,
+    "fields": {
+        "rank": "399",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202596"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 400,
+    "fields": {
+        "rank": "400",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202596"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 401,
+    "fields": {
+        "rank": "401",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202596"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 402,
+    "fields": {
+        "rank": "402",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202596"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 403,
+    "fields": {
+        "rank": "403",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202637"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 404,
+    "fields": {
+        "rank": "404",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202637"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 405,
+    "fields": {
+        "rank": "405",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202637"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 406,
+    "fields": {
+        "rank": "406",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202637"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 407,
+    "fields": {
+        "rank": "407",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202637"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 408,
+    "fields": {
+        "rank": "408",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202637"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 409,
+    "fields": {
+        "rank": "409",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202677"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 410,
+    "fields": {
+        "rank": "410",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202677"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 411,
+    "fields": {
+        "rank": "411",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202677"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 412,
+    "fields": {
+        "rank": "412",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202677"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 413,
+    "fields": {
+        "rank": "413",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202677"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 414,
+    "fields": {
+        "rank": "414",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202677"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 415,
+    "fields": {
+        "rank": "415",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202718"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 416,
+    "fields": {
+        "rank": "416",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202718"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 417,
+    "fields": {
+        "rank": "417",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202718"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 418,
+    "fields": {
+        "rank": "418",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202718"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 419,
+    "fields": {
+        "rank": "419",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202718"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 420,
+    "fields": {
+        "rank": "420",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202718"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 421,
+    "fields": {
+        "rank": "421",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202757"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 422,
+    "fields": {
+        "rank": "422",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202757"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 423,
+    "fields": {
+        "rank": "423",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202757"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 424,
+    "fields": {
+        "rank": "424",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202757"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 425,
+    "fields": {
+        "rank": "425",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202757"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 426,
+    "fields": {
+        "rank": "426",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202757"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 427,
+    "fields": {
+        "rank": "427",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "202976"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 428,
+    "fields": {
+        "rank": "428",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "202977"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 429,
+    "fields": {
+        "rank": "429",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "202978"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 430,
+    "fields": {
+        "rank": "430",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "202979"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 431,
+    "fields": {
+        "rank": "431",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "202980"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 432,
+    "fields": {
+        "rank": "432",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "202981"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 433,
+    "fields": {
+        "rank": "433",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203018"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 434,
+    "fields": {
+        "rank": "434",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203019"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 435,
+    "fields": {
+        "rank": "435",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203020"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 436,
+    "fields": {
+        "rank": "436",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203021"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 437,
+    "fields": {
+        "rank": "437",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203022"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 438,
+    "fields": {
+        "rank": "438",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203023"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 439,
+    "fields": {
+        "rank": "439",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203059"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 440,
+    "fields": {
+        "rank": "440",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203060"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 441,
+    "fields": {
+        "rank": "441",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203061"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 442,
+    "fields": {
+        "rank": "442",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203062"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 443,
+    "fields": {
+        "rank": "443",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203063"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 444,
+    "fields": {
+        "rank": "444",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203064"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 445,
+    "fields": {
+        "rank": "445",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203099"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 446,
+    "fields": {
+        "rank": "446",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203100"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 447,
+    "fields": {
+        "rank": "447",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203101"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 448,
+    "fields": {
+        "rank": "448",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203102"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 449,
+    "fields": {
+        "rank": "449",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203103"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 450,
+    "fields": {
+        "rank": "450",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203104"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 451,
+    "fields": {
+        "rank": "451",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203139"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 452,
+    "fields": {
+        "rank": "452",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203140"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 453,
+    "fields": {
+        "rank": "453",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203141"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 454,
+    "fields": {
+        "rank": "454",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203142"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 455,
+    "fields": {
+        "rank": "455",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203143"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 456,
+    "fields": {
+        "rank": "456",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203144"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 457,
+    "fields": {
+        "rank": "457",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203180"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 458,
+    "fields": {
+        "rank": "458",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203181"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 459,
+    "fields": {
+        "rank": "459",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203182"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 460,
+    "fields": {
+        "rank": "460",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203183"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 461,
+    "fields": {
+        "rank": "461",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203184"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 462,
+    "fields": {
+        "rank": "462",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203185"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 463,
+    "fields": {
+        "rank": "463",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203220"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 464,
+    "fields": {
+        "rank": "464",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203221"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 465,
+    "fields": {
+        "rank": "465",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203222"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 466,
+    "fields": {
+        "rank": "466",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203223"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 467,
+    "fields": {
+        "rank": "467",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203224"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 468,
+    "fields": {
+        "rank": "468",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203225"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 469,
+    "fields": {
+        "rank": "469",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203261"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 470,
+    "fields": {
+        "rank": "470",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203262"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 471,
+    "fields": {
+        "rank": "471",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203263"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 472,
+    "fields": {
+        "rank": "472",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203264"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 473,
+    "fields": {
+        "rank": "473",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203265"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 474,
+    "fields": {
+        "rank": "474",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203266"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 475,
+    "fields": {
+        "rank": "475",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203302"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 476,
+    "fields": {
+        "rank": "476",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203303"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 477,
+    "fields": {
+        "rank": "477",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203304"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 478,
+    "fields": {
+        "rank": "478",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203305"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 479,
+    "fields": {
+        "rank": "479",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203306"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 480,
+    "fields": {
+        "rank": "480",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203307"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 481,
+    "fields": {
+        "rank": "481",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203341"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 482,
+    "fields": {
+        "rank": "482",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203342"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 483,
+    "fields": {
+        "rank": "483",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203343"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 484,
+    "fields": {
+        "rank": "484",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203344"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 485,
+    "fields": {
+        "rank": "485",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203345"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 486,
+    "fields": {
+        "rank": "486",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203346"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 487,
+    "fields": {
+        "rank": "487",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203381"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 488,
+    "fields": {
+        "rank": "488",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203382"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 489,
+    "fields": {
+        "rank": "489",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203383"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 490,
+    "fields": {
+        "rank": "490",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203384"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 491,
+    "fields": {
+        "rank": "491",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203385"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 492,
+    "fields": {
+        "rank": "492",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203386"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 493,
+    "fields": {
+        "rank": "493",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203421"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 494,
+    "fields": {
+        "rank": "494",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203422"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 495,
+    "fields": {
+        "rank": "495",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203423"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 496,
+    "fields": {
+        "rank": "496",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203424"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 497,
+    "fields": {
+        "rank": "497",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203425"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 498,
+    "fields": {
+        "rank": "498",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203426"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 499,
+    "fields": {
+        "rank": "499",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203465"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 500,
+    "fields": {
+        "rank": "500",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203466"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 501,
+    "fields": {
+        "rank": "501",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203467"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 502,
+    "fields": {
+        "rank": "502",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203468"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 503,
+    "fields": {
+        "rank": "503",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203469"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 504,
+    "fields": {
+        "rank": "504",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203470"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 505,
+    "fields": {
+        "rank": "505",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203506"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 506,
+    "fields": {
+        "rank": "506",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203507"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 507,
+    "fields": {
+        "rank": "507",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203508"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 508,
+    "fields": {
+        "rank": "508",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203509"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 509,
+    "fields": {
+        "rank": "509",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203510"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 510,
+    "fields": {
+        "rank": "510",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203511"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 511,
+    "fields": {
+        "rank": "511",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203546"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 512,
+    "fields": {
+        "rank": "512",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203547"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 513,
+    "fields": {
+        "rank": "513",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203548"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 514,
+    "fields": {
+        "rank": "514",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203549"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 515,
+    "fields": {
+        "rank": "515",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203550"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 516,
+    "fields": {
+        "rank": "516",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203551"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 517,
+    "fields": {
+        "rank": "517",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203585"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 518,
+    "fields": {
+        "rank": "518",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203586"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 519,
+    "fields": {
+        "rank": "519",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203587"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 520,
+    "fields": {
+        "rank": "520",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203588"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 521,
+    "fields": {
+        "rank": "521",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203589"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 522,
+    "fields": {
+        "rank": "522",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203590"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 523,
+    "fields": {
+        "rank": "523",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203625"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 524,
+    "fields": {
+        "rank": "524",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203626"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 525,
+    "fields": {
+        "rank": "525",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203627"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 526,
+    "fields": {
+        "rank": "526",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203628"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 527,
+    "fields": {
+        "rank": "527",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203629"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 528,
+    "fields": {
+        "rank": "528",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203630"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 529,
+    "fields": {
+        "rank": "529",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203666"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 530,
+    "fields": {
+        "rank": "530",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203667"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 531,
+    "fields": {
+        "rank": "531",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203668"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 532,
+    "fields": {
+        "rank": "532",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203669"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 533,
+    "fields": {
+        "rank": "533",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203670"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 534,
+    "fields": {
+        "rank": "534",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203671"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 535,
+    "fields": {
+        "rank": "535",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203707"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 536,
+    "fields": {
+        "rank": "536",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203708"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 537,
+    "fields": {
+        "rank": "537",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203709"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 538,
+    "fields": {
+        "rank": "538",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203710"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 539,
+    "fields": {
+        "rank": "539",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203711"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 540,
+    "fields": {
+        "rank": "540",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203712"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 541,
+    "fields": {
+        "rank": "541",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203751"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 542,
+    "fields": {
+        "rank": "542",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203752"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 543,
+    "fields": {
+        "rank": "543",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203753"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 544,
+    "fields": {
+        "rank": "544",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203754"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 545,
+    "fields": {
+        "rank": "545",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203755"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 546,
+    "fields": {
+        "rank": "546",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203756"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 547,
+    "fields": {
+        "rank": "547",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203793"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 548,
+    "fields": {
+        "rank": "548",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203794"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 549,
+    "fields": {
+        "rank": "549",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203795"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 550,
+    "fields": {
+        "rank": "550",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203796"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 551,
+    "fields": {
+        "rank": "551",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203797"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 552,
+    "fields": {
+        "rank": "552",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203798"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 553,
+    "fields": {
+        "rank": "553",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203834"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 554,
+    "fields": {
+        "rank": "554",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203835"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 555,
+    "fields": {
+        "rank": "555",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203836"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 556,
+    "fields": {
+        "rank": "556",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203837"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 557,
+    "fields": {
+        "rank": "557",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203838"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 558,
+    "fields": {
+        "rank": "558",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203839"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 559,
+    "fields": {
+        "rank": "559",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203874"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 560,
+    "fields": {
+        "rank": "560",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203875"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 561,
+    "fields": {
+        "rank": "561",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203876"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 562,
+    "fields": {
+        "rank": "562",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203877"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 563,
+    "fields": {
+        "rank": "563",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203878"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 564,
+    "fields": {
+        "rank": "564",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "221039"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 565,
+    "fields": {
+        "rank": "565",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203915"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 566,
+    "fields": {
+        "rank": "566",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203916"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 567,
+    "fields": {
+        "rank": "567",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203917"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 568,
+    "fields": {
+        "rank": "568",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203918"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 569,
+    "fields": {
+        "rank": "569",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203919"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 570,
+    "fields": {
+        "rank": "570",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203920"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 571,
+    "fields": {
+        "rank": "571",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203955"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 572,
+    "fields": {
+        "rank": "572",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203956"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 573,
+    "fields": {
+        "rank": "573",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203957"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 574,
+    "fields": {
+        "rank": "574",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203958"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 575,
+    "fields": {
+        "rank": "575",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "203959"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 576,
+    "fields": {
+        "rank": "576",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "203960"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 577,
+    "fields": {
+        "rank": "577",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "203996"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 578,
+    "fields": {
+        "rank": "578",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "203997"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 579,
+    "fields": {
+        "rank": "579",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "203998"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 580,
+    "fields": {
+        "rank": "580",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "203999"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 581,
+    "fields": {
+        "rank": "581",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204000"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 582,
+    "fields": {
+        "rank": "582",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204001"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 583,
+    "fields": {
+        "rank": "583",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204036"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 584,
+    "fields": {
+        "rank": "584",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204037"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 585,
+    "fields": {
+        "rank": "585",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204038"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 586,
+    "fields": {
+        "rank": "586",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204039"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 587,
+    "fields": {
+        "rank": "587",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204040"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 588,
+    "fields": {
+        "rank": "588",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204041"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 589,
+    "fields": {
+        "rank": "589",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204077"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 590,
+    "fields": {
+        "rank": "590",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204078"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 591,
+    "fields": {
+        "rank": "591",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204079"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 592,
+    "fields": {
+        "rank": "592",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204080"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 593,
+    "fields": {
+        "rank": "593",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204081"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 594,
+    "fields": {
+        "rank": "594",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204082"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 595,
+    "fields": {
+        "rank": "595",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204117"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 596,
+    "fields": {
+        "rank": "596",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204118"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 597,
+    "fields": {
+        "rank": "597",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204119"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 598,
+    "fields": {
+        "rank": "598",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204120"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 599,
+    "fields": {
+        "rank": "599",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204121"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 600,
+    "fields": {
+        "rank": "600",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204122"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 601,
+    "fields": {
+        "rank": "601",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204158"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 602,
+    "fields": {
+        "rank": "602",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204159"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 603,
+    "fields": {
+        "rank": "603",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204160"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 604,
+    "fields": {
+        "rank": "604",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204161"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 605,
+    "fields": {
+        "rank": "605",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204162"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 606,
+    "fields": {
+        "rank": "606",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204163"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 607,
+    "fields": {
+        "rank": "607",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204199"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 608,
+    "fields": {
+        "rank": "608",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204200"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 609,
+    "fields": {
+        "rank": "609",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204201"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 610,
+    "fields": {
+        "rank": "610",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204202"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 611,
+    "fields": {
+        "rank": "611",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204203"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 612,
+    "fields": {
+        "rank": "612",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204204"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 613,
+    "fields": {
+        "rank": "613",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204239"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 614,
+    "fields": {
+        "rank": "614",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204240"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 615,
+    "fields": {
+        "rank": "615",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204241"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 616,
+    "fields": {
+        "rank": "616",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204242"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 617,
+    "fields": {
+        "rank": "617",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204243"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 618,
+    "fields": {
+        "rank": "618",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204244"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 619,
+    "fields": {
+        "rank": "619",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204280"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 620,
+    "fields": {
+        "rank": "620",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204281"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 621,
+    "fields": {
+        "rank": "621",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204282"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 622,
+    "fields": {
+        "rank": "622",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204283"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 623,
+    "fields": {
+        "rank": "623",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204284"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 624,
+    "fields": {
+        "rank": "624",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204285"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 625,
+    "fields": {
+        "rank": "625",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204320"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 626,
+    "fields": {
+        "rank": "626",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204321"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 627,
+    "fields": {
+        "rank": "627",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204322"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 628,
+    "fields": {
+        "rank": "628",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204323"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 629,
+    "fields": {
+        "rank": "629",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204324"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 630,
+    "fields": {
+        "rank": "630",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204325"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 631,
+    "fields": {
+        "rank": "631",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204363"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 632,
+    "fields": {
+        "rank": "632",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204364"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 633,
+    "fields": {
+        "rank": "633",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204365"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 634,
+    "fields": {
+        "rank": "634",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204366"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 635,
+    "fields": {
+        "rank": "635",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204367"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 636,
+    "fields": {
+        "rank": "636",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204368"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 637,
+    "fields": {
+        "rank": "637",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204405"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 638,
+    "fields": {
+        "rank": "638",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204406"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 639,
+    "fields": {
+        "rank": "639",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204407"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 640,
+    "fields": {
+        "rank": "640",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204408"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 641,
+    "fields": {
+        "rank": "641",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204409"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 642,
+    "fields": {
+        "rank": "642",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204410"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 643,
+    "fields": {
+        "rank": "643",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204445"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 644,
+    "fields": {
+        "rank": "644",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204446"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 645,
+    "fields": {
+        "rank": "645",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204447"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 646,
+    "fields": {
+        "rank": "646",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204448"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 647,
+    "fields": {
+        "rank": "647",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204449"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 648,
+    "fields": {
+        "rank": "648",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204450"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 649,
+    "fields": {
+        "rank": "649",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204486"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 650,
+    "fields": {
+        "rank": "650",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204487"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 651,
+    "fields": {
+        "rank": "651",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204488"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 652,
+    "fields": {
+        "rank": "652",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204489"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 653,
+    "fields": {
+        "rank": "653",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204490"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 654,
+    "fields": {
+        "rank": "654",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204491"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 655,
+    "fields": {
+        "rank": "655",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204530"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 656,
+    "fields": {
+        "rank": "656",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204531"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 657,
+    "fields": {
+        "rank": "657",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204532"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 658,
+    "fields": {
+        "rank": "658",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204533"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 659,
+    "fields": {
+        "rank": "659",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204534"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 660,
+    "fields": {
+        "rank": "660",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204535"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 661,
+    "fields": {
+        "rank": "661",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204571"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 662,
+    "fields": {
+        "rank": "662",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204572"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 663,
+    "fields": {
+        "rank": "663",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204573"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 664,
+    "fields": {
+        "rank": "664",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204574"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 665,
+    "fields": {
+        "rank": "665",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204575"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 666,
+    "fields": {
+        "rank": "666",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204576"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 667,
+    "fields": {
+        "rank": "667",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204611"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 668,
+    "fields": {
+        "rank": "668",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204612"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 669,
+    "fields": {
+        "rank": "669",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204613"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 670,
+    "fields": {
+        "rank": "670",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204614"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 671,
+    "fields": {
+        "rank": "671",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204615"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 672,
+    "fields": {
+        "rank": "672",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204616"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 673,
+    "fields": {
+        "rank": "673",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204652"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 674,
+    "fields": {
+        "rank": "674",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204653"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 675,
+    "fields": {
+        "rank": "675",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204654"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 676,
+    "fields": {
+        "rank": "676",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204655"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 677,
+    "fields": {
+        "rank": "677",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204656"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 678,
+    "fields": {
+        "rank": "678",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204657"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 679,
+    "fields": {
+        "rank": "679",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204693"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 680,
+    "fields": {
+        "rank": "680",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204694"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 681,
+    "fields": {
+        "rank": "681",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204695"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 682,
+    "fields": {
+        "rank": "682",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204696"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 683,
+    "fields": {
+        "rank": "683",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204697"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 684,
+    "fields": {
+        "rank": "684",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204698"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 685,
+    "fields": {
+        "rank": "685",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204734"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 686,
+    "fields": {
+        "rank": "686",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204735"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 687,
+    "fields": {
+        "rank": "687",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204736"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 688,
+    "fields": {
+        "rank": "688",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204737"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 689,
+    "fields": {
+        "rank": "689",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204738"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 690,
+    "fields": {
+        "rank": "690",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204739"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 691,
+    "fields": {
+        "rank": "691",
+        "tense": "47",
+        "subject": "15",
+        "auxiliary": "170",
+        "conjugation": "204775"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 692,
+    "fields": {
+        "rank": "692",
+        "tense": "47",
+        "subject": "16",
+        "auxiliary": "170",
+        "conjugation": "204776"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 693,
+    "fields": {
+        "rank": "693",
+        "tense": "47",
+        "subject": "17",
+        "auxiliary": "170",
+        "conjugation": "204777"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 694,
+    "fields": {
+        "rank": "694",
+        "tense": "47",
+        "subject": "18",
+        "auxiliary": "170",
+        "conjugation": "204778"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 695,
+    "fields": {
+        "rank": "695",
+        "tense": "47",
+        "subject": "19",
+        "auxiliary": "170",
+        "conjugation": "204779"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 696,
+    "fields": {
+        "rank": "696",
+        "tense": "47",
+        "subject": "20",
+        "auxiliary": "170",
+        "conjugation": "204780"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 697,
+    "fields": {
+        "rank": "697",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202798"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 698,
+    "fields": {
+        "rank": "698",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202839"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 699,
+    "fields": {
+        "rank": "699",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202879"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 700,
+    "fields": {
+        "rank": "700",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202920"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 701,
+    "fields": {
+        "rank": "701",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "202961"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 702,
+    "fields": {
+        "rank": "702",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203000"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 703,
+    "fields": {
+        "rank": "703",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203042"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 704,
+    "fields": {
+        "rank": "704",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203083"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 705,
+    "fields": {
+        "rank": "705",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203123"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 706,
+    "fields": {
+        "rank": "706",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203163"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 707,
+    "fields": {
+        "rank": "707",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203204"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 708,
+    "fields": {
+        "rank": "708",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203244"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 709,
+    "fields": {
+        "rank": "709",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203285"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 710,
+    "fields": {
+        "rank": "710",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203326"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 711,
+    "fields": {
+        "rank": "711",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203365"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 712,
+    "fields": {
+        "rank": "712",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203405"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 713,
+    "fields": {
+        "rank": "713",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203445"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 714,
+    "fields": {
+        "rank": "714",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203489"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 715,
+    "fields": {
+        "rank": "715",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203530"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 716,
+    "fields": {
+        "rank": "716",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203570"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 717,
+    "fields": {
+        "rank": "717",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203609"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 718,
+    "fields": {
+        "rank": "718",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203649"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 719,
+    "fields": {
+        "rank": "719",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203690"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 720,
+    "fields": {
+        "rank": "720",
+        "tense": "66",
+        "subject": "23",
+        "auxiliary": "170",
+        "conjugation": "203775"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 721,
+    "fields": {
+        "rank": "721",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202798"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 722,
+    "fields": {
+        "rank": "722",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202798"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 723,
+    "fields": {
+        "rank": "723",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202798"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 724,
+    "fields": {
+        "rank": "724",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202798"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 725,
+    "fields": {
+        "rank": "725",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202798"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 726,
+    "fields": {
+        "rank": "726",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202798"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 727,
+    "fields": {
+        "rank": "727",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202839"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 728,
+    "fields": {
+        "rank": "728",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202839"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 729,
+    "fields": {
+        "rank": "729",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202839"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 730,
+    "fields": {
+        "rank": "730",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202839"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 731,
+    "fields": {
+        "rank": "731",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202839"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 732,
+    "fields": {
+        "rank": "732",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202839"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 733,
+    "fields": {
+        "rank": "733",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202879"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 734,
+    "fields": {
+        "rank": "734",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202879"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 735,
+    "fields": {
+        "rank": "735",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202879"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 736,
+    "fields": {
+        "rank": "736",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202879"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 737,
+    "fields": {
+        "rank": "737",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202879"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 738,
+    "fields": {
+        "rank": "738",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202879"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 739,
+    "fields": {
+        "rank": "739",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202920"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 740,
+    "fields": {
+        "rank": "740",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202920"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 741,
+    "fields": {
+        "rank": "741",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202920"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 742,
+    "fields": {
+        "rank": "742",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202920"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 743,
+    "fields": {
+        "rank": "743",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202920"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 744,
+    "fields": {
+        "rank": "744",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202920"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 745,
+    "fields": {
+        "rank": "745",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "202961"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 746,
+    "fields": {
+        "rank": "746",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "202961"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 747,
+    "fields": {
+        "rank": "747",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "202961"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 748,
+    "fields": {
+        "rank": "748",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "202961"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 749,
+    "fields": {
+        "rank": "749",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "202961"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 750,
+    "fields": {
+        "rank": "750",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "202961"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 751,
+    "fields": {
+        "rank": "751",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "171",
+        "conjugation": "203000"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 752,
+    "fields": {
+        "rank": "752",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "172",
+        "conjugation": "203000"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 753,
+    "fields": {
+        "rank": "753",
+        "tense": "51",
+        "subject": "21",
+        "auxiliary": "173",
+        "conjugation": "203000"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 754,
+    "fields": {
+        "rank": "754",
+        "tense": "51",
+        "subject": "22",
+        "auxiliary": "173",
+        "conjugation": "203001"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 755,
+    "fields": {
+        "rank": "755",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "174",
+        "conjugation": "203002"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 756,
+    "fields": {
+        "rank": "756",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "175",
+        "conjugation": "203002"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 757,
+    "fields": {
+        "rank": "757",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "171",
+        "conjugation": "203002"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 758,
+    "fields": {
+        "rank": "758",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "171",
+        "conjugation": "202980"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 759,
+    "fields": {
+        "rank": "759",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "203042"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 760,
+    "fields": {
+        "rank": "760",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "203042"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 761,
+    "fields": {
+        "rank": "761",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "203042"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 762,
+    "fields": {
+        "rank": "762",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "203042"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 763,
+    "fields": {
+        "rank": "763",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "203042"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 764,
+    "fields": {
+        "rank": "764",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "203042"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 765,
+    "fields": {
+        "rank": "765",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "203083"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 766,
+    "fields": {
+        "rank": "766",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "203083"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 767,
+    "fields": {
+        "rank": "767",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "203083"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 768,
+    "fields": {
+        "rank": "768",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "203083"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 769,
+    "fields": {
+        "rank": "769",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "203083"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 770,
+    "fields": {
+        "rank": "770",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "203083"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 771,
+    "fields": {
+        "rank": "771",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "203123"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 772,
+    "fields": {
+        "rank": "772",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "203123"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 773,
+    "fields": {
+        "rank": "773",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "203123"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 774,
+    "fields": {
+        "rank": "774",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "203123"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 775,
+    "fields": {
+        "rank": "775",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "203123"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 776,
+    "fields": {
+        "rank": "776",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "203123"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 777,
+    "fields": {
+        "rank": "777",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "203163"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 778,
+    "fields": {
+        "rank": "778",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "203163"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 779,
+    "fields": {
+        "rank": "779",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "203163"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 780,
+    "fields": {
+        "rank": "780",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "203163"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 781,
+    "fields": {
+        "rank": "781",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "203163"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 782,
+    "fields": {
+        "rank": "782",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "203163"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 783,
+    "fields": {
+        "rank": "783",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "203204"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 784,
+    "fields": {
+        "rank": "784",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "203204"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 785,
+    "fields": {
+        "rank": "785",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "203204"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 786,
+    "fields": {
+        "rank": "786",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "203204"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 787,
+    "fields": {
+        "rank": "787",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "203204"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 788,
+    "fields": {
+        "rank": "788",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "203204"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 789,
+    "fields": {
+        "rank": "789",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "203244"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 790,
+    "fields": {
+        "rank": "790",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "203244"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 791,
+    "fields": {
+        "rank": "791",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "203244"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 792,
+    "fields": {
+        "rank": "792",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "203244"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 793,
+    "fields": {
+        "rank": "793",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "203244"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 794,
+    "fields": {
+        "rank": "794",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "203244"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 795,
+    "fields": {
+        "rank": "795",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "203285"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 796,
+    "fields": {
+        "rank": "796",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "203285"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 797,
+    "fields": {
+        "rank": "797",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "203285"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 798,
+    "fields": {
+        "rank": "798",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "203285"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 799,
+    "fields": {
+        "rank": "799",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "203285"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 800,
+    "fields": {
+        "rank": "800",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "203285"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 801,
+    "fields": {
+        "rank": "801",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "203326"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 802,
+    "fields": {
+        "rank": "802",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "203326"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 803,
+    "fields": {
+        "rank": "803",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "203326"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 804,
+    "fields": {
+        "rank": "804",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "203326"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 805,
+    "fields": {
+        "rank": "805",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "203326"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 806,
+    "fields": {
+        "rank": "806",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "203326"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 807,
+    "fields": {
+        "rank": "807",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "203365"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 808,
+    "fields": {
+        "rank": "808",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "203365"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 809,
+    "fields": {
+        "rank": "809",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "203365"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 810,
+    "fields": {
+        "rank": "810",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "203365"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 811,
+    "fields": {
+        "rank": "811",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "203365"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 812,
+    "fields": {
+        "rank": "812",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "203365"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 813,
+    "fields": {
+        "rank": "813",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "203405"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 814,
+    "fields": {
+        "rank": "814",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "203405"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 815,
+    "fields": {
+        "rank": "815",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "203405"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 816,
+    "fields": {
+        "rank": "816",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "203405"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 817,
+    "fields": {
+        "rank": "817",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "203405"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 818,
+    "fields": {
+        "rank": "818",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "203405"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 819,
+    "fields": {
+        "rank": "819",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "171",
+        "conjugation": "203445"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 820,
+    "fields": {
+        "rank": "820",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "172",
+        "conjugation": "203445"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 821,
+    "fields": {
+        "rank": "821",
+        "tense": "51",
+        "subject": "21",
+        "auxiliary": "173",
+        "conjugation": "203445"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 822,
+    "fields": {
+        "rank": "822",
+        "tense": "51",
+        "subject": "22",
+        "auxiliary": "173",
+        "conjugation": "203446"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 823,
+    "fields": {
+        "rank": "823",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "174",
+        "conjugation": "203447"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 824,
+    "fields": {
+        "rank": "824",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "175",
+        "conjugation": "203447"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 825,
+    "fields": {
+        "rank": "825",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "171",
+        "conjugation": "203447"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 826,
+    "fields": {
+        "rank": "826",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "171",
+        "conjugation": "203448"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 827,
+    "fields": {
+        "rank": "827",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "203489"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 828,
+    "fields": {
+        "rank": "828",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "203489"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 829,
+    "fields": {
+        "rank": "829",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "203489"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 830,
+    "fields": {
+        "rank": "830",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "203489"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 831,
+    "fields": {
+        "rank": "831",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "203489"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 832,
+    "fields": {
+        "rank": "832",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "203489"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 833,
+    "fields": {
+        "rank": "833",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "203530"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 834,
+    "fields": {
+        "rank": "834",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "203530"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 835,
+    "fields": {
+        "rank": "835",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "203530"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 836,
+    "fields": {
+        "rank": "836",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "203530"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 837,
+    "fields": {
+        "rank": "837",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "203530"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 838,
+    "fields": {
+        "rank": "838",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "203530"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 839,
+    "fields": {
+        "rank": "839",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "203570"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 840,
+    "fields": {
+        "rank": "840",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "203570"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 841,
+    "fields": {
+        "rank": "841",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "203570"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 842,
+    "fields": {
+        "rank": "842",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "203570"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 843,
+    "fields": {
+        "rank": "843",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "203570"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 844,
+    "fields": {
+        "rank": "844",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "203570"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 845,
+    "fields": {
+        "rank": "845",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "203609"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 846,
+    "fields": {
+        "rank": "846",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "203609"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 847,
+    "fields": {
+        "rank": "847",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "203609"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 848,
+    "fields": {
+        "rank": "848",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "203609"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 849,
+    "fields": {
+        "rank": "849",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "203609"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 850,
+    "fields": {
+        "rank": "850",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "203609"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 851,
+    "fields": {
+        "rank": "851",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "203649"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 852,
+    "fields": {
+        "rank": "852",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "203649"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 853,
+    "fields": {
+        "rank": "853",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "203649"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 854,
+    "fields": {
+        "rank": "854",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "203649"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 855,
+    "fields": {
+        "rank": "855",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "203649"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 856,
+    "fields": {
+        "rank": "856",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "203649"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 857,
+    "fields": {
+        "rank": "857",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "211",
+        "conjugation": "203690"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 858,
+    "fields": {
+        "rank": "858",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "212",
+        "conjugation": "203690"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 859,
+    "fields": {
+        "rank": "859",
+        "tense": "51",
+        "subject": "17",
+        "auxiliary": "213",
+        "conjugation": "203690"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 860,
+    "fields": {
+        "rank": "860",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "214",
+        "conjugation": "203690"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 861,
+    "fields": {
+        "rank": "861",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "215",
+        "conjugation": "203690"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 862,
+    "fields": {
+        "rank": "862",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "216",
+        "conjugation": "203690"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 863,
+    "fields": {
+        "rank": "863",
+        "tense": "51",
+        "subject": "15",
+        "auxiliary": "171",
+        "conjugation": "203775"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 864,
+    "fields": {
+        "rank": "864",
+        "tense": "51",
+        "subject": "16",
+        "auxiliary": "172",
+        "conjugation": "203775"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 865,
+    "fields": {
+        "rank": "865",
+        "tense": "51",
+        "subject": "21",
+        "auxiliary": "173",
+        "conjugation": "203775"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 866,
+    "fields": {
+        "rank": "866",
+        "tense": "51",
+        "subject": "22",
+        "auxiliary": "173",
+        "conjugation": "203776"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 867,
+    "fields": {
+        "rank": "867",
+        "tense": "51",
+        "subject": "18",
+        "auxiliary": "174",
+        "conjugation": "203777"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 868,
+    "fields": {
+        "rank": "868",
+        "tense": "51",
+        "subject": "19",
+        "auxiliary": "175",
+        "conjugation": "203777"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 869,
+    "fields": {
+        "rank": "869",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "171",
+        "conjugation": "203777"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 870,
+    "fields": {
+        "rank": "870",
+        "tense": "51",
+        "subject": "20",
+        "auxiliary": "171",
+        "conjugation": "203755"
+    }
+    }
+        ]

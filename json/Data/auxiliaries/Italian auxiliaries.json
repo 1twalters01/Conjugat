@@ -1,0 +1,650 @@
+[
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 170,
+    "fields": {
+        "language": "3",
+        "auxiliary": ""
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 171,
+    "fields": {
+        "language": "3",
+        "auxiliary": "sono"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 172,
+    "fields": {
+        "language": "3",
+        "auxiliary": "sei"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 173,
+    "fields": {
+        "language": "3",
+        "auxiliary": "è"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 174,
+    "fields": {
+        "language": "3",
+        "auxiliary": "siamo"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 175,
+    "fields": {
+        "language": "3",
+        "auxiliary": "siete"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 176,
+    "fields": {
+        "language": "3",
+        "auxiliary": "ero"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 177,
+    "fields": {
+        "language": "3",
+        "auxiliary": "eri"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 178,
+    "fields": {
+        "language": "3",
+        "auxiliary": "era"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 179,
+    "fields": {
+        "language": "3",
+        "auxiliary": "eravamo"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 180,
+    "fields": {
+        "language": "3",
+        "auxiliary": "eravate"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 181,
+    "fields": {
+        "language": "3",
+        "auxiliary": "erano"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 182,
+    "fields": {
+        "language": "3",
+        "auxiliary": "fui"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 183,
+    "fields": {
+        "language": "3",
+        "auxiliary": "fosti"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 184,
+    "fields": {
+        "language": "3",
+        "auxiliary": "fu"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 185,
+    "fields": {
+        "language": "3",
+        "auxiliary": "fummo"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 186,
+    "fields": {
+        "language": "3",
+        "auxiliary": "foste"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 187,
+    "fields": {
+        "language": "3",
+        "auxiliary": "furono"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 188,
+    "fields": {
+        "language": "3",
+        "auxiliary": "sarò"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 189,
+    "fields": {
+        "language": "3",
+        "auxiliary": "sarai"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 190,
+    "fields": {
+        "language": "3",
+        "auxiliary": "sarà"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 191,
+    "fields": {
+        "language": "3",
+        "auxiliary": "saremo"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 192,
+    "fields": {
+        "language": "3",
+        "auxiliary": "sarete"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 193,
+    "fields": {
+        "language": "3",
+        "auxiliary": "saranno"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 194,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 195,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che sia"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 196,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che siamo"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 197,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che siate"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 198,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che siano"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 199,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che fossi"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 200,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che fosse"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 201,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che fossimo"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 202,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che foste"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 203,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che fossero"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 204,
+    "fields": {
+        "language": "3",
+        "auxiliary": "sarei"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 205,
+    "fields": {
+        "language": "3",
+        "auxiliary": "saresti"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 206,
+    "fields": {
+        "language": "3",
+        "auxiliary": "sarebbe"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 207,
+    "fields": {
+        "language": "3",
+        "auxiliary": "saremmo"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 208,
+    "fields": {
+        "language": "3",
+        "auxiliary": "sareste"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 209,
+    "fields": {
+        "language": "3",
+        "auxiliary": "sarebbero"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 210,
+    "fields": {
+        "language": "3",
+        "auxiliary": "essendo"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 211,
+    "fields": {
+        "language": "3",
+        "auxiliary": "ho"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 212,
+    "fields": {
+        "language": "3",
+        "auxiliary": "hai"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 213,
+    "fields": {
+        "language": "3",
+        "auxiliary": "ha"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 214,
+    "fields": {
+        "language": "3",
+        "auxiliary": "abbiamo"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 215,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avete"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 216,
+    "fields": {
+        "language": "3",
+        "auxiliary": "hanno"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 217,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avevo"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 218,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avevi"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 219,
+    "fields": {
+        "language": "3",
+        "auxiliary": "aveva"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 220,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avevamo"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 221,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avevate"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 222,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avevano"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 223,
+    "fields": {
+        "language": "3",
+        "auxiliary": "ebbi"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 224,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avesti"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 225,
+    "fields": {
+        "language": "3",
+        "auxiliary": "ebbe"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 226,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avemmo"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 227,
+    "fields": {
+        "language": "3",
+        "auxiliary": "aveste"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 228,
+    "fields": {
+        "language": "3",
+        "auxiliary": "ebbero"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 229,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avrò"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 230,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avrai"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 231,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avrà"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 232,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avremo"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 233,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avrete"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 234,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avranno"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 235,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che abbia"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 236,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che abbiamo"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 237,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che abbiate"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 238,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che abbiano"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 239,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che avessi"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 240,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che avesse"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 241,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che avessimo"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 242,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che aveste"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 243,
+    "fields": {
+        "language": "3",
+        "auxiliary": "che avessero"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 244,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avrei"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 245,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avresti"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 246,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avrebbe"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 247,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avremmo"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 248,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avreste"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 249,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avrebbero"
+    }
+    },
+    {
+    "model": "verbs.romanceauxiliary",
+    "pk": 250,
+    "fields": {
+        "language": "3",
+        "auxiliary": "avendo"
+    }
+    }
+    ]

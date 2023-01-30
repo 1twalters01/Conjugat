@@ -1,0 +1,162 @@
+[
+    {
+    "model": "verbs.romancetense",
+    "pk": 47,
+    "fields": {
+        "language": "3",
+        "tense": "Indicativo Presente"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 48,
+    "fields": {
+        "language": "3",
+        "tense": "Indicativo Imperfetto"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 49,
+    "fields": {
+        "language": "3",
+        "tense": "Indicativo Passato remoto"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 50,
+    "fields": {
+        "language": "3",
+        "tense": "Indicativo Futuro semplice"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 51,
+    "fields": {
+        "language": "3",
+        "tense": "Indicativo Passato prossimo"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 52,
+    "fields": {
+        "language": "3",
+        "tense": "Indicativo Trapassato prossimo"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 53,
+    "fields": {
+        "language": "3",
+        "tense": "Indicativo Trapassato remoto"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 54,
+    "fields": {
+        "language": "3",
+        "tense": "Indicativo Futuro anteriore"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 55,
+    "fields": {
+        "language": "3",
+        "tense": "Congiuntivo Presente"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 56,
+    "fields": {
+        "language": "3",
+        "tense": "Congiuntivo Passato"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 57,
+    "fields": {
+        "language": "3",
+        "tense": "Congiuntivo Imperfetto"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 58,
+    "fields": {
+        "language": "3",
+        "tense": "Congiuntivo Trapassato"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 59,
+    "fields": {
+        "language": "3",
+        "tense": "Condizionale Presente"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 60,
+    "fields": {
+        "language": "3",
+        "tense": "Condizionale Passato"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 61,
+    "fields": {
+        "language": "3",
+        "tense": "Imperativo Presente"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 62,
+    "fields": {
+        "language": "3",
+        "tense": "Gerundio Presente"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 63,
+    "fields": {
+        "language": "3",
+        "tense": "Gerundio Passato"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 64,
+    "fields": {
+        "language": "3",
+        "tense": "Infinito Presente"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 65,
+    "fields": {
+        "language": "3",
+        "tense": "Participio Presente"
+    }
+    },
+    {
+    "model": "verbs.romancetense",
+    "pk": 66,
+    "fields": {
+        "language": "3",
+        "tense": "Participio Passato"
+    }
+    }
+    ]

@@ -1,0 +1,58 @@
+[
+    {
+    "model": "verbs.romancesubject",
+    "pk": 1,
+    "fields": {
+        "language": "1",
+        "subject": "yo"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 2,
+    "fields": {
+        "language": "1",
+        "subject": "tú"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 3,
+    "fields": {
+        "language": "1",
+        "subject": "él/ella/Ud."
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 4,
+    "fields": {
+        "language": "1",
+        "subject": "nosotros"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 5,
+    "fields": {
+        "language": "1",
+        "subject": "vosotros"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 6,
+    "fields": {
+        "language": "1",
+        "subject": "ellos/ellas/Uds."
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 7,
+    "fields": {
+        "language": "1",
+        "subject": ""
+    }
+    }
+    ]

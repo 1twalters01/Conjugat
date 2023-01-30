@@ -1,0 +1,130 @@
+[
+    {
+    "model": "verbs.romancesubject",
+    "pk": 24,
+    "fields": {
+        "language": "4",
+        "subject": "je"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 25,
+    "fields": {
+        "language": "4",
+        "subject": "tu"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 26,
+    "fields": {
+        "language": "4",
+        "subject": "il/elle"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 27,
+    "fields": {
+        "language": "4",
+        "subject": "nous"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 28,
+    "fields": {
+        "language": "4",
+        "subject": "vous"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 29,
+    "fields": {
+        "language": "4",
+        "subject": "ils/elles"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 30,
+    "fields": {
+        "language": "4",
+        "subject": "j'"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 31,
+    "fields": {
+        "language": "4",
+        "subject": ""
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 32,
+    "fields": {
+        "language": "4",
+        "subject": "masc.sg.:"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 33,
+    "fields": {
+        "language": "4",
+        "subject": "masc.pl.:"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 34,
+    "fields": {
+        "language": "4",
+        "subject": "fém.sg.:"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 35,
+    "fields": {
+        "language": "4",
+        "subject": "fém.pl.:"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 36,
+    "fields": {
+        "language": "4",
+        "subject": "il"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 37,
+    "fields": {
+        "language": "4",
+        "subject": "elle"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 38,
+    "fields": {
+        "language": "4",
+        "subject": "ils"
+    }
+    },
+    {
+    "model": "verbs.romancesubject",
+    "pk": 39,
+    "fields": {
+        "language": "4",
+        "subject": "elles"
+    }
+    }
+    ]

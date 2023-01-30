@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}home{% endblock %}
+{% block content %}
+    <p>Welcome {{ request.user.first_name|default:request.user.username }}</p>
+    <a href="{% url 'subscription:options' %}">Upgrade to a premium account</a>
+
+    <form action="{% url 'verbs:verb-test' %}" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="fieldWrapper">
+                {{ field.label }}{{ field }}
+            </div>
+            <p><input type="submit" value="Start test"></p>
+        {% endfor %}
+    </form>
+{% endblock %}

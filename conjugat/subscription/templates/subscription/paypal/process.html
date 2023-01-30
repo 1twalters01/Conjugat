@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Subscribe to conjugat{% endblock %}
+{% block content %}
+    <h1>Pay via paypal</h1>
+
+    <script src="https://www.paypal.com/sdk/js?client-id={{client_id}}&vault=true&intent=subscription"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <div id="paypal-button-container"></div>
+    <script>
+        let csrfToken = Cookies.get('csrftoken')
+
+        function completeOrder() {
+            var url = "{% url 'subscription:paypal_subscribe' %}"
+            alert(url)
+            fetch(url, {
+                method: 'POST',
+                headers:{
+                    'Content-type':'application/json',
+                    'X-CSRFToken': csrfToken,
+                },
+                body: JSON.stringify({'subscriptionID':data.subscriptionID})
+            })
+        }
+
+        paypal.Buttons({
+            createSubscription: function(data, actions) {
+                return actions.subscription.create({
+                    
+                    'plan_id': {% if trial == False %}'P-6K2200636N901382RMOVDFUQ'{% else %}'P-6D9393576X475814RMOSZHEQ'{% endif %}
+                    
+                });
+            },
+
+            onApprove: function(data, actions) {
+                formData = new FormData;
+                formData.append('subscriptionID', data.subscriptionID)
+                fetch("{% url 'subscription:paypal_subscribe' %}", {headers:{'X-CSRFToken': csrfToken}, method:'post', body: JSON.stringify({'subscriptionID':data.subscriptionID})})
+            }
+        }).render('#paypal-button-container');
+    </script>
+
+{% endblock %}
