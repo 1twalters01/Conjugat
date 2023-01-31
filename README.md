@@ -1,6 +1,10 @@
 # Conjugat
 This is a WIP language learning application meant to precisely test django coding fundamentals and their supersets - vanilla html, css and js (or compiled from scss and ts) with postgres as the main database. Cassandra and Redis will be used to store time series data due to limitations of postgres.
 
+## Note
+This project was only just uploaded to github. I was using a very bad "manual version control" of sorts. I have posted the old versions of this project to show the work I have done on it.
+
+## Detail
 The application tests the user's conjugation abilities by rendering forms that have a pre-determined verb and tense. The user will have to enter the correct answers for all of the subjects for the verb-tense combination. By serving new words/tenses periodically in a way that will adapt to the user, it will increase their active memory of words in that language.
 
 The order the verbs and tenses will be generated in will be based off of the most common verbs and tenses that speakers of the language in question use, so that they will learn words most likely to appear first unlike many other applications. The difference between users would come from:
@@ -31,10 +35,9 @@ Web scraping can be found in the python/verbs directory. I used pickle files to 
 The main database was split up into the order one would learn them. Some verbs had an irregular amount of tenses so I used a check to see if the tense was found. If not then it ran a for loop until the tense was found. I could have done a search starting from the list index that had failed rather than a for loop as the fail case but didn't as it ran relatively fast. JSON was created and then loaded into the database.
 
 ### Account functionality - conjugat/account with 2FA being in conjugat/settings/totp
-This is a fully fleshed out account system with: login and log out functionality that works for both username and email, password reset, registration with email verification and optional totp. A fake SSL is created for https requests using pyOpenSSL. This was required to get google, facebook and twitter authentication to work in testing.
+This is a fully fleshed out account system with: login and log out functionality that works for both username and email, password reset, registration with email verification and optional totp.
 
-
-There is also google, twitter and facebook authentication using their APIs as an optional second choice for loging in which was added through use of social_django. I did not add apple authentication as you need to pay £99/year to access their API and use the functionality.
+There is also google, twitter and facebook authentication using their APIs as an optional second choice for loging in which was added through use of social_django. I did not add apple authentication as you need to pay £99/year to access their API and use the functionality. A fake SSL is created for https requests using pyOpenSSL. This was required to get google, facebook and twitter authentication to work in testing.
 
 Django-two-factor-auth forced me to use their login view and not my own html template so I created my own functionality. I had some trouble with integrating it with the login system due to not wanting to store a password in a session variable or use get instead of post but came up with a work around that saves the username to sessions, checks to see if totp is enabled, and then returns the relevant form that looked and worked really well.
 
