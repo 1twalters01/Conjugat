@@ -21,35 +21,35 @@ def payment_method(method):
     elif method == 'Coinbase':
         return 3
 
-def get_subscriber_or_None(subscription_id, method):
+def get_subscriber_or_none(subscription_id, method):
     try:
         # Retrieve UserProfile instance with the subscription id
-        req_userprofiles = UserProfile.objects.filter(method_id=payment_method(method))
+        subscribers = UserProfile.objects.filter(method_id=payment_method(method))
         x = None
-        for i in range(len(req_userprofiles)):
-            if decrypt(req_userprofiles[i].subscription_id) == (subscription_id):
+        for i in range(len(subscribers)):
+            if decrypt(subscribers[i].subscription_id) == (subscription_id):
                 x = i
                 break
-        req_userprofile = req_userprofiles[x]
+        subscriber = subscribers[x]
     except:
-        req_userprofile = None
-    return req_userprofile
+        subscriber = None
+    return subscriber
 
 
 def get_customer_or_none(customer_id, method):
     try:
         # Retrieve UserProfile instance with said subscription id
-        req_userprofiles = UserProfile.objects.filter(method_id=payment_method(method), subscribed=True)
+        customers = UserProfile.objects.filter(method_id=payment_method(method), subscribed=True)
         x = None
-        for i in range(len(req_userprofiles)):
-            if decrypt(req_userprofiles[i].customer_id) == (customer_id):
+        for i in range(len(customers)):
+            if decrypt(customers[i].customer_id) == (customer_id):
                 x = i
                 break
-        req_userprofile = req_userprofiles[x]
+        customer = customers[x]
     except:
         # No subscription with that id saved in our database
-        req_userprofile = None
-    return req_userprofile
+        customer = None
+    return customer
 
 
 @csrf_exempt
@@ -137,7 +137,7 @@ def paypal_webhooks(request):
     if event and event["event_type"] == "BILLING.SUBSCRIPTION.ACTIVATED":
         print("Billing.subscription.activated") # log event
         subscription_id = event['resource']['id']
-        req_userprofile = get_subscriber_or_None(subscription_id, 'Paypal')
+        req_userprofile = get_subscriber_or_none(subscription_id, 'Paypal')
         if req_userprofile:
             # Add the subscription id to the database
             user = req_userprofile.user
@@ -159,7 +159,7 @@ def paypal_webhooks(request):
     elif event and event["event_type"] == "PAYMENT.SALE.COMPLETED":
         print("PAYMENT.SALE.COMPLETED") # log event
         subscription_id = event['resource']['id']
-        req_userprofile = get_subscriber_or_None(subscription_id, 'Paypal')
+        req_userprofile = get_subscriber_or_none(subscription_id, 'Paypal')
         if req_userprofile:
             user = req_userprofile.user
             subscriber = UserProfile.objects.get(user=user)
@@ -180,7 +180,7 @@ def paypal_webhooks(request):
     elif event and event["event_type"] == "Billing.subscription.expired":
         print("Billing.subscription.expired") # log event
         subscription_id = event['resource']['id']
-        req_userprofile = get_subscriber_or_None(subscription_id, 'Paypal')
+        req_userprofile = get_subscriber_or_none(subscription_id, 'Paypal')
         if req_userprofile:
             user = req_userprofile.user
             subscriber = UserProfile.objects.get(user=user)
@@ -211,19 +211,18 @@ def coinbase_webhooks(request):
         event = Webhook.construct_event(request_data, request_sig, webhook_secret)
     except (SignatureVerificationError, WebhookInvalidPayload) as e:
         print("Webhook error while parsing basic request." + str(e))
-        return JsonResponse({"success": True}, status=400)    
-    # https://docs.cloud.coinbase.com/commerce/docs/webhooks-events
+        return JsonResponse({"success": True}, status=400)
     
     if event['type'] == 'charge:created':
         subscription_id = event['data']['code']
-        req_userprofile = get_subscriber_or_None(subscription_id, 'Coinbase')
+        req_userprofile = get_subscriber_or_none(subscription_id, 'Coinbase')
         if req_userprofile:
             return JsonResponse({"success": True}, status=200)
 
     elif event['type'] == 'charge:confirmed':
         print('charge:confirmed') # log event
         subscription_id = event['data']['code']
-        req_userprofile = get_subscriber_or_None(subscription_id, 'Coinbase')
+        req_userprofile = get_subscriber_or_none(subscription_id, 'Coinbase')
         if req_userprofile:
             # Add the subscription id to the database
             user = req_userprofile.user

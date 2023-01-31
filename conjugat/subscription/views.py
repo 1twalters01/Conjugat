@@ -30,15 +30,17 @@ def payment_method(method):
         return 3
 
 # Redirect urls for if the subscriber has an active subscription
-def isSubscribed_url(subscriber):
+def url_if_subscribed(subscriber):
     if str(subscriber.method) == 'Stripe':
         return 'subscription:stripe_success'
     elif str(subscriber.method) == 'Paypal':
         return 'subscription:paypal_success'
     elif str(subscriber.method) == 'Coinbase':
         return 'subscription:coinbase_success'
+    else:
+        return 'home'
 
-def isNotSubscribed_url(subscriber):
+def url_if_not_subscribed(subscriber):
     if not subscriber:
         return 'subscription:options'
     if str(subscriber.method) == payment_method('Stripe'):
@@ -71,7 +73,7 @@ def options(request):
     if not subscriber or subscriber.subscribed != True:
         return render(request, 'subscription/options.html')
     else:
-        return redirect(isSubscribed_url(subscriber))
+        return redirect(url_if_subscribed(subscriber))
 
 
 
@@ -135,7 +137,7 @@ def stripe_process(request):
             return render(request, 'subscription/stripe/process.html')
 
     else:
-        return redirect(isSubscribed_url(subscriber))
+        return redirect(url_if_subscribed(subscriber))
 
 
 
@@ -151,8 +153,8 @@ def stripe_success(request):
                 else:
                     return render(request, 'subscription/stripe/success.html')
             else:
-                return redirect(isSubscribed_url(subscriber))
-    return redirect(isNotSubscribed_url(subscriber))
+                return redirect(url_if_subscribed(subscriber))
+    return redirect(url_if_not_subscribed(subscriber))
 
 
 
@@ -162,7 +164,7 @@ def stripe_cancelled(request):
     if not subscriber or subscriber.subscribed == False:
         return render(request, 'subscription/stripe/cancel.html')
     else:
-        return redirect(isSubscribed_url(subscriber))
+        return redirect(url_if_subscribed(subscriber))
 
 
 
@@ -196,7 +198,7 @@ def paypal_process(request):
         return render(request, 'subscription/paypal/process.html', context)
 
     else:
-        return redirect(isSubscribed_url(subscriber))
+        return redirect(url_if_subscribed(subscriber))
 
 
 
@@ -220,9 +222,9 @@ def paypal_subscribe(request):
             return redirect('subscription:paypal_success')
     else:
         if not subscriber:
-            return redirect(isNotSubscribed_url(subscriber))
+            return redirect(url_if_not_subscribed(subscriber))
         else:
-            return redirect(isSubscribed_url(subscriber))
+            return redirect(url_if_subscribed(subscriber))
 
 
 
@@ -241,7 +243,7 @@ def paypal_success(request):
 
     else:
         if not subscriber or subscriber.subscribed == False:
-            return redirect(isNotSubscribed_url(subscriber))
+            return redirect(url_if_not_subscribed(subscriber))
         else:
             if str(subscriber.method) == 'Paypal':
                 sub_id = decrypt(subscriber.subscription_id)
@@ -249,7 +251,7 @@ def paypal_success(request):
                 context = {'id':subscriber.subscription_id, 'status': details['status']}
                 return render(request, 'subscription/paypal/subscribed.html', context)
             else:
-                return redirect(isSubscribed_url(subscriber))
+                return redirect(url_if_subscribed(subscriber))
 
 
 
@@ -302,7 +304,7 @@ def coinbase_process(request):
         return render(request, 'subscription/coinbase/process.html', context)
 
     else:
-        return redirect(isSubscribed_url(subscriber))
+        return redirect(url_if_subscribed(subscriber))
 
 
 
@@ -319,8 +321,8 @@ def coinbase_success(request):
                 context = {'charge':charge}
                 return render(request, 'subscription/coinbase/success.html', context)
             else:
-                return redirect(isSubscribed_url(subscriber))
-    return redirect(isNotSubscribed_url(subscriber))
+                return redirect(url_if_subscribed(subscriber))
+    return redirect(url_if_not_subscribed(subscriber))
 
 
 
@@ -331,4 +333,4 @@ def coinbase_cancelled(request):
     if not subscriber or subscriber.subscribed == False:
         return render(request, 'subscription/coinbase/cancelled.html')
     else:
-        return redirect(isSubscribed_url(subscriber))
+        return redirect(url_if_subscribed(subscriber))

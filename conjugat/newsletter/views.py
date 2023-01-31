@@ -40,17 +40,17 @@ def does_email_exist(request):
     return email
 
 
-def create_member(cd, email):
+def create_member(cleaned_data, email):
     member_info = {
             'email_address': email,
             'status': 'subscribed',
             'merge_fields': {
-                'FNAME': cd['first_name'],
-                'LNAME': cd['last_name'],
+                'FNAME': cleaned_data['first_name'],
+                'LNAME': cleaned_data['last_name'],
             }
         }
-    if cd['languages']:
-        member_info['tags'] = cd['languages']
+    if cleaned_data['languages']:
+        member_info['tags'] = cleaned_data['languages']
     return member_info
 
 
@@ -66,9 +66,8 @@ def subscribe(request):
                 form = InfoForm(request.POST, initial='test')
                 if form.is_valid() == False:
                     return HttpResponse('invalid form')
-
-                cd = form.cleaned_data
-                member_info = create_member(cd, email)
+                cleaned_data = form.cleaned_data
+                member_info = create_member(cleaned_data, email)
                 mailchimp.lists.add_list_member(
                     settings.MAILCHIMP_MARKETING_AUDIENCE_ID,
                     member_info,
@@ -88,8 +87,8 @@ def subscribe(request):
             form = EmailForm(request.POST, initial='test')
             if form.is_valid() == False:
                     return HttpResponse('invalid form')
-            cd = form.cleaned_data
-            request.session['email'] = cd['email']
+            cleaned_data = form.cleaned_data
+            request.session['email'] = cleaned_data['email']
             return redirect('newsletter:subscribe')
         else:
             form = EmailForm()
@@ -103,8 +102,8 @@ def unsubscribe(request):
         form = EmailForm(request.POST, initial='test')
         if form.is_valid():
             try:
-                cd = form.cleaned_data
-                email_hash = hashlib.md5(cd['email'].encode('utf-8').lower()).hexdigest()
+                cleaned_data = form.cleaned_data
+                email_hash = hashlib.md5(cleaned_data['email'].encode('utf-8').lower()).hexdigest()
                 member_update = {'status': 'unsubscribed',}
                 response = mailchimp.lists.update_list_member(
                     settings.MAILCHIMP_MARKETING_AUDIENCE_ID,

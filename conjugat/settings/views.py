@@ -30,9 +30,9 @@ def close_account(request):
     if request.method == 'POST':
         form = CloseAccountForm(request.POST, initial='test')
         if form.is_valid():
-            cd = form.cleaned_data
+            cleaned_data = form.cleaned_data
             user = User.objects.get(username=request.user)
-            if user.check_password(cd['password']) == True:
+            if user.check_password(cleaned_data['password']) == True:
                 # See if user has premium account and if so delete it
                 try:
                     premium = UserProfile.objects.get(user=request.user)
@@ -73,15 +73,15 @@ def change_email(request):
     if request.method == 'POST':
         form = ChangeEmailForm(request.POST, initial='test')
         if form.is_valid():
-            cd = form.cleaned_data
+            cleaned_data = form.cleaned_data
             user = User.objects.get(username=request.user)
-            if user.check_password(cd['password']) == True:
+            if user.check_password(cleaned_data['password']) == True:
                 try:
-                    check = User.objects.get(email=cd['email'])
+                    check = User.objects.get(email=cleaned_data['email'])
                 except:
                     check = None
                 if check == None:
-                    user.email = cd['email']
+                    user.email = cleaned_data['email']
                     user.save()
                     return redirect('settings:change_email_done')
                 else:
@@ -107,15 +107,15 @@ def change_username(request):
     if request.method == 'POST':
         form = ChangeUsernameForm(request.POST, initial='test')
         if form.is_valid():
-            cd = form.cleaned_data
+            cleaned_data = form.cleaned_data
             user = User.objects.get(username=request.user)
-            if user.check_password(cd['password']) == True:
+            if user.check_password(cleaned_data['password']) == True:
                 try:
-                    check = User.objects.get(username=cd['username'])
+                    check = User.objects.get(username=cleaned_data['username'])
                 except:
                     check = None
                 if check == None:
-                    user.username = cd['username']
+                    user.username = cleaned_data['username']
                     user.save()
                     # Check if there is a premium account associated with this
                     try:
@@ -123,7 +123,7 @@ def change_username(request):
                     except:
                         userProfile = None
                     if userProfile:
-                        userProfile.user = cd['username']
+                        userProfile.user = cleaned_data['username']
                         userProfile.save()
                     return redirect('change_username_done')
                 else:
@@ -227,9 +227,9 @@ def two_factor_auth(request):
             key = decrypt(TwoFactor.key).encode('ascii')
             totp = generate_totp(key, length_of_OTP, step_in_seconds)
             if form.is_valid():
-                cd = form.cleaned_data
+                cleaned_data = form.cleaned_data
                 user = User.objects.get(username=request.user)
-                if user.check_password(cd['password']) and cd['totp'] == int(totp):
+                if user.check_password(cleaned_data['password']) and cleaned_data['totp'] == int(totp):
                     TwoFactor.confirmed = True
                     TwoFactor.save()
                     return redirect('settings:two_factor_auth')
@@ -240,9 +240,9 @@ def two_factor_auth(request):
             key = decrypt(TwoFactor.key).encode('ascii')
             totp = generate_totp(key, length_of_OTP, step_in_seconds)
             if form.is_valid():
-                cd = form.cleaned_data
+                cleaned_data = form.cleaned_data
                 user = User.objects.get(username=request.user)
-                if user.check_password(cd['password']) and cd['totp'] == int(totp):
+                if user.check_password(cleaned_data['password']) and cleaned_data['totp'] == int(totp):
                     TwoFactor.confirmed = False
                     TwoFactor.save()
                     return redirect('settings:two_factor_auth')
@@ -275,18 +275,18 @@ def reset_account(request):
     if request.method == 'POST':
         form = ResetAccountForm(request.POST, initial='test')
         if form.is_valid():
-            cd = form.cleaned_data
+            cleaned_data = form.cleaned_data
             user = User.objects.get(username=request.user)
-            if user.check_password(cd['password']) == True:
-                print(cd['language'], type(cd['language']))
-                if cd['language'] == 'All':
+            if user.check_password(cleaned_data['password']) == True:
+                print(cleaned_data['language'], type(cleaned_data['language']))
+                if cleaned_data['language'] == 'All':
                     try:
                         account = Progress.objects.filter(user=request.user)
                     except:
                         account = None
                 else:
                     try:
-                        account = Progress.objects.get(user=request.user, language=cd['language'])
+                        account = Progress.objects.get(user=request.user, language=cleaned_data['language'])
                     except:
                         account = None
                 if account:
