@@ -97,7 +97,7 @@ def build_stripe_checkout(request, subscriber, customer):
                 },
     ]
 
-    checkout_qwargs = {
+    checkout_kwargs = {
         'line_items' : line_items,
         'customer':customer,
         'mode':'subscription',
@@ -105,9 +105,9 @@ def build_stripe_checkout(request, subscriber, customer):
         'cancel_url':cancel_url,
     }
     if not subscriber or subscriber.trial == True:
-        checkout_qwargs['subscription_data'] = {'trial_period_days':7}
+        checkout_kwargs['subscription_data'] = {'trial_period_days':7}
 
-    checkout_session = stripe.checkout.Session.create(**checkout_qwargs)
+    checkout_session = stripe.checkout.Session.create(**checkout_kwargs)
     return checkout_session
 
 
@@ -269,7 +269,7 @@ def build_coinbase_checkout(request, subscriber):
     success_url = request.build_absolute_uri(reverse('subscription:coinbase_success'))
     cancel_url = request.build_absolute_uri(reverse('subscription:coinbase_process'))
 
-    checkout_qwargs = {
+    checkout_kwargs = {
         'name':'Conjugat Premium',
         'local_price': {
             'currency':'GBP'
@@ -279,13 +279,13 @@ def build_coinbase_checkout(request, subscriber):
         'cancel_url':cancel_url,
     }
     if not subscriber or subscriber.trial == True:
-        checkout_qwargs['description'] = '1 Week of conjugat Premium'
-        checkout_qwargs['local_price']['amount'] = '0.01'
+        checkout_kwargs['description'] = '1 Week of conjugat Premium'
+        checkout_kwargs['local_price']['amount'] = '0.01'
     else:
-        checkout_qwargs['description'] = '1 Month of conjugat Premium'
-        checkout_qwargs['local_price']['amount'] = '2.50'
+        checkout_kwargs['description'] = '1 Month of conjugat Premium'
+        checkout_kwargs['local_price']['amount'] = '2.50'
     
-    charge = client.charge.create(**checkout_qwargs)
+    charge = client.charge.create(**checkout_kwargs)
 
     return charge
 

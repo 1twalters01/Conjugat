@@ -31,18 +31,32 @@ Web scraping can be found in the python/verbs directory. I used pickle files to 
 The main database was split up into the order one would learn them. Some verbs had an irregular amount of tenses so I used a check to see if the tense was found. If not then it ran a for loop until the tense was found. I could have done a search starting from the list index that had failed rather than a for loop as the fail case but didn't as it ran relatively fast. JSON was created and then loaded into the database.
 
 ### Account functionality - conjugat/account with 2FA being in conjugat/settings/totp
-This is a fully fleshed out account system with: login and log out functionality that works for both username and email, password reset, registration with email verification and optional totp.#
+This is a fully fleshed out account system with: login and log out functionality that works for both username and email, password reset, registration with email verification and optional totp.
 
-Django-two-factor-auth forced me to use their login view and not my own html template so I created my own functionality. I had some trouble with integrating it with the login system due to not wanting to store a password in a session variable or get but came up with a work around that looked and worked really well.
+There is also google, twitter and facebook authentication using their APIs as an optional second choice for loging in which was added through use of social_django. I did not add apple authentication as you need to pay £99/year to access their API and use the functionality.
 
-There is also google, twitter and facebook authentication as an optional second choice for loging in which was added through use of social_django. I did not add apple authentication as you need to pay £99/year to use the functionality.
+Django-two-factor-auth forced me to use their login view and not my own html template so I created my own functionality. I had some trouble with integrating it with the login system due to not wanting to store a password in a session variable or use get instead of post but came up with a work around that saves the username to sessions, checks to see if totp is enabled, and then returns the relevant form that looked and worked really well.
 
-### Subscriptions
+Email verification makes use of the reset password token generator class based view that comes with django contrib auth, and creates the hash by using the user's pk, the timestamp and their active state. It thus gets invalidated once used once.
+
+### Subscriptions - conjugat/subscription and conjugat/settings directories.
+I am using paypal, stripe and coinbase for payment options due to their popularity. I made the design choice to have their success pages seperate here and NOT due to inability - I put their success pages all together in conjugat/settings in the premium view/template so that users could access this in a singular place.
+
+We are moving towards a software as a service (Saas) world, and if you can't beat them join them. I thus used the subscriptions with a free trial for stripe and paypal. Coinbase commerce doesn't allow for subscriptions so functionality will have to be added to check if the date for subscription has expired. It also doesn't allow a free trial option so I put a nominal fee of 1p rather than just activate the subscription ~~because common psychology says that getting someone to input their detail will make them more likely to pay with real money next time~~ so that it is fair between all three payment providers. I will likely use a chronjob though may check whenever they go on the website (once per day) as it may have the potential of being slow if lots of users were to be added.
+
+Webhooks are used to ensure that my database is correct. Webhook urls had to be created, along with correct processing of the payloads sent. A json code 200 response is to be sent back in the event of a success. No response is sent if it doesn't work as that is the signal for an internal error, although I may change this. An email is sent if the subscription trial is ending.
+
 ### General settings
 A white border around the qr code was required for it to be scannable by the google authenticator app.
+
 ### Newsletter
 
 ## To do
+Finish designing the PC version
+Finish designing the mobile site
+Add functionality to unsubscribe user if subscription date has expired.
+Create form functionality, along with verification for if it is correct or not
+Algorithm to determine what verbs/tenses should be tested.
 
 ## Web scraping
 
