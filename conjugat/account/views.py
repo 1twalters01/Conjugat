@@ -79,8 +79,8 @@ def user_login(request):
                 if form.is_valid() != True:
                     return HttpResponse('invalid form')
 
-                cd = form.cleaned_data
-                username = does_username_exist(cd['username'])
+                clean_data = form.cleaned_data
+                username = does_username_exist(clean_data['username'])
                 if not username:
                     return HttpResponse('username or email not found')
 
@@ -96,8 +96,8 @@ def user_login(request):
                 if form.is_valid() == False:
                     return HttpResponse('invalid form')
 
-                cd = form.cleaned_data
-                user = authenticate(request, username=username[0], password=cd['password'])
+                clean_data = form.cleaned_data
+                user = authenticate(request, username=username[0], password=clean_data['password'])
 
                 if user == None:
                     return HttpResponse('Incorrect password')
@@ -109,13 +109,13 @@ def user_login(request):
                     key = decrypt(TwoFactor.key).encode('ascii')
                     totp = generate_totp(key)
                 else:
-                    cd['totp'] = None
+                    clean_data['totp'] = None
                     totp = None
 
-                if cd['totp'] != totp:
+                if clean_data['totp'] != totp:
                     return HttpResponse('wrong totp')
 
-                login_procedure(request, user, cd['remember_me'])
+                login_procedure(request, user, clean_data['remember_me'])
                 username, confirmed = reset_username(request)
                 return redirect('home')
 
@@ -171,7 +171,7 @@ def activate(request, uidb64, token):
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
-    except:
+    except(TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
     if user and account_activation_token.check_token(user, token):
         user.is_active = True

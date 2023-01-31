@@ -36,7 +36,7 @@ def get_subscriber_or_None(subscription_id, method):
     return req_userprofile
 
 
-def get_customer_or_None(customer_id, method):
+def get_customer_or_none(customer_id, method):
     try:
         # Retrieve UserProfile instance with said subscription id
         req_userprofiles = UserProfile.objects.filter(method_id=payment_method(method), subscribed=True)
@@ -65,7 +65,7 @@ def stripe_webhooks(request):
     if event and event["type"] == "customer.deleted":
         print("customer.deleted") # log event
         customer_id = event["data"]["object"]["id"]
-        req_userprofile = get_customer_or_None(customer_id, 'Stripe')
+        req_userprofile = get_customer_or_none(customer_id, 'Stripe')
         print(req_userprofile)
         if req_userprofile:
             # Remove the subscription id from the database and set to false
@@ -81,7 +81,7 @@ def stripe_webhooks(request):
         print("invoice.payment_succeeded") # log event
         customer_id = event["data"]["object"]["customer"]
         subscription_id = event["data"]["object"]["id"]
-        req_userprofile = get_customer_or_None(customer_id, 'Stripe')
+        req_userprofile = get_customer_or_none(customer_id, 'Stripe')
         if req_userprofile:
             # Add the subscription id to the database
 
@@ -104,7 +104,7 @@ def stripe_webhooks(request):
     elif event and event["type"] == "customer.subscription.trial_will_end":
         print("customer.subscription.trial_will_end") # log event
         customer_id = event["data"]["object"]["customer"]
-        req_userprofile = get_customer_or_None(customer_id, 'Stripe')
+        req_userprofile = get_customer_or_none(customer_id, 'Stripe')
         if req_userprofile:
             user = User.objects.get(username=req_userprofile.user)
             email = user.email
