@@ -31,7 +31,8 @@ Web scraping can be found in the python/verbs directory. I used pickle files to 
 The main database was split up into the order one would learn them. Some verbs had an irregular amount of tenses so I used a check to see if the tense was found. If not then it ran a for loop until the tense was found. I could have done a search starting from the list index that had failed rather than a for loop as the fail case but didn't as it ran relatively fast. JSON was created and then loaded into the database.
 
 ### Account functionality - conjugat/account with 2FA being in conjugat/settings/totp
-This is a fully fleshed out account system with: login and log out functionality that works for both username and email, password reset, registration with email verification and optional totp.
+This is a fully fleshed out account system with: login and log out functionality that works for both username and email, password reset, registration with email verification and optional totp. A fake SSL is created for https requests using pyOpenSSL. This was required to get google, facebook and twitter authentication to work in testing.
+
 
 There is also google, twitter and facebook authentication using their APIs as an optional second choice for loging in which was added through use of social_django. I did not add apple authentication as you need to pay £99/year to access their API and use the functionality.
 
@@ -44,20 +45,27 @@ I am using paypal, stripe and coinbase for payment options due to their populari
 
 We are moving towards a software as a service (Saas) world, and if you can't beat them join them. I thus used the subscriptions with a free trial for stripe and paypal. Coinbase commerce doesn't allow for subscriptions so functionality will have to be added to check if the date for subscription has expired. It also doesn't allow a free trial option so I put a nominal fee of 1p rather than just activate the subscription ~~because common psychology says that getting someone to input their detail will make them more likely to pay with real money next time~~ so that it is fair between all three payment providers. I will likely use a chronjob though may check whenever they go on the website (once per day) as it may have the potential of being slow if lots of users were to be added.
 
-Webhooks are used to ensure that my database is correct. Webhook urls had to be created, along with correct processing of the payloads sent. A json code 200 response is to be sent back in the event of a success. No response is sent if it doesn't work as that is the signal for an internal error, although I may change this. An email is sent if the subscription trial is ending.
+Requests is used with paypal to properly post to their api to access the user's subscription status. This lets them make changes. The stripe cli client is used for working in test mode on stripe.
 
-### General settings
-A white border around the qr code was required for it to be scannable by the google authenticator app.
+Webhooks are used to ensure that my database is correct. Webhook urls had to be created, along with correct processing of the payloads sent. A json  with the success code 200 is to be sent back in the event of a success. No response is sent if it doesn't work as that is the signal for an internal error, although I may change this to an error code. An email is sent if the subscription trial is ending.
+
+### General settings - conjugat/settings
+This has common functionality - changing email, username and password, closing account, viewing premium subscription status, theme change and reseting progress on the account.
+
+The qr code works well in light mode, however it didn't work at all in dark mode with the google authenticator app. A white border around the qr code was required for it to be scannable by the google authenticator app when in dark mode.
+
+The theme change was made using a context processor. I could have used a session variable instead, but thought that users would rather their theme settings be associated to their account rather than their pc. I will use the session variable option for when users are not logged in.
 
 ### Newsletter
+This simply gets the user to enter their email (or use the one that is tied to their account) and sends it to mailchimp so that they can receive marketing emails. I was going to use webhooks to sync a copy to the app but then decided not to as mailchimp host everything and my site doesn't need to store or check any data for this, unlike with the payment processors where I had to make sure everything was synchronised.
+
+I connected to their API and send the data that gets input into my website over.
+
 
 ## To do
 Finish designing the PC version
 Finish designing the mobile site
+Add sesion variable for the theme when not logged in.
 Add functionality to unsubscribe user if subscription date has expired.
 Create form functionality, along with verification for if it is correct or not
 Algorithm to determine what verbs/tenses should be tested.
-
-## Web scraping
-
-##
