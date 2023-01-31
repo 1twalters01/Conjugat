@@ -19,12 +19,15 @@ The webapp will be fully fleshed out to give a more real feel including: login f
 ## What is finished
 Everything except for the design, the test functionality and the algorithm for choosing tenses is finished. Things that are finished are as follows:
 
+### Language database
+
 ### Web scraping
 The highest level one can be in language learning is C2 on the CEFR standard. It is said commonly that the amount of words you need to know doubles to get to the next level, starting at 500 words for A1. Others say that the number is 10,000+. This means that 10,000 - 16,000 words are needed. Verbs make up [15.2% of English words](https://www.google.com/search?rlz=1C1ONGR_enGB1030GB1030&sxsrf=AJOqlzVCms3En5pgorVT4ZJ9L8YuYRqbQA:1675176090117&q=What+percentage+of+words+are+verbs+in+english&sa=X&ved=2ahUKEwjimKaehfL8AhUILMAKHRinCq4Q1QJ6BAgzEAE&biw=1137&bih=730&dpr=0.9). I thus need between 1520 and 2432 verbs. I am choosing 2000 verbs. I am assuming that the romance languages in question also use this many due to being unable to find data for the percentage of verbs in them. I got the list of the top 2000 most common words from reverso from links such as [this](https://conjugator.reverso.net/index-french-1-250.html).
 
-Web scraping can be found in the python/verbs directory.
+Web scraping can be found in the python/verbs directory. I used pickle files to share data between the different sections of the web scraping due to the speed. I saved the seperate sections as either dictionaries or tuples so that the primary key - value pairs would be preserved. Each bit of code created a JSON file of a form that can be loaded by Django into the relevant databases. The tenses, subjects and auxiliaries were scraped for every single verb rather than just a few as I didn't know if there would be any irregularities for any of the verbs in a foreign language. Any duplicates were removed.
 
-### Language database
+
+
 ### Account functionality
 ### Subscriptions
 ### General settings
