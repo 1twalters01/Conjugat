@@ -2,7 +2,7 @@
 This is a WIP language learning application meant to precisely test django coding fundamentals and their supersets - vanilla html, css and js (or compiled from scss and ts) with postgres as the main database. Cassandra and Redis will be used to store time series data due to limitations of postgres.
 
 ## Note
-This project was only just uploaded to github. I was using a very bad "manual version control" of sorts. I have posted the old versions of this project to show the work I have done on it.
+This project was only just uploaded to github. I was using a very bad "manual version control" of sorts. I can provide the old versions on request.
 
 ## Detail
 The application tests the user's conjugation abilities by rendering forms that have a pre-determined verb and tense. The user will have to enter the correct answers for all of the subjects for the verb-tense combination. By serving new words/tenses periodically in a way that will adapt to the user, it will increase their active memory of words in that language.
