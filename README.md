@@ -7,7 +7,7 @@ This project was only just uploaded to github. I was using a very bad "manual ve
 ## Detail
 The application tests the user's conjugation abilities by rendering forms that have a pre-determined verb and tense. The user will have to enter the correct answers for all of the subjects for the verb-tense combination. By serving new words/tenses periodically in a way that will adapt to the user, it will increase their active memory of words in that language.
 
-The order the verbs and tenses will be generated in will be based off of the most common verbs and tenses that speakers of the language in question use, so that they will learn words most likely to appear first unlike many other applications. The difference between users would come from:
+The order the verbs and tenses will be generated in will be based off of the most common verbs and tenses that speakers of the language in question use, so that they will learn words most likely to appear first unlike many other applications. I think I will use Tensorflow to do this. The difference between users would come from:
 
 1. How the system learns from the initial use to quickly get the user to the level they are at - we don't want them to have to go through literally every combination.
     - A similar optional "training" mode should be activated if the user has a long break from the website.
