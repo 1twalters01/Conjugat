@@ -1,5 +1,5 @@
 # Conjugat
-This is a WIP language learning application meant to precisely test django coding fundamentals and their supersets - vanilla html, css and js (or compiled from scss and ts) with postgres as the main database. Cassandra and Redis will be used to store time series data due to limitations of postgres.
+This is a WIP language learning application meant to showcase my full stack programming - django for the back end, react for the website front end, kotlin for the android front end, and postgresql as the main database. Cassandra and Redis will be used to store time series data due to limitations of postgres.
 
 ## Note
 This project was only just uploaded to github. I was using a very bad "manual version control" of sorts. I can provide the old versions on request.
