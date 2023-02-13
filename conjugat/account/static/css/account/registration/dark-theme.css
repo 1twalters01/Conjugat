@@ -12,7 +12,9 @@
 
 .weak-btn{
     background-color: var(--primary-800);
-    color: var(--secondary-50);
+    color: var(--secondary-100);
+    border-color: var(--secondary-700);
+    
 }
 .weak-btn:hover{
     background-color: var(--primary-700);
@@ -40,7 +42,6 @@ input[type="text"],input[type="password"], input:-webkit-autofill, input:-webkit
     background-color: var(--primary-800) !important;
     border-bottom-color: var(--secondary-100) !important;
     -webkit-text-fill-color: white !important;
-    
 }
 
 

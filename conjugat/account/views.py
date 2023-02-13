@@ -164,7 +164,7 @@ def register(request):
                 return render(request, 'registration/register_verify.html', {'new_user':user})
         else:
             user_form = UserRegistrationForm()
-        return render(request, 'registration/register.html', {'user_form':user_form})
+        return render(request, 'registration/register.html', {'user_form':user_form, 'navbar':False})
 
 
 def activate(request, uidb64, token):
