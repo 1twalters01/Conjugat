@@ -65,13 +65,22 @@
     }
 
     /* form */
-    .login-form, .register-form{
+    .login-form, .register-form, .invalid-reset, .reset-form{
         display: grid;
         margin: auto;
     }
-    .login-form div, .register-form div{
+    .login-form div, .register-form, .reset-form{
         width: 60%;
         margin: auto;
+    }
+    .invalid-reset div{
+        width: 80%;
+        text-align: center;
+        margin: auto;
+    }
+    .invalid-reset .weak-btn{
+        margin-top: 30px;
+        margin-bottom: 40px;
     }
     .field{
         margin-bottom: 15px;
@@ -80,7 +89,7 @@
         margin-bottom: 10px;
     }
     
-    .login-form input, .register-form input{
+    .login-form input, .register-form input, .reset-form input{
         width: 100%;
         display: block;
         padding-left: 10px;
@@ -92,7 +101,8 @@
         outline: none;
     }
     .login-form input[type="text"], .login-form input[type="password"]
-    , .password-field input[type="text"], input[type="email"]{
+    , .password-field input[type="text"], input[type="email"],
+    .reset-form input[type="password"]{
         margin-bottom: 20px;
     }
     .spacer{
