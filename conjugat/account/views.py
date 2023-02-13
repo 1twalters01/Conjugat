@@ -16,6 +16,8 @@ from settings.totp import generate_totp
 from subscription.encryption import decrypt
 
 
+
+
 def reset_username(request):
     request.session['username'] = None
     request.session['confirmed'] = None

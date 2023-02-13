@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'social_django',
     'newsletter.apps.NewsletterConfig',
     'django_extensions',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
