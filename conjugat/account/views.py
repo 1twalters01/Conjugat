@@ -8,6 +8,7 @@ from django.core.mail import EmailMessage
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
+from django.urls import reverse_lazy
 from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from settings.models import TwoFactorAuth
@@ -131,7 +132,8 @@ def user_login(request):
 
 
 class NewPasswordResetView(PasswordResetView):
-    form_class = PasswordResetForm
+    kwargs = {'navbar':False}
+    success_url = reverse_lazy("password_reset_done")
 
 class NewPasswordResetConfirmView(PasswordResetConfirmView):
     form_class = SetPasswordForm

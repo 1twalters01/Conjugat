@@ -37,13 +37,15 @@
 p.username-text{
     color: var(--secondary-600);
 }
-input[type="text"],input[type="password"], input:-webkit-autofill, input:-webkit-autofill:focus{
+input[type="text"], input[type="password"], input[type="email"], input:-webkit-autofill, input:-webkit-autofill:focus{
     color-scheme: dark;
     background-color: var(--primary-800) !important;
     border-bottom-color: var(--secondary-100) !important;
     -webkit-text-fill-color: white !important;
 }
-
+.password-reset a:hover{
+    color: var(--primary-300);
+}
 
 /* Alternative login */
 .alt-login p{

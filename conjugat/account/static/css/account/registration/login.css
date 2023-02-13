@@ -85,13 +85,14 @@
         display: block;
         padding-left: 10px;
     }
-    input[type="text"], input[type="password"]{
+    input[type="text"], input[type="password"], input[type="email"]{
         height: 25px;
         border:none;
         border-bottom: 1px solid;
         outline: none;
     }
-    .login-form input[type="text"], .login-form input[type="password"], .password-field input[type="text"]{
+    .login-form input[type="text"], .login-form input[type="password"]
+    , .password-field input[type="text"], input[type="email"]{
         margin-bottom: 20px;
     }
     .spacer{
@@ -122,7 +123,7 @@
     .password-reset{
         text-align: center;
         padding-bottom: 40px;
-    }    
+    }
     .submit input[type="submit"]{
         padding: 10px 50px;
         border-radius: 15px;
