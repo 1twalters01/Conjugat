@@ -24,7 +24,7 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.core.exceptions import ObjectDoesNotExist
 
 @api_view(["GET"])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def getRoutes(request):
     routes = [
         {
@@ -38,6 +38,12 @@ def getRoutes(request):
             'method': 'GET',
             'body': None,
             'description': 'Logs out the user'
+        },
+        {
+            'Endpoint': '/register/',
+            'method': 'POST',
+            'body': {'body': ""},
+            'description': 'Registers a new, unactivated user'
         },
     ]
     return Response(routes)
@@ -69,6 +75,52 @@ def logoutView(request):
     logout(request)
     return Response({"success": "Successfully logged out."},
                     status=status.HTTP_200_OK)
+
+@api_view(["PUT"])
+@permission_classes([AllowAny])
+def registerView(request):
+    username = request.data.get("username")
+    email = request.data.get("email")
+    password = request.data.get("password")
+    password2 = request.data.get("password2")
+
+    if username is None or email is None or password is None or password2 is None:
+        return Response({'error': 'Please fill in all form fields'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    if password != password2:
+        return Response({'error': 'Passwords must match'},
+                        status=status.HTTP_400_BAD_REQUEST)      
+    try:
+        usernameTest = User.objects.get(username=username)
+        emailTest = User.objects.get(email=email)
+    except:
+        usernameTest = None
+        emailTest = None
+    if usernameTest is not None or emailTest is not None:
+        return Response({'error': 'User already exists'},
+                        status=status.HTTP_400_BAD_REQUEST)  
+    user = User.objects.create(username=username, email=email)
+    user.set_password(password)
+    user.is_active = False
+    user.save()
+
+    subject = 'Conjugat activation email'
+    current_site = get_current_site(request)
+    message = render_to_string('registration/active_email.html', {
+        'user': user,
+        'domain': current_site.domain,
+        'uid':urlsafe_base64_encode(force_bytes(user.pk)),
+        'token':account_activation_token.make_token(user),
+    })
+    recipient = email
+    email = EmailMessage(subject, message, to=[recipient])
+    email.send()
+
+    return Response({"success": "Successfully created user. Activate with link in email."},
+                status=status.HTTP_200_OK)
+
+
+
 
 
 def reset_username(request):
