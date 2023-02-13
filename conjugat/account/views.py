@@ -98,7 +98,8 @@ def registerView(request):
         emailTest = None
     if usernameTest is not None or emailTest is not None:
         return Response({'error': 'User already exists'},
-                        status=status.HTTP_400_BAD_REQUEST)  
+                        status=status.HTTP_400_BAD_REQUEST)
+                        
     user = User.objects.create(username=username, email=email)
     user.set_password(password)
     user.is_active = False
