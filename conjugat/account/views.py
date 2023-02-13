@@ -180,4 +180,5 @@ def activate(request, uidb64, token):
         user.save()
         return render(request, 'registration/register_done.html', {'new_user':user})
     else:
-        return HttpResponse('Activation link is invalid!')
+        return render(request, 'registration/register_done.html', {'new_user':user})
+        # return HttpResponse('Activation link is invalid!')
