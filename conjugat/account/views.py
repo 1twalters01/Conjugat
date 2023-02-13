@@ -1,6 +1,6 @@
 from .forms import UsernameForm, totpForm, passwordForm, UserRegistrationForm, PasswordResetForm, SetPasswordForm
 from .tokens import account_activation_token
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView
 from django.contrib.sites.shortcuts import get_current_site
@@ -16,6 +16,59 @@ from settings.totp import generate_totp
 from subscription.encryption import decrypt
 
 
+from rest_framework import status
+from rest_framework.authtoken.models import Token   
+from rest_framework.response import Response
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from django.core.exceptions import ObjectDoesNotExist
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def getRoutes(request):
+    routes = [
+        {
+            'Endpoint': '/login/',
+            'method': 'POST',
+            'body': {'body': ""},
+            'description': 'Authenticates the user'
+        },
+        {
+            'Endpoint': '/logout/',
+            'method': 'GET',
+            'body': None,
+            'description': 'Logs out the user'
+        },
+    ]
+    return Response(routes)
+
+
+@api_view(["POST"])
+@permission_classes([AllowAny])
+def loginView(request):
+    username = request.data.get("username")
+    password = request.data.get("password")
+    if username is None or password is None:
+        return Response({'error': 'Please provide both username and password'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    user = authenticate(username=username, password=password)
+    if not user:
+        return Response({'error': 'Invalid Credentials'},
+                        status=status.HTTP_404_NOT_FOUND)
+    token, _ = Token.objects.get_or_create(user=user)
+    return Response({'token': token.key},
+                    status=status.HTTP_200_OK)
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def logoutView(request):
+    try:
+        request.user.auth_token.delete()
+    except (AttributeError, ObjectDoesNotExist):
+        pass
+    logout(request)
+    return Response({"success": "Successfully logged out."},
+                    status=status.HTTP_200_OK)
 
 
 def reset_username(request):
