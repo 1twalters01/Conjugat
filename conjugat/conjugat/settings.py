@@ -56,9 +56,6 @@ INSTALLED_APPS = [
     'settings.apps.SettingsConfig',
     'social_django',
     'newsletter.apps.NewsletterConfig',
-    'django_extensions',
-    'rest_framework',
-    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -204,9 +201,3 @@ MAILCHIMP_API_KEY = config('MAILCHIMP_API_KEY')
 MAILCHIMP_USERNAME = config('MAILCHIMP_USERNAME')
 MAILCHIMP_REGION = config('MAILCHIMP_REGION')
 MAILCHIMP_MARKETING_AUDIENCE_ID = config('MAILCHIMP_MARKETING_AUDIENCE_ID')
-
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
-    ],
-}
