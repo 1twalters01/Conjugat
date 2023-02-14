@@ -1,21 +1,3 @@
-from .forms import UsernameForm, totpForm, passwordForm, UserRegistrationForm, PasswordResetForm, SetPasswordForm
-from .tokens import account_activation_token
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.models import User
-from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView
-from django.contrib.sites.shortcuts import get_current_site
-from django.core.mail import EmailMessage
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
-from django.template.loader import render_to_string
-from django.urls import reverse_lazy
-from django.utils.encoding import force_bytes, force_str
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from settings.models import TwoFactorAuth
-from settings.totp import generate_totp
-from subscription.encryption import decrypt
-
-
 def reset_username(request):
     request.session['username'] = None
     request.session['confirmed'] = None
@@ -130,16 +112,6 @@ def user_login(request):
                 context = {'form':form, 'navbar':False}
                 return render(request, 'registration/login.html', context)
 
-
-class NewPasswordResetView(PasswordResetView):
-    kwargs = {'navbar':False}
-    success_url = reverse_lazy("password_reset_done")
-
-class NewPasswordResetConfirmView(PasswordResetConfirmView):
-    form_class = SetPasswordForm
-
-
-# I am using django to send the email. I could use mailchimp instead.
 def register(request):
     if request.user.is_authenticated:
         return redirect('home')
@@ -180,5 +152,4 @@ def activate(request, uidb64, token):
         user.save()
         return render(request, 'registration/register_done.html', {'new_user':user})
     else:
-        return render(request, 'registration/register_done.html', {'new_user':user})
-        # return HttpResponse('Activation link is invalid!')
+        return HttpResponse('Activation link is invalid!')
