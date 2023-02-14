@@ -53,10 +53,39 @@ def getRoutes(request):
 @permission_classes([AllowAny])
 def loginView(request):
     username = request.data.get("username")
-    password = request.data.get("password")
-    if username is None or password is None:
-        return Response({'error': 'Please provide both username and password'},
+    if username is None:
+        return Response({'error': 'Please enter a username'},
                         status=status.HTTP_400_BAD_REQUEST)
+    
+    usernameCheck = does_username_exist(username)
+    if not usernameCheck:
+        return Response({'error': 'Username is not recognised'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    
+    confirmed = is_two_factor_active(username)
+    return Response({'username': username, 'confirmed': confirmed},
+                    status=status.HTTP_200_OK)
+
+@api_view(["POST"])
+@permission_classes([AllowAny])
+def loginPasswordView(request):
+    username = request.data.get("username")
+    password = request.data.get("password")
+    totp = request.data.get("totp")
+    confirmed = request.data.get("confirmed")
+    remember_me = request.data.get("remember_me")
+
+    if confirmed:
+        TwoFactor = TwoFactorAuth.objects.get(user=username[1])
+        key = decrypt(TwoFactor.key).encode('ascii')
+        totpCheck = generate_totp(key)
+    else:
+        totpCheck = None
+        totp = None
+    if totpCheck != totp:
+        return Response({'error': 'The totp is incorrect'},
+                        status=status.HTTP_400_BAD_REQUEST)
+
     user = authenticate(username=username, password=password)
     if not user:
         return Response({'error': 'Invalid Credentials'},
@@ -64,6 +93,7 @@ def loginView(request):
     token, _ = Token.objects.get_or_create(user=user)
     return Response({'token': token.key},
                     status=status.HTTP_200_OK)
+
 
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
@@ -288,5 +318,4 @@ def activate(request, uidb64, token):
         user.save()
         return render(request, 'registration/register_done.html', {'new_user':user})
     else:
-        return render(request, 'registration/register_done.html', {'new_user':user})
-        # return HttpResponse('Activation link is invalid!')
+        return HttpResponse('Activation link is invalid!')
