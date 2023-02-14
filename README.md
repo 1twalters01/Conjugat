@@ -2,7 +2,7 @@
 This is a WIP language learning application meant to showcase my full stack programming - django for the back end, react for the website front end, kotlin for the android front end, and postgresql as the main database. Cassandra and Redis will be used to store time series data due to limitations of postgres.
 
 ## Note
-This project was only just uploaded to github. I was using a very bad "manual version control" of sorts. I can provide the old versions on request.
+This project was only just uploaded to github. I can provide the old versions on request. See the no DjangoREST Framework branch for something that visibly - the main branch doesn't have react added yet and I haven't converted all of the views into a form that works with the DjangoREST framework yet.
 
 ## Detail
 The application tests the user's conjugation abilities by rendering forms that have a pre-determined verb and tense. The user will have to enter the correct answers for all of the subjects for the verb-tense combination. By serving new words/tenses periodically in a way that will adapt to the user, it will increase their active memory of words in that language.
@@ -22,7 +22,7 @@ The order the verbs and tenses will be generated in will be based off of the mos
 The webapp will be fully fleshed out to give a more real feel including: login functionality, payment with 3 different payment processors (on live mode as this is just a practice project) for the stereotypical freemium model, a newsletter sign up, and a fully responsive design. More features will be added as they are thought of / suggested.
 
 ## What is finished
-Everything except for the design, the test functionality and the algorithm for choosing tenses is finished. Things that are finished are as follows:
+Everything except for the design, the test functionality, and the algorithm for choosing tenses is finished for the version that does not use DRF. Things that are finished are as follows:
 
 ### Language database creation - conjugat/verbs/models
 Proper normalisation is critical when working with big databases. It can take your website from being unusable (25s+), even when the page is not accessing the ORM to working fast (<1s). Good indexing is also important. Proper management of primary keys had to be used in the web scraping to prevent data from going wrong. This is a read only database meaning I may consider using direct sql commands rather than the ORM depending on performance as the Django ORM is known to be quite slow for big databases.
