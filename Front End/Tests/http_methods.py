@@ -17,4 +17,4 @@ class HTTP_methods():
     def patch(url, headers=None, data=None):
         return requests.patch(url, headers=headers, data=data)
 
-print(HTTP_methods.post(urls['loginView']).json())
+print(HTTP_methods.post(urls['loginView'], data={"username":"lgyhglh"}).json())
