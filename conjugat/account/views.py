@@ -15,13 +15,13 @@ from settings.models import TwoFactorAuth
 from settings.totp import generate_totp
 from subscription.encryption import decrypt
 
-
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.core.exceptions import ObjectDoesNotExist
+from rest_framework.authtoken.models import Token
 
 @api_view(["GET"])
 @permission_classes([AllowAny])
@@ -41,8 +41,8 @@ def getRoutes(request):
         },
         {
             'Endpoint': '/logout/',
-            'method': 'GET',
-            'body': None,
+            'method': 'POST',
+            'body': {'body': ""},
             'description': 'Logs out the user'
         },
         {
@@ -199,8 +199,11 @@ def loginPasswordView(request):
 
 
 
-from rest_framework.authtoken.models import Token
 
+'''
+Remember to uncomment token.delete().
+It is commented out for testing purposes
+'''
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def logoutView(request):
@@ -212,12 +215,13 @@ def logoutView(request):
     if not token:
         return Response({'error': 'invalid authentication token'},
                         status=status.HTTP_400_BAD_REQUEST)
+    # token.delete()
     return Response({"success": "Successfully logged out."},
                     status=status.HTTP_200_OK)
 
 
 # I am using django to send the email. I could use mailchimp instead.
-@api_view(["PUT"])
+@api_view(["POST"])
 @permission_classes([AllowAny])
 def registerView(request):
     username = request.data.get("username")
@@ -246,17 +250,21 @@ def registerView(request):
     user.is_active = False
     user.save()
 
-    subject = 'Conjugat activation email'
-    current_site = get_current_site(request)
-    message = render_to_string('registration/activate_email.html', {
-        'user': user,
-        'domain': current_site.domain,
-        'uid':urlsafe_base64_encode(force_bytes(user.pk)),
-        'token':account_activation_token.make_token(user),
-    })
-    recipient = email
-    email = EmailMessage(subject, message, to=[recipient])
-    email.send()
+    try:
+        subject = 'Conjugat activation email'
+        current_site = get_current_site(request)
+        message = render_to_string('registration/activate_email.html', {
+            'user': user,
+            'domain': current_site.domain,
+            'uid':urlsafe_base64_encode(force_bytes(user.pk)),
+            'token':account_activation_token.make_token(user),
+        })
+        recipient = email
+        email = EmailMessage(subject, message, to=[recipient])
+        email.send()
+    except:
+        return Response({'error': 'Unable to send to email address'},
+                        status=status.HTTP_400_BAD_REQUEST)
 
     return Response({"success": "Successfully created user. Activate with link in email."},
                 status=status.HTTP_200_OK)
@@ -264,28 +272,38 @@ def registerView(request):
 
 @api_view(["POST"])
 @permission_classes([AllowAny])
-def activateView(request):
-    uidb64 = request.data.get("uidb64")
-    token = request.data.get("token")
+def activateView(request, uidb64, token):
+    # uidb64 = request.data.get("uidb64")
+    # token = request.data.get("token")
+
+    if uidb64 is None or token is None:
+        return Response({'error': 'Invalid url type'},
+                        status=status.HTTP_400_BAD_REQUEST)
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
     except(TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
-    if user and account_activation_token.check_token(user, token):
-        user.is_active = True
-        user.save()
-        return Response({"success": "Successfully activated user"},
-                status=status.HTTP_200_OK)
-    else:
-        return Response({'error': 'Activation link is invalid'},
+    if not user:
+        return Response({'error': 'user does not exist'},
                         status=status.HTTP_400_BAD_REQUEST)
+    if account_activation_token.check_token(user, token) != True:
+        return Response({'error': 'invalid token'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    
+    user.is_active = True
+    user.save()
+    return Response({"success": "Successfully activated user"},
+            status=status.HTTP_200_OK)
 
 
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def passwordResetView(request):
     email = request.data.get("email")
+    if not email:
+        return Response({'error': 'No email provided'},
+                        status=status.HTTP_400_BAD_REQUEST)
     try:
         user = User.objects.get(email)
     except:

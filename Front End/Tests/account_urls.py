@@ -7,7 +7,7 @@ urls = {
     "logoutView":"http://conjugat.io:8000/account/logout/",
 
     "registerView":"http://conjugat.io:8000/account/register/",
-    "activateView":"http://conjugat.io:8000/account/activate/<uidb64>/<token>/",
+    "activateView":"http://conjugat.io:8000/account/activate/",
 
     "passwordResetView":"http://conjugat.io:8000/account/password-reset/",
     "passwordResetConfirmView":"http://conjugat.io:8000/account/password-reset/<uidb64>/<token>/",
