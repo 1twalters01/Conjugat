@@ -1,0 +1,1 @@
+# I will create serializers after testing the views without them is complete

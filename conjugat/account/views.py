@@ -73,6 +73,8 @@ def getRoutes(request):
     return Response(routes)
 
 
+
+
 def does_username_exist(username):
     try:
         user = User.objects.get(username=username)
@@ -86,7 +88,7 @@ def does_username_exist(username):
             active = user.is_active
         except:
             user = None
-        active = None
+            active = None
     return user, active
 
 def is_two_factor_active(username):
@@ -100,32 +102,32 @@ def is_two_factor_active(username):
 
 @api_view(["POST"])
 @permission_classes([AllowAny])
-def loginView(request):
+def loginUsernameView(request):
     username = request.data.get("username")
     if username is None:
         return Response({'error': 'No username was entered'},
                         status=status.HTTP_400_BAD_REQUEST)
     
-    usernameCheck, activeCheck = does_username_exist(username)
-    if not usernameCheck:
+    user, activeCheck = does_username_exist(username)
+    if not user:
         return Response({'error': 'Username is not recognised'},
                         status=status.HTTP_400_BAD_REQUEST)
     if activeCheck != True:
         return Response({'error': 'User is not activated'},
                         status=status.HTTP_400_BAD_REQUEST)
 
-    confirmed = is_two_factor_active(username)
-    return Response({'username': username, 'confirmed': confirmed},
+    confirmed = is_two_factor_active(user.username)
+    return Response({'username': user.username, 'uid': user.id, 'confirmed': confirmed},
                     status=status.HTTP_200_OK)
 
 
 
 
-
-
-
 '''
-Need to make the remember_me functionality 
+Need to make the remember_me functionality
+    app - never resign in unless extended period of not being signed in
+    pc - once a month and every day respectively
+Need to have functionality to have each sign in platform have its own token
 '''
 def login_procedure(request, user, remember_me):
     if not remember_me:
@@ -136,15 +138,52 @@ def login_procedure(request, user, remember_me):
 @permission_classes([AllowAny])
 def loginPasswordView(request):
     username = request.data.get("username")
+    uid = request.data.get("uid")
     password = request.data.get("password")
     totp = request.data.get("totp")
     confirmed = request.data.get("confirmed")
     remember_me = request.data.get("remember_me")
 
+    if not uid:
+        return Response({'error': 'No username provided'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    try:
+        uid = int(uid)
+    except:
+        uid = None
+    if isinstance(uid, int) == False:
+        return Response({'error': 'User id must be an integer'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    if not password:
+        return Response({'error': 'No password provided'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    if not confirmed:
+        return Response({'error': 'No totp status provided'},
+                        status=status.HTTP_400_BAD_REQUEST)
+
+    if confirmed == 'True':
+        confirmed = True
+    elif confirmed == 'False':
+        confirmed = False
+    
+    if isinstance(confirmed, bool) == False:
+        return Response({'error': 'totp status must be a boolean'},
+                        status=status.HTTP_400_BAD_REQUEST)
+
+    
+    user = authenticate(username=username, password=password)
+    if not user:
+        return Response({'error': 'The username and/or password is incorrect'},
+                        status=status.HTTP_404_NOT_FOUND)
+    
     if confirmed:
-        TwoFactor = TwoFactorAuth.objects.get(user=username[1])
-        key = decrypt(TwoFactor.key).encode('ascii')
-        totpCheck = generate_totp(key)
+        try:
+            TwoFactor = TwoFactorAuth.objects.get(user=uid)
+            key = decrypt(TwoFactor.key).encode('ascii')
+            totpCheck = generate_totp(key)
+        except:
+            return Response({'error': 'uid is not found'},
+                        status=status.HTTP_404_NOT_FOUND)
     else:
         totpCheck = None
         totp = None
@@ -152,10 +191,6 @@ def loginPasswordView(request):
         return Response({'error': 'The totp is incorrect'},
                         status=status.HTTP_400_BAD_REQUEST)
 
-    user = authenticate(username=username, password=password)
-    if not user:
-        return Response({'error': 'The password is incorrect'},
-                        status=status.HTTP_404_NOT_FOUND)
     token, _ = Token.objects.get_or_create(user=user)
     return Response({'token': token.key},
                     status=status.HTTP_200_OK)
@@ -164,16 +199,19 @@ def loginPasswordView(request):
 
 
 
+from rest_framework.authtoken.models import Token
 
-
-@api_view(["GET"])
+@api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def logoutView(request):
+    token = request.headers.get("Authorization").split('Token ')[1]
     try:
-        request.user.auth_token.delete()
+        token = Token.objects.get(key=token)
     except (AttributeError, ObjectDoesNotExist):
-        pass
-    logout(request)
+        token = None
+    if not token:
+        return Response({'error': 'invalid authentication token'},
+                        status=status.HTTP_400_BAD_REQUEST)
     return Response({"success": "Successfully logged out."},
                     status=status.HTTP_200_OK)
 

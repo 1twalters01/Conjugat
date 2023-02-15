@@ -1,7 +1,7 @@
 urls = {
     "getRoutes":"http://conjugat.io:8000/account/",
 
-    "loginView":"http://conjugat.io:8000/account/login/username/",
+    "loginUsernameView":"http://conjugat.io:8000/account/login/username/",
     "loginPasswordView":"http://conjugat.io:8000/account/login/password/",
 
     "logoutView":"http://conjugat.io:8000/account/logout/",
