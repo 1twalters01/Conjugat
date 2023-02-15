@@ -1,2 +1,0 @@
-from .apiTest import getRoutesTest
-

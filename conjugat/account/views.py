@@ -103,7 +103,7 @@ def is_two_factor_active(username):
 def loginView(request):
     username = request.data.get("username")
     if username is None:
-        return Response({'error': 'Please enter a username'},
+        return Response({'error': 'No username was entered'},
                         status=status.HTTP_400_BAD_REQUEST)
     
     usernameCheck, activeCheck = does_username_exist(username)
