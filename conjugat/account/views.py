@@ -273,8 +273,6 @@ def registerView(request):
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def activateView(request, uidb64, token):
-    # uidb64 = request.data.get("uidb64")
-    # token = request.data.get("token")
 
     if uidb64 is None or token is None:
         return Response({'error': 'Invalid url type'},
@@ -305,27 +303,27 @@ def passwordResetView(request):
         return Response({'error': 'No email provided'},
                         status=status.HTTP_400_BAD_REQUEST)
     try:
-        user = User.objects.get(email)
+        user = User.objects.get(email=email)
     except:
-        pass
-    if user is None:
-        return Response({'error': 'Email has no associated account'},
+        user = None
+    if user == None:
+        return Response({'error': 'Email has no associated account or hasn\'t been activated'},
                         status=status.HTTP_400_BAD_REQUEST)
-    if user.is_active == False:
-        return Response({'error': 'User has not been activated'},
+    try:
+        subject = 'Conjugat password reset'
+        current_site = get_current_site(request)
+        message = render_to_string('registration/password_reset_email.html', {
+            'user': user,
+            'domain': current_site.domain,
+            'uid':urlsafe_base64_encode(force_bytes(user.pk)),
+            'token':password_reset_token.make_token(user),
+        })
+        recipient = email
+        email = EmailMessage(subject, message, to=[recipient])
+        email.send()
+    except:
+        return Response({'error': 'Unable to send to email address'},
                         status=status.HTTP_400_BAD_REQUEST)
-    
-    subject = 'Conjugat password reset'
-    current_site = get_current_site(request)
-    message = render_to_string('registration/password_reset_email.html', {
-        'user': user,
-        'domain': current_site.domain,
-        'uid':urlsafe_base64_encode(force_bytes(user.pk)),
-        'token':password_reset_token.make_token(user),
-    })
-    recipient = email
-    email = EmailMessage(subject, message, to=[recipient])
-    email.send()
 
     return Response({"success": "Password reset email has been sent"},
                 status=status.HTTP_200_OK)
@@ -333,17 +331,25 @@ def passwordResetView(request):
 
 @api_view(["POST"])
 @permission_classes([AllowAny])
-def passwordResetConfirmView(request):
-    uidb64 = request.data.get("uidb64")
-    token = request.data.get("token")
+def passwordResetConfirmView(request, uidb64, token):
     password = request.data.get("password")
     password2 = request.data.get("password2")
+
+    if uidb64 is None or token is None:
+        return Response({'error': 'Invalid url type'},
+                        status=status.HTTP_400_BAD_REQUEST)
+
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
     except(TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
-
+    if not user:
+        return Response({'error': 'user does not exist'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    if account_activation_token.check_token(user, token) != True:
+        return Response({'error': 'invalid token'},
+                        status=status.HTTP_400_BAD_REQUEST)
     if password != password2:
         return Response({'error': 'Passwords must match'},
                         status=status.HTTP_400_BAD_REQUEST)
@@ -351,3 +357,5 @@ def passwordResetConfirmView(request):
     if user and account_activation_token.check_token(user, token):
         user.set_password(password)
         user.save()
+    return Response({"success": "Successfully changed password"},
+            status=status.HTTP_200_OK)

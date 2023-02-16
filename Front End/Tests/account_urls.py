@@ -10,5 +10,5 @@ urls = {
     "activateView":"http://conjugat.io:8000/account/activate/",
 
     "passwordResetView":"http://conjugat.io:8000/account/password-reset/",
-    "passwordResetConfirmView":"http://conjugat.io:8000/account/password-reset/<uidb64>/<token>/",
+    "passwordResetConfirmView":"http://conjugat.io:8000/account/password-reset/",
     }

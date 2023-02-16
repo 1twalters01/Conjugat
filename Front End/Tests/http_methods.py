@@ -16,8 +16,3 @@ class HTTP_methods():
         return requests.options(url, headers=headers, data=data)
     def patch(url, headers=None, data=None):
         return requests.patch(url, headers=headers, data=data)
-
-
-
-# print(HTTP_methods.post(urls['loginPasswordView'], data={'uid':2, 'password':'wrong password', 'confirmed':'True'}).json())
-# print(HTTP_methods.post(urls['loginPasswordView'], data={'username':['admin', 2], 'password':'admin', 'confirmed':True}).json())
