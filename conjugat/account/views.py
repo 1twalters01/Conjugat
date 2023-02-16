@@ -73,8 +73,6 @@ def getRoutes(request):
     return Response(routes)
 
 
-
-
 def does_username_exist(username):
     try:
         user = User.objects.get(username=username)
