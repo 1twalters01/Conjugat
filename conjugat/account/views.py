@@ -285,6 +285,9 @@ def activateView(request, uidb64, token):
     if not user:
         return Response({'error': 'user does not exist'},
                         status=status.HTTP_400_BAD_REQUEST)
+    if user.is_active:
+        return Response({'error': 'user has already been activated'},
+                        status=status.HTTP_400_BAD_REQUEST)
     if account_activation_token.check_token(user, token) != True:
         return Response({'error': 'invalid token'},
                         status=status.HTTP_400_BAD_REQUEST)
@@ -347,14 +350,14 @@ def passwordResetConfirmView(request, uidb64, token):
     if not user:
         return Response({'error': 'user does not exist'},
                         status=status.HTTP_400_BAD_REQUEST)
-    if account_activation_token.check_token(user, token) != True:
+    if password_reset_token.check_token(user, token) != True:
         return Response({'error': 'invalid token'},
                         status=status.HTTP_400_BAD_REQUEST)
     if password != password2:
         return Response({'error': 'Passwords must match'},
                         status=status.HTTP_400_BAD_REQUEST)
 
-    if user and account_activation_token.check_token(user, token):
+    if user and password_reset_token.check_token(user, token):
         user.set_password(password)
         user.save()
     return Response({"success": "Successfully changed password"},
