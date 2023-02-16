@@ -91,23 +91,26 @@ def does_username_exist(username):
             active = None
     return user, active
 
-def is_two_factor_active(username):
+def is_two_factor_active(user):
     try:
-        TwoFactor = TwoFactorAuth.objects.get(user=username)
+        TwoFactor = TwoFactorAuth.objects.get(user=user)
         confirmed = TwoFactor.confirmed
     except:
         TwoFactor = None
-        confirmed = None
+        confirmed = False
     return confirmed
+
+from.serializers import LoginUsernameSerializer
 
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def loginUsernameView(request):
     username = request.data.get("username")
+
     if username is None:
         return Response({'error': 'No username was entered'},
                         status=status.HTTP_400_BAD_REQUEST)
-    
+
     user, activeCheck = does_username_exist(username)
     if not user:
         return Response({'error': 'Username is not recognised'},
@@ -116,9 +119,9 @@ def loginUsernameView(request):
         return Response({'error': 'User is not activated'},
                         status=status.HTTP_400_BAD_REQUEST)
 
-    confirmed = is_two_factor_active(user.username)
-    return Response({'username': user.username, 'uid': user.id, 'confirmed': confirmed},
-                    status=status.HTTP_200_OK)
+    user.confirmed = is_two_factor_active(user.id)
+    serializer = LoginUsernameSerializer(user)
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 

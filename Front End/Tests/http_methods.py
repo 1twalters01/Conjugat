@@ -16,3 +16,4 @@ class HTTP_methods():
         return requests.options(url, headers=headers, data=data)
     def patch(url, headers=None, data=None):
         return requests.patch(url, headers=headers, data=data)
+
