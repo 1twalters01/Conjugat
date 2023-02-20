@@ -1,5 +1,6 @@
 import {useState} from "react"
 import Axios from 'axios'
+import { Route, useNavigate } from "react-router-dom"
 import Authorization from '../../Authorization'
 
 function Register() {
@@ -31,7 +32,8 @@ function RegisterForm() {
       password2: data.password2
     })
     .then(res=>{
-      
+      const navigate = useNavigate();
+      return navigate('/register/done');
     })
   }
 

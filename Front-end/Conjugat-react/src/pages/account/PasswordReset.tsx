@@ -1,5 +1,6 @@
 import {useState} from "react"
 import Axios from 'axios'
+import { Route, useNavigate } from "react-router-dom"
 import Authorization from '../../Authorization'
 
 var sent = false
@@ -31,7 +32,7 @@ function EmailForm() {
       email: data.email
     })
     .then(res=>{
-      sent = true
+      
     })
   }
 

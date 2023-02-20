@@ -22,11 +22,14 @@ import Home from './pages/Home'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 
-import Activate from './pages/account/Activate'
 import Login from './pages/account/Login'
 import Logout from './pages/account/Logout'
 import PasswordReset from './pages/account/PasswordReset'
+import PasswordResetConfirm from './pages/account/PasswordResetConfirm'
+import PasswordResetToken from './pages/account/PasswordResetToken'
 import Register from './pages/account/Register'
+import RegisterConfirm from './pages/account/RegisterConfirm'
+import Activate from './pages/account/Activate'
 
 import Subscribe from './pages/newsletter/Subscribe'
 import Unsubscribe from './pages/newsletter/Unsubscribe'
@@ -55,11 +58,14 @@ const router = createBrowserRouter(
       <Route path="terms" element={<Terms />} />
 
       <Route path="account" element={<AccountLayout />}>
-        <Route path="activate" element={<Activate />} />
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Logout />} />
         <Route path="password-reset" element={<PasswordReset />} />
+        <Route path="password-reset/confirm" element={<PasswordResetConfirm />} />
+        <Route path="password-reset/:uidb64/:token" element={<PasswordResetToken />} />
         <Route path="register" element={<Register />} />
+        <Route path="register/confirm" element={<RegisterConfirm />} />
+        <Route path="activate/:uidb64/:token" element={<Activate />} />
       </Route>
 
       <Route path="newsletter" element={<NewsletterLayout />}>
