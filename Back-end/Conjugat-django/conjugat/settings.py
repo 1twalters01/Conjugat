@@ -57,11 +57,13 @@ INSTALLED_APPS = [
     'social_django',
     'newsletter.apps.NewsletterConfig',
     'django_extensions',
+    'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -204,6 +206,10 @@ MAILCHIMP_API_KEY = config('MAILCHIMP_API_KEY')
 MAILCHIMP_USERNAME = config('MAILCHIMP_USERNAME')
 MAILCHIMP_REGION = config('MAILCHIMP_REGION')
 MAILCHIMP_MARKETING_AUDIENCE_ID = config('MAILCHIMP_MARKETING_AUDIENCE_ID')
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:5000',
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
