@@ -233,7 +233,7 @@ def registerView(request):
     email = request.data.get("email")
     password = request.data.get("password")
     password2 = request.data.get("password2")
-
+    
     if username is None or email is None or password is None or password2 is None:
         return Response({'error': 'Please fill in all form fields'},
                         status=status.HTTP_400_BAD_REQUEST)

@@ -49,7 +49,7 @@ class UserRegistrationForm(forms.ModelForm):
         widgets = {
             'username': forms.TextInput(attrs={'placeholder':'Username here',}),
             'email': forms.TextInput(attrs={'placeholder':'Email here',}),
-                }
+        }
     def clean_password2(self):
         cd = self.cleaned_data
         if cd['password'] != cd['password2']:
