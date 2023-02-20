@@ -4,7 +4,7 @@ function PasswordResetToken() {
     Authorization.NotAuthRequired()
     return (
       <div>
-        <h1>Registration Confirmation</h1>
+        <h1>Registration Token</h1>
 
       </div>
     )

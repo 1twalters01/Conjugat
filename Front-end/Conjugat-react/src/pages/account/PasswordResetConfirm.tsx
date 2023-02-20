@@ -1,11 +1,12 @@
+import { Outlet, NavLink } from "react-router-dom"
 import Authorization from '../../Authorization'
 
 function PasswordResetConfirm() {
     Authorization.NotAuthRequired()
     return (
       <div>
-        <h1>Registration Confirmation</h1>
-
+        <h1>Password Confirmations</h1>
+        
       </div>
     )
   }

@@ -235,9 +235,11 @@ def registerView(request):
     password2 = request.data.get("password2")
     
     if username is None or email is None or password is None or password2 is None:
+        print('Please fill in all form fields')
         return Response({'error': 'Please fill in all form fields'},
                         status=status.HTTP_400_BAD_REQUEST)
     if password != password2:
+        print('Passwords must match')
         return Response({'error': 'Passwords must match'},
                         status=status.HTTP_400_BAD_REQUEST)      
     try:
@@ -247,6 +249,7 @@ def registerView(request):
         usernameTest = None
         emailTest = None
     if usernameTest is not None or emailTest is not None:
+        print('User already exists')
         return Response({'error': 'User already exists'},
                         status=status.HTTP_400_BAD_REQUEST)
                         
@@ -268,6 +271,7 @@ def registerView(request):
         email = EmailMessage(subject, message, to=[recipient])
         email.send()
     except:
+        print('Unable to send to email address')
         return Response({'error': 'Unable to send to email address'},
                         status=status.HTTP_400_BAD_REQUEST)
 
