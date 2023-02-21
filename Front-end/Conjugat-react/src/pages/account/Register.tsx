@@ -33,9 +33,9 @@ function RegisterForm() {
       password2: data.password2,
       domain: data.domain
     })
-    .then(
+    .then(res=>{
       window.location = '/account/register/confirm'
-    )
+    })
   }
 
   function handle(e) {

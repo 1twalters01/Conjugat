@@ -27,9 +27,9 @@ function EmailForm() {
       email: data.email,
       domain: domain
     })
-    .then(
+    .then(res=>{
       window.location = '/account/password-reset/confirm'
-    )
+    })
   }
 
   function handle(e) {

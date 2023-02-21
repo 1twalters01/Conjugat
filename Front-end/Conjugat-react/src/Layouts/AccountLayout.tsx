@@ -6,7 +6,6 @@ function AccountLayout() {
             <header>
                 <nav>
                     <NavLink to="/">Landing page</NavLink>
-                    <NavLink to="activate">Activate</NavLink>
                     <NavLink to="login">Login</NavLink>
                     <NavLink to="logout">Logout</NavLink>
                     <NavLink to="password-reset">Password-reset</NavLink>

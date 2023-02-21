@@ -32,9 +32,9 @@ function PasswordChange() {
       password: data.password,
       password2: data.password2,
     })
-    .then(
+    .then(res=>{
       window.location = '/account/password-reset/done'
-    )
+    })
   }
 
   function handle(e) {

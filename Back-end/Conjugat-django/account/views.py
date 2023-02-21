@@ -98,7 +98,7 @@ def is_two_factor_active(user):
         confirmed = False
     return confirmed
 
-from.serializers import LoginUsernameSerializer
+from.serializers import LoginUsernameSerializer, LoginPasswordSerializer
 
 @api_view(["POST"])
 @permission_classes([AllowAny])
@@ -145,6 +145,7 @@ def loginPasswordView(request):
     totp = request.data.get("totp")
     confirmed = request.data.get("confirmed")
     remember_me = request.data.get("remember_me")
+    print(remember_me)
     print(username, uid, password, totp,confirmed)
     if not uid:
         return Response({'error': 'No username provided'},
@@ -201,6 +202,9 @@ def loginPasswordView(request):
                         status=status.HTTP_400_BAD_REQUEST)
 
     token, _ = Token.objects.get_or_create(user=user)
+    print(token.key)
+    serializer = LoginPasswordSerializer(token)
+    print(serializer.data)
     return Response({'token': token.key},
                     status=status.HTTP_200_OK)
 

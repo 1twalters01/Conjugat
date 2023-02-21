@@ -58,7 +58,8 @@ function PasswordForm() {
   const url = "http://conjugat.io:8000/account/login/password/"
   const [data, setData] = useState({
     password: "",
-    totp: ""
+    totp: "",
+    rememberMe:false
   })
 
   function submit(e) {
@@ -68,13 +69,15 @@ function PasswordForm() {
       id: localStorage.getItem("id"),
       password: data.password,
       totp: data.totp,
-      confirmed: localStorage.getItem("confirmed")
+      confirmed: localStorage.getItem("confirmed"),
+      rememberMe: data.rememberMe
     })
     .then(res=>{
       localStorage.setItem("token", res.data.token);
       localStorage.removeItem('username');
       localStorage.removeItem('id');
       localStorage.removeItem('confirmed');
+      window.location.reload();
     })
   }
 
@@ -99,6 +102,8 @@ function PasswordForm() {
               <input id="totp" type="text" name="totp" value={data.totp} onChange={(e) => handle(e)} />
             </div>
           }
+          <label htmlFor="rememberMe">remember me</label>
+          <input type="checkbox" name="rememberMe" id="rememberMe" checked={data.rememberMe} onChange={(e) => handle(e)} />
           <button>Submit</button>
       </form>
     </div>

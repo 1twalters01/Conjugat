@@ -8,7 +8,6 @@ import {
 import './index.css'
 
 // Layouts
-import RootLayout from './Layouts/RootLayout'
 import AccountLayout from './Layouts/AccountLayout'
 import NewsletterLayout from './Layouts/NewsletterLayout'
 import SettingsLayout from './Layouts/SettingsLayout'

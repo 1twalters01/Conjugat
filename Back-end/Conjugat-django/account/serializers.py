@@ -1,16 +1,15 @@
 from rest_framework import serializers
 
 from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
 
-class ReadOnlyModelSerializer(serializers.ModelSerializer):
-    def get_fields(self, *args, **kwargs):
-        fields = super().get_fields(*args, **kwargs)
-        for field in fields:
-            fields[field].read_only = True
-        return fields
-
-class LoginUsernameSerializer(ReadOnlyModelSerializer):
-    confirmed = serializers.BooleanField(allow_null=True)
+class LoginUsernameSerializer(serializers.ModelSerializer):
+    confirmed = serializers.BooleanField()
     class Meta:
         model = User
         fields = ('username', 'id', 'confirmed')
+
+class LoginPasswordSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Token
+        fields = ('key',)
