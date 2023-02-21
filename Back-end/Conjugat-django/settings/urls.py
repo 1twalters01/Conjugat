@@ -11,7 +11,7 @@ urlpatterns = [
     path('change-username/', views.changeUsernameView, name='change_username'),
 
 
-    path('change-password/', views.change_password.as_view(), name='change_password'),
+    
     path('close-account/', views.close_account, name='close_account'),
     path('premium/', views.premium, name='premium'),
     path('reset-account/', views.reset_account, name='reset_account'),

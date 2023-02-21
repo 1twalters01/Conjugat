@@ -110,38 +110,37 @@ def changeEmailView(request):
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def changePasswordView(request):
-    email = request.data.get("email")
     password = request.data.get("password")
+    newPassword1 = request.data.get("newPassword1")
+    newPassword2 = request.data.get("newPassword2")
 
-    if not email:
-        print('No password provided')
-        return Response({'error': 'No email provided'},
-                        status=status.HTTP_400_BAD_REQUEST)
     if not password:
         print('No password provided')
         return Response({'error': 'No password provided'},
                         status=status.HTTP_400_BAD_REQUEST)
+    if not newPassword1:
+        print('No new password provided')
+        return Response({'error': 'No new password provided'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    if not newPassword2:
+        print('No verification password provided')
+        return Response({'error': 'No verification password provided'},
+                        status=status.HTTP_400_BAD_REQUEST)
     
     user = User.objects.get(username=request.user)
-    
     if user.check_password(password) == False:
         print('Incorrect password')
         return Response({'error': 'Incorrect password'},
                         status=status.HTTP_400_BAD_REQUEST)
     
-    try:
-        check = User.objects.get(email=email)
-    except:
-        check = None
-
-    if check:
-        print('Email is already in use')
-        return Response({'error': 'Email is already in use'},
+    if newPassword1 != newPassword2:
+        print('Passwords do not match')
+        return Response({'error': 'Passwords do not match'},
                         status=status.HTTP_400_BAD_REQUEST)
-    if check == None:
-        user.email = email
-        user.save()
-    return Response({"success": "Email changed successfully"},
+
+    user.set_password(newPassword1)
+    user.save()
+    return Response({"success": "Password was changed successfully"},
                 status=status.HTTP_200_OK)
 
 @api_view(["POST"])
@@ -238,42 +237,6 @@ class change_password_done(PasswordChangeDoneView):
 def change_email_done(request):
     context = {}
     return render(request, 'settings/change_email_done.html', context)
-
-
-@login_required
-def change_username(request):
-    if request.method == 'POST':
-        form = ChangeUsernameForm(request.POST, initial='test')
-        if form.is_valid():
-            cleaned_data = form.cleaned_data
-            user = User.objects.get(username=request.user)
-            if user.check_password(cleaned_data['password']) == True:
-                try:
-                    check = User.objects.get(username=cleaned_data['username'])
-                except:
-                    check = None
-                if check == None:
-                    user.username = cleaned_data['username']
-                    user.save()
-                    # Check if there is a premium account associated with this
-                    try:
-                        userProfile = UserProfile.objects.get(user=request.user)
-                    except:
-                        userProfile = None
-                    if userProfile:
-                        userProfile.user = cleaned_data['username']
-                        userProfile.save()
-                    return redirect('change_username_done')
-                else:
-                    HttpResponse("Email is already in use")
-            else:
-                form = ChangeUsernameForm()
-                context = {'form':form}
-                return render(request, 'settings/change_username_form.html', context)
-    else:
-        form = ChangeUsernameForm()
-        context = {'form':form}
-        return render(request, 'settings/change_username_form.html', context)
 
 
 @login_required
