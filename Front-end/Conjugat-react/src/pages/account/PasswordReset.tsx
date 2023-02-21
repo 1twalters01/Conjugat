@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { ChangeEvent, FormEvent, useState} from "react"
 import Axios from 'axios'
 import Authorization from '../../Authorization'
 
@@ -21,20 +21,20 @@ function EmailForm() {
     email: ""
   })
 
-  function submit(e) {
+  function submit(e:FormEvent<HTMLFormElement>) {
     e.preventDefault();
     Axios.post(url, {
       email: data.email,
       domain: domain
     })
     .then(res=>{
-      window.location = '/account/password-reset/confirm'
+      window.location.href = '/account/password-reset/confirm'
     })
   }
 
-  function handle(e) {
+  function handle(e:ChangeEvent<HTMLInputElement>) {
     const newdata = { ...data }
-    newdata[e.target.id] = e.target.value
+    newdata[e.target.id as keyof typeof data] = e.target.value
     setData(newdata)
   }
 

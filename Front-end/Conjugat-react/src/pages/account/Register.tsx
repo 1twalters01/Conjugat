@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { ChangeEvent, FormEvent, useState } from "react"
 import Axios from 'axios'
 import Authorization from '../../Authorization'
 
@@ -24,7 +24,7 @@ function RegisterForm() {
     domain: domain
   })
 
-  function submit(e) {
+  function submit(e:FormEvent<HTMLFormElement>) {
     e.preventDefault();
     Axios.post(url, {
       username: data.username,
@@ -34,13 +34,13 @@ function RegisterForm() {
       domain: data.domain
     })
     .then(res=>{
-      window.location = '/account/register/confirm'
+      window.location.href = '/account/register/confirm'
     })
   }
 
-  function handle(e) {
+  function handle(e:ChangeEvent<HTMLInputElement>) {
     const newdata = { ...data }
-    newdata[e.target.id] = e.target.value
+    newdata[e.target.id as keyof typeof data] = e.target.value
     setData(newdata)
   }
 

@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { ChangeEvent, FormEvent, useState } from "react"
 import { useParams } from 'react-router-dom'
 import Axios from 'axios'
 import Authorization from '../../Authorization'
@@ -24,7 +24,7 @@ function PasswordChange() {
     password2: ""
   })
 
-  function submit(e) {
+  function submit(e:FormEvent<HTMLFormElement>) {
     e.preventDefault();
     Axios.post(url, {
       uidb64: uidb64,
@@ -33,13 +33,13 @@ function PasswordChange() {
       password2: data.password2,
     })
     .then(res=>{
-      window.location = '/account/password-reset/done'
+      window.location.href = '/account/password-reset/done'
     })
   }
 
-  function handle(e) {
+  function handle(e:ChangeEvent<HTMLInputElement>) {
     const newdata = { ...data }
-    newdata[e.target.id] = e.target.value
+    newdata[e.target.id as keyof typeof data] = e.target.value
     setData(newdata)
   }
 

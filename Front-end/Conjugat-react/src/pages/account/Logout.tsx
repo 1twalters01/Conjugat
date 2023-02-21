@@ -1,3 +1,4 @@
+import { FormEvent} from "react"
 import Axios from 'axios'
 import Authorization from '../../Authorization'
 
@@ -13,7 +14,7 @@ function Logout() {
 }
 
 function LogoutBtn() {
-  function submit(e) {
+  function submit(e:FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const url = "http://conjugat.io:8000/account/logout/"
     const token = localStorage.getItem("token")

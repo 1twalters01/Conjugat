@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { ChangeEvent, FormEvent, useState} from "react"
 import Axios from 'axios'
 import Authorization from '../../Authorization'
 
@@ -24,7 +24,7 @@ function UsernameForm() {
     username: ""
   })
 
-  function submit(e) {
+  function submit(e:FormEvent<HTMLFormElement>) {
     e.preventDefault();
     Axios.post(url, {
       username: data.username
@@ -37,9 +37,9 @@ function UsernameForm() {
     })
   }
 
-  function handle(e) {
+  function handle(e:ChangeEvent<HTMLInputElement>) {
     const newdata = { ...data }
-    newdata[e.target.id] = e.target.value
+    newdata[e.target.id as keyof typeof data] = e.target.value
     setData(newdata)
   }
 
@@ -59,10 +59,10 @@ function PasswordForm() {
   const [data, setData] = useState({
     password: "",
     totp: "",
-    rememberMe:false
+    // rememberMe: ""
   })
 
-  function submit(e) {
+  function submit(e:FormEvent<HTMLFormElement>) {
     e.preventDefault();
     Axios.post(url, {
       username: localStorage.getItem("username"),
@@ -70,7 +70,7 @@ function PasswordForm() {
       password: data.password,
       totp: data.totp,
       confirmed: localStorage.getItem("confirmed"),
-      rememberMe: data.rememberMe
+      // rememberMe: data.rememberMe
     })
     .then(res=>{
       localStorage.setItem("token", res.data.token);
@@ -81,9 +81,9 @@ function PasswordForm() {
     })
   }
 
-  function handle(e) {
+  function handle(e:ChangeEvent<HTMLInputElement>) {
     const newdata = { ...data }
-    newdata[e.target.id] = e.target.value
+    newdata[e.target.id as keyof typeof data] = e.target.value
     setData(newdata)
   }
 
@@ -102,9 +102,9 @@ function PasswordForm() {
               <input id="totp" type="text" name="totp" value={data.totp} onChange={(e) => handle(e)} />
             </div>
           }
-          <label htmlFor="rememberMe">remember me</label>
-          <input type="checkbox" name="rememberMe" id="rememberMe" checked={data.rememberMe} onChange={(e) => handle(e)} />
-          <button>Submit</button>
+          {/* <label htmlFor="rememberMe">remember me</label>
+          <input type="checkbox" name="rememberMe" id="rememberMe" onChange={(e) => handle(e)} />
+          <button>Submit</button> */}
       </form>
     </div>
   )
@@ -115,7 +115,7 @@ function ResetUsername() {
   const id = localStorage.getItem("id")
   const confirmed = localStorage.getItem("confirmed")
 
-  function submit(e) {
+  function submit(e:FormEvent<HTMLFormElement>) {
     e.preventDefault();
     localStorage.removeItem('username');
     localStorage.removeItem('id');
