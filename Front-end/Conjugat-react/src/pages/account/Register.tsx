@@ -33,10 +33,9 @@ function RegisterForm() {
       password2: data.password2,
       domain: data.domain
     })
-    .then(res=>{
-      console.log(res)
+    .then(
       window.location = '/account/register/confirm'
-    })
+    )
   }
 
   function handle(e) {
@@ -56,19 +55,16 @@ function RegisterForm() {
         <div>
           <label htmlFor="email">Email</label>
           <input id="email" type="text" name="email" value={data.email} onChange={(e) => handle(e)} />
-
         </div>
         
         <div>
           <label htmlFor="password">password</label>
           <input id="password" type="password" name="password" value={data.password} onChange={(e) => handle(e)} />
-
         </div>
         
         <div>
           <label htmlFor="password2">Repeat your password</label>
           <input id="password2" type="password" name="password2" value={data.password2} onChange={(e) => handle(e)} />
-
         </div>
 
         <input type="submit" value="Submit" />

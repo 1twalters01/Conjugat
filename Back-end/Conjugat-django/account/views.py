@@ -314,6 +314,8 @@ def activateView(request):
 @permission_classes([AllowAny])
 def passwordResetView(request):
     email = request.data.get("email")
+    domain = request.data.get("domain")
+    print(email, domain)
     if not email:
         return Response({'error': 'No email provided'},
                         status=status.HTTP_400_BAD_REQUEST)
@@ -326,10 +328,9 @@ def passwordResetView(request):
                         status=status.HTTP_400_BAD_REQUEST)
     try:
         subject = 'Conjugat password reset'
-        current_site = get_current_site(request)
         message = render_to_string('registration/password_reset_email.html', {
             'user': user,
-            'domain': current_site.domain,
+            'domain': domain,
             'uid':urlsafe_base64_encode(force_bytes(user.pk)),
             'token':password_reset_token.make_token(user),
         })
@@ -347,9 +348,12 @@ def passwordResetView(request):
 
 @api_view(["POST"])
 @permission_classes([AllowAny])
-def passwordResetConfirmView(request, uidb64, token):
+def passwordResetConfirmView(request):
+    uidb64 = request.data.get("uidb64")
+    token = request.data.get("token")
     password = request.data.get("password")
     password2 = request.data.get("password2")
+    print(uidb64, token)
 
     if uidb64 is None or token is None:
         return Response({'error': 'Invalid url type'},
@@ -364,6 +368,7 @@ def passwordResetConfirmView(request, uidb64, token):
         return Response({'error': 'user does not exist'},
                         status=status.HTTP_400_BAD_REQUEST)
     if password_reset_token.check_token(user, token) != True:
+        print('invalid token')
         return Response({'error': 'invalid token'},
                         status=status.HTTP_400_BAD_REQUEST)
     if password != password2:

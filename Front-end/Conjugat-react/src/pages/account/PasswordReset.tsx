@@ -1,9 +1,7 @@
 import {useState} from "react"
 import Axios from 'axios'
-import { Route, useNavigate } from "react-router-dom"
 import Authorization from '../../Authorization'
 
-var sent = false
 
 function PasswordReset() {
   Authorization.NotAuthRequired()
@@ -11,17 +9,14 @@ function PasswordReset() {
     <div>
       <h1>Password Reset</h1>
       
-      {sent == false ?
-        <EmailForm />
-      :
-        null
-      }
+      <EmailForm />
     </div>
   )
 }
 
 function EmailForm() {
   const url = "http://conjugat.io:8000/account/password-reset/"
+  const domain = window.location.origin + "/account/"
   const [data, setData] = useState({
     email: ""
   })
@@ -29,11 +24,12 @@ function EmailForm() {
   function submit(e) {
     e.preventDefault();
     Axios.post(url, {
-      email: data.email
+      email: data.email,
+      domain: domain
     })
-    .then(res=>{
-      
-    })
+    .then(
+      window.location = '/account/password-reset/confirm'
+    )
   }
 
   function handle(e) {
