@@ -15,11 +15,13 @@ function Register() {
 
 function RegisterForm() {
   const url = "http://conjugat.io:8000/account/register/"
+  const domain = window.location.origin + "/account/"
   const [data, setData] = useState({
     username:"",
     email: "",
     password: "",
-    password2: ""
+    password2: "",
+    domain: domain
   })
 
   function submit(e) {
@@ -28,7 +30,8 @@ function RegisterForm() {
       username: data.username,
       email: data.email,
       password: data.password,
-      password2: data.password2
+      password2: data.password2,
+      domain: data.domain
     })
     .then(res=>{
       console.log(res)

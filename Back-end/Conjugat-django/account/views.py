@@ -233,6 +233,7 @@ def registerView(request):
     email = request.data.get("email")
     password = request.data.get("password")
     password2 = request.data.get("password2")
+    domain = request.data.get("domain")
     
     if username is None or email is None or password is None or password2 is None:
         print('Please fill in all form fields')
@@ -260,10 +261,9 @@ def registerView(request):
 
     try:
         subject = 'Conjugat activation email'
-        current_site = get_current_site(request)
         message = render_to_string('registration/activate_email.html', {
             'user': user,
-            'domain': current_site.domain,
+            'domain': domain,
             'uid':urlsafe_base64_encode(force_bytes(user.pk)),
             'token':account_activation_token.make_token(user),
         })
@@ -274,15 +274,18 @@ def registerView(request):
         print('Unable to send to email address')
         return Response({'error': 'Unable to send to email address'},
                         status=status.HTTP_400_BAD_REQUEST)
-
+    
     return Response({"success": "Successfully created user. Activate with link in email."},
                 status=status.HTTP_200_OK)
 
 
 @api_view(["POST"])
 @permission_classes([AllowAny])
-def activateView(request, uidb64, token):
-
+def activateView(request):
+    uidb64 = request.data.get("uidb64")
+    token = request.data.get("token")
+    print(uidb64, token)
+    print(get_current_site(request).domain)
     if uidb64 is None or token is None:
         return Response({'error': 'Invalid url type'},
                         status=status.HTTP_400_BAD_REQUEST)

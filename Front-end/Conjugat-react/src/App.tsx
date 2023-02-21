@@ -31,7 +31,6 @@ import PasswordResetDone from './pages/account/PasswordResetDone'
 import Register from './pages/account/Register'
 import RegisterConfirm from './pages/account/RegisterConfirm'
 import Activate from './pages/account/Activate'
-import ActivateDone from './pages/account/ActivateDone'
 
 import Subscribe from './pages/newsletter/Subscribe'
 import Unsubscribe from './pages/newsletter/Unsubscribe'
@@ -72,7 +71,6 @@ const router = createBrowserRouter(
         <Route path="register" element={<Register />} />
         <Route path="register/confirm" element={<RegisterConfirm />} />
         <Route path="activate/:uidb64/:token" element={<Activate />} />
-        <Route path="activate/done" element={<ActivateDone />} />
       </Route>
 
 
