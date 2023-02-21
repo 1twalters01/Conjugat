@@ -145,8 +145,6 @@ def loginPasswordView(request):
     totp = request.data.get("totp")
     confirmed = request.data.get("confirmed")
     remember_me = request.data.get("remember_me")
-    print(remember_me)
-    print(username, uid, password, totp,confirmed)
     if not uid:
         return Response({'error': 'No username provided'},
                         status=status.HTTP_400_BAD_REQUEST)

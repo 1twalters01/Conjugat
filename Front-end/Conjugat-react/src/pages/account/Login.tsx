@@ -103,8 +103,8 @@ function PasswordForm() {
             </div>
           }
           {/* <label htmlFor="rememberMe">remember me</label>
-          <input type="checkbox" name="rememberMe" id="rememberMe" onChange={(e) => handle(e)} />
-          <button>Submit</button> */}
+          <input type="checkbox" name="rememberMe" id="rememberMe" onChange={(e) => handle(e)} /> */}
+          <button>Submit</button>
       </form>
     </div>
   )

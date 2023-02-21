@@ -15,6 +15,60 @@ from subscription.paypal import suspend_sub, activate_sub
 import stripe
 from verbs.models import Progress
 
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework import status
+from rest_framework.decorators import api_view, permission_classes
+
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def getRoutes(request):
+    routes = [
+        {
+            'Endpoint': '/login/',
+            'method': 'POST',
+            'body': {'body': ""},
+            'description': 'Check if the user has totp activated'
+        },
+        {
+            'Endpoint': '/login/password/',
+            'method': 'POST',
+            'body': {'body': ""},
+            'description': 'Authenticates the user'
+        },
+        {
+            'Endpoint': '/logout/',
+            'method': 'POST',
+            'body': {'body': ""},
+            'description': 'Logs out the user'
+        },
+        {
+            'Endpoint': '/register/',
+            'method': 'POST',
+            'body': {'body': ""},
+            'description': 'Registers a new, unactivated user'
+        },
+        {
+            'Endpoint': '/activate/<uidb64>/<token>/',
+            'method': 'POST',
+            'body': {'body': ""},
+            'description': 'Activate a newly registered user'
+        },
+        {
+            'Endpoint': '/password-reset/',
+            'method': 'POST',
+            'body': {'body': ""},
+            'description': 'Send a password reset email'
+        },
+        {
+            'Endpoint': '/password-reset/<uidb64>/<token>/',
+            'method': 'POST',
+            'body': {'body': ""},
+            'description': 'Reset a password for a user'
+        },
+    ]
+    return Response(routes)
+
 
 def payment_method(method):
     if method == 'Stripe':
@@ -67,6 +121,42 @@ class change_password(PasswordChangeView):
 class change_password_done(PasswordChangeDoneView):
     title = "settings/change_password_done.html"
 
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def changeEmailView(request):
+    email = request.data.get("email")
+    password = request.data.get("password")
+
+    if not email:
+        print('No password provided')
+        return Response({'error': 'No email provided'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    if not password:
+        print('No password provided')
+        return Response({'error': 'No password provided'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    
+    user = User.objects.get(username=request.user)
+    
+    if user.check_password(password) == False:
+        print('Incorrect password')
+        return Response({'error': 'Incorrect password'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    
+    try:
+        check = User.objects.get(email=email)
+    except:
+        check = None
+
+    if check:
+        print('Email is already in use')
+        return Response({'error': 'Email is already in use'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    if check == None:
+        user.email = email
+        user.save()
+    return Response({"success": "Email changed successfully"},
+                status=status.HTTP_200_OK)
 
 @login_required
 def change_email(request):
