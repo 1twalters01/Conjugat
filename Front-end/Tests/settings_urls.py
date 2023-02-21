@@ -8,7 +8,7 @@ urls = {
     # "changePasswordView":"http://conjugat.io:8000/settings/close-account/",
     # "changeUsernameView":"http://conjugat.io:8000/settings/premium/",
     # "changePasswordView":"http://conjugat.io:8000/settings/reset-account/",
-    # "themesView":"http://conjugat.io:8000/settings/themes/",
+    "themesView":"http://conjugat.io:8000/settings/themes/",
     # "changePasswordView":"http://conjugat.io:8000/settings/two-factor-auth/",
 
 

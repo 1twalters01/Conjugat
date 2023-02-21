@@ -223,42 +223,28 @@ def close_account(request):
     return render(request, 'settings/close_account.html', context)
 
 
-class change_password(PasswordChangeView):
-    form_class = ChangePasswordForm
-    success_url = reverse_lazy("change_password_done")
-    template_name = "settings/change_password_form.html"
 
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def themesView(request):
+    choice = request.data.get("choice")
+    if not choice:
+        print('No theme provided')
+        return Response({'error': 'No theme provided'},
+                        status=status.HTTP_400_BAD_REQUEST)
+                        
+    theme = Theme.objects.get_or_create(user=request.user)[0]
 
-class change_password_done(PasswordChangeDoneView):
-    title = "settings/change_password_done.html"
+    if choice != 'Light':
+        if choice != 'Dark':
+            print('Invalid option')
+            return Response({'error': 'Invalid option'},
+                            status=status.HTTP_400_BAD_REQUEST)
+    theme.theme = choice
+    theme.save()
+    return Response({"success": "Theme changed successfully"},
+                status=status.HTTP_200_OK)
 
-
-@login_required
-def change_email_done(request):
-    context = {}
-    return render(request, 'settings/change_email_done.html', context)
-
-
-@login_required
-def change_username_done(request):
-    context = {}
-    return render(request, 'settings/change_username_done.html', context)
-
-
-@login_required
-def themes(request):
-    if request.method == 'POST':
-        form = ThemesForm(request.POST, initial='test')
-        theme = Theme.objects.get(user=request.user)
-        if form.is_valid():
-            selected = form.cleaned_data.get("theme")
-            theme.theme = selected
-            theme.save()
-            return redirect('settings:themes')
-    else:
-        form = ThemesForm()
-        context = {'form': form}
-        return render(request, 'settings/themes.html', context)
 
 
 @login_required
