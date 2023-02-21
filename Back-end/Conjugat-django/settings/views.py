@@ -70,6 +70,118 @@ def getRoutes(request):
     return Response(routes)
 
 
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def changeEmailView(request):
+    email = request.data.get("email")
+    password = request.data.get("password")
+
+    if not email:
+        print('No password provided')
+        return Response({'error': 'No email provided'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    if not password:
+        print('No password provided')
+        return Response({'error': 'No password provided'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    
+    user = User.objects.get(username=request.user)
+    
+    if user.check_password(password) == False:
+        print('Incorrect password')
+        return Response({'error': 'Incorrect password'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    
+    try:
+        check = User.objects.get(email=email)
+    except:
+        check = None
+
+    if check:
+        print('Email is already in use')
+        return Response({'error': 'Email is already in use'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    if check == None:
+        user.email = email
+        user.save()
+    return Response({"success": "Email changed successfully"},
+                status=status.HTTP_200_OK)
+
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def changePasswordView(request):
+    email = request.data.get("email")
+    password = request.data.get("password")
+
+    if not email:
+        print('No password provided')
+        return Response({'error': 'No email provided'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    if not password:
+        print('No password provided')
+        return Response({'error': 'No password provided'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    
+    user = User.objects.get(username=request.user)
+    
+    if user.check_password(password) == False:
+        print('Incorrect password')
+        return Response({'error': 'Incorrect password'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    
+    try:
+        check = User.objects.get(email=email)
+    except:
+        check = None
+
+    if check:
+        print('Email is already in use')
+        return Response({'error': 'Email is already in use'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    if check == None:
+        user.email = email
+        user.save()
+    return Response({"success": "Email changed successfully"},
+                status=status.HTTP_200_OK)
+
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def changeUsernameView(request):
+    username = request.data.get("username")
+    password = request.data.get("password")
+
+    if not username:
+        print('No password provided')
+        return Response({'error': 'No username provided'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    if not password:
+        print('No password provided')
+        return Response({'error': 'No password provided'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    
+    user = User.objects.get(username=request.user)
+    
+    if user.check_password(password) == False:
+        print('Incorrect password')
+        return Response({'error': 'Incorrect password'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    
+    try:
+        check = User.objects.get(username=username)
+    except:
+        check = None
+
+    if check:
+        print('Username is already in use')
+        return Response({'error': 'Username is already in use'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    if check == None:
+        user.username = username
+        user.save()
+    return Response({"success": "Username changed successfully"},
+                status=status.HTTP_200_OK)
+
+
 def payment_method(method):
     if method == 'Stripe':
         return 1
@@ -120,70 +232,6 @@ class change_password(PasswordChangeView):
 
 class change_password_done(PasswordChangeDoneView):
     title = "settings/change_password_done.html"
-
-@api_view(["POST"])
-@permission_classes([IsAuthenticated])
-def changeEmailView(request):
-    email = request.data.get("email")
-    password = request.data.get("password")
-
-    if not email:
-        print('No password provided')
-        return Response({'error': 'No email provided'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    if not password:
-        print('No password provided')
-        return Response({'error': 'No password provided'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    
-    user = User.objects.get(username=request.user)
-    
-    if user.check_password(password) == False:
-        print('Incorrect password')
-        return Response({'error': 'Incorrect password'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    
-    try:
-        check = User.objects.get(email=email)
-    except:
-        check = None
-
-    if check:
-        print('Email is already in use')
-        return Response({'error': 'Email is already in use'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    if check == None:
-        user.email = email
-        user.save()
-    return Response({"success": "Email changed successfully"},
-                status=status.HTTP_200_OK)
-
-@login_required
-def change_email(request):
-    if request.method == 'POST':
-        form = ChangeEmailForm(request.POST, initial='test')
-        if form.is_valid():
-            cleaned_data = form.cleaned_data
-            user = User.objects.get(username=request.user)
-            if user.check_password(cleaned_data['password']) == True:
-                try:
-                    check = User.objects.get(email=cleaned_data['email'])
-                except:
-                    check = None
-                if check == None:
-                    user.email = cleaned_data['email']
-                    user.save()
-                    return redirect('settings:change_email_done')
-                else:
-                    HttpResponse("Email is already in use")
-            else:
-                form = ChangeEmailForm()
-                context = {'form':form}
-                return render(request, 'settings/change_email_form.html', context)
-    else:
-        form = ChangeEmailForm()
-        context = {'form':form}
-        return render(request, 'settings/change_email_form.html', context)
 
 
 @login_required
