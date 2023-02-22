@@ -295,6 +295,55 @@ def premium(request):
     return render(request, 'settings/premium.html', context)
 
 
+def doesTwoFactorExist(request):
+    try:
+        TwoFactor = TwoFactorAuth.objects.get(user=request.user)
+        confirmed = TwoFactor.confirmed
+    except:
+        TwoFactor = None
+        confirmed = None
+    return TwoFactor, confirmed
+
+@api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
+def twoFactorAuthView(request):
+    TwoFactor, confirmed = doesTwoFactorExist(request)
+    length_of_OTP = 6
+    step_in_seconds = 30
+
+    if request.method == "GET":
+        if not TwoFactor or TwoFactor.confirmed == False:
+            key = create_key_of_length(20)
+            if not TwoFactor:
+                TwoFactor = TwoFactorAuth.objects.create(user=request.user)
+            TwoFactor.key = encrypt(key.decode('ascii'))
+            TwoFactor.save()
+            email = User.objects.get(username=request.user).email
+            qr_string = generate_QR_string_and_code(key, email, length_of_OTP, step_in_seconds)
+            context = {'qr_string':qr_string, 'confirmed':confirmed}
+
+        else:
+            key = decrypt(TwoFactor.key).encode('ascii')
+
+            email = User.objects.get(username=request.user).email
+            qr_string = generate_QR_string_and_code(key, email, length_of_OTP, step_in_seconds)
+            context = {'qr_string':qr_string, 'confirmed':confirmed}
+        return render(request,'settings/qrcode.html', context)
+
+
+    elif request.method == "POST":
+        password = request.data.get("password")
+        totp = request.data.get("choice")
+        if not password:
+            print('No password provided')
+            return Response({'error': 'No theme provided'},
+                            status=status.HTTP_400_BAD_REQUEST)
+        if not totp:
+            print('No password provided')
+            return Response({'error': 'No theme provided'},
+                            status=status.HTTP_400_BAD_REQUEST)
+
+
 
 @login_required
 def two_factor_auth(request):
