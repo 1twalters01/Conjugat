@@ -342,6 +342,32 @@ def twoFactorAuthView(request):
             print('No password provided')
             return Response({'error': 'No theme provided'},
                             status=status.HTTP_400_BAD_REQUEST)
+        
+        
+        if not TwoFactor or TwoFactor.confirmed == False:
+            key = decrypt(TwoFactor.key).encode('ascii')
+            totpGenerated = generate_totp(key, length_of_OTP, step_in_seconds)
+            
+            user = User.objects.get(username=request.user)
+            if user.check_password(password) and int(totp) == int(totpGenerated):
+                TwoFactor.confirmed = True
+                TwoFactor.save()
+                return redirect('settings:two_factor_auth')
+            else:
+                return redirect('settings:two_factor_auth')
+                    
+        elif TwoFactor.confirmed == True:
+            key = decrypt(TwoFactor.key).encode('ascii')
+            totpGenerated = generate_totp(key, length_of_OTP, step_in_seconds)
+
+            user = User.objects.get(username=request.user)
+            if user.check_password(password) and int(totp) == int(totpGenerated):
+                TwoFactor.confirmed = False
+                TwoFactor.save()
+                return redirect('settings:two_factor_auth')
+            else:
+                return redirect('settings:two_factor_auth')
+
 
 
 
