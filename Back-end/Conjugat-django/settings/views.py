@@ -11,7 +11,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from subscription.encryption import decrypt, encrypt
 from subscription.models import UserProfile
-from subscription.paypal import show_sub_details, suspend_sub, activate_sub
+from subscription.paypal import show_sub_details, suspend_sub, activate_sub, cancel_sub
 import stripe
 from verbs.models import Progress
 
@@ -28,61 +28,61 @@ def getRoutes(request):
             'Endpoint': '/change-email/',
             'method': 'POST',
             'body': {'body': ""},
-            'description': 'Check if the user has totp activated'
+            'description': "Change the user's email"
         },
         {
             'Endpoint': '/change-password/',
             'method': 'POST',
             'body': {'body': ""},
-            'description': 'Authenticates the user'
+            'description': "Change the user's password"
         },
         {
             'Endpoint': '/change-username/',
             'method': 'POST',
             'body': {'body': ""},
-            'description': 'Logs out the user'
+            'description': "Change the user's username"
         },
         {
             'Endpoint': '/premium/',
             'method': 'POST',
             'body': {'body': ""},
-            'description': 'Registers a new, unactivated user'
+            'description': "Check the user's payment status"
         },
         {
             'Endpoint': '/reset-account/',
             'method': 'POST',
             'body': {'body': ""},
-            'description': 'Activate a newly registered user'
+            'description': "Reset a user's account"
         },
         {
             'Endpoint': '/themes/',
             'method': 'POST',
             'body': {'body': ""},
-            'description': 'Send a password reset email'
+            'description': "Change the theme"
         },
         {
             'Endpoint': '/two-factor-auth/',
             'method': 'POST',
             'body': {'body': ""},
-            'description': 'Reset a password for a user'
+            'description': "Add or remove 2FA"
         },
         {
             'Endpoint': '/close-account/',
             'method': 'POST',
             'body': {'body': ""},
-            'description': 'Activate a newly registered user'
+            'description': "Close an account"
         },
         {
             'Endpoint': '/premium/',
             'method': 'POST',
             'body': {'body': ""},
-            'description': 'Send a password reset email'
+            'description': "Check the user's premium status"
         },
         {
             'Endpoint': '/reset-account/',
             'method': 'POST',
             'body': {'body': ""},
-            'description': 'Reset a password for a user'
+            'description': "Reset a user's account"
         },
     ]
     return Response(routes)
@@ -207,38 +207,43 @@ def payment_method(method):
     elif method == 'Coinbase':
         return 3
 
-from subscription.paypal import cancel_sub
-@login_required
-def close_account(request):
-    if request.method == 'POST':
-        form = CloseAccountForm(request.POST, initial='test')
-        if form.is_valid():
-            cleaned_data = form.cleaned_data
-            user = User.objects.get(username=request.user)
-            if user.check_password(cleaned_data['password']) == True:
-                # See if user has premium account and if so delete it
-                try:
-                    premium = UserProfile.objects.get(user=request.user)
-                except:
-                    premium = None
-                if premium:
-                    if premium.method_id == payment_method('Stripe'):
-                        # stop subscription
-                        if premium.subscription_id:
-                            customer = decrypt(premium.customer_id)
-                            subscription = decrypt(premium.subscription_id)
-                            stripe.api_key = settings.STRIPE_SECRET_KEY
-                            print(customer)
-                            stripe.Customer.delete(customer)
-                    if premium.method_id == payment_method('Paypal'):
-                        cancel_sub(decrypt(premium.subscription_id))
-                    premium.delete()
-                # Delete the user
-                # user.delete()
-                return redirect('landing')
-    form = CloseAccountForm()
-    context = {'form':form}
-    return render(request, 'settings/close_account.html', context)
+
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def closeAccountView(request):
+    password = request.data.get('password')
+    
+    if not password:
+        print('No password provided')
+        return Response({'error': 'No password provided'},
+                        status=status.HTTP_400_BAD_REQUEST)
+
+    user = User.objects.get(username=request.user)
+    if user.check_password(password) == False:
+        print('Incorrect password')
+        return Response({'error': 'Incorrect password'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    
+    try:
+        premium = UserProfile.objects.get(user=request.user)
+    except:
+        premium = None
+
+    if premium:
+        if premium.method_id == payment_method('Stripe'):
+            # stop subscription
+            if premium.subscription_id:
+                subscription = decrypt(premium.subscription_id)
+                stripe.api_key = settings.STRIPE_SECRET_KEY
+                stripe.Subscription.delete(subscription)
+        if premium.method_id == payment_method('Paypal'):
+            cancel_sub(decrypt(premium.subscription_id))
+        premium.delete()
+    # Delete the user
+    user.delete()
+    success = 'Account deleted successfully'
+    return Response({'success':success},
+        status=status.HTTP_200_OK)
 
 
 
@@ -352,58 +357,12 @@ def premiumView(request):
             print(error)
             return Response({'error':error},
                 status=status.HTTP_400_BAD_REQUEST)
+        
         else:
             error = 'invalid payment method'
             print(error)
             return Response({'error':error},
                 status=status.HTTP_400_BAD_REQUEST)
-
-@login_required
-def premium(request):
-    try:
-        user = UserProfile.objects.get(user=request.user)
-    except:
-        user = None
-    if user:
-        if user.subscribed == True:
-            if user.method_id == payment_method('Stripe'):
-                premium = user.subscribed
-                context = {'premium': user.subscribed, 'method': 'Stripe'}
-                if request.method == 'POST':
-                    # This is the URL to which the customer will be redirected after they are
-                    # done managing their billing with the portal.
-                    return_url = request.build_absolute_uri(reverse('settings:premium'))
-
-                    portalSession = stripe.billing_portal.Session.create(
-                        customer = decrypt(user.customer_id),
-                        return_url=return_url,
-                    )
-                    return redirect(portalSession.url, code=303)
-                else:
-                    return render(request, 'settings/premium.html', context)
-            elif user.method_id == payment_method('Paypal'):
-                premium = user.subscribed
-                context = {'premium': user.subscribed, 'method': 'Paypal'}
-                if request.method == 'POST':
-                    sub_id = decrypt(user.subscription_id)
-                    if request.POST.get('Stop'):
-                        suspend_sub(sub_id)
-                        return redirect('settings:premium')
-
-                    elif request.POST.get('Re-start'):
-                        activate_sub(sub_id)
-                        return redirect('settings:premium')
-                else:
-                    return render(request, 'settings/premium.html', context)
-            elif user.method_if == payment_method('Coinbase'):
-                charge_id = decrypt(user.subscription_id)
-                client = Client(api_key=settings.COINBASE_COMMERCE_API_KEY)
-                charge = client.charge.retrieve(charge_id)
-                context = {'premium':user.subscribed, 'method': 'Coinbase', 'charge':charge}
-
-    premium = None
-    context = {'premium': premium}
-    return render(request, 'settings/premium.html', context)
 
 
 
@@ -539,28 +498,3 @@ def resetAccountView(request):
         return Response({"success": "Account was successfully reset"},
                 status=status.HTTP_200_OK)
 
-@login_required
-def reset_account(request):
-    if request.method == 'POST':
-        form = ResetAccountForm(request.POST, initial='test')
-        if form.is_valid():
-            cleaned_data = form.cleaned_data
-            user = User.objects.get(username=request.user)
-            if user.check_password(cleaned_data['password']) == True:
-                print(cleaned_data['language'], type(cleaned_data['language']))
-                if cleaned_data['language'] == 'All':
-                    try:
-                        account = Progress.objects.filter(user=request.user)
-                    except:
-                        account = None
-                else:
-                    try:
-                        account = Progress.objects.get(user=request.user, language=cleaned_data['language'])
-                    except:
-                        account = None
-                if account:
-                    account.delete()
-                return redirect('settings:reset_account')
-    form = ResetAccountForm()
-    context = {'form':form}
-    return render(request, 'settings/reset_account.html', context)
