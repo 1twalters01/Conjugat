@@ -78,16 +78,21 @@ const router = createBrowserRouter(
         <Route path="unsubscribe" element={<Unsubscribe />} />
       </Route>
 
+
       <Route path="settings" element={<SettingsLayout />}>
         <Route path="change-email" element={<Email />} />
         <Route path="change-password" element={<Password />} />
         <Route path="change-username" element={<Username />} />
-        <Route path="close-account" element={<Account />} />
-        <Route path="premium" element={<Premium />} />
+
         <Route path="reset-account" element={<ResetAccount />} />
+        <Route path="close-account" element={<Account />} />
+
+        <Route path="premium" element={<Premium />} />
+
         <Route path="themes" element={<Themes />} />
         <Route path="two-factor-auth" element={<TwoFactorAuth />} />
       </Route>
+
 
       <Route path="subscriptions" element={<SubscriptionsLayout />}>
         <Route path="cancelled" element={<Cancelled />} />

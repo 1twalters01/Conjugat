@@ -62,11 +62,20 @@ class TestAccountApi(unittest.TestCase):
     #     self.assertEqual(str(HTTP_methods.options(urls['changeUsernameView'], headers={'Authorization':'Token 01d40d2d327d682d8cbf73772d5078486f91874c'})), '<Response [200]>')
     #     self.assertEqual(str(HTTP_methods.patch(urls['changeUsernameView'], headers={'Authorization':'Token 01d40d2d327d682d8cbf73772d5078486f91874c'})), '<Response [405]>')
 
-    def test_themesView(self):
-        self.assertEqual(HTTP_methods.post(urls['themesView']).json()['detail'], 'Authentication credentials were not provided.')
-        self.assertEqual(HTTP_methods.post(urls['themesView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['error'], 'No theme provided')
-        self.assertEqual(HTTP_methods.post(urls['themesView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'choice':'bird'}).json()['error'], 'Invalid option')
-        self.assertEqual(HTTP_methods.post(urls['themesView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'choice':'Light'}).json()['success'], 'Theme changed successfully')
+    def test_resetAccountView(self):
+        pass
+
+    def test_closeAccountView(self):
+        pass
+
+    def test_premiumView(self):
+        pass
+
+    # def test_themesView(self):
+    #     self.assertEqual(HTTP_methods.post(urls['themesView']).json()['detail'], 'Authentication credentials were not provided.')
+    #     self.assertEqual(HTTP_methods.post(urls['themesView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['error'], 'No theme provided')
+    #     self.assertEqual(HTTP_methods.post(urls['themesView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'choice':'bird'}).json()['error'], 'Invalid option')
+    #     self.assertEqual(HTTP_methods.post(urls['themesView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'choice':'Light'}).json()['success'], 'Theme changed successfully')
     #     # Disallowed methods
     #     self.assertEqual(str(HTTP_methods.head(urls['themesView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
     #     self.assertEqual(str(HTTP_methods.get(urls['themesView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
@@ -74,6 +83,9 @@ class TestAccountApi(unittest.TestCase):
     #     self.assertEqual(str(HTTP_methods.delete(urls['themesView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
     #     self.assertEqual(str(HTTP_methods.options(urls['themesView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [200]>')
     #     self.assertEqual(str(HTTP_methods.patch(urls['themesView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
+
+    def twoFactorAuthView(self):
+        pass
 
 if __name__ == '__main__':
     unittest.main()

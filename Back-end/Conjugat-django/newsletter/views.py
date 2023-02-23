@@ -8,6 +8,34 @@ from mailchimp_marketing import Client
 from mailchimp_marketing.api_client import ApiClientError
 
 
+from rest_framework import status
+from rest_framework.authtoken.models import Token
+from rest_framework.response import Response
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from django.core.exceptions import ObjectDoesNotExist
+from rest_framework.authtoken.models import Token
+
+
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def getRoutes(request):
+    routes = [
+        {
+            'Endpoint': '/subscribe/',
+            'method': 'POST',
+            'body': {'body': ""},
+            'description': 'Subscribes to the newsletter'
+        },
+        {
+            'Endpoint': '/unsubscribe/',
+            'method': 'POST',
+            'body': {'body': ""},
+            'description': 'Unsubscribes to the newsletter'
+        },
+    ]
+    return Response(routes)
+
 
 ''' Mailchimp ping '''
 mailchimp = Client()
@@ -94,6 +122,8 @@ def subscribe(request):
             form = EmailForm()
             context = {'form':form}
         return render(request, 'newsletter/email.html', context)
+
+
 
 
 ''' Unsubscribe '''
