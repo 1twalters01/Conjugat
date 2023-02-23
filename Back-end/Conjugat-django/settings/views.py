@@ -295,6 +295,8 @@ def premium(request):
     return render(request, 'settings/premium.html', context)
 
 
+
+
 def doesTwoFactorExist(request):
     try:
         TwoFactor = TwoFactorAuth.objects.get(user=request.user)
@@ -320,54 +322,75 @@ def twoFactorAuthView(request):
             TwoFactor.save()
             email = User.objects.get(username=request.user).email
             qr_string = generate_QR_string_and_code(key, email, length_of_OTP, step_in_seconds)
+            # Use serializer
             context = {'qr_string':qr_string, 'confirmed':confirmed}
+            return Response(data=context)
 
         else:
             key = decrypt(TwoFactor.key).encode('ascii')
 
             email = User.objects.get(username=request.user).email
             qr_string = generate_QR_string_and_code(key, email, length_of_OTP, step_in_seconds)
+            # Use serializer
             context = {'qr_string':qr_string, 'confirmed':confirmed}
-        return render(request,'settings/qrcode.html', context)
-
+            return Response(data=context)
 
     elif request.method == "POST":
         password = request.data.get("password")
         totp = request.data.get("choice")
         if not password:
             print('No password provided')
-            return Response({'error': 'No theme provided'},
+            return Response({'error': 'No password provided'},
                             status=status.HTTP_400_BAD_REQUEST)
         if not totp:
-            print('No password provided')
-            return Response({'error': 'No theme provided'},
+            print('No totp provided')
+            return Response({'error': 'No totp provided'},
                             status=status.HTTP_400_BAD_REQUEST)
         
+        if str(totp).isnumeric == False:
+            print('totp must only contain numbers')
+            return Response({'error': 'totp must only contain numbers'},
+                            status=status.HTTP_400_BAD_REQUEST)
         
+        if len(totp) != length_of_OTP:
+            error = 'totp must be' + length_of_OTP + 'characters long'
+            print(error)
+            return Response({'error': error},
+                            status=status.HTTP_400_BAD_REQUEST)
+
+        user = User.objects.get(username=request.user)
+        if user.check_password(password) == False:
+            print('Incorrect password')
+            return Response({'error': 'Incorrect password'},
+                            status=status.HTTP_400_BAD_REQUEST)
+
+        key = decrypt(TwoFactor.key).encode('ascii')
+        totpGenerated = generate_totp(key, length_of_OTP, step_in_seconds)
+        
+        if int(totp) != int(totpGenerated):
+            error = 'Incorrect totp'
+            print(error)
+            return Response({'error':error},
+                status=status.HTTP_400_BAD_REQUEST)
+
         if not TwoFactor or TwoFactor.confirmed == False:
-            key = decrypt(TwoFactor.key).encode('ascii')
-            totpGenerated = generate_totp(key, length_of_OTP, step_in_seconds)
-            
-            user = User.objects.get(username=request.user)
-            if user.check_password(password) and int(totp) == int(totpGenerated):
-                TwoFactor.confirmed = True
-                TwoFactor.save()
-                return redirect('settings:two_factor_auth')
-            else:
-                return redirect('settings:two_factor_auth')
-                    
+            TwoFactor.confirmed = True
+            TwoFactor.save()
+            success = "Two factor authentication has been added"
+            return Response({"success": success},
+                status=status.HTTP_200_OK)
+
         elif TwoFactor.confirmed == True:
-            key = decrypt(TwoFactor.key).encode('ascii')
-            totpGenerated = generate_totp(key, length_of_OTP, step_in_seconds)
+            TwoFactor.confirmed = False
+            TwoFactor.save()
+            success = "Two factor authentication has been removed"
+            return Response({"success": success},
+                status=status.HTTP_200_OK)
 
-            user = User.objects.get(username=request.user)
-            if user.check_password(password) and int(totp) == int(totpGenerated):
-                TwoFactor.confirmed = False
-                TwoFactor.save()
-                return redirect('settings:two_factor_auth')
-            else:
-                return redirect('settings:two_factor_auth')
-
+        else:
+            print('Error in Two factor confirmation')
+            return Response({'error': 'Error in Two factor confirmation'},
+                            status=status.HTTP_400_BAD_REQUEST)
 
 
 
