@@ -150,7 +150,7 @@ def changeUsernameView(request):
     password = request.data.get("password")
 
     if not username:
-        print('No password provided')
+        print('No username provided')
         return Response({'error': 'No username provided'},
                         status=status.HTTP_400_BAD_REQUEST)
     if not password:
@@ -394,65 +394,29 @@ def twoFactorAuthView(request):
 
 
 
-@login_required
-def two_factor_auth(request):
-    try:
-        TwoFactor = TwoFactorAuth.objects.get(user=request.user)
-        confirmed = TwoFactor.confirmed
-    except:
-        TwoFactor = None
-        confirmed = None
-    length_of_OTP = 6
-    step_in_seconds = 30
-    
-    if request.method == 'POST':
-        form = TOTPForm(request.POST)
 
-        if not TwoFactor or TwoFactor.confirmed == False:
-            key = decrypt(TwoFactor.key).encode('ascii')
-            totp = generate_totp(key, length_of_OTP, step_in_seconds)
-            if form.is_valid():
-                cleaned_data = form.cleaned_data
-                user = User.objects.get(username=request.user)
-                if user.check_password(cleaned_data['password']) and cleaned_data['totp'] == int(totp):
-                    TwoFactor.confirmed = True
-                    TwoFactor.save()
-                    return redirect('settings:two_factor_auth')
-                else:
-                    return redirect('settings:two_factor_auth')
-                    
-        elif TwoFactor.confirmed == True:
-            key = decrypt(TwoFactor.key).encode('ascii')
-            totp = generate_totp(key, length_of_OTP, step_in_seconds)
-            if form.is_valid():
-                cleaned_data = form.cleaned_data
-                user = User.objects.get(username=request.user)
-                if user.check_password(cleaned_data['password']) and cleaned_data['totp'] == int(totp):
-                    TwoFactor.confirmed = False
-                    TwoFactor.save()
-                    return redirect('settings:two_factor_auth')
-                else:
-                    return redirect('settings:two_factor_auth')
+@api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
+def resetAccountView(request):
+    if request.method == "GET":
+        account = Progress.objects.filter(user=request.user)
+        languages = [account[x].language for x in account]
+        return Response({languages:languages})
+        
+    elif request.method == "POST":
+        languages = request.data.get("languages")
+        password = request.data.get("password")
 
-    else:
-        form = TOTPForm()
-        if not TwoFactor or TwoFactor.confirmed == False:
-            key = create_key_of_length(20)
-            if not TwoFactor:
-                TwoFactor = TwoFactorAuth.objects.create(user=request.user)
-            TwoFactor.key = encrypt(key.decode('ascii'))
-            TwoFactor.save()
-            email = User.objects.get(username=request.user).email
-            qr_string = generate_QR_string_and_code(key, email, length_of_OTP, step_in_seconds)
-            context = {'qr_string':qr_string, 'form':form, 'confirmed':confirmed}
+        if not password:
+            print('No password provided')
+            return Response({'error': 'No password provided'},
+                            status=status.HTTP_400_BAD_REQUEST)
 
-        else:
-            key = decrypt(TwoFactor.key).encode('ascii')
-
-            email = User.objects.get(username=request.user).email
-            qr_string = generate_QR_string_and_code(key, email, length_of_OTP, step_in_seconds)
-            context = {'qr_string':qr_string, 'form':form, 'confirmed':confirmed}
-        return render(request,'settings/qrcode.html', context)
+        user = User.objects.get(username=request.user)
+        if user.check_password(password) == False:
+            print('Incorrect password')
+            return Response({'error': 'Incorrect password'},
+                            status=status.HTTP_400_BAD_REQUEST)
 
 
 @login_required
