@@ -11,7 +11,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse, reverse_lazy
 from subscription.encryption import decrypt, encrypt
 from subscription.models import UserProfile
-from subscription.paypal import suspend_sub, activate_sub
+from subscription.paypal import show_sub_details, suspend_sub, activate_sub
 import stripe
 from verbs.models import Progress
 
@@ -25,43 +25,61 @@ from rest_framework.decorators import api_view, permission_classes
 def getRoutes(request):
     routes = [
         {
-            'Endpoint': '/login/',
+            'Endpoint': '/change-email/',
             'method': 'POST',
             'body': {'body': ""},
             'description': 'Check if the user has totp activated'
         },
         {
-            'Endpoint': '/login/password/',
+            'Endpoint': '/change-password/',
             'method': 'POST',
             'body': {'body': ""},
             'description': 'Authenticates the user'
         },
         {
-            'Endpoint': '/logout/',
+            'Endpoint': '/change-username/',
             'method': 'POST',
             'body': {'body': ""},
             'description': 'Logs out the user'
         },
         {
-            'Endpoint': '/register/',
+            'Endpoint': '/premium/',
             'method': 'POST',
             'body': {'body': ""},
             'description': 'Registers a new, unactivated user'
         },
         {
-            'Endpoint': '/activate/<uidb64>/<token>/',
+            'Endpoint': '/reset-account/',
             'method': 'POST',
             'body': {'body': ""},
             'description': 'Activate a newly registered user'
         },
         {
-            'Endpoint': '/password-reset/',
+            'Endpoint': '/themes/',
             'method': 'POST',
             'body': {'body': ""},
             'description': 'Send a password reset email'
         },
         {
-            'Endpoint': '/password-reset/<uidb64>/<token>/',
+            'Endpoint': '/two-factor-auth/',
+            'method': 'POST',
+            'body': {'body': ""},
+            'description': 'Reset a password for a user'
+        },
+        {
+            'Endpoint': '/close-account/',
+            'method': 'POST',
+            'body': {'body': ""},
+            'description': 'Activate a newly registered user'
+        },
+        {
+            'Endpoint': '/premium/',
+            'method': 'POST',
+            'body': {'body': ""},
+            'description': 'Send a password reset email'
+        },
+        {
+            'Endpoint': '/reset-account/',
             'method': 'POST',
             'body': {'body': ""},
             'description': 'Reset a password for a user'
@@ -251,7 +269,94 @@ def themesView(request):
 @api_view(["GET", "POST"])
 @permission_classes([IsAuthenticated])
 def premiumView(request):
-    TwoFactor, confirmed = doesTwoFactorExist(request)
+    if request.method == 'GET':
+        try:
+            user = UserProfile.objects.get(user=request.user)
+            subscribed = user.subscribed
+            method = user.method_method
+        except:
+            user = None
+            subscribed = None
+            method = None
+        if method == 'Stripe':
+            pass
+        elif method == 'Paypal':
+            sub_id = decrypt(user.subscription_id)
+            status = show_sub_details(sub_id)['status']
+        elif method == 'Coinbase':
+            charge_id = decrypt(user.subscription_id)
+            client = Client(api_key=settings.COINBASE_COMMERCE_API_KEY)
+            charge = client.charge.retrieve(charge_id)
+        else:
+            error = 'invalid payment method'
+            print(error)
+            return Response({'error':error},
+                status=status.HTTP_400_BAD_REQUEST)
+        # Add serializers
+        return Response()
+
+    elif request.method == 'POST':
+        subscribed = request.data.get('premium')
+        method = request.data.get('method')
+        try:
+            user = UserProfile.objects.get(user=request.user)
+        except:
+            user = None
+        if not user:
+            error = 'user is not valid'
+            print(error)
+            return Response({'error':error}, 
+                status=status.HTTP_400_BAD_REQUEST)
+        if user.method_method != method:
+            error ='posted method does not match stored payment method'
+            print(error)
+            return Response({'error':error},
+                status=status.HTTP_400_BAD_REQUEST)
+        if user.subscribed != subscribed:
+            error ='posted subscription status does not match stored status'
+            print(error)
+            return Response({'error':error},
+                status=status.HTTP_400_BAD_REQUEST)
+        
+        if user.method_id == payment_method('Stripe'):
+            return_url = request.data.get['return_url']
+            portalSession = stripe.billing_portal.Session.create(
+                customer = decrypt(user.customer_id),
+                return_url=return_url,
+            )
+            return Response({'url':portalSession.url},
+                status=status.HTTP_303_SEE_OTHER)
+
+        elif user.method_id == payment_method('Paypal'):
+            sub_id = decrypt(user.subscription_id)
+            if request.POST.get('Stop'):
+                suspend_sub(sub_id)
+                success = 'successfully paused subscription'
+                return Response({'success':success},
+                    status=status.HTTP_200_OK)
+
+            elif request.POST.get('Re-start'):
+                activate_sub(sub_id)
+                success = 'successfully re-started subscription'
+                return Response({'success':success},
+                    status=status.HTTP_200_OK)
+            
+            else:
+                error = 'invalid paypal method'
+                print(error)
+                return Response({'error':error},
+                    status=status.HTTP_400_BAD_REQUEST)
+
+        elif user.method_id == payment_method('Coinbase'):
+            error ='Coinbase option has no post request'
+            print(error)
+            return Response({'error':error},
+                status=status.HTTP_400_BAD_REQUEST)
+        else:
+            error = 'invalid payment method'
+            print(error)
+            return Response({'error':error},
+                status=status.HTTP_400_BAD_REQUEST)
 
 @login_required
 def premium(request):
