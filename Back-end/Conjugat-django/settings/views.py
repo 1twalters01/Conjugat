@@ -247,6 +247,12 @@ def themesView(request):
 
 
 
+
+@api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
+def premiumView(request):
+    TwoFactor, confirmed = doesTwoFactorExist(request)
+
 @login_required
 def premium(request):
     try:
@@ -417,7 +423,16 @@ def resetAccountView(request):
             print('Incorrect password')
             return Response({'error': 'Incorrect password'},
                             status=status.HTTP_400_BAD_REQUEST)
+        for language in languages:
+            try:
+                account = Progress.objects.get(user=request.user, language=language)
+            except:
+                account = None
+            if account:
+                    account.delete()
 
+        return Response({"success": "Account was successfully reset"},
+                status=status.HTTP_200_OK)
 
 @login_required
 def reset_account(request):
