@@ -217,16 +217,29 @@ def closeAccountView(request):
         premium = None
 
     if premium:
-        if premium.method_id == payment_method('Stripe'):
-            # stop subscription
-            if premium.subscription_id:
-                subscription = decrypt(premium.subscription_id)
-                stripe.api_key = settings.STRIPE_SECRET_KEY
-                stripe.Subscription.delete(subscription)
-        if premium.method_id == payment_method('Paypal'):
-            cancel_sub(decrypt(premium.subscription_id))
+        if premium.subscribed == True:
+            if premium.method_id == payment_method('Stripe'):
+                # stop subscription
+                if premium.subscription_id:
+                    try:
+                        subscription = decrypt(premium.subscription_id)
+                        stripe.api_key = settings.STRIPE_SECRET_KEY
+                        stripe.Subscription.delete(subscription)
+                    except:
+                        error = 'Invalid stripe subscription id'
+                        print(error)
+                        return Response({'error': error},
+                            status=status.HTTP_400_BAD_REQUEST)
+            if premium.method_id == payment_method('Paypal'):
+                try:
+                    cancel_sub(decrypt(premium.subscription_id))
+                except:
+                    error = 'invalid paypal subscription id'
+                    print(error)
+                    return Response({'error': error},
+                                    status=status.HTTP_400_BAD_REQUEST)
         premium.delete()
-    # Delete the user
+
     user.delete()
     success = 'Account deleted successfully'
     return Response({'success':success},

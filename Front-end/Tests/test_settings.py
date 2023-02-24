@@ -66,7 +66,17 @@ class TestAccountApi(unittest.TestCase):
         pass
 
     def test_closeAccountView(self):
-        pass
+        self.assertEqual(HTTP_methods.post(urls['closeAccountView']).json()['detail'], 'Authentication credentials were not provided.')
+        self.assertEqual(HTTP_methods.post(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['error'], 'No password provided')
+        self.assertEqual(HTTP_methods.post(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'aaa'}).json()['error'], 'Incorrect password')
+        self.assertEqual(HTTP_methods.post(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'adf fdadf fd'}).json()['success'], 'Account deleted successfully')
+    #     # Disallowed methods
+    #     self.assertEqual(str(HTTP_methods.head(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
+    #     self.assertEqual(str(HTTP_methods.get(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
+    #     self.assertEqual(str(HTTP_methods.put(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
+    #     self.assertEqual(str(HTTP_methods.delete(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
+    #     self.assertEqual(str(HTTP_methods.options(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [200]>')
+    #     self.assertEqual(str(HTTP_methods.patch(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
 
     def test_premiumView(self):
         pass

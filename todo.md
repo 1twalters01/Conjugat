@@ -13,7 +13,7 @@ Finish first drafts and test back end APIs (no serializers) for:
         subscribeView
         unsubscribeView
     
-    Subscriptions
+    Subscriptions:
         all
 
 Create functionality in React for:
