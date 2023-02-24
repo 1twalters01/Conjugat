@@ -1,4 +1,8 @@
 # Short term goals
+Create JSON for payment methods
+Create accounts that have stripe, paypal and coinbase added to them
+Run premium view GET tests
+
 Finish back end API first drafts (no testing or serializers) for:
     Newsletter
     Settings
@@ -7,7 +11,6 @@ Finish back end API first drafts (no testing or serializers) for:
 Finish first drafts and test back end APIs (no serializers) for:
     Settings:
         resetAccountView
-        premiumView
     
     Newsletter:
         subscribeView

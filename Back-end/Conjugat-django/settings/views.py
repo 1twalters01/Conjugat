@@ -283,26 +283,46 @@ def premiumView(request):
             user = None
             subscribed = None
             method = None
-        if method == 'Stripe':
+
+        context = {'method':method, 'subscribed':subscribed}
+
+        if method == None:
+            pass
+        elif method == 'Stripe':
             pass
         elif method == 'Paypal':
             sub_id = decrypt(user.subscription_id)
-            status = show_sub_details(sub_id)['status']
+            paypalStatus = show_sub_details(sub_id)['status']
+            context['status'] = paypalStatus
         elif method == 'Coinbase':
             charge_id = decrypt(user.subscription_id)
             client = Client(api_key=settings.COINBASE_COMMERCE_API_KEY)
             charge = client.charge.retrieve(charge_id)
+            context['charge'] = charge
         else:
             error = 'invalid payment method'
             print(error)
             return Response({'error':error},
                 status=status.HTTP_400_BAD_REQUEST)
         # Add serializers
-        return Response()
+        return Response({'context':context},
+                        status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'POST':
         subscribed = request.data.get('premium')
         method = request.data.get('method')
+
+        if not subscribed:
+            error = 'No subscription status provided'
+            print(error)
+            return Response({'error':error},
+                status=status.HTTP_400_BAD_REQUEST)
+        if not method:
+            error = 'No payment method provided'
+            print(error)
+            return Response({'error':error},
+                status=status.HTTP_400_BAD_REQUEST)
+
         try:
             user = UserProfile.objects.get(user=request.user)
         except:
@@ -324,24 +344,43 @@ def premiumView(request):
                 status=status.HTTP_400_BAD_REQUEST)
         
         if user.method_id == payment_method('Stripe'):
-            return_url = request.data.get['return_url']
-            portalSession = stripe.billing_portal.Session.create(
-                customer = decrypt(user.customer_id),
-                return_url=return_url,
-            )
+            try:
+                return_url = request.data.get['return_url']
+                portalSession = stripe.billing_portal.Session.create(
+                    customer = decrypt(user.customer_id),
+                    return_url=return_url,
+                )
+            except:
+                error = 'Invalid customer ID'
+                print(error)
+                return Response({'error':error},
+                                status=status.HTTP_400_BAD_REQUEST)
             return Response({'url':portalSession.url},
                 status=status.HTTP_303_SEE_OTHER)
 
         elif user.method_id == payment_method('Paypal'):
             sub_id = decrypt(user.subscription_id)
-            if request.POST.get('Stop'):
-                suspend_sub(sub_id)
+            if request.data.get('Stop'):
+                try:
+                    suspend_sub(sub_id)
+                except:
+                    error = 'Invalid subscription ID'
+                    print(error)
+                    return Response({'error':error},
+                                    status=status.HTTP_400_BAD_REQUEST)
                 success = 'successfully paused subscription'
                 return Response({'success':success},
                     status=status.HTTP_200_OK)
 
-            elif request.POST.get('Re-start'):
-                activate_sub(sub_id)
+            elif request.data.get('Re-start'):
+                try:
+                    activate_sub(sub_id)
+                except:
+                    error = 'Invalid subscription ID'
+                    print(error)
+                    return Response({'error':error},
+                                    status=status.HTTP_400_BAD_REQUEST)
+                
                 success = 'successfully re-started subscription'
                 return Response({'success':success},
                     status=status.HTTP_200_OK)
