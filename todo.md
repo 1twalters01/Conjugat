@@ -7,10 +7,7 @@ Finish back end API first drafts (no testing or serializers) for:
 Finish first drafts and test back end APIs (no serializers) for:
     Settings:
         resetAccountView
-        closeAccountView
         premiumView
-        
-        twoFactorAuthView
     
     Newsletter:
         subscribeView
