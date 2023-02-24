@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-from . import webhooks
 
 app_name = 'newsletter'
 urlpatterns = [

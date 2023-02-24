@@ -43,28 +43,10 @@ def getRoutes(request):
             'description': "Change the user's username"
         },
         {
-            'Endpoint': '/premium/',
-            'method': 'POST',
-            'body': {'body': ""},
-            'description': "Check the user's payment status"
-        },
-        {
             'Endpoint': '/reset-account/',
-            'method': 'POST',
+            'method': 'GET, POST',
             'body': {'body': ""},
             'description': "Reset a user's account"
-        },
-        {
-            'Endpoint': '/themes/',
-            'method': 'POST',
-            'body': {'body': ""},
-            'description': "Change the theme"
-        },
-        {
-            'Endpoint': '/two-factor-auth/',
-            'method': 'POST',
-            'body': {'body': ""},
-            'description': "Add or remove 2FA"
         },
         {
             'Endpoint': '/close-account/',
@@ -74,15 +56,21 @@ def getRoutes(request):
         },
         {
             'Endpoint': '/premium/',
-            'method': 'POST',
+            'method': 'GET, POST',
             'body': {'body': ""},
-            'description': "Check the user's premium status"
+            'description': "Check the user's payment status"
         },
         {
-            'Endpoint': '/reset-account/',
+            'Endpoint': '/themes/',
             'method': 'POST',
             'body': {'body': ""},
-            'description': "Reset a user's account"
+            'description': "Change the theme"
+        },
+        {
+            'Endpoint': '/two-factor-auth/',
+            'method': 'GET, POST',
+            'body': {'body': ""},
+            'description': "Add or remove 2FA"
         },
     ]
     return Response(routes)
@@ -206,7 +194,6 @@ def payment_method(method):
         return 2
     elif method == 'Coinbase':
         return 3
-
 
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
@@ -393,6 +380,7 @@ def twoFactorAuthView(request):
             email = User.objects.get(username=request.user).email
             qr_string = generate_QR_string_and_code(key, email, length_of_OTP, step_in_seconds)
             # Use serializer
+            print(qr_string)
             context = {'qr_string':qr_string, 'confirmed':confirmed}
             return Response(data=context)
 
@@ -407,7 +395,7 @@ def twoFactorAuthView(request):
 
     elif request.method == "POST":
         password = request.data.get("password")
-        totp = request.data.get("choice")
+        totp = request.data.get("totp")
         if not password:
             print('No password provided')
             return Response({'error': 'No password provided'},
@@ -416,14 +404,14 @@ def twoFactorAuthView(request):
             print('No totp provided')
             return Response({'error': 'No totp provided'},
                             status=status.HTTP_400_BAD_REQUEST)
-        
-        if str(totp).isnumeric == False:
+
+        if totp.isnumeric() == False:
             print('totp must only contain numbers')
             return Response({'error': 'totp must only contain numbers'},
                             status=status.HTTP_400_BAD_REQUEST)
         
         if len(totp) != length_of_OTP:
-            error = 'totp must be' + length_of_OTP + 'characters long'
+            error = 'totp must be ' + str(length_of_OTP) + ' characters long'
             print(error)
             return Response({'error': error},
                             status=status.HTTP_400_BAD_REQUEST)
@@ -443,7 +431,7 @@ def twoFactorAuthView(request):
             return Response({'error':error},
                 status=status.HTTP_400_BAD_REQUEST)
 
-        if not TwoFactor or TwoFactor.confirmed == False:
+        if TwoFactor.confirmed == False:
             TwoFactor.confirmed = True
             TwoFactor.save()
             success = "Two factor authentication has been added"

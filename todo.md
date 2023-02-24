@@ -9,6 +9,7 @@ Finish first drafts and test back end APIs (no serializers) for:
         resetAccountView
         closeAccountView
         premiumView
+        
         twoFactorAuthView
     
     Newsletter:

@@ -84,8 +84,32 @@ class TestAccountApi(unittest.TestCase):
     #     self.assertEqual(str(HTTP_methods.options(urls['themesView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [200]>')
     #     self.assertEqual(str(HTTP_methods.patch(urls['themesView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
 
-    def twoFactorAuthView(self):
-        pass
+    # def test_twoFactorAuthView(self):
+    #     # GET
+    #     self.assertEqual(HTTP_methods.get(urls['twoFactorAuthView']).json()['detail'], 'Authentication credentials were not provided.')
+    #     self.assertEqual(HTTP_methods.get(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['confirmed'], False)
+    #     self.assertEqual(HTTP_methods.get(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['qr_string'], False)
+    #     self.assertEqual(HTTP_methods.get(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['confirmed'], True)
+    #     self.assertEqual(HTTP_methods.get(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['qr_string'], '')
+    #     # POST
+    #     self.assertEqual(HTTP_methods.post(urls['twoFactorAuthView']).json()['detail'], 'Authentication credentials were not provided.')
+    #     self.assertEqual(HTTP_methods.post(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['error'], 'No password provided')
+    #     self.assertEqual(HTTP_methods.post(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'adf fdadf fd'}).json()['error'], 'No totp provided')
+    #     self.assertEqual(HTTP_methods.post(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'adf fdadf fd', 'totp': 'f32223'}).json()['error'], 'totp must only contain numbers')
+    #     self.assertEqual(HTTP_methods.post(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'adf fdadf fd', 'totp': '324 223'}).json()['error'], 'totp must only contain numbers')
+    #     self.assertEqual(HTTP_methods.post(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'adf fdadf fd', 'totp': '32423'}).json()['error'], 'totp must be 6 characters long')
+    #     self.assertEqual(HTTP_methods.post(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'adf fdadf fd', 'totp': '3233423'}).json()['error'], 'totp must be 6 characters long')
+    #     self.assertEqual(HTTP_methods.post(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'wrong password', 'totp': '323423'}).json()['error'], 'Incorrect password')
+    #     self.assertEqual(HTTP_methods.post(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'adf fdadf fd', 'totp': '323423'}).json()['error'], 'Incorrect totp')
+    #     totp = 824979
+    #     self.assertEqual(HTTP_methods.post(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'adf fdadf fd', 'totp': '032772'}).json()['success'], 'Two factor authentication has been added')
+    #     self.assertEqual(HTTP_methods.post(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'adf fdadf fd', 'totp': totp}).json()['success'], 'Two factor authentication has been removed')
+    #     # Disallowed methods
+    #     self.assertEqual(str(HTTP_methods.head(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
+    #     self.assertEqual(str(HTTP_methods.put(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
+    #     self.assertEqual(str(HTTP_methods.delete(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
+    #     self.assertEqual(str(HTTP_methods.options(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [200]>')
+    #     self.assertEqual(str(HTTP_methods.patch(urls['twoFactorAuthView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
 
 if __name__ == '__main__':
     unittest.main()
