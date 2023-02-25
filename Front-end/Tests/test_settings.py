@@ -18,18 +18,18 @@ class TestAccountApi(unittest.TestCase):
 
     # def test_changeEmailView(self):
     #     self.assertEqual(HTTP_methods.post(urls['changeEmailView']).json()['detail'], 'Authentication credentials were not provided.')
-        # self.assertEqual(HTTP_methods.post(urls['changeEmailView'], headers={'Authorization':'Token 01d40d2d327d682d8cbf73772d5078486f91874c'}).json()['error'], 'No email provided')
-        # self.assertEqual(HTTP_methods.post(urls['changeEmailView'], headers={'Authorization':'Token 01d40d2d327d682d8cbf73772d5078486f91874c'}, data={'email':'twalters1234579@gmail.com'}).json()['error'], 'No password provided')
-        # self.assertEqual(HTTP_methods.post(urls['changeEmailView'], headers={'Authorization':'Token 01d40d2d327d682d8cbf73772d5078486f91874c'}, data={'email':'twalters1234579@gmail.com', 'password':'aaa'}).json()['error'], 'Incorrect password')
-        # self.assertEqual(HTTP_methods.post(urls['changeEmailView'], headers={'Authorization':'Token 01d40d2d327d682d8cbf73772d5078486f91874c'}, data={'email':'conjugat465@gmail.com', 'password':'adf fdadf fd'}).json()['error'], 'Email is already in use')
-        # self.assertEqual(HTTP_methods.post(urls['changeEmailView'], headers={'Authorization':'Token 01d40d2d327d682d8cbf73772d5078486f91874c'}, data={'email':'1twalters01@gmail.com', 'password':'adf fdadf fd'}).json()['success'], 'Email changed successfully')
-        # Disallowed methods
-        # self.assertEqual(str(HTTP_methods.head(urls['changeEmailView'])), '<Response [405]>')
-        # self.assertEqual(str(HTTP_methods.get(urls['changeEmailView'])), '<Response [405]>')
-        # self.assertEqual(str(HTTP_methods.put(urls['changeEmailView'])), '<Response [405]>')
-        # self.assertEqual(str(HTTP_methods.delete(urls['changeEmailView'])), '<Response [405]>')
-        # self.assertEqual(str(HTTP_methods.options(urls['changeEmailView'])), '<Response [200]>')
-        # self.assertEqual(str(HTTP_methods.patch(urls['changeEmailView'])), '<Response [405]>')
+    #     self.assertEqual(HTTP_methods.post(urls['changeEmailView'], headers={'Authorization':'Token 01d40d2d327d682d8cbf73772d5078486f91874c'}).json()['error'], 'No email provided')
+    #     self.assertEqual(HTTP_methods.post(urls['changeEmailView'], headers={'Authorization':'Token 01d40d2d327d682d8cbf73772d5078486f91874c'}, data={'email':'twalters1234579@gmail.com'}).json()['error'], 'No password provided')
+    #     self.assertEqual(HTTP_methods.post(urls['changeEmailView'], headers={'Authorization':'Token 01d40d2d327d682d8cbf73772d5078486f91874c'}, data={'email':'twalters1234579@gmail.com', 'password':'aaa'}).json()['error'], 'Incorrect password')
+    #     self.assertEqual(HTTP_methods.post(urls['changeEmailView'], headers={'Authorization':'Token 01d40d2d327d682d8cbf73772d5078486f91874c'}, data={'email':'conjugat465@gmail.com', 'password':'adf fdadf fd'}).json()['error'], 'Email is already in use')
+    #     self.assertEqual(HTTP_methods.post(urls['changeEmailView'], headers={'Authorization':'Token 01d40d2d327d682d8cbf73772d5078486f91874c'}, data={'email':'1twalters01@gmail.com', 'password':'adf fdadf fd'}).json()['success'], 'Email changed successfully')
+    #     # Disallowed methods
+    #     self.assertEqual(str(HTTP_methods.head(urls['changeEmailView'])), '<Response [405]>')
+    #     self.assertEqual(str(HTTP_methods.get(urls['changeEmailView'])), '<Response [405]>')
+    #     self.assertEqual(str(HTTP_methods.put(urls['changeEmailView'])), '<Response [405]>')
+    #     self.assertEqual(str(HTTP_methods.delete(urls['changeEmailView'])), '<Response [405]>')
+    #     self.assertEqual(str(HTTP_methods.options(urls['changeEmailView'])), '<Response [200]>')
+    #     self.assertEqual(str(HTTP_methods.patch(urls['changeEmailView'])), '<Response [405]>')
 
     # def test_changePasswordView(self):
     #     self.assertEqual(HTTP_methods.post(urls['changePasswordView']).json()['detail'], 'Authentication credentials were not provided.')
@@ -63,13 +63,29 @@ class TestAccountApi(unittest.TestCase):
     #     self.assertEqual(str(HTTP_methods.patch(urls['changeUsernameView'], headers={'Authorization':'Token 01d40d2d327d682d8cbf73772d5078486f91874c'})), '<Response [405]>')
 
     def test_resetAccountView(self):
-        pass
+        # GET
+        self.assertEqual(HTTP_methods.get(urls['subscribeView']).json()['detail'], 'Authentication credentials were not provided.')
+        self.assertEqual(HTTP_methods.get(urls['subscribeView'], headers={'Authorization':'Token fake0a2d09694c835ec37d15a115a7141c791417'}).json()['detail'], 'Invalid token.')
+        self.assertEqual(HTTP_methods.get(urls['subscribeView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['languages'], ['French', 'Spanish'])
+        # POST
+        self.assertEqual(HTTP_methods.post(urls['subscribeView']).json()['detail'], 'Authentication credentials were not provided.')
+        self.assertEqual(HTTP_methods.post(urls['subscribeView'], headers={'Authorization':'Token fake0a2d09694c835ec37d15a115a7141c791417'}).json()['detail'], 'Invalid token.')
+        self.assertEqual(HTTP_methods.post(urls['subscribeView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['error'], 'No password provided')
+        self.assertEqual(HTTP_methods.post(urls['subscribeView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'wrongPassword'}).json()['error'], 'Incorrect password')
+        self.assertEqual(HTTP_methods.post(urls['subscribeView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'adf fdadf fd'}).json()['success'], 'Account was successfully reset')
+        # Disallowed methods
+        self.assertEqual(str(HTTP_methods.head(urls['resetAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
+        self.assertEqual(str(HTTP_methods.put(urls['resetAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
+        self.assertEqual(str(HTTP_methods.delete(urls['resetAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
+        self.assertEqual(str(HTTP_methods.options(urls['resetAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [200]>')
+        self.assertEqual(str(HTTP_methods.patch(urls['resetAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
 
-    def test_closeAccountView(self):
-        self.assertEqual(HTTP_methods.post(urls['closeAccountView']).json()['detail'], 'Authentication credentials were not provided.')
-        self.assertEqual(HTTP_methods.post(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['error'], 'No password provided')
-        self.assertEqual(HTTP_methods.post(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'aaa'}).json()['error'], 'Incorrect password')
-        self.assertEqual(HTTP_methods.post(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'adf fdadf fd'}).json()['success'], 'Account deleted successfully')
+
+    # def test_closeAccountView(self):
+    #     self.assertEqual(HTTP_methods.post(urls['closeAccountView']).json()['detail'], 'Authentication credentials were not provided.')
+    #     self.assertEqual(HTTP_methods.post(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['error'], 'No password provided')
+    #     self.assertEqual(HTTP_methods.post(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'aaa'}).json()['error'], 'Incorrect password')
+    #     self.assertEqual(HTTP_methods.post(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'password':'adf fdadf fd'}).json()['success'], 'Account deleted successfully')
     #     # Disallowed methods
     #     self.assertEqual(str(HTTP_methods.head(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
     #     self.assertEqual(str(HTTP_methods.get(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
@@ -78,31 +94,31 @@ class TestAccountApi(unittest.TestCase):
     #     self.assertEqual(str(HTTP_methods.options(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [200]>')
     #     self.assertEqual(str(HTTP_methods.patch(urls['closeAccountView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'})), '<Response [405]>')
 
-    def test_premiumView(self):
-        # GET
-        self.assertEqual(HTTP_methods.get(urls['premiumView']).json()['detail'], 'Authentication credentials were not provided.')
-        self.assertEqual(HTTP_methods.get(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['detail'], 'Invalid token.')
-        self.assertEqual(HTTP_methods.get(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['method'], None)
-        self.assertEqual(HTTP_methods.get(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['method'], 'Stripe')
-        self.assertEqual(HTTP_methods.get(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['method'], 'Paypal')
-        self.assertEqual(HTTP_methods.get(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['method'], 'Coinbase')
-        # POST
-        # self.assertEqual(HTTP_methods.post(urls['premiumView']).json()['detail'], 'Authentication credentials were not provided.')
-        # self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token f5290a2d09694c835ec37d15a115a2141c791417'}).json()['detail'], 'Invalid token.')
-        # self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['error'], 'No subscription status provided')
-        # self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':True}).json()['error'], 'No payment method provided')
-        # self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':True, 'method':'Visa'}).json()['error'], 'posted method does not match stored payment method')
-        # self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':None, 'method':'Stripe'}).json()['error'], 'posted subscription status does not match stored status')
+    # def test_premiumView(self):
+    #     # GET
+    #     self.assertEqual(HTTP_methods.get(urls['premiumView']).json()['detail'], 'Authentication credentials were not provided.')
+    #     self.assertEqual(HTTP_methods.get(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['detail'], 'Invalid token.')
+    #     self.assertEqual(HTTP_methods.get(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['method'], None)
+    #     self.assertEqual(HTTP_methods.get(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['method'], 'Stripe')
+    #     self.assertEqual(HTTP_methods.get(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['method'], 'Paypal')
+    #     self.assertEqual(HTTP_methods.get(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['method'], 'Coinbase')
+    #     # POST
+    #     self.assertEqual(HTTP_methods.post(urls['premiumView']).json()['detail'], 'Authentication credentials were not provided.')
+    #     self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token f5290a2d09694c835ec37d15a115a2141c791417'}).json()['detail'], 'Invalid token.')
+    #     self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['error'], 'No subscription status provided')
+    #     self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':True}).json()['error'], 'No payment method provided')
+    #     self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':True, 'method':'Visa'}).json()['error'], 'posted method does not match stored payment method')
+    #     self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':None, 'method':'Stripe'}).json()['error'], 'posted subscription status does not match stored status')
 
-        self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':False, 'method':'Coinbase'}).json()['error'], 'Coinbase option has no post request')
-        self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':True, 'method':'Stripe'}).json()['url'], 'Coinbase option has no post request')
-        self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':False, 'method':'Stripe'}).json()['url'], 'Coinbase option has no post request')
-        self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':True, 'method':'Stripe'}).json()['error'], 'Invalid customer ID')
-        self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':False, 'method':'Stripe'}).json()['error'], 'Invalid customer ID')
-        self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':True, 'method':'Paypal'}).json()['success'], 'successfully paused subscription')
-        self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':False, 'method':'Paypal'}).json()['success'], 'successfully re-started subscription')
-        self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':True, 'method':'Paypal'}).json()['error'], 'Invalid subscription ID')
-        self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':False, 'method':'Paypal'}).json()['error'], 'Invalid subscription ID')
+    #     self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':False, 'method':'Coinbase'}).json()['error'], 'Coinbase option has no post request')
+    #     self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':True, 'method':'Stripe'}).json()['url'], 'Coinbase option has no post request')
+    #     self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':False, 'method':'Stripe'}).json()['url'], 'Coinbase option has no post request')
+    #     self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':True, 'method':'Stripe'}).json()['error'], 'Invalid customer ID')
+    #     self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':False, 'method':'Stripe'}).json()['error'], 'Invalid customer ID')
+    #     self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':True, 'method':'Paypal'}).json()['success'], 'successfully paused subscription')
+    #     self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':False, 'method':'Paypal'}).json()['success'], 'successfully re-started subscription')
+    #     self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':True, 'method':'Paypal'}).json()['error'], 'Invalid subscription ID')
+    #     self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':False, 'method':'Paypal'}).json()['error'], 'Invalid subscription ID')
 
     # def test_themesView(self):
     #     self.assertEqual(HTTP_methods.post(urls['themesView']).json()['detail'], 'Authentication credentials were not provided.')

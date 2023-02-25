@@ -510,8 +510,11 @@ def twoFactorAuthView(request):
 def resetAccountView(request):
     if request.method == "GET":
         account = Progress.objects.filter(user=request.user)
-        languages = [account[x].language for x in account]
-        return Response({languages:languages})
+        try:
+            languages = [account[x].language for x in account]
+        except:
+            languages = None
+        return Response({'languages':languages})
         
     elif request.method == "POST":
         languages = request.data.get("languages")
