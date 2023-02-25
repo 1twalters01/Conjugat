@@ -91,13 +91,13 @@ def subscribeView(request):
         languages = request.data.get('languages')
 
         if not email:
-            error = 'Email required'
+            error = 'No email provided'
             print(error)
             return Response({'error':error},
                         status=status.HTTP_400_BAD_REQUEST)
 
         if not first_name:
-            error = 'first name required'
+            error = 'No first name provided'
             print(error)
             return Response({'error':error},
                         status=status.HTTP_400_BAD_REQUEST)
@@ -113,10 +113,13 @@ def subscribeView(request):
                 settings.MAILCHIMP_MARKETING_AUDIENCE_ID,
                 member_info,
             )
-            return render(request, 'newsletter/success.html')
 
         except ApiClientError as error:
             return HttpResponse(error.text)
+        
+        success = 'Successfully subscribed to the newsletter'
+        return Response({'success':success, 'unsubscribe':True},
+                        status=status.HTTP_200_OK)
 
 
 
@@ -144,9 +147,10 @@ def unsubscribeView(request):
             email_hash,
             member_update,
         )
-        success = 'Successfully unsubscribed from the newsletter'
-        return Response({'success':success, 'unsubscribe':True},
-                        status=status.HTTP_200_OK)
 
     except ApiClientError as error:
         return HttpResponse(error.text)
+    
+    success = 'Successfully unsubscribed from the newsletter'
+    return Response({'success':success, 'unsubscribe':True},
+                    status=status.HTTP_200_OK)

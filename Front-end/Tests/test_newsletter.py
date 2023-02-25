@@ -19,9 +19,16 @@ class TestAccountApi(unittest.TestCase):
 
     def test_subscribeView(self):
         # GET
-        
+        self.assertEqual(HTTP_methods.get(urls['subscribeView']).json()['detail'], 'Authentication credentials were not provided.')
+        self.assertEqual(HTTP_methods.get(urls['subscribeView'], headers={'Authorization':'Token fake0a2d09694c835ec37d15a115a7141c791417'}).json()['detail'], 'Invalid token.')
+        self.assertEqual(HTTP_methods.get(urls['subscribeView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['email'], '1twalters01@gmail.com')
         # POST
-
+        self.assertEqual(HTTP_methods.post(urls['subscribeView']).json()['detail'], 'Authentication credentials were not provided.')
+        self.assertEqual(HTTP_methods.post(urls['subscribeView'], headers={'Authorization':'Token fake0a2d09694c835ec37d15a115a7141c791417'}).json()['detail'], 'Invalid token.')
+        self.assertEqual(HTTP_methods.post(urls['unsubscribeView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['error'], 'No email provided')
+        self.assertEqual(HTTP_methods.post(urls['unsubscribeView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'email':'1twalters01@gmail.com'}).json()['error'], 'No first name provided')
+        self.assertEqual(HTTP_methods.post(urls['unsubscribeView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'email':'1twalters01@gmail.com', 'first_name':'Tyler'}).json()['error'], 'Email already on list')
+        self.assertEqual(HTTP_methods.post(urls['unsubscribeView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'email':'twalters1234579@gmail.com', 'first_name':'Tyler'}).json()['success'], 'Successfully subscribed to the newsletter')
         # Disallowed methods
         self.assertEqual(str(HTTP_methods.head(urls['subscribeView'])), '<Response [405]>')
         self.assertEqual(str(HTTP_methods.put(urls['subscribeView'])), '<Response [405]>')
