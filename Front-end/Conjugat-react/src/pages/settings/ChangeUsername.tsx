@@ -13,7 +13,7 @@ function ChangeUsername() {
 }
 
 function UsernameForm(){
-  const url = "http://conjugat.io:8000/settings/change-Username/"
+  const url = "http://conjugat.io:8000/settings/change-username/"
   const token = localStorage.getItem("token")
   const headers = {
     'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ function UsernameForm(){
   function submit(e:FormEvent<HTMLFormElement>) {
     e.preventDefault();
     Axios.post(url, {
-      Username: data.username,
+      username: data.username,
       password: data.password,
     },
     {
