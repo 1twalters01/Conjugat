@@ -13,6 +13,14 @@ Finish first drafts and test back end APIs (no serializers) for:
 
 Create functionality in React for:
     Settings
+        Change email
+        Change password
+        Change username
+        Reset account
+        Close account
+        Premium
+        Themes
+        2FA
     Newsletter
     Subscriptions
     
