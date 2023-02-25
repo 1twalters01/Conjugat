@@ -10,9 +10,11 @@ const headers = {
   'Content-Type': 'application/json',
   'Authorization': 'Token '+ token
 }
+var load: boolean
 
 function TwoFactorAuth() {
   Authorization.AuthRequired()
+  load = false
   return (
     <div>
       <h1>TwoFactorAuth</h1>
@@ -23,7 +25,7 @@ function TwoFactorAuth() {
   )
 }
 
-var load = false
+
 
 function Qrcode() {
   const [qrString, setQrString] = useState("")
@@ -35,7 +37,7 @@ function Qrcode() {
         res => setQrString(res.data.qr_string)
       )
       load = true
-    } 
+    }
   })
 
   return(

@@ -22,7 +22,7 @@ function NotAuthRequired() {
     const userToken = localStorage.getItem('token');
     if (userToken) {
         setIsLoggedIn(true);
-        return navigate('/account/logout')   
+        return navigate('/home')   
     }
     setIsLoggedIn(false);
     }

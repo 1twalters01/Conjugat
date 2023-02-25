@@ -13,16 +13,16 @@ Finish first drafts and test back end APIs (no serializers) for:
 
 Create functionality in React for:
     Settings
-        Change email
-        Change password
-        Change username
         Reset account
-        Close account
         Premium
         Themes
-        2FA
+
     Newsletter
+        Subscribe
+        Unsubscribe
+
     Subscriptions
+        all
     
 Add Django-social-auth functionality to the login
 Add remind me functionality to the login
