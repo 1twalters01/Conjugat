@@ -88,7 +88,7 @@ class TestAccountApi(unittest.TestCase):
         self.assertEqual(HTTP_methods.get(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['method'], 'Coinbase')
         # POST
         # self.assertEqual(HTTP_methods.post(urls['premiumView']).json()['detail'], 'Authentication credentials were not provided.')
-        # self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['detail'], 'Invalid token.')
+        # self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token f5290a2d09694c835ec37d15a115a2141c791417'}).json()['detail'], 'Invalid token.')
         # self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}).json()['error'], 'No subscription status provided')
         # self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':True}).json()['error'], 'No payment method provided')
         # self.assertEqual(HTTP_methods.post(urls['premiumView'], headers={'Authorization':'Token 35290a2d09694c835ec37d15a115a7141c791417'}, data={'subscribed':True, 'method':'Visa'}).json()['error'], 'posted method does not match stored payment method')

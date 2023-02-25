@@ -131,7 +131,7 @@ def subscribeView(request):
 def unsubscribeView(request):
     email = request.data.get('email')
     if not email:
-        error = 'Email required'
+        error = 'No email provided'
         print(error)
         return Response({'error':error},
                     status=status.HTTP_400_BAD_REQUEST)
