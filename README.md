@@ -2,7 +2,7 @@
 This is a WIP language learning application meant to showcase my full stack programming - django for the back end, react for the website front end, kotlin for the android front end, and postgresql as the main database. Cassandra and Redis will be used to store time series data due to limitations of postgres.
 
 ## Note
-This project was only just uploaded to github. I can provide the old versions on request. See the no DjangoREST Framework branch for something that visibly - the main branch doesn't have react added yet and I haven't converted all of the views into a form that works with the DjangoREST framework yet.
+This project was only just uploaded to github. I can provide the old versions on request. See the no DjangoREST Framework branch for something that visibly works - the main branch doesn't have react added yet and I haven't converted all of the views into a form that works with the DjangoREST framework yet.
 
 ## Detail
 The application tests the user's conjugation abilities by rendering forms that have a pre-determined verb and tense. The user will have to enter the correct answers for all of the subjects for the verb-tense combination. By serving new words/tenses periodically in a way that will adapt to the user, it will increase their active memory of words in that language.
