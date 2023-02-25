@@ -3,6 +3,7 @@ import Axios from 'axios'
 import Authorization from '../../Authorization'
 
 function ChangePassword() {
+  Authorization.AuthRequired()
   return (
     <div>
       <h1>Change password</h1>

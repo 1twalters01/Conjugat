@@ -432,7 +432,6 @@ def twoFactorAuthView(request):
             email = User.objects.get(username=request.user).email
             qr_string = generate_QR_string_and_code(key, email, length_of_OTP, step_in_seconds)
             # Use serializer
-            print(qr_string)
             context = {'qr_string':qr_string, 'confirmed':confirmed}
             return Response(data=context)
 
