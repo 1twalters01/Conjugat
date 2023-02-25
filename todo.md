@@ -1,10 +1,9 @@
 # Short term goals
 Create JSON for payment methods
 Create accounts that have stripe, paypal and coinbase added to them
-Run premium view GET tests
+Run premium view POST tests
 
 Finish back end API first drafts (no testing or serializers) for:
-    Newsletter
     Settings
     Subscription
 
@@ -25,6 +24,7 @@ Create functionality in React for:
     Subscriptions
     
 Add Django-social-auth functionality to the login
+Add remind me functionality to the login
 
 # Medium term goals
 Refactor code and add serializers

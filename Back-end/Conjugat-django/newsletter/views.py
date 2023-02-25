@@ -50,12 +50,7 @@ def mailchimp_ping_view(request):
     return JsonResponse(response)
 
 
-
 ''' Subscribe'''
-def request_reset(request):
-    request.session['email'] = None
-    return None
-
 def does_email_exist(request):
     email = None
     if request.user.is_authenticated:
@@ -63,88 +58,95 @@ def does_email_exist(request):
             email = User.objects.get(username=request.user).email
         except:
             email = None
-    if not email:
-        email = request.session.get('email', None)
     return email
 
 
-def create_member(cleaned_data, email):
+def create_member(email, languages, first_name, last_name):
     member_info = {
             'email_address': email,
             'status': 'subscribed',
             'merge_fields': {
-                'FNAME': cleaned_data['first_name'],
-                'LNAME': cleaned_data['last_name'],
+                'FNAME': first_name,
             }
         }
-    if cleaned_data['languages']:
-        member_info['tags'] = cleaned_data['languages']
+    if last_name:
+        member_info['merge_fields']['last_name'] = last_name
+    if languages:
+        member_info['tags'] = languages
     return member_info
 
 
-def subscribe(request):
-    email = does_email_exist(request)
-    if email:
-        if request.method == 'POST':
-            if request.POST.get('new-email'):
-                email = request_reset(request)
-                return redirect('newsletter:subscribe')
+@api_view(["GET", "POST"])
+@permission_classes([AllowAny])
+def subscribeView(request):
+    if request.method == 'GET':
+        email = does_email_exist(request)
+        return Response({'email':email},
+                        status=status.HTTP_200_OK)
 
-            try:
-                form = InfoForm(request.POST, initial='test')
-                if form.is_valid() == False:
-                    return HttpResponse('invalid form')
-                cleaned_data = form.cleaned_data
-                member_info = create_member(cleaned_data, email)
-                mailchimp.lists.add_list_member(
-                    settings.MAILCHIMP_MARKETING_AUDIENCE_ID,
-                    member_info,
-                )
-                return render(request, 'newsletter/success.html')
-                
-            except ApiClientError as error:
-                return HttpResponse(error.text)
+    if request.method == 'POST':
+        email = request.data.get('email')
+        first_name = request.data.get('')
+        last_name = request.data.get('')
+        languages = request.data.get('languages')
 
-        else:
-            form = InfoForm()
-            context = {'form':form}
-        return render(request, 'newsletter/info.html', context)
+        if not email:
+            error = 'Email required'
+            print(error)
+            return Response({'error':error},
+                        status=status.HTTP_400_BAD_REQUEST)
 
-    else:
-        if request.method == 'POST':
-            form = EmailForm(request.POST, initial='test')
-            if form.is_valid() == False:
-                    return HttpResponse('invalid form')
-            cleaned_data = form.cleaned_data
-            request.session['email'] = cleaned_data['email']
-            return redirect('newsletter:subscribe')
-        else:
-            form = EmailForm()
-            context = {'form':form}
-        return render(request, 'newsletter/email.html', context)
+        if not first_name:
+            error = 'first name required'
+            print(error)
+            return Response({'error':error},
+                        status=status.HTTP_400_BAD_REQUEST)
+
+        if not last_name:
+            last_name = None
+        if not languages:
+            languages = None
+
+        try:
+            member_info = create_member(email, languages, first_name, last_name)
+            mailchimp.lists.add_list_member(
+                settings.MAILCHIMP_MARKETING_AUDIENCE_ID,
+                member_info,
+            )
+            return render(request, 'newsletter/success.html')
+
+        except ApiClientError as error:
+            return HttpResponse(error.text)
+
+
+
+
 
 
 
 
 ''' Unsubscribe '''
-def unsubscribe(request):
-    if request.method == 'POST':
-        form = EmailForm(request.POST, initial='test')
-        if form.is_valid():
-            try:
-                cleaned_data = form.cleaned_data
-                email_hash = hashlib.md5(cleaned_data['email'].encode('utf-8').lower()).hexdigest()
-                member_update = {'status': 'unsubscribed',}
-                response = mailchimp.lists.update_list_member(
-                    settings.MAILCHIMP_MARKETING_AUDIENCE_ID,
-                    email_hash,
-                    member_update,
-                )
-                context = {'unsubscribe':True}
-                return render(request, 'newsletter/success.html', context)
-            except ApiClientError as error:
-                return HttpResponse(error.text)
-    else:
-        form = EmailForm()
-        context = {'form':form}
-    return render(request, 'newsletter/unsubscribe.html', context)
+@api_view(["POST"])
+@permission_classes([AllowAny])
+def unsubscribeView(request):
+    email = request.data.get('email')
+    if not email:
+        error = 'Email required'
+        print(error)
+        return Response({'error':error},
+                    status=status.HTTP_400_BAD_REQUEST)
+
+    try:
+        email_hash = hashlib.md5(email.encode('utf-8').lower()).hexdigest()
+        member_update = {'status': 'unsubscribed',}
+        response = mailchimp.lists.update_list_member(
+            settings.MAILCHIMP_MARKETING_AUDIENCE_ID,
+            email_hash,
+            member_update,
+        )
+        success = 'Successfully unsubscribed from the newsletter'
+        return Response({'success':success, 'unsubscribe':True},
+                        status=status.HTTP_200_OK)
+
+    except ApiClientError as error:
+        return HttpResponse(error.text)
