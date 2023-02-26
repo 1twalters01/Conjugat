@@ -4,6 +4,10 @@ from . import webhooks
 
 app_name = "subscription"
 urlpatterns = [
+    path('success/', views.successView, name='success'),
+
+
+
     path('options/', views.options, name='options'),
 
     path('stripe-process/', views.stripe_process, name='stripe_process'),

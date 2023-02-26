@@ -10,7 +10,10 @@ import json
 import stripe
 
 
-
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework import status
+from rest_framework.decorators import api_view, permission_classes
 
 
 ''' Setup '''
@@ -20,6 +23,14 @@ def does_subscriber_exist(request):
     except:
         subscriber = None
     return subscriber
+
+def obtain_method(subscriber):
+    if subscriber:
+        method = str(subscriber.method)
+    else:
+        method = None
+    return method
+
 
 def payment_method(method):
     if method == 'Stripe':
@@ -31,6 +42,7 @@ def payment_method(method):
 
 # Redirect urls for if the subscriber has an active subscription
 def url_if_subscribed(subscriber):
+    print(subscriber)
     if str(subscriber.method) == 'Stripe':
         return 'subscription:stripe_success'
     elif str(subscriber.method) == 'Paypal':
@@ -43,11 +55,11 @@ def url_if_subscribed(subscriber):
 def url_if_not_subscribed(subscriber):
     if not subscriber:
         return 'subscription:options'
-    if str(subscriber.method) == payment_method('Stripe'):
+    if str(subscriber.method) == 'Stripe':
         return 'subscription:stripe_process'
-    elif str(subscriber.method) == payment_method('Paypal'):
+    elif str(subscriber.method) == 'Paypal':
         return 'subscription:paypal_process'
-    elif str(subscriber.method) == payment_method('Coinbase'):
+    elif str(subscriber.method) == 'Coinbase':
         return 'subscription:coinbase_process'
 
 def save_subscriber(request, method, subscriber, subscriber_id=None, customer_id=None):
@@ -77,6 +89,47 @@ def options(request):
 
 
 
+
+'''Success'''
+@api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
+def successView(request):
+    subscriber = does_subscriber_exist(request)
+    method = obtain_method(subscriber)
+    
+    if request.method == "GET":
+        if subscriber:
+            subscribed = subscriber.subscribed
+        else:
+            subscribed = False
+
+        context = {'subscribed':subscribed, 'method':method}
+        print(context)
+        return Response(data=context, status=status.HTTP_200_OK)
+
+    if request.method == "POST":
+        return_url = request.data.get('return_url')
+        if method == 'Stripe':
+            stripe_portal = build_stripe_portal(request, subscriber, return_url)
+            return Response({'url':stripe_portal.url},
+                            status=status.HTTP_200_OK)
+
+
+@login_required
+def stripe_success(request):
+    subscriber = does_subscriber_exist(request)
+    if subscriber:
+        if subscriber.subscribed == True:
+            if str(subscriber.method) == 'Stripe':
+                if request.method == 'POST':
+                    stripe_portal = build_stripe_portal(request, subscriber)
+                    print(stripe_portal.url)
+                    return redirect(stripe_portal.url, code=303)
+                else:
+                    return render(request, 'subscription/stripe/success.html')
+            else:
+                return redirect(url_if_subscribed(subscriber))
+    return redirect(url_if_not_subscribed(subscriber))
 
 
 ''' Stripe '''
@@ -112,8 +165,9 @@ def build_stripe_checkout(request, subscriber, customer):
 
 
 
-def build_stripe_portal(request, subscriber):
-    return_url = request.build_absolute_uri(reverse('subscription:stripe_success'))
+def build_stripe_portal(request, subscriber, return_url=None):
+    if not return_url:
+        return_url = request.build_absolute_uri(reverse('subscription:stripe_success'))
     customer = decrypt(subscriber.customer_id)
     portalSession = stripe.billing_portal.Session.create(
                     customer=customer,
@@ -141,20 +195,7 @@ def stripe_process(request):
 
 
 
-@login_required
-def stripe_success(request):
-    subscriber = does_subscriber_exist(request)
-    if subscriber:
-        if subscriber.subscribed == True:
-            if str(subscriber.method) == 'Stripe':
-                if request.method == 'POST':
-                    stripe_portal = build_stripe_portal(request, subscriber)
-                    return redirect(stripe_portal.url, code=303)
-                else:
-                    return render(request, 'subscription/stripe/success.html')
-            else:
-                return redirect(url_if_subscribed(subscriber))
-    return redirect(url_if_not_subscribed(subscriber))
+
 
 
 

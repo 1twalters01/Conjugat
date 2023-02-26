@@ -39,9 +39,11 @@ def get_subscriber_or_none(subscription_id, method):
 def get_customer_or_none(customer_id, method):
     try:
         # Retrieve UserProfile instance with said subscription id
-        customers = UserProfile.objects.filter(method_id=payment_method(method), subscribed=True)
+        customers = UserProfile.objects.filter(method_id=payment_method(method))
         x = None
+        
         for i in range(len(customers)):
+            print(decrypt(customers[i].customer_id), customer_id)
             if decrypt(customers[i].customer_id) == (customer_id):
                 x = i
                 break
@@ -61,12 +63,10 @@ def stripe_webhooks(request):
         print("Webhook error while parsing basic request." + str(e))
         return JsonResponse({"success": True}, status=400)
 
-
     if event and event["type"] == "customer.deleted":
         print("customer.deleted") # log event
         customer_id = event["data"]["object"]["id"]
         req_userprofile = get_customer_or_none(customer_id, 'Stripe')
-        print(req_userprofile)
         if req_userprofile:
             # Remove the subscription id from the database and set to false
             user = req_userprofile.user
@@ -82,6 +82,7 @@ def stripe_webhooks(request):
         customer_id = event["data"]["object"]["customer"]
         subscription_id = event["data"]["object"]["id"]
         req_userprofile = get_customer_or_none(customer_id, 'Stripe')
+        print(req_userprofile, 'hi')
         if req_userprofile:
             # Add the subscription id to the database
 
@@ -113,6 +114,8 @@ def stripe_webhooks(request):
             send_mail(subject, message, settings.EMAIL_HOST_USER, email)
             return JsonResponse({"success": True}, status=200)
         return JsonResponse({"success": False}, status=500)
+    
+    return JsonResponse({"success": True}, status=200)
 
 
 
