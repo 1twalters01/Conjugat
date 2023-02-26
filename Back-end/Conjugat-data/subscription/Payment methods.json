@@ -1,0 +1,23 @@
+[
+{
+  "model": "subscription.PaymentMethod",
+  "pk": 1,
+  "fields": {
+    "method": "Stripe"
+  }
+},
+{
+    "model": "subscription.PaymentMethod",
+    "pk": 2,
+    "fields": {
+      "method": "Paypal"
+    }
+},
+{
+    "model": "subscription.PaymentMethod",
+    "pk": 3,
+    "fields": {
+      "method": "Coinbase"
+    }
+}
+]

@@ -1,5 +1,4 @@
 # Short term goals
-Create JSON for payment methods
 Create accounts that have stripe, paypal and coinbase added to them
 Run premium and reset account view POST tests in tests_settings.py
 Run subscribe and unsubscribe view tests in tests_newsletter.py
@@ -8,6 +7,9 @@ Finish back end API first drafts (no testing or serializers) for:
     Subscription
 
 Finish first drafts and test back end APIs (no serializers) for:
+    Settings:
+        Reset account
+        Premium
     Subscriptions:
         all
 
@@ -15,7 +17,6 @@ Create functionality in React for:
     Settings
         Reset account
         Premium
-        Themes
 
     Newsletter
         Subscribe
