@@ -7,13 +7,11 @@ function Login() {
   return (
     <div>
       <h1>Login</h1>
-      {localStorage.getItem("id") == null ?
+      {sessionStorage.getItem("id") == null ?
         <UsernameForm />
       :
         <div><ResetUsername /><PasswordForm /></div>
       }
-      
-      
     </div>
   )
 }
@@ -30,9 +28,9 @@ function UsernameForm() {
       username: data.username
     })
     .then(res=>{
-      localStorage.setItem("username", res.data.username);
-      localStorage.setItem("id", res.data.id);
-      localStorage.setItem("confirmed", res.data.confirmed);
+      sessionStorage.setItem("username", res.data.username);
+      sessionStorage.setItem("id", res.data.id);
+      sessionStorage.setItem("confirmed", res.data.confirmed);
       window.location.reload();
     })
   }
@@ -65,18 +63,18 @@ function PasswordForm() {
   function submit(e:FormEvent<HTMLFormElement>) {
     e.preventDefault();
     Axios.post(url, {
-      username: localStorage.getItem("username"),
-      id: localStorage.getItem("id"),
+      username: sessionStorage.getItem("username"),
+      id: sessionStorage.getItem("id"),
       password: data.password,
       totp: data.totp,
-      confirmed: localStorage.getItem("confirmed"),
+      confirmed: sessionStorage.getItem("confirmed"),
       // rememberMe: data.rememberMe
     })
     .then(res=>{
       localStorage.setItem("token", res.data.token);
-      localStorage.removeItem('username');
-      localStorage.removeItem('id');
-      localStorage.removeItem('confirmed');
+      sessionStorage.removeItem('username');
+      sessionStorage.removeItem('id');
+      sessionStorage.removeItem('confirmed');
       window.location.reload();
     })
   }
@@ -94,7 +92,7 @@ function PasswordForm() {
             <label htmlFor="password">Password</label>
             <input id="password" type="password" name="password" value={data.password} onChange={(e) => handle(e)} />
           </div>
-          {localStorage.getItem("confirmed") == 'false' ?
+          {sessionStorage.getItem("confirmed") == 'false' ?
             null
           :
             <div>
@@ -111,15 +109,15 @@ function PasswordForm() {
 }
 
 function ResetUsername() {
-  const username = localStorage.getItem("username")
-  const id = localStorage.getItem("id")
-  const confirmed = localStorage.getItem("confirmed")
+  const username = sessionStorage.getItem("username")
+  const id = sessionStorage.getItem("id")
+  const confirmed = sessionStorage.getItem("confirmed")
 
   function submit(e:FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    localStorage.removeItem('username');
-    localStorage.removeItem('id');
-    localStorage.removeItem('confirmed');
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('id');
+    sessionStorage.removeItem('confirmed');
     window.location.reload();
   }
   return(

@@ -538,4 +538,3 @@ def resetAccountView(request):
 
         return Response({"success": "Account was successfully reset"},
                 status=status.HTTP_200_OK)
-

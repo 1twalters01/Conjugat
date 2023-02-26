@@ -18,10 +18,6 @@ Create functionality in React for:
         Reset account
         Premium
 
-    Newsletter
-        Subscribe
-        Unsubscribe
-
     Subscriptions
         all
     
