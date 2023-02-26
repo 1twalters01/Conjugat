@@ -86,8 +86,8 @@ def subscribeView(request):
 
     if request.method == 'POST':
         email = request.data.get('email')
-        first_name = request.data.get('')
-        last_name = request.data.get('')
+        first_name = request.data.get('first_name')
+        last_name = request.data.get('last_name')
         languages = request.data.get('languages')
 
         if not email:
@@ -118,7 +118,7 @@ def subscribeView(request):
             return HttpResponse(error.text)
         
         success = 'Successfully subscribed to the newsletter'
-        return Response({'success':success, 'unsubscribe':True},
+        return Response({'success':success},
                         status=status.HTTP_200_OK)
 
 
@@ -149,6 +149,7 @@ def unsubscribeView(request):
         )
 
     except ApiClientError as error:
+        print(error.text)
         return HttpResponse(error.text)
     
     success = 'Successfully unsubscribed from the newsletter'
