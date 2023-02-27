@@ -31,7 +31,6 @@ def obtain_method(subscriber):
         method = None
     return method
 
-
 def payment_method(method):
     if method == 'Stripe':
         return 1
@@ -43,9 +42,7 @@ def payment_method(method):
 # Redirect urls for if the subscriber has an active subscription
 def url_if_subscribed(subscriber):
     print(subscriber)
-    if str(subscriber.method) == 'Stripe':
-        return 'subscription:stripe_success'
-    elif str(subscriber.method) == 'Paypal':
+    if str(subscriber.method) == 'Paypal':
         return 'subscription:paypal_success'
     elif str(subscriber.method) == 'Coinbase':
         return 'subscription:coinbase_success'
@@ -89,58 +86,17 @@ def options(request):
 
 
 
-
-'''Success'''
-@api_view(["GET", "POST"])
-@permission_classes([IsAuthenticated])
-def successView(request):
-    subscriber = does_subscriber_exist(request)
-    method = obtain_method(subscriber)
-    
-    if request.method == "GET":
-        if subscriber:
-            subscribed = subscriber.subscribed
-        else:
-            subscribed = False
-
-        context = {'subscribed':subscribed, 'method':method}
-        print(context)
-        return Response(data=context, status=status.HTTP_200_OK)
-
-    if request.method == "POST":
-        return_url = request.data.get('return_url')
-        if method == 'Stripe':
-            stripe_portal = build_stripe_portal(request, subscriber, return_url)
-            return Response({'url':stripe_portal.url},
-                            status=status.HTTP_200_OK)
-
-
-@login_required
-def stripe_success(request):
-    subscriber = does_subscriber_exist(request)
-    if subscriber:
-        if subscriber.subscribed == True:
-            if str(subscriber.method) == 'Stripe':
-                if request.method == 'POST':
-                    stripe_portal = build_stripe_portal(request, subscriber)
-                    print(stripe_portal.url)
-                    return redirect(stripe_portal.url, code=303)
-                else:
-                    return render(request, 'subscription/stripe/success.html')
-            else:
-                return redirect(url_if_subscribed(subscriber))
-    return redirect(url_if_not_subscribed(subscriber))
-
-
-''' Stripe '''
+'''Process'''
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
-def build_stripe_checkout(request, subscriber, customer):
-    success_url = request.build_absolute_uri(reverse('subscription:stripe_success'))
-    cancel_url = request.build_absolute_uri(reverse('subscription:stripe_cancelled'))
+def build_stripe_checkout(request, subscriber, customer, success_url=None, cancel_url=None):
+    if not success_url:
+        success_url = request.build_absolute_uri(reverse('subscription:options'))
+    if not cancel_url:
+        cancel_url = request.build_absolute_uri(reverse('subscription:options'))
 
     prices = stripe.Price.list(
-            lookup_keys=[request.POST.get('lookup_key')],
+            lookup_keys=[request.data.get('lookup_key')],
             expand=['data.product']
     )
     line_items=[
@@ -163,11 +119,77 @@ def build_stripe_checkout(request, subscriber, customer):
     checkout_session = stripe.checkout.Session.create(**checkout_kwargs)
     return checkout_session
 
+def build_coinbase_checkout(request, subscriber, success_url=None, cancel_url=None):
+    client = Client(api_key=settings.COINBASE_COMMERCE_API_KEY)
+
+    if not success_url:
+        success_url = request.build_absolute_uri(reverse('subscription:options'))
+    if not cancel_url:
+        cancel_url = request.build_absolute_uri(reverse('subscription:options'))
+
+    checkout_kwargs = {
+        'name':'Conjugat Premium',
+        'local_price': {
+            'currency':'GBP'
+        },
+        'pricing_type':'fixed_price',
+        'rediret_url':success_url,
+        'cancel_url':cancel_url,
+    }
+    if not subscriber or subscriber.trial == True:
+        checkout_kwargs['description'] = '1 Week of conjugat Premium'
+        checkout_kwargs['local_price']['amount'] = '0.01'
+    else:
+        checkout_kwargs['description'] = '1 Month of conjugat Premium'
+        checkout_kwargs['local_price']['amount'] = '2.50'
+    
+    charge = client.charge.create(**checkout_kwargs)
+    return charge
+
+@api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
+def processView(request):
+    subscriber = does_subscriber_exist(request)
+    if request.method == "GET":
+        if request.data.get('method') == 'Stripe':
+            pass
+        if request.data.get('method') == 'Paypal':
+            pass
+        if request.data.get('method') == 'Coinbase':
+            pass
+
+    if request.method == "POST":
+        if request.data.get('method') == 'Stripe':
+            if not subscriber or subscriber.subscribed == False:
+                success_url = request.data.get("success_url")
+                cancel_url = request.data.get("cancel_url")
+
+                customer = stripe.Customer.create()
+                checkout_session = build_stripe_checkout(request, subscriber, customer, success_url, cancel_url)
+                save_subscriber(request, 'Stripe', subscriber, customer_id = customer.id)
+                return Response({'url':checkout_session.url},
+                            status=status.HTTP_200_OK)
+            
+        if request.data.get('method') == 'Paypal':
+            pass
+        if request.data.get('method') == 'Coinbase':
+            if not subscriber or subscriber.subscribed == False:
+                success_url = request.data.get("success_url")
+                cancel_url = request.data.get("cancel_url")
+
+                charge = build_coinbase_checkout(request, subscriber, success_url, cancel_url)
+                subscriber_id = charge.hosted_url.rsplit('/', 1)[1]
+                save_subscriber(request, 'Coinbase', subscriber, subscriber_id=subscriber_id)
+
+                return Response({'url':charge.hosted_url},
+                            status=status.HTTP_200_OK)
 
 
+
+'''Success'''
 def build_stripe_portal(request, subscriber, return_url=None):
     if not return_url:
-        return_url = request.build_absolute_uri(reverse('subscription:stripe_success'))
+        return_url = request.build_absolute_uri(reverse('subscription:options'))
     customer = decrypt(subscriber.customer_id)
     portalSession = stripe.billing_portal.Session.create(
                     customer=customer,
@@ -176,41 +198,63 @@ def build_stripe_portal(request, subscriber, return_url=None):
     return portalSession
 
 
-
-@login_required
-def stripe_process(request):
+@api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
+def successView(request):
     subscriber = does_subscriber_exist(request)
-    if not subscriber or subscriber.subscribed == False:
-        if request.method == 'POST':
-            customer = stripe.Customer.create()
-            checkout_session = build_stripe_checkout(request, subscriber, customer)
-            save_subscriber(request, 'Stripe', subscriber, customer_id = customer.id)
-            return redirect(checkout_session.url, code=303)
-
+    method = obtain_method(subscriber)
+    
+    if request.method == "GET":
+        if subscriber:
+            subscribed = subscriber.subscribed
         else:
-            return render(request, 'subscription/stripe/process.html')
+            subscribed = False
 
-    else:
-        return redirect(url_if_subscribed(subscriber))
+        context = {'subscribed':subscribed, 'method':method}
 
+        if method == 'Coinbase':
+            charge_id = decrypt(subscriber.subscription_id)
+            client = Client(api_key=settings.COINBASE_COMMERCE_API_KEY)
+            charge = client.charge.retrieve(charge_id)
+            context['charge'] = charge.hosted_url
+            
+        return Response(data=context, status=status.HTTP_200_OK)
 
+    if request.method == "POST":
+        return_url = request.data.get('return_url')
+        if method == 'Stripe':
+            stripe_portal = build_stripe_portal(request, subscriber, return_url)
+            return Response({'url':stripe_portal.url},
+                            status=status.HTTP_200_OK)
+        if method == 'Paypal':
+            pass
+        if method == 'Coinbase':
+            pass
 
-
-
-
-
-@login_required
-def stripe_cancelled(request):
+def paypal_success(request):
     subscriber = does_subscriber_exist(request)
-    if not subscriber or subscriber.subscribed == False:
-        return render(request, 'subscription/stripe/cancel.html')
+
+    if request.method == 'POST':
+        sub_id = decrypt(subscriber.subscription_id)
+        if request.POST.get('Stop'):
+            suspend_sub(sub_id)
+            return redirect('subscription:paypal_success')
+
+        elif request.POST.get('Re-start'):
+            activate_sub(sub_id)
+            return redirect('subscription:paypal_success')
+
     else:
-        return redirect(url_if_subscribed(subscriber))
-
-
-
-
-
+        if not subscriber or subscriber.subscribed == False:
+            return redirect(url_if_not_subscribed(subscriber))
+        else:
+            if str(subscriber.method) == 'Paypal':
+                sub_id = decrypt(subscriber.subscription_id)
+                details = show_sub_details(sub_id)
+                context = {'id':subscriber.subscription_id, 'status': details['status']}
+                return render(request, 'subscription/paypal/subscribed.html', context)
+            else:
+                return redirect(url_if_subscribed(subscriber))
 
 
 
@@ -269,30 +313,7 @@ def paypal_subscribe(request):
 
 
 
-def paypal_success(request):
-    subscriber = does_subscriber_exist(request)
 
-    if request.method == 'POST':
-        sub_id = decrypt(subscriber.subscription_id)
-        if request.POST.get('Stop'):
-            suspend_sub(sub_id)
-            return redirect('subscription:paypal_success')
-
-        elif request.POST.get('Re-start'):
-            activate_sub(sub_id)
-            return redirect('subscription:paypal_success')
-
-    else:
-        if not subscriber or subscriber.subscribed == False:
-            return redirect(url_if_not_subscribed(subscriber))
-        else:
-            if str(subscriber.method) == 'Paypal':
-                sub_id = decrypt(subscriber.subscription_id)
-                details = show_sub_details(sub_id)
-                context = {'id':subscriber.subscription_id, 'status': details['status']}
-                return render(request, 'subscription/paypal/subscribed.html', context)
-            else:
-                return redirect(url_if_subscribed(subscriber))
 
 
 
@@ -304,74 +325,7 @@ def paypal_success(request):
 
 
 ''' Coinbase '''
-def build_coinbase_checkout(request, subscriber):
-    client = Client(api_key=settings.COINBASE_COMMERCE_API_KEY)
-
-    success_url = request.build_absolute_uri(reverse('subscription:coinbase_success'))
-    cancel_url = request.build_absolute_uri(reverse('subscription:coinbase_process'))
-
-    checkout_kwargs = {
-        'name':'Conjugat Premium',
-        'local_price': {
-            'currency':'GBP'
-        },
-        'pricing_type':'fixed_price',
-        'rediret_url':success_url,
-        'cancel_url':cancel_url,
-    }
-    if not subscriber or subscriber.trial == True:
-        checkout_kwargs['description'] = '1 Week of conjugat Premium'
-        checkout_kwargs['local_price']['amount'] = '0.01'
-    else:
-        checkout_kwargs['description'] = '1 Month of conjugat Premium'
-        checkout_kwargs['local_price']['amount'] = '2.50'
-    
-    charge = client.charge.create(**checkout_kwargs)
-
-    return charge
-
-
-@login_required
-def coinbase_process(request):
-    subscriber = does_subscriber_exist(request)
-
-    if not subscriber or subscriber.subscribed == False:
-        charge = build_coinbase_checkout(request, subscriber)
-        #subscriber_id = charge.hosted_url.rsplit('/', 1)[1]
-        subscriber_id = charge.hosted_url.rsplit('/', 1)[1]
-        save_subscriber(request, 'Coinbase', subscriber, subscriber_id=subscriber_id)
-
-        context = {'charge':charge}
-        return render(request, 'subscription/coinbase/process.html', context)
-
-    else:
-        return redirect(url_if_subscribed(subscriber))
 
 
 
-@login_required
-def coinbase_success(request):
-    subscriber = does_subscriber_exist(request)        
-    if subscriber:
-        if subscriber.subscribed == True:
-            print(subscriber.method)
-            if str(subscriber.method) == 'Coinbase':
-                charge_id = decrypt(subscriber.subscription_id)
-                client = Client(api_key=settings.COINBASE_COMMERCE_API_KEY)
-                charge = client.charge.retrieve(charge_id)
-                context = {'charge':charge}
-                return render(request, 'subscription/coinbase/success.html', context)
-            else:
-                return redirect(url_if_subscribed(subscriber))
-    return redirect(url_if_not_subscribed(subscriber))
 
-
-
-@login_required
-def coinbase_cancelled(request):
-    subscriber = does_subscriber_exist(request)
-
-    if not subscriber or subscriber.subscribed == False:
-        return render(request, 'subscription/coinbase/cancelled.html')
-    else:
-        return redirect(url_if_subscribed(subscriber))

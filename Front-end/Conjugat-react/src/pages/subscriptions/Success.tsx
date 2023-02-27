@@ -1,7 +1,6 @@
 import { ChangeEvent, FormEvent, useState, useEffect} from "react"
 import Axios from 'axios'
 import Authorization from '../../Authorization'
-import QRCode from "react-qr-code"
 import { useNavigate } from 'react-router'
 
 const url = "http://conjugat.io:8000/subscriptions/success/"
@@ -27,12 +26,14 @@ function Success() {
 function RetrieveStatus() {
   const [method, setMethod] = useState(null)
   const [subscribed, setSubscribed] = useState(null)
+  const [charge, setCharge] = useState(null)
   
   if(count < 2){
     Axios.get(url, {headers: headers})
     .then(res =>{
       setMethod(res.data.method)
       setSubscribed(res.data.subscribed)
+      setCharge(res.data.charge)
     })
     count += 1
   }
@@ -59,9 +60,10 @@ function RetrieveStatus() {
       )
     }
     else if(method == 'Coinbase' && subscribed == true) {
+      console.log(charge)
       return (
         <div>
-          <CoinbaseSuccess />
+          <CoinbaseSuccess charge={charge} />
         </div>
       )
     }
@@ -83,7 +85,6 @@ function NotSubscribed() {
 }
 
 function StripeSuccess() {
-
   function submit(e:FormEvent<HTMLFormElement>) {
     e.preventDefault();
     Axios.post(url, {
@@ -97,6 +98,7 @@ function StripeSuccess() {
       window.location.href = res.data.url
     })
   }
+
   return (
     <div>
       <p>Stripe</p>
@@ -110,14 +112,21 @@ function StripeSuccess() {
     
   )
 }
+
 function PaypalSuccess() {
   return (
     <div>Paypal</div>
   )
 }
-function CoinbaseSuccess() {
+
+function CoinbaseSuccess({charge}) {
+  console.log(charge)
   return (
-    <div>Coinbase</div>
+    <div>
+      <p>Coinbase</p>
+      <a href={charge}><button>View Purchase</button></a>
+    </div>
+    
   )
 }
 
