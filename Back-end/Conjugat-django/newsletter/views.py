@@ -1,20 +1,16 @@
-from .forms import InfoForm, EmailForm
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, redirect
+
 import hashlib
 from mailchimp_marketing import Client
 from mailchimp_marketing.api_client import ApiClientError
 
-
 from rest_framework import status
-from rest_framework.authtoken.models import Token
-from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated, AllowAny
-from django.core.exceptions import ObjectDoesNotExist
-from rest_framework.authtoken.models import Token
+from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
+
 
 
 @api_view(["GET"])

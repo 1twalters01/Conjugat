@@ -1,14 +1,10 @@
-from .forms import CloseAccountForm, ChangePasswordForm, ChangeEmailForm, ChangeUsernameForm, ThemesForm, TOTPForm, ResetAccountForm
 from .models import Theme, TwoFactorAuth
 from .totp import create_key_of_length, generate_totp, generate_QR_string_and_code
 from coinbase_commerce.client import Client
+
 from django.conf import settings
 from django.contrib.auth.models import User
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.views import PasswordChangeView, PasswordChangeDoneView#
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
-from django.urls import reverse, reverse_lazy
+
 from subscription.encryption import decrypt, encrypt
 from subscription.models import UserProfile
 from subscription.paypal import show_sub_details, suspend_sub, activate_sub, cancel_sub

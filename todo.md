@@ -2,6 +2,7 @@
 Create accounts that have stripe, paypal and coinbase added to them
 Run premium and reset account view POST tests in tests_settings.py
 Run subscribe and unsubscribe view tests in tests_newsletter.py
+Add GET function to newsletter to auto add associated account's email
 
 Finish back end API first drafts (no testing or serializers) for:
     Subscription
@@ -19,7 +20,8 @@ Create functionality in React for:
         Premium
 
     Subscriptions
-        all
+        paypal subscription
+        paypal success
     
 Add Django-social-auth functionality to the login
 Add remind me functionality to the login
@@ -43,7 +45,6 @@ Launch webapp
 
 
 # Long term goals
-
 Build the android app (kotlin)
 
 Launch android app

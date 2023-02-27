@@ -1,7 +1,7 @@
-import { ChangeEvent, FormEvent, useState, useEffect} from "react"
+import { FormEvent, useState} from "react"
 import Axios from 'axios'
 import Authorization from '../../Authorization'
-import { useNavigate } from 'react-router'
+import PropTypes from 'prop-types'
 
 const url = "http://conjugat.io:8000/subscriptions/success/"
 const token = localStorage.getItem("token")
@@ -9,11 +9,12 @@ const headers = {
   'Content-Type': 'application/json',
   'Authorization': 'Token '+ token
 }
+
 var count: number
+count = 0
 
 function Success() {
   Authorization.AuthRequired()
-  count = 0
   return (
     <div>
       <h1>Success</h1>
@@ -26,7 +27,7 @@ function Success() {
 function RetrieveStatus() {
   const [method, setMethod] = useState(null)
   const [subscribed, setSubscribed] = useState(null)
-  const [charge, setCharge] = useState(null)
+  const [charge, setCharge] = useState('')
   
   if(count < 2){
     Axios.get(url, {headers: headers})
@@ -119,7 +120,7 @@ function PaypalSuccess() {
   )
 }
 
-function CoinbaseSuccess({charge}) {
+function CoinbaseSuccess({charge} : {charge:string}) {
   console.log(charge)
   return (
     <div>
@@ -129,5 +130,9 @@ function CoinbaseSuccess({charge}) {
     
   )
 }
+CoinbaseSuccess.propTypes = {
+  charge: PropTypes.string
+}
+
 
 export default Success

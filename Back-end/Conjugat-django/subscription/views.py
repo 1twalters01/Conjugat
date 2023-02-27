@@ -1,19 +1,20 @@
-from .encryption import decrypt, encrypt
-from .models import UserProfile, PaymentMethod
-from .paypal import show_sub_details, suspend_sub, activate_sub
+
 from coinbase_commerce.client import Client
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
+from .encryption import decrypt, encrypt
 import json
+
+from .models import UserProfile
+from .paypal import show_sub_details, suspend_sub, activate_sub
 import stripe
 
-
-from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
 
 
 ''' Setup '''
@@ -89,7 +90,7 @@ def options(request):
 '''Process'''
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
-def build_stripe_checkout(request, subscriber, customer, success_url=None, cancel_url=None):
+def build_stripe_checkout(request, subscriber, customer, success_url, cancel_url):
     if not success_url:
         success_url = request.build_absolute_uri(reverse('subscription:options'))
     if not cancel_url:
@@ -119,13 +120,8 @@ def build_stripe_checkout(request, subscriber, customer, success_url=None, cance
     checkout_session = stripe.checkout.Session.create(**checkout_kwargs)
     return checkout_session
 
-def build_coinbase_checkout(request, subscriber, success_url=None, cancel_url=None):
+def build_coinbase_checkout(subscriber, success_url, cancel_url):
     client = Client(api_key=settings.COINBASE_COMMERCE_API_KEY)
-
-    if not success_url:
-        success_url = request.build_absolute_uri(reverse('subscription:options'))
-    if not cancel_url:
-        cancel_url = request.build_absolute_uri(reverse('subscription:options'))
 
     checkout_kwargs = {
         'name':'Conjugat Premium',
@@ -172,17 +168,57 @@ def processView(request):
             
         if request.data.get('method') == 'Paypal':
             pass
+
         if request.data.get('method') == 'Coinbase':
             if not subscriber or subscriber.subscribed == False:
                 success_url = request.data.get("success_url")
                 cancel_url = request.data.get("cancel_url")
 
-                charge = build_coinbase_checkout(request, subscriber, success_url, cancel_url)
+                charge = build_coinbase_checkout(subscriber, success_url, cancel_url)
                 subscriber_id = charge.hosted_url.rsplit('/', 1)[1]
                 save_subscriber(request, 'Coinbase', subscriber, subscriber_id=subscriber_id)
 
                 return Response({'url':charge.hosted_url},
                             status=status.HTTP_200_OK)
+
+@login_required
+def paypal_process(request):
+    subscriber = does_subscriber_exist(request)
+    client_id = settings.PAYPAL_CLIENT_ID
+    context = {'trial':True, 'client_id':client_id}
+    if subscriber:
+        context = {'trial':subscriber.trial, 'client_id':client_id}
+
+    if not subscriber or subscriber.subscribed == False:
+        return render(request, 'subscription/paypal/process.html', context)
+
+    else:
+        return redirect(url_if_subscribed(subscriber))
+
+def does_json_exist(request):
+    try:
+        body = json.loads(request.body)
+    except:
+        body = None
+    return body
+
+
+@login_required
+def paypal_subscribe(request):
+    subscriber = does_subscriber_exist(request)
+    body = does_json_exist(request)
+    if body:
+        if request.method == 'POST':
+            subscriber_id = body['subscriptionID']
+            save_subscriber(request, 'Paypal', subscriber, subscriber_id=subscriber_id)
+            return redirect('subscription:paypal_success')
+    else:
+        if not subscriber:
+            return redirect(url_if_not_subscribed(subscriber))
+        else:
+            return redirect(url_if_subscribed(subscriber))
+
+
 
 
 
@@ -255,77 +291,3 @@ def paypal_success(request):
                 return render(request, 'subscription/paypal/subscribed.html', context)
             else:
                 return redirect(url_if_subscribed(subscriber))
-
-
-
-
-
-''' Paypal '''
-def do_paypal_details_exist(subscriber):
-    try:
-        sub_id = decrypt(subscriber.subscription_id)
-        details = show_sub_details(sub_id)['status']
-    except:
-        details = None
-    return details
-
-
-
-@login_required
-def paypal_process(request):
-    subscriber = does_subscriber_exist(request)
-    client_id = settings.PAYPAL_CLIENT_ID
-    context = {'trial':True, 'client_id':client_id}
-    if subscriber:
-        context = {'trial':subscriber.trial, 'client_id':client_id}
-
-    if not subscriber or subscriber.subscribed == False:
-        return render(request, 'subscription/paypal/process.html', context)
-
-    else:
-        return redirect(url_if_subscribed(subscriber))
-
-
-
-def does_json_exist(request):
-    try:
-        body = json.loads(request.body)
-    except:
-        body = None
-    return body
-
-
-
-@login_required
-def paypal_subscribe(request):
-    subscriber = does_subscriber_exist(request)
-    body = does_json_exist(request)
-    if body:
-        if request.method == 'POST':
-            subscriber_id = body['subscriptionID']
-            save_subscriber(request, 'Paypal', subscriber, subscriber_id=subscriber_id)
-            return redirect('subscription:paypal_success')
-    else:
-        if not subscriber:
-            return redirect(url_if_not_subscribed(subscriber))
-        else:
-            return redirect(url_if_subscribed(subscriber))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-''' Coinbase '''
-
-
-
-

@@ -2,7 +2,5 @@
 {% block title %}Payment options{% endblock %}
 {% block content %}
     <h1>Payment</h1>
-    <p>Pay via <a href="{% url 'subscription:stripe_process' %}">Stripe</a></p>
     <p>Pay via <a href="{% url 'subscription:paypal_process' %}">Paypal</a></p>
-    <p>Pay via <a href="{% url 'subscription:coinbase_process' %}">Coinbase</a></p>
 {% endblock %}

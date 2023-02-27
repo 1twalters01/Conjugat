@@ -1,27 +1,24 @@
-from .forms import UsernameForm, totpForm, passwordForm, UserRegistrationForm, PasswordResetForm, SetPasswordForm
-from .tokens import account_activation_token, password_reset_token
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.core.exceptions import ObjectDoesNotExist
 from django.template.loader import render_to_string
-from django.urls import reverse_lazy
 from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from settings.models import TwoFactorAuth
-from settings.totp import generate_totp
-from subscription.encryption import decrypt
 
 from rest_framework import status
 from rest_framework.authtoken.models import Token
-from rest_framework.response import Response
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny
-from django.core.exceptions import ObjectDoesNotExist
-from rest_framework.authtoken.models import Token
+from rest_framework.response import Response
+from.serializers import LoginUsernameSerializer, LoginPasswordSerializer
+
+from subscription.encryption import decrypt
+from settings.models import TwoFactorAuth
+from settings.totp import generate_totp
+from .tokens import account_activation_token, password_reset_token
+
 
 @api_view(["GET"])
 @permission_classes([AllowAny])
@@ -98,13 +95,12 @@ def is_two_factor_active(user):
         confirmed = False
     return confirmed
 
-from.serializers import LoginUsernameSerializer, LoginPasswordSerializer
+
 
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def loginUsernameView(request):
     username = request.data.get("username")
-    print(request.data)
     if username is None:
         return Response({'error': 'No username was entered'},
                         status=status.HTTP_400_BAD_REQUEST)

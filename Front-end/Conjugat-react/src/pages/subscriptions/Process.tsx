@@ -70,7 +70,7 @@ function PaypalProcess() {
 }
 
 function CoinbaseProcess() {
-  const [chargeURL, setChargeURL] = useState(null)
+  const [chargeURL, setChargeURL] = useState('')
   if(count < 2) {
     Axios.post(url, {
       success_url: 'http://localhost:5000/subscriptions/success',
@@ -93,7 +93,7 @@ function CoinbaseProcess() {
       </div>
     )
   }
-  
+  return(<div></div>)
 }
 
 export default Process
