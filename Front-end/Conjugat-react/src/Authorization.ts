@@ -8,7 +8,7 @@ function AuthRequired() {
     const userToken = localStorage.getItem('token');
     if (!userToken) {
         setIsLoggedIn(false);
-        return navigate('/account/login');
+        return navigate('/');
     }
     setIsLoggedIn(true);
     }

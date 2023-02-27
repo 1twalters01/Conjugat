@@ -1,0 +1,5 @@
+.underline-input{
+    color-scheme: dark;
+    background-color: var(--primary-800);
+    border-bottom-color: var(--secondary-100);
+}

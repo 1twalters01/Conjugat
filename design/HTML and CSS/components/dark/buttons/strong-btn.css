@@ -1,0 +1,10 @@
+.strong-btn{
+    background-color: var(--secondary-700);
+    color: var(--primary-800);
+}
+.strong-btn:hover{
+    background-color: var(--secondary-800);
+}
+.strong-btn:active{
+    background-color: var(--secondary-900);
+}

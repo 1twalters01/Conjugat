@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="../../reset.css">
+    <link rel="stylesheet" href="../../root colours.css">
+    <link rel="stylesheet" href="../../Fonts.css">
+    <link rel="stylesheet" href="dark2.css">
+
+    <link rel="stylesheet" href="../../components/dark/body.css">
+
+    
+    <link rel="stylesheet" href="../Containers.css">
+    <link rel="stylesheet" href="../headings.css">
+    <link rel="stylesheet" href="../links.css">
+    <link rel="stylesheet" href="../form.css">
+    <link rel="stylesheet" href="../alternate logins.css">
+
+    <link rel="stylesheet" href="../../components/dark/buttons/strong-btn.css">
+    <link rel="stylesheet" href="../../components/dark/buttons/weak-btn.css">
+    <link rel="stylesheet" href="../../components/dark/buttons/Facebook-btn.css">
+    <link rel="stylesheet" href="../../components/dark/buttons/Google-btn.css">
+    <link rel="stylesheet" href="../../components/dark/buttons/Twitter-btn.css">
+    <link rel="stylesheet" href="../../components/dark/inputs/underline-input.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="headings">
+            <a href=""><h1>Conjugat</h1></a>
+            <h2>Helping you to perfect your verb conjugations</h2>
+        </div>
+    
+        <div class="links">
+            <a href="{% url 'register' %}"><div class="register weak-btn">Register</div></a>
+            <a href="{% url 'newsletter:subscribe' %}"><div class="newsletter weak-btn">Newsletter</div></a>
+        </div>
+    
+        <!-- <div>
+            <p>Your username isn't recognised. Please try again.</p>
+        </div> -->
+        
+        <div class="login-form">
+            <form action="" method="post">
+                <div class="field">
+                    <p class="field-text">Username</p>
+                    <input type="text" name="Username" id="" class="underline-input">
+                </div>
+    
+                <div class="submit">
+                    <input type="submit" class="strong-btn" value="Continue">
+                </div>
+            </form>
+        </div>
+    
+        <div class="alternatives">
+            <p class="options">Or log-in via:</p>
+            <div class="alt-login">
+                <a href="{% url 'social:begin' 'facebook' %}"><div class="facebook Facebook-btn"><p>Facebook</p></div></a>
+                <a href="{% url 'social:begin' 'google-oauth2' %}"><div class="google Google-btn"><p>Google</p></div></a>
+                <a href="{% url 'social:begin' 'twitter' %}"><div class="twitter Twitter-btn"><p>Twitter</p></div></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

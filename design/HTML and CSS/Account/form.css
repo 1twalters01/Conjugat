@@ -1,0 +1,132 @@
+/* TV screens */
+@media only screen and (min-width: 1201px){
+    .login-form, .register-form, .invalid-reset, .reset-form, .log-out, .reset-success, .verify{
+        display: grid;
+        margin: auto;
+    }
+    .login-form div, .register-form, .reset-form{
+        width: 60%;
+        margin: auto;
+    }
+    .invalid-reset div, .log-out div, .reset-success div, .verify div{
+        width: 80%;
+        text-align: center;
+        margin: auto;
+    }
+    .log-out, .reset-success, .verify{
+        text-align: center;
+    }
+    .invalid-reset .weak-btn, .log-out .weak-btn, .reset-success .weak-btn, .verify .weak-btn{
+        margin-top: 30px;
+        margin-bottom: 40px;
+    }
+    .field{
+        margin-bottom: 15px;
+    }
+    p.field-text{
+        margin-bottom: 10px;
+    }
+    
+    .login-form input, .register-form input, .reset-form input{
+        width: 100%;
+        display: block;
+        padding-left: 10px;
+    }
+    input[type="text"], input[type="password"], input[type="email"]{
+        height: 25px;
+        border:none;
+        border-bottom: 1px solid;
+        outline: none;
+    }
+    .login-form input[type="text"], .login-form input[type="password"]
+    , .password-field input[type="text"], input[type="email"],
+    .reset-form{
+        margin-bottom: 20px;
+    }
+    .spacer{
+        height: 20px;
+    }
+    .register-form input{
+        margin-bottom: 20px;
+    }
+    .totp-div{
+        padding-top: 50px;
+    }
+    .remember-me{
+        display: grid;
+        grid-template-columns: 0.1fr 0.1fr;
+        grid-gap: 2%;
+        justify-content: center;
+        margin: auto;
+        padding-bottom: 15px;
+    }
+    .remember-me input[type="checkbox"]{
+        vertical-align: middle;
+        height: 15px;
+        width: 15px;
+    }
+    .remember-me p{
+        white-space: nowrap;
+    }
+    .password-reset{
+        text-align: center;
+        padding-bottom: 40px;
+    }
+    .submit input[type="submit"]{
+        padding: 10px 50px;
+        border-radius: 15px;
+        margin-bottom: 60px;
+    }
+    .submit input[type="submit"]:hover{
+        cursor: pointer;
+    }
+}
+
+/* PC */
+@media only screen and (max-width: 1200px) and (min-width: 1025px){
+    /* login form */
+    .login-form{
+        display: grid;
+        margin: auto;
+    }
+    .login-form div{
+        width: 60%;
+        margin: auto;
+    }
+    p.field-text{
+        margin-bottom: 15px;
+    }
+    
+    input{
+        width: 100%;
+        display: block;
+    }
+    input[type="text"]{
+        height: 20px;
+        border:none;
+        border-bottom: 1px solid;
+        padding: 0px 10px;
+        outline: none;
+        margin-bottom: 50px;
+    }
+    .submit input[type="submit"]{
+        padding: 10px 50px;
+        border-radius: 15px;
+        margin-bottom: 60px;
+    }
+}
+
+/* Laptops */
+@media only screen and (max-width: 1024px) and (min-width: 769px){
+    
+}
+
+/* Tablets */
+@media only screen and (max-width: 768px) and (min-width: 481px){
+
+}
+
+/* Mobiles */
+@media (max-width: 480px) and (min-width:320px){
+    
+}

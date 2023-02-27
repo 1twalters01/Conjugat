@@ -1,18 +1,15 @@
 # Short term goals
 Create accounts that have stripe, paypal and coinbase added to them
 Run premium and reset account view POST tests in tests_settings.py
-Run subscribe and unsubscribe view tests in tests_newsletter.py
 Add GET function to newsletter to auto add associated account's email
-
-Finish back end API first drafts (no testing or serializers) for:
-    Subscription
 
 Finish first drafts and test back end APIs (no serializers) for:
     Settings:
         Reset account
         Premium
     Subscriptions:
-        all
+        paypal subscription
+        paypal success
 
 Create functionality in React for:
     Settings
