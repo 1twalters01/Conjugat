@@ -1,14 +1,3 @@
 p, h1, h2, a, i{
     color: white;
 }
-
-
-
-/* Login */
-p.username-text{
-    color: var(--secondary-600);
-}
-
-.password-reset a:hover{
-    color: var(--primary-300);
-}

@@ -1,17 +1,39 @@
+import { Link } from "react-router-dom"
 import { ChangeEvent, FormEvent, useState} from "react"
 import Axios from 'axios'
 import Authorization from '../../Authorization'
+import './Login.scss'
 
 function Login() {
   Authorization.NotAuthRequired()
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="main-container">
+      <div className="headings">
+        <Link to="../../"><h1>Conjugat</h1></Link>
+        <h2>Helping you to perfect your verb conjugations</h2>
+      </div>
+
       {sessionStorage.getItem("id") == null ?
-        <UsernameForm />
+        <div>
+          <UsernameLinks />
+          <UsernameForm />
+          <UsernameSocials />
+        </div>
       :
-        <div><ResetUsername /><PasswordForm /></div>
+        <div>
+          <ResetUsername />
+          <PasswordForm />
+        </div>
       }
+    </div>
+  )
+}
+
+function UsernameLinks() {
+  return (
+    <div className="links">
+      <Link to="../Register"><div className="link weak-btn">Register</div></Link>
+      <Link to="../../Newsletter/subscribe"><div className="link weak-btn">Newsletter</div></Link>
     </div>
   )
 }
@@ -42,12 +64,54 @@ function UsernameForm() {
   }
 
   return(
+    <div className="login-form">
+      <form onSubmit={(e) => submit(e)}>
+        <div>
+          <p className="field-text"><label htmlFor="username">Email or Username</label></p>
+          <input id="username" type="text" name="username" value={data.username} onChange={(e) => handle(e)} />
+        </div>
+
+        <div className="submit">
+          <button>Submit</button>
+        </div>
+      </form>
+    </div>
+  )
+}
+
+function UsernameSocials() {
+  return (
+    <div className="alternatives">
+      <p className="options">Or log-in via:</p>
+      <div className="alt-login">
+        <a href="{% url 'social:begin' 'facebook' %}"><div className="facebook Facebook-btn"><p>Facebook</p></div></a>
+        <a href="{% url 'social:begin' 'google-oauth2' %}"><div className="google Google-btn"><p>Google</p></div></a>
+        <a href="{% url 'social:begin' 'twitter' %}"><div className="twitter Twitter-btn"><p>Twitter</p></div></a>
+      </div>
+    </div>
+  )
+}
+
+
+
+
+function ResetUsername() {
+  const username = sessionStorage.getItem("username")
+  const id = sessionStorage.getItem("id")
+  const confirmed = sessionStorage.getItem("confirmed")
+
+  function submit(e:FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('id');
+    sessionStorage.removeItem('confirmed');
+    window.location.reload();
+  }
+  return(
     <div>
       <form onSubmit={(e) => submit(e)}>
-          <label htmlFor="username">Email or Username</label>
-          <input id="username" type="text" name="username" value={data.username} onChange={(e) => handle(e)} />
-          <button>Submit</button>
-        </form>
+        <button>Choose a different username</button>
+      </form>
     </div>
   )
 }
@@ -102,28 +166,14 @@ function PasswordForm() {
           }
           {/* <label htmlFor="rememberMe">remember me</label>
           <input type="checkbox" name="rememberMe" id="rememberMe" onChange={(e) => handle(e)} /> */}
+          
+          <div className="password-reset">
+            <Link to="../password-reset">
+              Forgotten your password?
+            </Link>
+          </div>
+
           <button>Submit</button>
-      </form>
-    </div>
-  )
-}
-
-function ResetUsername() {
-  const username = sessionStorage.getItem("username")
-  const id = sessionStorage.getItem("id")
-  const confirmed = sessionStorage.getItem("confirmed")
-
-  function submit(e:FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    sessionStorage.removeItem('username');
-    sessionStorage.removeItem('id');
-    sessionStorage.removeItem('confirmed');
-    window.location.reload();
-  }
-  return(
-    <div>
-      <form onSubmit={(e) => submit(e)}>
-        <button>Choose a different username</button>
       </form>
     </div>
   )

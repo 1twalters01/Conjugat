@@ -1,24 +1,16 @@
 /* TV screens */
 @media only screen and (min-width: 1201px){
-    /* Links */
-    .links, .reset-username, .register-links{
+    .links{
         width: 50%;
         display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10%;
         justify-self: center;
         align-self: center;
         margin: auto;
-    }
-    .links, .reset-username{
         padding-bottom: 90px;
     }
-    .register-links{
-        padding-bottom: 50px;
-    }
-    .links, .register-links{
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 15%;
-    }
-    .register, .newsletter, .reset-username input[type="submit"]{
+    .link{
         align-self: center;
         text-align: center;
         width: 100%;
@@ -31,18 +23,17 @@
 
 /* PC */
 @media only screen and (max-width: 1200px) and (min-width: 1025px){
-    /* Links */
     .links{
         width: 50%;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 15%;
+        grid-gap: 10%;
         justify-self: center;
         align-self: center;
         margin: auto;
         padding-bottom: 80px;
     }
-    .register, .newsletter{
+    .link{
         align-self: center;
         text-align: center;
         width: 100%;
@@ -55,7 +46,25 @@
 
 /* Laptops */
 @media only screen and (max-width: 1024px) and (min-width: 769px){
-
+    .links{
+        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10%;
+        justify-self: center;
+        align-self: center;
+        margin: auto;
+        padding-bottom: 50px;
+    }
+    .link{
+        align-self: center;
+        text-align: center;
+        width: 100%;
+        border: 1.5px solid;
+        border-radius: 20px;
+        padding: 5px 0;
+        margin: auto;
+    }
 }
 
 /* Tablets */
