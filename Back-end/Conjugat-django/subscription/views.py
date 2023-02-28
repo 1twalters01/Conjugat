@@ -45,20 +45,14 @@ def url_if_subscribed(subscriber):
     print(subscriber)
     if str(subscriber.method) == 'Paypal':
         return 'subscription:paypal_success'
-    elif str(subscriber.method) == 'Coinbase':
-        return 'subscription:coinbase_success'
     else:
         return 'home'
 
 def url_if_not_subscribed(subscriber):
     if not subscriber:
         return 'subscription:options'
-    if str(subscriber.method) == 'Stripe':
-        return 'subscription:stripe_process'
     elif str(subscriber.method) == 'Paypal':
         return 'subscription:paypal_process'
-    elif str(subscriber.method) == 'Coinbase':
-        return 'subscription:coinbase_process'
 
 def save_subscriber(request, method, subscriber, subscriber_id=None, customer_id=None):
     if not subscriber:

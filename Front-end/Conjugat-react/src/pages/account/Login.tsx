@@ -121,8 +121,8 @@ function PasswordForm() {
   const [data, setData] = useState({
     password: "",
     totp: "",
-    // rememberMe: ""
   })
+  const [rememberMe, setRememberMe] = useState(false)
 
   function submit(e:FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -132,7 +132,7 @@ function PasswordForm() {
       password: data.password,
       totp: data.totp,
       confirmed: sessionStorage.getItem("confirmed"),
-      // rememberMe: data.rememberMe
+      remember_me: rememberMe
     })
     .then(res=>{
       localStorage.setItem("token", res.data.token);
@@ -147,6 +147,10 @@ function PasswordForm() {
     const newdata = { ...data }
     newdata[e.target.id as keyof typeof data] = e.target.value
     setData(newdata)
+  }
+  function handleChecked(e:ChangeEvent<HTMLInputElement>) {
+    setRememberMe(e.target.checked)
+    console.log(rememberMe, e.target.checked)
   }
 
   return(
@@ -164,8 +168,8 @@ function PasswordForm() {
               <input id="totp" type="text" name="totp" value={data.totp} onChange={(e) => handle(e)} />
             </div>
           }
-          {/* <label htmlFor="rememberMe">remember me</label>
-          <input type="checkbox" name="rememberMe" id="rememberMe" onChange={(e) => handle(e)} /> */}
+          <label htmlFor="rememberMe">remember me</label>
+          <input type="checkbox" name="rememberMe" id="rememberMe" checked={rememberMe} onChange={(e) => handleChecked(e)} />
           
           <div className="password-reset">
             <Link to="../password-reset">
