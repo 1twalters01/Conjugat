@@ -161,7 +161,10 @@ def processView(request):
                             status=status.HTTP_200_OK)
             
         if request.data.get('method') == 'Paypal':
-            pass
+            subscriptionID = request.data.get('subscriptionID')
+            save_subscriber(request, 'Paypal', subscriber, subscriber_id=subscriptionID)
+            return Response({'url':'url'},
+                            status=status.HTTP_200_OK)
 
         if request.data.get('method') == 'Coinbase':
             if not subscriber or subscriber.subscribed == False:
@@ -192,6 +195,7 @@ def paypal_process(request):
 def does_json_exist(request):
     try:
         body = json.loads(request.body)
+        body = request.data.get('subscriptionID')
     except:
         body = None
     return body

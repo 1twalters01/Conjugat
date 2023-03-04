@@ -141,7 +141,6 @@ def loginPasswordView(request):
     totp = request.data.get("totp")
     confirmed = request.data.get("confirmed")
     remember_me = request.data.get("remember_me")
-    print('remember me', remember_me)
     if not uid:
         return Response({'error': 'No username provided'},
                         status=status.HTTP_400_BAD_REQUEST)
@@ -195,8 +194,14 @@ def loginPasswordView(request):
         print('The totp is incorrect')
         return Response({'error': 'The totp is incorrect'},
                         status=status.HTTP_400_BAD_REQUEST)
-
-    token, _ = Token.objects.get_or_create(user=user)
+    
+    if remember_me == True:
+        # Token expiration date for 1 week
+        token, _ = Token.objects.get_or_create(user=user)
+    elif remember_me == False:
+        #token expiration date for 1 day
+        token, _ = Token.objects.get_or_create(user=user)
+    
     print(token.key)
     serializer = LoginPasswordSerializer(token)
     print(serializer.data)

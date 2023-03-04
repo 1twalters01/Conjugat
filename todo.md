@@ -20,15 +20,14 @@ Create functionality in React for:
         paypal subscription
         paypal success
     
-Add Django-social-auth functionality to the login
-Add remind me functionality to the login
+Create token that expires after a given length of time
 
 # Medium term goals
 Refactor code and add serializers
 
 Finish designing web pages
 
-Add style the react pages
+Add style to the react pages (SCSS)
 
 Create verbs functionality
 

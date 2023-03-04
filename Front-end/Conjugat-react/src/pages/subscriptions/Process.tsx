@@ -1,3 +1,4 @@
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js"
 import { ChangeEvent, FormEvent, useState, useEffect} from "react"
 import Axios from 'axios'
 import Authorization from '../../Authorization'
@@ -62,9 +63,55 @@ function StripeProcess() {
 }
 
 function PaypalProcess() {
+  var trial = false
+  const paypalSubscribe = (data:any, actions:any) => {
+    if (trial==false) {
+      return actions.subscription.create({
+        'plan_id': 'P-1L603410HK8214405MP6L5NQ',
+      });
+    }
+    else{
+      return actions.subscription.create({
+        'plan_id': 'P-9MS66805EA398571SMP6LZ4Y',
+      });
+    }
+  };
+
+  const paypalOnError = (err:any) => {
+  console.log("Error", err)
+  }
+
+  const paypalOnCancel = (err:any) => {
+    console.log("cancelled", err)
+  }
+
+  const paypalOnApprove = (data:any, detail:any) => {
+  // call the backend api to store transaction details
+  Axios.post(url, {
+    subscriptionID: data.subscriptionID,
+    method: 'Paypal',
+  },
+  {
+    headers: headers
+  })
+  .then(res=>{
+    window.location.href = "/subscriptions/success"
+  })
+  };
+
   return(
     <div>
       <p>Paypal</p>
+      <PayPalScriptProvider
+        options={{"client-id":`${import.meta.env.VITE_paypal_client_id}`, vault:true}}
+      >
+        <PayPalButtons
+          createSubscription={paypalSubscribe}
+          onApprove={paypalOnApprove}
+          onError={paypalOnError}
+          onCancel={paypalOnCancel}
+        />
+      </PayPalScriptProvider>
     </div>
   )
 }
