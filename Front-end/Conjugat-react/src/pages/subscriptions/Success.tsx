@@ -53,7 +53,6 @@ function RetrieveStatus() {
       )
     }
     else if(method == 'Paypal' && subscribed == true) {
-      console.log(status, 'paypal')
       return (
         <div>
           <PaypalSuccess status={status}/>
@@ -61,7 +60,6 @@ function RetrieveStatus() {
       )
     }
     else if(method == 'Coinbase' && subscribed == true) {
-      console.log(charge)
       return (
         <div>
           <CoinbaseSuccess charge={charge} />
@@ -95,7 +93,6 @@ function StripeSuccess() {
       headers: headers
     })
     .then(res=>{
-      console.log(res.data.url)
       window.location.href = res.data.url
     })
   }

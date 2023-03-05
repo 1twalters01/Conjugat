@@ -1,11 +1,9 @@
 
 from coinbase_commerce.client import Client
 from django.conf import settings
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from .encryption import decrypt, encrypt
-import json
 
 from .models import UserProfile
 from .paypal import show_sub_details, suspend_sub, activate_sub
@@ -40,19 +38,6 @@ def payment_method(method):
     elif method == 'Coinbase':
         return 3
 
-# Redirect urls for if the subscriber has an active subscription
-def url_if_subscribed(subscriber):
-    print(subscriber)
-    if str(subscriber.method) == 'Paypal':
-        return 'subscription:paypal_success'
-    else:
-        return 'home'
-
-def url_if_not_subscribed(subscriber):
-    if not subscriber:
-        return 'subscription:options'
-
-
 def save_subscriber(request, method, subscriber, subscriber_id=None, customer_id=None):
     if not subscriber:
         subscriber = UserProfile.objects.create(user=request.user, method_id=payment_method(method))
@@ -64,19 +49,6 @@ def save_subscriber(request, method, subscriber, subscriber_id=None, customer_id
         subscriber.subscription_id = encrypt(subscriber_id)
     subscriber.save()
 
-
-
-
-
-''' Options '''
-# Page to list the payment options
-@login_required
-def options(request):
-    subscriber = does_subscriber_exist(request)
-    if not subscriber or subscriber.subscribed != True:
-        return render(request, 'subscription/options.html')
-    else:
-        return redirect(url_if_subscribed(subscriber))
 
 
 

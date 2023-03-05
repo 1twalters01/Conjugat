@@ -97,12 +97,12 @@ function PaypalProcess({trial} : {trial:boolean|null}) {
   const paypalSubscribe = (data:any, actions:any) => {
     if (trial==false) {
       return actions.subscription.create({
-        'plan_id': 'P-1L603410HK8214405MP6L5NQ',
+        'plan_id': `${import.meta.env.VITE_paypal_no_trial_plan_id}`,
       });
     }
     else if (trial==true) {
       return actions.subscription.create({
-        'plan_id': 'P-9MS66805EA398571SMP6LZ4Y',
+        'plan_id': `${import.meta.env.VITE_paypal_with_trial_plan_id}`,
       });
     }
   };

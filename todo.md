@@ -5,12 +5,10 @@ Add GET function to newsletter to auto add associated account's email
 Finish first drafts and test back end APIs (no serializers) for:
     Settings:
         Reset account
-        Premium
 
 Create functionality in React for:
     Settings
         Reset account
-        Premium
 
 Create token that expires after a given length of time
 
