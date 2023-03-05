@@ -1,5 +1,5 @@
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js"
-import { ChangeEvent, FormEvent, useState, useEffect} from "react"
+import { FormEvent, useState } from "react"
 import Axios from 'axios'
 import Authorization from '../../Authorization'
 
@@ -49,12 +49,12 @@ function RetrieveStatus() {
       </div>
     )
   }
-   
-    return (
-      <div>
-        <p>Loading...</p>
-      </div>
-    )
+
+  return (
+    <div>
+      <p>Loading...</p>
+    </div>
+  )
 }
 
 function StripeProcess() {
@@ -127,7 +127,7 @@ function PaypalProcess({trial} : {trial:boolean|null}) {
       window.location.href = "/subscriptions/success"
     })
   };
-  
+
   if (trial==true || trial==false) {
     return(
       <div>
@@ -145,6 +145,7 @@ function PaypalProcess({trial} : {trial:boolean|null}) {
       </div>
     )
   }
+
   return (
     <div></div>
   )

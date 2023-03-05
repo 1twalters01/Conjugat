@@ -1,33 +1,65 @@
 # Short term goals
-Run premium and reset account view POST tests in tests_settings.py
-Add GET function to newsletter to auto add associated account's email
-
-Finish first drafts and test back end APIs (no serializers) for:
-    Settings:
-        Reset account
-
-Create functionality in React for:
-    Settings
-        Reset account
+Add GET functionality to newsletter to prepopulate associated email in the field
 
 Create token that expires after a given length of time
 
+Add social authentication to react login page
+
+Consider combining some of the password reset pages into one
+
+Finish designing web pages in HTML and CSS:
+    account
+        Activate
+        Login
+        Logout
+        Password reset
+        Password reset confirm
+        Password reset done
+        Password reset token
+    newsletter
+        Subscribe
+        Unsubscribe
+    settings
+        Change email
+        Change password
+        Change username
+        Close account
+        Premium
+        Reset account
+        Themes
+        Two factor authentication
+    subscriptions
+        Cancelled
+        Process
+        Success
+    Misc
+        Contact
+        FAQs
+        Home
+        Landing page
+        Privacy
+        Terms
+
+Refactor Django code and add serializers
+
+Refactor react code into more modular components
+
+Add styling to the react pages (SCSS)
+
+Delete django templates and static files
+
+
 # Medium term goals
-Refactor code and add serializers
-
-Finish designing web pages
-
-Add style to the react pages (SCSS)
-
-Create verbs functionality
-
-Test verbs functionality
+Create and test verbs functionality
 
 Create verb functionality for react
 
+Create functionality in Django and React for:
+    Settings: Reset account
+
 Get real api keys for everything rather than test api keys
 
-Launch webapp
+Launch web app
 
 
 # Long term goals
