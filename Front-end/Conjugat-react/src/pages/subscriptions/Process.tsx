@@ -2,7 +2,6 @@ import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js"
 import { ChangeEvent, FormEvent, useState, useEffect} from "react"
 import Axios from 'axios'
 import Authorization from '../../Authorization'
-import { useNavigate } from 'react-router'
 
 const url = "http://conjugat.io:8000/subscriptions/process/"
 const token = localStorage.getItem("token")
@@ -10,9 +9,12 @@ const headers = {
   'Content-Type': 'application/json',
   'Authorization': 'Token '+ token
 }
-var count = 0
+
+var count: number
+
 function Process() {
   Authorization.AuthRequired()
+  count = 0
   return (
     <div>
       <h1>Process</h1>
@@ -35,12 +37,10 @@ function RetrieveStatus() {
     count += 1
   }
   else{
-    console.log(trial, subscribed)
     if(subscribed == true) {
       window.location.href = "/subscriptions/success"
     }
 
-    console.log(trial)
     return (
       <div>
         <StripeProcess />
@@ -58,7 +58,6 @@ function RetrieveStatus() {
 }
 
 function StripeProcess() {
-
   function submit(e:FormEvent<HTMLFormElement>) {
     e.preventDefault();
     Axios.post(url, {
@@ -75,8 +74,8 @@ function StripeProcess() {
       window.location.href = res.data.url
     })
   }
+
   return(
-    
     <div>
       <p>Stripe</p>
       <div>
@@ -95,7 +94,6 @@ function StripeProcess() {
 }
 
 function PaypalProcess({trial} : {trial:boolean|null}) {
-  console.log(trial, 'hi')
   const paypalSubscribe = (data:any, actions:any) => {
     if (trial==false) {
       return actions.subscription.create({

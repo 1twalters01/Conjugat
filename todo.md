@@ -1,5 +1,4 @@
 # Short term goals
-Create accounts that have stripe, paypal and coinbase added to them
 Run premium and reset account view POST tests in tests_settings.py
 Add GET function to newsletter to auto add associated account's email
 
@@ -12,7 +11,7 @@ Create functionality in React for:
     Settings
         Reset account
         Premium
-    
+
 Create token that expires after a given length of time
 
 # Medium term goals

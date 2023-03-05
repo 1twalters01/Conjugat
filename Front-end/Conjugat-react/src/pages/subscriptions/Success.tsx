@@ -11,10 +11,10 @@ const headers = {
 }
 
 var count: number
-count = 0
 
 function Success() {
   Authorization.AuthRequired()
+  count = 0
   return (
     <div>
       <h1>Success</h1>
