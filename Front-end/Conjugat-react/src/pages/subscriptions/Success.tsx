@@ -37,18 +37,14 @@ function RetrieveStatus() {
       setSubscribed(res.data.subscribed)
       setCharge(res.data.charge)
       setStatus(res.data.status)
-      console.log(res.data)
     })
     count += 1
   }
   else{
-    if(method == null || subscribed == false) {
-      return (
-        <div>
-          <NotSubscribed />
-        </div>
-      )
+    if(subscribed == false) {
+      window.location.href = "/subscriptions/process"
     }
+
     if(method == 'Stripe' && subscribed == true) {
       return (
         <div>
@@ -74,7 +70,7 @@ function RetrieveStatus() {
     }
     return (
       <div>
-        <p>Error</p>
+        <p>Loading...</p>
       </div>
     )
   }

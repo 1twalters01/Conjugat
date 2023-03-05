@@ -140,12 +140,15 @@ def build_coinbase_checkout(subscriber, success_url, cancel_url):
 def processView(request):
     subscriber = does_subscriber_exist(request)
     if request.method == "GET":
-        if request.data.get('method') == 'Stripe':
-            pass
-        if request.data.get('method') == 'Paypal':
-            pass
-        if request.data.get('method') == 'Coinbase':
-            pass
+        if subscriber:
+            subscribed = subscriber.subscribed
+            trial = subscriber.trial
+        else:
+            subscribed = False
+            trial = True
+        context = {'subscribed':subscribed, 'trial':trial}
+        return Response(data=context,
+                            status=status.HTTP_200_OK)
 
     if request.method == "POST":
         if request.data.get('method') == 'Stripe':

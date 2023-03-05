@@ -11,18 +11,50 @@ const headers = {
   'Authorization': 'Token '+ token
 }
 var count = 0
-
 function Process() {
   Authorization.AuthRequired()
   return (
     <div>
       <h1>Process</h1>
 
-      <StripeProcess />
-      <PaypalProcess />
-      <CoinbaseProcess />
+      <RetrieveStatus />
     </div>
   )
+}
+
+function RetrieveStatus() {
+  const [subscribed, setSubscribed] = useState(null)
+  const [trial, setTrial] = useState(null)
+  
+  if(count < 2){
+    Axios.get(url, {headers: headers})
+    .then(res =>{
+      setTrial(res.data.trial)
+      setSubscribed(res.data.subscribed)
+    })
+    count += 1
+  }
+  else{
+    console.log(trial, subscribed)
+    if(subscribed == true) {
+      window.location.href = "/subscriptions/success"
+    }
+
+    console.log(trial)
+    return (
+      <div>
+        <StripeProcess />
+        <PaypalProcess trial={trial}/>
+        <CoinbaseProcess />
+      </div>
+    )
+  }
+   
+    return (
+      <div>
+        <p>Loading...</p>
+      </div>
+    )
 }
 
 function StripeProcess() {
@@ -62,15 +94,15 @@ function StripeProcess() {
   )
 }
 
-function PaypalProcess() {
-  var trial = false
+function PaypalProcess({trial} : {trial:boolean|null}) {
+  console.log(trial, 'hi')
   const paypalSubscribe = (data:any, actions:any) => {
     if (trial==false) {
       return actions.subscription.create({
         'plan_id': 'P-1L603410HK8214405MP6L5NQ',
       });
     }
-    else{
+    else if (trial==true) {
       return actions.subscription.create({
         'plan_id': 'P-9MS66805EA398571SMP6LZ4Y',
       });
@@ -78,7 +110,7 @@ function PaypalProcess() {
   };
 
   const paypalOnError = (err:any) => {
-  console.log("Error", err)
+    console.log("Error", err)
   }
 
   const paypalOnCancel = (err:any) => {
@@ -86,33 +118,37 @@ function PaypalProcess() {
   }
 
   const paypalOnApprove = (data:any, detail:any) => {
-  // call the backend api to store transaction details
-  Axios.post(url, {
-    subscriptionID: data.subscriptionID,
-    method: 'Paypal',
-  },
-  {
-    headers: headers
-  })
-  .then(res=>{
-    window.location.href = "/subscriptions/success"
-  })
+    Axios.post(url, {
+      subscriptionID: data.subscriptionID,
+      method: 'Paypal',
+    },
+    {
+      headers: headers
+    })
+    .then(res=>{
+      window.location.href = "/subscriptions/success"
+    })
   };
-
-  return(
-    <div>
-      <p>Paypal</p>
-      <PayPalScriptProvider
-        options={{"client-id":`${import.meta.env.VITE_paypal_client_id}`, vault:true}}
-      >
-        <PayPalButtons
-          createSubscription={paypalSubscribe}
-          onApprove={paypalOnApprove}
-          onError={paypalOnError}
-          onCancel={paypalOnCancel}
-        />
-      </PayPalScriptProvider>
-    </div>
+  
+  if (trial==true || trial==false) {
+    return(
+      <div>
+        <p>Paypal</p>
+        <PayPalScriptProvider
+          options={{"client-id":`${import.meta.env.VITE_paypal_client_id}`, vault:true}}
+        >
+          <PayPalButtons
+            createSubscription={paypalSubscribe}
+            onApprove={paypalOnApprove}
+            onError={paypalOnError}
+            onCancel={paypalOnCancel}
+          />
+        </PayPalScriptProvider>
+      </div>
+    )
+  }
+  return (
+    <div></div>
   )
 }
 
