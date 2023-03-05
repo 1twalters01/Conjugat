@@ -28,6 +28,7 @@ function RetrieveStatus() {
   const [method, setMethod] = useState(null)
   const [subscribed, setSubscribed] = useState(null)
   const [charge, setCharge] = useState('')
+  const [status, setStatus] = useState('')
   
   if(count < 2){
     Axios.get(url, {headers: headers})
@@ -35,6 +36,8 @@ function RetrieveStatus() {
       setMethod(res.data.method)
       setSubscribed(res.data.subscribed)
       setCharge(res.data.charge)
+      setStatus(res.data.status)
+      console.log(res.data)
     })
     count += 1
   }
@@ -54,9 +57,10 @@ function RetrieveStatus() {
       )
     }
     else if(method == 'Paypal' && subscribed == true) {
+      console.log(status, 'paypal')
       return (
         <div>
-          <PaypalSuccess />
+          <PaypalSuccess status={status}/>
         </div>
       )
     }
@@ -114,14 +118,46 @@ function StripeSuccess() {
   )
 }
 
-function PaypalSuccess() {
+function PaypalSuccess({status} : {status:string}) {
+  function submit (e:FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const target = e.target as HTMLFormElement
+    Axios.post(url, {
+      action:target.name
+    },
+    {
+    headers:headers
+    })
+    .then(res=>{
+      window.location.reload();
+    })
+  }  
+
+  if (status === 'ACTIVE') {
+    return (
+      <form method="post" onSubmit={(e) => submit(e)} name="Stop">
+        <input type="submit" value="Stop subscription" />
+      </form>
+    )
+  }
+  else if (status === 'SUSPENDED') {
+    return (
+      <form onSubmit={(e) => submit(e)} name="Re-start">
+        <input type="submit" value="Restart subscription" />
+      </form>
+    )
+  }
+  else if (status === 'CANCELLED') {
+    return (
+      <p>Subscription has been cancelled.</p>
+    )
+  }
   return (
-    <div>Paypal</div>
+    <div>Paypal {status}</div>
   )
 }
 
 function CoinbaseSuccess({charge} : {charge:string}) {
-  console.log(charge)
   return (
     <div>
       <p>Coinbase</p>

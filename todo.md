@@ -2,23 +2,18 @@
 Create accounts that have stripe, paypal and coinbase added to them
 Run premium and reset account view POST tests in tests_settings.py
 Add GET function to newsletter to auto add associated account's email
+Check in subscription/process (react) if they are subscribed and if so reroute them
+Check in success if they are subscribed and if not then reroute them
 
 Finish first drafts and test back end APIs (no serializers) for:
     Settings:
         Reset account
         Premium
-    Subscriptions:
-        paypal subscription
-        paypal success
 
 Create functionality in React for:
     Settings
         Reset account
         Premium
-
-    Subscriptions
-        paypal subscription
-        paypal success
     
 Create token that expires after a given length of time
 

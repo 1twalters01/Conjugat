@@ -51,8 +51,7 @@ def url_if_subscribed(subscriber):
 def url_if_not_subscribed(subscriber):
     if not subscriber:
         return 'subscription:options'
-    elif str(subscriber.method) == 'Paypal':
-        return 'subscription:paypal_process'
+
 
 def save_subscriber(request, method, subscriber, subscriber_id=None, customer_id=None):
     if not subscriber:
@@ -162,6 +161,7 @@ def processView(request):
             
         if request.data.get('method') == 'Paypal':
             subscriptionID = request.data.get('subscriptionID')
+            print(subscriptionID)
             save_subscriber(request, 'Paypal', subscriber, subscriber_id=subscriptionID)
             return Response({'url':'url'},
                             status=status.HTTP_200_OK)
@@ -178,43 +178,7 @@ def processView(request):
                 return Response({'url':charge.hosted_url},
                             status=status.HTTP_200_OK)
 
-@login_required
-def paypal_process(request):
-    subscriber = does_subscriber_exist(request)
-    client_id = settings.PAYPAL_CLIENT_ID
-    context = {'trial':True, 'client_id':client_id}
-    if subscriber:
-        context = {'trial':subscriber.trial, 'client_id':client_id}
 
-    if not subscriber or subscriber.subscribed == False:
-        return render(request, 'subscription/paypal/process.html', context)
-
-    else:
-        return redirect(url_if_subscribed(subscriber))
-
-def does_json_exist(request):
-    try:
-        body = json.loads(request.body)
-        body = request.data.get('subscriptionID')
-    except:
-        body = None
-    return body
-
-
-@login_required
-def paypal_subscribe(request):
-    subscriber = does_subscriber_exist(request)
-    body = does_json_exist(request)
-    if body:
-        if request.method == 'POST':
-            subscriber_id = body['subscriptionID']
-            save_subscriber(request, 'Paypal', subscriber, subscriber_id=subscriber_id)
-            return redirect('subscription:paypal_success')
-    else:
-        if not subscriber:
-            return redirect(url_if_not_subscribed(subscriber))
-        else:
-            return redirect(url_if_subscribed(subscriber))
 
 
 
@@ -251,6 +215,11 @@ def successView(request):
             client = Client(api_key=settings.COINBASE_COMMERCE_API_KEY)
             charge = client.charge.retrieve(charge_id)
             context['charge'] = charge.hosted_url
+        
+        if method == 'Paypal':
+            subscription_id = decrypt(subscriber.subscription_id)
+            details = show_sub_details(subscription_id)['status']
+            context['status'] = details
             
         return Response(data=context, status=status.HTTP_200_OK)
 
@@ -261,31 +230,17 @@ def successView(request):
             return Response({'url':stripe_portal.url},
                             status=status.HTTP_200_OK)
         if method == 'Paypal':
-            pass
+            action = request.data.get('action')
+            subscription_id = decrypt(subscriber.subscription_id)
+            if action == 'Stop':
+                suspend_sub(subscription_id)
+                success = 'subscription has been paused'
+                return Response({'success':success},
+                            status=status.HTTP_200_OK)
+            elif action == 'Re-start':
+                activate_sub(subscription_id)
+                success = 'subscription has been re-started'
+                return Response({'success':success},
+                            status=status.HTTP_200_OK)
         if method == 'Coinbase':
             pass
-
-def paypal_success(request):
-    subscriber = does_subscriber_exist(request)
-
-    if request.method == 'POST':
-        sub_id = decrypt(subscriber.subscription_id)
-        if request.POST.get('Stop'):
-            suspend_sub(sub_id)
-            return redirect('subscription:paypal_success')
-
-        elif request.POST.get('Re-start'):
-            activate_sub(sub_id)
-            return redirect('subscription:paypal_success')
-
-    else:
-        if not subscriber or subscriber.subscribed == False:
-            return redirect(url_if_not_subscribed(subscriber))
-        else:
-            if str(subscriber.method) == 'Paypal':
-                sub_id = decrypt(subscriber.subscription_id)
-                details = show_sub_details(sub_id)
-                context = {'id':subscriber.subscription_id, 'status': details['status']}
-                return render(request, 'subscription/paypal/subscribed.html', context)
-            else:
-                return redirect(url_if_subscribed(subscriber))

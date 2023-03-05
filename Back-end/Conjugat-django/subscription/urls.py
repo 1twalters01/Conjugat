@@ -9,16 +9,5 @@ urlpatterns = [
 
     path('stripe-webhooks/', webhooks.stripe_webhooks, name="stripe_webhooks"),
     path('paypal-webhooks/', webhooks.paypal_webhooks, name='paypal_webhooks'),
-    path('coinbase-webhooks/', webhooks.coinbase_webhooks, name='coinbase_webhooks'),
-
-
-
-
-    path('options/', views.options, name='options'),
-    path('paypal-process/', views.paypal_process, name='paypal_process'),
-    path('paypal-subscribe/', views.paypal_subscribe, name='paypal_subscribe'),
-    path('paypal-success/', views.paypal_success, name='paypal_success'),
-    
-
-    
+    path('coinbase-webhooks/', webhooks.coinbase_webhooks, name='coinbase_webhooks'),   
 ]
