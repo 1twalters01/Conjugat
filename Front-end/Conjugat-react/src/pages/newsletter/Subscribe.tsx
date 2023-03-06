@@ -1,19 +1,54 @@
 import { ChangeEvent, FormEvent, useState} from "react"
 import Axios from 'axios'
+import { NULL } from "sass"
+
+const url = "http://conjugat.io:8000/newsletter/subscribe/"
+const token = localStorage.getItem("token")
+const headers = {
+  'Content-Type': 'application/json',
+  'Authorization': 'Token '+ token
+}
+
+var count: number
 
 function Subscribe() {
+  count = 0
   return (
     <div>
       <h1>Subscribe</h1>
 
-      <SubscribeForm />
+      <RetrieveStatus />
     </div>
     
   )
 }
 
+function RetrieveStatus() {
+  const [email, setEmail] = useState('example@example.com')
+  
+  if(count < 2){
+    Axios.get(url, {headers: headers})
+    .then(res =>{
+      if (res.data.email != null) {
+        setEmail(res.data.email)
+      }
+    })
+    count += 1
+  }
+  else{
+    console.log(email)
+    return (
+      <div>
+        <SubscribeForm email={email}/>
+      </div>
+    )
+  }
+  return(
+    <div></div>
+  )
+}
 
-function SubscribeForm(){
+function SubscribeForm({email} : {email:string}){
   const url = 'http://conjugat.io:8000/newsletter/subscribe/'
   const token = localStorage.getItem("token")
   const headers = {
@@ -22,7 +57,7 @@ function SubscribeForm(){
   }
 
   const [data, setData] = useState({
-    email: "",
+    email: email,
     first_name: "",
     last_name: "",
   })

@@ -77,12 +77,6 @@ function RetrieveStatus() {
   )
 }
 
-function NotSubscribed() {
-  return (
-    <div>None</div>
-  )
-}
-
 function StripeSuccess() {
   function submit(e:FormEvent<HTMLFormElement>) {
     e.preventDefault();

@@ -54,6 +54,8 @@ def does_email_exist(request):
             email = User.objects.get(username=request.user).email
         except:
             email = None
+    else:
+        email = None
     return email
 
 
@@ -125,29 +127,35 @@ def subscribeView(request):
 
 
 ''' Unsubscribe '''
-@api_view(["POST"])
+@api_view(["GET", "POST"])
 @permission_classes([AllowAny])
 def unsubscribeView(request):
-    email = request.data.get('email')
-    if not email:
-        error = 'No email provided'
-        print(error)
-        return Response({'error':error},
-                    status=status.HTTP_400_BAD_REQUEST)
-
-    try:
-        email_hash = hashlib.md5(email.encode('utf-8').lower()).hexdigest()
-        member_update = {'status': 'unsubscribed',}
-        response = mailchimp.lists.update_list_member(
-            settings.MAILCHIMP_MARKETING_AUDIENCE_ID,
-            email_hash,
-            member_update,
-        )
-
-    except ApiClientError as error:
-        print(error.text)
-        return HttpResponse(error.text)
+    if request.method == 'GET':
+        email = does_email_exist(request)
+        return Response({'email':email},
+                        status=status.HTTP_200_OK)
     
-    success = 'Successfully unsubscribed from the newsletter'
-    return Response({'success':success, 'unsubscribe':True},
-                    status=status.HTTP_200_OK)
+    if request.method == 'POST':
+        email = request.data.get('email')
+        if not email:
+            error = 'No email provided'
+            print(error)
+            return Response({'error':error},
+                        status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            email_hash = hashlib.md5(email.encode('utf-8').lower()).hexdigest()
+            member_update = {'status': 'unsubscribed',}
+            response = mailchimp.lists.update_list_member(
+                settings.MAILCHIMP_MARKETING_AUDIENCE_ID,
+                email_hash,
+                member_update,
+            )
+
+        except ApiClientError as error:
+            print(error.text)
+            return HttpResponse(error.text)
+        
+        success = 'Successfully unsubscribed from the newsletter'
+        return Response({'success':success, 'unsubscribe':True},
+                        status=status.HTTP_200_OK)
