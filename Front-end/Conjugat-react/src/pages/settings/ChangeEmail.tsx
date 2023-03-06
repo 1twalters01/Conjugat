@@ -20,7 +20,7 @@ function EmailForm(){
     'Content-Type': 'application/json',
     'Authorization': 'Token '+ token
   }
-
+  const [done, setDone] = useState(false)
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -37,6 +37,7 @@ function EmailForm(){
     })
     .then(res=>{
       console.log(res.data)
+      setDone(true)
     })
   }
 
@@ -46,23 +47,30 @@ function EmailForm(){
     setData(newdata)
   }
 
-  return(
-    <div>
-      <form onSubmit={(e) => submit(e)}>
-          <div>
-            <label htmlFor="email">Email</label>
-            <input id="email" type="text" name="email" value={data.email} onChange={(e) => handle(e)} />
-          </div>
+  if (done == true) {
+    return(
+      <div>Email has been updated</div>
+    )
+  }
+  else{
+    return(
+      <div>
+        <form onSubmit={(e) => submit(e)}>
+            <div>
+              <label htmlFor="email">Email</label>
+              <input id="email" type="text" name="email" value={data.email} onChange={(e) => handle(e)} />
+            </div>
 
-          <div>
-            <label htmlFor="password">Password</label>
-            <input id="password" type="password" name="password" value={data.password} onChange={(e) => handle(e)} />
-          </div>
+            <div>
+              <label htmlFor="password">Password</label>
+              <input id="password" type="password" name="password" value={data.password} onChange={(e) => handle(e)} />
+            </div>
 
-          <button>Submit</button>
-      </form>
-    </div>
-  )
+            <button>Submit</button>
+        </form>
+      </div>
+    )
+  }
 }
 
 export default ChangeEmail

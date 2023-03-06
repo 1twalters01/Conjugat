@@ -1,22 +1,24 @@
 import { ChangeEvent, FormEvent, useState } from "react"
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import Axios from 'axios'
 import Authorization from '../../Authorization'
 
-function PasswordResetToken() {
-    Authorization.NotAuthRequired()
-    return (
-      <div>
-        <h1>Password Change</h1>
 
-        <PasswordChange />
-      </div>
-    )
-  }
+function PasswordResetToken() {
+  Authorization.NotAuthRequired()
+  return (
+    <div>
+      <h1>Password Change</h1>
+
+      <PasswordChange />
+    </div>
+  )
+}
 
 function PasswordChange() {
   const { uidb64, token } = useParams();
   const url = "http://conjugat.io:8000/account/password-reset/confirm"
+  const [done, setDone] = useState(false)
   const [data, setData] = useState({
     uidb64: uidb64,
     token: token,
@@ -33,7 +35,7 @@ function PasswordChange() {
       password2: data.password2,
     })
     .then(res=>{
-      window.location.href = '/account/password-reset/done'
+      setDone(true)
     })
   }
 
@@ -43,20 +45,34 @@ function PasswordChange() {
     setData(newdata)
   }
 
-  return(
-    <form onSubmit={(e) => submit(e)}>
+  if (done == true) {
+    return(
       <div>
-        <label htmlFor="password">password</label>
-        <input id="password" type="password" name="password" value={data.password} onChange={(e) => handle(e)} />
+        <h1>Registration Done</h1>
+
+        <div>
+          <p>Your password has successfully been reset.</p>
+          <Link to="../login"><div>Login</div></Link>
+        </div>
       </div>
-      
-      <div>
-        <label htmlFor="password2">Repeat your password</label>
-        <input id="password2" type="password" name="password2" value={data.password2} onChange={(e) => handle(e)} />
-      </div>
-      <input type="submit" value="Submit" />
-    </form>
-  )
+    )
+  }
+  else{
+    return(
+      <form onSubmit={(e) => submit(e)}>
+        <div>
+          <label htmlFor="password">password</label>
+          <input id="password" type="password" name="password" value={data.password} onChange={(e) => handle(e)} />
+        </div>
+        
+        <div>
+          <label htmlFor="password2">Repeat your password</label>
+          <input id="password2" type="password" name="password2" value={data.password2} onChange={(e) => handle(e)} />
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
+    )
+  }
 }
 
 export default PasswordResetToken

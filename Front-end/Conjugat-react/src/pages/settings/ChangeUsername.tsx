@@ -20,7 +20,7 @@ function UsernameForm(){
     'Content-Type': 'application/json',
     'Authorization': 'Token '+ token
   }
-
+  const [done, setDone] = useState(false)
   const [data, setData] = useState({
     username: "",
     password: "",
@@ -36,7 +36,7 @@ function UsernameForm(){
       headers: headers
     })
     .then(res=>{
-      console.log(res.data)
+      setDone(true)
     })
   }
 
@@ -46,23 +46,31 @@ function UsernameForm(){
     setData(newdata)
   }
 
-  return(
-    <div>
-      <form onSubmit={(e) => submit(e)}>
-          <div>
-            <label htmlFor="username">Username</label>
-            <input id="username" type="text" name="username" value={data.username} onChange={(e) => handle(e)} />
-          </div>
-
-          <div>
-            <label htmlFor="password">Password</label>
-            <input id="password" type="password" name="password" value={data.password} onChange={(e) => handle(e)} />
-          </div>
-
-          <button>Submit</button>
-      </form>
-    </div>
-  )
+  if (done == true) {
+    return(
+      <div>Username has been updated</div>
+    )
+  }
+  else{
+    return(
+      <div>
+        <form onSubmit={(e) => submit(e)}>
+            <div>
+              <label htmlFor="username">Username</label>
+              <input id="username" type="text" name="username" value={data.username} onChange={(e) => handle(e)} />
+            </div>
+  
+            <div>
+              <label htmlFor="password">Password</label>
+              <input id="password" type="password" name="password" value={data.password} onChange={(e) => handle(e)} />
+            </div>
+  
+            <button>Submit</button>
+        </form>
+      </div>
+    )
+  }
+  
 }
 
 export default ChangeUsername

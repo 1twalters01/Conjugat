@@ -3,8 +3,6 @@ Create token that expires after a given length of time
 
 Add social authentication to react login page
 
-Consider combining some of the password reset pages into one
-
 Finish designing web pages in HTML and CSS:
     account
         Activate
@@ -43,8 +41,6 @@ Refactor Django code and add serializers
 Refactor react code into more modular components
 
 Add styling to the react pages (SCSS)
-
-Delete django templates and static files
 
 
 # Medium term goals

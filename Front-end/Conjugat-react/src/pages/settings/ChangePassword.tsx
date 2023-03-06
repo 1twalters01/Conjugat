@@ -20,7 +20,7 @@ function PasswordForm(){
     'Content-Type': 'application/json',
     'Authorization': 'Token '+ token,
   }
-
+  const [done, setDone] = useState(false)
   const [data, setData] = useState({
     password: "",
     newPassword1: "",
@@ -39,6 +39,7 @@ function PasswordForm(){
     })
     .then(res=>{
       console.log(res.data)
+      setDone(true)
     })
   }
 
@@ -48,28 +49,35 @@ function PasswordForm(){
     setData(newdata)
   }
 
-  return(
-    <div>
-      <form onSubmit={(e) => submit(e)}>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input id="password" type="password" name="password" value={data.password} onChange={(e) => handle(e)} />
-          </div>
+  if (done == true) {
+    return(
+      <div>Password has been updated</div>
+    )
+  }
+  else{
+    return(
+      <div>
+        <form onSubmit={(e) => submit(e)}>
+            <div>
+              <label htmlFor="password">Password</label>
+              <input id="password" type="password" name="password" value={data.password} onChange={(e) => handle(e)} />
+            </div>
 
-          <div>
-            <label htmlFor="newPassword1"> New password</label>
-            <input id="newPassword1" type="text" name="newPassword1" value={data.newPassword1} onChange={(e) => handle(e)} />
-          </div>
+            <div>
+              <label htmlFor="newPassword1"> New password</label>
+              <input id="newPassword1" type="text" name="newPassword1" value={data.newPassword1} onChange={(e) => handle(e)} />
+            </div>
 
-          <div>
-            <label htmlFor="newPassword2">Re-enter new password</label>
-            <input id="newPassword2" type="text" name="newPassword2" value={data.newPassword2} onChange={(e) => handle(e)} />
-          </div>
+            <div>
+              <label htmlFor="newPassword2">Re-enter new password</label>
+              <input id="newPassword2" type="text" name="newPassword2" value={data.newPassword2} onChange={(e) => handle(e)} />
+            </div>
 
-          <button>Submit</button>
-      </form>
-    </div>
-  )
+            <button>Submit</button>
+        </form>
+      </div>
+    )
+  }
 }
 
 export default ChangePassword
