@@ -56,6 +56,7 @@ function SubscribeForm({email} : {email:string}){
     'Authorization': 'Token '+ token
   }
 
+  const [done, setDone] = useState(false)
   const [data, setData] = useState({
     email: email,
     first_name: "",
@@ -75,7 +76,7 @@ function SubscribeForm({email} : {email:string}){
       headers: headers
     })
     .then(res=>{
-      console.log(res.data)
+      setDone(true)
     })
   }
 
@@ -94,38 +95,47 @@ function SubscribeForm({email} : {email:string}){
     }
   }
 
-  return(
-    <div>
-      <form onSubmit={(e) => submit(e)}>
-          <div>
-            <label htmlFor="email">Email</label>
-            <input id="email" type="text" name="email" value={data.email} onChange={(e) => handle(e)} required />
-          </div>
+  if (done == true) {
+    return(
+      <div>
+          <p>Your subscription was successful</p>
+      </div>
+    )
+  }
+  else{
+    return(
+      <div>
+        <form onSubmit={(e) => submit(e)}>
+            <div>
+              <label htmlFor="email">Email</label>
+              <input id="email" type="text" name="email" value={data.email} onChange={(e) => handle(e)} required />
+            </div>
 
-          <div>
-            <label htmlFor="first_name">First name</label>
-            <input id="first_name" type="text" name="first_name" value={data.first_name} onChange={(e) => handle(e)} required />
-          </div>
-          
-          <div>
-            <label htmlFor="last_name">Last name</label>
-            <input id="last_name" type="text" name="last_name" value={data.last_name} onChange={(e) => handle(e)} />
-          </div>
-          
-          <div>
-            <label htmlFor="languages">Languages</label>
-            <select name="languages" id="languages" value={languages || []} onChange={(e) => changeLanguage(e)} multiple={true}>
-              <option value="English">English</option>
-              <option value="French">French</option>
-              <option value="Italian">Italian</option>
-              <option value="Portuguese">Portuguese</option>
-              <option value="Spanish">Spanish</option>
-            </select>
-          </div>
-          <button>Submit</button>
-      </form>
-    </div>
-  )
+            <div>
+              <label htmlFor="first_name">First name</label>
+              <input id="first_name" type="text" name="first_name" value={data.first_name} onChange={(e) => handle(e)} required />
+            </div>
+            
+            <div>
+              <label htmlFor="last_name">Last name</label>
+              <input id="last_name" type="text" name="last_name" value={data.last_name} onChange={(e) => handle(e)} />
+            </div>
+            
+            <div>
+              <label htmlFor="languages">Languages</label>
+              <select name="languages" id="languages" value={languages || []} onChange={(e) => changeLanguage(e)} multiple={true}>
+                <option value="English">English</option>
+                <option value="French">French</option>
+                <option value="Italian">Italian</option>
+                <option value="Portuguese">Portuguese</option>
+                <option value="Spanish">Spanish</option>
+              </select>
+            </div>
+            <button>Submit</button>
+        </form>
+      </div>
+    )
+  }
 }
 
 export default Subscribe
