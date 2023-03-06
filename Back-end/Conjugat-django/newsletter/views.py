@@ -53,9 +53,9 @@ def does_email_exist(request):
         try:
             email = User.objects.get(username=request.user).email
         except:
-            email = None
+            email = 'email@example.com'
     else:
-        email = None
+        email = 'email@example.com'
     return email
 
 

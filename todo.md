@@ -1,6 +1,4 @@
 # Short term goals
-Add GET functionality to newsletter to prepopulate associated email in the field
-
 Create token that expires after a given length of time
 
 Add social authentication to react login page

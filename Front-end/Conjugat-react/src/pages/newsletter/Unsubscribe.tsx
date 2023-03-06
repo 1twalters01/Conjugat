@@ -1,17 +1,53 @@
 import { ChangeEvent, FormEvent, useState} from "react"
 import Axios from 'axios'
 
+const url = "http://conjugat.io:8000/newsletter/subscribe/"
+const token = localStorage.getItem("token")
+const headers:any = {
+  'Content-Type': 'application/json',
+}
+if (token) {
+  headers['Authorization'] = 'Token '+token
+}
+
+var count: number
+
 function Unsubscribe() {
+  count = 0
   return (
     <div>
-      <h1>Change email</h1>
+      <h1>Unsubscribe</h1>
 
-      <UnsubscribeForm />
+      <RetrieveStatus />
     </div>
   )
 }
 
-function UnsubscribeForm(){
+function RetrieveStatus() {
+  const [email, setEmail] = useState('')
+  
+  if(count < 2){
+    Axios.get(url, {headers: headers})
+    .then(res =>{
+      if (res.data.email != null) {
+        setEmail(res.data.email)
+      }
+    })
+    count += 1
+  }
+  else{
+    return (
+      <div>
+        <UnsubscribeForm email={email}/>
+      </div>
+    )
+  }
+  return(
+    <div></div>
+  )
+}
+
+function UnsubscribeForm({email} : {email:string}){
   const url = "http://conjugat.io:8000/newsletter/unsubscribe/"
   const token = localStorage.getItem("token")
   const headers = {
@@ -20,7 +56,7 @@ function UnsubscribeForm(){
   }
 
   const [data, setData] = useState({
-    email: "",
+    email: email,
   })
 
   function submit(e:FormEvent<HTMLFormElement>) {
