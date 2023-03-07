@@ -13,8 +13,7 @@ function Activate() {
 }
 
 function activateAccount() {
-  const { uidb64, token } = useParams();
-  console.log(token)
+  const { uidb64, token } = useParams()
   const url = "http://conjugat.io:8000/account/activate/"
   Axios.post(url, {
     uidb64: uidb64,

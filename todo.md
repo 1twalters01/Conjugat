@@ -3,6 +3,10 @@ Create token that expires after a given length of time
 
 Add social authentication to react login page
 
+Add in serialiser/dark and light theme functionality
+
+Refactor Django code and add serializers
+
 Finish designing web pages in HTML and CSS:
     account
         Activate
@@ -35,8 +39,6 @@ Finish designing web pages in HTML and CSS:
         Landing page
         Privacy
         Terms
-
-Refactor Django code and add serializers
 
 Refactor react code into more modular components
 

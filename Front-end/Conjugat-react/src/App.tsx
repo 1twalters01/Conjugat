@@ -24,11 +24,8 @@ import Terms from './pages/Terms'
 import Login from './pages/account/Login'
 import Logout from './pages/account/Logout'
 import PasswordReset from './pages/account/PasswordReset'
-import PasswordResetConfirm from './pages/account/PasswordResetConfirm'
 import PasswordResetToken from './pages/account/PasswordResetToken'
-import PasswordResetDone from './pages/account/PasswordResetDone'
 import Register from './pages/account/Register'
-import RegisterConfirm from './pages/account/RegisterConfirm'
 import Activate from './pages/account/Activate'
 
 import Subscribe from './pages/newsletter/Subscribe'
@@ -63,12 +60,9 @@ const router = createBrowserRouter(
         <Route path="logout" element={<Logout />} />
 
         <Route path="password-reset" element={<PasswordReset />} />
-        <Route path="password-reset/confirm" element={<PasswordResetConfirm />} />
         <Route path="password-reset/:uidb64/:token" element={<PasswordResetToken />} />
-        <Route path="password-reset/done" element={<PasswordResetDone />} />
 
         <Route path="register" element={<Register />} />
-        <Route path="register/confirm" element={<RegisterConfirm />} />
         <Route path="activate/:uidb64/:token" element={<Activate />} />
       </Route>
 

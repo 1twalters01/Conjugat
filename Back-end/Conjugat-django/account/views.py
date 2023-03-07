@@ -201,7 +201,7 @@ def loginPasswordView(request):
     elif remember_me == False:
         #token expiration date for 1 day
         token, _ = Token.objects.get_or_create(user=user)
-    
+    print(token.created)
     print(token.key)
     serializer = LoginPasswordSerializer(token)
     print(serializer.data)
