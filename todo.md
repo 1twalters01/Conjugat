@@ -6,6 +6,16 @@ Add social authentication to react login page
 Add in serialiser/dark and light theme functionality
 
 Refactor Django code and add serializers
+    account
+        loginPasswordView
+        logoutView
+        registerView
+        activateView
+        passwordResetView
+        passwordResetConfirmedView
+    newsletter
+    settings
+    subscriptions
 
 Finish designing web pages in HTML and CSS:
     account

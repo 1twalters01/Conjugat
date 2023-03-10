@@ -20,6 +20,7 @@ from settings.totp import generate_totp
 from .tokens import account_activation_token, password_reset_token
 
 
+''' Routes '''
 @api_view(["GET"])
 @permission_classes([AllowAny])
 def getRoutes(request):
@@ -70,6 +71,7 @@ def getRoutes(request):
     return Response(routes)
 
 
+''' Login '''
 def does_username_exist(username):
     try:
         user = User.objects.get(username=username)
@@ -95,28 +97,30 @@ def is_two_factor_active(user):
         confirmed = False
     return confirmed
 
-
-
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def loginUsernameView(request):
     username = request.data.get("username")
-    if username is None:
-        return Response({'error': 'No username was entered'},
-                        status=status.HTTP_400_BAD_REQUEST)
 
-    user, activeCheck = does_username_exist(username)
+    if username is None:
+        error = 'No username was entered'
+        return Response({'error': error},
+                        status=status.HTTP_404_NOT_FOUND)
+
+    user, active = does_username_exist(username)
     if not user:
-        return Response({'error': 'Username is not recognised'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    if activeCheck != True:
-        return Response({'error': 'User is not activated'},
-                        status=status.HTTP_400_BAD_REQUEST)
+        error = 'Username is not recognised'
+        return Response({'error': error},
+                        status=status.HTTP_404_NOT_FOUND)
+    if active == False:
+        error = 'User is not activated'
+        return Response({'error': error},
+                        status=status.HTTP_401_UNAUTHORIZED)
 
     user.confirmed = is_two_factor_active(user.id)
+
     serializer = LoginUsernameSerializer(user)
-    print(serializer.data)
-    return Response(serializer.data, status=status.HTTP_200_OK)
+    return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 
 
@@ -127,11 +131,6 @@ Need to make the remember_me functionality
     pc - once a month and every day respectively
 Need to have functionality to have each sign in platform have its own token
 '''
-def login_procedure(request, user, remember_me):
-    if not remember_me:
-        request.session.set_expiry(0)
-    login(request, user)
-
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def loginPasswordView(request):
