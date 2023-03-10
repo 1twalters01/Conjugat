@@ -12,7 +12,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
-from.serializers import LoginUsernameSerializer, LoginPasswordSerializer
+from.serializers import LoginUsernameSerializer, LoginPasswordSerializer, LogoutSerializer
 
 from subscription.encryption import decrypt
 from settings.models import TwoFactorAuth
@@ -210,22 +210,15 @@ def loginPasswordView(request):
 
 
 
-
-
+from django.contrib.auth import logout
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def logoutView(request):
-    token = request.headers.get("Authorization").split('Token ')[1]
-    try:
-        token = Token.objects.get(key=token)
-    except (AttributeError, ObjectDoesNotExist):
-        token = None
-    if not token:
-        return Response({'error': 'invalid authentication token'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    token.delete()
+    request.user.auth_token.delete()
+    logout(request)
     return Response({"success": "Successfully logged out."},
                     status=status.HTTP_200_OK)
+
 
 
 # I am using django to send the email. I could use mailchimp instead.

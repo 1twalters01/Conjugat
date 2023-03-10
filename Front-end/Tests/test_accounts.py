@@ -51,10 +51,10 @@ class TestAccountApi(unittest.TestCase):
     #     self.assertEqual(str(HTTP_methods.options(urls['loginPasswordView'])), '<Response [200]>')
     #     self.assertEqual(str(HTTP_methods.patch(urls['loginPasswordView'])), '<Response [405]>')
 
-    # def test_logoutView(self):
-    #     self.assertEqual(str(HTTP_methods.post(urls['logoutView']).json()['detail']), 'Authentication credentials were not provided.')
-    #     self.assertEqual(str(HTTP_methods.post(urls['logoutView'], headers={'Authorization':'Token f3aa8f2f2bc993069d0ca86f8f4bc50287d69ee7'}).json()['detail']), 'Invalid token.')
-    #     self.assertEqual(str(HTTP_methods.post(urls['logoutView'], headers={'Authorization':'Token c3aa8f2f2bc993069d0ca86f8f4bc50287d69ee7'})), '<Response [200]>')
+    def test_logoutView(self):
+        # self.assertEqual(str(HTTP_methods.post(urls['logoutView']).json()['detail']), 'Authentication credentials were not provided.')
+        # self.assertEqual(str(HTTP_methods.post(urls['logoutView'], headers={'Authorization':'Token f3aa8f2f2bc993069d0ca86f8f4bc50287d69ee7'}).json()['detail']), 'Invalid token.')
+        self.assertEqual(str(HTTP_methods.post(urls['logoutView'], headers={'Authorization':'Token 998af8bb5bd3dc1a493c589f7c167236ba97c3aa'})), '<Response [200]>')
     #     # Disallowed methods
     #     self.assertEqual(str(HTTP_methods.get(urls['logoutView'])), '<Response [405]>')
     #     self.assertEqual(str(HTTP_methods.head(urls['logoutView'])), '<Response [405]>')

@@ -8,7 +8,6 @@ Add in serialiser/dark and light theme functionality
 Refactor Django code and add serializers
     account
         loginPasswordView
-        logoutView
         registerView
         activateView
         passwordResetView
