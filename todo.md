@@ -13,8 +13,20 @@ Refactor Django code and add serializers
         passwordResetView
         passwordResetConfirmedView
     newsletter
+        subscribeView
+        unsubscribeView
     settings
+        changeEmailView
+        changePasswordView
+        changeUsernameView
+        closeAccountView
+        themesView
+        premiumView
+        twoFactorAuthView
+        resetAccountView
     subscriptions
+        processView
+        successView
 
 Finish designing web pages in HTML and CSS:
     account
@@ -50,8 +62,70 @@ Finish designing web pages in HTML and CSS:
         Terms
 
 Refactor react code into more modular components
+    account
+        Activate
+        Login
+        Logout
+        Password reset
+        Password reset confirm
+        Password reset done
+        Password reset token
+    newsletter
+        Subscribe
+        Unsubscribe
+    settings
+        Change email
+        Change password
+        Change username
+        Close account
+        Premium
+        Reset account
+        Themes
+        Two factor authentication
+    subscriptions
+        Cancelled
+        Process
+        Success
+    Misc
+        Contact
+        FAQs
+        Home
+        Landing page
+        Privacy
+        Terms
 
 Add styling to the react pages (SCSS)
+    account
+        Activate
+        Login
+        Logout
+        Password reset
+        Password reset confirm
+        Password reset done
+        Password reset token
+    newsletter
+        Subscribe
+        Unsubscribe
+    settings
+        Change email
+        Change password
+        Change username
+        Close account
+        Premium
+        Reset account
+        Themes
+        Two factor authentication
+    subscriptions
+        Cancelled
+        Process
+        Success
+    Misc
+        Contact
+        FAQs
+        Home
+        Landing page
+        Privacy
+        Terms
 
 
 # Medium term goals

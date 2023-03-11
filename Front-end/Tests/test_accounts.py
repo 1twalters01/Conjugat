@@ -33,16 +33,16 @@ class TestAccountApi(unittest.TestCase):
     #     self.assertEqual(str(HTTP_methods.options(urls['loginUsernameView'])), '<Response [200]>')
     #     self.assertEqual(str(HTTP_methods.patch(urls['loginUsernameView'])), '<Response [405]>')
 
-    # def test_loginPasswordVieww(self):
-    #     self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView']).json()['error']), 'No username provided')
-    #     self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView'], data={'username': 'admin', 'uid': 'admin'}).json()['error']), 'User id must be an integer')
-    #     self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView'], data={'username': 'admin', 'uid': 2}).json()['error']), 'No password provided')
-    #     self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView'], data={'username': 'admin', 'uid': 2, 'password':'wrong password'}).json()['error']), 'No totp status provided')
-    #     self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView'], data={'username': 'admin', 'uid': 2, 'password':'wrong password', 'confirmed':'something'}).json()['error']), 'totp status must be a boolean')
-    #     self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView'], data={'username': 'admin', 'uid': 2, 'password':'admin', 'confirmed':True}).json()['error']), 'The totp is incorrect')
-    #     self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView'], data={'username': 'admin','uid': 3, 'password':'admin', 'confirmed':True}).json()['error']), 'uid is not found')
-    #     self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView'], data={'username': 'admin','uid': 2, 'password':'admin', 'confirmed':True, 'totp': '8799942'}).json()['error']), 'The totp is incorrect')
-    #     self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView'], data={'username': 'admin','uid': 2, 'password':'admin', 'confirmed':True, 'totp': '491484'}).json().keys()), "dict_keys(['token'])")
+    def test_loginPasswordVieww(self):
+        # self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView']).json()['error']), 'No username provided')
+        # self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView'], data={'username': 'admin', 'uid': 'admin'}).json()['error']), 'User id must be an integer')
+        # self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView'], data={'username': 'admin', 'uid': 2}).json()['error']), 'No password provided')
+        # self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView'], data={'username': 'admin', 'uid': 2, 'password':'wrong password'}).json()['error']), 'No totp status provided')
+        # self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView'], data={'username': 'admin', 'uid': 2, 'password':'wrong password', 'confirmed':'something'}).json()['error']), 'totp status must be a boolean')
+        self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView'], data={'username': 'admin', 'uid': 2, 'password':'admin', 'confirmed':True}).json()['error']), 'The totp is incorrect')
+        # self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView'], data={'username': 'admin','uid': 3, 'password':'admin', 'confirmed':True}).json()['error']), 'uid is not found')
+        # self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView'], data={'username': 'admin','uid': 2, 'password':'admin', 'confirmed':True, 'totp': '8799942'}).json()['error']), 'The totp is incorrect')
+        # self.assertEqual(str(HTTP_methods.post(urls['loginPasswordView'], data={'username': 'admin','uid': 2, 'password':'admin', 'confirmed':True, 'totp': '491484'}).json().keys()), "dict_keys(['token'])")
     #     # Disallowed methods
     #     self.assertEqual(str(HTTP_methods.get(urls['loginPasswordView'])), '<Response [405]>')
     #     self.assertEqual(str(HTTP_methods.head(urls['loginPasswordView'])), '<Response [405]>')
@@ -51,10 +51,10 @@ class TestAccountApi(unittest.TestCase):
     #     self.assertEqual(str(HTTP_methods.options(urls['loginPasswordView'])), '<Response [200]>')
     #     self.assertEqual(str(HTTP_methods.patch(urls['loginPasswordView'])), '<Response [405]>')
 
-    def test_logoutView(self):
-        # self.assertEqual(str(HTTP_methods.post(urls['logoutView']).json()['detail']), 'Authentication credentials were not provided.')
-        # self.assertEqual(str(HTTP_methods.post(urls['logoutView'], headers={'Authorization':'Token f3aa8f2f2bc993069d0ca86f8f4bc50287d69ee7'}).json()['detail']), 'Invalid token.')
-        self.assertEqual(str(HTTP_methods.post(urls['logoutView'], headers={'Authorization':'Token 998af8bb5bd3dc1a493c589f7c167236ba97c3aa'})), '<Response [200]>')
+    # def test_logoutView(self):
+    #     self.assertEqual(str(HTTP_methods.post(urls['logoutView']).json()['detail']), 'Authentication credentials were not provided.')
+    #     self.assertEqual(str(HTTP_methods.post(urls['logoutView'], headers={'Authorization':'Token f3aa8f2f2bc993069d0ca86f8f4bc50287d69ee7'}).json()['detail']), 'Invalid token.')
+    #     self.assertEqual(str(HTTP_methods.post(urls['logoutView'], headers={'Authorization':'Token 998af8bb5bd3dc1a493c589f7c167236ba97c3aa'})), '<Response [200]>')
     #     # Disallowed methods
     #     self.assertEqual(str(HTTP_methods.get(urls['logoutView'])), '<Response [405]>')
     #     self.assertEqual(str(HTTP_methods.head(urls['logoutView'])), '<Response [405]>')

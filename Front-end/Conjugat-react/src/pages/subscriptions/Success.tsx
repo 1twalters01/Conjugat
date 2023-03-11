@@ -33,6 +33,7 @@ function RetrieveStatus() {
   if(count < 2){
     Axios.get(url, {headers: headers})
     .then(res =>{
+      console.log(res.data)
       setMethod(res.data.method)
       setSubscribed(res.data.subscribed)
       setCharge(res.data.charge)
@@ -45,21 +46,21 @@ function RetrieveStatus() {
       window.location.href = "/subscriptions/process"
     }
 
-    if(method == 'Stripe' && subscribed == true) {
+    if(method === 1 && subscribed == true) {
       return (
         <div>
           <StripeSuccess />
         </div>
       )
     }
-    else if(method == 'Paypal' && subscribed == true) {
+    else if(method === 2 && subscribed == true) {
       return (
         <div>
           <PaypalSuccess status={status}/>
         </div>
       )
     }
-    else if(method == 'Coinbase' && subscribed == true) {
+    else if(method === 3 && subscribed == true) {
       return (
         <div>
           <CoinbaseSuccess charge={charge} />

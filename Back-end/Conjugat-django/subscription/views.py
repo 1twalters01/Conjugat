@@ -1,11 +1,10 @@
 
 from coinbase_commerce.client import Client
 from django.conf import settings
-from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from .encryption import decrypt, encrypt
 
-from .models import UserProfile
+from .models import UserProfile, PaymentMethod
 from .paypal import show_sub_details, suspend_sub, activate_sub
 import stripe
 
@@ -18,10 +17,24 @@ from rest_framework.response import Response
 ''' Setup '''
 def does_subscriber_exist(request):
     try:
-        subscriber = get_object_or_404(UserProfile, user=request.user)
+        subscriber = UserProfile.objects.get(user=request.user)
     except:
         subscriber = None
     return subscriber
+
+def is_user_subscribed(subscriber):
+    if subscriber:
+        subscribed = subscriber.subscribed
+    else:
+        subscribed = False
+    return subscribed
+
+def does_trial_exist(subscriber):
+    if subscriber:
+        trial = subscriber.trial
+    else:
+        trial = True
+    return trial
 
 def obtain_method(subscriber):
     if subscriber:
@@ -30,6 +43,7 @@ def obtain_method(subscriber):
         method = None
     return method
 
+# Instead of making an expensive call to postgres I am using a function instead.
 def payment_method(method):
     if method == 'Stripe':
         return 1
@@ -41,8 +55,10 @@ def payment_method(method):
 def save_subscriber(request, method, subscriber, subscriber_id=None, customer_id=None):
     if not subscriber:
         subscriber = UserProfile.objects.create(user=request.user, method_id=payment_method(method))
-        # subscriber.save()
     subscriber.method_id=payment_method(method)
+    # Reset the subscription and customer ids
+    subscriber.subscription_id = None
+    subscriber.customer_id = None
     if customer_id:
         subscriber.customer_id = encrypt(customer_id)
     if subscriber_id:
@@ -52,15 +68,10 @@ def save_subscriber(request, method, subscriber, subscriber_id=None, customer_id
 
 
 
-'''Process'''
+''' Process '''
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def build_stripe_checkout(request, subscriber, customer, success_url, cancel_url):
-    if not success_url:
-        success_url = request.build_absolute_uri(reverse('subscription:options'))
-    if not cancel_url:
-        cancel_url = request.build_absolute_uri(reverse('subscription:options'))
-
     prices = stripe.Price.list(
             lookup_keys=[request.data.get('lookup_key')],
             expand=['data.product']
@@ -107,51 +118,39 @@ def build_coinbase_checkout(subscriber, success_url, cancel_url):
     charge = client.charge.create(**checkout_kwargs)
     return charge
 
+from .serializers import ProcessSerializer
 @api_view(["GET", "POST"])
 @permission_classes([IsAuthenticated])
 def processView(request):
     subscriber = does_subscriber_exist(request)
     if request.method == "GET":
-        if subscriber:
-            subscribed = subscriber.subscribed
-            trial = subscriber.trial
-        else:
-            subscribed = False
-            trial = True
-        context = {'subscribed':subscribed, 'trial':trial}
-        return Response(data=context,
+        serializer = ProcessSerializer(subscriber)
+        return Response(data=serializer.data,
                             status=status.HTTP_200_OK)
 
     if request.method == "POST":
+        success_url = request.data.get("success_url")
+        cancel_url = request.data.get("cancel_url")
         if request.data.get('method') == 'Stripe':
             if not subscriber or subscriber.subscribed == False:
-                success_url = request.data.get("success_url")
-                cancel_url = request.data.get("cancel_url")
-
                 customer = stripe.Customer.create()
                 checkout_session = build_stripe_checkout(request, subscriber, customer, success_url, cancel_url)
                 save_subscriber(request, 'Stripe', subscriber, customer_id = customer.id)
                 return Response({'url':checkout_session.url},
-                            status=status.HTTP_200_OK)
-            
+                                status=status.HTTP_200_OK)
+
         if request.data.get('method') == 'Paypal':
             subscriptionID = request.data.get('subscriptionID')
-            print(subscriptionID)
             save_subscriber(request, 'Paypal', subscriber, subscriber_id=subscriptionID)
-            return Response({'url':'url'},
-                            status=status.HTTP_200_OK)
+            return Response(status=status.HTTP_200_OK)
 
         if request.data.get('method') == 'Coinbase':
             if not subscriber or subscriber.subscribed == False:
-                success_url = request.data.get("success_url")
-                cancel_url = request.data.get("cancel_url")
-
                 charge = build_coinbase_checkout(subscriber, success_url, cancel_url)
                 subscriber_id = charge.hosted_url.rsplit('/', 1)[1]
                 save_subscriber(request, 'Coinbase', subscriber, subscriber_id=subscriber_id)
-
                 return Response({'url':charge.hosted_url},
-                            status=status.HTTP_200_OK)
+                                status=status.HTTP_200_OK)
 
 
 
@@ -171,6 +170,7 @@ def build_stripe_portal(request, subscriber, return_url=None):
     return portalSession
 
 
+from .serializers import SuccessSerializer
 @api_view(["GET", "POST"])
 @permission_classes([IsAuthenticated])
 def successView(request):
@@ -178,25 +178,21 @@ def successView(request):
     method = obtain_method(subscriber)
     
     if request.method == "GET":
-        if subscriber:
-            subscribed = subscriber.subscribed
-        else:
-            subscribed = False
-
-        context = {'subscribed':subscribed, 'method':method}
-
+        subscriber.charge = None
+        subscriber.status = None
         if method == 'Coinbase':
-            charge_id = decrypt(subscriber.subscription_id)
             client = Client(api_key=settings.COINBASE_COMMERCE_API_KEY)
+            charge_id = decrypt(subscriber.subscription_id)
             charge = client.charge.retrieve(charge_id)
-            context['charge'] = charge.hosted_url
+            subscriber.charge = charge.hosted_url
         
         if method == 'Paypal':
             subscription_id = decrypt(subscriber.subscription_id)
-            details = show_sub_details(subscription_id)['status']
-            context['status'] = details
-            
-        return Response(data=context, status=status.HTTP_200_OK)
+            details = show_sub_details(subscription_id)
+            subscriber.status = details['status']
+
+        serializer = SuccessSerializer(subscriber)
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
 
     if request.method == "POST":
         return_url = request.data.get('return_url')
@@ -204,6 +200,7 @@ def successView(request):
             stripe_portal = build_stripe_portal(request, subscriber, return_url)
             return Response({'url':stripe_portal.url},
                             status=status.HTTP_200_OK)
+        
         if method == 'Paypal':
             action = request.data.get('action')
             subscription_id = decrypt(subscriber.subscription_id)
@@ -212,10 +209,14 @@ def successView(request):
                 success = 'subscription has been paused'
                 return Response({'success':success},
                             status=status.HTTP_200_OK)
+            
             elif action == 'Re-start':
                 activate_sub(subscription_id)
                 success = 'subscription has been re-started'
                 return Response({'success':success},
                             status=status.HTTP_200_OK)
-        if method == 'Coinbase':
-            pass
+
+        else:
+            error = 'Invalid method'
+            return Response({'error':error},
+                            status=status.HTTP_404_NOT_FOUND)
