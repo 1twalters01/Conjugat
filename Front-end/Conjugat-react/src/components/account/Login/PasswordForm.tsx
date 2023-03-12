@@ -2,10 +2,10 @@ import { useNavigate } from "react-router-dom"
 import { ChangeEvent, FormEvent, useState, } from "react"
 
 import AxiosInstance from '../../functions/AxiosInstance'
-import PasswordField from '../../functions/Input fields/PasswordField'
-import TotpField from '../../functions/Input fields/TotpField'
-import RememberMeField from '../../functions/Input fields/RememberMeField'
-import PasswordReset from '../../functions/Input fields/PasswordReset'
+import PasswordField from '../../Input fields/PasswordField'
+import TotpField from '../../Input fields/TotpField'
+import RememberMeField from '../../Input fields/RememberMeField'
+import PasswordReset from '../../Input fields/PasswordReset'
 
 function PasswordForm({username, id, confirmed}: {username:string, id:string, confirmed:boolean|null}) {
     const [password, setPassword] = useState('')
@@ -25,6 +25,7 @@ function PasswordForm({username, id, confirmed}: {username:string, id:string, co
   
     function submit(e:FormEvent<HTMLFormElement>) {
         e.preventDefault();
+        
         AxiosInstance.Unauthorised
         .post('account/login/password/', {
             username: username,

@@ -1,15 +1,37 @@
+import { useState } from 'react'
+
 import Authorization from '../../components/functions/Authorization'
+
+import Header from '../../components/account/Header'
 import LogoutBtn from '../../components/account/Logout/LogoutBtn'
+import LogoutResponse from '../../components/account/Logout/LogoutResponse'
+
 
 function Logout() {
   Authorization.AuthRequired()
-  return (
-    <div>
-        <h1>Logout</h1>
+  const [LoggedOut, SetLoggedOut] = useState(false)
+  if (LoggedOut==false) {
+    return (
+      <div>
+        <Header />
 
-        <LogoutBtn />
-    </div>
-  )
+        <LogoutBtn
+          onLoggedOutChange={SetLoggedOut}
+        />
+      </div>
+    )
+  }
+  else if (LoggedOut==true) {
+    return (
+      <div>
+        <Header />
+
+        <LogoutResponse />
+      </div>
+    )
+  }
 }
+
+
 
 export default Logout

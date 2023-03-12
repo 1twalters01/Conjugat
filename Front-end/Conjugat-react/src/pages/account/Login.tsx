@@ -36,7 +36,7 @@ function Login() {
 
   if (page == 'password' && username != '') {
     return(
-      <div>
+      <div className="main-container">
         <Header />
         <ResetUsername
           onPageChange={setPage}

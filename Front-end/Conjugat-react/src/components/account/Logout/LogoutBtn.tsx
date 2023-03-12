@@ -1,25 +1,18 @@
 import { FormEvent} from "react"
-import Axios from 'axios'
+import AxiosInstance from '../../functions/AxiosInstance'
 
-function LogoutBtn() {
+function LogoutBtn({onLoggedOutChange} : {onLoggedOutChange:Function}) {
     function submit(e:FormEvent<HTMLFormElement>) {
       e.preventDefault();
-      const url = "http://conjugat.io:8000/account/logout/"
-      const token = localStorage.getItem("token")
-      
-      const headers = {
-        'Content-Type': 'application/json',
-        'Authorization': 'Token '+ token
-      }
-  
-      Axios.post(url, {},
-      {
-        headers: headers
-      })
+
+      AxiosInstance.Authorised
+      .post('/account/logout/')
       .then(res=>{
-        console.log(res.data)
-        localStorage.removeItem('token');
-        window.location.reload();
+          localStorage.removeItem('token');
+          onLoggedOutChange(true)
+      })
+      .catch(err=>{
+          console.log(err.response.data.error)
       })
     }
 
