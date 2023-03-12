@@ -1,4 +1,4 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
@@ -111,7 +111,7 @@ def loginUsernameView(request):
     if not user:
         error = 'Username is not recognised'
         return Response({'error': error},
-                        status=status.HTTP_404_NOT_FOUND)
+                        status=status.HTTP_401_UNAUTHORIZED)
     if active == False:
         error = 'User is not activated'
         return Response({'error': error},
@@ -139,14 +139,10 @@ def loginPasswordView(request):
     totp = request.data.get("totp")
     confirmed = request.data.get("confirmed")
     remember_me = request.data.get("remember_me")
-    print(confirmed, isinstance(confirmed, bool))
+
     if not uid:
         return Response({'error': 'No username provided'},
                         status=status.HTTP_400_BAD_REQUEST)
-    try:
-        uid = int(uid)
-    except:
-        uid = None
     if isinstance(uid, int) == False:
         error = 'User id must be an integer'
         print(error)
@@ -157,24 +153,17 @@ def loginPasswordView(request):
         print(error)
         return Response({'error': error},
                         status=status.HTTP_400_BAD_REQUEST)
-    if not confirmed:
+    if confirmed == None:
         error = 'No totp status provided'
         print(error)
         return Response({'error': error},
                         status=status.HTTP_400_BAD_REQUEST)
-
-    if confirmed == 'True' or confirmed == 'true':
-        confirmed = True
-    elif confirmed == 'False' or confirmed == 'false':
-        confirmed = False
-    
     if isinstance(confirmed, bool) == False:
         error = 'totp status must be a boolean'
         print(error)
         return Response({'error': error},
                         status=status.HTTP_400_BAD_REQUEST)
 
-    
     user = authenticate(username=username, password=password)
     if not user:
         error = 'The username and/or password is incorrect'
@@ -207,11 +196,9 @@ def loginPasswordView(request):
     elif remember_me == False:
         #token expiration date for 1 day
         token, _ = Token.objects.get_or_create(user=user)
-    print(token.created)
-    print(token.key)
+    
     serializer = LoginPasswordSerializer(token)
-    print(serializer.data)
-    return Response({'token': token.key},
+    return Response(data=serializer.data,
                     status=status.HTTP_200_OK)
 
 

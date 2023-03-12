@@ -1,26 +1,40 @@
 import { ChangeEvent, FormEvent, useState} from "react"
 import Axios from 'axios'
-import Authorization from '../../Authorization'
+import Authorization from '../../components/functions/Authorization'
 
 function ChangePassword() {
   Authorization.AuthRequired()
-  return (
-    <div>
-      <h1>Change password</h1>
+  const [done, setDone] = useState(false)
 
-      <PasswordForm />
-    </div>
-  )
+  if (done == false) {
+    return (
+      <div>
+        <h1>Change password</h1>
+
+        <PasswordForm
+          onDoneChange={setDone}
+        />
+      </div>
+    )
+  }
+  else {
+    return (
+      <div>
+        <h1>Change Password done</h1>
+
+        <PasswordDone />
+      </div>
+    )
+  }
 }
 
-function PasswordForm(){
+function PasswordForm({ onDoneChange }: {onDoneChange:Function}){
   const url = "http://conjugat.io:8000/settings/change-password/"
   const token = localStorage.getItem("token")
   const headers = {
     'Content-Type': 'application/json',
     'Authorization': 'Token '+ token,
   }
-  const [done, setDone] = useState(false)
   const [data, setData] = useState({
     password: "",
     newPassword1: "",
@@ -39,7 +53,7 @@ function PasswordForm(){
     })
     .then(res=>{
       console.log(res.data)
-      setDone(true)
+      onDoneChange(true)
     })
   }
 
@@ -49,35 +63,34 @@ function PasswordForm(){
     setData(newdata)
   }
 
-  if (done == true) {
-    return(
-      <div>Password has been updated</div>
-    )
-  }
-  else{
-    return(
-      <div>
-        <form onSubmit={(e) => submit(e)}>
-            <div>
-              <label htmlFor="password">Password</label>
-              <input id="password" type="password" name="password" value={data.password} onChange={(e) => handle(e)} />
-            </div>
+  return(
+    <div>
+      <form onSubmit={(e) => submit(e)}>
+          <div>
+            <label htmlFor="password">Password</label>
+            <input id="password" type="password" name="password" value={data.password} onChange={(e) => handle(e)} />
+          </div>
 
-            <div>
-              <label htmlFor="newPassword1"> New password</label>
-              <input id="newPassword1" type="text" name="newPassword1" value={data.newPassword1} onChange={(e) => handle(e)} />
-            </div>
+          <div>
+            <label htmlFor="newPassword1"> New password</label>
+            <input id="newPassword1" type="text" name="newPassword1" value={data.newPassword1} onChange={(e) => handle(e)} />
+          </div>
 
-            <div>
-              <label htmlFor="newPassword2">Re-enter new password</label>
-              <input id="newPassword2" type="text" name="newPassword2" value={data.newPassword2} onChange={(e) => handle(e)} />
-            </div>
+          <div>
+            <label htmlFor="newPassword2">Re-enter new password</label>
+            <input id="newPassword2" type="text" name="newPassword2" value={data.newPassword2} onChange={(e) => handle(e)} />
+          </div>
 
-            <button>Submit</button>
-        </form>
-      </div>
-    )
-  }
+          <button>Submit</button>
+      </form>
+    </div>
+  )
+}
+
+function PasswordDone() {
+  return(
+    <div>Password has been updated</div>
+  )
 }
 
 export default ChangePassword

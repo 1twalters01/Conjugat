@@ -1,26 +1,41 @@
 import { ChangeEvent, FormEvent, useState} from "react"
 import Axios from 'axios'
-import Authorization from '../../Authorization'
+import Authorization from '../../components/functions/Authorization'
 
 function ChangeUsername() {
   Authorization.AuthRequired()
-  return (
-    <div>
-      <h1>Change username</h1>
+  const [done, setDone] = useState(false)
 
-      <UsernameForm />
-    </div>
-  )
+  if (done == false) {
+    return (
+      <div>
+        <h1>Change username</h1>
+
+        <UsernameForm
+          onDoneChange={setDone}
+        />
+      </div>
+    )
+  }
+
+  else {
+    return (
+      <div>
+        <h1>Change Password done</h1>
+
+        <UsernameDone />
+      </div>
+    )
+  }
 }
 
-function UsernameForm(){
+function UsernameForm({ onDoneChange }: {onDoneChange:Function}){
   const url = "http://conjugat.io:8000/settings/change-username/"
   const token = localStorage.getItem("token")
   const headers = {
     'Content-Type': 'application/json',
     'Authorization': 'Token '+ token
   }
-  const [done, setDone] = useState(false)
   const [data, setData] = useState({
     username: "",
     password: "",
@@ -35,9 +50,9 @@ function UsernameForm(){
     {
       headers: headers
     })
-    .then(res=>{
-      setDone(true)
-    })
+    .then(
+      onDoneChange(true)
+    )
   }
 
   function handle(e:ChangeEvent<HTMLInputElement>) {
@@ -46,31 +61,29 @@ function UsernameForm(){
     setData(newdata)
   }
 
-  if (done == true) {
-    return(
-      <div>Username has been updated</div>
-    )
-  }
-  else{
-    return(
-      <div>
-        <form onSubmit={(e) => submit(e)}>
-            <div>
-              <label htmlFor="username">Username</label>
-              <input id="username" type="text" name="username" value={data.username} onChange={(e) => handle(e)} />
-            </div>
-  
-            <div>
-              <label htmlFor="password">Password</label>
-              <input id="password" type="password" name="password" value={data.password} onChange={(e) => handle(e)} />
-            </div>
-  
-            <button>Submit</button>
-        </form>
-      </div>
-    )
-  }
-  
+  return(
+    <div>
+      <form onSubmit={(e) => submit(e)}>
+          <div>
+            <label htmlFor="username">Username</label>
+            <input id="username" type="text" name="username" value={data.username} onChange={(e) => handle(e)} />
+          </div>
+
+          <div>
+            <label htmlFor="password">Password</label>
+            <input id="password" type="password" name="password" value={data.password} onChange={(e) => handle(e)} />
+          </div>
+
+          <button>Submit</button>
+      </form>
+    </div>
+  )
+}
+
+function UsernameDone() {
+  return(
+    <div>Email has been updated</div>
+  )
 }
 
 export default ChangeUsername

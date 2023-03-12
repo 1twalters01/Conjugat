@@ -1,26 +1,41 @@
 import { ChangeEvent, FormEvent, useState} from "react"
 import Axios from 'axios'
-import Authorization from '../../Authorization'
+import Authorization from '../../components/functions/Authorization'
 
 function ChangeEmail() {
   Authorization.AuthRequired()
-  return (
-    <div>
-      <h1>Change email</h1>
+  const [done, setDone] = useState(false)
 
-      <EmailForm />
-    </div>
-  )
+  if (done == false) {
+    return (
+      <div>
+        <h1>Change email</h1>
+
+        <EmailForm
+          onDoneChange={setDone}
+        />
+      </div>
+    )
+  }
+  else {
+    return (
+      <div>
+        <h1>Change email done</h1>
+
+        <EmailDone />
+      </div>
+    )
+  }
 }
 
-function EmailForm(){
+function EmailForm({ onDoneChange }: {onDoneChange:Function}){
   const url = "http://conjugat.io:8000/settings/change-email/"
   const token = localStorage.getItem("token")
   const headers = {
     'Content-Type': 'application/json',
     'Authorization': 'Token '+ token
   }
-  const [done, setDone] = useState(false)
+  
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -37,7 +52,7 @@ function EmailForm(){
     })
     .then(res=>{
       console.log(res.data)
-      setDone(true)
+      onDoneChange(true)
     })
   }
 
@@ -47,30 +62,29 @@ function EmailForm(){
     setData(newdata)
   }
 
-  if (done == true) {
-    return(
-      <div>Email has been updated</div>
-    )
-  }
-  else{
-    return(
-      <div>
-        <form onSubmit={(e) => submit(e)}>
-            <div>
-              <label htmlFor="email">Email</label>
-              <input id="email" type="text" name="email" value={data.email} onChange={(e) => handle(e)} />
-            </div>
+  return(
+    <div>
+      <form onSubmit={(e) => submit(e)}>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input id="email" type="text" name="email" value={data.email} onChange={(e) => handle(e)} />
+          </div>
 
-            <div>
-              <label htmlFor="password">Password</label>
-              <input id="password" type="password" name="password" value={data.password} onChange={(e) => handle(e)} />
-            </div>
+          <div>
+            <label htmlFor="password">Password</label>
+            <input id="password" type="password" name="password" value={data.password} onChange={(e) => handle(e)} />
+          </div>
 
-            <button>Submit</button>
-        </form>
-      </div>
-    )
-  }
+          <button>Submit</button>
+      </form>
+    </div>
+  )
+}
+
+function EmailDone() {
+  return(
+    <div>Email has been updated</div>
+  )
 }
 
 export default ChangeEmail

@@ -1,6 +1,6 @@
 import { FormEvent, useState} from "react"
 import Axios from 'axios'
-import Authorization from '../../Authorization'
+import Authorization from '../../components/functions/Authorization'
 import PropTypes from 'prop-types'
 import { Link } from "react-router-dom"
 

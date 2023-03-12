@@ -1,13 +1,12 @@
 # Short term goals
 Create token that expires after a given length of time
 
-Add social authentication to react login page
+Add social authentication to AlternateLogins component
 
 Add in serialiser/dark and light theme functionality
 
 Refactor Django code and add serializers
     account
-        loginPasswordView
         registerView
         activateView
         passwordResetView
@@ -31,7 +30,6 @@ Refactor Django code and add serializers
 Finish designing web pages in HTML and CSS:
     account
         Activate
-        Login
         Logout
         Password reset
         Password reset confirm
@@ -64,12 +62,9 @@ Finish designing web pages in HTML and CSS:
 Refactor react code into more modular components
     account
         Activate
-        Login
-        Logout
         Password reset
-        Password reset confirm
-        Password reset done
         Password reset token
+        Register
     newsletter
         Subscribe
         Unsubscribe
@@ -129,6 +124,8 @@ Add styling to the react pages (SCSS)
 
 
 # Medium term goals
+Refactor react code once again
+
 Create and test verbs functionality
 
 Create verb functionality for react

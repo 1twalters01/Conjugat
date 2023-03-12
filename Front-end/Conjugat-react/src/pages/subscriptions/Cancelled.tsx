@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import Authorization from '../../Authorization'
+import Authorization from '../../components/functions/Authorization'
 
 function Cancelled() {
   Authorization.AuthRequired()
