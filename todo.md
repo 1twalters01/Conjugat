@@ -64,7 +64,6 @@ Refactor react code into more modular components
         Subscribe
         Unsubscribe
     settings
-        Close account
         Premium
         Reset account
         Themes

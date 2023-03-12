@@ -18,8 +18,7 @@ function ChangeUsername() {
       </div>
     )
   }
-
-  else {
+  else if (done == true) {
     return (
       <div>
         <h1>Change Password done</h1>
