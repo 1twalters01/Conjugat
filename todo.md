@@ -60,18 +60,10 @@ Finish designing web pages in HTML and CSS:
         Terms
 
 Refactor react code into more modular components
-    account
-        Activate
-        Password reset
-        Password reset token
-        Register
     newsletter
         Subscribe
         Unsubscribe
     settings
-        Change email
-        Change password
-        Change username
         Close account
         Premium
         Reset account

@@ -64,6 +64,7 @@ function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {
             id = "password"
             labelText="Password"
           />
+          
           <PasswordField
             password = {password2}
             handlePassword = {handlePassword2}
