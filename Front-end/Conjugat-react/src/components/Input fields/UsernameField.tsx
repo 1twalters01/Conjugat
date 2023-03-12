@@ -1,7 +1,7 @@
-function UsernameField({ username, handleUsername }: {username:string, handleUsername:Function}) {
+function UsernameField({ username, handleUsername, labelText="Email or Username" }: {username:string, handleUsername:Function, labelText:string}) {
     return (
       <div className='field'>
-        <label htmlFor="password" className="field-text">Email or Username</label>
+        <label htmlFor="password" className="field-text">{labelText}</label>
         <input
           id="username"
           type="text"

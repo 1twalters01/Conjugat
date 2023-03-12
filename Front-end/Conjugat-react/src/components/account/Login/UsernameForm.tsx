@@ -7,7 +7,7 @@ function UsernameForm({username, onPageChange, onUsernameChange, onIdChange, onC
     function submit(e:FormEvent<HTMLFormElement>) {
         e.preventDefault();
         AxiosInstance.Unauthorised
-        .post('/account/login/username/', {
+        .post('account/login/username/', {
           username: username
         })
         .then(res=>{

@@ -50,6 +50,8 @@ function PasswordForm({username, id, confirmed}: {username:string, id:string, co
             <PasswordField
               password = {password}
               handlePassword = {handlePassword}
+              id = "password"
+              labelText="Password"
             />
             
             {confirmed == false ?

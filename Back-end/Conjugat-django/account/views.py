@@ -231,19 +231,29 @@ def registerView(request):
         print(error)
         return Response({'error': error},
                         status=status.HTTP_400_BAD_REQUEST)
+    print(password, password2)
     if password != password2:
         error = 'Passwords must match'
         print(error)
         return Response({'error': error},
                         status=status.HTTP_400_BAD_REQUEST)      
+    
     try:
         usernameTest = User.objects.get(username=username)
-        emailTest = User.objects.get(email=email)
     except:
         usernameTest = None
+    try:
+        emailTest = User.objects.get(email=email)
+    except:
         emailTest = None
-    if usernameTest is not None or emailTest is not None:
+
+    if usernameTest is not None :
         error = 'User already exists'
+        print(error)
+        return Response({'error': error},
+                        status=status.HTTP_400_BAD_REQUEST)
+    if emailTest is not None:
+        error = 'Email already exists'
         print(error)
         return Response({'error': error},
                         status=status.HTTP_400_BAD_REQUEST)
@@ -251,11 +261,11 @@ def registerView(request):
     user = User.objects.create(username=username, email=email)
     user.set_password(password)
     user.is_active = False
-    user.save()
 
     try:
+        print(domain, email)
         subject = 'Conjugat activation email'
-        message = render_to_string('registration/activate_email.html', {
+        message = render_to_string('activate_email.html', {
             'user': user,
             'domain': domain,
             'uid':urlsafe_base64_encode(force_bytes(user.pk)),
@@ -269,8 +279,11 @@ def registerView(request):
         return Response({'error': 'Unable to send to email address'},
                         status=status.HTTP_400_BAD_REQUEST)
     
+    user.save()
     return Response({"success": "Successfully created user. Activate with link in email."},
                 status=status.HTTP_200_OK)
+
+
 
 
 @api_view(["POST"])
@@ -309,7 +322,6 @@ def activateView(request):
 def passwordResetView(request):
     email = request.data.get("email")
     domain = request.data.get("domain")
-    print(email, domain)
     if not email:
         return Response({'error': 'No email provided'},
                         status=status.HTTP_400_BAD_REQUEST)
@@ -322,12 +334,13 @@ def passwordResetView(request):
                         status=status.HTTP_400_BAD_REQUEST)
     try:
         subject = 'Conjugat password reset'
-        message = render_to_string('registration/password_reset_email.html', {
+        message = render_to_string('password_reset_email.html', {
             'user': user,
             'domain': domain,
             'uid':urlsafe_base64_encode(force_bytes(user.pk)),
             'token':password_reset_token.make_token(user),
         })
+        
         recipient = email
         email = EmailMessage(subject, message, to=[recipient])
         email.send()
