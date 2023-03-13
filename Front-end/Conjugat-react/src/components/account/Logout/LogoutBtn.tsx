@@ -1,5 +1,5 @@
 import { FormEvent} from "react"
-import AxiosInstance from '../../functions/AxiosInstance'
+import AxiosInstance from '../../../functions/AxiosInstance'
 
 function LogoutBtn({onLoggedOutChange} : {onLoggedOutChange:Function}) {
     function submit(e:FormEvent<HTMLFormElement>) {

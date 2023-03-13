@@ -1,4 +1,4 @@
-import Authorization from '../../components/functions/Authorization'
+import Authorization from '../../functions/Authorization'
 import CancelledText from "../../components/subscriptions/CancelledText"
 
 function Cancelled() {

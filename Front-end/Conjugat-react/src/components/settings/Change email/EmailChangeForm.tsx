@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useState} from "react"
-import AxiosInstance from "../../functions/AxiosInstance"
+import AxiosInstance from "../../../functions/AxiosInstance"
 import EmailField from "../../Input fields/EmailField"
 import PasswordField from "../../Input fields/PasswordField"
 

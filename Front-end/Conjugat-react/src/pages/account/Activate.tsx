@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import Axios from 'axios'
-import Authorization from '../../components/functions/Authorization'
+import Authorization from '../../functions/Authorization'
 
 function Activate() {
   Authorization.NotAuthRequired()

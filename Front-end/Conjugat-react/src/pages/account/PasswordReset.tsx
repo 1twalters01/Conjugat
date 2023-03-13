@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 import Header from "../../components/account/Header"
-import Authorization from '../../components/functions/Authorization'
+import Authorization from '../../functions/Authorization'
 import EmailDone from "../../components/account/Password reset/EmailDone"
 import EmailForm from "../../components/account/Password reset/EmailForm"
 

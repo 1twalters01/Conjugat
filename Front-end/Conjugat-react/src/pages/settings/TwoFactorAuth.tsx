@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useState, useEffect} from "react"
 import Axios from 'axios'
-import Authorization from '../../components/functions/Authorization'
+import Authorization from '../../functions/Authorization'
 import QRCode from "react-qr-code"
 import { useNavigate } from 'react-router'
 

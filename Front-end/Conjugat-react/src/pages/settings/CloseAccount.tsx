@@ -1,5 +1,5 @@
 import { useState} from "react"
-import Authorization from '../../components/functions/Authorization'
+import Authorization from '../../functions/Authorization'
 import AccountDeleted from "../../components/settings/Close account/AccountDeleted"
 import AccountDeleteForm from "../../components/settings/Close account/AccountDeleteForm"
 

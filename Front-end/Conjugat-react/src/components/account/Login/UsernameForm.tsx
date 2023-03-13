@@ -1,6 +1,6 @@
 import { FormEvent, useCallback } from "react"
 
-import AxiosInstance from '../../functions/AxiosInstance'
+import AxiosInstance from '../../../functions/AxiosInstance'
 import UsernameField from '../../Input fields/UsernameField'
 
 function UsernameForm({username, onPageChange, onUsernameChange, onIdChange, onConfirmedChange}: {username:string, onPageChange:Function, onUsernameChange:Function, onIdChange:Function, onConfirmedChange:Function}) {

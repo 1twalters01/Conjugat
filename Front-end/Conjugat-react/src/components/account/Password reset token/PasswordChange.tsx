@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from "react"
 import { useParams } from 'react-router-dom'
-import AxiosInstance from "../../functions/AxiosInstance";
+import AxiosInstance from "../../../functions/AxiosInstance";
 import PasswordField from "../../Input fields/PasswordField";
 
 function PasswordChange({ onDoneChange }: {onDoneChange:Function}) {

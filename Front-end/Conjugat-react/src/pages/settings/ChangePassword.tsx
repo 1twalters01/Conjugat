@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Authorization from '../../components/functions/Authorization'
+import Authorization from '../../functions/Authorization'
 import PasswordChanged from "../../components/settings/Change password/PasswordChanged"
 import PasswordChangeForm from "../../components/settings/Change password/PasswordChangeForm"
 

@@ -1,5 +1,5 @@
 import { ChangeEvent, FormEvent, useState} from "react"
-import AxiosInstance from "../../functions/AxiosInstance";
+import AxiosInstance from "../../../functions/AxiosInstance";
 import PasswordField from "../../Input fields/PasswordField"
 
 function AccountDeleteForm({ onDoneChange }: {onDoneChange:Function}){

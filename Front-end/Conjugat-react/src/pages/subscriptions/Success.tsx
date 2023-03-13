@@ -1,6 +1,6 @@
 import { FormEvent, useState} from "react"
 import Axios from 'axios'
-import Authorization from '../../components/functions/Authorization'
+import Authorization from '../../functions/Authorization'
 import PropTypes from 'prop-types'
 
 const url = "http://conjugat.io:8000/subscriptions/success/"

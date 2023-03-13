@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Authorization from '../../components/functions/Authorization'
+import Authorization from '../../functions/Authorization'
 import Header from "../../components/account/Header"
 
 import RegisterDone from "../../components/account/Register/RegisterDone"

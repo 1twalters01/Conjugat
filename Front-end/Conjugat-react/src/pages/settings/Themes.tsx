@@ -1,6 +1,6 @@
 import { FormEvent } from "react"
-import Authorization from '../../components/functions/Authorization'
-import AxiosInstance from "../../components/functions/AxiosInstance"
+import Authorization from '../../functions/Authorization'
+import AxiosInstance from "../../functions/AxiosInstance"
 
 function Themes() {
   Authorization.AuthRequired()
