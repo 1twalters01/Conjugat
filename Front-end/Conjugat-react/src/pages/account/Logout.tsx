@@ -30,6 +30,7 @@ function Logout() {
       </div>
     )
   }
+  return <div></div>
 }
 
 

@@ -27,6 +27,7 @@ function ChangeUsername() {
       </div>
     )
   }
+  return <div></div>
 }
 
 export default ChangeUsername

@@ -1,9 +1,16 @@
 # Short term goals
+Update Readme
+Update Todo list
+
 Create token that expires after a given length of time
 
 Add social authentication to AlternateLogins component
 
 Add in serialiser/dark and light theme functionality
+
+Make expired subscriptions turn off
+
+Add csrftokens to post requests
 
 Refactor Django code and add serializers
     account
@@ -59,7 +66,8 @@ Finish designing web pages in HTML and CSS:
         Privacy
         Terms
 
-Refactor react code into more modular components
+
+Refactor react code into more modular components:
     newsletter
         Subscribe
         Unsubscribe
@@ -69,16 +77,9 @@ Refactor react code into more modular components
         Themes
         Two factor authentication
     subscriptions
-        Cancelled
         Process
         Success
-    Misc
-        Contact
-        FAQs
-        Home
-        Landing page
-        Privacy
-        Terms
+
 
 Add styling to the react pages (SCSS)
     account
@@ -123,6 +124,8 @@ Create verb functionality for react
 
 Create functionality in Django and React for:
     Settings: Reset account
+
+Create sitemap
 
 Get real api keys for everything rather than test api keys
 

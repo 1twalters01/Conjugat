@@ -1,6 +1,6 @@
 import { FormEvent } from "react"
-import Axios from 'axios'
 import Authorization from '../../components/functions/Authorization'
+import AxiosInstance from "../../components/functions/AxiosInstance"
 
 function Themes() {
   Authorization.AuthRequired()
@@ -14,36 +14,33 @@ function Themes() {
 }
 
 function Test() {
-  const url = "http://conjugat.io:8000/settings/themes/"
-  const token = localStorage.getItem("token")
-  const headers = {
-    'Content-Type': 'application/json',
-    'Authorization': 'Token '+ token
-  }
-
   function submitDark(e:FormEvent<HTMLDivElement>) {
     e.preventDefault();
-    Axios.post(url, {
+    AxiosInstance.Authorised
+    .post('settings/themes/', {
       choice: 'Dark'
-    },
-    {
-      headers: headers
     })
     .then(res=>{
-      location.reload()
+      // location.reload()
+      console.log(res.data)
+    })
+    .catch(err=>{
+      console.log(err.response.data)
     })
   }
   
   function submitLight(e:FormEvent<HTMLDivElement>) {
     e.preventDefault();
-    Axios.post(url, {
-      choice: 'Dark'
-    },
-    {
-      headers: headers
+    AxiosInstance.Authorised
+    .post('settings/themes/', {
+      choice: 'Light'
     })
     .then(res=>{
-      location.reload()
+      // location.reload()
+      console.log(res.data)
+    })
+    .catch(err=>{
+      console.log(err.response.data)
     })
   }
 
@@ -56,7 +53,7 @@ function Test() {
 
 
       <div onClick={(e) => submitLight(e)} style={{height: '200px', width: '200px', background: 'yellow'}}>
-
+      
       </div>
     </div>
   )

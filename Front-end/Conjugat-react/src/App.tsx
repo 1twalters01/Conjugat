@@ -8,10 +8,10 @@ import {
 import './index.css'
 
 // Layouts
-import AccountLayout from './Layouts/AccountLayout'
-import NewsletterLayout from './Layouts/NewsletterLayout'
-import SettingsLayout from './Layouts/SettingsLayout'
-import SubscriptionsLayout from './Layouts/SubscriptionsLayout'
+import AccountLayout from './layouts/AccountLayout'
+import NewsletterLayout from './layouts/NewsletterLayout'
+import SettingsLayout from './layouts/SettingsLayout'
+import SubscriptionsLayout from './layouts/SubscriptionsLayout'
 
 // pages
 import Index from './pages/LandingPage'

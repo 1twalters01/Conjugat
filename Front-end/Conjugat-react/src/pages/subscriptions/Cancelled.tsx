@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
 import Authorization from '../../components/functions/Authorization'
+import CancelledText from "../../components/subscriptions/CancelledText"
 
 function Cancelled() {
   Authorization.AuthRequired()
@@ -7,7 +7,7 @@ function Cancelled() {
     <div>
       <h1>Cancelled</h1>
       
-      <p>There was a problem processing your payment. <Link to="../process">Try again</Link></p>
+      <CancelledText />
     </div>
   )
 }

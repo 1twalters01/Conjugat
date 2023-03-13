@@ -27,6 +27,7 @@ function CloseAccount() {
       </div>
     )
   }
+  return <div></div>
 }
 
 export default CloseAccount

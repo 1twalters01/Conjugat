@@ -260,7 +260,7 @@ def themesView(request):
                             status=status.HTTP_400_BAD_REQUEST)
     theme.theme = choice
     theme.save()
-    return Response({"success": "Theme changed successfully"},
+    return Response({"success": "Theme changed successfully", "choice":choice},
                 status=status.HTTP_200_OK)
 
 
