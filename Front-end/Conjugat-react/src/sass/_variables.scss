@@ -1,3 +1,4 @@
+// Colours
 // Shades
 $shades-0: #FFFFFF;
 $shades-1000: #000000;
@@ -46,3 +47,15 @@ $secondary-600: #E6CA97;
 $secondary-700: #EBC862;
 $secondary-800: #B68E1B;
 $secondary-900: #42331D;
+
+
+// Screen sizes
+$TV-breakpoint: 1201px;
+$PC-max-breakpoint: 1200px;
+$PC-min-breakpoint: 1025px;
+$Laptop-max-breakpoint:1024px;
+$Laptop-min-breakpoint: 769px;
+$Tablet-max-breakpoint: 768px;
+$Tablet-min-breakpoint: 481px;
+$Mobile-max-breakpoint: 480px;
+$Mobile-min-breakpoint: 320px;

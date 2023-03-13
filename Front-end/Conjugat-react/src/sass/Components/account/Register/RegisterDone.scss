@@ -1,0 +1,16 @@
+@import './variables';
+
+/* TV screens */
+@media only screen and (min-width: $TV-breakpoint){}
+
+/* PC */
+@media only screen and (max-width: $PC-max-breakpoint) and (min-width: $PC-min-breakpoint){}
+
+/* Laptops */
+@media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint){}
+
+/* Tablets */
+@media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){}
+
+/* Mobiles */
+@media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint){}
