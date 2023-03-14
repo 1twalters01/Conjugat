@@ -6,6 +6,7 @@ import PasswordResetDone from "../../components/account/Password reset/PasswordR
 import PasswordResetForm from "../../components/account/Password reset/PasswordResetForm"
 
 import '../../sass/pages/account/PasswordReset.scss'
+import RegisterLinks from "../../components/account/Register/RegisterLinks"
 
 function PasswordReset() {
   Authorization.NotAuthRequired()
@@ -13,12 +14,13 @@ function PasswordReset() {
 
   if (done == false) {
     return (
-      <div>
+      <div className="PasswordReset-container">
         <div className="Header-spacer-top"></div>
         <Header />
         <div className="Header-spacer-bottom"></div>
 
-        <h1>Password Reset</h1>
+        <RegisterLinks />
+        <div className="RegisterLinks-spacer"></div>
         
         <PasswordResetForm
           onDoneChange={setDone}
