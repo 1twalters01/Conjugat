@@ -9,6 +9,7 @@ import ResetUsername from '../../components/account/Login/ResetUsername'
 import UsernameForm from '../../components/account/Login/UsernameForm'
 import UsernameLinks from '../../components/account/Login/UsernameLinks'
 
+import '../../sass/pages/account/Login.scss'
 
 function Login() {
   Authorization.NotAuthRequired()
@@ -19,9 +20,14 @@ function Login() {
 
   if (page == 'username') {
     return (
-      <div className="main-container">
+      <div className="Login-container">
+        <div className="Header-spacer-top"></div>
         <Header />
+        <div className="Header-spacer-bottom"></div>
+
         <UsernameLinks />
+        <div className="UsernameLinks-spacer"></div>
+
         <UsernameForm
           onPageChange={setPage}
           username={username}
@@ -29,6 +35,8 @@ function Login() {
           onIdChange={setId}
           onConfirmedChange={setConfirmed}
         />
+        <div className="UsernameForm-spacer"></div>
+
         <AlternateLogins />
       </div>
     )
@@ -36,19 +44,25 @@ function Login() {
 
   if (page == 'password' && username != '') {
     return(
-      <div className="main-container">
+      <div className="Login-container">
+        <div className="Header-spacer-top"></div>
         <Header />
+        <div className="Header-spacer-bottom"></div>
+
         <ResetUsername
           onPageChange={setPage}
           onUsernameChange={setUsername}
           onIdChange={setId}
           onConfirmedChange={setConfirmed}
         />
+        <div className="ResetUsername-spacer"></div>
+
         <PasswordForm
           username={username}
           id={id}
           confirmed={confirmed}
         />
+        
       </div>
     )
   }

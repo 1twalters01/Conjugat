@@ -1,6 +1,8 @@
+import '../../sass/Components/Input fields/TotpField.scss'
+
 function TotpField({ totp, handleTotp }: {totp:string, handleTotp:Function}) {
     return (
-      <div className='field'>
+      <div className='totp-field'>
         <label htmlFor="totp" className="field-text">Totp</label>
         <input
           id="totp"

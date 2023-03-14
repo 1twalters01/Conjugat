@@ -1,5 +1,7 @@
 import { FormEvent } from "react"
 
+import '../../../sass/Components/account/Login/ResetUsername.scss'
+
 function ResetUsername({onUsernameChange, onPageChange, onIdChange, onConfirmedChange}: {onUsernameChange:Function, onPageChange:Function, onIdChange:Function, onConfirmedChange:Function}) {
     function submit(e:FormEvent<HTMLFormElement>) {
         e.preventDefault();

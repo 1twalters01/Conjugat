@@ -5,7 +5,10 @@ import AxiosInstance from '../../../functions/AxiosInstance'
 import PasswordField from '../../Input fields/PasswordField'
 import TotpField from '../../Input fields/TotpField'
 import RememberMeField from '../../Input fields/RememberMeField'
-import PasswordReset from '../../Input fields/PasswordReset'
+import PasswordReset from './PasswordReset'
+import SubmitBtn from "../../Input fields/SubmitBtn"
+
+import '../../../sass/Components/account/Login/PasswordForm.scss'
 
 function PasswordForm({username, id, confirmed}: {username:string, id:string, confirmed:boolean|null}) {
     const [password, setPassword] = useState('')
@@ -53,26 +56,33 @@ function PasswordForm({username, id, confirmed}: {username:string, id:string, co
               id = "password"
               labelText="Password"
             />
-            
+            <div className="password-spacer"></div>
+
             {confirmed == false ?
               null
             :
-              <TotpField
-                totp = {totp}
-                handleTotp = {handleTotp}
-              />
+              <>
+              <div className="totp-top-spacer"></div>
+                <TotpField
+                  totp = {totp}
+                  handleTotp = {handleTotp}
+                />
+                <div className="totp-bottom-spacer"></div>
+              </>
             }
 
             <RememberMeField
               rememberMe = {rememberMe}
               handleRememberMe = {handleRememberMe}
             />
+            <div className="rememberMe-spacer"></div>
 
             <PasswordReset />
+            <div className="passwordREset-spacer"></div>
 
-            <div className="submit">
-                <input type="submit" className="strong-btn" value="Submit" />
-            </div>
+            <SubmitBtn
+              value="Submit"
+            />
         </form>
       </div>
     )

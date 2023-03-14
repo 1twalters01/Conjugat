@@ -1,4 +1,3 @@
-import './App.css'
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -8,7 +7,6 @@ import {
 import './index.css'
 
 // Layouts
-import AccountLayout from './layouts/AccountLayout'
 import NewsletterLayout from './layouts/NewsletterLayout'
 import SettingsLayout from './layouts/SettingsLayout'
 import SubscriptionsLayout from './layouts/SubscriptionsLayout'
@@ -55,7 +53,7 @@ const router = createBrowserRouter(
       <Route path="terms" element={<Terms />} />
 
 
-      <Route path="account" element={<AccountLayout />}>
+      <Route path="account">
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Logout />} />
 

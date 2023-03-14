@@ -1,3 +1,5 @@
+import '../../../sass/Components/account/Login/UsernameLinks.scss'
+
 import { Link } from "react-router-dom"
 
 function UsernameLinks() {

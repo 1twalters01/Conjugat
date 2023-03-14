@@ -1,19 +1,191 @@
-@import './variables';
+@import '../../../variables';
+
+.alternatives {
+    color: red;
+    .options{
+        color: green;
+    }
+    .alt-login{
+        color: yellow;
+        
+        .facebook{
+            color: blue;
+        }
+        .google{
+            color: black;
+        }
+        .twitter{
+            color: aquamarine;
+        }        
+    }
+}
 
 /* TV screens */
-@media only screen and (min-width: $TV-breakpoint){}
+@media only screen and (min-width: $TV-breakpoint){
+    .alternatives {
+        width: 60%;
+        margin: auto;
+        padding-bottom: 25px;
+        
+        .options{
+            margin-bottom: 20px;
+        }
+
+        .alt-login{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 4%;
+            justify-items: center;
+            
+            .link{
+                width: 100%;
+                text-align: center;
+                .facebook{
+                    padding: 8px;
+                }
+                .google{
+                    padding: 8px;
+                }
+                .twitter{
+                    padding: 8px;
+                }
+            }
+        }
+    }
+}
 
 /* PC */
-@media only screen and (max-width: $PC-max-breakpoint) and (min-width: $PC-min-breakpoint){}
+@media only screen and (max-width: $PC-max-breakpoint) and (min-width: $PC-min-breakpoint){
+    .alternatives {
+        width: 60%;
+        margin: auto;
+        padding-bottom: 25px;
+
+        .options{
+            margin-bottom: 20px;
+        }
+
+        .alt-login{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 4%;
+            justify-items: center;
+            
+            .link{
+                width: 100%;
+                text-align: center;
+                .facebook{
+                    padding: 8px;
+                }
+                .google{
+                    padding: 8px;
+                }
+                .twitter{
+                    padding: 8px;
+                }
+            }
+        }
+    }
+}
 
 /* Laptops */
-@media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint){}
+@media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint){
+    .alternatives {
+        width: 60%;
+        margin: auto;
+        padding-bottom: 25px;
+
+        .options{
+            margin-bottom: 20px;
+        }
+
+        .alt-login{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 4%;
+            justify-items: center;
+            
+            .link{
+                width: 100%;
+                text-align: center;
+                .facebook{
+                    padding: 8px;
+                }
+                .google{
+                    padding: 8px;
+                }
+                .twitter{
+                    padding: 8px;
+                }
+            }
+        }
+    }
+}
 
 /* Tablets */
-@media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){}
+@media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){
+    .alternatives {
+        width: 60%;
+        margin: auto;
+        padding-bottom: 25px;
+
+        .options{
+            margin-bottom: 20px;
+        }
+
+        .alt-login{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 4%;
+            justify-items: center;
+            
+            .link{
+                width: 100%;
+                text-align: center;
+                .facebook{
+                    padding: 8px;
+                }
+                .google{
+                    padding: 8px;
+                }
+                .twitter{
+                    padding: 8px;
+                }
+            }
+        }
+    }
+}
 
 /* Mobiles */
-@media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint){}
+@media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint){
+    .alternatives {
+        width: 60%;
+        margin: auto;
+        padding-bottom: 25px;
 
+        .options{
+            margin-bottom: 20px;
+        }
+        
+        .alt-login{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 4%;
+            justify-items: center;
 
-
+            .link{
+                width: 100%;
+                text-align: center;
+                .facebook{
+                    padding: 8px;
+                }
+                .google{
+                    padding: 8px;
+                }
+                .twitter{
+                    padding: 8px;
+                }
+            }
+        }
+    }
+}
