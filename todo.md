@@ -87,10 +87,8 @@ Add styling to the react pages (SCSS)
     account
         Activate
         Logout
-        Password reset
-        Password reset confirm
         Password reset done
-        Password reset token
+        Password reset token done
     newsletter
         Subscribe
         Unsubscribe
@@ -150,6 +148,37 @@ Add colour to the react pages (SCSS)
 
 # Medium term goals
 Refactor react code once again
+    account
+        Activate
+        Login
+        Logout
+        Password reset
+        Password reset confirm
+        Password reset done
+        Password reset token
+    newsletter
+        Subscribe
+        Unsubscribe
+    settings
+        Change email
+        Change password
+        Change username
+        Close account
+        Premium
+        Reset account
+        Themes
+        Two factor authentication
+    subscriptions
+        Cancelled
+        Process
+        Success
+    Misc
+        Contact
+        FAQs
+        Home
+        Landing page
+        Privacy
+        Terms
 
 Create and test verbs functionality
 

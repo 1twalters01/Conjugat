@@ -2,7 +2,9 @@ import { useState } from "react"
 import Header from "../../components/account/Header"
 import Authorization from '../../functions/Authorization'
 import EmailDone from "../../components/account/Password reset/PasswordResetDone"
-import PasswordChange from "../../components/account/Password reset token/PasswordChange"
+import PasswordChangeForm from "../../components/account/Password reset token/PasswordChangeForm"
+
+import '../../sass/pages/account/PasswordResetToken.scss'
 
 function PasswordResetToken() {
   Authorization.NotAuthRequired()
@@ -10,20 +12,28 @@ function PasswordResetToken() {
 
   if (done == false) {
     return (
-      <div>
+      <div className="Password-change-container">
+        <div className="Header-spacer-top"></div>
         <Header />
-        <h1>Password Change</h1>
+        <div className="Header-spacer-bottom"></div>
 
-        <PasswordChange
+        <h1>Change Password</h1>
+        <div className="Title-spacer"></div>
+
+        <PasswordChangeForm
           onDoneChange={setDone}
         />
+        <div className="PasswordChangeForm-spacer"></div>
       </div>
     )
   }
   else {
     return (
       <div>
+        <div className="Header-spacer-top"></div>
         <Header />
+        <div className="Header-spacer-bottom"></div>
+
         <h1>Change email done</h1>
 
         <EmailDone />

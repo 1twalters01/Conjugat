@@ -2,8 +2,11 @@ import { ChangeEvent, FormEvent, useState } from "react"
 import { useParams } from 'react-router-dom'
 import AxiosInstance from "../../../functions/AxiosInstance";
 import PasswordField from "../../Input fields/PasswordField";
+import SubmitBtn from "../../Input fields/SubmitBtn";
 
-function PasswordChange({ onDoneChange }: {onDoneChange:Function}) {
+import '../../../sass/Components/account/Password reset token/PasswordChangeForm.scss'
+
+function PasswordChangeForm({ onDoneChange }: {onDoneChange:Function}) {
     const { uidb64, token } = useParams();
     const url = "http://conjugat.io:8000/account/password-reset/confirm"
     const [password, setPassword] = useState('')
@@ -35,23 +38,30 @@ function PasswordChange({ onDoneChange }: {onDoneChange:Function}) {
     }
   
     return(
-      <form onSubmit={(e) => submit(e)}>
-        <PasswordField
-          password = {password}
-          handlePassword = {handlePassword}
-          id = "password"
-          labelText="Password"
-        />
-        <PasswordField
-          password = {password2}
-          handlePassword = {handlePassword2}
-          id = "password2"
-          labelText="Repeat password"
-        />
-        
-        <input type="submit" value="Submit" />
-      </form>
+      <div className="passwordChange-form">
+        <form onSubmit={(e) => submit(e)}>
+          <PasswordField
+            password = {password}
+            handlePassword = {handlePassword}
+            id = "password"
+            labelText="Password"
+          />
+          <div className="password-spacer"></div>
+
+          <PasswordField
+            password = {password2}
+            handlePassword = {handlePassword2}
+            id = "password2"
+            labelText="Repeat password"
+          />
+          <div className="password-spacer2"></div>
+          
+          <SubmitBtn
+            value="Change Password"
+          />
+        </form>
+      </div>
     )
 }
 
-export default PasswordChange
+export default PasswordChangeForm
