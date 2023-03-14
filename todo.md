@@ -6,6 +6,8 @@ Create token that expires after a given length of time
 
 Add social authentication to AlternateLogins component
 
+Add Redux
+
 Add in serialiser/dark and light theme functionality
 
 Make expired subscriptions turn off
@@ -84,7 +86,6 @@ Refactor react code into more modular components:
 Add styling to the react pages (SCSS)
     account
         Activate
-        Login
         Logout
         Password reset
         Password reset confirm
@@ -114,6 +115,38 @@ Add styling to the react pages (SCSS)
         Privacy
         Terms
 
+Add colour to the react pages (SCSS)
+    account
+        Activate
+        Login
+        Logout
+        Password reset
+        Password reset confirm
+        Password reset done
+        Password reset token
+    newsletter
+        Subscribe
+        Unsubscribe
+    settings
+        Change email
+        Change password
+        Change username
+        Close account
+        Premium
+        Reset account
+        Themes
+        Two factor authentication
+    subscriptions
+        Cancelled
+        Process
+        Success
+    Misc
+        Contact
+        FAQs
+        Home
+        Landing page
+        Privacy
+        Terms
 
 # Medium term goals
 Refactor react code once again

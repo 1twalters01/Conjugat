@@ -20,7 +20,9 @@ function PasswordForm({username, id, confirmed}: {username:string, id:string, co
       setPassword(e.target.value)
     }
     function handleTotp(e:ChangeEvent<HTMLInputElement>) {
-        setTotp(e.target.value)
+        if (isNaN(+e.target.value) == false){
+          setTotp(e.target.value)
+        }
     }
     function handleRememberMe(e:ChangeEvent<HTMLInputElement>) {
         setRememberMe(e.target.checked)
@@ -78,7 +80,7 @@ function PasswordForm({username, id, confirmed}: {username:string, id:string, co
             <div className="rememberMe-spacer"></div>
 
             <PasswordReset />
-            <div className="passwordREset-spacer"></div>
+            <div className="passwordReset-spacer"></div>
 
             <SubmitBtn
               value="Submit"

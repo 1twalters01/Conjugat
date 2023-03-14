@@ -13,11 +13,14 @@
         .Header-spacer-bottom{
             padding-bottom: 5%;
         }
-        .UsernameLinks-spacer, .ResetUsername-spacer{
+        .UsernameLinks-spacer{
             padding-bottom: 90px;
         }
         .UsernameForm-spacer{
             margin-bottom: 60px;
+        }
+        .ResetUsername-spacer{
+            padding-bottom: 90px;
         }
     }
 }
@@ -43,7 +46,10 @@
         .UsernameLinks-spacer{
             padding-bottom: 90px;
         }
-        .UsernameForm-spacer, .ResetUsername-spacer{
+        .UsernameForm-spacer {
+            margin-bottom: 60px;
+        }
+        .ResetUsername-spacer {
             margin-bottom: 60px;
         }
     }
@@ -67,10 +73,13 @@
         .Header-spacer-bottom{
             padding-bottom: 3%;
         }
-        .UsernameLinks-spacer, .ResetUsername-spacer{
+        .UsernameLinks-spacer{
             padding-bottom: 80px;
         }
         .UsernameForm-spacer{
+            margin-bottom: 60px;
+        }
+        .ResetUsername-spacer {
             margin-bottom: 60px;
         }
     }
@@ -94,11 +103,14 @@
         .Header-spacer-bottom{
             padding-bottom: 2%;
         }
-        .UsernameLinks-spacer, .ResetUsername-spacer{
+        .UsernameLinks-spacer{
             padding-bottom: 70px;
         }
         .UsernameForm-spacer{
             margin-bottom: 60px;
+        }
+        .ResetUsername-spacer {
+            margin-bottom: 50px;
         }
     }
 }
@@ -121,11 +133,14 @@
         .Header-spacer-bottom{
             padding-bottom: 2%;
         }
-        .UsernameLinks-spacer, .ResetUsername-spacer{
+        .UsernameLinks-spacer {
             padding-bottom: 60px;
         }
         .UsernameForm-spacer{
             margin-bottom: 60px;
+        }
+        .ResetUsername-spacer {
+            margin-bottom: 40px;
         }
     }
 }

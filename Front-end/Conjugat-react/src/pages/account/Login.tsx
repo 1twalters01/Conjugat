@@ -62,7 +62,6 @@ function Login() {
           id={id}
           confirmed={confirmed}
         />
-        
       </div>
     )
   }

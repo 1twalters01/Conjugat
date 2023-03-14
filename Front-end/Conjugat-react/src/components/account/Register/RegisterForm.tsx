@@ -4,6 +4,7 @@ import AxiosInstance from "../../../functions/AxiosInstance"
 import UsernameField from "../../Input fields/UsernameField"
 import EmailField from "../../Input fields/EmailField"
 import PasswordField from "../../Input fields/PasswordField"
+import SubmitBtn from "../../Input fields/SubmitBtn"
 
 
 function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {
@@ -72,9 +73,9 @@ function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {
             labelText="Repeat password"
           />
   
-          <div className="submit">
-            <input type="submit" className="strong-btn" value="Submit" />
-          </div>
+          <SubmitBtn
+            value="Submit"
+          />
         </form>
       </div>
     )

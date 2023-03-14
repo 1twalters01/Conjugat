@@ -15,7 +15,7 @@ function ResetUsername({onUsernameChange, onPageChange, onIdChange, onConfirmedC
         <div className="reset-username">
             <form onSubmit={(e) => submit(e)}>
                 <input type="submit"
-                    value="Choose a different username"
+                    value="Different username"
                     className="register weak-btn"
                 />
             </form>

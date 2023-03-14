@@ -8,6 +8,7 @@ function TotpField({ totp, handleTotp }: {totp:string, handleTotp:Function}) {
           id="totp"
           type="text"
           inputMode="numeric"
+          maxLength={6}
           name="totp"
           value={totp}
           onChange={(e) => handleTotp(e)}

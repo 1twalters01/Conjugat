@@ -2,6 +2,7 @@ import { ChangeEvent, FormEvent, useState} from "react"
 
 import AxiosInstance from "../../../functions/AxiosInstance"
 import EmailField from "../../Input fields/EmailField"
+import SubmitBtn from "../../Input fields/SubmitBtn"
 
 function EmailForm({onDoneChange}: {onDoneChange:Function}) {
     const domain = window.location.origin + "/account/"
@@ -34,9 +35,9 @@ function EmailForm({onDoneChange}: {onDoneChange:Function}) {
             handleEmail={handleEmail}
           />
           
-          <div className="submit">
-            <input type="submit" className="strong-btn" value="Submit" />
-          </div>
+          <SubmitBtn
+            value="Submit"
+          />
         </form>
       </div>
     )
