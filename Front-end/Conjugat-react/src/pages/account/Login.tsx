@@ -20,7 +20,7 @@ function Login() {
 
   if (page == 'username') {
     return (
-      <div className="Login-container">
+      <div className="Login-username-container">
         <div className="Header-spacer-top"></div>
         <Header />
         <div className="Header-spacer-bottom"></div>
@@ -44,7 +44,7 @@ function Login() {
 
   if (page == 'password' && username != '') {
     return(
-      <div className="Login-container">
+      <div className="Login-password-container">
         <div className="Header-spacer-top"></div>
         <Header />
         <div className="Header-spacer-bottom"></div>
@@ -62,6 +62,7 @@ function Login() {
           id={id}
           confirmed={confirmed}
         />
+        <div className="PasswordForm-spacer"></div>
       </div>
     )
   }

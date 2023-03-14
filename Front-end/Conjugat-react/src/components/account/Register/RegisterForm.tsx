@@ -6,6 +6,7 @@ import EmailField from "../../Input fields/EmailField"
 import PasswordField from "../../Input fields/PasswordField"
 import SubmitBtn from "../../Input fields/SubmitBtn"
 
+import '../../../sass/Components/account/Register/RegisterForm.scss'
 
 function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {
     const domain = window.location.origin + "/account/"
@@ -46,18 +47,20 @@ function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {
     }
   
     return (
-      <div>
+      <div className="register-form">
         <form onSubmit={(e) => submit(e)}>
           <UsernameField
             username = {username}
             handleUsername = {handleUsername}
             labelText = "Username"
           />
+          <div className="username-spacer"></div>
           
           <EmailField
             email={email}
             handleEmail={handleEmail}
           />
+          <div className="email-spacer"></div>
           
           <PasswordField
             password = {password}
@@ -65,6 +68,7 @@ function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {
             id = "password"
             labelText="Password"
           />
+          <div className="password-spacer"></div>
           
           <PasswordField
             password = {password2}
@@ -72,9 +76,10 @@ function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {
             id = "password2"
             labelText="Repeat password"
           />
+          <div className="password-spacer2"></div>
   
           <SubmitBtn
-            value="Submit"
+            value="Sign up"
           />
         </form>
       </div>
