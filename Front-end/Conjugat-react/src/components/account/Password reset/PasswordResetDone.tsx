@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-function EmailDone() {
+function PasswordResetDone() {
     return(
         <div>
         <h1>Password Confirmation</h1>
@@ -14,4 +14,4 @@ function EmailDone() {
     )
 }
 
-export default EmailDone
+export default PasswordResetDone

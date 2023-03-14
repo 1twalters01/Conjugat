@@ -2,8 +2,10 @@ import { useState } from "react"
 
 import Header from "../../components/account/Header"
 import Authorization from '../../functions/Authorization'
-import EmailDone from "../../components/account/Password reset/EmailDone"
-import EmailForm from "../../components/account/Password reset/EmailForm"
+import PasswordResetDone from "../../components/account/Password reset/PasswordResetDone"
+import PasswordResetForm from "../../components/account/Password reset/PasswordResetForm"
+
+import '../../sass/pages/account/PasswordReset.scss'
 
 function PasswordReset() {
   Authorization.NotAuthRequired()
@@ -12,21 +14,27 @@ function PasswordReset() {
   if (done == false) {
     return (
       <div>
+        <div className="Header-spacer-top"></div>
         <Header />
+        <div className="Header-spacer-bottom"></div>
+
         <h1>Password Reset</h1>
         
-        <EmailForm
+        <PasswordResetForm
           onDoneChange={setDone}
         />
+        <div className="PasswordResetForm-spacer"></div>
       </div>
     )
   }
   else {
     return(
       <div>
+        <div className="Header-spacer-top"></div>
         <Header />
+        <div className="Header-spacer-bottom"></div>
 
-        <EmailDone />
+        <PasswordResetDone />
       </div>
     )
   }

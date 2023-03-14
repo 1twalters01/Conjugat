@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Header from "../../components/account/Header"
 import Authorization from '../../functions/Authorization'
-import EmailDone from "../../components/account/Password reset/EmailDone"
+import EmailDone from "../../components/account/Password reset/PasswordResetDone"
 import PasswordChange from "../../components/account/Password reset token/PasswordChange"
 
 function PasswordResetToken() {

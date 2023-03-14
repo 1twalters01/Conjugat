@@ -4,7 +4,9 @@ import AxiosInstance from "../../../functions/AxiosInstance"
 import EmailField from "../../Input fields/EmailField"
 import SubmitBtn from "../../Input fields/SubmitBtn"
 
-function EmailForm({onDoneChange}: {onDoneChange:Function}) {
+import '../../../sass/Components/account/Password reset/PasswordResetForm.scss'
+
+function PasswordResetForm({onDoneChange}: {onDoneChange:Function}) {
     const domain = window.location.origin + "/account/"
     const [email, setEmail] = useState('')
   
@@ -28,19 +30,20 @@ function EmailForm({onDoneChange}: {onDoneChange:Function}) {
     }
   
     return (
-      <div>
+      <div className="passwordReset-form">
         <form onSubmit={(e) => submit(e)}>
           <EmailField
             email={email}
             handleEmail={handleEmail}
           />
-          
+          <div className="email-spacer"></div>
+
           <SubmitBtn
-            value="Submit"
+            value="Reset Password"
           />
         </form>
       </div>
     )
   }
 
-export default EmailForm
+export default PasswordResetForm
