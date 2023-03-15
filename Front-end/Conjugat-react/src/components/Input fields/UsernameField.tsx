@@ -1,6 +1,13 @@
 import '../../sass/Components/Input fields/UsernameField.scss'
+import { useSelector, useDispatch } from "react-redux";
 
-function UsernameField({ username, handleUsername, labelText="Email or Username" }: {username:string, handleUsername:Function, labelText:string}) {
+import { onUsernameChange } from '../../redux/slices/loginSlice';
+import { RootState } from '../../redux/store';
+
+function UsernameField({ labelText="Email or Username" }: {labelText:string}) {
+  const{ username } = useSelector((state: RootState) => state.login)
+  const dispatch = useDispatch();
+  console.log(username)
   return (
     <div className='username-field'>
       <label htmlFor="username" className="field-text">{labelText}</label>
@@ -9,7 +16,7 @@ function UsernameField({ username, handleUsername, labelText="Email or Username"
         type="text"
         name="username"
         value={ username }
-        onChange={(e) => handleUsername(e)}
+        onChange={(e) => dispatch(onUsernameChange(e.target.value))}
         required={true}
       />
     </div>

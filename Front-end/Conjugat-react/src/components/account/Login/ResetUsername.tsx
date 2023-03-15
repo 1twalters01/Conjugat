@@ -1,13 +1,16 @@
 import { FormEvent } from "react"
+import { useDispatch } from "react-redux";
+import { onUsernameChange, onIdChange, onConfirmedChange } from "../../../redux/slices/loginSlice";
 
 import '../../../sass/Components/account/Login/ResetUsername.scss'
 
-function ResetUsername({onUsernameChange, onPageChange, onIdChange, onConfirmedChange}: {onUsernameChange:Function, onPageChange:Function, onIdChange:Function, onConfirmedChange:Function}) {
+function ResetUsername({ onPageChange}: { onPageChange:Function }) {
+    const dispatch = useDispatch();
     function submit(e:FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        onUsernameChange('')
-        onIdChange('')
-        onConfirmedChange(null)
+        dispatch(onUsernameChange(''))
+        dispatch(onIdChange(null))
+        dispatch(onConfirmedChange(null))
         onPageChange('username')
     }
 

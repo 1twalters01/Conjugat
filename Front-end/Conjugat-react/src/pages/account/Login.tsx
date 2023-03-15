@@ -14,8 +14,6 @@ import '../../sass/pages/account/Login.scss'
 function Login() {
   Authorization.NotAuthRequired()
   const [page, setPage] = useState('username')
-  const [username, setUsername] = useState('')
-  const [id, setId] = useState('')
   const [confirmed, setConfirmed] = useState(null)
 
   if (page == 'username') {
@@ -30,10 +28,6 @@ function Login() {
 
         <UsernameForm
           onPageChange={setPage}
-          username={username}
-          onUsernameChange={setUsername}
-          onIdChange={setId}
-          onConfirmedChange={setConfirmed}
         />
         <div className="UsernameForm-spacer"></div>
 
@@ -42,7 +36,7 @@ function Login() {
     )
   }
 
-  if (page == 'password' && username != '') {
+  if (page == 'password') {
     return(
       <div className="Login-password-container">
         <div className="Header-spacer-top"></div>
@@ -51,17 +45,10 @@ function Login() {
 
         <ResetUsername
           onPageChange={setPage}
-          onUsernameChange={setUsername}
-          onIdChange={setId}
-          onConfirmedChange={setConfirmed}
         />
         <div className="ResetUsername-spacer"></div>
 
-        <PasswordForm
-          username={username}
-          id={id}
-          confirmed={confirmed}
-        />
+        <PasswordForm/>
         <div className="PasswordForm-spacer"></div>
       </div>
     )

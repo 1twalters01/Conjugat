@@ -9,8 +9,14 @@ import PasswordReset from './PasswordReset'
 import SubmitBtn from "../../Input fields/SubmitBtn"
 
 import '../../../sass/Components/account/Login/PasswordForm.scss'
+import { useSelector } from "react-redux"
+import { RootState } from "../../../redux/store"
 
-function PasswordForm({username, id, confirmed}: {username:string, id:string, confirmed:boolean|null}) {
+function PasswordForm() {
+    const{ username } = useSelector((state: RootState) => state.login)
+    const{ id } = useSelector((state: RootState) => state.login)
+    const{ confirmed } = useSelector((state: RootState) => state.login)
+    
     const [password, setPassword] = useState('')
     const [totp, setTotp] = useState('')
     const [rememberMe, setRememberMe] = useState(false)

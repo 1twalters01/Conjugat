@@ -1,12 +1,46 @@
 # Short term goals
 Update Readme
+
 Update Todo list
 
 Create token that expires after a given length of time
 
 Add social authentication to AlternateLogins component
 
-Add Redux
+Add Redux to:
+    account
+        Activate
+        Logout
+        Password reset
+        Password reset confirm
+        Password reset done
+        Password reset token
+    newsletter
+        Subscribe
+        Unsubscribe
+    settings
+        Change email
+        Change password
+        Change username
+        Close account
+        Premium
+        Reset account
+        Themes
+        Two factor authentication
+    subscriptions
+        Cancelled
+        Process
+        Success
+    Misc
+        Contact
+        FAQs
+        Home
+        Landing page
+        Privacy
+        Terms
+    
+
+Add flash messages
 
 Add in serialiser/dark and light theme functionality
 

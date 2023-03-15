@@ -14,7 +14,7 @@ from pathlib import Path
 from decouple import config, AutoConfig
 
 # Choose the path where the env file is kept
-config = AutoConfig(search_path='..\..\..\..\Project envs\Project 8 - Conjugat\.env')
+config = AutoConfig(search_path='..\..\..\..\envs\Project 1 - Conjugat\.env')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
