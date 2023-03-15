@@ -39,7 +39,7 @@ function UsernameForm({ onPageChange, }: { onPageChange:Function }) {
           <TextField
               id="username"
               value={ username }
-              handleText={handleUsername}
+              handleText={(e:ChangeEvent<HTMLInputElement>) => handleUsername(e)}
               labelText = "Email or Username"
               required={true}
           />

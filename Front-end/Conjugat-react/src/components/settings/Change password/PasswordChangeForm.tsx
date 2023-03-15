@@ -2,7 +2,6 @@ import { ChangeEvent, FormEvent, useState} from "react"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import PasswordField from "../../Input fields/PasswordField"
 
-
 function PasswordChangeForm({ onDoneChange }: {onDoneChange:Function}){
     const [password, setPassword] = useState('')
     const [newPassword1, setNewPassword1] = useState('')
@@ -23,7 +22,7 @@ function PasswordChangeForm({ onDoneChange }: {onDoneChange:Function}){
         console.log(err.response.data)
       })
     }
-  
+
     function handlePassword(e:ChangeEvent<HTMLInputElement>) {
       setPassword(e.target.value)
     }
@@ -33,27 +32,27 @@ function PasswordChangeForm({ onDoneChange }: {onDoneChange:Function}){
     function handleNewPassword2(e:ChangeEvent<HTMLInputElement>) {
       setNewPassword2(e.target.value)
     }
-  
+
     return(
       <div>
         <form onSubmit={(e) => submit(e)}>
             <PasswordField
               password = {password}
-              handlePassword = {handlePassword}
+              handlePassword = {(e:any) => handlePassword(e)}
               id = "password"
               labelText="Password"
             />
   
             <PasswordField
               password = {newPassword1}
-              handlePassword = {handleNewPassword1}
+              handlePassword = {(e:any) => handleNewPassword1(e)}
               id = "newPassword1"
               labelText="New password"
             />
   
             <PasswordField
               password = {newPassword2}
-              handlePassword = {handleNewPassword2}
+              handlePassword = {(e:any) => handleNewPassword2(e)}
               id = "newPassword2"
               labelText="Re-enter new password"
             />

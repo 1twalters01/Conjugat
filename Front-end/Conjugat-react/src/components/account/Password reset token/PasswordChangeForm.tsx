@@ -42,7 +42,7 @@ function PasswordChangeForm({ onDoneChange }: {onDoneChange:Function}) {
         <form onSubmit={(e) => submit(e)}>
           <PasswordField
             password = {password}
-            handlePassword = {handlePassword}
+            handlePassword = {(e:ChangeEvent<HTMLInputElement>) => handlePassword(e)}
             id = "password"
             labelText="Password"
           />
@@ -50,7 +50,7 @@ function PasswordChangeForm({ onDoneChange }: {onDoneChange:Function}) {
 
           <PasswordField
             password = {password2}
-            handlePassword = {handlePassword2}
+            handlePassword = {(e:ChangeEvent<HTMLInputElement>) => handlePassword2(e)}
             id = "password2"
             labelText="Repeat password"
           />

@@ -60,7 +60,7 @@ function PasswordForm() {
         <form onSubmit={(e) => submit(e)}>
             <PasswordField
               password = {password}
-              handlePassword = {handlePassword}
+              handlePassword = {(e:ChangeEvent<HTMLInputElement>) => handlePassword(e)}
               id = "password"
               labelText="Password"
             />
@@ -73,7 +73,8 @@ function PasswordForm() {
               <div className="totp-top-spacer"></div>
                 <TotpField
                   totp = {totp}
-                  handleTotp = {handleTotp}
+                  handleTotp = {(e:ChangeEvent<HTMLInputElement>) => handleTotp(e)}
+                  labelText="Totp"
                 />
                 <div className="totp-bottom-spacer"></div>
               </>

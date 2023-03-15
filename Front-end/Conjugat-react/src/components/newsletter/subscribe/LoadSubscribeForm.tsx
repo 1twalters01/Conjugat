@@ -15,7 +15,9 @@ function LoadSubscribeForm({setDone, loading, setLoading}: {setDone:Function, lo
         setEmail(res.data.email)
         setLoading(false)
       })
-      return <></>
+      return (
+        <></>
+      )
     }
     return (
       <SubscribeForm
