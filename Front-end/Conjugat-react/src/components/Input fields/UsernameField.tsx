@@ -7,7 +7,6 @@ import { RootState } from '../../redux/store';
 function UsernameField({ labelText="Email or Username" }: {labelText:string}) {
   const{ username } = useSelector((state: RootState) => state.login)
   const dispatch = useDispatch();
-  console.log(username)
   return (
     <div className='username-field'>
       <label htmlFor="username" className="field-text">{labelText}</label>
