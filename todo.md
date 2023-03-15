@@ -97,8 +97,6 @@ Finish designing web pages in HTML and CSS:
 
 
 Refactor react code into more modular components:
-    newsletter
-        Unsubscribe
     settings
         Premium
         Reset account

@@ -52,14 +52,14 @@ function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:stri
                 id='email'
                 email={email}
                 labelText="Email"
-                handleEmail={(e:any) => handleEmail}
+                handleEmail={(e:ChangeEvent<HTMLInputElement>) => handleEmail(e)}
               />
               
               <TextField
                 id={"firstName"}
                 labelText="First name"
                 required={false}
-                handleText={(e:any) => handleFirstName}
+                handleText={(e:ChangeEvent<HTMLInputElement>) => handleFirstName(e)}
                 value={firstName}
               />
   
@@ -67,7 +67,7 @@ function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:stri
                 id={"lastName"}
                 labelText="Last name"
                 required={false}
-                handleText={(e:any) => handleLastName}
+                handleText={(e:ChangeEvent<HTMLInputElement>) => handleLastName(e)}
                 value={lastName}
               />
               
