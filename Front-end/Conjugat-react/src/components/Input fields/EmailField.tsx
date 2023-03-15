@@ -1,11 +1,11 @@
 import '../../sass/Components/Input fields/EmailField.scss'
 
-function EmailField({email, handleEmail}: {email:string, handleEmail: Function}) {
+function EmailField({ id, email, labelText, handleEmail}: { id:string, email:string, labelText:string, handleEmail: Function}) {
     return(
       <div className='email-field'>
-          <label htmlFor="email" className="field-text">Email</label>
+          <label htmlFor="email" className="field-text">{labelText}</label>
           <input
-              id="email"
+              id={id}
               type="email"
               name="email"
               value={ email }

@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useState} from "react"
 import Axios from 'axios'
 
-const url = "http://conjugat.io:8000/newsletter/subscribe/"
+const url = "http://conjugat.io:8000/newsletter/unsubscribe/"
 const token = localStorage.getItem("token")
 const headers:any = {
   'Content-Type': 'application/json',

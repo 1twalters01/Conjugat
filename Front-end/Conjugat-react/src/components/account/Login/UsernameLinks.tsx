@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom"
 import '../../../sass/Components/account/DualLinks.scss'
 
-import { Link } from "react-router-dom"
 
 function UsernameLinks() {
     return (

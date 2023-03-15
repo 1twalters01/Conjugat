@@ -8,13 +8,6 @@ Create token that expires after a given length of time
 Add social authentication to AlternateLogins component
 
 Add Redux to:
-    account
-        Activate
-        Logout
-        Password reset
-        Password reset confirm
-        Password reset done
-        Password reset token
     newsletter
         Subscribe
         Unsubscribe
@@ -105,7 +98,6 @@ Finish designing web pages in HTML and CSS:
 
 Refactor react code into more modular components:
     newsletter
-        Subscribe
         Unsubscribe
     settings
         Premium

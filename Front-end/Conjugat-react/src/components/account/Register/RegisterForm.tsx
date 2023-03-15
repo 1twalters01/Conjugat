@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from "react"
 import AxiosInstance from "../../../functions/AxiosInstance"
 
-import UsernameField from "../../Input fields/UsernameField"
+import TextField from "../../Input fields/TextField"
 import EmailField from "../../Input fields/EmailField"
 import PasswordField from "../../Input fields/PasswordField"
 import SubmitBtn from "../../Input fields/SubmitBtn"
@@ -49,15 +49,19 @@ function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {
     return (
       <div className="register-form">
         <form onSubmit={(e) => submit(e)}>
-          <UsernameField
-            username = {username}
-            handleUsername = {handleUsername}
+          <TextField
+            id='username'
+            value = {username}
+            handleText = {handleUsername}
             labelText = "Username"
+            required={false}
           />
           <div className="username-spacer"></div>
           
           <EmailField
+            id='email'
             email={email}
+            labelText="Email"
             handleEmail={handleEmail}
           />
           <div className="email-spacer"></div>

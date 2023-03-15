@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
-import Axios from 'axios'
 import Authorization from '../../functions/Authorization'
+import AxiosInstance from '../../functions/AxiosInstance'
 
 function Activate() {
   Authorization.NotAuthRequired()
@@ -14,8 +14,8 @@ function Activate() {
 
 function activateAccount() {
   const { uidb64, token } = useParams()
-  const url = "http://conjugat.io:8000/account/activate/"
-  Axios.post(url, {
+  AxiosInstance.Unauthorised
+  .post('/account/activate/', {
     uidb64: uidb64,
     token: token
   })

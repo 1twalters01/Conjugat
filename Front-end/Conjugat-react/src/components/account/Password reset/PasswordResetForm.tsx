@@ -33,7 +33,9 @@ function PasswordResetForm({onDoneChange}: {onDoneChange:Function}) {
       <div className="passwordReset-form">
         <form onSubmit={(e) => submit(e)}>
           <EmailField
+            id='email'
             email={email}
+            labelText='Email'
             handleEmail={handleEmail}
           />
           <div className="email-spacer"></div>

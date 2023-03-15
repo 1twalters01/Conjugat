@@ -53,9 +53,10 @@ def does_email_exist(request):
         try:
             email = User.objects.get(username=request.user).email
         except:
-            email = 'email@example.com'
+            email = ''
     else:
-        email = 'email@example.com'
+        email = ''
+    print(email)
     return email
 
 
@@ -105,15 +106,15 @@ def subscribeView(request):
         if not languages:
             languages = None
 
-        try:
-            member_info = create_member(email, languages, first_name, last_name)
-            mailchimp.lists.add_list_member(
-                settings.MAILCHIMP_MARKETING_AUDIENCE_ID,
-                member_info,
-            )
+        # try:
+        #     member_info = create_member(email, languages, first_name, last_name)
+        #     mailchimp.lists.add_list_member(
+        #         settings.MAILCHIMP_MARKETING_AUDIENCE_ID,
+        #         member_info,
+        #     )
 
-        except ApiClientError as error:
-            return HttpResponse(error.text)
+        # except ApiClientError as error:
+        #     return HttpResponse(error.text)
         
         success = 'Successfully subscribed to the newsletter'
         return Response({'success':success},

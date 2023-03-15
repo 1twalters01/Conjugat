@@ -1,16 +1,15 @@
-import { FormEvent } from "react"
+import { ChangeEvent, FormEvent, useState } from "react"
 
 import AxiosInstance from '../../../functions/AxiosInstance'
-import UsernameField from '../../Input fields/UsernameField'
+import TextField from '../../Input fields/TextField'
 import SubmitBtn from "../../Input fields/SubmitBtn";
 
 import '../../../sass/Components/account/Login/UsernameForm.scss'
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../redux/store";
-import { onConfirmedChange, onIdChange } from "../../../redux/slices/loginSlice";
+import { useDispatch } from "react-redux";
+import { onConfirmedChange, onIdChange, onUsernameChange } from "../../../redux/slices/loginSlice";
 
 function UsernameForm({ onPageChange, }: { onPageChange:Function }) {
-    const{ username } = useSelector((state: RootState) => state.login)
+    const [username, setUsername] = useState('')
     const dispatch = useDispatch();
 
     function submit(e:FormEvent<HTMLFormElement>) {
@@ -20,20 +19,29 @@ function UsernameForm({ onPageChange, }: { onPageChange:Function }) {
           username: username
         })
         .then(res=>{
-              onPageChange('password')
-              dispatch(onConfirmedChange(res.data.confirmed))
-              dispatch(onIdChange(res.data.id))
+            dispatch(onUsernameChange(res.data.username))
+            dispatch(onConfirmedChange(res.data.confirmed))
+            dispatch(onIdChange(res.data.id))
+            onPageChange('password')
         })
         .catch(err=>{
-          console.log(err.response.data.error)
+            console.log(err.response.data.error)
         })
     }
+    
+    function handleUsername(e:ChangeEvent<HTMLInputElement>) {
+      setUsername(e.target.value)
+    }
   
-    return(
+    return (
       <div className="login-form">
         <form onSubmit={(e) => submit(e)}>
-          <UsernameField
+          <TextField
+              id="username"
+              value={ username }
+              handleText={handleUsername}
               labelText = "Email or Username"
+              required={true}
           />
           <div className="username-spacer"></div>
   

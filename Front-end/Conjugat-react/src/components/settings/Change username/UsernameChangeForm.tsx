@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useState} from "react"
 import AxiosInstance from "../../../functions/AxiosInstance"
-import UsernameField from "../../Input fields/UsernameField"
+import UsernameField from "../../Input fields/TextField"
 import PasswordField from "../../Input fields/PasswordField"
 
 
@@ -34,8 +34,6 @@ function UsernameChangeForm({ onDoneChange }: {onDoneChange:Function}){
       <div>
         <form onSubmit={(e) => submit(e)}>
             <UsernameField
-              username = {username}
-              handleUsername = {handleUsername}
               labelText = "Username"
             />
   
