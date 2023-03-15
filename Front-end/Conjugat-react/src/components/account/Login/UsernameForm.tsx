@@ -23,7 +23,6 @@ function UsernameForm({ onPageChange, }: { onPageChange:Function }) {
               onPageChange('password')
               dispatch(onConfirmedChange(res.data.confirmed))
               dispatch(onIdChange(res.data.id))
-              console.log(res.data)
         })
         .catch(err=>{
           console.log(err.response.data.error)
