@@ -12,7 +12,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-
+from .serializers import ProcessSerializer
 
 ''' Setup '''
 def does_subscriber_exist(request):
@@ -118,7 +118,7 @@ def build_coinbase_checkout(subscriber, success_url, cancel_url):
     charge = client.charge.create(**checkout_kwargs)
     return charge
 
-from .serializers import ProcessSerializer
+
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def processView(request):
@@ -163,45 +163,11 @@ def processView(request):
                 return Response(status=status.HTTP_404_NOT_FOUND)
             return Response(status=status.HTTP_200_OK)
         
-    subscriber.stripe_url, subscriber.coinbase_url = None, None
+    subscriber.stripe_url, subscriber.coinbase_url, subscriber.stripe_customer_id = None, None, None
+    
     serializer = ProcessSerializer(subscriber)
     return Response(data=serializer.data,
                     status=status.HTTP_200_OK)
-
-@api_view(["GET", "POST"])
-@permission_classes([IsAuthenticated])
-def processView_backup(request):
-    subscriber = does_subscriber_exist(request)
-    if request.method == "GET":
-        serializer = ProcessSerializer(subscriber)
-        return Response(data=serializer.data,
-                            status=status.HTTP_200_OK)
-
-    if request.method == "POST":
-        success_url = request.data.get("success_url")
-        cancel_url = request.data.get("cancel_url")
-        
-        if request.data.get('method') == 'Stripe':
-            if not subscriber or subscriber.subscribed == False:
-                customer = stripe.Customer.create()
-                checkout_session = build_stripe_checkout(request, subscriber, customer, success_url, cancel_url)
-                save_subscriber(request, 'Stripe', subscriber, customer_id = customer.id)
-                return Response({'url':checkout_session.url},
-                                status=status.HTTP_200_OK)
-
-        if request.data.get('method') == 'Paypal':
-            subscriptionID = request.data.get('subscriptionID')
-            save_subscriber(request, 'Paypal', subscriber, subscriber_id=subscriptionID)
-            return Response(status=status.HTTP_200_OK)
-
-        if request.data.get('method') == 'Coinbase':
-            if not subscriber or subscriber.subscribed == False:
-                charge = build_coinbase_checkout(subscriber, success_url, cancel_url)
-                subscriber_id = charge.hosted_url.rsplit('/', 1)[1]
-                save_subscriber(request, 'Coinbase', subscriber, subscriber_id=subscriber_id)
-                return Response({'url':charge.hosted_url},
-                                status=status.HTTP_200_OK)
-
 
 
 
@@ -221,9 +187,45 @@ def build_stripe_portal(request, subscriber, return_url=None):
 
 
 from .serializers import SuccessSerializer
-@api_view(["GET", "POST"])
+@api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def successView(request):
+    subscriber = does_subscriber_exist(request)
+    method = obtain_method(subscriber)
+    if request.data.get('method') == None:
+        return_url = request.data.get('return_url')
+        subscriber.url = None
+        subscriber.status = None
+        if method == 'Stripe':
+            stripe_portal = build_stripe_portal(request, subscriber, return_url)
+            subscriber.url = stripe_portal.url
+            return Response({'url':stripe_portal.url},
+                            status=status.HTTP_200_OK)
+
+        if method == 'Coinbase':
+            client = Client(api_key=settings.COINBASE_COMMERCE_API_KEY)
+            charge_id = decrypt(subscriber.subscription_id)
+            charge = client.charge.retrieve(charge_id)
+            subscriber.url = charge.hosted_url
+        
+        if method == 'Paypal':
+            subscription_id = decrypt(subscriber.subscription_id)
+            details = show_sub_details(subscription_id)
+            subscriber.status = details['status']
+        
+        serializer = SuccessSerializer(subscriber)
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
+    
+    if request.data.get('method') == 'Stripe':
+        pass
+    if request.data.get('method') == 'Paypal':
+        pass
+    if request.data.get('method') == 'Coinbase':
+        pass
+
+@api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
+def successViewOld(request):
     subscriber = does_subscriber_exist(request)
     method = obtain_method(subscriber)
     

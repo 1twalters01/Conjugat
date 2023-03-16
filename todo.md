@@ -101,8 +101,6 @@ Refactor react code into more modular components:
 1. settings
 * Premium
 * Reset account
-2. subscriptions
-* Success
 
 
 Add styling to the react pages (SCSS)

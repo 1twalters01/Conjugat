@@ -10,8 +10,8 @@ class ProcessSerializer(serializers.ModelSerializer):
         fields = ('subscribed', 'trial', 'stripe_url', 'stripe_customer_id', 'coinbase_url')
 
 class SuccessSerializer(serializers.ModelSerializer):
-    charge = serializers.CharField()
+    url = serializers.CharField()
     status = serializers.BooleanField()
     class Meta:
         model = UserProfile
-        fields = ('subscribed', 'method', 'charge', 'status')
+        fields = ('subscribed', 'method', 'url', 'status')

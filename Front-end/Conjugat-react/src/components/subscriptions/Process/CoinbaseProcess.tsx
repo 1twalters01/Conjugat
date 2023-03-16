@@ -16,7 +16,7 @@ function CoinbaseProcess({url}: {url:string}) {
     return(
         <div>
             <p>Coinbase</p>
-            <a href='#' onClick={submit}><button>Purchase</button></a>
+            <a onClick={submit}><button>Purchase</button></a>
         </div>
     )
 }

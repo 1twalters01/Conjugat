@@ -1,6 +1,5 @@
-import { useState } from "react"
-import RetrieveStatus from "../../components/subscriptions/Process/RetrieveStatus"
 import Authorization from '../../functions/Authorization'
+import RetrieveStatus from "../../components/subscriptions/Process/RetrieveStatus"
 
 function Process() {
   Authorization.AuthRequired()

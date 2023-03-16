@@ -1,7 +1,7 @@
 import AxiosInstance from "../../../functions/AxiosInstance"
 
 function StripeProcess({url, stripeCustomerID}: {url:string, stripeCustomerID:string}) {
-  function submit() {
+  function click() {
     AxiosInstance.Authorised
     .post('subscriptions/process/', {
         customer_id: stripeCustomerID,
@@ -20,7 +20,7 @@ function StripeProcess({url, stripeCustomerID}: {url:string, stripeCustomerID:st
           <h5>$3.00 / month</h5>
         </div>
         
-        <a href='#' onClick={submit}><button>Checkout</button></a>
+        <a onClick={click}><button>Checkout</button></a>
       </div>
     </div>
   )

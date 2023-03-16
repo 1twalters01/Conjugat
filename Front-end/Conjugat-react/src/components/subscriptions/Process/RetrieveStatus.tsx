@@ -38,24 +38,19 @@ function RetrieveStatus() {
     if (subscribed == true) {
       navigate('/subscriptions/success')
     }
-    else {
-      return (
-        <>
-          <StripeProcess
-            url={stripeURL}
-            stripeCustomerID={stripeCustomerID}
-          />
-          <PaypalProcess
-            trial={trial}
-          />
-          <CoinbaseProcess
-            url={coinbaseURL}
-          />
-        </>
-      )
-    }
     return (
-        <></>
+      <>
+        <StripeProcess
+          url={stripeURL}
+          stripeCustomerID={stripeCustomerID}
+        />
+        <PaypalProcess
+          trial={trial}
+        />
+        <CoinbaseProcess
+          url={coinbaseURL}
+        />
+      </>
     )
 }
 
