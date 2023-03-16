@@ -21,7 +21,7 @@ function RetrieveSuccessStatus() {
         return_url: window.location.href,
         method: null
       })
-      .then(res =>{
+      .then(res => {
         console.log(res.data)
         setMethod(res.data.method)
         setSubscribed(res.data.subscribed)
@@ -58,10 +58,4 @@ function RetrieveSuccessStatus() {
     return <></>
 }
   
-  
-  
-  
-  
-  
-
 export default RetrieveSuccessStatus

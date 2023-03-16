@@ -99,7 +99,6 @@ Finish designing web pages in HTML and CSS:
 
 Refactor react code into more modular components:
 1. settings
-* Premium
 * Reset account
 
 

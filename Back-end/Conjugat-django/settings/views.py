@@ -265,139 +265,85 @@ def themesView(request):
 
 
 
+from subscription.serializers import ProcessSerializer, SuccessSerializer
+from subscription.views import build_stripe_portal, \
+    build_stripe_checkout, build_coinbase_checkout, \
+    does_subscriber_exist, save_subscriber, obtain_method, \
+    is_user_subscribed
 
-@api_view(["GET", "POST"])
+
+
+
+@api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def premiumView(request):
-    if request.method == 'GET':
-        try:
-            user = UserProfile.objects.get(user=request.user)
-            subscribed = user.subscribed
-            method = user.method_method
-        except:
-            user = None
-            subscribed = None
-            method = None
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    subscriber = does_subscriber_exist(request)
+    method = obtain_method(subscriber)
+    subscribed = is_user_subscribed(subscriber)
+    if subscribed == False:
+        print(method)
+        if request.data.get('method') == None:
+            success_url = request.data.get("success_url")
+            cancel_url = request.data.get("cancel_url")
 
-        context = {'method':method, 'subscribed':subscribed}
+            customer = stripe.Customer.create()
+            stripe_url = build_stripe_checkout(request, subscriber, customer, success_url, cancel_url).url
+            subscriber.stripe_customer_id = customer.id
+            subscriber.stripe_url = stripe_url
 
-        if method == None:
-            pass
-        elif method == 'Stripe':
-            pass
-        elif method == 'Paypal':
-            sub_id = decrypt(user.subscription_id)
-            paypalStatus = show_sub_details(sub_id)['status']
-            context['status'] = paypalStatus
-        elif method == 'Coinbase':
-            charge_id = decrypt(user.subscription_id)
-            client = Client(api_key=settings.COINBASE_COMMERCE_API_KEY)
-            charge = client.charge.retrieve(charge_id)
-            context['charge'] = charge
-        else:
-            error = 'invalid payment method'
-            print(error)
-            return Response({'error':error},
-                status=status.HTTP_400_BAD_REQUEST)
-        # Add serializers
-        return Response({'context':context},
-                        status=status.HTTP_400_BAD_REQUEST)
+            charge = build_coinbase_checkout(subscriber, success_url, cancel_url)
+            coinbase_url = charge.hosted_url
+            subscriber.coinbase_url = coinbase_url
 
-    elif request.method == 'POST':
-        subscribed = request.data.get('premium')
-        method = request.data.get('method')
-
-        if not subscribed:
-            error = 'No subscription status provided'
-            print(error)
-            return Response({'error':error},
-                status=status.HTTP_400_BAD_REQUEST)
-        if not method:
-            error = 'No payment method provided'
-            print(error)
-            return Response({'error':error},
-                status=status.HTTP_400_BAD_REQUEST)
-
-        try:
-            user = UserProfile.objects.get(user=request.user)
-        except:
-            user = None
-        if not user:
-            error = 'user is not valid'
-            print(error)
-            return Response({'error':error}, 
-                status=status.HTTP_400_BAD_REQUEST)
-        if user.method_method != method:
-            error ='posted method does not match stored payment method'
-            print(error)
-            return Response({'error':error},
-                status=status.HTTP_400_BAD_REQUEST)
-        if user.subscribed != subscribed:
-            error ='posted subscription status does not match stored status'
-            print(error)
-            return Response({'error':error},
-                status=status.HTTP_400_BAD_REQUEST)
+            serializer = ProcessSerializer(subscriber)
+            return Response(data=serializer.data,
+                            status=status.HTTP_200_OK)
         
-        if user.method_id == payment_method('Stripe'):
+        if request.data.get('method') == 'Stripe':
+            customer_id = request.data.get('customer_id')
             try:
-                return_url = request.data.get['return_url']
-                portalSession = stripe.billing_portal.Session.create(
-                    customer = decrypt(user.customer_id),
-                    return_url=return_url,
-                )
+                save_subscriber(request, 'Stripe', subscriber, customer_id = customer_id)
             except:
-                error = 'Invalid customer ID'
-                print(error)
-                return Response({'error':error},
-                                status=status.HTTP_400_BAD_REQUEST)
-            return Response({'url':portalSession.url},
-                status=status.HTTP_303_SEE_OTHER)
+                return Response(status=status.HTTP_404_NOT_FOUND)
+            return Response(status=status.HTTP_200_OK)
 
-        elif user.method_id == payment_method('Paypal'):
-            sub_id = decrypt(user.subscription_id)
-            if request.data.get('Stop'):
-                try:
-                    suspend_sub(sub_id)
-                except:
-                    error = 'Invalid subscription ID'
-                    print(error)
-                    return Response({'error':error},
-                                    status=status.HTTP_400_BAD_REQUEST)
-                success = 'successfully paused subscription'
-                return Response({'success':success},
-                    status=status.HTTP_200_OK)
-
-            elif request.data.get('Re-start'):
-                try:
-                    activate_sub(sub_id)
-                except:
-                    error = 'Invalid subscription ID'
-                    print(error)
-                    return Response({'error':error},
-                                    status=status.HTTP_400_BAD_REQUEST)
-                
-                success = 'successfully re-started subscription'
-                return Response({'success':success},
-                    status=status.HTTP_200_OK)
-            
-            else:
-                error = 'invalid paypal method'
-                print(error)
-                return Response({'error':error},
-                    status=status.HTTP_400_BAD_REQUEST)
-
-        elif user.method_id == payment_method('Coinbase'):
-            error ='Coinbase option has no post request'
-            print(error)
-            return Response({'error':error},
-                status=status.HTTP_400_BAD_REQUEST)
+        if request.data.get('method') == 'Paypal':
+            subscriber_id = request.data.get('subscriptionID')
+            save_subscriber(request, 'Paypal', subscriber, subscriber_id=subscriber_id)
+            return Response(status=status.HTTP_200_OK)
         
-        else:
-            error = 'invalid payment method'
-            print(error)
-            return Response({'error':error},
-                status=status.HTTP_400_BAD_REQUEST)
+        if request.data.get('method') == 'Coinbase':
+            charge_url = request.data.get('charge_url')
+            subscriber_id = charge_url.rsplit('/', 1)[1]
+            try:
+                save_subscriber(request, 'Coinbase', subscriber, subscriber_id=subscriber_id)
+            except:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+            return Response(status=status.HTTP_200_OK)
+    else:
+        return_url = request.data.get('return_url')
+        subscriber.url = None
+        subscriber.status = None
+        if method == 'Stripe':
+            stripe_portal = build_stripe_portal(request, subscriber, return_url)
+            subscriber.url = stripe_portal.url
+            return Response({'url':stripe_portal.url},
+                            status=status.HTTP_200_OK)
 
+        if method == 'Coinbase':
+            client = Client(api_key=settings.COINBASE_COMMERCE_API_KEY)
+            charge_id = decrypt(subscriber.subscription_id)
+            charge = client.charge.retrieve(charge_id)
+            subscriber.url = charge.hosted_url
+        
+        if method == 'Paypal':
+            subscription_id = decrypt(subscriber.subscription_id)
+            details = show_sub_details(subscription_id)
+            subscriber.status = details['status']
+        
+        serializer = SuccessSerializer(subscriber)
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 
 
