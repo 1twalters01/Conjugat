@@ -113,15 +113,64 @@ def build_coinbase_checkout(subscriber, success_url, cancel_url):
         checkout_kwargs['local_price']['amount'] = '0.01'
     else:
         checkout_kwargs['description'] = '1 Month of conjugat Premium'
-        checkout_kwargs['local_price']['amount'] = '2.50'
+        checkout_kwargs['local_price']['amount'] = '3.00'
     
     charge = client.charge.create(**checkout_kwargs)
     return charge
 
 from .serializers import ProcessSerializer
-@api_view(["GET", "POST"])
+@api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def processView(request):
+    subscriber = does_subscriber_exist(request)
+    if not subscriber or subscriber.subscribed == False:
+        if request.data.get('method') == None:
+            success_url = request.data.get("success_url")
+            cancel_url = request.data.get("cancel_url")
+
+            customer = stripe.Customer.create()
+            stripe_url = build_stripe_checkout(request, subscriber, customer, success_url, cancel_url).url
+            subscriber.stripe_customer_id = customer.id
+            subscriber.stripe_url = stripe_url
+
+            charge = build_coinbase_checkout(subscriber, success_url, cancel_url)
+            coinbase_url = charge.hosted_url
+            subscriber.coinbase_url = coinbase_url
+
+            serializer = ProcessSerializer(subscriber)
+            return Response(data=serializer.data,
+                            status=status.HTTP_200_OK)
+        
+        if request.data.get('method') == 'Stripe':
+            customer_id = request.data.get('customer_id')
+            try:
+                save_subscriber(request, 'Stripe', subscriber, customer_id = customer_id)
+            except:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+            return Response(status=status.HTTP_200_OK)
+
+        if request.data.get('method') == 'Paypal':
+            subscriber_id = request.data.get('subscriptionID')
+            save_subscriber(request, 'Paypal', subscriber, subscriber_id=subscriber_id)
+            return Response(status=status.HTTP_200_OK)
+        
+        if request.data.get('method') == 'Coinbase':
+            charge_url = request.data.get('charge_url')
+            subscriber_id = charge_url.rsplit('/', 1)[1]
+            try:
+                save_subscriber(request, 'Coinbase', subscriber, subscriber_id=subscriber_id)
+            except:
+                return Response(status=status.HTTP_404_NOT_FOUND)
+            return Response(status=status.HTTP_200_OK)
+        
+    subscriber.stripe_url, subscriber.coinbase_url = None, None
+    serializer = ProcessSerializer(subscriber)
+    return Response(data=serializer.data,
+                    status=status.HTTP_200_OK)
+
+@api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
+def processView_backup(request):
     subscriber = does_subscriber_exist(request)
     if request.method == "GET":
         serializer = ProcessSerializer(subscriber)
@@ -131,6 +180,7 @@ def processView(request):
     if request.method == "POST":
         success_url = request.data.get("success_url")
         cancel_url = request.data.get("cancel_url")
+        
         if request.data.get('method') == 'Stripe':
             if not subscriber or subscriber.subscribed == False:
                 customer = stripe.Customer.create()

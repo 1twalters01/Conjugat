@@ -33,7 +33,6 @@ Add Redux to:
 * Landing page
 * Privacy
 * Terms
-    
 
 Add flash messages
 
@@ -103,7 +102,6 @@ Refactor react code into more modular components:
 * Premium
 * Reset account
 2. subscriptions
-* Process
 * Success
 
 
