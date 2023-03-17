@@ -42,6 +42,8 @@ import Cancelled from './pages/subscriptions/Cancelled'
 import Process from './pages/subscriptions/Process'
 import Success from './pages/subscriptions/Success'
 
+import './sass/app.scss'
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/">
@@ -97,7 +99,10 @@ const router = createBrowserRouter(
 
 function App() {
   return (
-    <RouterProvider router={router} />
+    <div className="light">
+        <RouterProvider router={router} />
+    </div>
+    
   )
 }
 
