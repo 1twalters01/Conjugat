@@ -1,13 +1,13 @@
 # Short term goals
 Update Readme
 
-Update Todo list
+Add in dark and light theme functionality to react - Redux
 
 Create token that expires after a given length of time
 
 Add social authentication to AlternateLogins component
 
-Make TwoFactorAuth react code not "repeat itself"
+Add csrftokens to post requests
 
 Add Redux to:
 1. newsletter
@@ -27,20 +27,10 @@ Add Redux to:
 * Process
 * Success
 4. Misc
-* Contact
-* FAQs
 * Home
 * Landing page
-* Privacy
-* Terms
 
-Add flash messages
-
-Add in serialiser/dark and light theme functionality
-
-Make expired subscriptions turn off
-
-Add csrftokens to post requests
+Make TwoFactorAuth react code not "repeat itself"
 
 Refactor Django code and add serializers
 1. account
@@ -64,14 +54,14 @@ Refactor Django code and add serializers
 * processView
 * successView
 
+Make expired subscriptions turn off
+
 Finish designing web pages in HTML and CSS:
 1. account
 * Activate
 * Logout
-* Password reset
 * Password reset confirm
 * Password reset done
-* Password reset token
 2. newsletter
 * Subscribe
 * Unsubscribe
@@ -95,12 +85,6 @@ Finish designing web pages in HTML and CSS:
 * Landing page
 * Privacy
 * Terms
-
-
-Refactor react code into more modular components:
-1. settings
-* Reset account
-
 
 Add styling to the react pages (SCSS)
 1. account
@@ -131,6 +115,8 @@ Add styling to the react pages (SCSS)
 * Landing page
 * Privacy
 * Terms
+
+Add flash messages
 
 Add colour to the react pages (SCSS)
 1. account
@@ -172,8 +158,6 @@ Refactor react code once again
 * Login
 * Logout
 * Password reset
-* Password reset confirm
-* Password reset done
 * Password reset token
 2. newsletter
 * Subscribe
