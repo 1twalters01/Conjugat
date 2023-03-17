@@ -1,6 +1,12 @@
+import { Link } from "react-router-dom"
+
 function Index() {
     return (
-      <h1>Index</h1>
+      <div>
+        <h1>Index</h1>
+        <Link to='../account/login/' >Log in</Link>
+      </div>
+      
     )
   }
 

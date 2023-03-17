@@ -10,6 +10,7 @@ class LoginUsernameSerializer(serializers.ModelSerializer):
         fields = ('username', 'id', 'confirmed')
 
 class LoginPasswordSerializer(serializers.ModelSerializer):
+    theme = serializers.CharField()
     class Meta:
         model = Token
-        fields = ('key',)
+        fields = ('key', 'theme')

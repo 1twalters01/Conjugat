@@ -11,16 +11,20 @@ import SubmitBtn from "../../Input fields/SubmitBtn"
 import '../../../sass/Components/account/Login/PasswordForm.scss'
 import { useSelector } from "react-redux"
 import { RootState } from "../../../redux/store"
+import { useDispatch } from "react-redux"
+import { onThemeChange } from "../../../redux/slices/themeSlice"
+
 
 function PasswordForm() {
-    const{ username } = useSelector((state: RootState) => state.login)
-    const{ id } = useSelector((state: RootState) => state.login)
-    const{ confirmed } = useSelector((state: RootState) => state.login)
+    const{ username } = useSelector((state: RootState) => state.persistedReducer.login)
+    const{ id } = useSelector((state: RootState) => state.persistedReducer.login)
+    const{ confirmed } = useSelector((state: RootState) => state.persistedReducer.login)
     
     const [password, setPassword] = useState('')
     const [totp, setTotp] = useState('')
     const [rememberMe, setRememberMe] = useState(false)
     const navigate = useNavigate()
+    const dispatch = useDispatch();
     
     function handlePassword(e:ChangeEvent<HTMLInputElement>) {
       setPassword(e.target.value)
@@ -36,7 +40,6 @@ function PasswordForm() {
   
     function submit(e:FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        
         AxiosInstance.Unauthorised
         .post('account/login/password/', {
             username: username,
@@ -47,12 +50,14 @@ function PasswordForm() {
             remember_me: rememberMe
         })
         .then(res=>{
-            localStorage.setItem("token", res.data.key);
+            console.log(username, res.data.key, res.data.theme)
+            localStorage.setItem("token", res.data.key)
+            dispatch(onThemeChange(res.data.theme))
             navigate('/home')
         })
-        .catch(err=>{
-          console.log(err.response.data.error)
-        })
+        // .catch(err=>{
+        //   console.log(err.response.data.error)
+        // })
     }
 
     return (

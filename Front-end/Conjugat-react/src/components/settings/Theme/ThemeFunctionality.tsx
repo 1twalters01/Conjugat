@@ -1,7 +1,10 @@
 import { FormEvent } from "react"
+import { useDispatch } from "react-redux";
 import AxiosInstance from "../../../functions/AxiosInstance";
+import { onThemeChange } from "../../../redux/slices/themeSlice";
 
 function ThemeFunctionality() {
+  const dispatch = useDispatch();
     function submitDark(e:FormEvent<HTMLDivElement>) {
       e.preventDefault();
       AxiosInstance.Authorised
@@ -9,11 +12,11 @@ function ThemeFunctionality() {
         choice: 'Dark'
       })
       .then(res=>{
-        // location.reload()
-        console.log(res.data)
+        console.log(typeof res.data.theme, res.data.theme)
+        dispatch(onThemeChange(res.data.theme))
       })
       .catch(err=>{
-        console.log(err.response.data)
+        console.log(err)
       })
     }
     
@@ -24,11 +27,11 @@ function ThemeFunctionality() {
         choice: 'Light'
       })
       .then(res=>{
-        // location.reload()
-        console.log(res.data)
+        console.log(typeof res.data.theme, res.data.theme)
+        dispatch(onThemeChange(res.data.theme))
       })
       .catch(err=>{
-        console.log(err.response.data)
+        console.log(err)
       })
     }
   

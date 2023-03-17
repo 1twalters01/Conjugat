@@ -1,9 +1,4 @@
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import './index.css'
 
 // Layouts
@@ -97,12 +92,25 @@ const router = createBrowserRouter(
   )
 )
 
+import { Provider, useSelector } from "react-redux"
+import { RootState, store } from './redux/store';
+import { PersistGate } from "redux-persist/integration/react"
+import { persistStore } from "redux-persist"
+
+var persistor = persistStore(store)
+
 function App() {
+  const{ theme } = useSelector((state: RootState) => state.persistedReducer.theme)
   return (
-    <div className="light">
-        <RouterProvider router={router} />
-    </div>
-    
+    <Provider store={store}>
+      <div className={theme}>
+        <div className="background">
+          <PersistGate persistor={persistor}>
+            <RouterProvider router={router} />
+          </PersistGate>
+        </div>
+      </div>
+    </Provider>
   )
 }
 

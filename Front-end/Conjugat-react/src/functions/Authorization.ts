@@ -2,11 +2,11 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 function AuthRequired() {
+    const token = localStorage.getItem("token")
     const navigate = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const checkUserToken = () => {
-        const userToken = localStorage.getItem('token');
-        if (!userToken) {
+        if (!token) {
             setIsLoggedIn(false);
             return navigate('/');
         }
@@ -16,11 +16,11 @@ function AuthRequired() {
 }
 
 function NotAuthRequired() {
+    const token = localStorage.getItem("token")
     const navigate = useNavigate();
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const checkUserToken = () => {
-        const userToken = localStorage.getItem('token');
-        if (userToken) {
+        if (token) {
             setIsLoggedIn(false);
             return navigate('/home')   
         }

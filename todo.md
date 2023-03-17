@@ -1,8 +1,6 @@
 # Short term goals
 Update Readme
 
-Add in dark and light theme functionality to react - Redux
-
 Create token that expires after a given length of time
 
 Add social authentication to AlternateLogins component

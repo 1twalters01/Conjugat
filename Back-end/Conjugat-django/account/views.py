@@ -130,6 +130,7 @@ Need to make the remember_me functionality
     pc - once a month and every day respectively
 Need to have functionality to have each sign in platform have its own token
 '''
+from settings.models import Theme
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def loginPasswordView(request):
@@ -196,7 +197,9 @@ def loginPasswordView(request):
     elif remember_me == False:
         #token expiration date for 1 day
         token, _ = Token.objects.get_or_create(user=user)
-    
+
+    theme = Theme.objects.get_or_create(user=user)[0]
+    token.theme = theme.theme
     serializer = LoginPasswordSerializer(token)
     return Response(data=serializer.data,
                     status=status.HTTP_200_OK)
