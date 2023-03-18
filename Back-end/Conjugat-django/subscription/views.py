@@ -22,11 +22,12 @@ def does_subscriber_exist(request):
         subscriber = None
     return subscriber
 
-def is_user_subscribed(subscriber):
+def is_user_subscribed(request, subscriber):
     if subscriber:
         subscribed = subscriber.subscribed
     else:
-        subscribed = False
+        subscriber = UserProfile.objects.create(user=request.user, method_id=payment_method('None'))
+        subscriber.save()
     return subscribed
 
 def does_trial_exist(subscriber):
@@ -51,6 +52,8 @@ def payment_method(method):
         return 2
     elif method == 'Coinbase':
         return 3
+    elif method == 'None':
+        return 4
 
 def save_subscriber(request, method, subscriber, subscriber_id=None, customer_id=None):
     if not subscriber:
@@ -123,7 +126,7 @@ def build_coinbase_checkout(subscriber, success_url, cancel_url):
 @permission_classes([IsAuthenticated])
 def processView(request):
     subscriber = does_subscriber_exist(request)
-    subscribed = is_user_subscribed(subscriber)
+    subscribed = is_user_subscribed(request, subscriber)
     if subscribed == False:
         if request.data.get('method') == None:
             success_url = request.data.get("success_url")
@@ -193,7 +196,7 @@ from .serializers import SuccessSerializer
 def successView(request):
     subscriber = does_subscriber_exist(request)
     method = obtain_method(subscriber)
-    subscribed = is_user_subscribed(subscriber)
+    subscribed = is_user_subscribed(request, subscriber)
     if subscribed == True:
         return_url = request.data.get('return_url')
         subscriber.url = None
@@ -219,4 +222,8 @@ def successView(request):
         serializer = SuccessSerializer(subscriber)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
     else:
-        return Response(status=status.HTTP_405_METHOD_NOT_ALLOWED)
+        subscriber.url = None
+        subscriber.status = None
+        serializer = SuccessSerializer(subscriber)
+        return Response(data=serializer.data,
+                    status=status.HTTP_200_OK)

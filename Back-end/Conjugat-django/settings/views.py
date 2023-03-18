@@ -296,7 +296,8 @@ def premiumView(request):
     stripe.api_key = settings.STRIPE_SECRET_KEY
     subscriber = does_subscriber_exist(request)
     method = obtain_method(subscriber)
-    subscribed = is_user_subscribed(subscriber)
+    subscribed = is_user_subscribed(request, subscriber)
+    print(subscribed)
     if subscribed == False:
         print(method)
         if request.data.get('method') == None:

@@ -1,8 +1,6 @@
 # Short term goals
 Update Readme
 
-Put token into react-redux-persist and thus change AxiosInstance
-
 Add social authentication to AlternateLogins component
 
 Create token that expires after a given length of time

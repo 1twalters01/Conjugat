@@ -193,7 +193,7 @@ def logoutView(request):
                     status=status.HTTP_204_NO_CONTENT)
 
 
-
+from subscription.models import UserProfile
 # I am using django to send the email. I could use mailchimp instead.
 @api_view(["POST"])
 @permission_classes([AllowAny])
@@ -258,6 +258,8 @@ def registerView(request):
                         status=status.HTTP_400_BAD_REQUEST)
     
     user.save()
+    subscriber = UserProfile.objects.create(user=user, method_id=4)
+    subscriber.save()
     return Response({"success": "Successfully created user. Activate with link in email."},
                 status=status.HTTP_200_OK)
 
