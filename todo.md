@@ -9,6 +9,8 @@ Add csrftokens to post requests
 
 Refactor Django code and add serializers
 1. account
+* password
+* logout
 * registerView
 * activateView
 * passwordResetView

@@ -5,11 +5,13 @@ from . import views
 urlpatterns = [
     path('', views.getRoutes, name='getRoutes'),
 
-    path('login/username/', views.loginUsernameView, name='login'),
+    path('login/username/', views.LoginUsername.as_view(), name='login_username'),
     path('login/password/', views.loginPasswordView, name='login_Password'),
+
     path('logout/', views.logoutView, name='logout'),
     
     path('register/', views.registerView, name='register'),
+    # path('activate/', views.activateView, name='activate'),
     path('activate/', views.activateView, name='activate'),
 
     path('password-reset/', views.passwordResetView, name='password_reset'),

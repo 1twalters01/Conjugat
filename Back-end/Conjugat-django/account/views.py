@@ -1,23 +1,54 @@
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
-from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
 from django.core.exceptions import ObjectDoesNotExist
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
-from.serializers import LoginUsernameSerializer, LoginPasswordSerializer
-
+from.serializers import LoginPasswordSerializer
 from subscription.encryption import decrypt
 from settings.models import TwoFactorAuth
 from settings.totp import generate_totp
+from subscription.models import UserProfile
 from .tokens import account_activation_token, password_reset_token
+
+from rest_framework.views import APIView
+from rest_framework import permissions
+from rest_framework.authentication import SessionAuthentication
+from .serializers import LoginUsernameSerializer
+from .validations import *
+
+
+
+def does_username_exist(username):
+    try:
+        user = User.objects.get(username=username)
+        active = user.is_active
+    except:
+        user = None
+        active = None
+    if not user:
+        try:
+            user = User.objects.get(email=username)
+            active = user.is_active
+        except:
+            user = None
+            active = None
+    return user, active
+
+def is_two_factor_active(user):
+    try:
+        TwoFactor = TwoFactorAuth.objects.get(user=user)
+        confirmed = TwoFactor.confirmed
+    except:
+        TwoFactor = None
+        confirmed = False
+    return confirmed
 
 
 ''' Routes '''
@@ -72,55 +103,19 @@ def getRoutes(request):
 
 
 ''' Login '''
-def does_username_exist(username):
-    try:
-        user = User.objects.get(username=username)
-        active = user.is_active
-    except:
-        user = None
-        active = None
-    if not user:
-        try:
-            user = User.objects.get(email=username)
-            active = user.is_active
-        except:
-            user = None
-            active = None
-    return user, active
-
-def is_two_factor_active(user):
-    try:
-        TwoFactor = TwoFactorAuth.objects.get(user=user)
-        confirmed = TwoFactor.confirmed
-    except:
-        TwoFactor = None
-        confirmed = False
-    return confirmed
-
-@api_view(["POST"])
-@permission_classes([AllowAny])
-def loginUsernameView(request):
-    username = request.data.get("username")
-
-    if username is None:
-        error = 'No username was entered'
-        return Response({'error': error},
-                        status=status.HTTP_404_NOT_FOUND)
-
-    user, active = does_username_exist(username)
-    if not user:
-        error = 'Username is not recognised'
-        return Response({'error': error},
-                        status=status.HTTP_401_UNAUTHORIZED)
-    if active == False:
-        error = 'User is not activated'
-        return Response({'error': error},
-                        status=status.HTTP_401_UNAUTHORIZED)
-
-    user.confirmed = is_two_factor_active(user.id)
-    serializer = LoginUsernameSerializer(user)
-    return Response(data=serializer.data, status=status.HTTP_200_OK)
-
+class LoginUsername(APIView):
+    permission_classes = (permissions.AllowAny,)
+    authentication_classes = (SessionAuthentication,)
+    def post(self, request):
+        data = request.data
+        assert validate_username(data)
+        serializer = LoginUsernameSerializer(data=data)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.valid_user(data)
+            if response[1] == True:
+                return Response(data=response[0], status=status.HTTP_200_OK)
+            else:
+                return Response({'error':response[0]}, status=status.HTTP_404_NOT_FOUND)
 
 
 
@@ -193,7 +188,9 @@ def logoutView(request):
                     status=status.HTTP_204_NO_CONTENT)
 
 
-from subscription.models import UserProfile
+
+
+
 # I am using django to send the email. I could use mailchimp instead.
 @api_view(["POST"])
 @permission_classes([AllowAny])
@@ -206,16 +203,15 @@ def registerView(request):
     
     if username is None or email is None or password is None or password2 is None:
         error = 'Please fill in all form fields'
-        print(error)
         return Response({'error': error},
                         status=status.HTTP_400_BAD_REQUEST)
-    print(password, password2)
+
     if password != password2:
         error = 'Passwords must match'
         print(error)
         return Response({'error': error},
                         status=status.HTTP_400_BAD_REQUEST)      
-    
+
     try:
         usernameTest = User.objects.get(username=username)
     except:
@@ -253,16 +249,17 @@ def registerView(request):
         email = EmailMessage(subject, message, to=[recipient])
         email.send()
     except:
-        print('Unable to send to email address')
-        return Response({'error': 'Unable to send to email address'},
+        error = 'Unable to send to email address'
+        print(error)
+        return Response({'error':error},
                         status=status.HTTP_400_BAD_REQUEST)
     
     user.save()
     subscriber = UserProfile.objects.create(user=user, method_id=4)
     subscriber.save()
-    return Response({"success": "Successfully created user. Activate with link in email."},
+    success = "Successfully created user. Activate with link in email."
+    return Response({"success":success},
                 status=status.HTTP_200_OK)
-
 
 
 
@@ -271,47 +268,71 @@ def registerView(request):
 def activateView(request):
     uidb64 = request.data.get("uidb64")
     token = request.data.get("token")
-    print(uidb64, token)
-    print(get_current_site(request).domain)
+
     if uidb64 is None or token is None:
-        return Response({'error': 'Invalid url type'},
+        error = 'Invalid url type'
+        return Response({'error':error},
                         status=status.HTTP_400_BAD_REQUEST)
+    
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
         user = User.objects.get(pk=uid)
     except(TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
+
     if not user:
-        return Response({'error': 'user does not exist'},
+        error = 'user does not exist'
+        return Response({'error':error},
                         status=status.HTTP_400_BAD_REQUEST)
     if user.is_active:
-        return Response({'error': 'user has already been activated'},
+        error = 'user has already been activated'
+        return Response({'error':error},
                         status=status.HTTP_400_BAD_REQUEST)
     if account_activation_token.check_token(user, token) != True:
-        return Response({'error': 'invalid token'},
+        error = 'invalid token'
+        return Response({'error':error},
                         status=status.HTTP_400_BAD_REQUEST)
     
     user.is_active = True
     user.save()
-    return Response({"success": "Successfully activated user"},
+    success = "Successfully activated user"
+    return Response({"success":success},
             status=status.HTTP_200_OK)
 
+# from rest_framework.views import APIView
+# from rest_framework import permissions, status
+# from .serializers import PasswordResetSerializer
+# # class PasswordReset(APIView):
+# #     permission_classes = (permissions.AllowAny,)
+# #     def post(self, request):
+# #         # clean_data = PasswordResetValidation(request.data)
+# #         serializer = PasswordResetSerializer(data=clean_data)
+# #         if serializer.is_valid(raise_exception=True):
+# #             user = s
 
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def passwordResetView(request):
     email = request.data.get("email")
     domain = request.data.get("domain")
+
     if not email:
-        return Response({'error': 'No email provided'},
+        error = "No email provided"
+        return Response({'error':error},
                         status=status.HTTP_400_BAD_REQUEST)
+    if not domain:
+        error = "No domain provided"
+        return Response({"error":error})
+    
     try:
         user = User.objects.get(email=email)
     except:
         user = None
     if user == None:
-        return Response({'error': 'Email has no associated account or hasn\'t been activated'},
+        error = 'Email has no associated account or hasn\'t been activated'
+        return Response({'error':error},
                         status=status.HTTP_400_BAD_REQUEST)
+    
     try:
         subject = 'Conjugat password reset'
         message = render_to_string('password_reset_email.html', {
@@ -325,11 +346,12 @@ def passwordResetView(request):
         email = EmailMessage(subject, message, to=[recipient])
         email.send()
     except:
-        print('Unable to send to email address')
-        return Response({'error': 'Unable to send to email address'},
+        error = 'Unable to send to email address'
+        print(error)
+        return Response({'error':error},
                         status=status.HTTP_400_BAD_REQUEST)
-
-    return Response({"success": "Password reset email has been sent"},
+    success = "Password reset email has been sent"
+    return Response({"success":success},
                 status=status.HTTP_200_OK)
 
 
@@ -343,7 +365,8 @@ def passwordResetConfirmView(request):
     print(uidb64, token)
 
     if uidb64 is None or token is None:
-        return Response({'error': 'Invalid url type'},
+        error = 'Invalid url type'
+        return Response({'error': error},
                         status=status.HTTP_400_BAD_REQUEST)
 
     try:
@@ -352,18 +375,22 @@ def passwordResetConfirmView(request):
     except(TypeError, ValueError, OverflowError, User.DoesNotExist):
         user = None
     if not user:
-        return Response({'error': 'user does not exist'},
+        error = 'user does not exist'
+        return Response({'error': error},
                         status=status.HTTP_400_BAD_REQUEST)
     if password_reset_token.check_token(user, token) != True:
-        print('invalid token')
-        return Response({'error': 'invalid token'},
+        error = 'invalid token'
+        print(error)
+        return Response({'error': error},
                         status=status.HTTP_400_BAD_REQUEST)
     if password != password2:
-        return Response({'error': 'Passwords must match'},
+        error = 'Passwords must match'
+        return Response({'error': error},
                         status=status.HTTP_400_BAD_REQUEST)
 
     if user and password_reset_token.check_token(user, token):
         user.set_password(password)
         user.save()
-    return Response({"success": "Successfully changed password"},
+    success = "Successfully changed password"
+    return Response({"success":success},
             status=status.HTTP_200_OK)
