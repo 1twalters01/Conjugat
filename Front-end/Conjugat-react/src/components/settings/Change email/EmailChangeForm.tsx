@@ -2,6 +2,7 @@ import { ChangeEvent, FormEvent, useState} from "react"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import EmailField from "../../Input fields/EmailField"
 import PasswordField from "../../Input fields/PasswordField"
+import SubmitBtn from "../../Input fields/SubmitBtn"
 
 function EmailChangeForm({ onDoneChange }: {onDoneChange:Function}){
     const [email, setEmail] = useState('')
@@ -22,29 +23,26 @@ function EmailChangeForm({ onDoneChange }: {onDoneChange:Function}){
       })
     }
   
-    function handleEmail(e:ChangeEvent<HTMLInputElement>) {
-      setEmail(e.target.value)
-    }
-    function handlePassword(e:ChangeEvent<HTMLInputElement>) {
-      setPassword(e.target.value)
-    }
-  
     return(
       <div>
         <form onSubmit={(e) => submit(e)}>
             <EmailField
+              id="email"
               email={email}
-              handleEmail={handleEmail}
+              handleEmail={(e:ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+              labelText="Email"
             />
             
             <PasswordField
               password = {password}
-              handlePassword = {handlePassword}
+              handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
               id = "password"
               labelText="Password"
             />
   
-            <button>Submit</button>
+            <SubmitBtn
+              value="Submit"
+            />
         </form>
       </div>
     )

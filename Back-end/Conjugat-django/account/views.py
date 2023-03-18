@@ -135,36 +135,16 @@ from settings.models import Theme
 @permission_classes([AllowAny])
 def loginPasswordView(request):
     username = request.data.get("username")
-    uid = request.data.get("id")
     password = request.data.get("password")
     totp = request.data.get("totp")
-    confirmed = request.data.get("confirmed")
     remember_me = request.data.get("remember_me")
 
-    if not uid:
-        return Response({'error': 'No username provided'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    if isinstance(uid, int) == False:
-        error = 'User id must be an integer'
-        print(error)
-        return Response({'error': error},
-                        status=status.HTTP_400_BAD_REQUEST)
     if not password:
         error = 'No password provided'
         print(error)
         return Response({'error': error},
                         status=status.HTTP_400_BAD_REQUEST)
-    if confirmed == None:
-        error = 'No totp status provided'
-        print(error)
-        return Response({'error': error},
-                        status=status.HTTP_400_BAD_REQUEST)
-    if isinstance(confirmed, bool) == False:
-        error = 'totp status must be a boolean'
-        print(error)
-        return Response({'error': error},
-                        status=status.HTTP_400_BAD_REQUEST)
-
+    
     user = authenticate(username=username, password=password)
     if not user:
         error = 'The username and/or password is incorrect'
@@ -172,24 +152,19 @@ def loginPasswordView(request):
         return Response({'error': error},
                         status=status.HTTP_404_NOT_FOUND)
     
-    if confirmed:
-        try:
-            TwoFactor = TwoFactorAuth.objects.get(user=uid)
-            key = decrypt(TwoFactor.key).encode('ascii')
-            totpCheck = generate_totp(key)
-        except:
-            error = 'uid is not found'
-            print(error)
-            return Response({'error': error},
-                        status=status.HTTP_404_NOT_FOUND)
-    else:
-        totpCheck = None
-        totp = None
+    try:
+        TwoFactor = TwoFactorAuth.objects.get(user=user.id)
+        key = decrypt(TwoFactor.key).encode('ascii')
+        totpCheck = generate_totp(key)
+    except:
+        TwoFactor = None
+        totpCheck = ''
+    print(totpCheck, totp)
     if totpCheck != totp:
         error = 'The totp is incorrect'
         print(error)
         return Response({'error': error},
-                        status=status.HTTP_400_BAD_REQUEST)
+                    status=status.HTTP_400_BAD_REQUEST)
     
     if remember_me == True:
         # Token expiration date for 1 week

@@ -9,47 +9,47 @@ import UsernameLinks from '../../components/account/Login/UsernameLinks'
 import '../../sass/pages/account/Login.scss'
 
 function Login() {
-  Authorization.NotAuthRequired()
-  const [page, setPage] = useState('username')
+    Authorization.NotAuthRequired()
+    const [page, setPage] = useState('username')
 
-  if (page == 'username') {
-    return (
-      <div className="Login-username-container">
-        <div className="Header-spacer-top"></div>
-        <Header />
-        <div className="Header-spacer-bottom"></div>
+    if (page == 'username') {
+        return (
+          <div className="Login-username-container">
+            <div className="Header-spacer-top"></div>
+            <Header />
+            <div className="Header-spacer-bottom"></div>
 
-        <UsernameLinks />
-        <div className="UsernameLinks-spacer"></div>
+            <UsernameLinks />
+            <div className="UsernameLinks-spacer"></div>
 
-        <UsernameForm
-          onPageChange={setPage}
-        />
-        <div className="UsernameForm-spacer"></div>
+            <UsernameForm
+            onPageChange={setPage}
+            />
+            <div className="UsernameForm-spacer"></div>
 
-        <AlternateLogins />
-      </div>
-    )
-  }
+            <AlternateLogins />
+          </div>
+        )
+    }
 
-  if (page == 'password') {
-    return(
-      <div className="Login-password-container">
-        <div className="Header-spacer-top"></div>
-        <Header />
-        <div className="Header-spacer-bottom"></div>
+    if (page == 'password') {
+        return (
+          <div className="Login-password-container">
+            <div className="Header-spacer-top"></div>
+            <Header />
+            <div className="Header-spacer-bottom"></div>
 
-        <ResetUsername
-          onPageChange={setPage}
-        />
-        <div className="ResetUsername-spacer"></div>
+            <ResetUsername
+            onPageChange={setPage}
+            />
+            <div className="ResetUsername-spacer"></div>
 
-        <PasswordForm/>
-        <div className="PasswordForm-spacer"></div>
-      </div>
-    )
-  }
-  return <div></div>
+            <PasswordForm/>
+            <div className="PasswordForm-spacer"></div>
+          </div>
+        )
+    }
+    return <div></div>
 }
 
 export default Login

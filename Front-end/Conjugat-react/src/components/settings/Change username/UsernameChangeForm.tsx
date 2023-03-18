@@ -1,7 +1,8 @@
 import { ChangeEvent, FormEvent, useState} from "react"
 import AxiosInstance from "../../../functions/AxiosInstance"
-import UsernameField from "../../Input fields/TextField"
+import TextField from "../../Input fields/TextField"
 import PasswordField from "../../Input fields/PasswordField"
+import SubmitBtn from "../../Input fields/SubmitBtn"
 
 
 function UsernameChangeForm({ onDoneChange }: {onDoneChange:Function}){
@@ -23,28 +24,27 @@ function UsernameChangeForm({ onDoneChange }: {onDoneChange:Function}){
       })
     }
   
-    function handleUsername(e:ChangeEvent<HTMLInputElement>) {
-      setUsername(e.target.value)
-    }
-    function handlePassword(e:ChangeEvent<HTMLInputElement>) {
-      setPassword(e.target.value)
-    }
-  
     return(
       <div>
         <form onSubmit={(e) => submit(e)}>
-            <UsernameField
+            <TextField
+              id = "username"
               labelText = "Username"
+              value = { username }
+              handleText = {(e:ChangeEvent<HTMLInputElement>) => setUsername(e.target.value)}
+              required = {true}
             />
   
             <PasswordField
               password = {password}
-              handlePassword = {handlePassword}
+              handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
               id = "password"
               labelText="Password"
             />
   
-            <button>Submit</button>
+            <SubmitBtn
+              value="Submit"
+            />
         </form>
       </div>
     )

@@ -3,8 +3,11 @@ import PasswordField from "../../Input fields/PasswordField"
 import TotpField from "../../Input fields/TotpField"
 import SubmitBtn from "../../Input fields/SubmitBtn"
 import AxiosInstance from "../../../functions/AxiosInstance"
+import { useDispatch } from "react-redux"
+import { onConfirmedChange } from "../../../redux/slices/loginSlice"
 
 function QrForm({setDone}: {setDone:Function}) {
+    const dispatch = useDispatch()
     const [password, setPassword] = useState('')
     const [totp, setTotp] = useState('')
   
@@ -17,6 +20,11 @@ function QrForm({setDone}: {setDone:Function}) {
       })
       .then(res=>{
         setDone(true)
+        console.log(res.data.confirmed, res.data.success)
+        dispatch(onConfirmedChange(res.data.confirmed))
+      })
+      .catch(err => {
+        console.log(err.response.data.error)
       })
     }
   

@@ -7,7 +7,7 @@ class LoginUsernameSerializer(serializers.ModelSerializer):
     confirmed = serializers.BooleanField()
     class Meta:
         model = User
-        fields = ('username', 'id', 'confirmed')
+        fields = ('username', 'confirmed')
 
 class LoginPasswordSerializer(serializers.ModelSerializer):
     theme = serializers.CharField()

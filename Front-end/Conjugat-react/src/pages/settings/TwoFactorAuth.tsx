@@ -4,7 +4,6 @@ import Authorization from '../../functions/Authorization'
 
 function TwoFactorAuth() {
   Authorization.AuthRequired()
-  const [loading, setLoading] = useState(true);
   const [done, setDone] = useState(false)
   if (done == false) {
     return (
@@ -12,9 +11,7 @@ function TwoFactorAuth() {
         <h1>TwoFactorAuth</h1>
 
         <LoadTwoFactorAuth
-          loading={loading}
           setDone={setDone}
-          setLoading={setLoading}
         />
       </div>
     )

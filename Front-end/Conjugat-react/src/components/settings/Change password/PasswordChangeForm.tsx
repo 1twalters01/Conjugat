@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, useState} from "react"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import PasswordField from "../../Input fields/PasswordField"
+import SubmitBtn from "../../Input fields/SubmitBtn"
 
 function PasswordChangeForm({ onDoneChange }: {onDoneChange:Function}){
     const [password, setPassword] = useState('')
@@ -23,41 +24,33 @@ function PasswordChangeForm({ onDoneChange }: {onDoneChange:Function}){
       })
     }
 
-    function handlePassword(e:ChangeEvent<HTMLInputElement>) {
-      setPassword(e.target.value)
-    }
-    function handleNewPassword1(e:ChangeEvent<HTMLInputElement>) {
-      setNewPassword1(e.target.value)
-    }
-    function handleNewPassword2(e:ChangeEvent<HTMLInputElement>) {
-      setNewPassword2(e.target.value)
-    }
-
     return(
       <div>
         <form onSubmit={(e) => submit(e)}>
             <PasswordField
               password = {password}
-              handlePassword = {(e:any) => handlePassword(e)}
+              handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
               id = "password"
               labelText="Password"
             />
   
             <PasswordField
               password = {newPassword1}
-              handlePassword = {(e:any) => handleNewPassword1(e)}
+              handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setNewPassword1(e.target.value)}
               id = "newPassword1"
               labelText="New password"
             />
   
             <PasswordField
               password = {newPassword2}
-              handlePassword = {(e:any) => handleNewPassword2(e)}
+              handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setNewPassword2(e.target.value)}
               id = "newPassword2"
               labelText="Re-enter new password"
             />
   
-            <button>Submit</button>
+            <SubmitBtn
+              value="Submit"
+            />
         </form>
       </div>
     )

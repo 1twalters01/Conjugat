@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import loginReducer from './slices/loginSlice'
 import themeReducer from './slices/themeSlice'
+import tokenReducer from './slices/tokenSlice'
 
 import thunk from 'redux-thunk';
 import { combineReducers } from '@reduxjs/toolkit';
@@ -16,6 +17,7 @@ const persistConfig = {
 const reducer = combineReducers({
   login: loginReducer,
   theme: themeReducer,
+  token: tokenReducer
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer)

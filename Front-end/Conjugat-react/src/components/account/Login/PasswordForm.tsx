@@ -1,106 +1,88 @@
-import { useNavigate } from "react-router-dom"
 import { ChangeEvent, FormEvent, useState, } from "react"
-
+import { useDispatch, useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
+import { RootState } from "../../../redux/store"
+import { onThemeChange } from "../../../redux/slices/themeSlice"
+import { onConfirmedChange } from "../../../redux/slices/loginSlice"
 import AxiosInstance from '../../../functions/AxiosInstance'
+import handleText from "../../../functions/handlers/handleText"
 import PasswordField from '../../Input fields/PasswordField'
+import handleTotp from "../../../functions/handlers/handleTotp"
 import TotpField from '../../Input fields/TotpField'
+import handleCheckbox from "../../../functions/handlers/handleCheckbox"
 import RememberMeField from '../../Input fields/RememberMeField'
 import PasswordReset from './PasswordReset'
 import SubmitBtn from "../../Input fields/SubmitBtn"
-
 import '../../../sass/Components/account/Login/PasswordForm.scss'
-import { useSelector } from "react-redux"
-import { RootState } from "../../../redux/store"
-import { useDispatch } from "react-redux"
-import { onThemeChange } from "../../../redux/slices/themeSlice"
-
 
 function PasswordForm() {
-    const{ username } = useSelector((state: RootState) => state.persistedReducer.login)
-    const{ id } = useSelector((state: RootState) => state.persistedReducer.login)
-    const{ confirmed } = useSelector((state: RootState) => state.persistedReducer.login)
-    
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const { confirmed } = useSelector((state: RootState) => state.persistedReducer.login)
+    const { username } = useSelector((state: RootState) => state.persistedReducer.login)
     const [password, setPassword] = useState('')
     const [totp, setTotp] = useState('')
     const [rememberMe, setRememberMe] = useState(false)
-    const navigate = useNavigate()
-    const dispatch = useDispatch();
-    
-    function handlePassword(e:ChangeEvent<HTMLInputElement>) {
-      setPassword(e.target.value)
-    }
-    function handleTotp(e:ChangeEvent<HTMLInputElement>) {
-        if (isNaN(+e.target.value) == false){
-          setTotp(e.target.value)
-        }
-    }
-    function handleRememberMe(e:ChangeEvent<HTMLInputElement>) {
-        setRememberMe(e.target.checked)
-    }
-  
+
     function submit(e:FormEvent<HTMLFormElement>) {
         e.preventDefault();
         AxiosInstance.Unauthorised
         .post('account/login/password/', {
             username: username,
-            id: id,
-            confirmed: confirmed,
             password: password,
             totp: totp,
             remember_me: rememberMe
         })
         .then(res=>{
-            console.log(username, res.data.key, res.data.theme)
             localStorage.setItem("token", res.data.key)
             dispatch(onThemeChange(res.data.theme))
-            navigate('/home')
+            window.location.href = ('/home')
         })
-        // .catch(err=>{
-        //   console.log(err.response.data.error)
-        // })
+        .catch(err=>{
+            console.log(err.response.data.error)
+        })
     }
 
     return (
       <div className="login-form">
         <form onSubmit={(e) => submit(e)}>
-            <PasswordField
-              password = {password}
-              handlePassword = {(e:ChangeEvent<HTMLInputElement>) => handlePassword(e)}
-              id = "password"
-              labelText="Password"
-            />
-            <div className="password-spacer"></div>
+          <PasswordField
+            password = {password}
+            handlePassword = {(e:ChangeEvent<HTMLInputElement>) => handleText(e, setPassword)}
+            id = "password"
+            labelText="Password"
+          />
+          <div className="password-spacer"></div>
 
-            {confirmed == false ?
-              null
-            :
-              <>
-              <div className="totp-top-spacer"></div>
-                <TotpField
-                  totp = {totp}
-                  handleTotp = {(e:ChangeEvent<HTMLInputElement>) => handleTotp(e)}
-                  labelText="Totp"
-                />
-                <div className="totp-bottom-spacer"></div>
-              </>
-            }
+          {confirmed == false ?
+            null
+          :
+            <>
+            <div className="totp-top-spacer"></div>
+              <TotpField
+                totp = {totp}
+                handleTotp = {(e:ChangeEvent<HTMLInputElement>) => handleTotp(e, setTotp)}
+                labelText="Totp"
+              />
+              <div className="totp-bottom-spacer"></div>
+            </>
+          }
 
-            <RememberMeField
-              rememberMe = {rememberMe}
-              handleRememberMe = {handleRememberMe}
-            />
-            <div className="rememberMe-spacer"></div>
+          <RememberMeField
+            rememberMe = {rememberMe}
+            handleRememberMe = {(e:ChangeEvent<HTMLInputElement>) => handleCheckbox(e, setRememberMe)}
+          />
+          <div className="rememberMe-spacer"></div>
 
-            <PasswordReset />
-            <div className="passwordReset-spacer"></div>
+          <PasswordReset />
+          <div className="passwordReset-spacer"></div>
 
-            <SubmitBtn
-              value="Submit"
-            />
-        </form>
-      </div>
-    )
+          <SubmitBtn
+            value="Submit"
+          />
+      </form>
+    </div>
+  )
 }
-
 
 export default PasswordForm

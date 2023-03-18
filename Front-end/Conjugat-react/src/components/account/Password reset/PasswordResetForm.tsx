@@ -1,9 +1,8 @@
 import { ChangeEvent, FormEvent, useState} from "react"
-
 import AxiosInstance from "../../../functions/AxiosInstance"
+import handleText from "../../../functions/handlers/handleText"
 import EmailField from "../../Input fields/EmailField"
 import SubmitBtn from "../../Input fields/SubmitBtn"
-
 import '../../../sass/Components/account/Password reset/PasswordResetForm.scss'
 
 function PasswordResetForm({onDoneChange}: {onDoneChange:Function}) {
@@ -11,22 +10,18 @@ function PasswordResetForm({onDoneChange}: {onDoneChange:Function}) {
     const [email, setEmail] = useState('')
   
     function submit(e:FormEvent<HTMLFormElement>) {
-      e.preventDefault();
-      AxiosInstance.Unauthorised
-      .post('account/password-reset/', {
-        email: email,
-        domain: domain
-      })
-      .then(
-        onDoneChange(true)
-      )
-      .catch(err=>{
-        console.log(err.response.data.error)
-      })
-    }
-  
-    function handleEmail(e:ChangeEvent<HTMLInputElement>) {
-      setEmail(e.target.value)
+        e.preventDefault();
+        AxiosInstance.Unauthorised
+        .post('account/password-reset/', {
+            email: email,
+            domain: domain
+        })
+        .then(
+            onDoneChange(true)
+        )
+        .catch(err=>{
+            console.log(err.response.data.error)
+        })
     }
   
     return (
@@ -36,7 +31,7 @@ function PasswordResetForm({onDoneChange}: {onDoneChange:Function}) {
             id='email'
             email={email}
             labelText='Email'
-            handleEmail={handleEmail}
+            handleEmail={(e:ChangeEvent<HTMLInputElement>) => handleText(e, setEmail)}
           />
           <div className="email-spacer"></div>
 
@@ -46,6 +41,6 @@ function PasswordResetForm({onDoneChange}: {onDoneChange:Function}) {
         </form>
       </div>
     )
-  }
+}
 
 export default PasswordResetForm

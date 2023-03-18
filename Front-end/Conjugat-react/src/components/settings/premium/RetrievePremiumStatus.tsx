@@ -8,11 +8,12 @@ import PaypalProcess from "../../subscriptions/Process/PaypalProcess"
 import CoinbaseProcess from "../../subscriptions/Process/CoinbaseProcess"
 
 function RetrievePremiumStatus() {
+    const [loading, setLoading] = useState(true)
+
     const [method, setMethod] = useState(null)
     const [subscribed, setSubscribed] = useState(null)
     const [url, setURL] = useState('')
     const [status, setStatus] = useState('')
-    const [loading, setLoading] = useState(true)
     
     const [trial, setTrial] = useState(null)
     const [stripeURL, setStripeURL] = useState('')

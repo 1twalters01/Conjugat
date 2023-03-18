@@ -1,34 +1,13 @@
 # Short term goals
 Update Readme
 
-Create token that expires after a given length of time
+Put token into react-redux-persist and thus change AxiosInstance
 
 Add social authentication to AlternateLogins component
 
+Create token that expires after a given length of time
+
 Add csrftokens to post requests
-
-Add Redux to:
-1. newsletter
-* Subscribe
-* Unsubscribe
-2. settings
-* Change email
-* Change password
-* Change username
-* Close account
-* Premium
-* Reset account
-* Themes
-* Two factor authentication
-3. subscriptions
-* Cancelled
-* Process
-* Success
-4. Misc
-* Home
-* Landing page
-
-Make TwoFactorAuth react code not "repeat itself"
 
 Refactor Django code and add serializers
 1. account
@@ -114,8 +93,6 @@ Add styling to the react pages (SCSS)
 * Privacy
 * Terms
 
-Add flash messages
-
 Add colour to the react pages (SCSS)
 1. account
 * Activate
@@ -148,6 +125,8 @@ Add colour to the react pages (SCSS)
 * Landing page
 * Privacy
 * Terms
+
+Add flash messages
 
 # Medium term goals
 Refactor react code once again

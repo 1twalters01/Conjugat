@@ -1,3 +1,4 @@
+from account.views import is_two_factor_active
 from .models import Theme, TwoFactorAuth
 from .totp import create_key_of_length, generate_totp, generate_QR_string_and_code
 from coinbase_commerce.client import Client
@@ -195,6 +196,7 @@ def payment_method(method):
 @permission_classes([IsAuthenticated])
 def closeAccountView(request):
     password = request.data.get('password')
+    totp = request.data.get("totp")
     
     if not password:
         print('No password provided')
@@ -206,6 +208,20 @@ def closeAccountView(request):
         print('Incorrect password')
         return Response({'error': 'Incorrect password'},
                         status=status.HTTP_400_BAD_REQUEST)
+    
+    try:
+        TwoFactor = TwoFactorAuth.objects.get(user=user.id)
+        key = decrypt(TwoFactor.key).encode('ascii')
+        totpCheck = generate_totp(key)
+    except:
+        TwoFactor = None
+        totpCheck = ''
+
+    if totpCheck != totp:
+        error = 'The totp is incorrect'
+        print(error)
+        return Response({'error': error},
+                    status=status.HTTP_400_BAD_REQUEST)
     
     try:
         premium = UserProfile.objects.get(user=request.user)
@@ -422,19 +438,19 @@ def twoFactorAuthView(request):
             print(error)
             return Response({'error':error},
                 status=status.HTTP_400_BAD_REQUEST)
-
+        
         if TwoFactor.confirmed == False:
             TwoFactor.confirmed = True
             TwoFactor.save()
             success = "Two factor authentication has been added"
-            return Response({"success": success},
+            return Response({"success": success, 'confirmed':TwoFactor.confirmed},
                 status=status.HTTP_200_OK)
 
         elif TwoFactor.confirmed == True:
             TwoFactor.confirmed = False
             TwoFactor.save()
             success = "Two factor authentication has been removed"
-            return Response({"success": success},
+            return Response({"success": success, 'confirmed':TwoFactor.confirmed},
                 status=status.HTTP_200_OK)
 
         else:

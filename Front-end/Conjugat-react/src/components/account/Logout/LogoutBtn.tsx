@@ -1,14 +1,14 @@
-import { FormEvent} from "react"
+import { FormEvent } from "react"
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import AxiosInstance from '../../../functions/AxiosInstance'
 import { onThemeChange } from "../../../redux/slices/themeSlice";
 
 function LogoutBtn({onLoggedOutChange} : {onLoggedOutChange:Function}) {
     const dispatch = useDispatch();
-    function submit(e:FormEvent<HTMLFormElement>) {
+    
+    function submit(e:FormEvent<HTMLButtonElement>) {
       e.preventDefault();
-
+      console.log(localStorage.getItem('token'), 'hiii')
       AxiosInstance.Authorised
       .post('/account/logout/')
       .then(res=>{
@@ -17,14 +17,12 @@ function LogoutBtn({onLoggedOutChange} : {onLoggedOutChange:Function}) {
           onLoggedOutChange(true)
       })
       .catch(err=>{
-          console.log(err.response.data.error)
+          console.log(err)
       })
     }
 
     return (
-      <form onSubmit={(e) => submit(e)}>
-        <button>Log out</button>
-      </form>
+      <button onClick={(e) => submit(e)}>Log out</button>
     )
   }
 

@@ -2,6 +2,7 @@ import { ChangeEvent, FormEvent, useState} from "react"
 import EmailField from "../../Input fields/EmailField"
 import TextField from "../../Input fields/TextField";
 import AxiosInstance from "../../../functions/AxiosInstance"
+import SubmitBtn from "../../Input fields/SubmitBtn";
 
 function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:string, setEmail:Function}) {
     const [firstName, setFirstName] = useState('')
@@ -19,21 +20,10 @@ function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:stri
       })
       .then(res=>{
         setDone(true)
-        console.log(res.data)
       })
       .catch(err=>{
         console.log(err.response.data.error)
       })
-    }
-    
-    function handleEmail(e:ChangeEvent<HTMLInputElement>) {
-      setEmail(e.target.value)
-    }
-    function handleFirstName(e:ChangeEvent<HTMLInputElement>) {
-      setFirstName(e.target.value)
-    }
-    function handleLastName(e:ChangeEvent<HTMLInputElement>) {
-      setLastName(e.target.value)
     }
   
     function changeLanguage(e:ChangeEvent<HTMLSelectElement>) {
@@ -52,14 +42,14 @@ function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:stri
                 id='email'
                 email={email}
                 labelText="Email"
-                handleEmail={(e:ChangeEvent<HTMLInputElement>) => handleEmail(e)}
+                handleEmail={(e:ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
               />
               
               <TextField
                 id={"firstName"}
                 labelText="First name"
                 required={false}
-                handleText={(e:ChangeEvent<HTMLInputElement>) => handleFirstName(e)}
+                handleText={(e:ChangeEvent<HTMLInputElement>) => setFirstName(e.target.value)}
                 value={firstName}
               />
   
@@ -67,7 +57,7 @@ function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:stri
                 id={"lastName"}
                 labelText="Last name"
                 required={false}
-                handleText={(e:ChangeEvent<HTMLInputElement>) => handleLastName(e)}
+                handleText={(e:ChangeEvent<HTMLInputElement>) => setLastName(e.target.value)}
                 value={lastName}
               />
               
@@ -81,7 +71,10 @@ function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:stri
                   <option value="Spanish">Spanish</option>
                 </select>
               </div>
-              <button>Submit</button>
+
+              <SubmitBtn
+                value="Submit"
+              />
           </form>
       </div>
     )
