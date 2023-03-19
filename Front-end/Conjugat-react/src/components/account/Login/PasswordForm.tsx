@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { RootState } from "../../../redux/store"
 import { onThemeChange } from "../../../redux/slices/themeSlice"
-import { onConfirmedChange } from "../../../redux/slices/loginSlice"
 import AxiosInstance from '../../../functions/AxiosInstance'
 import handleText from "../../../functions/handlers/handleText"
 import PasswordField from '../../Input fields/PasswordField'
@@ -17,7 +16,7 @@ import '../../../sass/Components/account/Login/PasswordForm.scss'
 
 function PasswordForm() {
     const dispatch = useDispatch()
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const { confirmed } = useSelector((state: RootState) => state.persistedReducer.login)
     const { username } = useSelector((state: RootState) => state.persistedReducer.login)
     const [password, setPassword] = useState('')
@@ -39,7 +38,7 @@ function PasswordForm() {
             window.location.href = ('/home')
         })
         .catch(err=>{
-            console.log(err.response.data.error)
+            console.log(err.response.data)
         })
     }
 

@@ -25,7 +25,7 @@ function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {
             domain: domain
         })
         .then(res=>{
-            onDoneChange(true)
+            // onDoneChange(true)
         })
         .catch(err=>{
             console.log(err.response.data)

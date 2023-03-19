@@ -1,13 +1,13 @@
 import { ChangeEvent, FormEvent, useState } from "react"
 import { useParams } from 'react-router-dom'
-import AxiosInstance from "../../../functions/AxiosInstance";
-import handleText from "../../../functions/handlers/handleText";
-import PasswordField from "../../Input fields/PasswordField";
-import SubmitBtn from "../../Input fields/SubmitBtn";
+import AxiosInstance from "../../../functions/AxiosInstance"
+import handleText from "../../../functions/handlers/handleText"
+import PasswordField from "../../Input fields/PasswordField"
+import SubmitBtn from "../../Input fields/SubmitBtn"
 import '../../../sass/Components/account/Password reset token/PasswordChangeForm.scss'
 
 function PasswordChangeForm({ onDoneChange }: {onDoneChange:Function}) {
-    const { uidb64, token } = useParams();
+    const { uidb64, token } = useParams()
     const [password, setPassword] = useState('')
     const [password2, setPassword2] = useState('')
   

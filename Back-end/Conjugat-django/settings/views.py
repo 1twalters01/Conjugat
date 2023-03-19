@@ -1,4 +1,3 @@
-from account.views import is_two_factor_active
 from .models import Theme, TwoFactorAuth
 from .totp import create_key_of_length, generate_totp, generate_QR_string_and_code
 from coinbase_commerce.client import Client

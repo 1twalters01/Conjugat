@@ -8,11 +8,6 @@ Create token that expires after a given length of time
 Add csrftokens to post requests
 
 Refactor Django code and add serializers
-1. account
-* password
-* logout
-* registerView
-* passwordResetView
 2. newsletter
 * subscribeView
 * unsubscribeView
