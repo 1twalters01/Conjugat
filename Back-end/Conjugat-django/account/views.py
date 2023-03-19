@@ -189,7 +189,7 @@ def logoutView(request):
 
 
 
-
+''' Register '''
 # I am using django to send the email. I could use mailchimp instead.
 @api_view(["POST"])
 @permission_classes([AllowAny])
@@ -261,7 +261,6 @@ def registerView(request):
                 status=status.HTTP_200_OK)
 
 
-''' Activate '''
 class Activate(APIView):
     permission_classes = (permissions.AllowAny,)
     authentication_classes = ()

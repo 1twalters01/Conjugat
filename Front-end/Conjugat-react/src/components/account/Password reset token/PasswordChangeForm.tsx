@@ -1,10 +1,10 @@
 import { ChangeEvent, FormEvent, useState } from "react"
 import { useParams } from 'react-router-dom'
 import AxiosInstance from "../../../functions/AxiosInstance";
+import handleText from "../../../functions/handlers/handleText";
 import PasswordField from "../../Input fields/PasswordField";
 import SubmitBtn from "../../Input fields/SubmitBtn";
 import '../../../sass/Components/account/Password reset token/PasswordChangeForm.scss'
-import handleText from "../../../functions/handlers/handleText";
 
 function PasswordChangeForm({ onDoneChange }: {onDoneChange:Function}) {
     const { uidb64, token } = useParams();
