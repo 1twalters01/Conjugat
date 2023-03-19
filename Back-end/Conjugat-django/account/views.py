@@ -1,36 +1,10 @@
 from django.contrib.auth import logout
-from django.contrib.auth.models import User
-from django.core.mail import EmailMessage
-from django.template.loader import render_to_string
-from django.utils.encoding import force_bytes, force_str
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from rest_framework import status
-from rest_framework.authtoken.models import Token
-from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated, AllowAny
-from rest_framework.response import Response
-from.serializers import LoginPasswordSerializer
-from subscription.encryption import decrypt
-from settings.models import TwoFactorAuth
-from settings.totp import generate_totp
-from subscription.models import UserProfile
-from .tokens import account_activation_token, password_reset_token
-
-from rest_framework.views import APIView
-from rest_framework import permissions
+from rest_framework import status, permissions
 from rest_framework.authentication import SessionAuthentication
+from rest_framework.response import Response
+from rest_framework.views import APIView
 from .serializers import *
 from .validations import *
-
-
-def is_two_factor_active(user):
-    try:
-        TwoFactor = TwoFactorAuth.objects.get(user=user)
-        confirmed = TwoFactor.confirmed
-    except:
-        TwoFactor = None
-        confirmed = False
-    return confirmed
 
 
 ''' Routes '''
