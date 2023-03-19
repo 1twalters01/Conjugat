@@ -20,7 +20,8 @@ from .tokens import account_activation_token, password_reset_token
 from rest_framework.views import APIView
 from rest_framework import permissions
 from rest_framework.authentication import SessionAuthentication
-from .serializers import LoginUsernameSerializer, ActivateSerializer
+from .serializers import LoginUsernameSerializer, ActivateSerializer, \
+PasswordResetConfirmSerializer
 from .validations import *
 
 
@@ -52,7 +53,6 @@ def is_two_factor_active(user):
 
 
 ''' Routes '''
-   
 class GetRoutes(APIView):
     def get(self, request):
         routes = [
@@ -267,8 +267,8 @@ class Activate(APIView):
     authentication_classes = ()
     def post(self, request):
         data = request.data
-        assert validate_uidb64
-        assert validate_token
+        assert validate_uidb64(data)
+        assert validate_token(data)
         serializer = ActivateSerializer(data=data)
         if serializer.is_valid(raise_exception=True):
             response = serializer.activate_user(data)
@@ -279,53 +279,7 @@ class Activate(APIView):
 
 
 
-@api_view(["POST"])
-@permission_classes([AllowAny])
-def activateView(request):
-    uidb64 = request.data.get("uidb64")
-    token = request.data.get("token")
-
-    if uidb64 is None or token is None:
-        error = 'Invalid url type'
-        return Response({'error':error},
-                        status=status.HTTP_400_BAD_REQUEST)
-    
-    try:
-        uid = force_str(urlsafe_base64_decode(uidb64))
-        user = User.objects.get(pk=uid)
-    except(TypeError, ValueError, OverflowError, User.DoesNotExist):
-        user = None
-
-    if not user:
-        error = 'user does not exist'
-        return Response({'error':error},
-                        status=status.HTTP_400_BAD_REQUEST)
-    if user.is_active:
-        error = 'user has already been activated'
-        return Response({'error':error},
-                        status=status.HTTP_400_BAD_REQUEST)
-    if account_activation_token.check_token(user, token) != True:
-        error = 'invalid token'
-        return Response({'error':error},
-                        status=status.HTTP_400_BAD_REQUEST)
-    
-    user.is_active = True
-    user.save()
-    success = "Successfully activated user"
-    return Response({"success":success},
-            status=status.HTTP_200_OK)
-
-# from rest_framework.views import APIView
-# from rest_framework import permissions, status
-# from .serializers import PasswordResetSerializer
-# # class PasswordReset(APIView):
-# #     permission_classes = (permissions.AllowAny,)
-# #     def post(self, request):
-# #         # clean_data = PasswordResetValidation(request.data)
-# #         serializer = PasswordResetSerializer(data=clean_data)
-# #         if serializer.is_valid(raise_exception=True):
-# #             user = s
-
+''' Password reset '''
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def passwordResetView(request):
@@ -371,42 +325,17 @@ def passwordResetView(request):
                 status=status.HTTP_200_OK)
 
 
-@api_view(["POST"])
-@permission_classes([AllowAny])
-def passwordResetConfirmView(request):
-    uidb64 = request.data.get("uidb64")
-    token = request.data.get("token")
-    password = request.data.get("password")
-    password2 = request.data.get("password2")
-    print(uidb64, token)
-
-    if uidb64 is None or token is None:
-        error = 'Invalid url type'
-        return Response({'error': error},
-                        status=status.HTTP_400_BAD_REQUEST)
-
-    try:
-        uid = force_str(urlsafe_base64_decode(uidb64))
-        user = User.objects.get(pk=uid)
-    except(TypeError, ValueError, OverflowError, User.DoesNotExist):
-        user = None
-    if not user:
-        error = 'user does not exist'
-        return Response({'error': error},
-                        status=status.HTTP_400_BAD_REQUEST)
-    if password_reset_token.check_token(user, token) != True:
-        error = 'invalid token'
-        print(error)
-        return Response({'error': error},
-                        status=status.HTTP_400_BAD_REQUEST)
-    if password != password2:
-        error = 'Passwords must match'
-        return Response({'error': error},
-                        status=status.HTTP_400_BAD_REQUEST)
-
-    if user and password_reset_token.check_token(user, token):
-        user.set_password(password)
-        user.save()
-    success = "Successfully changed password"
-    return Response({"success":success},
-            status=status.HTTP_200_OK)
+class PasswordResetConfirm(APIView):
+    permission_classes = (permissions.AllowAny,)
+    authentication_classes = ()
+    def post(self, request):
+        data = request.data
+        assert validate_uidb64(data)
+        assert validate_token(data)
+        assert validate_passwords(data)
+        serializer = PasswordResetConfirmSerializer(data=data)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.activate_user(data)
+            if response[1] == True:
+                return Response({"success":response[0]}, status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=status.HTTP_400_BAD_REQUEST)

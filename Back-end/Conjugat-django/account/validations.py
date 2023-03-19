@@ -17,3 +17,12 @@ def validate_token(data):
     if not token:
         raise ValidationError('Invalid url type')
     return True
+
+def validate_passwords(data):
+    password = data['password'].strip()
+    password2 = data['password2'].strip()
+    if not password or not password2:
+        raise ValidationError('Provide all fields')
+    if password != password2:
+         raise ValidationError('Passwords must match')
+    return True

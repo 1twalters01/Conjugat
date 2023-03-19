@@ -13,7 +13,6 @@ Refactor Django code and add serializers
 * logout
 * registerView
 * passwordResetView
-* passwordResetConfirmedView
 2. newsletter
 * subscribeView
 * unsubscribeView

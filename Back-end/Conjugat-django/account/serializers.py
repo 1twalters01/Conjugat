@@ -4,7 +4,7 @@ from rest_framework.authtoken.models import Token
 from django.contrib.auth.models import User
 from settings.models import TwoFactorAuth
 from django.utils.encoding import force_str
-from .tokens import account_activation_token
+from .tokens import account_activation_token, password_reset_token
 
 
 
@@ -68,6 +68,32 @@ class ActivateSerializer(serializers.Serializer):
         response = 'Successfully activated user'
         return response, True
 
+class PasswordResetConfirmSerializer(serializers.Serializer):
+    uidb64 = serializers.CharField()
+    token = serializers.CharField()
+    password = serializers.CharField()
+    password2 = serializers.CharField()
+    def activate_user(self, data):        
+        try:
+            uid = urlsafe_b64decode(data['uidb64']+'=')
+            user = User.objects.get(pk=uid)
+        except(TypeError, ValueError, OverflowError, User.DoesNotExist):
+            user = None
+
+        if not user:
+            error = 'user does not exist'
+            return error, False
+        
+        token = data['token']
+        if password_reset_token.check_token(user, token) != True:
+            error = 'invalid token'
+            return error, False
+        
+        
+        user.set_password(data['password'])
+        user.save()
+        response = 'Successfully changed password'
+        return response, True
 
 
 
@@ -82,9 +108,3 @@ class LoginPasswordSerializer(serializers.ModelSerializer):
 class PasswordResetSerializer(serializers.Serializer):
     email = serializers.CharField(read_only=True)
     domain = serializers.CharField(read_only=True)
-
-# class PasswordResetConfirmationSerializer(serializers.Serializer):
-#     uidb64 = serializers.CharField(read_only=True)
-#     token = serializers(read_only=True)
-#     password = serializers(read_only=True)
-#     password2 = serializers(read_only=True)
