@@ -1,5 +1,5 @@
 import { useState } from "react"
-import LoadUnsubscribeForm from "../../components/newsletter/subscribe/LoadUnsubscribeform"
+import LoadUnsubscribeForm from "../../components/newsletter/unsubscribe/LoadUnsubscribeform"
 
 function Unsubscribe() {
   const [loading, setLoading] = useState(true);
@@ -7,7 +7,7 @@ function Unsubscribe() {
   if (done == false) {
     return (
       <div>
-        <h1>Subscribe</h1>
+        <h1>Unsubscribe</h1>
 
         <LoadUnsubscribeForm
           loading={loading}

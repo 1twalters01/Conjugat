@@ -12,7 +12,7 @@ function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:stri
     function submit(e:FormEvent<HTMLFormElement>) {
       e.preventDefault();
       AxiosInstance.Unauthorised
-      .post('/newsletter/subscribe/', {
+      .post('/newsletter/unsubscribe/', {
         email: email,
         first_name: firstName,
         last_name: lastName,

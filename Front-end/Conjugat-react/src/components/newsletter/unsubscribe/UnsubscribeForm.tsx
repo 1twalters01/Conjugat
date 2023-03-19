@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent } from "react"
 import EmailField from "../../Input fields/EmailField"
 import AxiosInstance from "../../../functions/AxiosInstance"
+import SubmitBtn from "../../Input fields/SubmitBtn";
 
 function UnsubscribeForm({setDone, email, setEmail}: {setDone:Function, email:string, setEmail:Function}) {
     function submit(e:FormEvent<HTMLFormElement>) {
@@ -31,8 +32,11 @@ function UnsubscribeForm({setDone, email, setEmail}: {setDone:Function, email:st
               labelText="Email"
               handleEmail={(e:ChangeEvent<HTMLInputElement>) => handleEmail(e)}
             />
+
+        <SubmitBtn
+          value="Unsubscribe"
+        />
         </form>
-        <button>Submit</button>
       </div>
     )
 }

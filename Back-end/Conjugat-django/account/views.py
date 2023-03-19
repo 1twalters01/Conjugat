@@ -3,7 +3,8 @@ from rest_framework import status, permissions
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import *
+from .serializers import LoginUsernameSerializer, LoginPasswordSerializer, \
+RegisterSerializer, ActivateSerializer, PasswordResetSerializer, PasswordResetConfirmSerializer
 from .validations import *
 
 

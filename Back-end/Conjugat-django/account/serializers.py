@@ -190,7 +190,6 @@ class RegisterSerializer(serializers.Serializer):
         response = "Successfully created user. Activate with link in email."
         return response, True
 
-
 class ActivateSerializer(serializers.Serializer):
     uidb64 = serializers.CharField()
     token = serializers.CharField()
@@ -235,6 +234,7 @@ class ActivateSerializer(serializers.Serializer):
         user.save()
         response = 'Successfully activated user'
         return response, True
+
 
 ''' Password reset '''
 class PasswordResetSerializer(serializers.Serializer):

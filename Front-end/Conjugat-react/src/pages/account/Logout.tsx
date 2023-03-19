@@ -1,5 +1,4 @@
 import { useState } from 'react'
-
 import Authorization from '../../functions/Authorization'
 import Header from '../../components/account/Header'
 import LogoutBtn from '../../components/account/Logout/LogoutBtn'

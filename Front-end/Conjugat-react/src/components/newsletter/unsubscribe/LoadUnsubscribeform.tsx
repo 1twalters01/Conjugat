@@ -10,7 +10,7 @@ function LoadUnsubscribeForm({setDone, loading, setLoading}: {setDone:Function, 
       if (localStorage.getItem("token")) {Axios = AxiosInstance.Authorised}
       else {Axios = AxiosInstance.Unauthorised}
       Axios
-      .get('newsletter/subscribe/')
+      .get('newsletter/unsubscribe/')
       .then(res =>{
         setEmail(res.data.email)
         setLoading(false)

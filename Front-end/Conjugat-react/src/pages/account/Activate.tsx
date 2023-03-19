@@ -26,9 +26,4 @@ function Activate() {
     )
 }
 
-function activateAccount() {
-
-    
-}
-
 export default Activate
