@@ -12,7 +12,6 @@ Refactor Django code and add serializers
 * password
 * logout
 * registerView
-* activateView
 * passwordResetView
 * passwordResetConfirmedView
 2. newsletter

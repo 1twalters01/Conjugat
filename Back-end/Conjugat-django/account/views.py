@@ -20,7 +20,7 @@ from .tokens import account_activation_token, password_reset_token
 from rest_framework.views import APIView
 from rest_framework import permissions
 from rest_framework.authentication import SessionAuthentication
-from .serializers import LoginUsernameSerializer
+from .serializers import LoginUsernameSerializer, ActivateSerializer
 from .validations import *
 
 
@@ -52,10 +52,10 @@ def is_two_factor_active(user):
 
 
 ''' Routes '''
-@api_view(["GET"])
-@permission_classes([AllowAny])
-def getRoutes(request):
-    routes = [
+   
+class GetRoutes(APIView):
+    def get(self, request):
+        routes = [
         {
             'Endpoint': '/login/',
             'method': 'POST',
@@ -99,8 +99,7 @@ def getRoutes(request):
             'description': 'Reset a password for a user'
         },
     ]
-    return Response(routes)
-
+        return Response(routes)
 
 ''' Login '''
 class LoginUsername(APIView):
@@ -111,7 +110,7 @@ class LoginUsername(APIView):
         assert validate_username(data)
         serializer = LoginUsernameSerializer(data=data)
         if serializer.is_valid(raise_exception=True):
-            response = serializer.valid_user(data)
+            response = serializer.validate_user(data)
             if response[1] == True:
                 return Response(data=response[0], status=status.HTTP_200_OK)
             else:
@@ -260,6 +259,23 @@ def registerView(request):
     success = "Successfully created user. Activate with link in email."
     return Response({"success":success},
                 status=status.HTTP_200_OK)
+
+
+''' Activate '''
+class Activate(APIView):
+    permission_classes = (permissions.AllowAny,)
+    authentication_classes = ()
+    def post(self, request):
+        data = request.data
+        assert validate_uidb64
+        assert validate_token
+        serializer = ActivateSerializer(data=data)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.activate_user(data)
+            if response[1] == True:
+                return Response({"success":response[0]}, status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=status.HTTP_400_BAD_REQUEST)
+
 
 
 

@@ -1,16 +1,18 @@
+from base64 import urlsafe_b64decode
 from rest_framework import serializers
 from rest_framework.authtoken.models import Token
 from django.contrib.auth.models import User
 from settings.models import TwoFactorAuth
+from django.utils.encoding import force_str
+from .tokens import account_activation_token
 
-class ActivateSerializer(serializers.Serializer):
-    uidb64 = serializers.CharField()
-    token = serializers.CharField()
+
+
 
 class LoginUsernameSerializer(serializers.Serializer):
     username = serializers.CharField()
     confirmed = serializers.BooleanField(required=False)
-    def valid_user(self, data):
+    def validate_user(self, data):
         try:
             user = User.objects.get(username=data['username'])
         except:
@@ -38,6 +40,33 @@ class LoginUsernameSerializer(serializers.Serializer):
         response = {"username":user.username, "confirmed":confirmed}
         return response, True
 
+class ActivateSerializer(serializers.Serializer):
+    uidb64 = serializers.CharField()
+    token = serializers.CharField()
+    def activate_user(self, data):        
+        try:
+            uid = urlsafe_b64decode(data['uidb64']+'=')
+            user = User.objects.get(pk=uid)
+        except(TypeError, ValueError, OverflowError, User.DoesNotExist):
+            user = None
+
+        if not user:
+            error = 'user does not exist'
+            return error, False
+        
+        if user.is_active:
+            error = 'user has already been activated'
+            return error, False
+        
+        token = data['token']
+        if account_activation_token.check_token(user, token) != True:
+            error = 'invalid token'
+            return error, False
+        
+        user.is_active = True
+        user.save()
+        response = 'Successfully activated user'
+        return response, True
 
 
 
