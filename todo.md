@@ -6,8 +6,6 @@ Add social authentication to AlternateLogins component
     Google
     Twitter
 
-Create token that expires after a given length of time - Django REST Knox
-
 Add csrftokens to post requests
 
 Refactor Django code and add serializers

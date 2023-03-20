@@ -90,12 +90,10 @@ class LoginPasswordSerializer(serializers.Serializer):
 
     def obtain_token(self, remember_me, user):
         if remember_me == True:
-            # Token expiration date for 1 week
-            token, test = AuthToken.objects.create(user, expiry=timedelta(days=7))
+            hash, token = AuthToken.objects.create(user, expiry=timedelta(days=7))
         elif remember_me == False:
-            #token expiration date for 1 day
-            token, test = AuthToken.objects.create(user, expiry=timedelta(days=1))
-        return token, test
+            hash, token = AuthToken.objects.create(user, expiry=timedelta(days=1))
+        return hash, token
 
     def login_user(self, data):
         username = data['username']
@@ -112,19 +110,12 @@ class LoginPasswordSerializer(serializers.Serializer):
         if validated_2FA[1] == False:
             return validated_2FA[0], validated_2FA[1], validated_2FA[2]
         
-        token, test = self.obtain_token(remember_me, user)
-        print(test)
-        token = str(token).rstrip(' : '+username)
+        hash, token = self.obtain_token(remember_me, user)
         theme = Theme.objects.get_or_create(user=user)[0]
         response = {'token':token, 'theme':theme.theme}
-        return user, True, theme.theme
+        # return user, True, theme.theme
         return response, True
-'''
-Need to make the remember_me functionality
-    app - never resign in unless extended period of not being signed in
-    pc - once a month and every day respectively
-Need to have functionality to have each sign in platform have its own token
-'''
+
 
 ''' Register '''
 class RegisterSerializer(serializers.Serializer):

@@ -82,15 +82,9 @@ class LoginPassword(Knox_views.LoginView):
         serializer = LoginPasswordSerializer(data=data)
         if serializer.is_valid(raise_exception=True):
             response = serializer.login_user(data)
-            
             if response[1] == True:
-                
-                login(request, response[0], backend='django.contrib.auth.backends.ModelBackend',)
-                super_response = super().post(request, format=None)
-                print(super_response.data)
-                token = super_response.data['token']
-                return Response({'token':token, 'theme':response[2]}, status=status.HTTP_200_OK)
-            return Response({'error':response[0]}, status=response[2])
+                return Response(data=response[0], status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=status.HTTP_404_NOT_FOUND)
 
 
 ''' Logout '''
