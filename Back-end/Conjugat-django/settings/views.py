@@ -23,7 +23,7 @@ from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import ChangeEmailSerializer, ChangePasswordSerializer, \
-    ChangeUsernameSerializer, ThemeSerializer
+    ChangeUsernameSerializer, ThemeSerializer, TwoFactorAuthSerializer
 from .validations import *
 
 ''' Routes '''
@@ -223,23 +223,54 @@ class ChangeTheme(APIView):
             if response[1] == True:
                 return Response(data=response[0], status=status.HTTP_200_OK)
             return Response({'error':response[0]}, status=response[2])
+
+
+''' 2FA '''
+class TwoFactorAuthentication(APIView):
+    permission_classes = (permissions.AllowAny,)
+    # authentication_classes = (SessionAuthentication,)
+    def doesTwoFactorExist(self, request):
+        try:
+            TwoFactor = TwoFactorAuth.objects.get(user=request.user)
+            confirmed = TwoFactor.confirmed
+        except:
+            TwoFactor = None
+            confirmed = None
+        return TwoFactor, confirmed
+    
+    def get(self, request):
+        TwoFactor, confirmed = self.doesTwoFactorExist(request)
+        if not TwoFactor or TwoFactor.confirmed == False:
+            key = create_key_of_length(20)
+            if not TwoFactor:
+                TwoFactor = TwoFactorAuth.objects.create(user=request.user)
+            TwoFactor.key = encrypt(key.decode('ascii'))
+            TwoFactor.save()
+            email = User.objects.get(username=request.user).email
+            qr_string = generate_QR_string_and_code(key, email)
+            context = {'qr_string':qr_string, 'confirmed':confirmed}
+            return Response(data=context)
+        else:
+            key = decrypt(TwoFactor.key).encode('ascii')
+            email = User.objects.get(username=request.user).email
+            qr_string = generate_QR_string_and_code(key, email)
+            context = {'qr_string':qr_string, 'confirmed':confirmed}
+            return Response(data=context)
         
-@api_view(["POST"])
-@permission_classes([IsAuthenticated])
-def themesView(request):
-    choice = request.data.get("choice")
+    def post(self, request):
+        data = request.data
+        length_of_OTP = 6
+        assert validate_password(data)
+        assert validate_totp(data, length_of_OTP)
+        context = {'username': request.user}
+        serializer = TwoFactorAuthSerializer(data=data, context=context)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.set_2FA(data)
+            if response[1] == True:
+                return Response(data=response[0], status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=response[2])
+        
 
-    theme = Theme.objects.get_or_create(user=request.user)[0]
-
-    if choice != 'Light':
-        if choice != 'Dark':
-            print('Invalid option')
-            return Response({'error': 'Invalid option'},
-                            status=status.HTTP_400_BAD_REQUEST)
-    theme.theme = choice
-    theme.save()
-    return Response({"success": "Theme changed successfully", "theme":choice},
-                status=status.HTTP_200_OK)
 
 
 
@@ -325,101 +356,6 @@ def premiumView(request):
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 
-
-def doesTwoFactorExist(request):
-    try:
-        TwoFactor = TwoFactorAuth.objects.get(user=request.user)
-        confirmed = TwoFactor.confirmed
-    except:
-        TwoFactor = None
-        confirmed = None
-    return TwoFactor, confirmed
-
-@api_view(["GET", "POST"])
-@permission_classes([IsAuthenticated])
-def twoFactorAuthView(request):
-    TwoFactor, confirmed = doesTwoFactorExist(request)
-    length_of_OTP = 6
-    step_in_seconds = 30
-
-    if request.method == "GET":
-        if not TwoFactor or TwoFactor.confirmed == False:
-            key = create_key_of_length(20)
-            if not TwoFactor:
-                TwoFactor = TwoFactorAuth.objects.create(user=request.user)
-            TwoFactor.key = encrypt(key.decode('ascii'))
-            TwoFactor.save()
-            email = User.objects.get(username=request.user).email
-            qr_string = generate_QR_string_and_code(key, email, length_of_OTP, step_in_seconds)
-            # Use serializer
-            context = {'qr_string':qr_string, 'confirmed':confirmed}
-            return Response(data=context)
-
-        else:
-            key = decrypt(TwoFactor.key).encode('ascii')
-
-            email = User.objects.get(username=request.user).email
-            qr_string = generate_QR_string_and_code(key, email, length_of_OTP, step_in_seconds)
-            # Use serializer
-            context = {'qr_string':qr_string, 'confirmed':confirmed}
-            return Response(data=context)
-
-    elif request.method == "POST":
-        password = request.data.get("password")
-        totp = request.data.get("totp")
-        if not password:
-            print('No password provided')
-            return Response({'error': 'No password provided'},
-                            status=status.HTTP_400_BAD_REQUEST)
-        if not totp:
-            print('No totp provided')
-            return Response({'error': 'No totp provided'},
-                            status=status.HTTP_400_BAD_REQUEST)
-
-        if totp.isnumeric() == False:
-            print('totp must only contain numbers')
-            return Response({'error': 'totp must only contain numbers'},
-                            status=status.HTTP_400_BAD_REQUEST)
-        
-        if len(totp) != length_of_OTP:
-            error = 'totp must be ' + str(length_of_OTP) + ' characters long'
-            print(error)
-            return Response({'error': error},
-                            status=status.HTTP_400_BAD_REQUEST)
-
-        user = User.objects.get(username=request.user)
-        if user.check_password(password) == False:
-            print('Incorrect password')
-            return Response({'error': 'Incorrect password'},
-                            status=status.HTTP_400_BAD_REQUEST)
-
-        key = decrypt(TwoFactor.key).encode('ascii')
-        totpGenerated = generate_totp(key, length_of_OTP, step_in_seconds)
-        
-        if int(totp) != int(totpGenerated):
-            error = 'Incorrect totp'
-            print(error)
-            return Response({'error':error},
-                status=status.HTTP_400_BAD_REQUEST)
-        
-        if TwoFactor.confirmed == False:
-            TwoFactor.confirmed = True
-            TwoFactor.save()
-            success = "Two factor authentication has been added"
-            return Response({"success": success, 'confirmed':TwoFactor.confirmed},
-                status=status.HTTP_200_OK)
-
-        elif TwoFactor.confirmed == True:
-            TwoFactor.confirmed = False
-            TwoFactor.save()
-            success = "Two factor authentication has been removed"
-            return Response({"success": success, 'confirmed':TwoFactor.confirmed},
-                status=status.HTTP_200_OK)
-
-        else:
-            print('Error in Two factor confirmation')
-            return Response({'error': 'Error in Two factor confirmation'},
-                            status=status.HTTP_400_BAD_REQUEST)
 
 
 

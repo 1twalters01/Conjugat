@@ -16,5 +16,5 @@ urlpatterns = [
     path('premium/', views.premiumView, name='premium'),
 
     path('themes/', views.ChangeTheme.as_view(), name='themes'),
-    path('two-factor-auth/', views.twoFactorAuthView, name='two_factor_auth'),
+    path('two-factor-auth/', views.TwoFactorAuthentication.as_view(), name='two_factor_auth'),
 ]

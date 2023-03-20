@@ -7,7 +7,7 @@ import time
 # import qrcode
 import secrets
           
-def create_key_of_length(key_length):
+def create_key_of_length(key_length=20):
     chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$^&*(-_=+)'
     key = ''.join(secrets.choice(chars) for i in range(key_length)).encode('ascii')
     return key
@@ -21,7 +21,7 @@ def generate_totp(key, length_of_OTP=6, step_in_seconds=30):
     totp = str(binary)[-length_of_OTP:]
     return totp
           
-def generate_QR_string_and_code(key, email, length_of_OTP, step_in_seconds):
+def generate_QR_string_and_code(key, email, length_of_OTP=6, step_in_seconds=30):
     site = 'Conjugat'
     token = base64.b32encode(key)
     qr_string = "otpauth://totp/"+site+":"+email+"?secret=" + token.decode("utf-8") +"&issuer="+site+"&algorithm=SHA1&digits="+str(length_of_OTP)+"&period="+str(step_in_seconds)

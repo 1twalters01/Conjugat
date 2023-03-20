@@ -13,7 +13,6 @@ Refactor Django code and add serializers
 3. settings
 * closeAccountView
 * premiumView
-* twoFactorAuthView
 * resetAccountView
 4. subscriptions
 * processView

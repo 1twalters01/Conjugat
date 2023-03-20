@@ -18,6 +18,16 @@ def validate_password(data):
         raise ValidationError('No password provided')
     return True
 
+def validate_totp(data, length_of_OTP):
+    totp = data['totp'].strip()
+    if not totp:
+        raise ValidationError('No totp provided')
+    if totp.isnumeric() == False:
+        raise ValidationError('totp must only contain numbers')
+    if len(totp) != length_of_OTP:
+        raise ValidationError('totp must be ' + str(length_of_OTP) + ' characters long')
+    return True
+
 def validate_new_passwords(data):
     newPassword1 = data['newPassword1'].strip()
     newPassword2 = data['newPassword2'].strip()

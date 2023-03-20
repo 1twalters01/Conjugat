@@ -1,5 +1,7 @@
 from django.contrib.auth.models import User
-from settings.models import Theme
+from settings.models import Theme, TwoFactorAuth
+from settings.totp import generate_totp
+from subscription.encryption import decrypt
 from rest_framework import serializers, status
 
 class ChangeEmailSerializer(serializers.Serializer):
@@ -116,3 +118,61 @@ class ThemeSerializer(serializers.Serializer):
         theme.save()
         response = {"success":"Theme changed successfully", "theme":choice}
         return response, True
+    
+
+class TwoFactorAuthSerializer(serializers.Serializer):
+    password = serializers.CharField()
+    totp = serializers.CharField()
+    def doesTwoFactorExist(self, req_username):
+        try:
+            TwoFactor = TwoFactorAuth.objects.get(user=req_username)
+        except:
+            TwoFactor = TwoFactorAuth.objects.create(user=req_username, confirmed=False)
+        return TwoFactor
+    
+    def totp_validation(self, TwoFactor, totp):
+        key = decrypt(TwoFactor.key).encode('ascii')
+        totpGenerated = generate_totp(key)
+        print(totp, totpGenerated)
+        if int(totp) != int(totpGenerated):
+            error = 'Incorrect totp'
+            return error, False, status.HTTP_400_BAD_REQUEST
+        return True, True
+    
+    def save_2FA(self, TwoFactor):
+        if TwoFactor.confirmed == False:
+            TwoFactor.confirmed = True
+            TwoFactor.save()
+            success = "Two factor authentication has been added"
+            response = {"success": success, 'confirmed':TwoFactor.confirmed}
+            return response, True, status.HTTP_200_OK
+
+        elif TwoFactor.confirmed == True:
+            TwoFactor.confirmed = False
+            TwoFactor.save()
+            success = "Two factor authentication has been removed"
+            response = {"success": success, 'confirmed':TwoFactor.confirmed}
+            return response, True, status.HTTP_200_OK
+
+        else:
+            error = 'Error in Two factor confirmation'
+            return error, False, status.HTTP_400_BAD_REQUEST
+
+    def set_2FA(self, data):
+        password = data['password']
+        totp = data['totp']
+        req_username =  self.context['username']
+        TwoFactor = self.doesTwoFactorExist(req_username)
+        
+        user = User.objects.get(username=req_username)
+        if user.check_password(password) == False:
+            error = 'Incorrect password'
+            return error, False, status.HTTP_400_BAD_REQUEST
+
+        
+        validated_totp = self.totp_validation(TwoFactor, totp)
+        if validated_totp[1] == False:
+            return validated_totp[0], validated_totp[1], validated_totp[2]
+
+        save_2FA = self.save_2FA(TwoFactor)
+        return save_2FA[0], save_2FA[1], save_2FA[2]
