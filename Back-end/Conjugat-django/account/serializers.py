@@ -1,4 +1,5 @@
 from base64 import urlsafe_b64decode
+from datetime import timedelta
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
@@ -12,8 +13,8 @@ from subscription.models import UserProfile
 from .tokens import account_activation_token, password_reset_token
 from rest_framework import serializers, status
 from rest_framework.authtoken.models import Token
-
-
+from knox.auth import TokenAuthentication
+from knox.auth import AuthToken
 class LoginUsernameSerializer(serializers.Serializer):
     username = serializers.CharField()
     confirmed = serializers.BooleanField(required=False)
@@ -81,19 +82,20 @@ class LoginPasswordSerializer(serializers.Serializer):
             TwoFactor = None
             totpCheck = ''
 
-        if totpCheck != totp:
-            error = 'The totp is incorrect'
-            return error, False, status.HTTP_400_BAD_REQUEST
+        if TwoFactor.confirmed == True:
+            if totpCheck != totp:
+                error = 'The totp is incorrect'
+                return error, False, status.HTTP_400_BAD_REQUEST
         return True, True
 
     def obtain_token(self, remember_me, user):
         if remember_me == True:
             # Token expiration date for 1 week
-            token, _ = Token.objects.get_or_create(user=user)
+            token, test = AuthToken.objects.create(user, expiry=timedelta(days=7))
         elif remember_me == False:
             #token expiration date for 1 day
-            token, _ = Token.objects.get_or_create(user=user)
-        return token
+            token, test = AuthToken.objects.create(user, expiry=timedelta(days=1))
+        return token, test
 
     def login_user(self, data):
         username = data['username']
@@ -110,9 +112,12 @@ class LoginPasswordSerializer(serializers.Serializer):
         if validated_2FA[1] == False:
             return validated_2FA[0], validated_2FA[1], validated_2FA[2]
         
-        token = self.obtain_token(remember_me, user)
+        token, test = self.obtain_token(remember_me, user)
+        print(test)
+        token = str(token).rstrip(' : '+username)
         theme = Theme.objects.get_or_create(user=user)[0]
-        response = {'key':token.key, 'theme':theme.theme}
+        response = {'token':token, 'theme':theme.theme}
+        return user, True, theme.theme
         return response, True
 '''
 Need to make the remember_me functionality

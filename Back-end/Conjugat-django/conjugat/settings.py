@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
+    'knox',
 ]
 
 MIDDLEWARE = [
@@ -214,6 +215,10 @@ CORS_ORIGIN_WHITELIST = [
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
+        'knox.auth.TokenAuthentication',
     ],
+}
+from datetime import timedelta
+REST_KNOX = {
+    'TOKEN_TTL': timedelta(hours=48)
 }

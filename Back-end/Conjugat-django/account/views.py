@@ -1,4 +1,4 @@
-from django.contrib.auth import logout
+from django.contrib.auth import logout, login
 from rest_framework import status, permissions
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
@@ -6,7 +6,7 @@ from rest_framework.views import APIView
 from .serializers import LoginUsernameSerializer, LoginPasswordSerializer, \
 RegisterSerializer, ActivateSerializer, PasswordResetSerializer, PasswordResetConfirmSerializer
 from .validations import *
-
+from knox import views as Knox_views
 
 ''' Routes '''
 class GetRoutes(APIView):
@@ -72,7 +72,7 @@ class LoginUsername(APIView):
                 return Response(data=response[0], status=status.HTTP_200_OK)
             return Response({'error':response[0]}, status=status.HTTP_404_NOT_FOUND)
 
-class LoginPassword(APIView):
+class LoginPassword(Knox_views.LoginView):
     permission_classes = (permissions.AllowAny,)
     authentication_classes = (SessionAuthentication,)
     def post(self, request):
@@ -82,15 +82,24 @@ class LoginPassword(APIView):
         serializer = LoginPasswordSerializer(data=data)
         if serializer.is_valid(raise_exception=True):
             response = serializer.login_user(data)
+            
             if response[1] == True:
-                return Response(data=response[0], status=status.HTTP_200_OK)
+                
+                login(request, response[0], backend='django.contrib.auth.backends.ModelBackend',)
+                super_response = super().post(request, format=None)
+                print(super_response.data)
+                token = super_response.data['token']
+                return Response({'token':token, 'theme':response[2]}, status=status.HTTP_200_OK)
             return Response({'error':response[0]}, status=response[2])
 
 
 ''' Logout '''
 class Logout(APIView):
     def post(self, request):
-        request.user.auth_token.delete()
+        # Knox_views.LogoutView
+        # Knox_views.LogoutAllView
+        request._auth.delete()
+        print(request.user)
         logout(request)
         success = "User has been successfully logged out"
         return Response({"success": success},

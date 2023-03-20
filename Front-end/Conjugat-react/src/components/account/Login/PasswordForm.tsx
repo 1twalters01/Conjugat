@@ -33,9 +33,10 @@ function PasswordForm() {
             remember_me: rememberMe
         })
         .then(res=>{
-            localStorage.setItem("token", res.data.key)
+            console.log(res.data.token)
+            localStorage.setItem("token", res.data.token)
             dispatch(onThemeChange(res.data.theme))
-            window.location.href = ('/home')
+            // window.location.href = ('/home')
         })
         .catch(err=>{
             console.log(err.response.data)
