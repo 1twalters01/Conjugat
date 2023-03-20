@@ -19,7 +19,8 @@ def does_subscriber_exist(request):
     try:
         subscriber = UserProfile.objects.get(user=request.user)
     except:
-        subscriber = None
+        subscriber = UserProfile.objects.create(user=request.user, method_id=payment_method('None'))
+        subscriber.save()
     return subscriber
 
 def is_user_subscribed(request, subscriber):

@@ -30,7 +30,7 @@ class GetRoutes(APIView):
 ''' Subscribe'''
 class Subscribe(APIView):
     permission_classes = (permissions.AllowAny,)
-    authentication_classes = (SessionAuthentication,)
+    # authentication_classes = (SessionAuthentication,)
     def get(self, request):
         email = ''
         if request.user.is_authenticated:
@@ -55,7 +55,7 @@ class Subscribe(APIView):
 ''' Unsubscribe '''
 class Unsubscribe(APIView):
     permission_classes = (permissions.AllowAny,)
-    authentication_classes = (SessionAuthentication,)
+    # authentication_classes = (SessionAuthentication,)
     def get(self, request):
         email = ''
         if request.user.is_authenticated:
