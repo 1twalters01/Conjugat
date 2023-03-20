@@ -16,10 +16,19 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 
-@api_view(["GET"])
-@permission_classes([AllowAny])
-def getRoutes(request):
-    routes = [
+
+
+from rest_framework import status, permissions
+from rest_framework.authentication import SessionAuthentication
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializers import ChangeEmailSerializer, ChangePasswordSerializer, ChangeUsernameSerializer
+from .validations import *
+
+''' Routes '''
+class GetRoutes(APIView):
+    def get(self, request):
+        routes = [
         {
             'Endpoint': '/change-email/',
             'method': 'POST',
@@ -69,118 +78,60 @@ def getRoutes(request):
             'description': "Add or remove 2FA"
         },
     ]
-    return Response(routes)
+        return Response(routes)
 
 
-@api_view(["POST"])
-@permission_classes([IsAuthenticated])
-def changeEmailView(request):
-    email = request.data.get("email")
-    password = request.data.get("password")
+''' Change email '''
+class ChangeEmail(APIView):
+    permission_classes = (permissions.AllowAny,)
+    # authentication_classes = (SessionAuthentication,)
+    def post(self, request):
+        data = request.data
+        assert validate_email(data)
+        assert validate_password(data)
+        context = {'username': request.user.username}
+        serializer = ChangeEmailSerializer(data=data, context=context)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.change_email(data)
+            if response[1] == True:
+                return Response(data=response[0], status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=response[2])
 
-    if not email:
-        print('No password provided')
-        return Response({'error': 'No email provided'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    if not password:
-        print('No password provided')
-        return Response({'error': 'No password provided'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    
-    user = User.objects.get(username=request.user)
-    
-    if user.check_password(password) == False:
-        print('Incorrect password')
-        return Response({'error': 'Incorrect password'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    
-    try:
-        check = User.objects.get(email=email)
-    except:
-        check = None
 
-    if check:
-        print('Email is already in use')
-        return Response({'error': 'Email is already in use'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    if check == None:
-        user.email = email
-        user.save()
-    return Response({"success": "Email changed successfully"},
-                status=status.HTTP_200_OK)
+''' Change password '''
+class ChangePassword(APIView):
+    permission_classes = (permissions.AllowAny,)
+    # authentication_classes = (SessionAuthentication,)
+    def post(self, request):
+        data = request.data
+        assert validate_password(data)
+        assert validate_new_passwords(data)
+        context = {'username': request.user.username}
+        serializer = ChangePasswordSerializer(data=data, context=context)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.change_password(data)
+            if response[1] == True:
+                return Response(data=response[0], status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=response[2])
+      
 
-@api_view(["POST"])
-@permission_classes([IsAuthenticated])
-def changePasswordView(request):
-    password = request.data.get("password")
-    newPassword1 = request.data.get("newPassword1")
-    newPassword2 = request.data.get("newPassword2")
+''' Change username '''
+class ChangeUsername(APIView):
+    permission_classes = (permissions.AllowAny,)
+    # authentication_classes = (SessionAuthentication,)
+    def post(self, request):
+        data = request.data
+        assert validate_username(data)
+        assert validate_password(data)
+        context = {'username': request.user.username}
+        serializer = ChangeUsernameSerializer(data=data, context=context)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.change_username(data)
+            if response[1] == True:
+                return Response(data=response[0], status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=response[2])
+        
 
-    if not password:
-        print('No password provided')
-        return Response({'error': 'No password provided'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    if not newPassword1:
-        print('No new password provided')
-        return Response({'error': 'No new password provided'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    if not newPassword2:
-        print('No verification password provided')
-        return Response({'error': 'No verification password provided'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    
-    user = User.objects.get(username=request.user)
-    if user.check_password(password) == False:
-        print('Incorrect password')
-        return Response({'error': 'Incorrect password'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    
-    if newPassword1 != newPassword2:
-        print('Passwords do not match')
-        return Response({'error': 'Passwords do not match'},
-                        status=status.HTTP_400_BAD_REQUEST)
-
-    user.set_password(newPassword1)
-    user.save()
-    return Response({"success": "Password was changed successfully"},
-                status=status.HTTP_200_OK)
-
-@api_view(["POST"])
-@permission_classes([IsAuthenticated])
-def changeUsernameView(request):
-    username = request.data.get("username")
-    password = request.data.get("password")
-
-    if not username:
-        print('No username provided')
-        return Response({'error': 'No username provided'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    if not password:
-        print('No password provided')
-        return Response({'error': 'No password provided'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    
-    user = User.objects.get(username=request.user)
-    
-    if user.check_password(password) == False:
-        print('Incorrect password')
-        return Response({'error': 'Incorrect password'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    
-    try:
-        check = User.objects.get(username=username)
-    except:
-        check = None
-
-    if check:
-        print('Username is already in use')
-        return Response({'error': 'Username is already in use'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    if check == None:
-        user.username = username
-        user.save()
-    return Response({"success": "Username changed successfully"},
-                status=status.HTTP_200_OK)
 
 
 def payment_method(method):

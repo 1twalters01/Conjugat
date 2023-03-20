@@ -4,11 +4,11 @@ from . import views
 
 app_name = 'settings'
 urlpatterns = [
-    path('', views.getRoutes, name='getRoutes'),
+    path('', views.GetRoutes.as_view(), name='getRoutes'),
 
-    path('change-email/', views.changeEmailView, name='change_email'),
-    path('change-password/', views.changePasswordView, name='change_password'),
-    path('change-username/', views.changeUsernameView, name='change_username'),
+    path('change-email/', views.ChangeEmail.as_view(), name='change_email'),
+    path('change-password/', views.ChangePassword.as_view(), name='change_password'),
+    path('change-username/', views.ChangeUsername.as_view(), name='change_username'),
 
     path('reset-account/', views.resetAccountView, name='reset_account'),
     path('close-account/', views.closeAccountView, name='close_account'),

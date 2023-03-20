@@ -16,7 +16,7 @@ function EmailChangeForm({ onDoneChange }: {onDoneChange:Function}){
         password: password,
       })
       .then(res=>{
-        onDoneChange(true)
+        // onDoneChange(true)
       })
       .catch(err=>{
         console.log(err.response.data)

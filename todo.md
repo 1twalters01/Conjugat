@@ -8,9 +8,8 @@ Create token that expires after a given length of time
 Add csrftokens to post requests
 
 Refactor Django code and add serializers
-2. newsletter
-* subscribeView
-* unsubscribeView
+0. all
+* make validations return errors rather than raise validation error
 3. settings
 * changeEmailView
 * changePasswordView

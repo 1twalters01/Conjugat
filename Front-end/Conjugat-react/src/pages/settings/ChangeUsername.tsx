@@ -21,7 +21,7 @@ function ChangeUsername() {
   else if (done == true) {
     return (
       <div>
-        <h1>Change Password done</h1>
+        <h1>Change Username done</h1>
 
         <UsernameChanged />
       </div>

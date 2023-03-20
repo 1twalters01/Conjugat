@@ -14,6 +14,36 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from .serializers import ProcessSerializer
 
+
+
+from django.contrib.auth.models import User
+from rest_framework import status, permissions
+from rest_framework.authentication import SessionAuthentication
+from rest_framework.response import Response
+from rest_framework.views import APIView
+# from .serializers import
+from .validations import *
+
+
+''' Routes '''
+class GetRoutes(APIView):
+    def get(self, request):
+        routes = [
+            {
+                'Endpoint': '/process/',
+                'method': 'POST',
+                'body': {'body': ""},
+                'description': 'Post data and retrieve payment details'
+            },
+            {
+                'Endpoint': '/success/',
+                'method': 'POST',
+                'body': {'body': ""},
+                'description': 'Unsubscribes to the newsletter'
+            },
+        ]
+        return Response(routes)
+
 ''' Setup '''
 def does_subscriber_exist(request):
     try:

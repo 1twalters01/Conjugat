@@ -4,6 +4,8 @@ from . import webhooks
 
 app_name = "subscription"
 urlpatterns = [
+    path('', views.GetRoutes.as_view(), name='get_routes'),
+
     path('process/', views.processView, name='options'),
     path('success/', views.successView, name='success'),
 
