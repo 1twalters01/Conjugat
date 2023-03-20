@@ -16,7 +16,6 @@ function ThemeFunctionality() {
           choice: choice
         })
         .then(res=>{
-          console.log(typeof res.data.theme, res.data.theme)
           dispatch(onThemeChange(res.data.theme))
         })
         .catch(err=>{

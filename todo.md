@@ -11,11 +11,7 @@ Refactor Django code and add serializers
 0. all
 * make validations return errors rather than raise validation error
 3. settings
-* changeEmailView
-* changePasswordView
-* changeUsernameView
 * closeAccountView
-* themesView
 * premiumView
 * twoFactorAuthView
 * resetAccountView

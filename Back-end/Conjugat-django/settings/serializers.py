@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from settings.models import Theme
 from rest_framework import serializers, status
 
 class ChangeEmailSerializer(serializers.Serializer):
@@ -87,4 +88,31 @@ class ChangeUsernameSerializer(serializers.Serializer):
         user.username = username
         user.save()
         response = "Email changed successfully"
+        return response, True
+
+
+
+
+class ThemeSerializer(serializers.Serializer):
+    choice = serializers.CharField()
+    def validate_choice(self, choice):
+        if choice != 'Light':
+            if choice != 'Dark':
+                error = 'Invalid option'
+                return error, False, status.HTTP_400_BAD_REQUEST
+        return True, True
+            
+    def change_theme(self, data):
+        choice = data['choice']
+        req_username =  self.context['username']
+
+        theme = Theme.objects.get_or_create(user=req_username)[0]
+
+        validated_choice = self.validate_choice(choice)
+        if validated_choice[1] == False:
+            return validated_choice[0], validated_choice[1], validated_choice[2]
+        
+        theme.theme = choice
+        theme.save()
+        response = {"success":"Theme changed successfully", "theme":choice}
         return response, True

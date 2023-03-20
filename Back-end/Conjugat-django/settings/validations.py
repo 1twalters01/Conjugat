@@ -32,3 +32,9 @@ def validate_first_name(data):
     if not first_name:
         raise ValidationError('No first name provided')
     return True
+
+def validate_choice(data):
+    choice = data['choice'].strip()
+    if not choice:
+        raise ValidationError('No theme provided')
+    return True

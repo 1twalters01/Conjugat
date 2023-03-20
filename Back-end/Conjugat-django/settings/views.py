@@ -22,7 +22,8 @@ from rest_framework import status, permissions
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import ChangeEmailSerializer, ChangePasswordSerializer, ChangeUsernameSerializer
+from .serializers import ChangeEmailSerializer, ChangePasswordSerializer, \
+    ChangeUsernameSerializer, ThemeSerializer
 from .validations import *
 
 ''' Routes '''
@@ -208,15 +209,26 @@ def closeAccountView(request):
         status=status.HTTP_200_OK)
 
 
+''' Theme '''
+class ChangeTheme(APIView):
+    permission_classes = (permissions.AllowAny,)
+    # authentication_classes = (SessionAuthentication,)
+    def post(self, request):
+        data = request.data
+        assert validate_choice(data)
+        context = {'username': request.user}
+        serializer = ThemeSerializer(data=data, context=context)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.change_theme(data)
+            if response[1] == True:
+                return Response(data=response[0], status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=response[2])
+        
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def themesView(request):
     choice = request.data.get("choice")
-    if not choice:
-        print('No theme provided')
-        return Response({'error': 'No theme provided'},
-                        status=status.HTTP_400_BAD_REQUEST)
-                        
+
     theme = Theme.objects.get_or_create(user=request.user)[0]
 
     if choice != 'Light':
