@@ -19,7 +19,8 @@ function RetrieveSuccessStatus() {
       AxiosInstance.Authorised
       .post('subscriptions/success/',{
         return_url: window.location.href,
-        method: null
+        method: null,
+        action: null
       })
       .then(res => {
         console.log(res.data)

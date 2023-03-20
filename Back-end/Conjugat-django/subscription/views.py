@@ -247,8 +247,16 @@ def successView(request):
         
         if method == 'Paypal':
             subscription_id = decrypt(subscriber.subscription_id)
-            details = show_sub_details(subscription_id)
-            subscriber.status = details['status']
+            if request.data.get('action') == None:
+                details = show_sub_details(subscription_id)
+                subscriber.status = details['status']
+            elif request.data.get('action') == 'Stop':
+                suspend_sub(subscription_id)
+                return Response(status=status.HTTP_200_OK)
+
+            elif request.data.get('action') == 'Re-start':
+                activate_sub(subscription_id)
+                return Response(status=status.HTTP_200_OK)
         
         serializer = SuccessSerializer(subscriber)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
