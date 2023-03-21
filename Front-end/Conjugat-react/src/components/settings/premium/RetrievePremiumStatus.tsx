@@ -65,21 +65,24 @@ function RetrievePremiumStatus() {
           )
     }
 
-    if(method === 1 && subscribed == true) {
+    if(method === 'Stripe' && subscribed == true) {
         return (
             <div>
                 <StripeSuccess url={url}/>
             </div>
         )
     }
-    else if(method === 2 && subscribed == true) {
+    else if(method === 'Paypal' && subscribed == true) {
         return (
             <div>
-                <PaypalSuccess status={status}/>
+                <PaypalSuccess
+                  status={status}
+                  setStatus={setStatus}
+                />
             </div>
         )
     }
-    else if(method === 3 && subscribed == true) {
+    else if(method === 'Coinbase' && subscribed == true) {
         return (
             <div>
                 <CoinbaseSuccess charge={url} />

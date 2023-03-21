@@ -23,7 +23,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import ChangeEmailSerializer, ChangePasswordSerializer, \
     ChangeUsernameSerializer, ThemeSerializer, TwoFactorAuthSerializer, \
-    CloseAccountSerializer
+    CloseAccountSerializer, PremiumSerializer
 from .validations import *
 
 ''' Routes '''
@@ -207,6 +207,24 @@ class CloseAccount(APIView):
 
 
 
+
+''' Premium view '''
+class Premium(APIView):
+    permission_classes = (permissions.AllowAny,)
+    # authentication_classes = (SessionAuthentication,)
+    def post(self, request):
+        data = request.data
+        context = {'user': request.user}
+        serializer = PremiumSerializer(data=data, context=context)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.return_premium_status(data)
+            if response[1] == True:
+                return Response(data=response[0], status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=response[2])
+
+
+
+
 from subscription.serializers import ProcessSerializer, SuccessSerializer
 
 def save_subscriber(request, method, subscriber, subscriber_id=None, customer_id=None):
@@ -310,85 +328,83 @@ def build_stripe_portal(request, subscriber, return_url):
     )
     return portalSession
 
-''' Premium view '''
-@api_view(["POST"])
-@permission_classes([IsAuthenticated])
-def premiumView(request):
-    stripe.api_key = settings.STRIPE_SECRET_KEY
-    subscriber = does_subscriber_exist(request)
-    method = obtain_method(subscriber)
-    subscribed = is_user_subscribed(request, subscriber)
-    print(subscribed)
-    if subscribed == False:
-        print(method)
-        if request.data.get('method') == None:
-            success_url = request.data.get("success_url")
-            cancel_url = request.data.get("cancel_url")
+# @api_view(["POST"])
+# @permission_classes([IsAuthenticated])
+# def premiumView(request):
+#     stripe.api_key = settings.STRIPE_SECRET_KEY
+#     subscriber = does_subscriber_exist(request)
+#     method = obtain_method(subscriber)
+#     subscribed = is_user_subscribed(request, subscriber)
+#     if subscribed == False:
+#         print(method)
+#         if request.data.get('method') == None:
+#             success_url = request.data.get("success_url")
+#             cancel_url = request.data.get("cancel_url")
 
-            customer = stripe.Customer.create()
-            stripe_url = build_stripe_checkout(request, subscriber, customer, success_url, cancel_url).url
-            subscriber.stripe_customer_id = customer.id
-            subscriber.stripe_url = stripe_url
+#             customer = stripe.Customer.create()
+#             stripe_url = build_stripe_checkout(request, subscriber, customer, success_url, cancel_url).url
+#             subscriber.stripe_customer_id = customer.id
+#             subscriber.stripe_url = stripe_url
 
-            charge = build_coinbase_checkout(subscriber, success_url, cancel_url)
-            coinbase_url = charge.hosted_url
-            subscriber.coinbase_url = coinbase_url
+#             charge = build_coinbase_checkout(subscriber, success_url, cancel_url)
+#             coinbase_url = charge.hosted_url
+#             subscriber.coinbase_url = coinbase_url
 
-            serializer = ProcessSerializer(subscriber)
-            return Response(data=serializer.data,
-                            status=status.HTTP_200_OK)
+#             serializer = ProcessSerializer(subscriber)
+#             return Response(data=serializer.data,
+#                             status=status.HTTP_200_OK)
         
-        if request.data.get('method') == 'Stripe':
-            customer_id = request.data.get('customer_id')
-            try:
-                save_subscriber(request, 'Stripe', subscriber, customer_id = customer_id)
-            except:
-                return Response(status=status.HTTP_404_NOT_FOUND)
-            return Response(status=status.HTTP_200_OK)
+#         if request.data.get('method') == 'Stripe':
+#             customer_id = request.data.get('customer_id')
+#             try:
+#                 save_subscriber(request, 'Stripe', subscriber, customer_id = customer_id)
+#             except:
+#                 return Response(status=status.HTTP_404_NOT_FOUND)
+#             return Response(status=status.HTTP_200_OK)
 
-        if request.data.get('method') == 'Paypal':
-            subscriber_id = request.data.get('subscriptionID')
-            save_subscriber(request, 'Paypal', subscriber, subscriber_id=subscriber_id)
-            return Response(status=status.HTTP_200_OK)
+#         if request.data.get('method') == 'Paypal':
+#             subscriber_id = request.data.get('subscriptionID')
+#             save_subscriber(request, 'Paypal', subscriber, subscriber_id=subscriber_id)
+#             return Response(status=status.HTTP_200_OK)
         
-        if request.data.get('method') == 'Coinbase':
-            charge_url = request.data.get('charge_url')
-            subscriber_id = charge_url.rsplit('/', 1)[1]
-            try:
-                save_subscriber(request, 'Coinbase', subscriber, subscriber_id=subscriber_id)
-            except:
-                return Response(status=status.HTTP_404_NOT_FOUND)
-            return Response(status=status.HTTP_200_OK)
-    else:
-        return_url = request.data.get('return_url')
-        subscriber.url = None
-        subscriber.status = None
-        if method == 'Stripe':
-            stripe_portal = build_stripe_portal(request, subscriber, return_url)
-            subscriber.url = stripe_portal.url
-            return Response({'url':stripe_portal.url},
-                            status=status.HTTP_200_OK)
+#         if request.data.get('method') == 'Coinbase':
+#             charge_url = request.data.get('charge_url')
+#             subscriber_id = charge_url.rsplit('/', 1)[1]
+#             try:
+#                 save_subscriber(request, 'Coinbase', subscriber, subscriber_id=subscriber_id)
+#             except:
+#                 return Response(status=status.HTTP_404_NOT_FOUND)
+#             return Response(status=status.HTTP_200_OK)
+#     else:
+#         return_url = request.data.get('return_url')
+#         subscriber.url = None
+#         subscriber.status = None
+#         if method == 'Stripe':
+#             stripe_portal = build_stripe_portal(request, subscriber, return_url)
+#             subscriber.url = stripe_portal.url
+#             return Response({'url':stripe_portal.url},
+#                             status=status.HTTP_200_OK)
 
-        if method == 'Coinbase':
-            client = Client(api_key=settings.COINBASE_COMMERCE_API_KEY)
-            charge_id = decrypt(subscriber.subscription_id)
-            charge = client.charge.retrieve(charge_id)
-            subscriber.url = charge.hosted_url
+#         if method == 'Coinbase':
+#             client = Client(api_key=settings.COINBASE_COMMERCE_API_KEY)
+#             charge_id = decrypt(subscriber.subscription_id)
+#             charge = client.charge.retrieve(charge_id)
+#             subscriber.url = charge.hosted_url
         
-        if method == 'Paypal':
-            subscription_id = decrypt(subscriber.subscription_id)
-            if request.data.get('action') == None:
-                details = show_sub_details(subscription_id)
-                subscriber.status = details['status']
-            elif request.data.get('action') == 'Stop':
-                suspend_sub(subscription_id)
-                return Response(status=status.HTTP_200_OK)
-            elif request.data.get('action') == 'Re-start':
-                activate_sub(subscription_id)
-                return Response(status=status.HTTP_200_OK)
+#         if method == 'Paypal':
+#             subscription_id = decrypt(subscriber.subscription_id)
+#             if request.data.get('action') == None:
+#                 details = show_sub_details(subscription_id)
+#                 subscriber.status = details['status']
+#             elif request.data.get('action') == 'Stop':
+#                 suspend_sub(subscription_id)
+#                 return Response(status=status.HTTP_200_OK)
+#             elif request.data.get('action') == 'Re-start':
+#                 activate_sub(subscription_id)
+#                 return Response(status=status.HTTP_200_OK)
         
-        serializer = SuccessSerializer(subscriber)
-        return Response(data=serializer.data, status=status.HTTP_200_OK)
+#         serializer = SuccessSerializer(subscriber)
+#         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 
 

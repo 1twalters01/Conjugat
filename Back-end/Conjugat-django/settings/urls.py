@@ -13,7 +13,7 @@ urlpatterns = [
     path('reset-account/', views.ResetAccount.as_view(), name='reset_account'),
     path('close-account/', views.CloseAccount.as_view(), name='close_account'),
 
-    path('premium/', views.premiumView, name='premium'),
+    path('premium/', views.Premium.as_view(), name='premium'),
 
     path('themes/', views.ChangeTheme.as_view(), name='themes'),
     path('two-factor-auth/', views.TwoFactorAuthentication.as_view(), name='two_factor_auth'),

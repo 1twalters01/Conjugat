@@ -166,7 +166,7 @@ class NewStripeCustomerSerializer(serializers.Serializer):
             try:
                 self.save_subscriber(user, subscriber, customer_id)
             except:
-                error = 'stripe customer id was not found'
+                error = 'Stripe customer id was not found'
                 return error, False, status.HTTP_404_NOT_FOUND
             response = "User created successfully"
             return response, True, status.HTTP_200_OK
