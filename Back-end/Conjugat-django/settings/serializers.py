@@ -1,12 +1,13 @@
 from django.conf import settings
 from django.contrib.auth.models import User
+from rest_framework import serializers, status
 from settings.models import Theme, TwoFactorAuth
 from settings.totp import generate_totp
 from subscription.encryption import decrypt
 from subscription.models import UserProfile
 from subscription.paypal import show_sub_details, suspend_sub, activate_sub, cancel_sub
 import stripe
-from rest_framework import serializers, status
+from verbs.models import Progress
 
 class ChangeEmailSerializer(serializers.Serializer):
     email = serializers.CharField()
@@ -96,6 +97,28 @@ class ChangeUsernameSerializer(serializers.Serializer):
         response = "Email changed successfully"
         return response, True
 
+class ResetAccountSerializer(serializers.Serializer):
+    password = serializers.CharField()
+    def reset_account(self, data):
+        languages = data["languages"]
+        password = data["password"]
+
+        req_user = self.context['username']
+        user = User.objects.get(username=req_user.username)
+        if user.check_password(password) == False:
+            error = 'Incorrect password'
+            return error, False, status.HTTP_400_BAD_REQUEST
+
+        for language in languages:
+            try:
+                account = Progress.objects.get(user=req_user, language=language)
+            except:
+                account = None
+            if account:
+                    account.delete()
+        response = 'Account was successfully reset'
+        return response, True
+                
 class CloseAccountSerializer(serializers.Serializer):
     password = serializers.CharField()
     def totp_validation(self, user, totp):
@@ -172,6 +195,10 @@ class CloseAccountSerializer(serializers.Serializer):
         response = 'Account deleted successfully'
         return response, True
 
+
+
+
+
 class ThemeSerializer(serializers.Serializer):
     choice = serializers.CharField()
     def validate_choice(self, choice):
@@ -196,7 +223,6 @@ class ThemeSerializer(serializers.Serializer):
         response = {"success":"Theme changed successfully", "theme":choice}
         return response, True
     
-
 class TwoFactorAuthSerializer(serializers.Serializer):
     password = serializers.CharField()
     totp = serializers.CharField()
