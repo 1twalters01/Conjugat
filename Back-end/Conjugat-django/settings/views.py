@@ -188,12 +188,107 @@ class CloseAccount(APIView):
 
 
 from subscription.serializers import ProcessSerializer, SuccessSerializer
-from subscription.views import build_stripe_portal, \
-    build_stripe_checkout, build_coinbase_checkout, \
-    does_subscriber_exist, save_subscriber, obtain_method, \
-    is_user_subscribed
 
+def save_subscriber(request, method, subscriber, subscriber_id=None, customer_id=None):
+    if not subscriber:
+        subscriber = UserProfile.objects.create(user=request.user, method_id=payment_method(method))
+    subscriber.method_id=payment_method(method)
+    # Reset the subscription and customer ids
+    subscriber.subscription_id = None
+    subscriber.customer_id = None
+    if customer_id:
+        subscriber.customer_id = encrypt(customer_id)
+    if subscriber_id:
+        subscriber.subscription_id = encrypt(subscriber_id)
+    subscriber.save()
 
+def is_user_subscribed(request, subscriber):
+    if subscriber:
+        subscribed = subscriber.subscribed
+    else:
+        subscriber = UserProfile.objects.create(user=request.user, method_id=payment_method('None'))
+        subscriber.save()
+    return subscribed
+
+def payment_method(method):
+    if method == 'Stripe':
+        return 1
+    elif method == 'Paypal':
+        return 2
+    elif method == 'Coinbase':
+        return 3
+    elif method == 'None':
+        return 4
+
+def obtain_method(subscriber):
+    if subscriber:
+        method = str(subscriber.method)
+    else:
+        method = None
+    return method
+
+def does_subscriber_exist(request):
+    try:
+        subscriber = UserProfile.objects.get(user=request.user)
+    except:
+        subscriber = UserProfile.objects.create(user=request.user, method_id=payment_method('None'))
+        subscriber.save()
+    return subscriber
+
+def build_stripe_checkout(request, subscriber, customer, success_url, cancel_url):
+    prices = stripe.Price.list(
+            lookup_keys=[request.data.get('lookup_key')],
+            expand=['data.product']
+    )
+    line_items=[
+                {
+                    'price': prices.data[0].id,
+                    'quantity': 1,
+                },
+    ]
+
+    checkout_kwargs = {
+        'line_items' : line_items,
+        'customer':customer,
+        'mode':'subscription',
+        'success_url':success_url,
+        'cancel_url':cancel_url,
+    }
+    if not subscriber or subscriber.trial == True:
+        checkout_kwargs['subscription_data'] = {'trial_period_days':7}
+
+    checkout_session = stripe.checkout.Session.create(**checkout_kwargs)
+    return checkout_session
+
+def build_coinbase_checkout(subscriber, success_url, cancel_url):
+    client = Client(api_key=settings.COINBASE_COMMERCE_API_KEY)
+
+    checkout_kwargs = {
+        'name':'Conjugat Premium',
+        'local_price': {
+            'currency':'GBP'
+        },
+        'pricing_type':'fixed_price',
+        'rediret_url':success_url,
+        'cancel_url':cancel_url,
+    }
+    if not subscriber or subscriber.trial == True:
+        checkout_kwargs['description'] = '1 Week of conjugat Premium'
+        checkout_kwargs['local_price']['amount'] = '0.01'
+    else:
+        checkout_kwargs['description'] = '1 Month of conjugat Premium'
+        checkout_kwargs['local_price']['amount'] = '3.00'
+    
+    charge = client.charge.create(**checkout_kwargs)
+    return charge
+
+def build_stripe_portal(request, subscriber, return_url):
+    customer = decrypt(subscriber.customer_id)
+    portalSession = stripe.billing_portal.Session.create(
+                    customer=customer,
+                    return_url=return_url,
+    )
+    return portalSession
 
 ''' Premium view '''
 @api_view(["POST"])
@@ -262,8 +357,15 @@ def premiumView(request):
         
         if method == 'Paypal':
             subscription_id = decrypt(subscriber.subscription_id)
-            details = show_sub_details(subscription_id)
-            subscriber.status = details['status']
+            if request.data.get('action') == None:
+                details = show_sub_details(subscription_id)
+                subscriber.status = details['status']
+            elif request.data.get('action') == 'Stop':
+                suspend_sub(subscription_id)
+                return Response(status=status.HTTP_200_OK)
+            elif request.data.get('action') == 'Re-start':
+                activate_sub(subscription_id)
+                return Response(status=status.HTTP_200_OK)
         
         serializer = SuccessSerializer(subscriber)
         return Response(data=serializer.data, status=status.HTTP_200_OK)

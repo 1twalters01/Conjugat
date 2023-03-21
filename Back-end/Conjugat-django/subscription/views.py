@@ -253,7 +253,6 @@ def successView(request):
             elif request.data.get('action') == 'Stop':
                 suspend_sub(subscription_id)
                 return Response(status=status.HTTP_200_OK)
-
             elif request.data.get('action') == 'Re-start':
                 activate_sub(subscription_id)
                 return Response(status=status.HTTP_200_OK)
