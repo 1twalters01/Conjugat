@@ -9,8 +9,6 @@ Add social authentication to AlternateLogins component
 Add csrftokens to post requests
 
 Refactor Django code and add serializers
-make validations return errors rather than raise validation error
-Test close account function
 3. settings
 * premiumView
 4. subscriptions

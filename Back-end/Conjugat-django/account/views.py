@@ -64,9 +64,11 @@ class LoginUsername(APIView):
     permission_classes = (permissions.AllowAny,)
     authentication_classes = (SessionAuthentication,)
     def post(self, request):
-        print(request.headers)
         data = request.data
-        assert validate_username(data)
+        validated_username = validate_username(data)
+        if validated_username[0] == False:
+            return Response(data=validated_username[1], status=validated_username[2])
+        
         serializer = LoginUsernameSerializer(data=data)
         if serializer.is_valid(raise_exception=True):
             response = serializer.check_username(data)
@@ -74,13 +76,19 @@ class LoginUsername(APIView):
                 return Response(data=response[0], status=status.HTTP_200_OK)
             return Response({'error':response[0]}, status=status.HTTP_404_NOT_FOUND)
 
+
 class LoginPassword(Knox_views.LoginView):
     permission_classes = (permissions.AllowAny,)
     authentication_classes = (SessionAuthentication,)
     def post(self, request):
         data = request.data
-        assert validate_username(data)
-        assert validate_password(data)
+        validated_username = validate_username(data)
+        validated_password = validate_password(data)
+        if validated_username[0] == False:
+            return Response(data=validated_username[1], status=validated_username[2])
+        if validated_password[0] == False:
+            return Response(data=validated_password[1], status=validated_password[2])
+
         serializer = LoginPasswordSerializer(data=data)
         if serializer.is_valid(raise_exception=True):
             response = serializer.login_user(data)
@@ -92,8 +100,6 @@ class LoginPassword(Knox_views.LoginView):
 ''' Logout '''
 class Logout(APIView):
     def post(self, request):
-        # Knox_views.LogoutView
-        # Knox_views.LogoutAllView
         request._auth.delete()
         print(request.user)
         logout(request)
@@ -109,10 +115,19 @@ class Register(APIView):
     authentication_classes = (SessionAuthentication,)
     def post(self, request):
         data = request.data
-        assert validate_username(data)
-        assert validate_email(data)
-        assert validate_passwords(data)
-        assert validate_domain(data)
+        validated_username = validate_username(data)
+        validated_email = validate_email(data)
+        validated_passwords = validate_passwords(data)
+        validated_domain = validate_domain(data)
+        if validated_username[0] == False:
+            return Response(data=validated_username[1], status=validated_username[2])
+        if validated_email[0] == False:
+            return Response(data=validated_email[1], status=validated_email[2])
+        if validated_passwords[0] == False:
+            return Response(data=validated_passwords[1], status=validated_passwords[2])
+        if validated_domain[0] == False:
+            return Response(data=validated_domain[1], status=validated_domain[2])
+
         serializer = RegisterSerializer(data=data)
         if serializer.is_valid(raise_exception=True):
             response = serializer.register_user(data)
@@ -125,8 +140,13 @@ class Activate(APIView):
     authentication_classes = ()
     def post(self, request):
         data = request.data
-        assert validate_uidb64(data)
-        assert validate_token(data)
+        validated_uidb64 = validate_uidb64(data)
+        validated_token = validate_uidb64(data)
+        if validated_uidb64[0] == False:
+            return Response(data=validated_uidb64[1], status=validated_uidb64[2])
+        if validated_token[0] == False:
+            return Response(data=validated_token[1], status=validated_token[2])
+
         serializer = ActivateSerializer(data=data)
         if serializer.is_valid(raise_exception=True):
             response = serializer.activate_user(data)
@@ -141,8 +161,13 @@ class PasswordReset(APIView):
     authentication_classes = (SessionAuthentication,)
     def post(self, request):
         data = request.data
-        assert validate_email(data)
-        assert validate_domain(data)
+        validated_email = validate_email(data)
+        validated_domain = validate_domain(data)
+        if validated_email[0] == False:
+            return Response(data=validated_email[1], status=validated_email[2])
+        if validated_domain[0] == False:
+            return Response(data=validated_domain[1], status=validated_domain[2])
+
         serializer = PasswordResetSerializer(data=data)
         if serializer.is_valid(raise_exception=True):
             response = serializer.send_password_reset_email(data)
@@ -155,9 +180,16 @@ class PasswordResetConfirm(APIView):
     authentication_classes = ()
     def post(self, request):
         data = request.data
-        assert validate_uidb64(data)
-        assert validate_token(data)
-        assert validate_passwords(data)
+        validated_uidb64 = validate_uidb64(data)
+        validated_token = validate_token(data)
+        validated_passwords = validate_passwords(data)
+        if validated_uidb64[0] == False:
+            return Response(data=validated_uidb64[1], status=validated_uidb64[2])
+        if validated_token[0] == False:
+            return Response(data=validated_token[1], status=validated_token[2])
+        if validated_passwords[0] == False:
+            return Response(data=validated_passwords[1], status=validated_passwords[2])
+
         serializer = PasswordResetConfirmSerializer(data=data)
         if serializer.is_valid(raise_exception=True):
             response = serializer.activate_user(data)

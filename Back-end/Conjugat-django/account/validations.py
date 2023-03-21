@@ -1,46 +1,54 @@
-from django.core.exceptions import ValidationError
+from rest_framework import status
 
 def validate_username(data):
     username = data['username'].strip()
     if not username:
-        raise ValidationError('No username provided')
-    return True
+        error = 'No username provided'
+        return False, error, status.HTTP_400_BAD_REQUEST
+    return True, 'valid'
 
 def validate_email(data):
     email = data['email'].strip()
     if not email:
-        raise ValidationError('No email provided')
-    return True
+        error = 'No email provided'
+        return False, error, status.HTTP_400_BAD_REQUEST
+    return True, 'valid'
 
 def validate_password(data):
     password = data['password'].strip()
     if not password:
-        raise ValidationError('No password provided')
-    return True
+        error = 'No password provided'
+        return False, error, status.HTTP_400_BAD_REQUEST
+    return True, 'valid'
 
 def validate_passwords(data):
     password = data['password'].strip()
     password2 = data['password2'].strip()
     if not password or not password2:
-        raise ValidationError('Provide all fields')
+        error = 'No password provided'
+        return False, error, status.HTTP_400_BAD_REQUEST
     if password != password2:
-         raise ValidationError('Passwords must match')
-    return True
+        error = 'Passwords must match'
+        return False, error, status.HTTP_400_BAD_REQUEST
+    return True, 'valid'
 
 def validate_uidb64(data):
     uidb64 = data['uidb64'].strip()
     if not uidb64:
-        raise ValidationError('Invalid url type')
-    return True
+        error = 'Invalid url type'
+        return False, error, status.HTTP_400_BAD_REQUEST
+    return True, 'valid'
 
 def validate_token(data):
     token = data['token'].strip()
     if not token:
-        raise ValidationError('Invalid url type')
-    return True
+        error = 'Invalid url type'
+        return False, error, status.HTTP_400_BAD_REQUEST
+    return True, 'valid'
 
 def validate_domain(data):
     domain = data['domain'].strip()
     if not domain:
-        raise ValidationError('Invalid url')
-    return True
+        error = 'Invalid url'
+        return False, error, status.HTTP_400_BAD_REQUEST
+    return True, 'valid'

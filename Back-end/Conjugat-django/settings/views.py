@@ -88,8 +88,13 @@ class ChangeEmail(APIView):
     # authentication_classes = (SessionAuthentication,)
     def post(self, request):
         data = request.data
-        assert validate_email(data)
-        assert validate_password(data)
+        validated_email = validate_email(data)
+        validated_password = validate_password(data)
+        if validated_email[0] == False:
+            return Response(data=validated_email[1], status=validated_email[2])
+        if validated_password[0] == False:
+            return Response(data=validated_password[1], status=validated_password[2])
+
         context = {'username': request.user.username}
         serializer = ChangeEmailSerializer(data=data, context=context)
         if serializer.is_valid(raise_exception=True):
@@ -105,8 +110,13 @@ class ChangePassword(APIView):
     # authentication_classes = (SessionAuthentication,)
     def post(self, request):
         data = request.data
-        assert validate_password(data)
-        assert validate_new_passwords(data)
+        validated_password = validate_password(data)
+        validated_new_passwords = validate_new_passwords(data)
+        if validated_password[0] == False:
+            return Response(data=validated_password[1], status=validated_password[2])
+        if validated_new_passwords[0] == False:
+            return Response(data=validated_new_passwords[1], status=validated_new_passwords[2])
+
         context = {'username': request.user.username}
         serializer = ChangePasswordSerializer(data=data, context=context)
         if serializer.is_valid(raise_exception=True):
@@ -122,6 +132,12 @@ class ChangeUsername(APIView):
     # authentication_classes = (SessionAuthentication,)
     def post(self, request):
         data = request.data
+        validated_password = validate_password(data)
+        validated_new_passwords = validate_new_passwords(data)
+        if validated_password[0] == False:
+            return Response(data=validated_password[1], status=validated_password[2])
+        if validated_new_passwords[0] == False:
+            return Response(data=validated_new_passwords[1], status=validated_new_passwords[2])
         assert validate_username(data)
         assert validate_password(data)
         context = {'username': request.user.username}
@@ -158,7 +174,10 @@ class ResetAccount(APIView):
 
     def post(self, request):
         data = request.data
-        assert validate_password(data)
+        validated_password = validate_password(data)
+        if validated_password[0] == False:
+            return Response(data=validated_password[1], status=validated_password[2])
+    
         context = {'username': request.user}
         serializer = CloseAccountSerializer(data=data, context=context)
         if serializer.is_valid(raise_exception=True):
@@ -174,7 +193,10 @@ class CloseAccount(APIView):
     # authentication_classes = (SessionAuthentication,)
     def post(self, request):
         data = request.data
-        assert validate_password(data)
+        validated_password = validate_password(data)
+        if validated_password[0] == False:
+            return Response(data=validated_password[1], status=validated_password[2])
+
         context = {'username': request.user.username}
         serializer = CloseAccountSerializer(data=data, context=context)
         if serializer.is_valid(raise_exception=True):
@@ -376,7 +398,10 @@ class ChangeTheme(APIView):
     # authentication_classes = (SessionAuthentication,)
     def post(self, request):
         data = request.data
-        assert validate_choice(data)
+        validated_choice = validate_choice(data)
+        if validated_choice[0] == False:
+            return Response(data=validated_choice[1], status=validated_choice[2])
+
         context = {'username': request.user}
         serializer = ThemeSerializer(data=data, context=context)
         if serializer.is_valid(raise_exception=True):
@@ -421,8 +446,13 @@ class TwoFactorAuthentication(APIView):
     def post(self, request):
         data = request.data
         length_of_OTP = 6
-        assert validate_password(data)
-        assert validate_totp(data, length_of_OTP)
+        validated_password = validate_password(data)
+        if validated_password[0] == False:
+            return Response(data=validated_password[1], status=validated_password[2])
+        validated_totp = validate_totp(data, length_of_OTP)
+        if validated_totp[0] == False:
+            return Response(data=validated_totp[1], status=validated_totp[2])
+
         context = {'username': request.user}
         serializer = TwoFactorAuthSerializer(data=data, context=context)
         if serializer.is_valid(raise_exception=True):

@@ -42,8 +42,13 @@ class Subscribe(APIView):
                         status=status.HTTP_200_OK)
     def post(self, request):
         data = request.data
-        assert validate_email(data)
-        assert validate_first_name(data)
+        validated_email = validate_email(data)
+        validated_first_name = validate_first_name(data)
+        if validated_email[0] == False:
+            return Response(data=validated_email[1], status=validated_email[2])
+        if validated_first_name[0] == False:
+            return Response(data=validated_first_name[1], status=validated_first_name[2])
+
         serializer = SubscribeSerializer(data=data)
         if serializer.is_valid(raise_exception=True):
             response = serializer.subscribe_user(data)
@@ -67,7 +72,10 @@ class Unsubscribe(APIView):
                         status=status.HTTP_200_OK)
     def post(self, request):
         data = request.data
-        assert validate_email(data)
+        validated_email = validate_email(data)
+        if validated_email[0] == False:
+            return Response(data=validated_email[1], status=validated_email[2])
+        
         serializer = UnsubscribeSerializer(data=data)
         if serializer.is_valid(raise_exception=True):
             response = serializer.unsubscribe_user(data)
