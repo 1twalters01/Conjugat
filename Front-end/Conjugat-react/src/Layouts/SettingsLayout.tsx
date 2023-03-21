@@ -9,6 +9,7 @@ function SettingsLayout() {
                     <NavLink to="change-email">Change email</NavLink>
                     <NavLink to="change-password">Change password</NavLink>
                     <NavLink to="change-username">Change username</NavLink>
+                    <NavLink to="logout-all">Logout all</NavLink>
                     <NavLink to="close-account">Close account</NavLink>
                     <NavLink to="premium">Premium</NavLink>
 

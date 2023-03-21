@@ -27,6 +27,7 @@ import Unsubscribe from './pages/newsletter/Unsubscribe'
 import Email from './pages/settings/ChangeEmail'
 import Password from './pages/settings/ChangePassword'
 import Username from './pages/settings/ChangeUsername'
+import LogoutAll from "./pages/settings/LogoutAll";
 import Account from './pages/settings/CloseAccount'
 import Premium from './pages/settings/Premium'
 import ResetAccount from './pages/settings/ResetAccount'
@@ -73,6 +74,7 @@ const router = createBrowserRouter(
         <Route path="change-password" element={<Password />} />
         <Route path="change-username" element={<Username />} />
 
+        <Route path="logout-all" element={<LogoutAll />} />
         <Route path="reset-account" element={<ResetAccount />} />
         <Route path="close-account" element={<Account />} />
 
