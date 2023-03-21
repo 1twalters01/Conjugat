@@ -18,19 +18,16 @@ function RetrieveStatus() {
       setLoading(false)
 
       AxiosInstance.Authorised
-      .post('subscriptions/process/', {
+      .post('subscriptions/retrieve-status/', {
         success_url: 'http://localhost:5000/subscriptions/success',
         cancel_url: 'http://localhost:5000/subscriptions/cancelled',
-        lookup_key: 'Conjugat Premium',
-        method: null,
       })
       .then(res =>{
-        setTrial(res.data.trial)
         setSubscribed(res.data.subscribed)
-        setStripeURL(res.data.stripe_url)
+        setTrial(res.data.trial)
         setStripeCustomerID(res.data.stripe_customer_id)
+        setStripeURL(res.data.stripe_url)
         setCoinbaseURL(res.data.coinbase_url)
-        console.log(res.data)
       })
       return <></>
     }

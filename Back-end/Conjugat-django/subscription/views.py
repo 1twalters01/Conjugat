@@ -25,6 +25,9 @@ from rest_framework.views import APIView
 from .validations import *
 
 
+from .serializers import RetrieveStatusSerializer, NewStripeCustomerSerializer, \
+    NewCoinbaseCustomerSerializer, NewPaypalCustomerSerializer
+
 ''' Routes '''
 class GetRoutes(APIView):
     def get(self, request):
@@ -107,7 +110,7 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def build_stripe_checkout(request, subscriber, customer, success_url, cancel_url):
     prices = stripe.Price.list(
-            lookup_keys=[request.data.get('lookup_key')],
+            lookup_keys=['Conjugat Premium'],
             expand=['data.product']
     )
     line_items=[
@@ -124,6 +127,7 @@ def build_stripe_checkout(request, subscriber, customer, success_url, cancel_url
         'success_url':success_url,
         'cancel_url':cancel_url,
     }
+
     if not subscriber or subscriber.trial == True:
         checkout_kwargs['subscription_data'] = {'trial_period_days':7}
 
@@ -142,6 +146,7 @@ def build_coinbase_checkout(subscriber, success_url, cancel_url):
         'rediret_url':success_url,
         'cancel_url':cancel_url,
     }
+
     if not subscriber or subscriber.trial == True:
         checkout_kwargs['description'] = '1 Week of conjugat Premium'
         checkout_kwargs['local_price']['amount'] = '0.01'
@@ -153,49 +158,83 @@ def build_coinbase_checkout(subscriber, success_url, cancel_url):
     return charge
 
 
+class RetrieveStatus(APIView):
+    permission_classes = (permissions.AllowAny,)
+    # authentication_classes = (SessionAuthentication,)
+    def post(self, request):
+        data = request.data
+        validated_return_urls = validate_return_urls(data)
+        if validated_return_urls[0] == False:
+            return Response(data=validated_return_urls[1], status=validated_return_urls[2])
+
+        context = {'user': request.user}
+        serializer = RetrieveStatusSerializer(data=data, context=context)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.retrieve_status(data)
+            if response[1] == True:
+                return Response(data=response[0], status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=response[2])
+
+class NewStripeCustomer(APIView):
+    permission_classes = (permissions.AllowAny,)
+    # authentication_classes = (SessionAuthentication,)
+    def post(self, request):
+        data = request.data
+        validated_customer_id = validate_customer_id(data)
+        if validated_customer_id[0] == False:
+            return Response(data=validated_customer_id[1], status=validated_customer_id[2])
+
+        context = {'user': request.user}
+        serializer = NewStripeCustomerSerializer(data=data, context=context)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.create_stripe_customer(data)
+            if response[1] == True:
+                return Response(data=response[0], status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=response[2])
+
+class NewPaypalCustomer(APIView):
+    permission_classes = (permissions.AllowAny,)
+    # authentication_classes = (SessionAuthentication,)
+    def post(self, request):
+        data = request.data
+        validated_subscriber_id = validate_subscriber_id(data)
+        if validated_subscriber_id[0] == False:
+            return Response(data=validated_subscriber_id[1], status=validated_subscriber_id[2])
+
+        context = {'user': request.user}
+        serializer = NewPaypalCustomerSerializer(data=data, context=context)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.create_paypal_customer(data)
+            if response[1] == True:
+                return Response(data=response[0], status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=response[2])
+
+class NewCoinbaseCustomer(APIView):
+    permission_classes = (permissions.AllowAny,)
+    # authentication_classes = (SessionAuthentication,)
+    def post(self, request):
+        data = request.data
+        validated_charge_url = validate_charge_url(data)
+        if validated_charge_url[0] == False:
+            return Response(data=validated_charge_url[1], status=validated_charge_url[2])
+
+        context = {'user': request.user}
+        serializer = NewCoinbaseCustomerSerializer(data=data, context=context)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.create_coinbase_customer(data)
+            if response[1] == True:
+                return Response(data=response[0], status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=response[2])
+
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def processView(request):
     subscriber = does_subscriber_exist(request)
     subscribed = is_user_subscribed(request, subscriber)
     if subscribed == False:
-        if request.data.get('method') == None:
-            success_url = request.data.get("success_url")
-            cancel_url = request.data.get("cancel_url")
-
-            customer = stripe.Customer.create()
-            stripe_url = build_stripe_checkout(request, subscriber, customer, success_url, cancel_url).url
-            subscriber.stripe_customer_id = customer.id
-            subscriber.stripe_url = stripe_url
-
-            charge = build_coinbase_checkout(subscriber, success_url, cancel_url)
-            coinbase_url = charge.hosted_url
-            subscriber.coinbase_url = coinbase_url
-
-            serializer = ProcessSerializer(subscriber)
-            return Response(data=serializer.data,
-                            status=status.HTTP_200_OK)
-        
-        if request.data.get('method') == 'Stripe':
-            customer_id = request.data.get('customer_id')
-            try:
-                save_subscriber(request, 'Stripe', subscriber, customer_id = customer_id)
-            except:
-                return Response(status=status.HTTP_404_NOT_FOUND)
-            return Response(status=status.HTTP_200_OK)
-
         if request.data.get('method') == 'Paypal':
             subscriber_id = request.data.get('subscriptionID')
             save_subscriber(request, 'Paypal', subscriber, subscriber_id=subscriber_id)
-            return Response(status=status.HTTP_200_OK)
-        
-        if request.data.get('method') == 'Coinbase':
-            charge_url = request.data.get('charge_url')
-            subscriber_id = charge_url.rsplit('/', 1)[1]
-            try:
-                save_subscriber(request, 'Coinbase', subscriber, subscriber_id=subscriber_id)
-            except:
-                return Response(status=status.HTTP_404_NOT_FOUND)
             return Response(status=status.HTTP_200_OK)
         
     subscriber.stripe_url, subscriber.coinbase_url, subscriber.stripe_customer_id = None, None, None

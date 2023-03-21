@@ -25,9 +25,8 @@ function PaypalProcess({trial} : {trial:boolean|null}) {
   
     const paypalOnApprove = (data:any, detail:any) => {
       AxiosInstance.Authorised
-      .post('subscriptions/process/', {
-        subscriptionID: data.subscriptionID,
-        method: 'Paypal',
+      .post('subscriptions/new-paypal-customer/', {
+        subscriber_id: data.subscriptionID,
       })
       .then(res=>{
         window.location.href = "/subscriptions/success"

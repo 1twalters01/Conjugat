@@ -12,7 +12,6 @@ Refactor Django code and add serializers
 3. settings
 * premiumView
 4. subscriptions
-* processView
 * successView
 
 Finish designing web pages in HTML and CSS:

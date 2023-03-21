@@ -5,9 +5,8 @@ function CoinbaseProcess({url}: {url:string}) {
         console.log(url, 'Coinbase')
 
         AxiosInstance.Authorised
-        .post('subscriptions/process/', {
+        .post('subscriptions/new-coinbase-customer/', {
             charge_url: url,
-            method: 'Coinbase',
         })
         .then(res => {
             window.location.href = url
