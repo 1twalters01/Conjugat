@@ -1,4 +1,5 @@
 from django.contrib.auth import logout, login
+from knox import views as Knox_views
 from rest_framework import status, permissions
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
@@ -6,7 +7,7 @@ from rest_framework.views import APIView
 from .serializers import LoginUsernameSerializer, LoginPasswordSerializer, \
 RegisterSerializer, ActivateSerializer, PasswordResetSerializer, PasswordResetConfirmSerializer
 from .validations import *
-from knox import views as Knox_views
+
 
 ''' Routes '''
 class GetRoutes(APIView):
@@ -63,6 +64,7 @@ class LoginUsername(APIView):
     permission_classes = (permissions.AllowAny,)
     authentication_classes = (SessionAuthentication,)
     def post(self, request):
+        print(request.headers)
         data = request.data
         assert validate_username(data)
         serializer = LoginUsernameSerializer(data=data)

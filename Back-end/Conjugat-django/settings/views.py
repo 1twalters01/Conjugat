@@ -1,21 +1,19 @@
 from .models import Theme, TwoFactorAuth
-from .totp import create_key_of_length, generate_totp, generate_QR_string_and_code
+from .totp import create_key_of_length, generate_QR_string_and_code
 from coinbase_commerce.client import Client
 
 from django.conf import settings
 from django.contrib.auth.models import User
-
+from knox import views as Knox_views
 from subscription.encryption import decrypt, encrypt
 from subscription.models import UserProfile
 from subscription.paypal import show_sub_details, suspend_sub, activate_sub, cancel_sub
 import stripe
 from verbs.models import Progress
-
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
-
 
 
 from rest_framework import status, permissions
@@ -23,7 +21,8 @@ from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import ChangeEmailSerializer, ChangePasswordSerializer, \
-    ChangeUsernameSerializer, ThemeSerializer, TwoFactorAuthSerializer
+    ChangeUsernameSerializer, ThemeSerializer, TwoFactorAuthSerializer, \
+    CloseAccountSerializer
 from .validations import *
 
 ''' Routes '''
@@ -131,146 +130,60 @@ class ChangeUsername(APIView):
             if response[1] == True:
                 return Response(data=response[0], status=status.HTTP_200_OK)
             return Response({'error':response[0]}, status=response[2])
-        
 
 
-
-def payment_method(method):
-    if method == 'Stripe':
-        return 1
-    elif method == 'Paypal':
-        return 2
-    elif method == 'Coinbase':
-        return 3
-
-@api_view(["POST"])
+''' Reset account '''
+@api_view(["GET", "POST"])
 @permission_classes([IsAuthenticated])
-def closeAccountView(request):
-    password = request.data.get('password')
-    totp = request.data.get("totp")
-    
-    if not password:
-        print('No password provided')
-        return Response({'error': 'No password provided'},
-                        status=status.HTTP_400_BAD_REQUEST)
-
-    user = User.objects.get(username=request.user)
-    if user.check_password(password) == False:
-        print('Incorrect password')
-        return Response({'error': 'Incorrect password'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    
-    try:
-        TwoFactor = TwoFactorAuth.objects.get(user=user.id)
-        key = decrypt(TwoFactor.key).encode('ascii')
-        totpCheck = generate_totp(key)
-    except:
-        TwoFactor = None
-        totpCheck = ''
-
-    if totpCheck != totp:
-        error = 'The totp is incorrect'
-        print(error)
-        return Response({'error': error},
-                    status=status.HTTP_400_BAD_REQUEST)
-    
-    try:
-        premium = UserProfile.objects.get(user=request.user)
-    except:
-        premium = None
-
-    if premium:
-        if premium.subscribed == True:
-            if premium.method_id == payment_method('Stripe'):
-                # stop subscription
-                if premium.subscription_id:
-                    try:
-                        subscription = decrypt(premium.subscription_id)
-                        stripe.api_key = settings.STRIPE_SECRET_KEY
-                        stripe.Subscription.delete(subscription)
-                    except:
-                        error = 'Invalid stripe subscription id'
-                        print(error)
-                        return Response({'error': error},
-                            status=status.HTTP_400_BAD_REQUEST)
-            if premium.method_id == payment_method('Paypal'):
-                try:
-                    cancel_sub(decrypt(premium.subscription_id))
-                except:
-                    error = 'invalid paypal subscription id'
-                    print(error)
-                    return Response({'error': error},
-                                    status=status.HTTP_400_BAD_REQUEST)
-        premium.delete()
-
-    user.delete()
-    success = 'Account deleted successfully'
-    return Response({'success':success},
-        status=status.HTTP_200_OK)
-
-
-''' Theme '''
-class ChangeTheme(APIView):
-    permission_classes = (permissions.AllowAny,)
-    # authentication_classes = (SessionAuthentication,)
-    def post(self, request):
-        data = request.data
-        assert validate_choice(data)
-        context = {'username': request.user}
-        serializer = ThemeSerializer(data=data, context=context)
-        if serializer.is_valid(raise_exception=True):
-            response = serializer.change_theme(data)
-            if response[1] == True:
-                return Response(data=response[0], status=status.HTTP_200_OK)
-            return Response({'error':response[0]}, status=response[2])
-
-
-''' 2FA '''
-class TwoFactorAuthentication(APIView):
-    permission_classes = (permissions.AllowAny,)
-    # authentication_classes = (SessionAuthentication,)
-    def doesTwoFactorExist(self, request):
+def resetAccountView(request):
+    if request.method == "GET":
+        account = Progress.objects.filter(user=request.user)
         try:
-            TwoFactor = TwoFactorAuth.objects.get(user=request.user)
-            confirmed = TwoFactor.confirmed
+            languages = [account[x].language for x in account]
         except:
-            TwoFactor = None
-            confirmed = None
-        return TwoFactor, confirmed
-    
-    def get(self, request):
-        TwoFactor, confirmed = self.doesTwoFactorExist(request)
-        if not TwoFactor or TwoFactor.confirmed == False:
-            key = create_key_of_length(20)
-            if not TwoFactor:
-                TwoFactor = TwoFactorAuth.objects.create(user=request.user)
-            TwoFactor.key = encrypt(key.decode('ascii'))
-            TwoFactor.save()
-            email = User.objects.get(username=request.user).email
-            qr_string = generate_QR_string_and_code(key, email)
-            context = {'qr_string':qr_string, 'confirmed':confirmed}
-            return Response(data=context)
-        else:
-            key = decrypt(TwoFactor.key).encode('ascii')
-            email = User.objects.get(username=request.user).email
-            qr_string = generate_QR_string_and_code(key, email)
-            context = {'qr_string':qr_string, 'confirmed':confirmed}
-            return Response(data=context)
+            languages = None
+        return Response({'languages':languages})
         
+    elif request.method == "POST":
+        languages = request.data.get("languages")
+        password = request.data.get("password")
+
+        if not password:
+            print('No password provided')
+            return Response({'error': 'No password provided'},
+                            status=status.HTTP_400_BAD_REQUEST)
+
+        user = User.objects.get(username=request.user)
+        if user.check_password(password) == False:
+            print('Incorrect password')
+            return Response({'error': 'Incorrect password'},
+                            status=status.HTTP_400_BAD_REQUEST)
+        for language in languages:
+            try:
+                account = Progress.objects.get(user=request.user, language=language)
+            except:
+                account = None
+            if account:
+                    account.delete()
+
+        return Response({"success": "Account was successfully reset"},
+                status=status.HTTP_200_OK)
+
+
+''' Close account '''
+class CloseAccount(APIView):
+    permission_classes = (permissions.AllowAny,)
+    # authentication_classes = (SessionAuthentication,)
     def post(self, request):
         data = request.data
-        length_of_OTP = 6
         assert validate_password(data)
-        assert validate_totp(data, length_of_OTP)
-        context = {'username': request.user}
-        serializer = TwoFactorAuthSerializer(data=data, context=context)
+        context = {'username': request.user.username}
+        serializer = CloseAccountSerializer(data=data, context=context)
         if serializer.is_valid(raise_exception=True):
-            response = serializer.set_2FA(data)
+            response = serializer.close_account(data)
             if response[1] == True:
                 return Response(data=response[0], status=status.HTTP_200_OK)
             return Response({'error':response[0]}, status=response[2])
-        
-
 
 
 
@@ -282,7 +195,7 @@ from subscription.views import build_stripe_portal, \
 
 
 
-
+''' Premium view '''
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
 def premiumView(request):
@@ -357,41 +270,75 @@ def premiumView(request):
 
 
 
+''' Theme '''
+class ChangeTheme(APIView):
+    permission_classes = (permissions.AllowAny,)
+    # authentication_classes = (SessionAuthentication,)
+    def post(self, request):
+        data = request.data
+        assert validate_choice(data)
+        context = {'username': request.user}
+        serializer = ThemeSerializer(data=data, context=context)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.change_theme(data)
+            if response[1] == True:
+                return Response(data=response[0], status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=response[2])
 
 
-
-@api_view(["GET", "POST"])
-@permission_classes([IsAuthenticated])
-def resetAccountView(request):
-    if request.method == "GET":
-        account = Progress.objects.filter(user=request.user)
+''' 2FA '''
+class TwoFactorAuthentication(APIView):
+    permission_classes = (permissions.AllowAny,)
+    # authentication_classes = (SessionAuthentication,)
+    def doesTwoFactorExist(self, request):
         try:
-            languages = [account[x].language for x in account]
+            TwoFactor = TwoFactorAuth.objects.get(user=request.user)
+            confirmed = TwoFactor.confirmed
         except:
-            languages = None
-        return Response({'languages':languages})
+            TwoFactor = None
+            confirmed = None
+        return TwoFactor, confirmed
+    
+    def get(self, request):
+        TwoFactor, confirmed = self.doesTwoFactorExist(request)
+        if not TwoFactor or TwoFactor.confirmed == False:
+            key = create_key_of_length(20)
+            if not TwoFactor:
+                TwoFactor = TwoFactorAuth.objects.create(user=request.user)
+            TwoFactor.key = encrypt(key.decode('ascii'))
+            TwoFactor.save()
+            email = User.objects.get(username=request.user).email
+            qr_string = generate_QR_string_and_code(key, email)
+            context = {'qr_string':qr_string, 'confirmed':confirmed}
+            return Response(data=context)
+        else:
+            key = decrypt(TwoFactor.key).encode('ascii')
+            email = User.objects.get(username=request.user).email
+            qr_string = generate_QR_string_and_code(key, email)
+            context = {'qr_string':qr_string, 'confirmed':confirmed}
+            return Response(data=context)
         
-    elif request.method == "POST":
-        languages = request.data.get("languages")
-        password = request.data.get("password")
+    def post(self, request):
+        data = request.data
+        length_of_OTP = 6
+        assert validate_password(data)
+        assert validate_totp(data, length_of_OTP)
+        context = {'username': request.user}
+        serializer = TwoFactorAuthSerializer(data=data, context=context)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.set_2FA(data)
+            if response[1] == True:
+                return Response(data=response[0], status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=response[2])
+        
 
-        if not password:
-            print('No password provided')
-            return Response({'error': 'No password provided'},
-                            status=status.HTTP_400_BAD_REQUEST)
 
-        user = User.objects.get(username=request.user)
-        if user.check_password(password) == False:
-            print('Incorrect password')
-            return Response({'error': 'Incorrect password'},
-                            status=status.HTTP_400_BAD_REQUEST)
-        for language in languages:
-            try:
-                account = Progress.objects.get(user=request.user, language=language)
-            except:
-                account = None
-            if account:
-                    account.delete()
 
-        return Response({"success": "Account was successfully reset"},
-                status=status.HTTP_200_OK)
+
+
+
+
+
+
+
+

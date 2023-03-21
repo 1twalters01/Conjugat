@@ -9,17 +9,14 @@ Add social authentication to AlternateLogins component
 Add csrftokens to post requests
 
 Refactor Django code and add serializers
-0. all
-* make validations return errors rather than raise validation error
+make validations return errors rather than raise validation error
+Test close account function
 3. settings
-* closeAccountView
 * premiumView
 * resetAccountView
 4. subscriptions
 * processView
 * successView
-
-Make expired subscriptions turn off
 
 Finish designing web pages in HTML and CSS:
 1. account
@@ -151,6 +148,8 @@ Refactor react code once again
 Create and test verbs functionality
 
 Create verb functionality for react
+
+Make expired subscriptions turn off
 
 Create functionality in Django and React for:
 * Settings: Reset account

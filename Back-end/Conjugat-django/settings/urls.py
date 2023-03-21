@@ -1,4 +1,3 @@
-from django.contrib.auth import views as auth_views
 from django.urls import path
 from . import views
 
@@ -11,7 +10,7 @@ urlpatterns = [
     path('change-username/', views.ChangeUsername.as_view(), name='change_username'),
 
     path('reset-account/', views.resetAccountView, name='reset_account'),
-    path('close-account/', views.closeAccountView, name='close_account'),
+    path('close-account/', views.CloseAccount.as_view(), name='close_account'),
 
     path('premium/', views.premiumView, name='premium'),
 

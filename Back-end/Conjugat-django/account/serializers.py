@@ -81,11 +81,12 @@ class LoginPasswordSerializer(serializers.Serializer):
         except:
             TwoFactor = None
             totpCheck = ''
-
-        if TwoFactor.confirmed == True:
-            if totpCheck != totp:
-                error = 'The totp is incorrect'
-                return error, False, status.HTTP_400_BAD_REQUEST
+            
+        if TwoFactor:
+            if TwoFactor.confirmed == True:
+                if totpCheck != totp:
+                    error = 'The totp is incorrect'
+                    return error, False, status.HTTP_400_BAD_REQUEST
         return True, True
 
     def obtain_token(self, remember_me, user):

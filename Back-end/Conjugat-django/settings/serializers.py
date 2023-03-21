@@ -1,7 +1,11 @@
+from django.conf import settings
 from django.contrib.auth.models import User
 from settings.models import Theme, TwoFactorAuth
 from settings.totp import generate_totp
 from subscription.encryption import decrypt
+from subscription.models import UserProfile
+from subscription.paypal import show_sub_details, suspend_sub, activate_sub, cancel_sub
+import stripe
 from rest_framework import serializers, status
 
 class ChangeEmailSerializer(serializers.Serializer):
@@ -92,8 +96,81 @@ class ChangeUsernameSerializer(serializers.Serializer):
         response = "Email changed successfully"
         return response, True
 
+class CloseAccountSerializer(serializers.Serializer):
+    password = serializers.CharField()
+    def totp_validation(self, user, totp):
+        try:
+            TwoFactor = TwoFactorAuth.objects.get(user=user.id)
+            key = decrypt(TwoFactor.key).encode('ascii')
+            totpCheck = generate_totp(key)
+        except:
+            TwoFactor = None
+            totpCheck = ''
 
+        if totpCheck != totp:
+            error = 'The totp is incorrect'
+            return error, False, status.HTTP_400_BAD_REQUEST
+        return True, True
 
+    def delete_premium(self, req_username):
+        try:
+            premium = UserProfile.objects.get(user=req_username)
+        except:
+            premium = None
+
+        if premium:
+            if premium.subscribed == True:
+                if premium.method_id == self.payment_method('Stripe'):
+                    # stop subscription
+                    if premium.subscription_id:
+                        try:
+                            subscription = decrypt(premium.subscription_id)
+                            stripe.api_key = settings.STRIPE_SECRET_KEY
+                            stripe.Subscription.delete(subscription)
+                        except:
+                            error = 'Invalid stripe subscription id'
+                            return error, False, status.HTTP_400_BAD_REQUEST
+                            
+                if premium.method_id == self.payment_method('Paypal'):
+                    try:
+                        cancel_sub(decrypt(premium.subscription_id))
+                    except:
+                        error = 'invalid paypal subscription id'
+                        return error, False, status.HTTP_400_BAD_REQUEST
+            premium.delete()
+            return True, True
+
+    def payment_method(self, method):
+        if method == 'Stripe':
+            return 1
+        elif method == 'Paypal':
+            return 2
+        elif method == 'Coinbase':
+            return 3
+        elif method == 'None':
+            return 4
+
+    def close_account(self, data):
+        password = data['password']
+        totp = data['totp']
+        req_username = self.context['username']
+        user = User.objects.get(username=req_username)
+
+        if user.check_password(password) == False:
+            error = 'Incorrect password'
+            return error, False, status.HTTP_400_BAD_REQUEST
+
+        validated_totp = self.totp_validation(user, totp)
+        if validated_totp[1] == False:
+            return validated_totp[0], validated_totp[1], validated_totp[2]
+
+        delete_premium_check = self.delete_premium(req_username)
+        if delete_premium_check[1] == False:
+            return delete_premium_check[0], delete_premium_check[1], delete_premium_check[2]
+
+        user.delete()
+        response = 'Account deleted successfully'
+        return response, True
 
 class ThemeSerializer(serializers.Serializer):
     choice = serializers.CharField()
@@ -133,7 +210,6 @@ class TwoFactorAuthSerializer(serializers.Serializer):
     def totp_validation(self, TwoFactor, totp):
         key = decrypt(TwoFactor.key).encode('ascii')
         totpGenerated = generate_totp(key)
-        print(totp, totpGenerated)
         if int(totp) != int(totpGenerated):
             error = 'Incorrect totp'
             return error, False, status.HTTP_400_BAD_REQUEST
