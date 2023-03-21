@@ -13,7 +13,6 @@ make validations return errors rather than raise validation error
 Test close account function
 3. settings
 * premiumView
-* resetAccountView
 4. subscriptions
 * processView
 * successView

@@ -3,6 +3,7 @@ from .totp import create_key_of_length, generate_QR_string_and_code
 from coinbase_commerce.client import Client
 
 from django.conf import settings
+from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from knox import views as Knox_views
 from subscription.encryption import decrypt, encrypt
@@ -132,42 +133,39 @@ class ChangeUsername(APIView):
             return Response({'error':response[0]}, status=response[2])
 
 
+''' Logout all '''
+class Logout_all(APIView):
+    def post(self, request):
+        request.user.auth_token_set.all().delete()
+        print(request.user)
+        logout(request)
+        success = "User has been successfully logged out"
+        return Response({"success": success},
+                    status=status.HTTP_204_NO_CONTENT)
+
+
 ''' Reset account '''
-@api_view(["GET", "POST"])
-@permission_classes([IsAuthenticated])
-def resetAccountView(request):
-    if request.method == "GET":
+class ResetAccount(APIView):
+    permission_classes = (permissions.AllowAny,)
+    # authentication_classes = (SessionAuthentication,)
+    def get(self, request):
         account = Progress.objects.filter(user=request.user)
         try:
             languages = [account[x].language for x in account]
         except:
             languages = None
         return Response({'languages':languages})
-        
-    elif request.method == "POST":
-        languages = request.data.get("languages")
-        password = request.data.get("password")
 
-        if not password:
-            print('No password provided')
-            return Response({'error': 'No password provided'},
-                            status=status.HTTP_400_BAD_REQUEST)
-
-        user = User.objects.get(username=request.user)
-        if user.check_password(password) == False:
-            print('Incorrect password')
-            return Response({'error': 'Incorrect password'},
-                            status=status.HTTP_400_BAD_REQUEST)
-        for language in languages:
-            try:
-                account = Progress.objects.get(user=request.user, language=language)
-            except:
-                account = None
-            if account:
-                    account.delete()
-
-        return Response({"success": "Account was successfully reset"},
-                status=status.HTTP_200_OK)
+    def post(self, request):
+        data = request.data
+        assert validate_password(data)
+        context = {'username': request.user}
+        serializer = CloseAccountSerializer(data=data, context=context)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.reset_account(data)
+            if response[1] == True:
+                return Response(data=response[0], status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=response[2])
 
 
 ''' Close account '''
