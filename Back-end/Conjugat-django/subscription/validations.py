@@ -1,4 +1,3 @@
-from django.core.exceptions import ValidationError
 from rest_framework import status
 
 def validate_return_urls(data):
@@ -29,15 +28,3 @@ def validate_charge_url(data):
         error = 'Provide all urls'
         return False, error, status.HTTP_400_BAD_REQUEST
     return True, 'valid'
-
-def validate_email(data):
-    email = data['email'].strip()
-    if not email:
-        raise ValidationError('No email provided')
-    return True
-
-def validate_first_name(data):
-    first_name = data['first_name'].strip()
-    if not first_name:
-        raise ValidationError('No first name provided')
-    return True

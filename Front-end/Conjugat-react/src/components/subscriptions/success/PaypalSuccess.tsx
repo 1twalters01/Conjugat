@@ -1,7 +1,7 @@
 import { FormEvent } from "react"
 import AxiosInstance from "../../../functions/AxiosInstance"
 
-function PaypalSuccess({status} : {status:string}) {
+function PaypalSuccess({status, setStatus} : {status:string, setStatus:Function}) {
     function submit (e:FormEvent<HTMLFormElement>) {
       e.preventDefault();
       const target = e.target as HTMLFormElement
@@ -10,7 +10,8 @@ function PaypalSuccess({status} : {status:string}) {
         action:target.name
       })
       .then(res=>{
-        window.location.reload();
+        setStatus(res.data.status)
+        // window.location.reload();
       })
     }  
   

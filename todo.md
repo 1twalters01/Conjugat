@@ -11,8 +11,6 @@ Add csrftokens to post requests
 Refactor Django code and add serializers
 3. settings
 * premiumView
-4. subscriptions
-* successView
 
 Finish designing web pages in HTML and CSS:
 1. account
