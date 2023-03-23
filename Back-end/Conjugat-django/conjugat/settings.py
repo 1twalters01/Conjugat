@@ -212,13 +212,10 @@ MAILCHIMP_MARKETING_AUDIENCE_ID = config('MAILCHIMP_MARKETING_AUDIENCE_ID')
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:5000',
 ]
+CORS_ALLOW_CREDENTIALS = True
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'knox.auth.TokenAuthentication',
     ],
-}
-from datetime import timedelta
-REST_KNOX = {
-    'TOKEN_TTL': timedelta(hours=48)
 }

@@ -1,22 +1,7 @@
-from .models import Theme, TwoFactorAuth
-from .totp import create_key_of_length, generate_QR_string_and_code
-from coinbase_commerce.client import Client
-
 from django.conf import settings
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
-from knox import views as Knox_views
-from subscription.encryption import decrypt, encrypt
-from subscription.models import UserProfile
-from subscription.paypal import show_sub_details, suspend_sub, activate_sub, cancel_sub
-import stripe
-from verbs.models import Progress
-from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated, AllowAny
-from rest_framework import status
-from rest_framework.decorators import api_view, permission_classes
-
-
+from .models import TwoFactorAuth
 from rest_framework import status, permissions
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
@@ -24,7 +9,10 @@ from rest_framework.views import APIView
 from .serializers import ChangeEmailSerializer, ChangePasswordSerializer, \
     ChangeUsernameSerializer, ThemeSerializer, TwoFactorAuthSerializer, \
     CloseAccountSerializer, PremiumSerializer
+from subscription.encryption import decrypt, encrypt
+from .totp import create_key_of_length, generate_QR_string_and_code
 from .validations import *
+from verbs.models import Progress
 
 ''' Routes '''
 class GetRoutes(APIView):
