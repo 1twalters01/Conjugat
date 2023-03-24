@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_protect
 from .models import TwoFactorAuth
 from rest_framework import status, permissions
 from rest_framework.authentication import SessionAuthentication
@@ -13,6 +15,8 @@ from subscription.encryption import decrypt, encrypt
 from .totp import create_key_of_length, generate_QR_string_and_code
 from .validations import *
 from verbs.models import Progress
+
+
 
 ''' Routes '''
 class GetRoutes(APIView):
@@ -71,9 +75,9 @@ class GetRoutes(APIView):
 
 
 ''' Change email '''
+# @method_decorator(csrf_protect, name='dispatch')
 class ChangeEmail(APIView):
     permission_classes = (permissions.AllowAny,)
-    # authentication_classes = (SessionAuthentication,)
     def post(self, request):
         data = request.data
         validated_email = validate_email(data)
@@ -212,9 +216,9 @@ class Premium(APIView):
 
 
 ''' Theme '''
+# @method_decorator(csrf_protect, name='dispatch')
 class ChangeTheme(APIView):
     permission_classes = (permissions.AllowAny,)
-    # authentication_classes = (SessionAuthentication,)
     def post(self, request):
         data = request.data
         validated_choice = validate_choice(data)

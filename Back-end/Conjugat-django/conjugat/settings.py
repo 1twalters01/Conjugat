@@ -41,6 +41,7 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:8000',
     'http://conjugat.io',
     'https://conjugat.io',
+    'http://localhost:5000'
 ]
 
 # Application definition
@@ -209,10 +210,24 @@ MAILCHIMP_USERNAME = config('MAILCHIMP_USERNAME')
 MAILCHIMP_REGION = config('MAILCHIMP_REGION')
 MAILCHIMP_MARKETING_AUDIENCE_ID = config('MAILCHIMP_MARKETING_AUDIENCE_ID')
 
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:5000',
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5000",
 ]
+
 CORS_ALLOW_CREDENTIALS = True
+
+# CORS_ALLOW_HEADERS = [
+#     "withCredentials",
+#     "x-csrftoken",
+#     "xsrfCookieName",
+#     "xsrfHeaderName",
+#     "authorization",
+#     "content-type",
+# ]
+
+# CSRF_COOKIE_DOMAIN = [
+#     "http://localhost:5000",
+# ]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [

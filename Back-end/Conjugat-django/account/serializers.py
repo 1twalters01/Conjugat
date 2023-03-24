@@ -15,6 +15,7 @@ from rest_framework import serializers, status
 from rest_framework.authtoken.models import Token
 from knox.auth import TokenAuthentication
 from knox.auth import AuthToken
+
 class LoginUsernameSerializer(serializers.Serializer):
     username = serializers.CharField()
     confirmed = serializers.BooleanField(required=False)
@@ -115,7 +116,7 @@ class LoginPasswordSerializer(serializers.Serializer):
         theme = Theme.objects.get_or_create(user=user)[0]
         response = {'token':token, 'theme':theme.theme}
         # return user, True, theme.theme
-        return response, True
+        return response, True, user
 
 
 ''' Register '''

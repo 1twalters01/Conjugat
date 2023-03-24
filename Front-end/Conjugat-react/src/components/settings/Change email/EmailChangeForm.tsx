@@ -1,3 +1,5 @@
+// import Cookies from "js-cookie"
+// import CSRFToken from "../../../functions/CSRFToken"
 import { ChangeEvent, FormEvent, useState} from "react"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import EmailField from "../../Input fields/EmailField"
@@ -26,6 +28,7 @@ function EmailChangeForm({ onDoneChange }: {onDoneChange:Function}){
     return(
       <div>
         <form onSubmit={(e) => submit(e)}>
+            {/* <CSRFToken /> */}
             <EmailField
               id="email"
               email={email}

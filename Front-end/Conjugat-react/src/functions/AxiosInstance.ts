@@ -1,16 +1,16 @@
 import axios from 'axios'
+// import Cookies from 'js-cookie'
 
-axios.defaults.xsrfCookieName = 'csrftoken';
-axios.defaults.xsrfHeaderName = 'X-CSRFToken';
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true
+// axios.defaults.xsrfCookieName = 'Cookie'
+// axios.defaults.xsrfHeaderName = "X-CSRFToken"
+axios.defaults.baseURL = 'http://conjugat.io:8000/'
+axios.defaults.timeout = 5000
 
-const baseURL = 'http://conjugat.io:8000/'
 const token = localStorage.getItem("token")
-const timeout = 5000
+
 
 const Unauthorised = axios.create({
-    baseURL: baseURL,
-    timeout: timeout,
     headers: {
         'Content-Type': 'application/json',
         accept: 'application/json',
@@ -18,8 +18,6 @@ const Unauthorised = axios.create({
 })
 
 const Authorised = axios.create({
-    baseURL: baseURL,
-    timeout: timeout,
     headers: {
         'Authorization': 'Token '+ token,
         'Content-Type': 'application/json',

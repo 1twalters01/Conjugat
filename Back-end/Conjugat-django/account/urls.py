@@ -5,6 +5,8 @@ from . import views
 urlpatterns = [
     path('', views.GetRoutes.as_view(), name='get_routes'),
 
+    # path('obtain-csrfToken/', views.GetCSRF.as_view(), name='obtain_csrfToken'),
+
     path('login/username/', views.LoginUsername.as_view(), name='login_username'),
     path('login/password/', views.LoginPassword.as_view(), name='login_Password'),
 

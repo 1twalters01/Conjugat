@@ -4,13 +4,15 @@ import AxiosInstance from "../../../functions/AxiosInstance";
 import { onThemeChange } from "../../../redux/slices/themeSlice";
 import { RootState } from "../../../redux/store";
 
+
 function ThemeFunctionality() {
     const{ theme } = useSelector((state: RootState) => state.persistedReducer.theme)
     const dispatch = useDispatch();
-    
+
     function submit(choice:string, e:FormEvent<HTMLDivElement>) {
       if (choice != theme) {
         e.preventDefault();
+
         AxiosInstance.Authorised
         .post('settings/themes/', {
           choice: choice

@@ -1,4 +1,6 @@
 from django.contrib.auth import logout, login
+# from django.middleware.csrf import get_token
+# from django.utils.decorators import method_decorator
 from knox import views as Knox_views
 from rest_framework import status, permissions
 from rest_framework.authentication import SessionAuthentication
@@ -59,11 +61,23 @@ class GetRoutes(APIView):
         return Response(routes)
 
 
+
+
+# @method_decorator(ensure_csrf_cookie, name='dispatch')
+# class GetCSRF(APIView):
+#     def get(self, request):
+#         token = get_token(request)
+#         print(token)
+#         response = {'token': token}
+#         return Response(data=response, status = status.HTTP_200_OK)
+
+
 ''' Login '''
 class LoginUsername(APIView):
     permission_classes = (permissions.AllowAny,)
     authentication_classes = (SessionAuthentication,)
     def post(self, request):
+        print(request.headers)
         data = request.data
         validated_username = validate_username(data)
         if validated_username[0] == False:
@@ -75,7 +89,6 @@ class LoginUsername(APIView):
             if response[1] == True:
                 return Response(data=response[0], status=status.HTTP_200_OK)
             return Response({'error':response[0]}, status=status.HTTP_404_NOT_FOUND)
-
 
 class LoginPassword(Knox_views.LoginView):
     permission_classes = (permissions.AllowAny,)
@@ -93,6 +106,8 @@ class LoginPassword(Knox_views.LoginView):
         if serializer.is_valid(raise_exception=True):
             response = serializer.login_user(data)
             if response[1] == True:
+                login(request, user=response[2], backend='django.contrib.auth.backends.ModelBackend')
+                print(serializer.data)
                 return Response(data=response[0], status=status.HTTP_200_OK)
             return Response({'error':response[0]}, status=status.HTTP_404_NOT_FOUND)
 
