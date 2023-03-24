@@ -3,7 +3,6 @@ Update Readme
 
 Add social authentication to AlternateLogins component
     Facebook
-    Google
     Twitter
 
 Finish designing web pages in HTML and CSS:

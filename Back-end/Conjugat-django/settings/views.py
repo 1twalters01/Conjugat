@@ -214,11 +214,15 @@ class Premium(APIView):
                 return Response(data=response[0], status=status.HTTP_200_OK)
             return Response({'error':response[0]}, status=response[2])
 
-
+from .models import Theme
 ''' Theme '''
 # @method_decorator(csrf_protect, name='dispatch')
 class ChangeTheme(APIView):
     permission_classes = (permissions.AllowAny,)
+    def get(self, request):
+        theme = Theme.objects.get(user=request.user).theme
+        return Response({'theme':theme}, status=status.HTTP_200_OK)
+    
     def post(self, request):
         data = request.data
         validated_choice = validate_choice(data)
