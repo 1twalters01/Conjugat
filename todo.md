@@ -6,8 +6,6 @@ Add social authentication to AlternateLogins component
     Google
     Twitter
 
-Add csrftokens to post requests
-
 Finish designing web pages in HTML and CSS:
 1. account
 * Activate
