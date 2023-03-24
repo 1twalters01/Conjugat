@@ -62,8 +62,7 @@ INSTALLED_APPS = [
     'newsletter.apps.NewsletterConfig',
     'django_extensions',
     'corsheaders',
-    'rest_framework',
-    'rest_framework.authtoken',
+    'rest_social_auth',
     'knox',
 ]
 
@@ -175,7 +174,6 @@ AUTHENTICATION_BACKENDS = [
     'social_core.backends.facebook.FacebookOAuth2',
     'social_core.backends.google.GoogleOAuth2',
     'social_core.backends.twitter.TwitterOAuth',
-    'social_core.backends.apple.AppleIdAuth',
 ]
 
 
@@ -214,7 +212,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5000",
 ]
 
-CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOW_CREDENTIALS = True
 
 # CORS_ALLOW_HEADERS = [
 #     "withCredentials",
@@ -234,3 +232,5 @@ REST_FRAMEWORK = {
         'knox.auth.TokenAuthentication',
     ],
 }
+
+REST_SOCIAL_OAUTH_ABSOLUTE_REDIRECT_URI = 'http://localhost:5000/account/google-oauth'

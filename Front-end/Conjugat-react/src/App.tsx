@@ -15,6 +15,7 @@ import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
 
 import Login from './pages/account/Login'
+import OauthLogin from "./pages/account/OauthLogin";
 import Logout from './pages/account/Logout'
 import PasswordReset from './pages/account/PasswordReset'
 import PasswordResetToken from './pages/account/PasswordResetToken'
@@ -53,6 +54,7 @@ const router = createBrowserRouter(
 
       <Route path="account">
         <Route path="login" element={<Login />} />
+        <Route path="google-oauth" element={<OauthLogin />} />
         <Route path="logout" element={<Logout />} />
 
         <Route path="password-reset" element={<PasswordReset />} />

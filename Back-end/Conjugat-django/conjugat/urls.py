@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path('api/login/', include('rest_social_auth.urls_knox')),
     path('admin/', admin.site.urls),
     path('account/', include('account.urls')),
     path('', include('home.urls')),
