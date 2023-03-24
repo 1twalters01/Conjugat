@@ -61,13 +61,11 @@ class GetRoutes(APIView):
         return Response(routes)
 
 
-
-
+''' CSRF Token '''
 # @method_decorator(ensure_csrf_cookie, name='dispatch')
 # class GetCSRF(APIView):
 #     def get(self, request):
 #         token = get_token(request)
-#         print(token)
 #         response = {'token': token}
 #         return Response(data=response, status = status.HTTP_200_OK)
 
@@ -77,7 +75,6 @@ class LoginUsername(APIView):
     permission_classes = (permissions.AllowAny,)
     authentication_classes = (SessionAuthentication,)
     def post(self, request):
-        print(request.headers)
         data = request.data
         validated_username = validate_username(data)
         if validated_username[0] == False:
@@ -107,7 +104,6 @@ class LoginPassword(Knox_views.LoginView):
             response = serializer.login_user(data)
             if response[1] == True:
                 login(request, user=response[2], backend='django.contrib.auth.backends.ModelBackend')
-                print(serializer.data)
                 return Response(data=response[0], status=status.HTTP_200_OK)
             return Response({'error':response[0]}, status=status.HTTP_404_NOT_FOUND)
 
@@ -116,7 +112,6 @@ class LoginPassword(Knox_views.LoginView):
 class Logout(APIView):
     def post(self, request):
         request._auth.delete()
-        print(request.user)
         logout(request)
         success = "User has been successfully logged out"
         return Response({"success": success},

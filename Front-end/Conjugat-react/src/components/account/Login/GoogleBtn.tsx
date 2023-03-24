@@ -1,6 +1,6 @@
 function GetGoogleURL() {
 
-    const getGoogleUrl = (from: string) => {
+    const getGoogleUrl = () => {
         const rootUrl = `https://accounts.google.com/o/oauth2/v2/auth`;
       
         const options = {

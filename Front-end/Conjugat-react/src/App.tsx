@@ -55,6 +55,8 @@ const router = createBrowserRouter(
       <Route path="account">
         <Route path="login" element={<Login />} />
         <Route path="google-oauth" element={<OauthLogin />} />
+        <Route path="facebook-oauth" element={<OauthLogin />} />
+        <Route path="twitter-oauth" element={<OauthLogin />} />
         <Route path="logout" element={<Logout />} />
 
         <Route path="password-reset" element={<PasswordReset />} />

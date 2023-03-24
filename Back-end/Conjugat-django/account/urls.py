@@ -1,5 +1,5 @@
 
-from django.urls import path
+from django.urls import include, path
 from . import views
 
 urlpatterns = [
@@ -8,6 +8,7 @@ urlpatterns = [
     # path('obtain-csrfToken/', views.GetCSRF.as_view(), name='obtain_csrfToken'),
 
     path('login/username/', views.LoginUsername.as_view(), name='login_username'),
+    path('login/Oauth/', include('rest_social_auth.urls_knox')),
     path('login/password/', views.LoginPassword.as_view(), name='login_Password'),
 
     path('logout/', views.Logout.as_view(), name='logout'),

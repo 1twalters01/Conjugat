@@ -17,13 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('api/login/', include('rest_social_auth.urls_knox')),
+    path('', include('home.urls')),
     path('admin/', admin.site.urls),
     path('account/', include('account.urls')),
-    path('', include('home.urls')),
     path('subscriptions/', include('subscription.urls')),
     path('verbs/', include('verbs.urls')),
     path('settings/', include('settings.urls')),
-    path('oauth/', include('social_django.urls', namespace='social')),
     path('newsletter/', include('newsletter.urls')),
 ]

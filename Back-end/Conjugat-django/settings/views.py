@@ -145,7 +145,6 @@ class ChangeUsername(APIView):
 class Logout_all(APIView):
     def post(self, request):
         request.user.auth_token_set.all().delete()
-        print(request.user)
         logout(request)
         success = "User has been successfully logged out"
         return Response({"success": success},
