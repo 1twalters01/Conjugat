@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react"
+import { toast } from "react-toastify"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import handleText from "../../../functions/handlers/handleText"
 import TextField from "../../Input fields/TextField"
@@ -25,10 +26,10 @@ function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {
             domain: domain
         })
         .then(res=>{
-            // onDoneChange(true)
+            onDoneChange(true)
         })
         .catch(err=>{
-            console.log(err.response.data)
+            toast.error(err.response.data.error)
         })
     }
 

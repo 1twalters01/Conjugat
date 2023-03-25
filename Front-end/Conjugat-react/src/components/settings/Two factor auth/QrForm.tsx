@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState} from "react"
+import { toast } from "react-toastify"
 import PasswordField from "../../Input fields/PasswordField"
 import TotpField from "../../Input fields/TotpField"
 import SubmitBtn from "../../Input fields/SubmitBtn"
@@ -24,7 +25,7 @@ function QrForm({setDone}: {setDone:Function}) {
         dispatch(onConfirmedChange(res.data.confirmed))
       })
       .catch(err => {
-        console.log(err.response.data.error)
+        toast.error(err.response.data.error)
       })
     }
   

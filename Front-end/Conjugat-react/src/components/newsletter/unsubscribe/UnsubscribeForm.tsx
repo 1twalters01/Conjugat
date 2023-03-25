@@ -1,7 +1,9 @@
 import { ChangeEvent, FormEvent } from "react"
+import { toast } from "react-toastify"
 import EmailField from "../../Input fields/EmailField"
 import AxiosInstance from "../../../functions/AxiosInstance"
-import SubmitBtn from "../../Input fields/SubmitBtn";
+import SubmitBtn from "../../Input fields/SubmitBtn"
+
 
 function UnsubscribeForm({setDone, email, setEmail}: {setDone:Function, email:string, setEmail:Function}) {
     function submit(e:FormEvent<HTMLFormElement>) {
@@ -15,7 +17,7 @@ function UnsubscribeForm({setDone, email, setEmail}: {setDone:Function, email:st
         console.log(res.data)
       })
       .catch(err=>{
-        console.log(err.response.data.error)
+        toast.error(err.response.data.error)
       })
     }
     

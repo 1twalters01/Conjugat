@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from "react"
 import { useParams } from 'react-router-dom'
+import { toast } from "react-toastify"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import handleText from "../../../functions/handlers/handleText"
 import PasswordField from "../../Input fields/PasswordField"
@@ -24,7 +25,7 @@ function PasswordChangeForm({ onDoneChange }: {onDoneChange:Function}) {
             onDoneChange(true)
         })
         .catch(err => {
-            console.log(err.response.data.error)
+            toast.error(err.response.data.error)
         })
     }
   

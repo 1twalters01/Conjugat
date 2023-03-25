@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState} from "react"
+import { toast } from "react-toastify"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import handleText from "../../../functions/handlers/handleText"
 import EmailField from "../../Input fields/EmailField"
@@ -20,7 +21,7 @@ function PasswordResetForm({onDoneChange}: {onDoneChange:Function}) {
             onDoneChange(true)
         )
         .catch(err=>{
-            console.log(err.response.data.error)
+            toast.error(err.response.data.error)
         })
     }
   

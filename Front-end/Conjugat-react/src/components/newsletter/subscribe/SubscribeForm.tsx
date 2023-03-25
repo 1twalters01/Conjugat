@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState} from "react"
+import { toast } from "react-toastify";
 import EmailField from "../../Input fields/EmailField"
 import TextField from "../../Input fields/TextField";
 import AxiosInstance from "../../../functions/AxiosInstance"
@@ -22,7 +23,7 @@ function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:stri
         setDone(true)
       })
       .catch(err=>{
-        console.log(err.response.data.error)
+        toast.error(err.response.data.error)
       })
     }
   

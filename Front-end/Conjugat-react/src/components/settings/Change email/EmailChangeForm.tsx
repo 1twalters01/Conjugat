@@ -1,6 +1,7 @@
 // import Cookies from "js-cookie"
 // import CSRFToken from "../../../functions/CSRFToken"
 import { ChangeEvent, FormEvent, useState} from "react"
+import { toast } from "react-toastify"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import EmailField from "../../Input fields/EmailField"
 import PasswordField from "../../Input fields/PasswordField"
@@ -18,10 +19,10 @@ function EmailChangeForm({ onDoneChange }: {onDoneChange:Function}){
         password: password,
       })
       .then(res=>{
-        // onDoneChange(true)
+        onDoneChange(true)
       })
       .catch(err=>{
-        console.log(err.response.data)
+        toast.error(err.response.data.error)
       })
     }
   

@@ -1,12 +1,12 @@
 import { ChangeEvent, FormEvent, useState } from "react"
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 import { onConfirmedChange, onUsernameChange } from "../../../redux/slices/loginSlice";
 import AxiosInstance from '../../../functions/AxiosInstance'
 import handleText from "../../../functions/handlers/handleText";
 import TextField from '../../Input fields/TextField'
 import SubmitBtn from "../../Input fields/SubmitBtn";
 import '../../../sass/Components/account/Login/UsernameForm.scss'
-import { toast } from "react-toastify";
 
 
 function UsernameForm({ onPageChange, }: { onPageChange:Function }) {

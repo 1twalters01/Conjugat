@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useState, } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
 import { RootState } from "../../../redux/store"
 import { onThemeChange } from "../../../redux/slices/themeSlice"
 import AxiosInstance from '../../../functions/AxiosInstance'
@@ -13,6 +13,7 @@ import RememberMeField from '../../Input fields/RememberMeField'
 import PasswordReset from './PasswordReset'
 import SubmitBtn from "../../Input fields/SubmitBtn"
 import '../../../sass/Components/account/Login/PasswordForm.scss'
+
 
 function PasswordForm() {
     const dispatch = useDispatch()
@@ -39,7 +40,7 @@ function PasswordForm() {
             window.location.href = ('/home')
         })
         .catch(err=>{
-            console.log(err.response.data)
+            toast.error(err.response.data.error)
         })
     }
 

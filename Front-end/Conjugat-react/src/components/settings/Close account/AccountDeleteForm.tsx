@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent, useState} from "react"
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 import AxiosInstance from "../../../functions/AxiosInstance";
 import { RootState } from "../../../redux/store";
 import PasswordField from "../../Input fields/PasswordField"
@@ -29,7 +30,7 @@ function AccountDeleteForm({ onDoneChange }: {onDoneChange:Function}){
         onDoneChange(true)
       })
       .catch(err=>{
-        console.log(err.response.data)
+        toast.error(err.response.data.error)
       })
     }
   
