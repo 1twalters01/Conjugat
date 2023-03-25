@@ -1,10 +1,9 @@
 # Short term goals
 Update Readme
 
-Add social authentication to AlternateLogins component
-    Twitter
+Add Twitter authentication once approved
 
-Finish designing web pages in HTML and CSS:
+Finish designing web pages:
 1. account
 * Activate
 * Logout
@@ -30,7 +29,6 @@ Finish designing web pages in HTML and CSS:
 * Contact
 * FAQs
 * Home
-* Landing page
 * Privacy
 * Terms
 
@@ -96,8 +94,6 @@ Add colour to the react pages (SCSS)
 * Landing page
 * Privacy
 * Terms
-
-Add flash messages
 
 # Medium term goals
 Refactor react code once again

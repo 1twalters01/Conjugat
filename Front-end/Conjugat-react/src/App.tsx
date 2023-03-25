@@ -7,12 +7,12 @@ import SettingsLayout from './layouts/SettingsLayout'
 import SubscriptionsLayout from './layouts/SubscriptionsLayout'
 
 // pages
-import Index from './pages/LandingPage'
-import Contact from './pages/Contact'
-import Faq from './pages/FAQs'
-import Home from './pages/Home'
-import Privacy from './pages/Privacy'
-import Terms from './pages/Terms'
+import Index from './pages/home/LandingPage'
+import Contact from './pages/home/Contact'
+import Faq from './pages/home/FAQs'
+import Home from './pages/home/Home'
+import Privacy from './pages/home/Privacy'
+import Terms from './pages/home/Terms'
 
 import Login from './pages/account/Login'
 import OauthLogin from "./pages/account/OauthLogin";
@@ -38,6 +38,9 @@ import TwoFactorAuth from './pages/settings/TwoFactorAuth'
 import Cancelled from './pages/subscriptions/Cancelled'
 import Process from './pages/subscriptions/Process'
 import Success from './pages/subscriptions/Success'
+
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 import './sass/app.scss'
 
@@ -108,12 +111,23 @@ function App() {
   return (
     <Provider store={store}>
       <div className={theme}>
-        <div className="background">
-          <PersistGate persistor={persistor}>
-            <RouterProvider router={router} />
-          </PersistGate>
-        </div>
+        <PersistGate persistor={persistor}>
+          <RouterProvider router={router} />
+        </PersistGate>
       </div>
+      {theme == 'Dark' ?
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          theme='colored'
+        />
+      :
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          theme='light'
+        />
+      }
     </Provider>
   )
 }

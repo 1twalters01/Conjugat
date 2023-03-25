@@ -6,6 +6,8 @@ import handleText from "../../../functions/handlers/handleText";
 import TextField from '../../Input fields/TextField'
 import SubmitBtn from "../../Input fields/SubmitBtn";
 import '../../../sass/Components/account/Login/UsernameForm.scss'
+import { toast } from "react-toastify";
+
 
 function UsernameForm({ onPageChange, }: { onPageChange:Function }) {
     const dispatch = useDispatch()
@@ -23,7 +25,7 @@ function UsernameForm({ onPageChange, }: { onPageChange:Function }) {
             onPageChange('password')
         })
         .catch(err=>{
-            console.log(err.response.data.error)
+            toast.error(err.response.data.error)
         })
     }
   

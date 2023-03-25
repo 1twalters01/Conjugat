@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import Authorization from "../functions/Authorization"
+import Authorization from "../../functions/Authorization"
 
 function Home() {
     Authorization.AuthRequired()

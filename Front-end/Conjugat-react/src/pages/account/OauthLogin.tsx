@@ -4,6 +4,11 @@ import Authorization from "../../functions/Authorization";
 import AxiosInstance from "../../functions/AxiosInstance";
 import { onThemeChange } from "../../redux/slices/themeSlice";
 
+
+// I am repeating the functions here as I don't know if the twitter one works yet
+// Refactoring once I do will be easier than the other way
+// I am waiting for Twitter to accept my pettition for api usage
+
 function OauthLogin() {
     Authorization.NotAuthRequired()
     const dispatch = useDispatch()
@@ -39,10 +44,7 @@ function OauthLogin() {
     }
 
     else if (url.includes('facebook')) {
-        console.log(url)
         var code:string|null = decodeURIComponent(url.match(/code=(.*?)&/i)[1])
-        console.log(code)
-
         AxiosInstance.Unauthorised
         .post('account/login/Oauth/social/knox/facebook/',{
             "code": code

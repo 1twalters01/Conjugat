@@ -378,6 +378,7 @@ class SuccessSerializer(serializers.Serializer):
                         'status': subscriber.status
                     }
                     return response, True, status.HTTP_200_OK
+                
                 elif action == 'Re-start':
                     activate_sub(subscription_id)
                     details = show_sub_details(subscription_id)
@@ -389,4 +390,8 @@ class SuccessSerializer(serializers.Serializer):
                     }
                     return response, True, status.HTTP_200_OK
         else:
-            return subscriber.subscribed, True, status.HTTP_200_OK
+            response = {
+                'method': method,
+                'subscribed': subscribed
+            }
+            return response, True, status.HTTP_200_OK

@@ -22,7 +22,7 @@ function RetrieveSuccessStatus() {
         action: null
       })
       .then(res => {
-        console.log(res.data.method)
+        console.log(res.data)
         setMethod(res.data.method)
         setSubscribed(res.data.subscribed)
         setURL(res.data.url)

@@ -1,6 +1,6 @@
 function GetFacebookURL() {
     const getFacebookUrl = () => {
-        const rootUrl = 'https://www.facebook.com/v16.0/dialog/oauth?'
+        const rootUrl = 'https://www.facebook.com/v16.0/dialog/oauth'
 
         const options = {
             client_id: import.meta.env.VITE_FACEBOOK_OAUTH_APP_ID as string,
@@ -11,7 +11,7 @@ function GetFacebookURL() {
             state: 'facebook-Conjugat',
         };
         const qs = new URLSearchParams(options);
-        window.location.href = `${rootUrl}${qs.toString()}`
+        window.location.href = `${rootUrl}?${qs.toString()}`
     }
 
     return (
