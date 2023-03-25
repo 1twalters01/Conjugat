@@ -233,4 +233,4 @@ REST_FRAMEWORK = {
     ],
 }
 
-REST_SOCIAL_OAUTH_ABSOLUTE_REDIRECT_URI = 'http://localhost:5000/account/google-oauth'
+REST_SOCIAL_OAUTH_ABSOLUTE_REDIRECT_URI = 'http://localhost:5000/account/oauth'

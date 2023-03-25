@@ -219,7 +219,10 @@ from .models import Theme
 class ChangeTheme(APIView):
     permission_classes = (permissions.AllowAny,)
     def get(self, request):
-        theme = Theme.objects.get(user=request.user).theme
+        try:
+            theme = Theme.objects.get(user=request.user).theme
+        except:
+            theme = Theme.objects.create(user=request.user).theme
         return Response({'theme':theme}, status=status.HTTP_200_OK)
     
     def post(self, request):
