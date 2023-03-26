@@ -5,7 +5,7 @@ import handleText from "../../../functions/handlers/handleText"
 import TextField from "../../Input fields/TextField"
 import EmailField from "../../Input fields/EmailField"
 import PasswordField from "../../Input fields/PasswordField"
-import SubmitBtn from "../../Input fields/SubmitBtn"
+import SubmitBtn from "../../Buttons/SubmitBtn"
 import '../../../sass/Components/account/Register/RegisterForm.scss'
 
 function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {

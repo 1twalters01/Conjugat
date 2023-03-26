@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import EmailField from "../../Input fields/EmailField"
 import TextField from "../../Input fields/TextField";
 import AxiosInstance from "../../../functions/AxiosInstance"
-import SubmitBtn from "../../Input fields/SubmitBtn";
+import SubmitBtn from "../../Buttons/SubmitBtn";
 
 function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:string, setEmail:Function}) {
     const [firstName, setFirstName] = useState('')

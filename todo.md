@@ -1,8 +1,6 @@
 # Short term goals
 Update Readme
 
-Add Twitter authentication once approved
-
 Finish designing web pages:
 1. account
 * Activate
@@ -95,7 +93,10 @@ Add colour to the react pages (SCSS)
 * Privacy
 * Terms
 
+
 # Medium term goals
+Add Twitter authentication once approved
+
 Refactor react code once again
 1. account
 * Activate

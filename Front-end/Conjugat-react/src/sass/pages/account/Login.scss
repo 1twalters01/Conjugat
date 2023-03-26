@@ -1,12 +1,20 @@
 @import '../../variables';
 
+/* All */
+.Login-body {
+    min-height: 100vh;
+}
+
 /* TV screens */
 @media only screen and (min-width: $TV-breakpoint){
+    .Login-username-container-spacer{
+        height: 50px;
+    }
     .Login-username-container{
         max-width: 720px;
         border-radius: 25px;
         margin: auto;
-        margin-top: 2%;
+        // margin-top: 2%;
         .Header-spacer-top{
             padding-top: 8%
         }
@@ -19,6 +27,9 @@
         .UsernameForm-spacer{
             margin-bottom: 60px;
         }
+    }
+    .Login-password-container-spacer{
+        height: 50px;
     }
     .Login-password-container{
         max-width: 720px;
@@ -42,6 +53,9 @@
 
 /* PC */
 @media only screen and (max-width: $PC-max-breakpoint) and (min-width: $PC-min-breakpoint){
+    .Login-container-spacer{
+        height: 50px;
+    }
     .Login-username-container{
         height: 80%;
         width: 60%;
@@ -64,6 +78,9 @@
         .UsernameForm-spacer {
             margin-bottom: 60px;
         }
+    }
+    .Login-password-container-spacer{
+        height: 50px;
     }
     .Login-password-container{
         height: 80%;
@@ -92,6 +109,9 @@
 
 /* Laptops */
 @media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint){
+    .Login-container-spacer{
+        height: 50px;
+    }
     .Login-username-container{
         height: 90%;
         width: 70%;
@@ -114,6 +134,9 @@
         .UsernameForm-spacer{
             margin-bottom: 60px;
         }
+    }
+    .Login-password-container-spacer{
+        height: 50px;
     }
     .Login-password-container{
         height: 90%;
@@ -142,6 +165,9 @@
 
 /* Tablets */
 @media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){
+    .Login-container-spacer{
+        height: 50px;
+    }
     .Login-username-container{
         height: 90%;
         width: 85%;
@@ -164,6 +190,9 @@
         .UsernameForm-spacer{
             margin-bottom: 60px;
         }
+    }
+    .Login-password-container-spacer{
+        height: 50px;
     }
     .Login-password-container{
         height: 90%;
@@ -192,6 +221,9 @@
 
 /* Mobiles */
 @media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint){
+    .Login-container-spacer{
+        height: 50px;
+    }
     .Login-username-container{
         height: 90%;
         width: 85%;
@@ -214,6 +246,9 @@
         .UsernameForm-spacer{
             margin-bottom: 50px;
         }
+    }
+    .Login-password-container-spacer{
+        height: 50px;
     }
     .Login-password-container{
         height: 90%;

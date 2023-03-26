@@ -5,7 +5,7 @@ import { onConfirmedChange, onUsernameChange } from "../../../redux/slices/login
 import AxiosInstance from '../../../functions/AxiosInstance'
 import handleText from "../../../functions/handlers/handleText";
 import TextField from '../../Input fields/TextField'
-import SubmitBtn from "../../Input fields/SubmitBtn";
+import SubmitBtn from "../../Buttons/SubmitBtn";
 import '../../../sass/Components/account/Login/UsernameForm.scss'
 
 
@@ -43,6 +43,7 @@ function UsernameForm({ onPageChange, }: { onPageChange:Function }) {
 
           <SubmitBtn
             value="Continue"
+            style= 'strong-gold-btn'
           />
         </form>
       </div>

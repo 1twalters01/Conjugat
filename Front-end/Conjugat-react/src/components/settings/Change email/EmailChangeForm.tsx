@@ -5,7 +5,7 @@ import { toast } from "react-toastify"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import EmailField from "../../Input fields/EmailField"
 import PasswordField from "../../Input fields/PasswordField"
-import SubmitBtn from "../../Input fields/SubmitBtn"
+import SubmitBtn from "../../Buttons/SubmitBtn"
 
 function EmailChangeForm({ onDoneChange }: {onDoneChange:Function}){
     const [email, setEmail] = useState('')

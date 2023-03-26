@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import AxiosInstance from "../../../functions/AxiosInstance";
 import { RootState } from "../../../redux/store";
 import PasswordField from "../../Input fields/PasswordField"
-import SubmitBtn from "../../Input fields/SubmitBtn";
+import SubmitBtn from "../../Buttons/SubmitBtn";
 import TotpField from "../../Input fields/TotpField";
 
 function AccountDeleteForm({ onDoneChange }: {onDoneChange:Function}){

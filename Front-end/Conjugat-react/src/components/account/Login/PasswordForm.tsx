@@ -11,7 +11,7 @@ import TotpField from '../../Input fields/TotpField'
 import handleCheckbox from "../../../functions/handlers/handleCheckbox"
 import RememberMeField from '../../Input fields/RememberMeField'
 import PasswordReset from './PasswordReset'
-import SubmitBtn from "../../Input fields/SubmitBtn"
+import SubmitBtn from "../../Buttons/SubmitBtn"
 import '../../../sass/Components/account/Login/PasswordForm.scss'
 
 

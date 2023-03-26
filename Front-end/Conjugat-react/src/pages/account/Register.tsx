@@ -12,18 +12,20 @@ function Register() {
 
     if (done == false) {
         return (
-          <div className="Register-container">
-            <div className="Header-spacer-top"></div>
-            <Header />
-            <div className="Header-spacer-bottom"></div>
+          <div className="Login-body body">
+            <div className="Register-container container">
+              <div className="Header-spacer-top"></div>
+              <Header />
+              <div className="Header-spacer-bottom"></div>
 
-            <RegisterLinks />
-            <div className="RegisterLinks-spacer"></div>
-            
-            <RegisterForm
-              onDoneChange={setDone}
-            />
-            <div className="RegisterForm-spacer"></div>
+              <RegisterLinks />
+              <div className="RegisterLinks-spacer"></div>
+              
+              <RegisterForm
+                onDoneChange={setDone}
+              />
+              <div className="RegisterForm-spacer"></div>
+            </div>
           </div>
         )
     }

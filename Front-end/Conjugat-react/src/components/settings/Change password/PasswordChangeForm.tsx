@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useState} from "react"
 import { toast } from "react-toastify"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import PasswordField from "../../Input fields/PasswordField"
-import SubmitBtn from "../../Input fields/SubmitBtn"
+import SubmitBtn from "../../Buttons/SubmitBtn"
 
 function PasswordChangeForm({ onDoneChange }: {onDoneChange:Function}){
     const [password, setPassword] = useState('')

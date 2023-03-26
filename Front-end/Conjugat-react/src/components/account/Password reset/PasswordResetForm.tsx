@@ -3,7 +3,7 @@ import { toast } from "react-toastify"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import handleText from "../../../functions/handlers/handleText"
 import EmailField from "../../Input fields/EmailField"
-import SubmitBtn from "../../Input fields/SubmitBtn"
+import SubmitBtn from "../../Buttons/SubmitBtn"
 import '../../../sass/Components/account/Password reset/PasswordResetForm.scss'
 
 function PasswordResetForm({onDoneChange}: {onDoneChange:Function}) {

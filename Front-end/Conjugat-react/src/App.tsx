@@ -117,14 +117,14 @@ function App() {
       </div>
       {theme == 'Dark' ?
         <ToastContainer
-          position="top-center"
-          autoClose={3000}
+          position="top-right"
+          autoClose={2000}
           theme='colored'
         />
       :
         <ToastContainer
-          position="top-center"
-          autoClose={3000}
+          position="top-right"
+          autoClose={2000}
           theme='light'
         />
       }

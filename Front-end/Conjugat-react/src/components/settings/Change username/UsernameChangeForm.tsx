@@ -3,7 +3,7 @@ import { toast } from "react-toastify"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import TextField from "../../Input fields/TextField"
 import PasswordField from "../../Input fields/PasswordField"
-import SubmitBtn from "../../Input fields/SubmitBtn"
+import SubmitBtn from "../../Buttons/SubmitBtn"
 
 function UsernameChangeForm({ onDoneChange }: {onDoneChange:Function}){
     const [username, setUsername] = useState('')
