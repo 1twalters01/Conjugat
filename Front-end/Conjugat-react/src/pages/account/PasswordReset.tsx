@@ -12,19 +12,21 @@ function PasswordReset() {
 
     if (done == false) {
         return (
-          <div className="PasswordReset-container">
-            <div className="Header-spacer-top"></div>
-            <Header />
-            <div className="Header-spacer-bottom"></div>
+            <div className="PasswordReset-container container">
+                <div className="Header-spacer-top"></div>
+                <Header />
+                <div className="Header-spacer-bottom"></div>
 
-            <RegisterLinks />
-            <div className="RegisterLinks-spacer"></div>
-            
-            <PasswordResetForm
-            onDoneChange={setDone}
-            />
-            <div className="PasswordResetForm-spacer"></div>
-          </div>
+                <RegisterLinks />
+                <div className="RegisterLinks-spacer"></div>
+                
+                <div className="form-width">
+                    <PasswordResetForm
+                    onDoneChange={setDone}
+                    />
+                </div>
+                <div className="PasswordResetForm-spacer"></div>
+            </div>
         )
     }
     else {

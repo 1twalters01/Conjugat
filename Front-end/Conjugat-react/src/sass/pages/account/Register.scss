@@ -32,12 +32,8 @@
         height: 90%;
         width: 60%;
         border-radius: 25px;
-        position: absolute;
-        top: 0;
-        bottom: 0%;
-        left: 0;
-        right: 0;
-        margin: auto;
+        padding: 0 10px 30px 10px;
+        margin: 20px auto 20px auto;
         .Header-spacer-top{
             padding-top: 8%
         }
@@ -52,7 +48,7 @@
             margin: auto;
         }
         .RegisterForm-spacer{
-            padding: 30px;
+            padding: 20px;
         }
     }
 }

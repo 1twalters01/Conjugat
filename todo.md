@@ -63,9 +63,7 @@ Add styling to the react pages (SCSS)
 Add colour to the react pages (SCSS)
 1. account
 * Activate
-* Login
 * Logout
-* Password reset
 * Password reset confirm
 * Password reset done
 * Password reset token

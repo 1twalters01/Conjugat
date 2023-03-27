@@ -38,6 +38,7 @@ function PasswordResetForm({onDoneChange}: {onDoneChange:Function}) {
 
           <SubmitBtn
             value="Reset Password"
+            style="strong-gold-btn"
           />
         </form>
       </div>
