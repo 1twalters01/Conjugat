@@ -34,7 +34,7 @@
         border-radius: 25px;
         position: absolute;
         top: 0;
-        bottom: 10%;
+        bottom: 15%;
         left: 0;
         right: 0;
         margin: auto;
@@ -60,13 +60,14 @@
 /* Laptops */
 @media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint){
     .Login-username-container{
+        display: block;
         min-height: 90%;
         width: 70%;
         border-radius: 20px;
         padding: 0 10px 30px 10px;
         margin: 20px auto 20px auto;
         .Header-spacer-top{
-            padding-top: 5%
+            height: 40px;
         }
         .Header-spacer-bottom{
             padding-bottom: 3%;
@@ -115,16 +116,11 @@
 /* Mobiles */
 @media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint){
     .Login-username-container{
-        display: inline-block;
+        display: block;
         min-height: 90%;
         width: 85%;
         border-radius: 15px;
         padding: 0 10px 0px 10px;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
         margin: 20px auto 20px auto;
         .Header-spacer-top{
             padding-top: 15%

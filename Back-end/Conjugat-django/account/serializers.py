@@ -6,15 +6,13 @@ from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
+from knox.auth import AuthToken
 from settings.models import Theme, TwoFactorAuth
 from settings.totp import generate_totp
 from subscription.encryption import decrypt
 from subscription.models import UserProfile
 from .tokens import account_activation_token, password_reset_token
 from rest_framework import serializers, status
-from rest_framework.authtoken.models import Token
-from knox.auth import TokenAuthentication
-from knox.auth import AuthToken
 
 class LoginUsernameSerializer(serializers.Serializer):
     username = serializers.CharField()
@@ -70,7 +68,7 @@ class LoginPasswordSerializer(serializers.Serializer):
     
     def validate_user(self, user):
         if not user:
-            error = 'The username and/or password is incorrect'
+            error = 'The password and/or totp is incorrect'
             return error, False, status.HTTP_401_UNAUTHORIZED
         return True, True
 
@@ -86,7 +84,7 @@ class LoginPasswordSerializer(serializers.Serializer):
         if TwoFactor:
             if TwoFactor.confirmed == True:
                 if totpCheck != totp:
-                    error = 'The totp is incorrect'
+                    error = 'The password and/or totp is incorrect'
                     return error, False, status.HTTP_400_BAD_REQUEST
         return True, True
 
@@ -115,7 +113,6 @@ class LoginPasswordSerializer(serializers.Serializer):
         hash, token = self.obtain_token(remember_me, user)
         theme = Theme.objects.get_or_create(user=user)[0]
         response = {'token':token, 'theme':theme.theme}
-        # return user, True, theme.theme
         return response, True, user
 
 

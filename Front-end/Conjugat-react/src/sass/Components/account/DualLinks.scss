@@ -6,7 +6,7 @@
         width: 50%;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 10%;
+        grid-gap: 5%;
         justify-self: center;
         align-self: center;
         margin: auto;
@@ -14,7 +14,7 @@
             align-self: center;
             text-align: center;
             width: 100%;
-            border: 2px solid;
+            border: 3px solid;
             border-radius: 20px;
             padding: 5px 0;
             margin: auto;
@@ -28,15 +28,15 @@
         width: 50%;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 10%;
+        grid-gap: 5%;
         justify-self: center;
         align-self: center;
         margin: auto;
         .link{
             align-self: center;
             text-align: center;
-            width: 80%;
-            border: 2px solid;
+            width: 100%;
+            border: 2.5px solid;
             border-radius: 20px;
             padding: 5px 0;
             margin: auto;
@@ -50,7 +50,7 @@
         width: 60%;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 10%;
+        grid-gap: 5%;
         justify-self: center;
         align-self: center;
         margin: auto;
@@ -58,7 +58,7 @@
             align-self: center;
             text-align: center;
             width: 100%;
-            border: 1.5px solid;
+            border: 2px solid;
             border-radius: 20px;
             padding: 5px 0;
             margin: auto;
@@ -80,7 +80,7 @@
             align-self: center;
             text-align: center;
             width: 100%;
-            border: 1.5px solid;
+            border: 2px solid;
             border-radius: 20px;
             padding: 5px 0;
             margin: auto;

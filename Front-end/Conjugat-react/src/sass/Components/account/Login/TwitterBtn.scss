@@ -14,19 +14,23 @@
 
 	display: inline-block;
 	border-radius: 3px;
-    border-color: #007aa6;
-    background-color: #008cbf;
     background-image: url(https://g.twimg.com/Twitter_logo_white.png);
     color: #FFFFFF;
     width: 100%;
     text-align: left;
+    border-color: #007aa6;
+    background-color: #008cbf;
+    &:hover {
+        border-color: #007aa6;
+        background-color: #0686b4;
+    }
     svg {
         display: inline-block;
         vertical-align: middle;
     }
     p {
         display: inline-block;
-        margin-left: 10px;
+        margin-left: 15px;
         vertical-align: middle;
     }
 }

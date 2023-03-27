@@ -12,7 +12,8 @@ function RememberMeField({rememberMe, handleRememberMe}: {rememberMe: boolean|un
         onChange={(e) => handleRememberMe(e)}
         className="checkbox"
       />
-      <label htmlFor="rememberMe" className="field-text">remember me</label>
+      <div className="rememberMe-spacer"></div>
+      <label htmlFor="rememberMe" className="field-text text">remember me</label>
       </div>
       
     </div>

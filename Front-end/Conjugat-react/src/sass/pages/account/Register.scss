@@ -20,24 +20,6 @@
             padding: 60px;
         }
     }
-    .Register-done-container{
-        max-width: 720px;
-        border-radius: 25px;
-        margin: auto;
-        margin-top: 2%;
-        .Header-spacer-top{
-            padding-top: 8%
-        }
-        .Header-spacer-bottom{
-            padding-bottom: 5%;
-        }
-        .ResetUsername-spacer{
-            padding-bottom: 90px;
-        }
-        .PasswordForm-spacer{
-            height: 60px;
-        }
-    }
 }
 
 /* PC */
@@ -63,29 +45,6 @@
         }
         .RegisterForm-spacer{
             padding: 30px;
-        }
-    }
-    .Register-done-container{
-        height: 80%;
-        width: 60%;
-        border-radius: 25px;
-        position: absolute;
-        top: 0;
-        bottom: 15%;
-        left: 0;
-        right: 0;
-        margin: auto;
-        .Header-spacer-top{
-            padding-top: 8%
-        }
-        .Header-spacer-bottom{
-            padding-bottom: 5%;
-        }
-        .ResetUsername-spacer{
-            padding-bottom: 90px;
-        }
-        .PasswordForm-spacer{
-            height: 60px;
         }
     }
 }
@@ -115,29 +74,6 @@
             padding: 20px;
         }
     }
-    .Register-done-container{
-        height: 90%;
-        width: 70%;
-        border-radius: 20px;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        .Header-spacer-top{
-            padding-top: 3%
-        }
-        .Header-spacer-bottom{
-            padding-bottom: 5%;
-        }
-        .ResetUsername-spacer{
-            padding-bottom: 90px;
-        }
-        .PasswordForm-spacer{
-            height: 20px;
-        }
-    }
 }
 
 /* Tablets */
@@ -165,26 +101,6 @@
             padding: 20px;
         }
     }
-    .Register-done-container{
-        height: 90%;
-        width: 85%;
-        border-radius: 15px;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        .Header-spacer-top{
-            padding-top: 8%
-        }
-        .Header-spacer-bottom{
-            padding-bottom: 5%;
-        }
-        .RegisterLinks-spacer{
-            padding-bottom: 90px;
-        }
-    }
 }
 
 /* Mobiles */
@@ -210,29 +126,6 @@
         }
         .RegisterForm-spacer{
             padding: 20px;
-        }
-    }
-    .Register-done-container{
-        height: 90%;
-        width: 85%;
-        border-radius: 15px;
-        position: absolute;
-        top: 10%;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        .Header-spacer-top{
-            padding-top: 8%
-        }
-        .Header-spacer-bottom{
-            padding-bottom: 5%;
-        }
-        .ResetUsername-spacer{
-            padding-bottom: 90px;
-        }
-        .PasswordForm-spacer{
-            height: 40px;
         }
     }
 }

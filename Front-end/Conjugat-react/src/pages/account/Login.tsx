@@ -24,9 +24,7 @@ function Login() {
                 <div className="UsernameLinks-spacer"></div>
 
                 <div className="form-width">
-                    <UsernameForm
-                    onPageChange={setPage}
-                    />
+                    <UsernameForm onPageChange={setPage} />
                 </div>
                 
                 <div className="UsernameForm-spacer"></div>
@@ -43,12 +41,14 @@ function Login() {
                 <Header />
                 <div className="Header-spacer-bottom"></div>
 
-                <ResetUsername
-                onPageChange={setPage}
-                />
+                <div className="form-width">
+                    <ResetUsername onPageChange={setPage} />
+                </div>
                 <div className="ResetUsername-spacer"></div>
 
-                <PasswordForm/>
+                <div className="form-width">
+                    <PasswordForm/>
+                </div>
                 <div className="PasswordForm-spacer"></div>
             </div>
         )
