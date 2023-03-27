@@ -3,7 +3,7 @@
 /* TV screens */
 @media only screen and (min-width: $TV-breakpoint){
     .submit-btn{
-        width: 60%;
+        width: 100%;
         margin: auto;
         input[type="submit"]{
             width: 100%;
@@ -20,7 +20,7 @@
 /* PC */
 @media only screen and (max-width: $PC-max-breakpoint) and (min-width: $PC-min-breakpoint){
     .submit-btn{
-        width: 60%;
+        width: 100%;
         margin: auto;
         input[type="submit"]{
             width: 100%;
@@ -37,7 +37,7 @@
 /* Laptops */
 @media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint){
     .submit-btn{
-        width: 60%;
+        width: 100%;
         margin: auto;
         input[type="submit"]{
             width: 100%;
@@ -54,7 +54,7 @@
 /* Tablets */
 @media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){
     .submit-btn{
-        width: 60%;
+        width: 100%;
         margin: auto;
         input[type="submit"]{
             width: 100%;
@@ -71,7 +71,7 @@
 /* Mobiles */
 @media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint){
     .submit-btn{
-        width: 60%;
+        width: 100%;
         margin: auto;
         input[type="submit"]{
             width: 100%;

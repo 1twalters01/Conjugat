@@ -1,3 +1,5 @@
+import '../../../sass/Components/account/Login/GoogleBtn.scss'
+
 function GetGoogleURL() {
 
     const getGoogleUrl = () => {
@@ -20,7 +22,8 @@ function GetGoogleURL() {
     };
 
     return (
-        <button onClick={getGoogleUrl}>Google</button>
+        <button onClick={getGoogleUrl} type='button'
+        className="google-btn">Google</button>
     )
 }
 

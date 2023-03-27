@@ -5,7 +5,7 @@ import '../../../sass/Components/account/Login/PasswordReset.scss'
 function PasswordReset() {
     return (
       <div className="password-reset">
-        <Link to="../password-reset">
+        <Link to="../password-reset" className="text-link">
           Forgotten your password?
         </Link>
       </div>

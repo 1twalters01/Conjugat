@@ -80,6 +80,7 @@ function PasswordForm() {
 
           <SubmitBtn
             value="Submit"
+            style='strong-gold-btn'
           />
       </form>
     </div>

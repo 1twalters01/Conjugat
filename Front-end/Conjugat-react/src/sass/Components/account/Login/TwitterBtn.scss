@@ -1,0 +1,41 @@
+@import '../../../variables';
+
+.twitter-btn {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    
+    text-align: left;
+    padding-left: 15px;
+
+	display: inline-block;
+	border-radius: 3px;
+    border-color: #007aa6;
+    background-color: #008cbf;
+    background-image: url(https://g.twimg.com/Twitter_logo_white.png);
+    color: #FFFFFF;
+    width: 100%;
+    text-align: left;
+    svg {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    p {
+        display: inline-block;
+        margin-left: 10px;
+        vertical-align: middle;
+    }
+}
+
+@media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){
+    .twitter-btn {
+        height: 40px;
+        width: 80%;
+        text-align: left;
+        padding-left: 15px;
+    }
+}

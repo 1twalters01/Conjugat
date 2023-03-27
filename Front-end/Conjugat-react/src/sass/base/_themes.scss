@@ -53,6 +53,14 @@
             transition: 0.6s;
         }
     }
+    .strong-green-btn {
+        background-color: $success-500;
+        color: $primary-800;
+        &:hover{
+            background-color: $success-700;
+            transition: 0.6s;
+        }
+    }
 
     // Weak buttons
     .weak-gold-btn {
@@ -76,7 +84,15 @@
     }
 
     .text { color: $shades-0; }
-
+    .text-link {
+        color: $shades-0;
+        &:hover {
+            color: $primary-200;
+        }
+        &:active {
+            color: $primary-300;
+        }
+    }
 
 
     

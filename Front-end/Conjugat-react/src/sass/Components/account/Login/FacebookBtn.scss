@@ -1,0 +1,57 @@
+@import '../../../variables';
+
+.btn-fb {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    
+	display: inline-block;
+	border-radius: 3px;
+	text-decoration: none;
+	box-shadow: 0 2px 4px 0 #00000040;
+	transition: background-color .218s, border-color .218s, box-shadow .218s;
+    padding-top: 1.5px;
+	background: #4267b2;
+    width: 100%;
+	&:hover{
+		box-shadow: 0 0 3px 3px rgba(#3b5998,.3);
+    }
+	&:active {
+	    background-color: #3b5998;
+    }
+	.fb-content p {
+		color: #ffffff;
+    }
+	.fb-content{
+		display: flex;
+		align-items: center;
+		width: 10%;
+		height: 40px;
+		.logo {
+			padding: 0 15px 0 15px ;
+            padding-top: 10px;
+			height: inherit;
+        }
+		p {
+			width: 100%;
+			line-height: 1;
+			letter-spacing: .21px;
+			text-align: center;
+			font-weight: 500;
+			font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            padding-right: 10px;
+        }
+    }
+}
+	
+
+@media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){
+    .btn-fb {
+        width: 80%;
+    }
+}

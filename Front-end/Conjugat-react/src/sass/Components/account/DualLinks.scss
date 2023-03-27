@@ -47,7 +47,7 @@
 /* Laptops */
 @media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint){
     .links{
-        width: 50%;
+        width: 60%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 10%;
@@ -69,7 +69,7 @@
 /* Tablets */
 @media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){
     .links{
-        width: 50%;
+        width: 60%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 10%;
@@ -91,7 +91,7 @@
 /* Mobiles */
 @media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint){
     .links{
-        width: 50%;
+        width: 70%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 10%;
