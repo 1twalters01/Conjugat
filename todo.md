@@ -128,6 +128,37 @@ Refactor react code once again
 * Privacy
 * Terms
 
+Choose light theme for
+1. account
+* Activate
+* Login
+* Logout
+* Password reset
+* Password reset token
+2. newsletter
+* Subscribe
+* Unsubscribe
+3. settings
+* Change email
+* Change password
+* Change username
+* Close account
+* Premium
+* Reset account
+* Themes
+* Two factor authentication
+4. subscriptions
+* Cancelled
+* Process
+* Success
+5. Misc
+* Contact
+* FAQs
+* Home
+* Landing page
+* Privacy
+* Terms
+
 Create and test verbs functionality
 
 Create verb functionality for react
