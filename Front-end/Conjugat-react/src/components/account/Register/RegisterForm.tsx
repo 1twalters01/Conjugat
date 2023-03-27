@@ -17,20 +17,25 @@ function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {
   
     function submit(e:FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        AxiosInstance.Unauthorised
-        .post('account/register/', {
-            username: username,
-            email: email,
-            password: password,
-            password2: password2,
-            domain: domain
-        })
-        .then(res=>{
-            onDoneChange(true)
-        })
-        .catch(err=>{
-            toast.error(err.response.data.error)
-        })
+        if (password == password2) {
+            AxiosInstance.Unauthorised
+            .post('account/register/', {
+                username: username,
+                email: email,
+                password: password,
+                password2: password2,
+                domain: domain
+            })
+            .then(res=>{
+                onDoneChange(true)
+            })
+            .catch(err=>{
+                toast.error(err.response.data.error)
+            })
+        }
+        else {
+          toast.error('Passwords do not match')
+        }
     }
 
     return (
@@ -71,6 +76,7 @@ function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {
   
           <SubmitBtn
             value="Sign up"
+            style="strong-gold-btn"
           />
         </form>
       </div>

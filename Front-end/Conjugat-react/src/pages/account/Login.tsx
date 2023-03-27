@@ -30,6 +30,7 @@ function Login() {
                 <div className="UsernameForm-spacer"></div>
 
                 <AlternateLogins />
+                <div className="UsernameForm-spacer"></div>
             </div>          
         )
     }

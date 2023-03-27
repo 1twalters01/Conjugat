@@ -21,9 +21,12 @@ function Register() {
               <RegisterLinks />
               <div className="RegisterLinks-spacer"></div>
               
-              <RegisterForm
-                onDoneChange={setDone}
-              />
+              <div className="form-width">
+                  <RegisterForm
+                  onDoneChange={setDone}
+                  />
+              </div>
+              
               <div className="RegisterForm-spacer"></div>
             </div>
           </div>

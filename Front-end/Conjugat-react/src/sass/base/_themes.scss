@@ -83,6 +83,16 @@
         }
     }
 
+    .weak-blue-btn {
+        background-color: transparent;
+        color: $secondary-100;  
+        border-color: $primary-400;
+        &:hover {
+            background-color: $primary-700;
+            transition: 0.4s;
+        }
+    }
+
     // Text
     .text { color: $shades-0; }
     .text-link {
