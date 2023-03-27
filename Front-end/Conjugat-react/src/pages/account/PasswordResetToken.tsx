@@ -11,19 +11,21 @@ function PasswordResetToken() {
 
     if (done == false) {
         return (
-          <div className="Password-change-container">
-            <div className="Header-spacer-top"></div>
-            <Header />
-            <div className="Header-spacer-bottom"></div>
+            <div className="Password-change-container container">
+                <div className="Header-spacer-top"></div>
+                <Header />
+                <div className="Header-spacer-bottom"></div>
 
-            <h1>Change Password</h1>
-            <div className="Title-spacer"></div>
+                <h1 className="blue-text">Change Password</h1>
+                <div className="Title-spacer"></div>
 
-            <PasswordChangeForm
-            onDoneChange={setDone}
-            />
-            <div className="PasswordChangeForm-spacer"></div>
-          </div>
+                <div className="form-width">
+                    <PasswordChangeForm
+                    onDoneChange={setDone}
+                    />
+                </div>
+                <div className="PasswordChangeForm-spacer"></div>
+            </div>
         )
     }
     else {

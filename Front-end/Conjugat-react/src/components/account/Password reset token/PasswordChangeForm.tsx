@@ -50,6 +50,7 @@ function PasswordChangeForm({ onDoneChange }: {onDoneChange:Function}) {
           
           <SubmitBtn
             value="Change Password"
+            style="strong-gold-btn"
           />
         </form>
       </div>
