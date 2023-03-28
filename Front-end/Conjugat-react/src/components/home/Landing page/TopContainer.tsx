@@ -22,6 +22,9 @@ function TopContainer() {
     }
     return (
         <div className="Landing-page-top-container">
+            <div className="right-container">
+                <p className='text'>Image will go here</p>
+            </div>
             <div className="left-container">
                 <div className="title">
                     <h1 className='header'>Conjugat Premium</h1>
@@ -35,7 +38,7 @@ function TopContainer() {
                         </div>
                         <div className="para para-2" ref={para2}>
                             <p className="text">We have 2000 verbs for each language so you won't mess up your grammar again. Practice all of the different types of irregular verbs and never make a mistake with them again.</p>
-                            <p className="text">Practice more than just verbs - you can practice noun and adjective genders in the same fun way with Conjugat Premium. Let us know what we should add! </p>
+                            <p className="text">Practice more than just verbs - you can practice noun and adjective genders in the same way with Conjugat Premium. Let us know what we should add! </p>
                         </div>
                     </div>
                     
@@ -48,14 +51,12 @@ function TopContainer() {
                 </div>
 
 
-                    <Link to='/account/register'>
-                        <p className="join strong-blue-btn">Join now</p>
-                    </Link>
+                <Link to='/account/register'>
+                    <p className="join strong-blue-btn">Join now</p>
+                </Link>
             </div>
     
-            <div className="right-container">
-                <p className='text'>Image will go here</p>
-            </div>
+            
         </div>
     )
 }

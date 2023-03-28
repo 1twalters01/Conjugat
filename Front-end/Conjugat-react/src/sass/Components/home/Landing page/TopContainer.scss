@@ -155,10 +155,142 @@
 
 /* Tablets */
 @media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint) {
-
+    .Landing-page-top-container{
+        display: grid;
+        grid-template-rows: 1.05fr 1fr;
+        .left-container{
+            margin: auto;
+            .title{
+                position: absolute;
+                top: 100px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                text-align: center;
+            }
+            .left-container {
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                align-self: center;
+                justify-self: center;
+            }
+            .right-container {
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                align-self: center;
+                justify-self: center;
+            }
+            .para{
+                margin-bottom: 10px;
+                &.para-2{
+                    display: none;
+                }
+                .text{
+                    margin-bottom: 1rem;
+                }
+            }
+            .carousel-btns{
+                display: grid;
+                justify-content: center;
+                margin: auto;
+                .dot{
+                    height: 13px;
+                    width: 13px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin-bottom: 30px;
+                    cursor: pointer;
+                    &.dot-1{
+                        background-color: #00c04b;
+                        margin-right: 10px;
+                    }
+                    &.dot-2 {
+                        background-color: #b9b8b9;
+                    }
+                }
+            }
+            .join{
+                width: 60%;
+                text-align: center;
+                border-radius: 20px;
+                padding: 10px 50px;
+                margin: auto;
+            }
+        }
+    }
 }
 
 /* Mobiles */
 @media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint) {
-
+    .Landing-page-top-container{
+        display: grid;
+        grid-template-rows: 1.05fr 1fr;
+        .left-container{
+            margin: auto;
+            .title{
+                position: absolute;
+                top: 90px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                text-align: center;
+            }
+            .left-container {
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                align-self: center;
+                justify-self: center;
+            }
+            .right-container {
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                align-self: center;
+                justify-self: center;
+            }
+            .para{
+                margin-bottom: 10px;
+                &.para-2{
+                    display: none;
+                }
+                .text{
+                    margin-bottom: 1rem;
+                }
+            }
+            .carousel-btns{
+                display: grid;
+                justify-content: center;
+                margin: auto;
+                .dot{
+                    height: 13px;
+                    width: 13px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin-bottom: 30px;
+                    cursor: pointer;
+                    &.dot-1{
+                        background-color: #00c04b;
+                        margin-right: 10px;
+                    }
+                    &.dot-2 {
+                        background-color: #b9b8b9;
+                    }
+                }
+            }
+            .join{
+                width: 60%;
+                text-align: center;
+                border-radius: 20px;
+                padding: 10px 50px;
+                margin: auto;
+            }
+        }
+    }
 }
