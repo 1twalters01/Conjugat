@@ -1,0 +1,121 @@
+@import '../../../variables';
+
+/* TV screens */
+@media only screen and (min-width: $TV-breakpoint) {
+    .Landing-page-bottom-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap:2.5em;
+        margin: auto;
+        .Text {
+            margin-bottom: 20px;
+        }
+        Link {
+            text-align: center;
+        }
+        .link-btn{
+            text-align: center;
+            border: 3px solid;
+            border-radius: 20px;
+            padding: 10px 50px;
+            margin: auto;
+        }
+    }
+}
+
+/* PC */
+@media only screen and (max-width: $PC-max-breakpoint) and (min-width: $PC-min-breakpoint) {
+    .Landing-page-bottom-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1.8em;
+        margin: auto;
+        .Text {
+            margin-bottom: 20px;
+        }
+        Link {
+            text-align: center;
+        }
+        .link-btn{
+            text-align: center;
+            border: 3px solid;
+            border-radius: 20px;
+            padding: 10px 50px;
+            margin: auto;
+        }
+    }
+}
+
+/* Laptops */
+@media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint) {
+    .Landing-page-bottom-container {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-gap: 1.8em;
+        margin: auto;
+        .section {
+            display: grid;
+            grid-template-columns: 0.8fr 0.2fr;
+            grid-gap: 30px;
+        }
+        .Text {
+            margin-bottom: 20px;
+        }
+        Link {
+            text-align: center;
+        }
+        .link-btn{
+            text-align: center;
+            border: 3px solid;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin: 1rem auto auto auto;
+        }
+    }
+}
+
+/* Tablets */
+@media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint) {
+    .Landing-page-bottom-container {
+        margin: auto;
+        .section{
+            margin-bottom: 70px;
+        }
+        .Text {
+            margin-bottom: 0px;
+        }
+        Link {
+            text-align: center;
+        }
+        .link-btn{
+            text-align: center;
+            border: 3px solid;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin: 1.5rem auto auto auto;
+        }
+    }
+}
+
+/* Mobiles */
+@media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint) {
+    .Landing-page-bottom-container {
+        margin: auto;
+        .section{
+            margin-bottom: 60px;
+        }
+        .Text {
+            margin-bottom: 0px;
+        }
+        Link {
+            text-align: center;
+        }
+        .link-btn{
+            text-align: center;
+            border: 3px solid;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin: 1.5rem auto auto auto;
+        }
+    }
+}

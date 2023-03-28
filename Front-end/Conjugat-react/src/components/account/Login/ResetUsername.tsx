@@ -18,7 +18,7 @@ function ResetUsername({ onPageChange}: { onPageChange:Function }) {
         <form onSubmit={(e) => submit(e)}>
           <input type="submit"
             value="Different username"
-            className="register weak-btn"
+            className="register strong-white-btn"
           />
         </form>
       </div>

@@ -65,7 +65,6 @@ Add colour to the react pages (SCSS)
 * Activate
 * Logout
 * Password reset confirm
-* Password reset done
 * Password reset token
 2. newsletter
 * Subscribe

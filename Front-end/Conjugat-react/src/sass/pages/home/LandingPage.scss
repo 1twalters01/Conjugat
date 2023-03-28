@@ -1,0 +1,134 @@
+@import '../../variables';
+
+/* TV screens */
+@media only screen and (min-width: $TV-breakpoint){
+    .Landing-page-container {
+        max-width: 1150px;
+        border-radius: 25px;
+        margin: auto;
+        margin-top: 2%;
+        .Navbar-spacer {
+            padding-top: 3%;
+            width: 80%;
+            margin: auto;
+        }
+        .TopContainer-spacer {
+            padding-top: 6%;
+            width: 90%;
+            margin: auto;
+        }
+        .BottomContainer-spacer {
+            padding: 5% 0 10% 0;
+            width: 85%;
+            margin: auto auto 3% auto;
+        }
+    }
+}
+
+/* PC */
+@media only screen and (max-width: $PC-max-breakpoint) and (min-width: $PC-min-breakpoint){
+    .Landing-page-container {
+        display: block;
+        min-height: 80%;
+        width: 95%;
+        border-radius: 25px;
+        padding: 0 10px 0px 10px;
+        margin: 2% auto 20px auto;
+    }
+    .Navbar-spacer {
+        padding-top: 3%;
+        width: 80%;
+        margin: auto;
+    }
+    .TopContainer-spacer {
+        padding-top: 7%;
+        width: 90%;
+        margin: auto;
+    }
+    .BottomContainer-spacer {
+        padding: 5% 0 10% 0;
+        width: 85%;
+        margin: auto auto 2% auto;
+    }
+}
+
+/* Laptops */
+@media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint){
+    .Landing-page-container {
+        display: block;
+        min-height: 80%;
+        width: 95%;
+        border-radius: 20px;
+        padding: 0 10px 0px 10px;
+        margin: 2.5% auto 0px auto;
+    }
+    .Navbar-spacer {
+        padding-top: 3%;
+        width: 90%;
+        margin: auto;
+    }
+    .TopContainer-spacer {
+        padding-top: 7%;
+        width: 80%;
+        margin: auto;
+    }
+    .BottomContainer-spacer {
+        padding: 5% 0 10% 0;
+        width: 80%;
+        margin: auto auto 2.5% auto;
+    }
+}
+
+/* Tablets */
+@media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){
+    .Landing-page-container {
+        display: block;
+        min-height: 80%;
+        width: 95%;
+        border-radius: 15px;
+        padding: 0 10px 0px 10px;
+        margin: 2.5% auto 0px auto;
+    }
+    .Navbar-spacer {
+        padding-top: 3%;
+        width: 90%;
+        margin: auto;
+    }
+    .TopContainer-spacer {
+        padding-top: 7%;
+        width: 80%;
+        margin: auto;
+    }
+    .BottomContainer-spacer {
+        padding: 5% 0 10% 0;
+        width: 80%;
+        margin: auto auto 2.5% auto;
+    }
+}
+
+/* Mobiles */
+@media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint){
+    .Landing-page-container {
+        display: block;
+        min-height: 80%;
+        width: 90%;
+        border-radius: 15px;
+        padding: 0 10px 0px 10px;
+        margin: 5% auto 0px auto;
+    }
+    .Navbar-spacer {
+        padding-top: 3%;
+        width: 90%;
+        margin: auto;
+    }
+    .TopContainer-spacer {
+        padding-top: 7%;
+        width: 80%;
+        margin: auto;
+    }
+    .BottomContainer-spacer {
+        padding: 25% 0 10% 0;
+        width: 80%;
+        margin: auto auto 5% auto;
+    }
+}

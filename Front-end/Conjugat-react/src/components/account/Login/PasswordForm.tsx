@@ -79,7 +79,7 @@ function PasswordForm() {
           <div className="passwordReset-spacer"></div>
 
           <SubmitBtn
-            value="Submit"
+            value="Log in"
             style='strong-gold-btn'
           />
       </form>

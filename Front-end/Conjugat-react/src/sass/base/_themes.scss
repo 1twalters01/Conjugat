@@ -45,6 +45,14 @@
     }
 
     // Strong buttons
+    .strong-white-btn {
+        background-color: $shades-0;
+        color: $primary-800;
+        &:hover{
+            background-color: #d1d1d1;
+            transition: 0.4s;
+        }
+    }
     .strong-gold-btn {
         background-color: $secondary-700;
         color: $primary-800;
@@ -54,10 +62,20 @@
         }
     }
     .strong-green-btn {
-        background-color: $success-500;
-        color: $primary-800;
+        background-color: $success-900;
+        color: $secondary-100;
+        border-color: $success-900;
         &:hover{
             background-color: $success-700;
+            transition: 0.4s;
+        }
+    }
+    .strong-blue-btn {
+        background-color: $primary-500;
+        color: $secondary-100;
+        border-color: $primary-500;
+        &:hover{
+            background-color: $primary-400;
             transition: 0.4s;
         }
     }
@@ -96,13 +114,20 @@
     // Text
     .text { color: $shades-0; }
     .blue-text { color: $primary-400;}
-    .text-link {
+    .text-blue-link {
         color: $shades-0;
         &:hover {
             color: $primary-200;
         }
         &:active {
             color: $primary-300;
+        }
+    }
+    .text-gold-link {
+        color: $shades-0;
+        &:hover {
+            color: $secondary-700;
+            transition: 0.4s;
         }
     }
 
