@@ -34,11 +34,11 @@ function TopContainer() {
                     <div className="paragraphs">
                         <div className="para para-1" ref={para1}>
                             <p className="text">At Conjugat we are here to help you learn verbs and tenses in the order that you will be most likely to encounter them. We use spaced repetition to get you to memorise them.</p>
-                            <p className="text">We have 5 languages to choose from and growing. Perfect any of our growing list of languages to be able to make new friends on your travels around the globe.</p>
+                            <p className="text">We have 5 languages to choose from and growing. Perfect any of our growing list of languages to be able to make friends on your travels around the globe.</p>
                         </div>
                         <div className="para para-2" ref={para2}>
                             <p className="text">We have 2000 verbs for each language so you won't mess up your grammar again. Practice all of the different types of irregular verbs and never make a mistake with them again.</p>
-                            <p className="text">Practice more than just verbs - you can practice noun and adjective genders in the same way with Conjugat Premium. Let us know what we should add! </p>
+                            <p className="text">Practice more than just verbs - you can practice noun and adjective genders in the same fun way with Conjugat Premium. Let us know what else we should add! </p>
                         </div>
                     </div>
                     

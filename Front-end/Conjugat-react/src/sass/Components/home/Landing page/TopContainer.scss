@@ -4,7 +4,7 @@
 @media only screen and (min-width: $TV-breakpoint) {
     .Landing-page-top-container{
         display: grid;
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 60% 40%;
         margin: auto;
         .left-container{
             .title{
@@ -55,7 +55,7 @@
 @media only screen and (max-width: $PC-max-breakpoint) and (min-width: $PC-min-breakpoint) {
     .Landing-page-top-container{
         display: grid;
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 60% 40%;
         margin: auto;
         .left-container{
             .title{
