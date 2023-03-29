@@ -77,7 +77,7 @@ function OauthLogin() {
     }
     
     return (
-        <p>Loading...</p>
+        <p className="text">Loading...</p>
     )
 }
 

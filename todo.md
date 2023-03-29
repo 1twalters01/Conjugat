@@ -3,9 +3,7 @@ Update Readme
 
 Finish designing web pages:
 1. account
-* Activate
-* Password reset confirm
-* Password reset done
+* Password reset token done
 2. newsletter
 * Subscribe
 * Unsubscribe
@@ -32,8 +30,6 @@ Finish designing web pages:
 Add styling to the react pages (SCSS)
 Fix navbar for phones / tablets for landing page
 1. account
-* Activate
-* Password reset done
 * Password reset token done
 2. newsletter
 * Subscribe
@@ -60,9 +56,7 @@ Fix navbar for phones / tablets for landing page
 
 Add colour to the react pages (SCSS)
 1. account
-* Activate
-* Password reset confirm
-* Password reset token
+* Password reset token done
 2. newsletter
 * Subscribe
 * Unsubscribe
