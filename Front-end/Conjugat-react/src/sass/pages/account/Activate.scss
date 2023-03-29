@@ -1,0 +1,163 @@
+@import '../../variables';
+
+/* TV screens */
+@media only screen and (min-width: $TV-breakpoint){
+    .Activate-container{
+        max-width: 720px;
+        border-radius: 25px;
+        margin: 2% auto auto auto;
+        .header-spacer{
+            padding-top: 8%;
+        }
+        .text-spacer {
+            width: 70%;
+            margin: 40px auto auto auto;
+        }
+        .btn-spacer {
+            width: 40%;
+            margin: 60px auto auto auto;
+            padding-bottom: 40px;
+            .login-btn {
+                width: 100%;
+                padding: 8px 50px;
+                border-radius: 15px;
+                text-align: center;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/* PC */
+@media only screen and (max-width: $PC-max-breakpoint) and (min-width: $PC-min-breakpoint){
+    .Activate-container{
+        height: 80%;
+        width: 60%;
+        border-radius: 25px;
+        padding: 0 10px 0 10px;
+        margin: 20px auto 20px auto;
+        .header-spacer{
+            padding-top: 8%;
+        }
+        .text-spacer {
+            width: 70%;
+            margin: 40px auto auto auto;
+        }
+        .btn-spacer {
+            width: 40%;
+            margin: 60px auto auto auto;
+            padding-bottom: 40px;
+            .login-btn {
+                width: 100%;
+                padding: 8px 50px;
+                border-radius: 15px;
+                text-align: center;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/* Laptops */
+@media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint){
+    .Activate-container{
+        display: block;
+        min-height: 90%;
+        width: 70%;
+        border-radius: 20px;
+        padding: 0 10px 40px 10px;
+        margin: 20px auto 0px auto;
+        .header-spacer{
+            padding-top: 6.5%;
+        }
+        .text-spacer {
+            width: 70%;
+            margin: 35px auto auto auto;
+        }
+        .btn-spacer {
+            width: 40%;
+            margin: 50px auto auto auto;
+            .login-btn {
+                width: 100%;
+                padding: 8px 50px;
+                border-radius: 15px;
+                text-align: center;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/* Tablets */
+@media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){
+    .Activate-container{
+        display: block;
+        min-height: 110%;
+        width: 85%;
+        border-radius: 15px;
+        padding: 0 10px 50px 10px;
+        margin: 20px auto 20px auto;
+        .header-spacer{
+            padding-top: 6.5%;
+            width: 80%;
+            margin: auto;
+        }
+        .text-spacer {
+            width: 70%;
+            margin: 20px auto auto auto;
+            text-align: center;
+        }
+        .btn-spacer {
+            width: 40%;
+            margin: 50px auto auto auto;
+            .login-btn {
+                width: 100%;
+                padding: 8px 50px;
+                border-radius: 15px;
+                text-align: center;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/* Mobiles */
+@media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint){
+    .Activate-container{
+        display: block;
+        min-height: 90%;
+        width: 85%;
+        border-radius: 15px;
+        padding: 0 10px 0px 10px;
+        margin: 20px auto 20px auto;
+        .header-spacer{
+            padding-top: 15%
+        }
+        .text-spacer {
+            width: 70%;
+            margin: 40px auto auto auto;
+        }
+        .btn-spacer {
+            width: 40%;
+            margin: 50px auto auto auto;
+            padding-bottom: 40px;
+            .login-btn {
+                width: 100%;
+                padding: 8px 50px;
+                border-radius: 15px;
+                text-align: center;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
