@@ -7,11 +7,8 @@
         border-radius: 25px;
         margin: auto;
         margin-top: 2%;
-        .Header-spacer-top{
-            padding-top: 8%
-        }
-        .Header-spacer-bottom{
-            padding-bottom: 5%;
+        .Header-spacer{
+            padding: 8% 0 5% 0;
         }
         .UsernameLinks-spacer{
             padding-bottom: 90px;
@@ -24,7 +21,7 @@
             margin: auto;
         }
         .AlternameLogins-spacer {
-            height: 20px;
+            padding-bottom: 20px;
         }
     }
 }
@@ -37,11 +34,8 @@
         border-radius: 25px;
         padding: 0 10px 30px 10px;
         margin: 20px auto 20px auto;
-        .Header-spacer-top{
-            padding-top: 8%
-        }
-        .Header-spacer-bottom{
-            padding-bottom: 5%;
+        .Header-spacer{
+            padding: 8% 0 5% 0;
         }
         .UsernameLinks-spacer{
             padding-bottom: 90px;
@@ -54,7 +48,7 @@
             margin: auto;
         }
         .AlternameLogins-spacer {
-            height: 20px;
+            padding-bottom: 20px;
         }
     }
 }
@@ -68,8 +62,8 @@
         border-radius: 20px;
         padding: 0 10px 30px 10px;
         margin: 20px auto 20px auto;
-        .Header-spacer-top{
-            height: 40px;
+        .Header-spacer{
+            padding: 6.5% 0 5% 0;
         }
         .Header-spacer-bottom{
             padding-bottom: 5%;
@@ -85,7 +79,7 @@
             margin: auto;
         }
         .AlternameLogins-spacer {
-            height: 20px;
+            padding-bottom: 20px;
         }
     }
 }
@@ -99,11 +93,8 @@
         border-radius: 15px;
         padding: 0 10px 30px 10px;
         margin: 20px auto 20px auto;
-        .Header-spacer-top{
-            padding-top: 6%;
-        }
-        .Header-spacer-bottom{
-            padding-bottom: 8%;
+        .Header-spacer{
+            padding: 6% 0 8% 0;
         }
         .UsernameLinks-spacer{
             padding-bottom: 70px;
@@ -116,7 +107,7 @@
             margin: auto;
         }
         .AlternameLogins-spacer {
-            height: 20px;
+            padding-bottom: 20px;
         }
     }
 }
@@ -130,11 +121,8 @@
         border-radius: 15px;
         padding: 0 10px 0px 10px;
         margin: 20px auto 20px auto;
-        .Header-spacer-top{
-            padding-top: 15%
-        }
-        .Header-spacer-bottom{
-            padding-bottom: 8%;
+        .Header-spacer{
+            padding: 15% 0 8% 0;
         }
         .UsernameLinks-spacer {
             padding-bottom: 60px;
@@ -150,7 +138,7 @@
             padding-bottom: 30px;
         }
         .AlternameLogins-spacer {
-            height: 20px;
+            padding-bottom: 20px;
         }
     }
 }

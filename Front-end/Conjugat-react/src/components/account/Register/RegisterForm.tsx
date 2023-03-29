@@ -40,45 +40,49 @@ function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {
 
     return (
       <div className="register-form">
-        <form onSubmit={(e) => submit(e)}>
-          <TextField
-            id='username'
-            value = {username}
-            handleText={(e:ChangeEvent<HTMLInputElement>) => handleText(e, setUsername)}
-            labelText = "Username"
-            required={false}
-          />
-          <div className="username-spacer"></div>
-          
-          <EmailField
-            id='email'
-            email={email}
-            labelText="Email"
-            handleEmail={(e:ChangeEvent<HTMLInputElement>) => handleText(e, setEmail)}
-          />
-          <div className="email-spacer"></div>
-          
-          <PasswordField
-            password = {password}
-            handlePassword = {(e:ChangeEvent<HTMLInputElement>) => handleText(e, setPassword)}
-            id = "password"
-            labelText="Password"
-          />
-          <div className="password-spacer"></div>
-          
-          <PasswordField
-            password = {password2}
-            handlePassword = {(e:ChangeEvent<HTMLInputElement>) => handleText(e, setPassword2)}
-            id = "password2"
-            labelText="Repeat password"
-          />
-          <div className="password-spacer2"></div>
-  
-          <SubmitBtn
-            value="Sign up"
-            style="strong-gold-btn"
-          />
-        </form>
+          <form onSubmit={(e) => submit(e)}>
+              <div className="username-spacer">
+                  <TextField
+                  id='username'
+                  value = {username}
+                  handleText={(e:ChangeEvent<HTMLInputElement>) => handleText(e, setUsername)}
+                  labelText = "Username"
+                  required={false}
+                  />
+              </div>
+              
+              <div className="email-spacer">
+                  <EmailField
+                  id='email'
+                  email={email}
+                  labelText="Email"
+                  handleEmail={(e:ChangeEvent<HTMLInputElement>) => handleText(e, setEmail)}
+                  />
+              </div>
+              
+              <div className="password-spacer">
+                  <PasswordField
+                    password = {password}
+                    handlePassword = {(e:ChangeEvent<HTMLInputElement>) => handleText(e, setPassword)}
+                    id = "password"
+                    labelText="Password"
+                  />
+              </div>
+              
+              <div className="password-spacer2">
+                  <PasswordField
+                    password = {password2}
+                    handlePassword = {(e:ChangeEvent<HTMLInputElement>) => handleText(e, setPassword2)}
+                    id = "password2"
+                    labelText="Repeat password"
+                  />
+              </div>
+      
+              <SubmitBtn
+                value="Sign up"
+                style="strong-gold-btn"
+              />
+          </form>
       </div>
     )
 }

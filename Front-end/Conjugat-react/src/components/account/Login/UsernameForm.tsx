@@ -31,21 +31,22 @@ function UsernameForm({ onPageChange, }: { onPageChange:Function }) {
   
     return (
       <div className="login-form">
-        <form onSubmit={(e) => submit(e)}>
-          <TextField
-            id="username"
-            value={ username }
-            handleText={(e:ChangeEvent<HTMLInputElement>) => handleText(e, setUsername)}
-            labelText = "Email or Username"
-            required={true}
-          />
-          <div className="username-spacer"></div>
+          <form onSubmit={(e) => submit(e)}>
+              <div className="username-spacer">
+                  <TextField
+                    id="username"
+                    value={ username }
+                    handleText={(e:ChangeEvent<HTMLInputElement>) => handleText(e, setUsername)}
+                    labelText = "Email or Username"
+                    required={true}
+                  />
+              </div>
 
-          <SubmitBtn
-            value="Continue"
-            style= 'strong-gold-btn'
-          />
-        </form>
+              <SubmitBtn
+                value="Continue"
+                style= 'strong-gold-btn'
+              />
+          </form>
       </div>
     )
 }

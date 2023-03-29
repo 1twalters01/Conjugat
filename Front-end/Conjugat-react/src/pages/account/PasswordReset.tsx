@@ -17,14 +17,14 @@ function PasswordReset() {
                     <Header />
                 </div>
                 
-
-                <RegisterLinks />
-                <div className="RegisterLinks-spacer"></div>
+                
+                <div className="RegisterLinks-spacer">
+                    <RegisterLinks />
+                </div>
                 
                 <div className="form-width">
                     <PasswordResetForm onDoneChange={setDone} />
                 </div>
-                <div className="PasswordResetForm-spacer"></div>
             </div>
         )
     }

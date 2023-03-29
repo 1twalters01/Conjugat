@@ -27,20 +27,21 @@ function PasswordResetForm({onDoneChange}: {onDoneChange:Function}) {
   
     return (
       <div className="passwordReset-form">
-        <form onSubmit={(e) => submit(e)}>
-          <EmailField
-            id='email'
-            email={email}
-            labelText='Email'
-            handleEmail={(e:ChangeEvent<HTMLInputElement>) => handleText(e, setEmail)}
-          />
-          <div className="email-spacer"></div>
+          <form onSubmit={(e) => submit(e)}>
+              <div className="email-spacer">
+                  <EmailField
+                  id='email'
+                  email={email}
+                  labelText='Email'
+                  handleEmail={(e:ChangeEvent<HTMLInputElement>) => handleText(e, setEmail)}
+                  />
+              </div>
 
-          <SubmitBtn
-            value="Reset Password"
-            style="strong-gold-btn"
-          />
-        </form>
+              <SubmitBtn
+              value="Reset Password"
+              style="strong-gold-btn"
+              />
+          </form>
       </div>
     )
 }

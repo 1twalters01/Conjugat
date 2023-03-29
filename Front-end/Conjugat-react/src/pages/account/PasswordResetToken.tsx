@@ -9,26 +9,26 @@ function PasswordResetToken() {
     Authorization.NotAuthRequired()
     const [done, setDone] = useState(false)
 
-    // if (done == false) {
-    //     return (
-    //         <div className="Password-change-container container">
-    //             <div className="Header-spacer">
-    //                 <Header />
-    //             </div>
+    if (done == false) {
+        return (
+            <div className="Password-change-container container">
+                <div className="Header-spacer">
+                    <Header />
+                </div>
                 
-    //             <div className="Title-spacer">
-    //                 <h1 className="blue-text">Change Password</h1>
-    //             </div>
+                <div className="Title-spacer">
+                    <h1 className="blue-text">Change Password</h1>
+                </div>
 
-    //             <div className="form-width">
-    //                 <PasswordChangeForm
-    //                 onDoneChange={setDone}
-    //                 />
-    //             </div>
-    //         </div>
-    //     )
-    // }
-    // else {
+                <div className="form-width">
+                    <PasswordChangeForm
+                    onDoneChange={setDone}
+                    />
+                </div>
+            </div>
+        )
+    }
+    else {
         return (
           <div className="Password-change-container container">
               <div className="Header-spacer">
@@ -40,7 +40,7 @@ function PasswordResetToken() {
               </div>
           </div>
         )
-      // }
+      }
 }
 
 

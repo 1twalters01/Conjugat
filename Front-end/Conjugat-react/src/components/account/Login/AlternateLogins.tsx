@@ -5,14 +5,14 @@ import '../../../sass/Components/account/Login/AlternateLogins.scss'
 
 function AlternateLogins() {
     return (
-      <div className="alternatives">
-        <p className="options text">Or log-in via:</p>
-        <div className="alt-login">
-          <GetFacebookURL />
-          <GetGoogleURL />
-          <GetTwitterURL />
+        <div className="alternatives">
+            <p className="options text">Or log-in via:</p>
+            <div className="alt-login">
+                <GetFacebookURL />
+                <GetGoogleURL />
+                <GetTwitterURL />
+            </div>
         </div>
-      </div>
     )
   }
 

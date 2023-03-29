@@ -16,12 +16,13 @@ function Login() {
     if (page == 'username') {
         return (
             <div className="Login-username-container container">
-                <div className="Header-spacer-top"></div>
-                <Header />
-                <div className="Header-spacer-bottom"></div>
+                <div className="Header-spacer">
+                    <Header />
+                </div>
 
-                <UsernameLinks />
-                <div className="UsernameLinks-spacer"></div>
+                <div className="UsernameLinks-spacer">
+                    <UsernameLinks />
+                </div>
 
                 <div className="form-width">
                     <UsernameForm onPageChange={setPage} />
@@ -29,8 +30,10 @@ function Login() {
                 
                 <div className="UsernameForm-spacer"></div>
 
-                <AlternateLogins />
-                <div className="AlternameLogins-spacer"></div>
+                
+                <div className="AlternameLogins-spacer">
+                    <AlternateLogins />
+                </div>
             </div>          
         )
     }
@@ -38,19 +41,18 @@ function Login() {
     if (page == 'password') {
         return (
             <div className="Login-password-container container">
-                <div className="Header-spacer-top"></div>
-                <Header />
-                <div className="Header-spacer-bottom"></div>
+                <div className="Header-spacer">
+                    <Header />
+                </div>
+                
 
-                <div className="form-width">
+                <div className="ResetUsername-spacer form-width">
                     <ResetUsername onPageChange={setPage} />
                 </div>
-                <div className="ResetUsername-spacer"></div>
 
                 <div className="form-width">
                     <PasswordForm/>
                 </div>
-                <div className="PasswordForm-spacer"></div>
             </div>
         )
     }
