@@ -27,10 +27,14 @@ function Logout() {
   }
   else if (LoggedOut==true) {
     return (
-      <div>
-        <Header />
-
-        <LogoutResponse />
+      <div className="Logout-container container">
+        <div className="header-spacer">
+            <Header />
+        </div>
+        
+        <div className="logout-response-spacer">
+            <LogoutResponse />
+        </div>
       </div>
     )
   }
