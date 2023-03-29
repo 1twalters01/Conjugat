@@ -38,7 +38,7 @@ function TopContainer() {
                         </div>
                         <div className="para para-2" ref={para2}>
                             <p className="text">We have 2000 verbs for each language so that you won't mess up your grammar again. Practice the different types of irregular verbs and never make a mistake with them again.</p>
-                            <p className="text">Practice more than just verbs - you can practice noun and adjective genders in the same fun way with Conjugat Premium. Let us know what else we should add! </p>
+                            <p className="text">Practice more than verbs - you can practice noun and adjective genders in the same fun way with Conjugat Premium. Let us know what else we should add! </p>
                         </div>
                     </div>
                     

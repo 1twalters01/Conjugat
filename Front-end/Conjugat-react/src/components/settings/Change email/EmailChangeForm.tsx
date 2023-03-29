@@ -46,6 +46,7 @@ function EmailChangeForm({ onDoneChange }: {onDoneChange:Function}){
   
             <SubmitBtn
               value="Submit"
+              style="strong-gold-btn"
             />
         </form>
       </div>

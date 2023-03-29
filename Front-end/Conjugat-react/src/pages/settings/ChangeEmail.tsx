@@ -9,7 +9,7 @@ function ChangeEmail() {
 
   if (done == false) {
     return (
-      <div>
+      <div className="Change-email-container container">
         <h1>Change email</h1>
 
         <EmailChangeForm
