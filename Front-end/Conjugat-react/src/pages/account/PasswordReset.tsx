@@ -10,25 +10,25 @@ function PasswordReset() {
     Authorization.NotAuthRequired()
     const [done, setDone] = useState(false)
 
-    // if (done == false) {
-    //     return (
-    //         <div className="PasswordReset-container container">
-    //             <div className="Header-spacer">
-    //                 <Header />
-    //             </div>
-    //             
-
-    //             <RegisterLinks />
-    //             <div className="RegisterLinks-spacer"></div>
+    if (done == false) {
+        return (
+            <div className="PasswordReset-container container">
+                <div className="Header-spacer">
+                    <Header />
+                </div>
                 
-    //             <div className="form-width">
-    //                 <PasswordResetForm onDoneChange={setDone} />
-    //             </div>
-    //             <div className="PasswordResetForm-spacer"></div>
-    //         </div>
-    //     )
-    // }
-    // else {
+
+                <RegisterLinks />
+                <div className="RegisterLinks-spacer"></div>
+                
+                <div className="form-width">
+                    <PasswordResetForm onDoneChange={setDone} />
+                </div>
+                <div className="PasswordResetForm-spacer"></div>
+            </div>
+        )
+    }
+    else {
         return(
             <div className="PasswordReset-container container">
                 <div className="Header-spacer">
@@ -38,7 +38,7 @@ function PasswordReset() {
                 <PasswordResetDone />
             </div>
         )
-    // }
+    }
 }
 
 export default PasswordReset
