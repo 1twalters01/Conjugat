@@ -27,7 +27,7 @@ function TopContainer() {
             </div>
             <div className="left-container">
                 <div className="title">
-                    <h1 className='header'>Conjugat Premium</h1>
+                    <h1 className='header'>Conjugat</h1>
                     <h2 className='subheader'>Helping you to perfect your verb conjugations</h2>
                 </div>
                 <div className="main-section">

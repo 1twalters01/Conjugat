@@ -69,6 +69,7 @@ function Activate() {
           </div>
         )
     }
+    return <></>
 }
 
 export default Activate

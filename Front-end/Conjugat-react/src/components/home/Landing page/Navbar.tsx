@@ -23,14 +23,14 @@ function Navbar() {
             </div>
             <div className="options">
                 <Link to='/Contact' ><p className="link text-gold-link">Contact</p></Link>
-                <Link to='/FAQ' ><p className="link text-gold-link">FAQ</p></Link>
+                <Link to='/Faq' ><p className="link text-gold-link">Faq</p></Link>
                 <Link to='/Privacy' ><p className="link text-gold-link">Privacy</p></Link>
                 <Link to='/Terms' ><p className="link text-gold-link">Terms</p></Link>
             </div>
             <div className="settings">
                 <Link to='/' ><p className="link text-blue-link" onClick={ThemeSwitch}>Theme</p></Link>
                 <Link to='/' ><p className="link text-gold-link">Language</p></Link>
-                <Link to='/' ><p className="link text-gold-link">Premium</p></Link>
+                <Link to='/Premium' ><p className="link text-gold-link">Premium</p></Link>
             </div>
             <Link to='/account/Login' ><div className="">
                 <p className="login strong-gold-btn">Log in</p>

@@ -4,8 +4,12 @@ Update Readme
 Finish designing web pages, style and add colour to:
 Fix navbar for phones / tablets for landing page
 2. newsletter
-* Subscribe
-* Unsubscribe
+* Subscribe unauth done
+* Unsubscribe unauth done
+* Subscribe auth
+* Unsubscribe auth
+* Subscribe auth done
+* Unsubscribe auth done
 3. settings
 * Change email
 * Change password
@@ -20,11 +24,12 @@ Fix navbar for phones / tablets for landing page
 * Process
 * Success
 5. Misc
-* Contact
 * FAQs
 * Home
-* Privacy
-* Terms
+* Premium
+
+Remove all cases of duplication in the scss
+Light theme
 
 # Medium term goals
 Add Twitter authentication once approved
@@ -60,36 +65,6 @@ Refactor react code once again
 * Privacy
 * Terms
 
-Choose light theme for
-1. account
-* Activate
-* Login
-* Logout
-* Password reset
-* Password reset token
-2. newsletter
-* Subscribe
-* Unsubscribe
-3. settings
-* Change email
-* Change password
-* Change username
-* Close account
-* Premium
-* Reset account
-* Themes
-* Two factor authentication
-4. subscriptions
-* Cancelled
-* Process
-* Success
-5. Misc
-* Contact
-* FAQs
-* Home
-* Landing page
-* Privacy
-* Terms
 
 Create and test verbs functionality
 

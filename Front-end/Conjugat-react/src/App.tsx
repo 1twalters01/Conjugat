@@ -12,6 +12,7 @@ import Faq from './pages/home/FAQs'
 import Home from './pages/home/Home'
 import Privacy from './pages/home/Privacy'
 import Terms from './pages/home/Terms'
+import PremiumInfo from "./pages/home/PremiumInfo";
 
 import Login from './pages/account/Login'
 import OauthLogin from "./pages/account/OauthLogin";
@@ -52,6 +53,7 @@ const router = createBrowserRouter(
       <Route path="home" element={<Home />} />
       <Route path="privacy" element={<Privacy />} />
       <Route path="terms" element={<Terms />} />
+      <Route path="premium" element={<PremiumInfo />} />
 
 
       <Route path="account">

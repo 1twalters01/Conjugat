@@ -5,10 +5,41 @@
     .Terms-container{
         max-width: 720px;
         border-radius: 25px;
-        margin: auto;
-        margin-top: 2%;
+        margin: 2% auto 40px auto;
+        padding-bottom: 40px;
         .Header-spacer{
             padding: 8% 0 5% 0;
+        }
+        .navbar{
+            width: 70%;
+            margin: auto;
+            padding-bottom: 50px;
+        }
+        .para{
+            width: 80%;
+            margin: auto;
+            h1{
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .subtitle{
+                font-style: bold;
+                margin-bottom: 30px;
+            }
+            li{
+                margin-bottom: 40px;
+                h3{
+                    margin-bottom: 10px;
+                }
+                p{
+                text-align: justify;
+                text-justify: inter-word;
+                margin-bottom: 10px;
+                &.bold{
+                    margin-top: 20px;
+                }
+                }
+            }
         }
     }
 }
@@ -25,6 +56,37 @@
         .Header-spacer{
             padding: 8% 0 5% 0;
         }
+        .navbar{
+            width: 70%;
+            margin: auto;
+            padding-bottom: 40px;
+        }
+        .para{
+            width: 80%;
+            margin: auto;
+            h1{
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .subtitle{
+                font-style: bold;
+                margin-bottom: 30px;
+            }
+            li{
+                margin-bottom: 40px;
+                h3{
+                    margin-bottom: 10px;
+                }
+                p{
+                text-align: justify;
+                text-justify: inter-word;
+                margin-bottom: 10px;
+                &.bold{
+                    margin-top: 20px;
+                }
+                }
+            }
+        }
     }
 }
 
@@ -39,6 +101,37 @@
         margin: 20px auto 20px auto;
         .Header-spacer{
             padding: 6.5% 0 5% 0;
+        }
+        .navbar{
+            width: 70%;
+            margin: auto;
+            padding-bottom: 40px;
+        }
+        .para{
+            width: 80%;
+            margin: auto;
+            h1{
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .subtitle{
+                font-style: bold;
+                margin-bottom: 30px;
+            }
+            li{
+                margin-bottom: 40px;
+                h3{
+                    margin-bottom: 10px;
+                }
+                p{
+                text-align: justify;
+                text-justify: inter-word;
+                margin-bottom: 10px;
+                &.bold{
+                    margin-top: 20px;
+                }
+                }
+            }
         }
     }
 }
@@ -55,6 +148,38 @@
         .Header-spacer{
             padding: 6% 0 8% 0;
         }
+        .navbar{
+            width: 70%;
+            margin: auto;
+            padding-bottom: 40px;
+        }
+        .para{
+            width: 80%;
+            margin: auto;
+            h1{
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .subtitle{
+                font-style: bold;
+                margin-bottom: 30px;
+            }
+            li{
+                margin-bottom: 40px;
+                h3{
+                    margin-bottom: 10px;
+                }
+                p{
+                text-align: justify;
+                text-justify: inter-word;
+                margin-bottom: 10px;
+                &.bold{
+                    margin-top: 20px;
+                }
+                }
+            }
+        }
+        
     }
 }
 
@@ -69,6 +194,37 @@
         margin: 20px auto 20px auto;
         .Header-spacer{
             padding: 15% 0 8% 0;
+        }
+        .navbar{
+            width: 80%;
+            margin: auto;
+            padding-bottom: 40px;            
+        }
+        .para{
+            width: 80%;
+            margin: auto;
+            h1{
+                margin-bottom: 30px;
+                text-align: center;
+            }
+            .subtitle{
+                font-style: bold;
+                margin-bottom: 30px;
+            }
+            li{
+                margin-bottom: 40px;
+                h3{
+                    margin-bottom: 10px;
+                }
+                p{
+                text-align: justify;
+                text-justify: inter-word;
+                margin-bottom: 10px;
+                &.bold{
+                    margin-top: 20px;
+                }
+                }
+            }
         }
     }
 }

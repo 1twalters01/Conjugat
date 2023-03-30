@@ -43,6 +43,7 @@ function Subscribe() {
             <p>Sign up successful</p>
         )
     }
+    return <></>
 }
 
 export default Subscribe
