@@ -2,7 +2,6 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import './index.css'
 
 // Layouts
-import NewsletterLayout from './layouts/NewsletterLayout'
 import SettingsLayout from './layouts/SettingsLayout'
 import SubscriptionsLayout from './layouts/SubscriptionsLayout'
 
@@ -68,7 +67,7 @@ const router = createBrowserRouter(
       </Route>
 
 
-      <Route path="newsletter" element={<NewsletterLayout />}>
+      <Route path="newsletter">
         <Route path="subscribe" element={<Subscribe />} />
         <Route path="unsubscribe" element={<Unsubscribe />} />
       </Route>

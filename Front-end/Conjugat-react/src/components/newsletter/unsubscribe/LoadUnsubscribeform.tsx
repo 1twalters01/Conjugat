@@ -15,7 +15,13 @@ function LoadUnsubscribeForm({setDone, loading, setLoading}: {setDone:Function, 
         setEmail(res.data.email)
         setLoading(false)
       })
-      return <></>
+      return (
+          <UnsubscribeForm
+          email={email}
+          setDone={setDone}
+          setEmail={setEmail}
+          />
+      )
     }
     return (
       <UnsubscribeForm

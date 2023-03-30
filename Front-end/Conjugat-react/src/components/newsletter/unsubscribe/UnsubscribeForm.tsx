@@ -3,6 +3,7 @@ import { toast } from "react-toastify"
 import EmailField from "../../Input fields/EmailField"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import SubmitBtn from "../../Buttons/SubmitBtn"
+import '../../../sass/Components/newsletter/unsubscribe/UnsubscribeForm.scss'
 
 
 function UnsubscribeForm({setDone, email, setEmail}: {setDone:Function, email:string, setEmail:Function}) {
@@ -26,18 +27,22 @@ function UnsubscribeForm({setDone, email, setEmail}: {setDone:Function, email:st
     }
   
     return (
-      <div>
+      <div className="Unsubscribe-form">
         <form onSubmit={(e) => submit(e)}>
-            <EmailField
-              id='email'
-              email={email}
-              labelText="Email"
-              handleEmail={(e:ChangeEvent<HTMLInputElement>) => handleEmail(e)}
-            />
+            <div className="email-spacer">
+                <EmailField
+                id='email'
+                email={email}
+                labelText="Email"
+                handleEmail={(e:ChangeEvent<HTMLInputElement>) => handleEmail(e)}
+                required={true}
+                />
+            </div>
 
-        <SubmitBtn
-          value="Unsubscribe"
-        />
+            <SubmitBtn
+              value="Unsubscribe"
+              style="strong-gold-btn"
+            />
         </form>
       </div>
     )

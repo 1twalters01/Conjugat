@@ -44,37 +44,39 @@ function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:stri
                 email={email}
                 labelText="Email"
                 handleEmail={(e:ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                required={true}
               />
               
               <TextField
                 id={"firstName"}
                 labelText="First name"
-                required={false}
+                required={true}
                 handleText={(e:ChangeEvent<HTMLInputElement>) => setFirstName(e.target.value)}
                 value={firstName}
               />
   
               <TextField
                 id={"lastName"}
-                labelText="Last name"
+                labelText="Last name (optional)"
                 required={false}
                 handleText={(e:ChangeEvent<HTMLInputElement>) => setLastName(e.target.value)}
                 value={lastName}
               />
               
               <div>
-                <label htmlFor="languages">Languages</label>
-                <select name="languages" id="languages" value={languages || []} onChange={(e) => changeLanguage(e)} multiple={true}>
-                  <option value="English">English</option>
-                  <option value="French">French</option>
-                  <option value="Italian">Italian</option>
-                  <option value="Portuguese">Portuguese</option>
-                  <option value="Spanish">Spanish</option>
-                </select>
+                  <label htmlFor="languages">Languages</label>
+                  <select name="languages" id="languages" value={languages || []} onChange={(e) => changeLanguage(e)} multiple={true}>
+                      <option value="English">English</option>
+                      <option value="French">French</option>
+                      <option value="Italian">Italian</option>
+                      <option value="Portuguese">Portuguese</option>
+                      <option value="Spanish">Spanish</option>
+                  </select>
               </div>
 
               <SubmitBtn
                 value="Submit"
+                style="strong-gold-btn"
               />
           </form>
       </div>

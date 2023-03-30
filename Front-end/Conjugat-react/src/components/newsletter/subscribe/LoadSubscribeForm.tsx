@@ -16,7 +16,11 @@ function LoadSubscribeForm({setDone, loading, setLoading}: {setDone:Function, lo
         setLoading(false)
       })
       return (
-        <></>
+        <SubscribeForm
+        email={email}
+        setDone={setDone}
+        setEmail={setEmail}
+        />
       )
     }
     return (
