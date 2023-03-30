@@ -1,5 +1,10 @@
 @import '../../variables';
 
+/* All */
+.subscribe-link p:hover{
+    text-decoration: underline;
+}
+
 /* TV screens */
 @media only screen and (min-width: $TV-breakpoint){
     .Newsletter-unsubscribe-container{

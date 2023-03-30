@@ -33,7 +33,7 @@ function Subscribe() {
                 </div>
                 
                 <div className="unsubscribe-link">
-                    <Link to="../unsubscribe/" className="text">Unsubscribe from the newsletter</Link>
+                    <Link to="../unsubscribe/"><p className="text">Unsubscribe from the newsletter</p></Link>
                 </div>
             </div>
         )

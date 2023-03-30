@@ -5,7 +5,6 @@ import AxiosInstance from "../../../functions/AxiosInstance"
 import SubmitBtn from "../../Buttons/SubmitBtn"
 import '../../../sass/Components/newsletter/unsubscribe/UnsubscribeForm.scss'
 
-
 function UnsubscribeForm({setDone, email, setEmail}: {setDone:Function, email:string, setEmail:Function}) {
     function submit(e:FormEvent<HTMLFormElement>) {
       e.preventDefault();
