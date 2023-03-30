@@ -5,7 +5,7 @@ function LogoutResponse() {
     return(
         <div className="Logout-response">
             <p className="para text">You have been successfully logged out.</p>
-            <Link to="../login"><div className="login-btn strong-gold-btn">Login</div></Link>
+            <Link to="../../../"><div className="home-btn strong-gold-btn">Home</div></Link>
         </div>
     )
 }

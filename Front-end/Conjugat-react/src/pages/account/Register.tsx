@@ -1,7 +1,8 @@
 import { useState } from "react"
 import Authorization from '../../functions/Authorization'
 import Header from "../../components/account/Header"
-import RegisterDone from "../../components/account/Register/RegisterDone"
+import RegisterDoneFalse from "../../components/account/Register/RegisterDoneFalse"
+import RegisterDoneTrue from "../../components/account/Register/RegisterDoneTrue"
 import RegisterForm from "../../components/account/Register/RegisterForm"
 import RegisterLinks from "../../components/account/Register/RegisterLinks"
 import '../../sass/pages/account/Register.scss'
@@ -9,43 +10,61 @@ import '../../sass/pages/account/Register.scss'
 function Register() {
     Authorization.NotAuthRequired()
     const [done, setDone] = useState(false)
+    const [returnedEmail, setReturnedEmail] = useState(true)
 
     if (done == false) {
         return (
-            <div className="Login-body body">
+            <div className="Register-container container">
+                <div className="Header-spacer">
+                    <Header />
+                </div>
+
+                
+                <div className="RegisterLinks-spacer">
+                    <RegisterLinks />
+                </div>
+                
+                <div className="form-width">
+                    <RegisterForm
+                    onDoneChange={setDone}
+                    setReturnedEmail={setReturnedEmail}
+                    />
+                </div>
+                
+                <div className="RegisterForm-spacer"></div>
+            </div>
+
+        )
+    }
+    else {
+        if (returnedEmail == true){
+            return (
                 <div className="Register-container container">
                     <div className="Header-spacer">
                         <Header />
                     </div>
 
-                    
-                    <div className="RegisterLinks-spacer">
-                        <RegisterLinks />
+                    <div className="Register-done-spacer">
+                        <RegisterDoneTrue />
                     </div>
-                    
-                    <div className="form-width">
-                        <RegisterForm
-                        onDoneChange={setDone}
-                        />
-                    </div>
-                    
-                    <div className="RegisterForm-spacer"></div>
                 </div>
-            </div>
-        )
-    }
-    else {
-        return (
-          <div className="Register-done-container">
-            <div className="Header-spacer-top"></div>
-            <Header />
-            <div className="Header-spacer-bottom"></div>
-
-            <h1>Register</h1>
-            
-            <RegisterDone />
-          </div>
-        )
+              )
+        }
+        else {
+            return (
+                <div className="Register-container container">
+                    <div className="Header-spacer">
+                        <Header />
+                    </div>
+                    
+                    <div className="Register-done-spacer">
+                         <RegisterDoneFalse />
+                    </div>
+                  
+                </div>
+              )
+        }
+        
     }
 }
 

@@ -1,6 +1,4 @@
 from django.contrib.auth import logout, login
-# from django.middleware.csrf import get_token
-# from django.utils.decorators import method_decorator
 from knox import views as Knox_views
 from rest_framework import status, permissions
 from rest_framework.authentication import SessionAuthentication
@@ -126,13 +124,10 @@ class Register(APIView):
     def post(self, request):
         data = request.data
         validated_username = validate_username(data)
-        validated_email = validate_email(data)
         validated_passwords = validate_passwords(data)
         validated_domain = validate_domain(data)
         if validated_username[0] == False:
             return Response(data=validated_username[1], status=validated_username[2])
-        if validated_email[0] == False:
-            return Response(data=validated_email[1], status=validated_email[2])
         if validated_passwords[0] == False:
             return Response(data=validated_passwords[1], status=validated_passwords[2])
         if validated_domain[0] == False:

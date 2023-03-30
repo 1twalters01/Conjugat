@@ -3,6 +3,7 @@ import BottomContainer from "../../components/home/Landing page/BottomContainer"
 import Navbar from "../../components/home/Landing page/Navbar"
 import TopContainer from "../../components/home/Landing page/TopContainer"
 import '../../sass/pages/home/LandingPage.scss'
+import LPFooter from "../../components/home/Landing page/LPFooter"
 
 function Index() {
     Authorization.NotAuthRequired()
@@ -18,6 +19,10 @@ function Index() {
           
           <div className="BottomContainer-spacer">
               <BottomContainer />
+          </div>
+
+          <div className="Footer">
+                <LPFooter />
           </div>
       </div>
     )

@@ -8,7 +8,7 @@ import PasswordField from "../../Input fields/PasswordField"
 import SubmitBtn from "../../Buttons/SubmitBtn"
 import '../../../sass/Components/account/Register/RegisterForm.scss'
 
-function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {
+function RegisterForm({ onDoneChange, setReturnedEmail }: {onDoneChange:Function, setReturnedEmail:Function}) {
     const domain = window.location.origin + "/account/"
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -27,9 +27,12 @@ function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {
                 domain: domain
             })
             .then(res=>{
+                setReturnedEmail(res.data.email)
+                console.log(res.data.email)
                 onDoneChange(true)
             })
             .catch(err=>{
+                console.log(err.response)
                 toast.error(err.response.data.error)
             })
         }
@@ -55,8 +58,9 @@ function RegisterForm({ onDoneChange }: {onDoneChange:Function}) {
                   <EmailField
                   id='email'
                   email={email}
-                  labelText="Email"
+                  labelText="Email (optional)"
                   handleEmail={(e:ChangeEvent<HTMLInputElement>) => handleText(e, setEmail)}
+                  required={false}
                   />
               </div>
               

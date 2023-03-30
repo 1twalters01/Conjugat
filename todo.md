@@ -1,31 +1,7 @@
 # Short term goals
 Update Readme
 
-Finish designing web pages:
-2. newsletter
-* Subscribe
-* Unsubscribe
-3. settings
-* Change email
-* Change password
-* Change username
-* Close account
-* Premium
-* Reset account
-* Themes
-* Two factor authentication
-4. subscriptions
-* Cancelled
-* Process
-* Success
-5. Misc
-* Contact
-* FAQs
-* Home
-* Privacy
-* Terms
-
-Add styling to the react pages (SCSS)
+Finish designing web pages, style and add colour to:
 Fix navbar for phones / tablets for landing page
 2. newsletter
 * Subscribe
@@ -49,31 +25,6 @@ Fix navbar for phones / tablets for landing page
 * Home
 * Privacy
 * Terms
-
-Add colour to the react pages (SCSS)
-2. newsletter
-* Subscribe
-* Unsubscribe
-3. settings
-* Change email
-* Change password
-* Change username
-* Close account
-* Premium
-* Reset account
-* Themes
-* Two factor authentication
-4. subscriptions
-* Cancelled
-* Process
-* Success
-5. Misc
-* Contact
-* FAQs
-* Home
-* Privacy
-* Terms
-
 
 # Medium term goals
 Add Twitter authentication once approved

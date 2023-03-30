@@ -67,6 +67,7 @@
         border-color: $success-900;
         &:hover{
             background-color: $success-700;
+            border-color: $success-700;
             transition: 0.4s;
         }
     }

@@ -119,7 +119,7 @@ class LoginPasswordSerializer(serializers.Serializer):
 ''' Register '''
 class RegisterSerializer(serializers.Serializer):
     username = serializers.CharField()
-    email = serializers.CharField()
+    email = serializers.CharField(required=False, allow_blank=True)
     password = serializers.CharField()
     password2 = serializers.CharField()
     domain = serializers.CharField()
@@ -152,20 +152,32 @@ class RegisterSerializer(serializers.Serializer):
 
     def register_user(self, data):
         username = data['username']
-        email = data['email']
         password = data['password']
         domain = data['domain']
+        try:
+            email = data['email']
+        except:
+            email = None
         
         if self.obtain_user_via_username(username):
             error = 'Username already exists'
             return error, False, status.HTTP_409_CONFLICT
         
-        if self.obtain_user_via_email(email):
-            error = 'Email already exists'
-            return error, False, status.HTTP_409_CONFLICT
+        if email or email != '':
+            if self.obtain_user_via_email(email):
+                error = 'Email already exists'
+                return error, False, status.HTTP_409_CONFLICT
                        
         user = User.objects.create(username=username, email=email)
         user.set_password(password)
+
+        if not email or email == '':
+            user.save
+            message = "Successfully created user."
+            response = {'email': False, 'message':message}
+            return response, True
+
+
         user.is_active = False
         user.save()
 
@@ -182,7 +194,8 @@ class RegisterSerializer(serializers.Serializer):
         
         subscriber = UserProfile.objects.create(user=user, method_id=4)
         subscriber.save()
-        response = "Successfully created user. Activate with link in email."
+        message = "Successfully created user. Activate with link in email."
+        response = {'email': True, 'message':message}
         return response, True
 
 class ActivateSerializer(serializers.Serializer):

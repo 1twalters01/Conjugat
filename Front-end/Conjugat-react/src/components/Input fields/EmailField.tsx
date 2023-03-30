@@ -1,6 +1,6 @@
 import '../../sass/Components/Input fields/EmailField.scss'
 
-function EmailField({ id, email, labelText, handleEmail}: { id:string, email:string, labelText:string, handleEmail: Function}) {
+function EmailField({ id, email, labelText, handleEmail, required=true}: { id:string, email:string, labelText:string, handleEmail: Function, required: boolean}) {
     return(
       <div className='email-field'>
           <label htmlFor="email" className="field-text line-label">{labelText}</label>
@@ -11,7 +11,7 @@ function EmailField({ id, email, labelText, handleEmail}: { id:string, email:str
               className='line'
               value={ email }
               onChange={(e) => handleEmail(e)}
-              required={true}
+              required={required}
           />
       </div>
     )

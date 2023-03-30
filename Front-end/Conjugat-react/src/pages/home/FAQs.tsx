@@ -1,6 +1,15 @@
+import Header from "../../components/account/Header"
+import '../../sass/pages/home/FAQ.scss'
+
 function Faq() {
     return (
-      <h1>Faq</h1>
+        <div className="FAQ-container container">
+            <div className="header-spacer">
+                <Header />
+            </div>
+
+            <h1>FAQ</h1>
+        </div> 
     )
   }
 
