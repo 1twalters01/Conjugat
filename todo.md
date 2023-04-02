@@ -2,7 +2,7 @@
 Update Readme
 
 Finish designing web pages, style and add colour to:
-Fix navbar for phones / tablets for landing page
+* Fix navbar for phones / tablets for landing page
 2. newsletter
 * Subscribe unauth done
 * Unsubscribe unauth done

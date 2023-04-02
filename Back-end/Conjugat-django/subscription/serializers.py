@@ -15,14 +15,17 @@ class RetrieveStatusSerializer(serializers.Serializer):
     stripe_url = serializers.CharField(required=False)
     coinbase_url = serializers.CharField(required=False)
     def payment_method(self, method):
-        if method == 'Stripe':
+        if method == 'None':
             return 1
-        elif method == 'Paypal':
+        elif method == 'Stripe':
             return 2
-        elif method == 'Coinbase':
+        elif method == 'Paypal':
             return 3
-        elif method == 'None':
+        elif method == 'Coinbase':
             return 4
+        else:
+            error = 'Invalid method'
+            raise Exception(error)
 
     def does_subscriber_exist(self, user):
         try:
@@ -123,14 +126,17 @@ class RetrieveStatusSerializer(serializers.Serializer):
 
 class NewStripeCustomerSerializer(serializers.Serializer):
     def payment_method(self, method):
-        if method == 'Stripe':
+        if method == 'None':
             return 1
-        elif method == 'Paypal':
+        elif method == 'Stripe':
             return 2
-        elif method == 'Coinbase':
+        elif method == 'Paypal':
             return 3
-        elif method == 'None':
+        elif method == 'Coinbase':
             return 4
+        else:
+            error = 'Invalid method'
+            raise Exception(error)
 
     def does_subscriber_exist(self, user):
         try:
@@ -173,14 +179,17 @@ class NewStripeCustomerSerializer(serializers.Serializer):
 
 class NewPaypalCustomerSerializer(serializers.Serializer):
     def payment_method(self, method):
-        if method == 'Stripe':
+        if method == 'None':
             return 1
-        elif method == 'Paypal':
+        elif method == 'Stripe':
             return 2
-        elif method == 'Coinbase':
+        elif method == 'Paypal':
             return 3
-        elif method == 'None':
+        elif method == 'Coinbase':
             return 4
+        else:
+            error = 'Invalid method'
+            raise Exception(error)
 
     def does_subscriber_exist(self, user):
         try:
@@ -223,14 +232,17 @@ class NewPaypalCustomerSerializer(serializers.Serializer):
 
 class NewCoinbaseCustomerSerializer(serializers.Serializer):
     def payment_method(self, method):
-        if method == 'Stripe':
+        if method == 'None':
             return 1
-        elif method == 'Paypal':
+        elif method == 'Stripe':
             return 2
-        elif method == 'Coinbase':
+        elif method == 'Paypal':
             return 3
-        elif method == 'None':
+        elif method == 'Coinbase':
             return 4
+        else:
+            error = 'Invalid method'
+            raise Exception(error)
 
     def does_subscriber_exist(self, user):
         try:
@@ -299,14 +311,17 @@ class SuccessSerializer(serializers.Serializer):
         return method
 
     def payment_method(self, method):
-        if method == 'Stripe':
+        if method == 'None':
             return 1
-        elif method == 'Paypal':
+        elif method == 'Stripe':
             return 2
-        elif method == 'Coinbase':
+        elif method == 'Paypal':
             return 3
-        elif method == 'None':
+        elif method == 'Coinbase':
             return 4
+        else:
+            error = 'Invalid method'
+            raise Exception(error)
 
     def is_user_subscribed(self, user, subscriber):
         if subscriber:

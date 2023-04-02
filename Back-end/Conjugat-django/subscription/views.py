@@ -1,16 +1,3 @@
-
-from coinbase_commerce.client import Client
-from django.conf import settings
-from django.urls import reverse
-from .encryption import decrypt, encrypt
-from .models import UserProfile
-from .paypal import show_sub_details, suspend_sub, activate_sub
-import stripe
-from rest_framework.decorators import api_view, permission_classes
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.authentication import SessionAuthentication
-
-
 from rest_framework import status, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView

@@ -59,7 +59,8 @@ class GetRoutes(APIView):
         return Response(routes)
 
 
-''' CSRF Token '''
+# #For if I were to want to use session authentication
+# ''' CSRF Token '''
 # @method_decorator(ensure_csrf_cookie, name='dispatch')
 # class GetCSRF(APIView):
 #     def get(self, request):

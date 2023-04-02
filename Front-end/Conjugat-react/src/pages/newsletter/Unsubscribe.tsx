@@ -45,9 +45,10 @@ function Unsubscribe() {
         </div>
         
         <div className="logout-response-spacer">
-            <NewsletterResponse />
+            <NewsletterResponse
+            text={"You have successfully unsubscribed from the newsletter"}
+            />
         </div>
-        <p>Unsubscribed successfully</p>
     </div>
     
   )

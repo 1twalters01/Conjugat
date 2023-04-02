@@ -15,11 +15,11 @@ import json
 
 def payment_method(method):
     if method == 'Stripe':
-        return 1
-    elif method == 'Paypal':
         return 2
-    elif method == 'Coinbase':
+    elif method == 'Paypal':
         return 3
+    elif method == 'Coinbase':
+        return 4
 
 def get_subscriber_or_none(subscription_id, method):
     try:
