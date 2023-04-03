@@ -3,8 +3,6 @@ Update Readme
 
 Finish designing web pages, style and add colour to:
 2. newsletter
-* Subscribe unauth done
-* Unsubscribe unauth done
 * Subscribe auth
 * Unsubscribe auth
 * Subscribe auth done

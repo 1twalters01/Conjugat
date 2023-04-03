@@ -7,7 +7,7 @@
 
 /* TV screens */
 @media only screen and (min-width: $TV-breakpoint){
-    .Newsletter-unsubscribe-container{
+    .Newsletter-unauth-unsubscribe-container{
         max-width: 720px;
         border-radius: 25px;
         margin: auto;
@@ -39,7 +39,7 @@
 
 /* PC */
 @media only screen and (max-width: $PC-max-breakpoint) and (min-width: $PC-min-breakpoint){
-    .Newsletter-unsubscribe-container{
+    .Newsletter-unauth-unsubscribe-container{
         display: block;
         height: 80%;
         width: 60%;
@@ -73,7 +73,7 @@
 
 /* Laptops */
 @media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint){
-    .Newsletter-unsubscribe-container{
+    .Newsletter-unauth-unsubscribe-container{
         display: block;
         min-height: 90%;
         width: 70%;
@@ -107,7 +107,7 @@
 
 /* Tablets */
 @media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){
-    .Newsletter-unsubscribe-container{
+    .Newsletter-unauth-unsubscribe-container{
         display: block;
         min-height: 110%;
         width: 85%;
@@ -141,7 +141,7 @@
 
 /* Mobiles */
 @media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint){
-    .Newsletter-unsubscribe-container{
+    .Newsletter-unauth-unsubscribe-container{
         display: block;
         min-height: 90%;
         width: 85%;
