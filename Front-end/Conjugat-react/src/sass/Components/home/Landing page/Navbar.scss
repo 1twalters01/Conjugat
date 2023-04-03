@@ -8,6 +8,9 @@
         grid-gap: 5%;
         justify-content: center;
         margin: auto;
+        .hamburger{
+            display: none;
+        }
         .logo, .options, .settings, .login {
             align-self: center;
         }
@@ -33,6 +36,9 @@
         grid-gap: 4.5%;
         justify-content: center;
         margin: auto;
+        .hamburger{
+            display: none;
+        }
         .logo, .options, .settings, .login {
             align-self: center;
         }
@@ -58,6 +64,9 @@
         grid-gap: 3%;
         justify-content: center;
         margin: auto;
+        .hamburger{
+            display: none;
+        }
         .logo, .options, .settings, .login {
             align-self: center;
         }
@@ -77,10 +86,72 @@
 
 /* Tablets */
 @media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint) {
-
+    .Landing-page-navbar {
+        display: grid;
+        z-index:1;
+        position:relative;
+        transition: 0.5s;
+        .logo{
+            display: grid;
+            grid-template-columns: 0.2fr 2fr;
+            vertical-align: middle;
+            svg{
+                margin: auto auto auto 0;
+                cursor: pointer;
+            }
+        }
+        .options, .settings, .login-div{
+            display: none;
+        }
+        .options.show-menu, .settings.show-menu, .login-div.show-menu{
+            min-width: 100%;
+            position: absolute;
+            display: grid;
+        }
+        .options.show-menu{
+            margin-top: 35px;
+        }
+        .settings.show-menu{
+            margin-top: 106px;;
+        }
+        .login-div.show-menu{
+            margin-top: 165px;
+        }
+    }
 }
 
 /* Mobiles */
 @media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint) {
-
+    .Landing-page-navbar {
+        display: grid;
+        z-index:1;
+        position:relative;
+        transition: 0.5s;
+        .logo{
+            display: grid;
+            grid-template-columns: 0.2fr 2fr;
+            vertical-align: middle;
+            svg{
+                margin: auto auto auto 0;
+                cursor: pointer;
+            }
+        }
+        .options, .settings, .login-div{
+            display: none;
+        }
+        .options.show-menu, .settings.show-menu, .login-div.show-menu{
+            min-width: 100%;
+            position: absolute;
+            display: grid;
+        }
+        .options.show-menu{
+            margin-top: 35px;
+        }
+        .settings.show-menu{
+            margin-top: 106px;;
+        }
+        .login-div.show-menu{
+            margin-top: 165px;
+        }
+    }
 }

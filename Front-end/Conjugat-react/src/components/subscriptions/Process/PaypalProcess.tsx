@@ -52,7 +52,9 @@ function PaypalProcess({trial} : {trial:boolean|null}) {
     }
   
     return (
-      <div></div>
+      <div>
+        <p>Paypal</p>
+      </div>
     )
 }
 
