@@ -10,7 +10,8 @@ function Subscribe() {
     const [loading, setLoading] = useState(true);
     const [done, setDone] = useState(false)
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    type ILoggedIn = boolean|null
+    const [isLoggedIn, setIsLoggedIn] = useState<ILoggedIn>(null);
     const checkUserToken = () => {
         const userToken = localStorage.getItem('token');
         if (!userToken) {
@@ -69,7 +70,7 @@ function Subscribe() {
             )
         }
     }
-    else {
+    else if (isLoggedIn == true) {
         if (done == false) {
             return (
                 <div className="Newsletter-auth-container container">

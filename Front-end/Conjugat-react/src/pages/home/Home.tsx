@@ -6,19 +6,19 @@ function Home() {
     return (
       <div>
         <h1>Home</h1>
-        <Link to='../account/logout/' >Log out</Link>
+        <Link to='../account/logout/' className="text-blue-link">Log out</Link>
 
         <br />
         
-        <Link to='../settings/' >Settings</Link>
+        <Link to='../settings/' className="text-blue-link">Settings</Link>
         
         <br />
         
-        <Link to='../subscriptions/' >Subscribe</Link>
+        <Link to='../subscriptions/' className="text-blue-link">Subscribe</Link>
         
         <br />
         
-        <Link to='../Newsletter/subscribe/' >Newsletter</Link>
+        <Link to='../Newsletter/subscribe/' className="text-blue-link">Newsletter</Link>
       </div>
       
     )

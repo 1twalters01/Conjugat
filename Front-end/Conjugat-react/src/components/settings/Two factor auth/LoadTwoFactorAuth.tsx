@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import Qrcode from "./QrCode"
 import QrForm from "./QrForm"
+import '../../../sass/Components/settings/Two factor auth/LoadTwoFactorAuth.scss'
 
 
 function LoadTwoFactorAuth({setDone }: {setDone:Function}) {
@@ -22,14 +23,17 @@ function LoadTwoFactorAuth({setDone }: {setDone:Function}) {
 
     if (qrString!= '') {
       return (
-        <>
-          <Qrcode
-            qrString = {qrString}
-          />
-          <QrForm
+        <div className="Load-2FA-container">
+            <div className="QrCode">
+                <Qrcode
+                qrString = {qrString}
+                />
+            </div>
+          
+            <QrForm
             setDone={setDone}
-          />
-        </>
+            />
+        </div>
       )
     }
     return <></>

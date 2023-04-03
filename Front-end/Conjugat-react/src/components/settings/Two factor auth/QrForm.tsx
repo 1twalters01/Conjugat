@@ -1,11 +1,12 @@
 import { ChangeEvent, FormEvent, useState} from "react"
+import { useDispatch } from "react-redux"
 import { toast } from "react-toastify"
+import { onConfirmedChange } from "../../../redux/slices/loginSlice"
 import PasswordField from "../../Input fields/PasswordField"
 import TotpField from "../../Input fields/TotpField"
 import SubmitBtn from "../../Buttons/SubmitBtn"
 import AxiosInstance from "../../../functions/AxiosInstance"
-import { useDispatch } from "react-redux"
-import { onConfirmedChange } from "../../../redux/slices/loginSlice"
+import '../../../sass/Components/settings/Two factor auth/QrForm.scss'
 
 function QrForm({setDone}: {setDone:Function}) {
     const dispatch = useDispatch()
@@ -39,24 +40,29 @@ function QrForm({setDone}: {setDone:Function}) {
     }
   
     return(
-      <form onSubmit={(e) => submit(e)}>
-          <PasswordField
-            id="password"
-            password={password}
-            handlePassword={(e:ChangeEvent<HTMLInputElement>) => handlePassword(e)}
-            labelText="Password"
-          />
-  
-          <TotpField
-          totp={totp}
-          handleTotp={(e:ChangeEvent<HTMLInputElement>) => handleTotp(e)}
-          labelText="Totp"
-          />
-  
-          <SubmitBtn
-            value="Submit"
-          />
-      </form>
+        <form className="QrForm-container" onSubmit={(e) => submit(e)}>
+            <div className="password-spacer">
+                <PasswordField
+                  id="password"
+                  password={password}
+                  handlePassword={(e:ChangeEvent<HTMLInputElement>) => handlePassword(e)}
+                  labelText="Password"
+                />
+            </div>
+
+            <div className="totp-spacer">
+                <TotpField
+                totp={totp}
+                handleTotp={(e:ChangeEvent<HTMLInputElement>) => handleTotp(e)}
+                labelText="Totp"
+                />
+            </div>
+    
+            <SubmitBtn
+              value="Submit"
+              style="strong-gold-btn"
+            />
+        </form>
     )
 }
 

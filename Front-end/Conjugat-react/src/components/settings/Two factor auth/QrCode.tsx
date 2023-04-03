@@ -1,8 +1,9 @@
 import QRCode from "react-qr-code"
+import '../../../sass/Components/settings/Two factor auth/QrCode.scss'
 
 function Qrcode({qrString}: { qrString:string}) {
     return(
-      <div style={{ background: 'white', padding: '10px' }}>
+      <div className='QRCode-container'>
         { qrString == "" ?
         <div style={{ height: '260px'}}></div>
         :

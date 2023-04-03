@@ -8,14 +8,16 @@ Finish designing web pages, style and add colour to:
 * Subscribe auth done
 * Unsubscribe auth done
 3. settings
+Add top navbar
 <!-- * Change email -->
 <!-- * Change password -->
 <!-- * Change username -->
 <!-- * Close account -->
-* Premium
+<!-- * Logout all -->
+<!-- * Premium -->
 * Reset account
 * Themes
-* Two factor authentication
+<!-- * Two factor authentication -->
 4. subscriptions
 * Cancelled
 * Process
@@ -60,7 +62,6 @@ Refactor react code once again
 * Landing page
 * Privacy
 * Terms
-
 
 Create and test verbs functionality
 

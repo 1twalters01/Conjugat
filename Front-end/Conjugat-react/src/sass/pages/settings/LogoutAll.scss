@@ -2,7 +2,7 @@
 
 /* TV screens */
 @media only screen and (min-width: $TV-breakpoint){
-    .Theme-container{
+    .Close-account-container{
         max-width: 1030px;
         display: grid;
         grid-template-columns: 0.25fr 0.75fr;
@@ -13,6 +13,7 @@
             border-radius: 25px;
         }
         .rhs{
+            height: 355px;
             border-radius: 25px;
             padding-bottom: 80px;
             .Header-spacer{
