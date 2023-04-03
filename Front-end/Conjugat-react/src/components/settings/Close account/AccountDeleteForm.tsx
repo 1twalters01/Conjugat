@@ -6,6 +6,7 @@ import { RootState } from "../../../redux/store";
 import PasswordField from "../../Input fields/PasswordField"
 import SubmitBtn from "../../Buttons/SubmitBtn";
 import TotpField from "../../Input fields/TotpField";
+import '../../../sass/Components/settings/Close account/AccountDeleteForm.scss'
 
 function AccountDeleteForm({ onDoneChange }: {onDoneChange:Function}){
     const { confirmed } = useSelector((state: RootState) => state.persistedReducer.login)
@@ -35,33 +36,34 @@ function AccountDeleteForm({ onDoneChange }: {onDoneChange:Function}){
     }
   
     return(
-      <div>
-        <form onSubmit={(e) => submit(e)}>
-            <PasswordField
-              password = {password}
-              handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
-              id = "password"
-              labelText="Password"
-            />
-
-            {confirmed == false ?
-              null
-            :
-              <>
-                <div className="totp-top-spacer"></div>
-                  <TotpField
-                    totp = {totp}
-                    handleTotp = {(e:ChangeEvent<HTMLInputElement>) => handleTotp(e)}
-                    labelText="Totp"
+      <div className="Close-account-form-container">
+          <form onSubmit={(e) => submit(e)}>
+              <div className="password-spacer">
+                  <PasswordField
+                    password = {password}
+                    handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+                    id = "password"
+                    labelText="Password"
                   />
-                <div className="totp-bottom-spacer"></div>
-              </>
-            }
+              </div>
 
-            <SubmitBtn
-              value="Delete account"
-            />
-        </form>
+              {confirmed == false ?
+                null
+              :
+                  <div className="totp-spacer">
+                      <TotpField
+                      totp = {totp}
+                      handleTotp = {(e:ChangeEvent<HTMLInputElement>) => handleTotp(e)}
+                      labelText="Totp"
+                      />
+                  </div>
+              }
+
+              <SubmitBtn
+                value="Delete account"
+                style="strong-red-btn"
+              />
+          </form>
       </div>
     )
 }

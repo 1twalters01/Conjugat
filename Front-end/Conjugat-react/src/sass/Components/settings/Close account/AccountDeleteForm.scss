@@ -1,15 +1,12 @@
-@import '../../variables';
+@import '../../../variables';
 
 /* TV screens */
 @media only screen and (min-width: $TV-breakpoint){
-    .settings-links{
-        margin-left: 20px;
-        h1{
-            text-align: center;
-            margin: 10% 0 30px 0;
+    .Close-account-form-container {
+        .password-spacer{
+            margin-bottom: 40px;
         }
-        .profile, .options, .account{
-            display: grid;
+        .last-password-spacer{
             margin-bottom: 20px;
         }
     }
@@ -17,20 +14,28 @@
 
 /* PC */
 @media only screen and (max-width: $PC-max-breakpoint) and (min-width: $PC-min-breakpoint){
-    
+    .register-form {
+        
+    }
 }
 
 /* Laptops */
 @media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint){
-    
+    .register-form {
+        
+    }
 }
 
 /* Tablets */
 @media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){
-    
+    .register-form {
+
+    }
 }
 
 /* Mobiles */
 @media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint){
-    
+    .register-form {
+
+    }
 }

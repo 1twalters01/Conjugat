@@ -80,6 +80,15 @@
             transition: 0.4s;
         }
     }
+    .strong-red-btn {
+        background-color: #E74C3C;
+        color: $shades-0;
+        border-color: #E74C3C;
+        &:hover{
+            background-color: $error-900;
+            transition: 0.4s;
+        }
+    }
 
     // Weak buttons
     .weak-gold-btn {
