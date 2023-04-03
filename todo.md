@@ -8,10 +8,10 @@ Finish designing web pages, style and add colour to:
 * Subscribe auth done
 * Unsubscribe auth done
 3. settings
-* Change email
-* Change password
-* Change username
-* Close account
+<!-- * Change email -->
+<!-- * Change password -->
+<!-- * Change username -->
+<!-- * Close account -->
 * Premium
 * Reset account
 * Themes

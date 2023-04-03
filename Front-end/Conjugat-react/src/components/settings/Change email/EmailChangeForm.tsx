@@ -6,6 +6,7 @@ import AxiosInstance from "../../../functions/AxiosInstance"
 import EmailField from "../../Input fields/EmailField"
 import PasswordField from "../../Input fields/PasswordField"
 import SubmitBtn from "../../Buttons/SubmitBtn"
+import '../../../sass/Components/settings/Change email/EmailChangeForm.scss'
 
 function EmailChangeForm({ onDoneChange }: {onDoneChange:Function}){
     const [email, setEmail] = useState('')
@@ -27,22 +28,28 @@ function EmailChangeForm({ onDoneChange }: {onDoneChange:Function}){
     }
   
     return(
-      <div>
+      <div className="Email-change-form-container">
         <form onSubmit={(e) => submit(e)}>
             {/* <CSRFToken /> */}
-            <EmailField
-              id="email"
-              email={email}
-              handleEmail={(e:ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-              labelText="Email"
-            />
+            <div className="email-spacer">
+                <EmailField
+                id="email"
+                email={email}
+                handleEmail={(e:ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                labelText="Email"
+                required={true}
+                />
+            </div>
             
-            <PasswordField
-              password = {password}
-              handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
-              id = "password"
-              labelText="Password"
-            />
+            <div className="password-spacer">
+                <PasswordField
+                password = {password}
+                handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+                id = "password"
+                labelText="Password"
+                />
+            </div>
+            
   
             <SubmitBtn
               value="Submit"

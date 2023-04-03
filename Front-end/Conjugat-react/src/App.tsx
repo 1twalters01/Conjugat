@@ -2,7 +2,6 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import './index.css'
 
 // Layouts
-import SettingsLayout from './layouts/SettingsLayout'
 import SubscriptionsLayout from './layouts/SubscriptionsLayout'
 
 // pages
@@ -75,7 +74,7 @@ const router = createBrowserRouter(
       </Route>
 
 
-      <Route path="settings" element={<SettingsLayout />}>
+      <Route path="settings">
         <Route path="change-email" element={<Email />} />
         <Route path="change-password" element={<Password />} />
         <Route path="change-username" element={<Username />} />

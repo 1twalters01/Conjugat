@@ -3,6 +3,7 @@ import { toast } from "react-toastify"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import PasswordField from "../../Input fields/PasswordField"
 import SubmitBtn from "../../Buttons/SubmitBtn"
+import '../../../sass/Components/settings/Change password/PasswordChangeForm.scss'
 
 function PasswordChangeForm({ onDoneChange }: {onDoneChange:Function}){
     const [password, setPassword] = useState('')
@@ -26,31 +27,39 @@ function PasswordChangeForm({ onDoneChange }: {onDoneChange:Function}){
     }
 
     return(
-      <div>
+      <div className="Password-change-form-container">
         <form onSubmit={(e) => submit(e)}>
-            <PasswordField
-              password = {password}
-              handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
-              id = "password"
-              labelText="Password"
-            />
+            <div className="password-spacer">
+                <PasswordField
+                  password = {password}
+                  handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+                  id = "password"
+                  labelText="Password"
+                />
+            </div>
+
+            <div className="password-spacer">
+                <PasswordField
+                  password = {newPassword1}
+                  handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setNewPassword1(e.target.value)}
+                  id = "newPassword1"
+                  labelText="New password"
+                />
+            </div>
   
-            <PasswordField
-              password = {newPassword1}
-              handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setNewPassword1(e.target.value)}
-              id = "newPassword1"
-              labelText="New password"
-            />
-  
-            <PasswordField
-              password = {newPassword2}
-              handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setNewPassword2(e.target.value)}
-              id = "newPassword2"
-              labelText="Re-enter new password"
-            />
+            <div className="last-password-spacer">
+                <PasswordField
+                  password = {newPassword2}
+                  handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setNewPassword2(e.target.value)}
+                  id = "newPassword2"
+                  labelText="Re-enter new password"
+                />
+            </div>
+            
   
             <SubmitBtn
               value="Submit"
+              style="strong-gold-btn"
             />
         </form>
       </div>
