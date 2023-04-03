@@ -21,7 +21,6 @@ Finish designing web pages, style and add colour to:
 * Process
 * Success
 5. Misc
-* FAQs
 * Home
 * Premium
 

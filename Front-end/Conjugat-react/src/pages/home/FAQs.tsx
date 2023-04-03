@@ -1,3 +1,4 @@
+import Dropdowns from "../../components/home/FAQs/Dropdowns"
 import Header from "../../components/account/Header"
 import MiscNavbar from "../../components/home/MiscNavbar"
 import '../../sass/pages/home/FAQ.scss'
@@ -9,12 +10,18 @@ function Faq() {
                 <Header />
             </div>
 
-            <div className="navbar">
-                <MiscNavbar/>
+            <div className="navbar-spacer">
+                <MiscNavbar />
+            </div>
+            
+            <div className="para">
+                <h1 className="text">FAQ</h1>
             </div>
 
-            <h1>FAQ</h1>
-        </div> 
+            <div className="dropdown-spacer">
+                <Dropdowns />
+            </div>
+        </div>
     )
   }
 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import '.././../sass/Components/home/MiscNavbar.scss'
+import '../../sass/Components/home/MiscNavbar.scss'
 
 function MiscNavbar(){
     return(

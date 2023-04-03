@@ -11,10 +11,17 @@
         .Header-spacer{
             padding: 8% 0 5% 0;
         }
-        .navbar{
+        .navbar-spacer{
             width: 70%;
             margin: auto;
             padding-bottom: 50px;
+        }
+        .para{
+            padding-bottom: 30px;
+        }
+        .dropdown-spacer{
+            width: 80%;
+            margin: auto;
         }
     }
 }
@@ -31,10 +38,13 @@
         .Header-spacer{
             padding: 8% 0 5% 0;
         }
-        .navbar{
+        .navbar-spacer{
             width: 70%;
             margin: auto;
             padding-bottom: 40px;
+        }
+        .para{
+            margin-bottom: 30px;
         }
     }
 }
@@ -51,10 +61,13 @@
         .Header-spacer{
             padding: 6.5% 0 5% 0;
         }
-        .navbar{
+        .navbar-spacer{
             width: 70%;
             margin: auto;
             padding-bottom: 40px;
+        }
+        .para{
+            margin-bottom: 30px;
         }
     }
 }
@@ -71,12 +84,14 @@
         .Header-spacer{
             padding: 6% 0 8% 0;
         }
-        .navbar{
+        .navbar-spacer{
             width: 70%;
             margin: auto;
             padding-bottom: 40px;
         }
-        
+        .para{
+            margin-bottom: 30px;
+        }
     }
 }
 
@@ -92,10 +107,13 @@
         .Header-spacer{
             padding: 15% 0 8% 0;
         }
-        .navbar{
+        .navbar-spacer{
             width: 80%;
             margin: auto;
             padding-bottom: 40px;            
+        }
+        .para{
+            margin-bottom: 30px;
         }
     }
 }

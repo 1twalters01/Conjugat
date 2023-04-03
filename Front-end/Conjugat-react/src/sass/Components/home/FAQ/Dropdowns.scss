@@ -1,0 +1,50 @@
+@import '../../../variables';
+
+/* TV screens */
+@media only screen and (min-width: $TV-breakpoint){
+    .Dropdown-container{
+        .subtitle{
+            margin-bottom: 20px;
+        }
+        .section{
+            margin-bottom: 60px;
+        }
+        .faq{
+            cursor: pointer;
+            border-bottom: 2px solid white;
+            .question{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .answer{
+                max-height: 0;
+                overflow: hidden;
+                transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+            }
+            &.active .answer{
+                max-height: 100%;
+            }
+        }
+    }
+}
+
+/* PC */
+@media only screen and (max-width: $PC-max-breakpoint) and (min-width: $PC-min-breakpoint){
+     
+}
+
+/* Laptops */
+@media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint){
+    
+}
+
+/* Tablets */
+@media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){
+    
+}
+
+/* Mobiles */
+@media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint){
+    
+}

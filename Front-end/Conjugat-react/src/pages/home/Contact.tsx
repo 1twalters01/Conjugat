@@ -13,7 +13,7 @@ function Contact() {
             <div className="navbar">
                 <MiscNavbar/>
             </div>
-            
+
             <div className="para">
                 <h1 className="text">Contact us</h1>
                 <p className="text">
