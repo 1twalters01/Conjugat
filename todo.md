@@ -8,7 +8,7 @@ Finish designing web pages, style and add colour to:
 * Subscribe auth done
 * Unsubscribe auth done
 3. settings
-Add top navbar
+* Add top navbar
 <!-- * Change email -->
 <!-- * Change password -->
 <!-- * Change username -->

@@ -1,5 +1,5 @@
-import '../../../sass/Components/home/FAQ/Dropdowns.scss'
 import { useState } from 'react'
+import '../../../sass/Components/home/FAQ/Dropdowns.scss'
 
 function Dropdowns() {
     type TSelected = number|null
