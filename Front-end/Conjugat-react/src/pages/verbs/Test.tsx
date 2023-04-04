@@ -6,4 +6,17 @@ function Test() {
     )
 }
 
+const exmpleQustionData = [
+    {
+        language: English,
+        Base: 
+    },
+    {
+
+    },
+    {
+
+    }
+]
+
 export default Test
