@@ -10,7 +10,7 @@ function Home() {
 
         <br />
         
-        <Link to='../settings/' className="text-blue-link">Settings</Link>
+        <Link to='../settings/change-email/' className="text-blue-link">Settings</Link>
         
         <br />
         

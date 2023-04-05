@@ -1,8 +1,8 @@
-@import '../../variables';
+@import '../../../variables';
 
 /* TV screens */
 @media only screen and (min-width: $TV-breakpoint){
-    .submit-btn{
+    .logout-btn{
         width: 100%;
         margin: auto;
         .strong-btn {
@@ -20,7 +20,7 @@
 
 /* PC */
 @media only screen and (max-width: $PC-max-breakpoint) and (min-width: $PC-min-breakpoint){
-    .submit-btn{
+    .logout-btn{
         width: 100%;
         margin: auto;
         .strong-btn {
@@ -38,7 +38,7 @@
 
 /* Laptops */
 @media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint){
-    .submit-btn{
+    .logout-btn{
         width: 100%;
         margin: auto;
         .strong-btn {
@@ -56,7 +56,7 @@
 
 /* Tablets */
 @media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){
-    .submit-btn{
+    .logout-btn{
         width: 100%;
         margin: auto;
         .strong-btn {
@@ -74,7 +74,7 @@
 
 /* Mobiles */
 @media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint){
-    .submit-btn{
+    .logout-btn{
         width: 100%;
         margin: auto;
         .strong-btn {

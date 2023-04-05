@@ -2,8 +2,6 @@ import { useState} from "react"
 import Authorization from '../../functions/Authorization'
 import AccountDeleted from "../../components/settings/Close account/AccountDeleted"
 import AccountDeleteForm from "../../components/settings/Close account/AccountDeleteForm"
-import SettingsLinks from "../../components/settings/SettingsLinks"
-import '../../sass/pages/settings/CloseAccount.scss'
 
 function CloseAccount() {
   Authorization.AuthRequired()
@@ -11,21 +9,15 @@ function CloseAccount() {
 
   if (done == false) {
     return (
-      <div className="Close-account-container">
-          <div className="lhs container">
-              <SettingsLinks />
+      <div className="rhs container">
+          <div className="Header-spacer">
+              <h1 className="text">Close account</h1>
           </div>
           
-          <div className="rhs container">
-              <div className="Header-spacer">
-                  <h1 className="text">Close account</h1>
-              </div>
-              
-              <div className="form-spacer">
-                  <AccountDeleteForm
-                    onDoneChange={setDone}
-                  />
-              </div>
+          <div className="form-spacer">
+              <AccountDeleteForm
+                onDoneChange={setDone}
+              />
           </div>
       </div>
     )

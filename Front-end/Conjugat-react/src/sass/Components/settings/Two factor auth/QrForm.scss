@@ -14,28 +14,48 @@
 
 /* PC */
 @media only screen and (max-width: $PC-max-breakpoint) and (min-width: $PC-min-breakpoint){
-    .register-form {
-        
+    .QrForm-container {
+        .password-spacer{
+            margin-bottom: 40px;
+        }
+        .totp-spacer{
+            margin-bottom: 20px;
+        }
     }
 }
 
 /* Laptops */
 @media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint){
-    .register-form {
-        
+    .QrForm-container {
+        .password-spacer{
+            margin-bottom: 40px;
+        }
+        .totp-spacer{
+            margin-bottom: 20px;
+        }
     }
 }
 
 /* Tablets */
 @media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){
-    .register-form {
-
+    .QrForm-container {
+        .password-spacer{
+            margin-bottom: 40px;
+        }
+        .totp-spacer{
+            margin-bottom: 20px;
+        }
     }
 }
 
 /* Mobiles */
 @media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint){
-    .register-form {
-
+    .QrForm-container {
+        .password-spacer{
+            margin-bottom: 40px;
+        }
+        .totp-spacer{
+            margin-bottom: 20px;
+        }
     }
 }

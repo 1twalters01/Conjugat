@@ -24,6 +24,7 @@ import Activate from './pages/account/Activate'
 import Subscribe from './pages/newsletter/Subscribe'
 import Unsubscribe from './pages/newsletter/Unsubscribe'
 
+import Settings from "./pages/settings/Settings";
 import Email from './pages/settings/ChangeEmail'
 import Password from './pages/settings/ChangePassword'
 import Username from './pages/settings/ChangeUsername'
@@ -37,6 +38,8 @@ import TwoFactorAuth from './pages/settings/TwoFactorAuth'
 import Cancelled from './pages/subscriptions/Cancelled'
 import Process from './pages/subscriptions/Process'
 import Success from './pages/subscriptions/Success'
+
+import Test from "./pages/verbs/Test";
 
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -74,7 +77,8 @@ const router = createBrowserRouter(
       </Route>
 
 
-      <Route path="settings">
+      <Route path="settings" element={<Settings />}>
+      {/* <Route path="settings"> */}
         <Route path="change-email" element={<Email />} />
         <Route path="change-password" element={<Password />} />
         <Route path="change-username" element={<Username />} />
@@ -95,6 +99,11 @@ const router = createBrowserRouter(
         <Route path="process" element={<Process />} />
         <Route path="success" element={<Success />} />
       </Route>
+
+      <Route path="verbs">
+        <Route path="test" element={<Test />} />
+      </Route>
+
     </Route>
   )
 )

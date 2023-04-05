@@ -2,46 +2,39 @@
 
 /* TV screens */
 @media only screen and (min-width: $TV-breakpoint){
-    .Change-username-container{
-        max-width: 1030px;
+    .Settings-navbar{
         display: grid;
-        grid-template-columns: 0.25fr 0.75fr;
-        grid-gap: 40px;
-        margin: 2% auto auto auto;
-        .lhs{
-            height: 420px;
-            border-radius: 25px;
-        }
-        .rhs{
-            border-radius: 25px;
-            padding-bottom: 80px;
-            .Header-spacer{
-                padding: 8% 0 8% 0;
-            }
-            .form-spacer{
-                width: 50%;
-                margin: auto;
-            }
-        }
+        grid-template-columns: repeat(5, 1fr);
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
     }
 }
 
 /* PC */
 @media only screen and (max-width: $PC-max-breakpoint) and (min-width: $PC-min-breakpoint){
-    
+    .Settings-navbar{
+
+    }
 }
 
 /* Laptops */
 @media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint){
-    
+    .Settings-navbar{
+
+    }
 }
 
 /* Tablets */
 @media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){
-    
+    .Settings-navbar{
+
+    }
 }
 
 /* Mobiles */
 @media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint){
-    
+    .Settings-navbar{
+
+    }
 }

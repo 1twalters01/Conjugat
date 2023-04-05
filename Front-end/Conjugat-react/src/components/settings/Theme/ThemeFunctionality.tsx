@@ -1,13 +1,34 @@
-import { FormEvent } from "react"
+import { FormEvent, useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import AxiosInstance from "../../../functions/AxiosInstance";
 import { onThemeChange } from "../../../redux/slices/themeSlice";
 import { RootState } from "../../../redux/store";
-
+import '../../../sass/Components/settings/Themes/ThemeFunctionality.scss'
 
 function ThemeFunctionality() {
     const{ theme } = useSelector((state: RootState) => state.persistedReducer.theme)
     const dispatch = useDispatch();
+
+    var init_width
+    if (window.innerWidth > 1201) {
+      init_width = 125
+    }
+    else{
+      init_width = window.innerWidth/7.5
+    }
+
+    const [themeSize, SetThemeSize] = useState(init_width)
+    function resizeFunction() {
+        var width = window.innerWidth
+        if (width > 1201){
+            SetThemeSize(125)
+        }
+        else {
+            SetThemeSize(width/7.5)
+        }
+    }
+
+    window.addEventListener("resize", resizeFunction);
 
     function submit(choice:string, e:FormEvent<HTMLDivElement>) {
       if (choice != theme) {
@@ -27,11 +48,11 @@ function ThemeFunctionality() {
     }
   
     return(
-      <div>
-        <div onClick={(e) => submit('Dark', e)} style={{height: '200px', width: '200px', background: 'black'}}>
+      <div className="Themes-container" style={{width: `${2*themeSize}px`}}>
+        <div onClick={(e) => submit('Dark', e)} style={{height: `${themeSize}px`, width: `${themeSize}px`, background: 'black'}}>
         
         </div>
-        <div onClick={(e) => submit('Light', e)} style={{height: '200px', width: '200px', background: 'yellow'}}>
+        <div onClick={(e) => submit('Light', e)} style={{height: `${themeSize}px`, width: `${themeSize}px`, background: 'yellow'}}>
         
         </div>
       </div>

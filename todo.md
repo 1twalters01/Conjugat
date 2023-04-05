@@ -7,17 +7,7 @@ Finish designing web pages, style and add colour to:
 * Unsubscribe auth
 * Subscribe auth done
 * Unsubscribe auth done
-3. settings
-* Add top navbar
-<!-- * Change email -->
-<!-- * Change password -->
-<!-- * Change username -->
-<!-- * Close account -->
-<!-- * Logout all -->
-<!-- * Premium -->
-* Reset account
-* Themes
-<!-- * Two factor authentication -->
+3. settings - Mobile scss, Navbar SCSS, Reset account, Themes
 4. subscriptions
 * Cancelled
 * Process

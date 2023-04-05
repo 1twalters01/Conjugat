@@ -22,7 +22,7 @@ function LogoutAllBtn({onLoggedOutChange} : {onLoggedOutChange:Function}) {
     }
 
     return (
-      <button onClick={(e) => submit(e)}>Log out</button>
+      <button onClick={(e) => submit(e)} className="logout-btn strong-gold-btn">Log out</button>
     )
   }
 

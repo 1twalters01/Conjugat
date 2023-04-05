@@ -11,28 +11,36 @@
 
 /* PC */
 @media only screen and (max-width: $PC-max-breakpoint) and (min-width: $PC-min-breakpoint){
-    .register-form {
-        
+    .Load-2FA-container {
+        .QrCode{
+            padding-bottom: 35px;
+        }
     }
 }
 
 /* Laptops */
 @media only screen and (max-width: $Laptop-max-breakpoint) and (min-width: $Laptop-min-breakpoint){
-    .register-form {
-        
+    .Load-2FA-container {
+        .QrCode{
+            padding-bottom: 35px;
+        }
     }
 }
 
 /* Tablets */
 @media only screen and (max-width: $Tablet-max-breakpoint) and (min-width: $Tablet-min-breakpoint){
-    .register-form {
-
+    .Load-2FA-container {
+        .QrCode{
+            padding-bottom: 35px;
+        }
     }
 }
 
 /* Mobiles */
 @media (max-width: $Mobile-max-breakpoint) and (min-width:$Mobile-min-breakpoint){
-    .register-form {
-
+    .Load-2FA-container {
+        .QrCode{
+            padding-bottom: 35px;
+        }
     }
 }
