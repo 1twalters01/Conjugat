@@ -5,7 +5,9 @@ class SubscriptionStatus(models.Model):
     status = models.CharField(max_length=20)
     def __str__(self):
         return self.method
+    class Meta:
+        verbose_name_plural = 'Subscription statuses'
 
-class NewsletterSubscribers(models.Model):
+class NewsletterSubscriber(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     status = models.ForeignKey(SubscriptionStatus, on_delete=models.CASCADE, related_name='subscription_status')

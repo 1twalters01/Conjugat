@@ -2,11 +2,11 @@ from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
-from .models import NewsletterSubscribers
+from .models import NewsletterSubscriber
 
 def get_subscriber(email):
     user = User.objects.get(email=email)
-    subscriber = NewsletterSubscribers(user=user)
+    subscriber = NewsletterSubscriber(user=user)
     return subscriber
 
 def subscription_method(status):
@@ -14,11 +14,11 @@ def subscription_method(status):
         return 1
     if status == 'unsubscribe':
         return 2
-    if status == 'Non-subscribed':
+    if status == 'non-subscribed':
         return 3
-    if status == 'Cleaned':
+    if status == 'cleaned':
         return 4
-    if status == 'Pending':
+    if status == 'pending':
         return 5
 
 @csrf_exempt
