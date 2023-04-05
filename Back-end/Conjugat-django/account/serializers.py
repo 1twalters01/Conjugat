@@ -111,8 +111,7 @@ class LoginPasswordSerializer(serializers.Serializer):
             return validated_2FA[0], validated_2FA[1], validated_2FA[2]
         
         hash, token = self.obtain_token(remember_me, user)
-        theme = Theme.objects.get_or_create(user=user)[0]
-        response = {'token':token, 'theme':theme.theme}
+        response = {'token':token}
         return response, True, user
 
 

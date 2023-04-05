@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { toast } from "react-toastify"
 import { RootState } from "../../../redux/store"
 import { onThemeChange } from "../../../redux/slices/themeSlice"
+import axios from "axios"
 import AxiosInstance from '../../../functions/AxiosInstance'
 import handleText from "../../../functions/handlers/handleText"
 import PasswordField from '../../Input fields/PasswordField'
@@ -14,10 +15,8 @@ import PasswordReset from './PasswordReset'
 import SubmitBtn from "../../Buttons/SubmitBtn"
 import '../../../sass/Components/account/Login/PasswordForm.scss'
 
-
 function PasswordForm() {
     const dispatch = useDispatch()
-    // const navigate = useNavigate()
     const { confirmed } = useSelector((state: RootState) => state.persistedReducer.login)
     const { username } = useSelector((state: RootState) => state.persistedReducer.login)
     const [password, setPassword] = useState('')
@@ -34,10 +33,22 @@ function PasswordForm() {
             remember_me: rememberMe
         })
         .then(res=>{
-            console.log(res.data.token)
             localStorage.setItem("token", res.data.token)
-            dispatch(onThemeChange(res.data.theme))
-            window.location.href = ('/home')
+            axios
+            .get ('settings/themes/', {
+                headers: {
+                    'Authorization': 'Token '+ localStorage.getItem("token"),
+                    'Content-Type': 'application/json',
+                    accept: 'application/json',
+                }
+            })
+            .then ((result: { data: { theme: string; }; }) => {
+                dispatch(onThemeChange(result.data.theme))
+                window.location.href = '/home'
+            })
+            .catch (err=>{
+                console.log(err.response.data)
+            })
         })
         .catch(err=>{
             toast.error(err.response.data.error)
@@ -47,36 +58,39 @@ function PasswordForm() {
     return (
       <div className="login-form">
         <form onSubmit={(e) => submit(e)}>
-          <PasswordField
-            password = {password}
-            handlePassword = {(e:ChangeEvent<HTMLInputElement>) => handleText(e, setPassword)}
-            id = "password"
-            labelText="Password"
-          />
-          <div className="password-spacer"></div>
+            <div className="password-spacer">
+                <PasswordField
+                  password = {password}
+                  handlePassword = {(e:ChangeEvent<HTMLInputElement>) => handleText(e, setPassword)}
+                  id = "password"
+                  labelText="Password"
+                />
+            </div>
 
           {confirmed == false ?
             null
           :
             <>
-            <div className="totp-top-spacer"></div>
-              <TotpField
-                totp = {totp}
-                handleTotp = {(e:ChangeEvent<HTMLInputElement>) => handleTotp(e, setTotp)}
-                labelText="Totp"
-              />
-              <div className="totp-bottom-spacer"></div>
+            <div className="totp-spacer">
+                <TotpField
+                  totp = {totp}
+                  handleTotp = {(e:ChangeEvent<HTMLInputElement>) => handleTotp(e, setTotp)}
+                  labelText="Totp"
+                />
+            </div>
             </>
           }
 
-          <RememberMeField
-            rememberMe = {rememberMe}
-            handleRememberMe = {(e:ChangeEvent<HTMLInputElement>) => handleCheckbox(e, setRememberMe)}
-          />
-          <div className="rememberMe-spacer"></div>
+          <div className="rememberMe-spacer">
+              <RememberMeField
+                rememberMe = {rememberMe}
+                handleRememberMe = {(e:ChangeEvent<HTMLInputElement>) => handleCheckbox(e, setRememberMe)}
+              />
+          </div>
 
-          <PasswordReset />
-          <div className="passwordReset-spacer"></div>
+          <div className="passwordReset-spacer">
+              <PasswordReset />
+          </div>
 
           <SubmitBtn
             value="Log in"
