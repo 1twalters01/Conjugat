@@ -3,7 +3,7 @@ from rest_framework import status, permissions
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import SubscribeSerializer, UnsubscribeSerializer
+from .serializers import SubscribeSerializer, UnsubscribeSerializer, StatusSerializer
 from .validations import *
 
 
@@ -25,7 +25,6 @@ class GetRoutes(APIView):
             },
         ]
         return Response(routes)
-
 
 ''' Subscribe'''
 class Subscribe(APIView):
@@ -81,4 +80,19 @@ class Unsubscribe(APIView):
             response = serializer.unsubscribe_user(data)
             if response[1] == True:
                 return Response(data=response[0], status=status.HTTP_201_CREATED)
+            return Response({'error':response[0]}, status=response[2])
+
+
+''' Obtain status '''
+class Premium(APIView):
+    permission_classes = (permissions.AllowAny,)
+    # authentication_classes = (SessionAuthentication,)
+    def post(self, request):
+        data = request.data
+        context = {'user': request.user}
+        serializer = StatusSerializer(data=data, context=context)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.get_status(data)
+            if response[1] == True:
+                return Response(data=response[0], status=status.HTTP_200_OK)
             return Response({'error':response[0]}, status=response[2])

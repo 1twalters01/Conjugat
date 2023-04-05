@@ -109,7 +109,7 @@ class StatusSerializer(serializers.Serializer):
             return 4
         if status == 'pending':
             return 5
-    
+
     def get_status(self, data):
         username =  self.context['username']
         user = User.objects.get(username=username)
@@ -121,5 +121,5 @@ class StatusSerializer(serializers.Serializer):
         if not subscriber.status:
             subscriber.status = self.NewsletterStatus('Not-subscribed')
         elif subscriber.status:
-            response = {'status': subscriber.status}
+            response = {'status': subscriber.status.status}
         return response, True
