@@ -1,4 +1,5 @@
 import AxiosInstance from "../../../functions/AxiosInstance"
+import '../../../sass/Components/subscriptions/Process/StripeProcess.scss'
 
 function StripeProcess({url, stripeCustomerID}: {url:string, stripeCustomerID:string}) {
     function click() {
@@ -12,15 +13,15 @@ function StripeProcess({url, stripeCustomerID}: {url:string, stripeCustomerID:st
     }
     return(
       <div>
-        <h2>Stripe</h2>
-        <div>
+          <h2>Stripe</h2>
           <div>
-            <h3>Premium plan</h3>
-            <h5>$3.00 / month</h5>
+              <div>
+                  <h3>Premium plan</h3>
+                  <h5>$3.00 / month</h5>
+              </div>
+              
+              <button onClick={click} className="StripeBtn">Checkout with <span>stripe</span></button>
           </div>
-          
-          <a onClick={click}><button>Checkout</button></a>
-        </div>
       </div>
     )
 }

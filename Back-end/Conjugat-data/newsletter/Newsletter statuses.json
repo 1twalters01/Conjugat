@@ -1,0 +1,37 @@
+[
+{
+    "model": "newsletter.NewsletterSubscribers",
+    "pk": 1,
+    "fields": {
+        "status": "Subscribed"
+    }
+},
+{
+    "model": "newsletter.NewsletterSubscribers",
+    "pk": 2,
+    "fields": {
+        "status": "Unsubscribed"
+    }
+},
+{
+    "model": "newsletter.NewsletterSubscribers",
+    "pk": 3,
+    "fields": {
+        "status": "Non-subscribed"
+    }
+},
+{
+    "model": "newsletter.NewsletterSubscribers",
+    "pk": 4,
+    "fields": {
+        "status": "Cleaned"
+    }
+},
+{
+    "model": "newsletter.NewsletterSubscribers",
+    "pk": 5,
+    "fields": {
+        "status": "Pending"
+    }
+}
+]

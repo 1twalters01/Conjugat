@@ -1,0 +1,12 @@
+{
+    "key": "YOUR_API_KEY",
+    "url": "http://conjugat.io/newsletter/mailchimp-webhooks/",
+    "description": "Conjugat newsletter webhook",
+    "events": [
+        "send",
+        "open",
+        "click",
+        "hard_bounce",
+        "spam"
+    ]
+}

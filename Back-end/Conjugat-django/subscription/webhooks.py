@@ -61,7 +61,7 @@ def stripe_webhooks(request):
         event = json.loads(payload)
     except ValueError as e:
         print("Webhook error while parsing basic request." + str(e))
-        return JsonResponse({"success": True}, status=400)
+        return JsonResponse({"success": False}, status=400)
 
     if event and event["type"] == "customer.deleted":
         print("customer.deleted") # log event

@@ -90,10 +90,10 @@ class LoginPasswordSerializer(serializers.Serializer):
 
     def obtain_token(self, remember_me, user):
         if remember_me == True:
-            hash, token = AuthToken.objects.create(user, expiry=timedelta(days=7))
+            _, token = AuthToken.objects.create(user, expiry=timedelta(days=7))
         elif remember_me == False:
-            hash, token = AuthToken.objects.create(user, expiry=timedelta(days=1))
-        return hash, token
+            _, token = AuthToken.objects.create(user, expiry=timedelta(days=1))
+        return token
 
     def login_user(self, data):
         username = data['username']
@@ -110,7 +110,7 @@ class LoginPasswordSerializer(serializers.Serializer):
         if validated_2FA[1] == False:
             return validated_2FA[0], validated_2FA[1], validated_2FA[2]
         
-        hash, token = self.obtain_token(remember_me, user)
+        token = self.obtain_token(remember_me, user)
         response = {'token':token}
         return response, True, user
 

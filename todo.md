@@ -7,7 +7,7 @@ Finish designing web pages, style and add colour to:
 * Unsubscribe auth
 * Subscribe auth done
 * Unsubscribe auth done
-3. settings - Mobile scss, Navbar SCSS, Reset account, Themes
+3. settings - Mobile scss, Navbar SCSS, Reset account, Themes, premium, done pages
 4. subscriptions
 * Cancelled
 * Process
@@ -71,6 +71,8 @@ Launch web app
 
 # Long term goals
 Build the android app (kotlin)
+
+Make themes detect if browser or app
 
 Launch android app
 
