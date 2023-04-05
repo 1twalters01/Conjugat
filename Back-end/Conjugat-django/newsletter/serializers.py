@@ -1,7 +1,9 @@
 from django.conf import settings
+from django.contrib.auth.models import User
 import hashlib
 from mailchimp_marketing import Client
 from mailchimp_marketing.api_client import ApiClientError
+from .models import NewsletterSubscriber
 from rest_framework import serializers, status
 
 
@@ -84,4 +86,40 @@ class UnsubscribeSerializer(serializers.Serializer):
             return error.text, False, status.HTTP_424_FAILED_DEPENDENCY
         
         response = 'Successfully unsubscribed from the newsletter'
+        return response, True
+    
+''' Obtain status '''
+class StatusSerializer(serializers.Serializer):
+    status = serializers.CharField()
+    def get_subscriber(self, user):
+        try:
+            subscriber = NewsletterSubscriber.objects.get(user=user)
+        except:
+            subscriber = None
+        return subscriber
+    
+    def NewsletterStatus(self, status):
+        if status == 'subscribe':
+            return 1
+        if status == 'unsubscribe':
+            return 2
+        if status == 'non-subscribed':
+            return 3
+        if status == 'cleaned':
+            return 4
+        if status == 'pending':
+            return 5
+    
+    def get_status(self, data):
+        username =  self.context['username']
+        user = User.objects.get(username=username)
+        subscriber = self.get_subscriber(user)
+        if not subscriber:
+            subscriber = NewsletterSubscriber.objects.create(user=user)
+            subscriber.status = self.NewsletterStatus('Not-subscribed')
+
+        if not subscriber.status:
+            subscriber.status = self.NewsletterStatus('Not-subscribed')
+        elif subscriber.status:
+            response = {'status': subscriber.status}
         return response, True
