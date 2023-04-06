@@ -9,7 +9,6 @@ Finish designing web pages, style and add colour to:
 * Unsubscribe auth done
 3. settings - Mobile scss, Navbar SCSS, Reset account, Themes, premium
 4. subscriptions
-* Cancelled
 * Process
 * Success
 5. Misc
