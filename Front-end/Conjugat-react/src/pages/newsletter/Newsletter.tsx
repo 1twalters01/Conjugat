@@ -16,7 +16,7 @@ function Newsletter() {
         }
         else {
             setSubscribed(false)
-            navigate('/newsletters/subscribe')
+            navigate('/newsletters/unsubscribe')
         }
     })
 }
