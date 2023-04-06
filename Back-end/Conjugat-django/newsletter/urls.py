@@ -6,5 +6,6 @@ urlpatterns = [
     path('', views.GetRoutes.as_view(), name='get_routes'),
     path('subscribe/', views.Subscribe.as_view(), name='subscribe'),
     path('unsubscribe/', views.Unsubscribe.as_view(), name='unsubscribe'),
+    path('obtain-status/', views.ObtainStatus.as_view(), name='obtain_status'),
     path('mailchimp-webhooks/', webhooks.mailchimp_webhooks, name="mailchimp_webhooks"),
 ]

@@ -89,8 +89,8 @@ class UnsubscribeSerializer(serializers.Serializer):
         return response, True
     
 ''' Obtain status '''
-class StatusSerializer(serializers.Serializer):
-    status = serializers.CharField()
+class ObtainStatusSerializer(serializers.Serializer):
+    status = serializers.CharField(required=False)
     def get_subscriber(self, user):
         try:
             subscriber = NewsletterSubscriber.objects.get(user=user)
@@ -111,13 +111,16 @@ class StatusSerializer(serializers.Serializer):
             return 5
 
     def get_status(self, data):
-        username =  self.context['username']
+        username =  self.context['user']
         user = User.objects.get(username=username)
         subscriber = self.get_subscriber(user)
         if not subscriber:
             subscriber = NewsletterSubscriber.objects.create(user=user)
-            subscriber.status = self.NewsletterStatus('Not-subscribed')
+            subscriber.status = self.NewsletterStatus('non-subscribed')
+            print(subscriber.status)
+            subscriber.save()
 
+        print(subscriber.status)
         if not subscriber.status:
             subscriber.status = self.NewsletterStatus('Not-subscribed')
         elif subscriber.status:

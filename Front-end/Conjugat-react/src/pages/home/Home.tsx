@@ -18,7 +18,7 @@ function Home() {
         
         <br />
         
-        <Link to='../Newsletter/subscribe/' className="text-blue-link">Newsletter</Link>
+        <Link to='../Newsletter/' className="text-blue-link">Newsletter</Link>
       </div>
       
     )

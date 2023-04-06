@@ -3,7 +3,7 @@ from rest_framework import status, permissions
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import SubscribeSerializer, UnsubscribeSerializer, StatusSerializer
+from .serializers import SubscribeSerializer, UnsubscribeSerializer, ObtainStatusSerializer
 from .validations import *
 
 
@@ -84,13 +84,13 @@ class Unsubscribe(APIView):
 
 
 ''' Obtain status '''
-class Premium(APIView):
+class ObtainStatus(APIView):
     permission_classes = (permissions.AllowAny,)
     # authentication_classes = (SessionAuthentication,)
-    def post(self, request):
+    def get(self, request):
         data = request.data
         context = {'user': request.user}
-        serializer = StatusSerializer(data=data, context=context)
+        serializer = ObtainStatusSerializer(data=data, context=context)
         if serializer.is_valid(raise_exception=True):
             response = serializer.get_status(data)
             if response[1] == True:

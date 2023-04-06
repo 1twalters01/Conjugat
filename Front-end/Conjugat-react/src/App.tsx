@@ -21,6 +21,7 @@ import PasswordResetToken from './pages/account/PasswordResetToken'
 import Register from './pages/account/Register'
 import Activate from './pages/account/Activate'
 
+import Newsletter from "./pages/newsletter/Newsletter";
 import Subscribe from './pages/newsletter/Subscribe'
 import Unsubscribe from './pages/newsletter/Unsubscribe'
 
@@ -71,7 +72,7 @@ const router = createBrowserRouter(
       </Route>
 
 
-      <Route path="newsletter">
+      <Route path="newsletter" element={<Newsletter />}>
         <Route path="subscribe" element={<Subscribe />} />
         <Route path="unsubscribe" element={<Unsubscribe />} />
       </Route>

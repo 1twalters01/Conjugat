@@ -7,4 +7,4 @@ class NewsletterSubscriberAdmin(admin.ModelAdmin):
 
 @admin.register(SubscriptionStatus)
 class SubscriptionStatus(admin.ModelAdmin):
-    list_display = ['status', 'pk']
+    list_display = ['status', 'id']
