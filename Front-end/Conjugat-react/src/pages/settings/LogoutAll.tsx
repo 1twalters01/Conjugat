@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import Authorization from '../../functions/Authorization'
-import Header from '../../components/account/Header'
 import LogoutAllBtn from '../../components/settings/Logout all/LogoutAllBtn'
-import LogoutAllResponse from '../../components/settings/Logout all/LogoutAllResponse'
+import { Link } from 'react-router-dom'
 
 function LogoutAll() {
   Authorization.AuthRequired()
@@ -15,7 +14,7 @@ function LogoutAll() {
               </div>
               
               <div className="para">
-                  <p className='text'>Are you sure that you want to log out of all accounts?</p>
+                  <p className='text'>Are you sure that you want to log out of all accounts, including this one?</p>
               </div>
 
               <div className="form-spacer">
@@ -27,13 +26,18 @@ function LogoutAll() {
       )
   }
   else if (LoggedOut==true) {
-    return (
-      <div>
-        <Header />
+      return (
+          <div className="rhs container">
+              <div className="Header-spacer">
+                  <h1 className="text">Logout all</h1>
+              </div>                
 
-        <LogoutAllResponse />
-      </div>
-    )
+              <div className="para">
+                  <p className="text">You have been successfully logged out from all devices.</p>
+                  <Link to="../login"><div className="register weak-btn">Login</div></Link>
+              </div>
+          </div>
+      )
   }
   return <div></div>
 }

@@ -1,6 +1,5 @@
 import { useState } from "react"
 import Authorization from '../../functions/Authorization'
-import EmailChanged from "../../components/settings/Change email/EmailChanged"
 import EmailChangeForm from "../../components/settings/Change email/EmailChangeForm"
 
 function ChangeEmail() {
@@ -24,10 +23,15 @@ function ChangeEmail() {
     }
     else {
         return (
-            <div>
-                <h1>Change email done</h1>
+            <div className="rhs container">
+                <div className="Header-spacer">
+                    <h1 className="text">Change email done</h1>
+                </div>                
 
-                <EmailChanged />
+                <div className="para">
+                    <p className="text">Email has been updated.</p>
+                </div>
+                
             </div>
         )
     }

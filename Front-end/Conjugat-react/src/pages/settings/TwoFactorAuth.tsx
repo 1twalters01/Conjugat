@@ -22,7 +22,16 @@ function TwoFactorAuth() {
     )
   }
   return (
-    <p>Two factor authentication activation successful</p>
+    <div className="rhs container">
+        <div className="Header-spacer">
+            <h1 className="text">Two Factor Authentication</h1>
+        </div>                
+
+        <div className="para">
+            <p className="text">Two factor authentication activation successful.</p>
+        </div>
+        
+    </div>
   )
 }
 

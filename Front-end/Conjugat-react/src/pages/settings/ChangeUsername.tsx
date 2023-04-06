@@ -1,6 +1,5 @@
 import { useState } from "react"
 import Authorization from '../../functions/Authorization'
-import UsernameChanged from "../../components/settings/Change username/UsernameChanged"
 import UsernameChangeForm from "../../components/settings/Change username/UsernameChangeForm"
 
 function ChangeUsername() {
@@ -23,13 +22,17 @@ function ChangeUsername() {
         )
     }
     else if (done == true) {
-      return (
-        <div>
-          <h1>Change Username done</h1>
+        return (
+            <div className="rhs container">
+                <div className="Header-spacer">
+                    <h1 className="text">Change Username done</h1>
+                </div>                
 
-          <UsernameChanged />
-        </div>
-      )
+                <div className="para">
+                    <p className="text">Username has been updated</p>
+                </div>
+            </div>
+        )
     }
     return <div></div>
 }
