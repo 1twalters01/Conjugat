@@ -1,9 +1,8 @@
-from django.conf import settings
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect
-from .models import TwoFactorAuth
+from .models import Theme, TwoFactorAuth
 from rest_framework import status, permissions
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
@@ -213,7 +212,7 @@ class Premium(APIView):
                 return Response(data=response[0], status=status.HTTP_200_OK)
             return Response({'error':response[0]}, status=response[2])
 
-from .models import Theme
+
 ''' Theme '''
 # @method_decorator(csrf_protect, name='dispatch')
 class ChangeTheme(APIView):
@@ -289,15 +288,3 @@ class TwoFactorAuthentication(APIView):
             if response[1] == True:
                 return Response(data=response[0], status=status.HTTP_200_OK)
             return Response({'error':response[0]}, status=response[2])
-        
-
-
-
-
-
-
-
-
-
-
-

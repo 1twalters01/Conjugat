@@ -49,6 +49,7 @@
         margin: 20px auto 20px auto;
         .Header-spacer{
             padding: 8% 0 5% 0;
+            text-align: center;
         }
         .view-answers-spacer{
             padding-bottom: 70px;
@@ -79,10 +80,6 @@
         .Header-spacer{
             padding: 6.5% 0 5% 0;
             text-align: center;
-            margin: auto;
-            .subtitle{
-                color: green;
-            }
         }
         .view-answers-spacer{
             padding-bottom: 60px;
@@ -111,6 +108,7 @@
         margin: 20px auto 20px auto;
         .Header-spacer{
             padding: 6% 0 5% 0;
+            text-align: center;
         }
         .view-answers-spacer{
             padding-bottom: 60px;
@@ -139,7 +137,8 @@
         padding: 0 10px 0px 10px;
         margin: 20px auto 20px auto;
         .Header-spacer{
-            padding: 15% 0 8% 0
+            padding: 15% 0 8% 0;
+            text-align: center;
         }
         .view-answers-spacer{
             padding-bottom: 50px;
