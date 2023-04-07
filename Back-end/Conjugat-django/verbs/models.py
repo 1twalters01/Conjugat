@@ -7,19 +7,6 @@ class Language(models.Model):
         return self.language
 
 
-class RomanceBase(models.Model):
-    language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='language_base')
-    base = models.CharField(max_length=20)
-    rank = models.PositiveIntegerField()
-    class Meta:
-        unique_together = (('language','base'), ('language', 'rank'),)
-        indexes = [
-        models.Index(fields=['base']),
-        ]
-    def __str__(self):
-        return self.base
-
-
 class RomanceTense(models.Model):
     language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='language_tense')
     tense = models.CharField(max_length=80)
@@ -30,6 +17,64 @@ class RomanceTense(models.Model):
         ]
     def __str__(self):
         return self.tense
+
+
+class RomanceBase(models.Model):
+    language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='language_base')
+    base = models.CharField(max_length=50)
+    rank = models.PositiveIntegerField()
+    class Meta:
+        unique_together = (('language','base'), ('language', 'rank'),)
+        indexes = [
+        models.Index(fields=['base']),
+        ]
+    def __str__(self):
+        return self.base
+
+
+class RomanceGroup(models.Model):
+    language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='language_group')
+    group = models.CharField(max_length=10)
+    class Meta:
+        unique_together = (('language', 'group'),)
+    def __str__(self):
+        return self.group
+
+
+class RomanceModel(models.Model):
+    language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='language_model')
+    group = models.ForeignKey(RomanceGroup, on_delete=models.CASCADE, related_name='group_model')
+    model = models.CharField(max_length=50)
+    class Meta:
+        unique_together = (('language', 'model'),)
+    def __str__(self):
+        return self.model
+
+
+class RomanceRhyme(models.Model):
+    language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='language_rhyme')
+    base = models.ForeignKey(RomanceBase, on_delete=models.CASCADE, related_name='bases_rhyme_base')
+    rhymes = models.ForeignKey(RomanceBase, on_delete=models.CASCADE, related_name='bases_rhyme')
+    class Meta:
+        unique_together = (('language', 'base', 'rhymes'),)
+        indexes = [
+        models.Index(fields=['rhymes']),
+        ]
+    def __str__(self):
+        return self.rhymes
+
+
+class RomanceHalfRhyme(models.Model):
+    language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='language_half_rhyme')
+    base = models.ForeignKey(RomanceBase, on_delete=models.CASCADE, related_name='bases_half_rhyme_base')
+    half_rhymes = models.ForeignKey(RomanceBase, on_delete=models.CASCADE, related_name='bases_half_rhyme')
+    class Meta:
+        unique_together = (('language', 'base', 'half_rhymes'),)
+        indexes = [
+        models.Index(fields=['half_rhymes']),
+        ]
+    def __str__(self):
+        return self.half_rhymes
 
 
 class RomanceSubject(models.Model):
@@ -67,6 +112,12 @@ class RomanceConjugation(models.Model):
         ]
     def __str__(self):
         return self.conjugation
+
+
+
+
+
+
 
 
 class RomanceMain(models.Model):
