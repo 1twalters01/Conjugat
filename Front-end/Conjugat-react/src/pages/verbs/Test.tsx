@@ -1,18 +1,44 @@
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, FormEvent, useState } from "react"
 import '../../sass/Components/Input fields/TextField.scss'
 import '../../sass/Components/Input fields/SubmitBtn.scss'
 import '../../sass/pages/verbs/Test.scss'
+import AxiosInstance from "../../functions/AxiosInstance"
+import { toast } from "react-toastify"
 
 function Test() {
     const [inputValues, setInputValues] = useState({})
+    // const [testIDs, setTestIDs] = useState({})
+    
 
     const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
         setInputValues({...inputValues, [e.target.id]: e.target.value})
     }
 
+    function submit(e:FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        
+        let results = (
+            {
+                IDs: Object.keys(inputValues),
+                answers: Object.values(inputValues),
+            }
+        )
+        
+        AxiosInstance.Authorised
+        .post('verbs/verb-test', {
+            results: results
+        })
+        .then(res=>{
+            
+        })
+        .catch(err=>{
+            toast.error(err.response.data.error)
+        })
+    }
+
     return (
         <div>
-            {exmpleQustionData.map((test, i) => (
+            {exampleQustionData.map((test, i) => (
                 <div className='Test-container container'>
                     <div className="Header-spacer">
                         <h1 className="title header">{test.Base.charAt(0).toUpperCase()+test.Base.slice(1)}</h1>
@@ -24,7 +50,7 @@ function Test() {
                     </div>
 
                     <div className="form-width">
-                        <form action="" key={i}>
+                        <form action="" key={i} onSubmit={(e) => submit(e)}>
                             {test.IDs.map((id, j) => (
                             
                                 <div className="text-spacer" key={id}>
@@ -42,7 +68,7 @@ function Test() {
                             ))}
                             
                             <div className="btn">
-                                {i === exmpleQustionData.length-1 ?
+                                {i === exampleQustionData.length-1 ?
                                 <div className="submit-btn">
                                     <input type="submit" value="Submit" className="strong-btn strong-gold-btn"/>
                                 </div>
@@ -65,7 +91,14 @@ function Test() {
     )
 }
 
-const exmpleQustionData = [
+const idealAnswers = [
+    {
+        IDs: [1, 5, 6],
+        answers: ["am", "are", "ar"],
+    }
+]
+
+const exampleQustionData = [
     {
         language: 'English',
         Base: 'be',
@@ -88,7 +121,7 @@ const exmpleQustionData = [
         language: 'English',
         Base: 'know',
         Tense: 'Present',
-        IDs: [13, 14, 15, 16],
+        IDs: [25, 14, 15, 16],
         Subjects: ['He/She/It', 'We', 'You', 'They'],
         Auxiliaries: ["", "", "", "", ""],
         Verbs: ["know", "know", "knows", "know"],

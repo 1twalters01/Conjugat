@@ -6,6 +6,9 @@ fn sum_as_string(a: usize, b: usize) -> PyResult<String> {
     Ok((a + b).to_string())
 }
 
+#[pyfunction]
+fn check_test_answers(a:)
+
 /// A Python module implemented in Rust.
 #[pymodule]
 fn Test(_py: Python, m: &PyModule) -> PyResult<()> {

@@ -72,7 +72,7 @@ class GetRoutes(APIView):
 ''' Login '''
 class LoginUsername(APIView):
     permission_classes = (permissions.AllowAny,)
-    authentication_classes = (SessionAuthentication,)
+    # authentication_classes = (SessionAuthentication,)
     def post(self, request):
         data = request.data
         validated_username = validate_username(data)

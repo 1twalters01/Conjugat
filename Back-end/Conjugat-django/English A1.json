@@ -1,0 +1,5007 @@
+[
+    {
+    "model": "verbs.romancemain",
+    "pk": 1,
+    "fields": {
+        "rank": "1",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358490"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 2,
+    "fields": {
+        "rank": "2",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358491"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 3,
+    "fields": {
+        "rank": "3",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358492"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 4,
+    "fields": {
+        "rank": "4",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358491"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 5,
+    "fields": {
+        "rank": "5",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358491"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 6,
+    "fields": {
+        "rank": "6",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358498"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 7,
+    "fields": {
+        "rank": "7",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358498"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 8,
+    "fields": {
+        "rank": "8",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358499"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 9,
+    "fields": {
+        "rank": "9",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358498"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 10,
+    "fields": {
+        "rank": "10",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358498"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 11,
+    "fields": {
+        "rank": "11",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358502"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 12,
+    "fields": {
+        "rank": "12",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358502"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 13,
+    "fields": {
+        "rank": "13",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358503"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 14,
+    "fields": {
+        "rank": "14",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358502"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 15,
+    "fields": {
+        "rank": "15",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358502"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 16,
+    "fields": {
+        "rank": "16",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358507"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 17,
+    "fields": {
+        "rank": "17",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358507"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 18,
+    "fields": {
+        "rank": "18",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358508"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 19,
+    "fields": {
+        "rank": "19",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358507"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 20,
+    "fields": {
+        "rank": "20",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358507"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 21,
+    "fields": {
+        "rank": "21",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358512"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 22,
+    "fields": {
+        "rank": "22",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358512"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 23,
+    "fields": {
+        "rank": "23",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358513"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 24,
+    "fields": {
+        "rank": "24",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358512"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 25,
+    "fields": {
+        "rank": "25",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358512"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 26,
+    "fields": {
+        "rank": "26",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358516"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 27,
+    "fields": {
+        "rank": "27",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358516"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 28,
+    "fields": {
+        "rank": "28",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358517"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 29,
+    "fields": {
+        "rank": "29",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358516"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 30,
+    "fields": {
+        "rank": "30",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358516"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 31,
+    "fields": {
+        "rank": "31",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358521"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 32,
+    "fields": {
+        "rank": "32",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358521"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 33,
+    "fields": {
+        "rank": "33",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358522"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 34,
+    "fields": {
+        "rank": "34",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358521"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 35,
+    "fields": {
+        "rank": "35",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358521"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 36,
+    "fields": {
+        "rank": "36",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358526"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 37,
+    "fields": {
+        "rank": "37",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358526"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 38,
+    "fields": {
+        "rank": "38",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358527"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 39,
+    "fields": {
+        "rank": "39",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358526"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 40,
+    "fields": {
+        "rank": "40",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358526"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 41,
+    "fields": {
+        "rank": "41",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358530"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 42,
+    "fields": {
+        "rank": "42",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358530"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 43,
+    "fields": {
+        "rank": "43",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358531"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 44,
+    "fields": {
+        "rank": "44",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358530"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 45,
+    "fields": {
+        "rank": "45",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358530"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 46,
+    "fields": {
+        "rank": "46",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358534"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 47,
+    "fields": {
+        "rank": "47",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358534"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 48,
+    "fields": {
+        "rank": "48",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358535"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 49,
+    "fields": {
+        "rank": "49",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358534"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 50,
+    "fields": {
+        "rank": "50",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358534"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 51,
+    "fields": {
+        "rank": "51",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358538"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 52,
+    "fields": {
+        "rank": "52",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358538"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 53,
+    "fields": {
+        "rank": "53",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358539"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 54,
+    "fields": {
+        "rank": "54",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358538"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 55,
+    "fields": {
+        "rank": "55",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358538"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 56,
+    "fields": {
+        "rank": "56",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358543"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 57,
+    "fields": {
+        "rank": "57",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358543"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 58,
+    "fields": {
+        "rank": "58",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358544"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 59,
+    "fields": {
+        "rank": "59",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358543"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 60,
+    "fields": {
+        "rank": "60",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358543"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 61,
+    "fields": {
+        "rank": "61",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358548"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 62,
+    "fields": {
+        "rank": "62",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358548"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 63,
+    "fields": {
+        "rank": "63",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358549"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 64,
+    "fields": {
+        "rank": "64",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358548"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 65,
+    "fields": {
+        "rank": "65",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358548"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 66,
+    "fields": {
+        "rank": "66",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358552"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 67,
+    "fields": {
+        "rank": "67",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358552"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 68,
+    "fields": {
+        "rank": "68",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358553"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 69,
+    "fields": {
+        "rank": "69",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358552"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 70,
+    "fields": {
+        "rank": "70",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358552"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 71,
+    "fields": {
+        "rank": "71",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358556"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 72,
+    "fields": {
+        "rank": "72",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358556"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 73,
+    "fields": {
+        "rank": "73",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358557"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 74,
+    "fields": {
+        "rank": "74",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358556"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 75,
+    "fields": {
+        "rank": "75",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358556"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 76,
+    "fields": {
+        "rank": "76",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358560"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 77,
+    "fields": {
+        "rank": "77",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358560"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 78,
+    "fields": {
+        "rank": "78",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358561"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 79,
+    "fields": {
+        "rank": "79",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358560"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 80,
+    "fields": {
+        "rank": "80",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358560"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 81,
+    "fields": {
+        "rank": "81",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358564"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 82,
+    "fields": {
+        "rank": "82",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358564"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 83,
+    "fields": {
+        "rank": "83",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358565"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 84,
+    "fields": {
+        "rank": "84",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358564"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 85,
+    "fields": {
+        "rank": "85",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358564"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 86,
+    "fields": {
+        "rank": "86",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358568"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 87,
+    "fields": {
+        "rank": "87",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358568"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 88,
+    "fields": {
+        "rank": "88",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358569"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 89,
+    "fields": {
+        "rank": "89",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358568"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 90,
+    "fields": {
+        "rank": "90",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358568"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 91,
+    "fields": {
+        "rank": "91",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358573"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 92,
+    "fields": {
+        "rank": "92",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358573"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 93,
+    "fields": {
+        "rank": "93",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358574"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 94,
+    "fields": {
+        "rank": "94",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358573"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 95,
+    "fields": {
+        "rank": "95",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358573"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 96,
+    "fields": {
+        "rank": "96",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358577"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 97,
+    "fields": {
+        "rank": "97",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358577"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 98,
+    "fields": {
+        "rank": "98",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358578"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 99,
+    "fields": {
+        "rank": "99",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358577"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 100,
+    "fields": {
+        "rank": "100",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358577"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 101,
+    "fields": {
+        "rank": "101",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358581"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 102,
+    "fields": {
+        "rank": "102",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358581"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 103,
+    "fields": {
+        "rank": "103",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358582"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 104,
+    "fields": {
+        "rank": "104",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358581"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 105,
+    "fields": {
+        "rank": "105",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358581"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 106,
+    "fields": {
+        "rank": "106",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358585"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 107,
+    "fields": {
+        "rank": "107",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358585"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 108,
+    "fields": {
+        "rank": "108",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358586"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 109,
+    "fields": {
+        "rank": "109",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358585"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 110,
+    "fields": {
+        "rank": "110",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358585"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 111,
+    "fields": {
+        "rank": "111",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358589"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 112,
+    "fields": {
+        "rank": "112",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358589"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 113,
+    "fields": {
+        "rank": "113",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358590"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 114,
+    "fields": {
+        "rank": "114",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358589"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 115,
+    "fields": {
+        "rank": "115",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358589"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 116,
+    "fields": {
+        "rank": "116",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358593"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 117,
+    "fields": {
+        "rank": "117",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358593"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 118,
+    "fields": {
+        "rank": "118",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358594"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 119,
+    "fields": {
+        "rank": "119",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358593"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 120,
+    "fields": {
+        "rank": "120",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358593"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 121,
+    "fields": {
+        "rank": "121",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358597"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 122,
+    "fields": {
+        "rank": "122",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358597"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 123,
+    "fields": {
+        "rank": "123",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358598"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 124,
+    "fields": {
+        "rank": "124",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358597"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 125,
+    "fields": {
+        "rank": "125",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358597"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 126,
+    "fields": {
+        "rank": "126",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358600"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 127,
+    "fields": {
+        "rank": "127",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358600"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 128,
+    "fields": {
+        "rank": "128",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358601"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 129,
+    "fields": {
+        "rank": "129",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358600"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 130,
+    "fields": {
+        "rank": "130",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358600"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 131,
+    "fields": {
+        "rank": "131",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358604"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 132,
+    "fields": {
+        "rank": "132",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358604"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 133,
+    "fields": {
+        "rank": "133",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358605"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 134,
+    "fields": {
+        "rank": "134",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358604"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 135,
+    "fields": {
+        "rank": "135",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358604"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 136,
+    "fields": {
+        "rank": "136",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358608"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 137,
+    "fields": {
+        "rank": "137",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358608"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 138,
+    "fields": {
+        "rank": "138",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358609"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 139,
+    "fields": {
+        "rank": "139",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358608"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 140,
+    "fields": {
+        "rank": "140",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358608"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 141,
+    "fields": {
+        "rank": "141",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358612"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 142,
+    "fields": {
+        "rank": "142",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358612"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 143,
+    "fields": {
+        "rank": "143",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358613"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 144,
+    "fields": {
+        "rank": "144",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358612"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 145,
+    "fields": {
+        "rank": "145",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358612"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 146,
+    "fields": {
+        "rank": "146",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358616"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 147,
+    "fields": {
+        "rank": "147",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358616"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 148,
+    "fields": {
+        "rank": "148",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358617"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 149,
+    "fields": {
+        "rank": "149",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358616"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 150,
+    "fields": {
+        "rank": "150",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358616"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 151,
+    "fields": {
+        "rank": "151",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358620"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 152,
+    "fields": {
+        "rank": "152",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358620"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 153,
+    "fields": {
+        "rank": "153",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358621"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 154,
+    "fields": {
+        "rank": "154",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358620"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 155,
+    "fields": {
+        "rank": "155",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358620"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 156,
+    "fields": {
+        "rank": "156",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358624"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 157,
+    "fields": {
+        "rank": "157",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358624"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 158,
+    "fields": {
+        "rank": "158",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358625"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 159,
+    "fields": {
+        "rank": "159",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358624"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 160,
+    "fields": {
+        "rank": "160",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358624"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 161,
+    "fields": {
+        "rank": "161",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358628"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 162,
+    "fields": {
+        "rank": "162",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358628"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 163,
+    "fields": {
+        "rank": "163",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358629"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 164,
+    "fields": {
+        "rank": "164",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358628"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 165,
+    "fields": {
+        "rank": "165",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358628"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 166,
+    "fields": {
+        "rank": "166",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358632"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 167,
+    "fields": {
+        "rank": "167",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358632"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 168,
+    "fields": {
+        "rank": "168",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358633"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 169,
+    "fields": {
+        "rank": "169",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358632"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 170,
+    "fields": {
+        "rank": "170",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358632"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 171,
+    "fields": {
+        "rank": "171",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358636"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 172,
+    "fields": {
+        "rank": "172",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358636"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 173,
+    "fields": {
+        "rank": "173",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358637"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 174,
+    "fields": {
+        "rank": "174",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358636"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 175,
+    "fields": {
+        "rank": "175",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358636"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 176,
+    "fields": {
+        "rank": "176",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358496"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 177,
+    "fields": {
+        "rank": "177",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358500"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 178,
+    "fields": {
+        "rank": "178",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358506"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 179,
+    "fields": {
+        "rank": "179",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358511"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 180,
+    "fields": {
+        "rank": "180",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358514"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 181,
+    "fields": {
+        "rank": "181",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358520"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 182,
+    "fields": {
+        "rank": "182",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358525"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 183,
+    "fields": {
+        "rank": "183",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358528"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 184,
+    "fields": {
+        "rank": "184",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358532"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 185,
+    "fields": {
+        "rank": "185",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358536"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 186,
+    "fields": {
+        "rank": "186",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358542"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 187,
+    "fields": {
+        "rank": "187",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358547"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 188,
+    "fields": {
+        "rank": "188",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358550"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 189,
+    "fields": {
+        "rank": "189",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358554"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 190,
+    "fields": {
+        "rank": "190",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358558"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 191,
+    "fields": {
+        "rank": "191",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358562"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 192,
+    "fields": {
+        "rank": "192",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358566"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 193,
+    "fields": {
+        "rank": "193",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358572"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 194,
+    "fields": {
+        "rank": "194",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358575"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 195,
+    "fields": {
+        "rank": "195",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358579"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 196,
+    "fields": {
+        "rank": "196",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358581"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 197,
+    "fields": {
+        "rank": "197",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358587"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 198,
+    "fields": {
+        "rank": "198",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358591"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 199,
+    "fields": {
+        "rank": "199",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358595"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 200,
+    "fields": {
+        "rank": "200",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358597"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 201,
+    "fields": {
+        "rank": "201",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358602"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 202,
+    "fields": {
+        "rank": "202",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358606"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 203,
+    "fields": {
+        "rank": "203",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358610"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 204,
+    "fields": {
+        "rank": "204",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358614"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 205,
+    "fields": {
+        "rank": "205",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358618"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 206,
+    "fields": {
+        "rank": "206",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358640"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 207,
+    "fields": {
+        "rank": "207",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358640"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 208,
+    "fields": {
+        "rank": "208",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358641"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 209,
+    "fields": {
+        "rank": "209",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358640"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 210,
+    "fields": {
+        "rank": "210",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358640"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 211,
+    "fields": {
+        "rank": "211",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358644"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 212,
+    "fields": {
+        "rank": "212",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358644"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 213,
+    "fields": {
+        "rank": "213",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358645"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 214,
+    "fields": {
+        "rank": "214",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358644"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 215,
+    "fields": {
+        "rank": "215",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358644"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 216,
+    "fields": {
+        "rank": "216",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358648"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 217,
+    "fields": {
+        "rank": "217",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358648"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 218,
+    "fields": {
+        "rank": "218",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358649"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 219,
+    "fields": {
+        "rank": "219",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358648"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 220,
+    "fields": {
+        "rank": "220",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358648"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 221,
+    "fields": {
+        "rank": "221",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358652"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 222,
+    "fields": {
+        "rank": "222",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358652"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 223,
+    "fields": {
+        "rank": "223",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358653"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 224,
+    "fields": {
+        "rank": "224",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358652"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 225,
+    "fields": {
+        "rank": "225",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358652"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 226,
+    "fields": {
+        "rank": "226",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358656"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 227,
+    "fields": {
+        "rank": "227",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358656"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 228,
+    "fields": {
+        "rank": "228",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358657"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 229,
+    "fields": {
+        "rank": "229",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358656"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 230,
+    "fields": {
+        "rank": "230",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358656"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 231,
+    "fields": {
+        "rank": "231",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358660"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 232,
+    "fields": {
+        "rank": "232",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358660"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 233,
+    "fields": {
+        "rank": "233",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358661"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 234,
+    "fields": {
+        "rank": "234",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358660"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 235,
+    "fields": {
+        "rank": "235",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358660"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 236,
+    "fields": {
+        "rank": "236",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358664"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 237,
+    "fields": {
+        "rank": "237",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358664"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 238,
+    "fields": {
+        "rank": "238",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358665"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 239,
+    "fields": {
+        "rank": "239",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358664"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 240,
+    "fields": {
+        "rank": "240",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358664"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 241,
+    "fields": {
+        "rank": "241",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358668"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 242,
+    "fields": {
+        "rank": "242",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358668"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 243,
+    "fields": {
+        "rank": "243",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358669"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 244,
+    "fields": {
+        "rank": "244",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358668"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 245,
+    "fields": {
+        "rank": "245",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358668"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 246,
+    "fields": {
+        "rank": "246",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358672"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 247,
+    "fields": {
+        "rank": "247",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358672"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 248,
+    "fields": {
+        "rank": "248",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358673"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 249,
+    "fields": {
+        "rank": "249",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358672"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 250,
+    "fields": {
+        "rank": "250",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358672"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 251,
+    "fields": {
+        "rank": "251",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358676"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 252,
+    "fields": {
+        "rank": "252",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358676"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 253,
+    "fields": {
+        "rank": "253",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358677"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 254,
+    "fields": {
+        "rank": "254",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358676"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 255,
+    "fields": {
+        "rank": "255",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358676"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 256,
+    "fields": {
+        "rank": "256",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358680"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 257,
+    "fields": {
+        "rank": "257",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358680"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 258,
+    "fields": {
+        "rank": "258",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358681"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 259,
+    "fields": {
+        "rank": "259",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358680"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 260,
+    "fields": {
+        "rank": "260",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358680"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 261,
+    "fields": {
+        "rank": "261",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358683"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 262,
+    "fields": {
+        "rank": "262",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358683"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 263,
+    "fields": {
+        "rank": "263",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358684"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 264,
+    "fields": {
+        "rank": "264",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358683"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 265,
+    "fields": {
+        "rank": "265",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358683"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 266,
+    "fields": {
+        "rank": "266",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358687"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 267,
+    "fields": {
+        "rank": "267",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358687"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 268,
+    "fields": {
+        "rank": "268",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358688"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 269,
+    "fields": {
+        "rank": "269",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358687"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 270,
+    "fields": {
+        "rank": "270",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358687"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 271,
+    "fields": {
+        "rank": "271",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358690"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 272,
+    "fields": {
+        "rank": "272",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358690"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 273,
+    "fields": {
+        "rank": "273",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358691"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 274,
+    "fields": {
+        "rank": "274",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358690"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 275,
+    "fields": {
+        "rank": "275",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358690"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 276,
+    "fields": {
+        "rank": "276",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358694"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 277,
+    "fields": {
+        "rank": "277",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358694"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 278,
+    "fields": {
+        "rank": "278",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358695"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 279,
+    "fields": {
+        "rank": "279",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358694"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 280,
+    "fields": {
+        "rank": "280",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358694"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 281,
+    "fields": {
+        "rank": "281",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358698"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 282,
+    "fields": {
+        "rank": "282",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358698"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 283,
+    "fields": {
+        "rank": "283",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358699"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 284,
+    "fields": {
+        "rank": "284",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358698"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 285,
+    "fields": {
+        "rank": "285",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358698"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 286,
+    "fields": {
+        "rank": "286",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358702"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 287,
+    "fields": {
+        "rank": "287",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358702"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 288,
+    "fields": {
+        "rank": "288",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358703"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 289,
+    "fields": {
+        "rank": "289",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358702"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 290,
+    "fields": {
+        "rank": "290",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358702"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 291,
+    "fields": {
+        "rank": "291",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358707"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 292,
+    "fields": {
+        "rank": "292",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358707"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 293,
+    "fields": {
+        "rank": "293",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358708"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 294,
+    "fields": {
+        "rank": "294",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358707"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 295,
+    "fields": {
+        "rank": "295",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358707"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 296,
+    "fields": {
+        "rank": "296",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358711"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 297,
+    "fields": {
+        "rank": "297",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358711"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 298,
+    "fields": {
+        "rank": "298",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358712"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 299,
+    "fields": {
+        "rank": "299",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358711"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 300,
+    "fields": {
+        "rank": "300",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358711"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 301,
+    "fields": {
+        "rank": "301",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358715"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 302,
+    "fields": {
+        "rank": "302",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358715"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 303,
+    "fields": {
+        "rank": "303",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358716"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 304,
+    "fields": {
+        "rank": "304",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358715"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 305,
+    "fields": {
+        "rank": "305",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358715"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 306,
+    "fields": {
+        "rank": "306",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358719"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 307,
+    "fields": {
+        "rank": "307",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358719"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 308,
+    "fields": {
+        "rank": "308",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358720"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 309,
+    "fields": {
+        "rank": "309",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358719"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 310,
+    "fields": {
+        "rank": "310",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358719"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 311,
+    "fields": {
+        "rank": "311",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358723"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 312,
+    "fields": {
+        "rank": "312",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358723"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 313,
+    "fields": {
+        "rank": "313",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358724"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 314,
+    "fields": {
+        "rank": "314",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358723"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 315,
+    "fields": {
+        "rank": "315",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358723"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 316,
+    "fields": {
+        "rank": "316",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358727"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 317,
+    "fields": {
+        "rank": "317",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358727"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 318,
+    "fields": {
+        "rank": "318",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358728"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 319,
+    "fields": {
+        "rank": "319",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358727"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 320,
+    "fields": {
+        "rank": "320",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358727"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 321,
+    "fields": {
+        "rank": "321",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358730"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 322,
+    "fields": {
+        "rank": "322",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358730"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 323,
+    "fields": {
+        "rank": "323",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358731"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 324,
+    "fields": {
+        "rank": "324",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358730"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 325,
+    "fields": {
+        "rank": "325",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358730"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 326,
+    "fields": {
+        "rank": "326",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358734"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 327,
+    "fields": {
+        "rank": "327",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358734"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 328,
+    "fields": {
+        "rank": "328",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358735"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 329,
+    "fields": {
+        "rank": "329",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358734"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 330,
+    "fields": {
+        "rank": "330",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358734"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 331,
+    "fields": {
+        "rank": "331",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358738"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 332,
+    "fields": {
+        "rank": "332",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358738"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 333,
+    "fields": {
+        "rank": "333",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358739"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 334,
+    "fields": {
+        "rank": "334",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358738"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 335,
+    "fields": {
+        "rank": "335",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358738"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 336,
+    "fields": {
+        "rank": "336",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358742"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 337,
+    "fields": {
+        "rank": "337",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358742"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 338,
+    "fields": {
+        "rank": "338",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358743"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 339,
+    "fields": {
+        "rank": "339",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358742"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 340,
+    "fields": {
+        "rank": "340",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358742"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 341,
+    "fields": {
+        "rank": "341",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358746"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 342,
+    "fields": {
+        "rank": "342",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358746"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 343,
+    "fields": {
+        "rank": "343",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358747"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 344,
+    "fields": {
+        "rank": "344",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358746"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 345,
+    "fields": {
+        "rank": "345",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358746"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 346,
+    "fields": {
+        "rank": "346",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358750"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 347,
+    "fields": {
+        "rank": "347",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358750"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 348,
+    "fields": {
+        "rank": "348",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358751"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 349,
+    "fields": {
+        "rank": "349",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358750"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 350,
+    "fields": {
+        "rank": "350",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358750"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 351,
+    "fields": {
+        "rank": "351",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358754"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 352,
+    "fields": {
+        "rank": "352",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358754"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 353,
+    "fields": {
+        "rank": "353",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358755"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 354,
+    "fields": {
+        "rank": "354",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358754"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 355,
+    "fields": {
+        "rank": "355",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358754"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 356,
+    "fields": {
+        "rank": "356",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358758"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 357,
+    "fields": {
+        "rank": "357",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358758"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 358,
+    "fields": {
+        "rank": "358",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358759"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 359,
+    "fields": {
+        "rank": "359",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358758"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 360,
+    "fields": {
+        "rank": "360",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358758"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 361,
+    "fields": {
+        "rank": "361",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358762"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 362,
+    "fields": {
+        "rank": "362",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358762"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 363,
+    "fields": {
+        "rank": "363",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358763"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 364,
+    "fields": {
+        "rank": "364",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358762"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 365,
+    "fields": {
+        "rank": "365",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358762"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 366,
+    "fields": {
+        "rank": "366",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358766"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 367,
+    "fields": {
+        "rank": "367",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358766"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 368,
+    "fields": {
+        "rank": "368",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358767"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 369,
+    "fields": {
+        "rank": "369",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358766"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 370,
+    "fields": {
+        "rank": "370",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358766"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 371,
+    "fields": {
+        "rank": "371",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358770"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 372,
+    "fields": {
+        "rank": "372",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358770"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 373,
+    "fields": {
+        "rank": "373",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358771"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 374,
+    "fields": {
+        "rank": "374",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358770"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 375,
+    "fields": {
+        "rank": "375",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358770"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 376,
+    "fields": {
+        "rank": "376",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358774"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 377,
+    "fields": {
+        "rank": "377",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358774"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 378,
+    "fields": {
+        "rank": "378",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358775"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 379,
+    "fields": {
+        "rank": "379",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358774"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 380,
+    "fields": {
+        "rank": "380",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358774"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 381,
+    "fields": {
+        "rank": "381",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358778"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 382,
+    "fields": {
+        "rank": "382",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358778"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 383,
+    "fields": {
+        "rank": "383",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358779"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 384,
+    "fields": {
+        "rank": "384",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358778"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 385,
+    "fields": {
+        "rank": "385",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358778"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 386,
+    "fields": {
+        "rank": "386",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358782"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 387,
+    "fields": {
+        "rank": "387",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358782"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 388,
+    "fields": {
+        "rank": "388",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358783"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 389,
+    "fields": {
+        "rank": "389",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358782"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 390,
+    "fields": {
+        "rank": "390",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358782"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 391,
+    "fields": {
+        "rank": "391",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358786"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 392,
+    "fields": {
+        "rank": "392",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358786"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 393,
+    "fields": {
+        "rank": "393",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358787"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 394,
+    "fields": {
+        "rank": "394",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358786"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 395,
+    "fields": {
+        "rank": "395",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358786"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 396,
+    "fields": {
+        "rank": "396",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358790"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 397,
+    "fields": {
+        "rank": "397",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358790"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 398,
+    "fields": {
+        "rank": "398",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358791"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 399,
+    "fields": {
+        "rank": "399",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358790"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 400,
+    "fields": {
+        "rank": "400",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358790"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 401,
+    "fields": {
+        "rank": "401",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358794"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 402,
+    "fields": {
+        "rank": "402",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358794"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 403,
+    "fields": {
+        "rank": "403",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358795"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 404,
+    "fields": {
+        "rank": "404",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358794"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 405,
+    "fields": {
+        "rank": "405",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358794"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 406,
+    "fields": {
+        "rank": "406",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358798"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 407,
+    "fields": {
+        "rank": "407",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358798"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 408,
+    "fields": {
+        "rank": "408",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358799"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 409,
+    "fields": {
+        "rank": "409",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358798"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 410,
+    "fields": {
+        "rank": "410",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358798"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 411,
+    "fields": {
+        "rank": "411",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358802"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 412,
+    "fields": {
+        "rank": "412",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358802"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 413,
+    "fields": {
+        "rank": "413",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358803"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 414,
+    "fields": {
+        "rank": "414",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358802"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 415,
+    "fields": {
+        "rank": "415",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358802"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 416,
+    "fields": {
+        "rank": "416",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358806"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 417,
+    "fields": {
+        "rank": "417",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358806"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 418,
+    "fields": {
+        "rank": "418",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358807"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 419,
+    "fields": {
+        "rank": "419",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358806"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 420,
+    "fields": {
+        "rank": "420",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358806"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 421,
+    "fields": {
+        "rank": "421",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358810"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 422,
+    "fields": {
+        "rank": "422",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358810"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 423,
+    "fields": {
+        "rank": "423",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358811"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 424,
+    "fields": {
+        "rank": "424",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358810"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 425,
+    "fields": {
+        "rank": "425",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358810"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 426,
+    "fields": {
+        "rank": "426",
+        "tense": "89",
+        "subject": "40",
+        "auxiliary": "432",
+        "conjugation": "358814"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 427,
+    "fields": {
+        "rank": "427",
+        "tense": "89",
+        "subject": "41",
+        "auxiliary": "432",
+        "conjugation": "358814"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 428,
+    "fields": {
+        "rank": "428",
+        "tense": "89",
+        "subject": "42",
+        "auxiliary": "432",
+        "conjugation": "358815"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 429,
+    "fields": {
+        "rank": "429",
+        "tense": "89",
+        "subject": "43",
+        "auxiliary": "432",
+        "conjugation": "358814"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 430,
+    "fields": {
+        "rank": "430",
+        "tense": "89",
+        "subject": "44",
+        "auxiliary": "432",
+        "conjugation": "358814"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 431,
+    "fields": {
+        "rank": "431",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358622"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 432,
+    "fields": {
+        "rank": "432",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358626"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 433,
+    "fields": {
+        "rank": "433",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358630"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 434,
+    "fields": {
+        "rank": "434",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358632"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 435,
+    "fields": {
+        "rank": "435",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358638"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 436,
+    "fields": {
+        "rank": "436",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358642"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 437,
+    "fields": {
+        "rank": "437",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358646"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 438,
+    "fields": {
+        "rank": "438",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358650"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 439,
+    "fields": {
+        "rank": "439",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358654"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 440,
+    "fields": {
+        "rank": "440",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358658"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 441,
+    "fields": {
+        "rank": "441",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358662"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 442,
+    "fields": {
+        "rank": "442",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358666"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 443,
+    "fields": {
+        "rank": "443",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358670"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 444,
+    "fields": {
+        "rank": "444",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358674"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 445,
+    "fields": {
+        "rank": "445",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358678"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 446,
+    "fields": {
+        "rank": "446",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358680"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 447,
+    "fields": {
+        "rank": "447",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358685"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 448,
+    "fields": {
+        "rank": "448",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358687"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 449,
+    "fields": {
+        "rank": "449",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358692"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 450,
+    "fields": {
+        "rank": "450",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358696"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 451,
+    "fields": {
+        "rank": "451",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358700"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 452,
+    "fields": {
+        "rank": "452",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358706"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 453,
+    "fields": {
+        "rank": "453",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358709"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 454,
+    "fields": {
+        "rank": "454",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358713"
+    }
+    },
+    {
+    "model": "verbs.romancemain",
+    "pk": 455,
+    "fields": {
+        "rank": "455",
+        "tense": "103",
+        "subject": "45",
+        "auxiliary": "432",
+        "conjugation": "358717"
+    }
+    }
+        ]
