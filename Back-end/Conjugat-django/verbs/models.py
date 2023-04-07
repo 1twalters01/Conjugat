@@ -104,7 +104,7 @@ class RomanceAuxiliary(models.Model):
 
 class RomanceConjugation(models.Model):
     base = models.ForeignKey(RomanceBase, on_delete=models.CASCADE, related_name='bases')
-    conjugation = models.CharField(max_length=40)
+    conjugation = models.CharField(max_length=50)
     class Meta:
         unique_together = (('base','conjugation'),)
         indexes = [
