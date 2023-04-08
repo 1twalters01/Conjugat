@@ -1,15 +1,52 @@
-import { ChangeEvent, FormEvent, useState } from "react"
+import { ChangeEvent, FormEvent, useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import { toast } from "react-toastify"
+import AxiosInstance from "../../functions/AxiosInstance"
 import '../../sass/Components/Input fields/TextField.scss'
 import '../../sass/Components/Input fields/SubmitBtn.scss'
 import '../../sass/pages/verbs/Test.scss'
-import AxiosInstance from "../../functions/AxiosInstance"
-import { toast } from "react-toastify"
+import '../../sass/Components/account/DualLinks.scss'
 
 function Test() {
-    const [inputValues, setInputValues] = useState({})    
+    const [page, setPage] = useState(0)
+    const [inputValues, setInputValues] = useState({})
+    const [QuestionData, SetQuestionData] = useState([{
+        language: '',
+        Base: '',
+        Tense: '',
+        IDs: [''],
+        Subjects: [''],
+        Auxiliaries: [""],
+        Verbs: [""],
+    }])
+
+    const fetchdata = async () => {
+        const res = await (
+            AxiosInstance.Authorised
+            .post('verbs/verb-random-retrieval',{
+                language: ['English'],
+                number: 5
+            })
+        )
+        SetQuestionData(res.data) 
+    }
+
+    useEffect(() => {
+        fetchdata();
+      }, [])
 
     const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
         setInputValues({...inputValues, [e.target.id]: e.target.value})
+    }
+
+    function handlePrevious(i:number) {
+        if (i > 0) {
+            setPage(i - 1)
+        }
+    }
+    function handleNext(i:number) {
+        if (i < QuestionData.length-1)
+        setPage(i + 1)
     }
 
     function submit(e:FormEvent<HTMLFormElement>) {
@@ -36,15 +73,19 @@ function Test() {
 
     return (
         <div>
-            {exampleQustionData.map((test, i) => (
-                <div className='Test-container container'>
+            {QuestionData.map((test, i) => (
+                // <div className='Test-container container'>
+                <div className={`Test-container container${page == i ? ' active' : ''}`}>
                     <div className="Header-spacer">
                         <h1 className="title header">{test.Base.charAt(0).toUpperCase()+test.Base.slice(1)}</h1>
                         <h2 className="subtitle subheader">{test.Tense}</h2>
                     </div>
 
                     <div className="view-answers-spacer">
-                        
+                        <div className="dual-links">
+                            <div className="link weak-gold-btn" onClick={() =>handlePrevious(i)}>Previous</div>
+                            <div className="link weak-gold-btn" onClick={() =>handleNext(i)}>Next</div>
+                        </div>
                     </div>
 
                     <div className="form-width">
@@ -72,9 +113,8 @@ function Test() {
                                 </div>
                                 :
                                 <div className="submit-btn">
-                                    <button type="button"  className="strong-btn strong-gold-btn">Continue</button>
+                                    <button type="button"  className="strong-btn strong-gold-btn" onClick={() =>handleNext(i)}>Continue</button>
                                 </div>
-                                
                                 }
                             </div>
                             

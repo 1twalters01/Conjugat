@@ -3,28 +3,31 @@
 /* TV screens */
 @media only screen and (min-width: $TV-breakpoint){
     .Test-container{
-        max-width: 720px;
-        border-radius: 25px;
-        margin: 2% auto 2% auto;
-        padding-bottom: 70px;
-        .Header-spacer{
-            padding: 8% 0 5% 0;
-            text-align: center;
-        }
-        .view-answers-spacer{
+        display: none;
+        &.active{
+            display: block;
+            max-width: 720px;
+            border-radius: 25px;
+            margin: 2% auto 2% auto;
             padding-bottom: 70px;
-        }
-        .form-width {
-            width: 50%;
-            margin: auto;
-            // overflow-x: hidden;
-            .text-spacer{
-                // display: grid;
-                // grid-template-columns: auto 100%;
-                // grid-gap: 10px;
-                .text-field{
-                margin-bottom: 30px;
+            .Header-spacer{
+                padding: 8% 0 5% 0;
+                text-align: center;
             }
+            .view-answers-spacer{
+                padding-bottom: 70px;
+            }
+            .form-width {
+                width: 50%;
+                margin: auto;
+                // overflow-x: hidden;
+                .text-spacer{
+                    // display: grid;
+                    // grid-template-columns: auto 100%;
+                    // grid-gap: 10px;
+                    .text-field{
+                    margin-bottom: 30px;
+                }
             }
             
         }
@@ -36,6 +39,8 @@
             margin: auto;
             padding-bottom: 40px;
         }
+        }
+        
     }
 }
 
