@@ -1,11 +1,30 @@
-from django.shortcuts import render, redirect
-from .forms import HomeForm, SingleTestForm
 from rest_framework import status, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import RomanceMain
+import random
 
-# Create your views here.
+number = 15
+lower = 1
+upper = 100
+numbers = sorted(random.sample(range(lower, upper), number))
+objects =  RomanceMain.objects.filter(pk__in=numbers)
+for object in objects:
+    print(object.conjugation, object.pk)
+
+class VerbRandomRetrieval(APIView):
+    permission_classes = (permissions.AllowAny,)
+    def post(self, request):
+        data = request.data
+        language = data['language']
+        number = data['number']
+        lower = 1
+        upper = 100
+        numbers = sorted(random.sample(range(lower, upper), number))
+        objects =  RomanceMain.objects.filter(pk__in=numbers)
+        for object in objects:
+            print(object.conjugation, object.pk)
+
 
 
 class VerbTest(APIView):
@@ -14,13 +33,11 @@ class VerbTest(APIView):
     def post(self, request):
         data = request.data
 
-        print(data['results'])
         IDs = data['results']['IDs']
         Answers = data['results']['answers']
         IDs = [int(elem) for elem in IDs]
 
         objects = RomanceMain.objects.filter(pk__in=IDs)
-        print(objects.count())
         for index, object in enumerate(objects):
             print(object.conjugation, Answers[index])
             if (str(object.conjugation) == Answers[index]):

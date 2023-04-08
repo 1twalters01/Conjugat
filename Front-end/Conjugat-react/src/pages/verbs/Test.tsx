@@ -6,9 +6,7 @@ import AxiosInstance from "../../functions/AxiosInstance"
 import { toast } from "react-toastify"
 
 function Test() {
-    const [inputValues, setInputValues] = useState({})
-    // const [testIDs, setTestIDs] = useState({})
-    
+    const [inputValues, setInputValues] = useState({})    
 
     const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
         setInputValues({...inputValues, [e.target.id]: e.target.value})
