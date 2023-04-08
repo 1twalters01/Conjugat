@@ -120,7 +120,7 @@ CACHES = {
         "LOCATION": config('CACHE_LOCATION'),
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            # "PASSWORD":config('CACHE_PASSWORD')
+            "PASSWORD":config('CACHE_PASSWORD')
         }
     }
 }

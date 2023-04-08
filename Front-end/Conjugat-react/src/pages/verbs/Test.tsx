@@ -8,8 +8,10 @@ import '../../sass/pages/verbs/Test.scss'
 import '../../sass/Components/account/DualLinks.scss'
 
 function Test() {
+    type ITestID = null|number
     const [page, setPage] = useState(0)
     const [inputValues, setInputValues] = useState({})
+    const [TestID, setTestID] = useState<ITestID>(null)
     const [QuestionData, SetQuestionData] = useState([{
         language: '',
         Base: '',
@@ -25,10 +27,13 @@ function Test() {
             AxiosInstance.Authorised
             .post('verbs/verb-random-retrieval',{
                 language: ['English'],
-                number: 5
+                number: 50
             })
         )
-        SetQuestionData(res.data) 
+        console.log(res.data)
+        setPage(0)
+        SetQuestionData(res.data.Test)
+        setTestID(res.data.TestID)
     }
 
     useEffect(() => {
@@ -61,6 +66,7 @@ function Test() {
         
         AxiosInstance.Authorised
         .post('verbs/verb-test', {
+            TestID: TestID,
             results: results
         })
         .then(res=>{
@@ -89,7 +95,7 @@ function Test() {
                     </div>
 
                     <div className="form-width">
-                        <form action="" key={i} onSubmit={(e) => submit(e)}>
+                        <form action="" autoComplete="off" key={i} onSubmit={(e) => submit(e)}>
                             {test.IDs.map((id, j) => (
                             
                                 <div className="text-spacer" key={id}>
@@ -107,7 +113,7 @@ function Test() {
                             ))}
                             
                             <div className="btn">
-                                {i === exampleQustionData.length-1 ?
+                                {i === QuestionData.length-1 ?
                                 <div className="submit-btn">
                                     <input type="submit" value="Submit" className="strong-btn strong-gold-btn"/>
                                 </div>
@@ -129,42 +135,76 @@ function Test() {
     )
 }
 
-const idealAnswers = [
-    {
-        IDs: [1, 5, 6],
-        answers: ["am", "are", "ar"],
-    }
-]
+// const idealAnswers = [
+//     {
+//         IDs: [1, 5, 6],
+//         answers: ["am", "are", "ar"],
+//     }
+// ]
 
-const exampleQustionData = [
-    {
-        language: 'English',
-        Base: 'be',
-        Tense: 'Present',
-        IDs: [1, 2, 3, 4, 5, 6],
-        Subjects: ['I', 'You', 'He/She/It', 'We', 'You', 'They'],
-        Auxiliaries: ["", "", "", "", "", "", ""],
-        Verbs: ["am", "are", "is", "are", "are", "are"],
-    },
-    {
-        language: 'English',
-        Base: 'have',
-        Tense: 'Present',
-        IDs: [7, 8, 9, 10, 11, 12],
-        Subjects: ['I', 'You', 'He/She/It', 'We', 'You', 'They'],
-        Auxiliaries: ["", "", "", "", "", "", ""],
-        Verbs: ["have", "have", "have", "have", "have", "have"],
-    },
-    {
-        language: 'English',
-        Base: 'know',
-        Tense: 'Present',
-        IDs: [25, 14, 15, 16],
-        Subjects: ['He/She/It', 'We', 'You', 'They'],
-        Auxiliaries: ["", "", "", "", ""],
-        Verbs: ["know", "know", "knows", "know"],
+// const exampleQustionData = [
+//     {
+//         language: 'English',
+//         Base: 'be',
+//         Tense: 'Present',
+//         IDs: [1, 2, 3, 4, 5, 6],
+//         Subjects: ['I', 'You', 'He/She/It', 'We', 'You', 'They'],
+//         Auxiliaries: ["", "", "", "", "", "", ""],
+//         Verbs: ["am", "are", "is", "are", "are", "are"],
+//     },
+//     {
+//         language: 'English',
+//         Base: 'have',
+//         Tense: 'Present',
+//         IDs: [7, 8, 9, 10, 11, 12],
+//         Subjects: ['I', 'You', 'He/She/It', 'We', 'You', 'They'],
+//         Auxiliaries: ["", "", "", "", "", "", ""],
+//         Verbs: ["have", "have", "have", "have", "have", "have"],
+//     },
+//     {
+//         language: 'English',
+//         Base: 'know',
+//         Tense: 'Present',
+//         IDs: [25, 14, 15, 16],
+//         Subjects: ['He/She/It', 'We', 'You', 'They'],
+//         Auxiliaries: ["", "", "", "", ""],
+//         Verbs: ["know", "know", "knows", "know"],
 
-    }
-]
+//     }
+// ]
+
+// const exampleQustionDataNew = [
+//     {   TestID: 234594,
+//         Test: [
+//             {
+//                 language: 'English',
+//                 Base: 'be',
+//                 Tense: 'Present',
+//                 IDs: [1, 2, 3, 4, 5, 6],
+//                 Subjects: ['I', 'You', 'He/She/It', 'We', 'You', 'They'],
+//                 Auxiliaries: ["", "", "", "", "", "", ""],
+//                 Verbs: ["am", "are", "is", "are", "are", "are"],
+//             },
+//             {
+//                 language: 'English',
+//                 Base: 'have',
+//                 Tense: 'Present',
+//                 IDs: [7, 8, 9, 10, 11, 12],
+//                 Subjects: ['I', 'You', 'He/She/It', 'We', 'You', 'They'],
+//                 Auxiliaries: ["", "", "", "", "", "", ""],
+//                 Verbs: ["have", "have", "have", "have", "have", "have"],
+//             },
+//             {
+//                 language: 'English',
+//                 Base: 'know',
+//                 Tense: 'Present',
+//                 IDs: [25, 14, 15, 16],
+//                 Subjects: ['He/She/It', 'We', 'You', 'They'],
+//                 Auxiliaries: ["", "", "", "", ""],
+//                 Verbs: ["know", "know", "knows", "know"],
+//             }
+//         ]
+//     }
+// ]
 
 export default Test

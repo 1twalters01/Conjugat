@@ -1,9 +1,9 @@
 from django.core.cache import cache
+from .models import RomanceMain
 from rest_framework import status, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import RomanceMain
-import random
+import random, string
 
 class VerbRandomRetrieval(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -43,9 +43,29 @@ class VerbRandomRetrieval(APIView):
                     'Subjects': [object.subject.subject],
                     'Auxiliaries': [object.auxiliary.auxiliary],
                     'Verbs': [object.conjugation.conjugation]
-                })
+                    })
         random.shuffle(formated_json_list)
-        return Response(data=formated_json_list, status=status.HTTP_200_OK)
+
+        TestID = 3333 # placeholder
+        # Try random x digit alphanumeric string. Repeat if it is in the the cache. If failed 3 consecutive times then increase the number of digits by one. Store the size of this digit in cache as it is a singular number for all users of the site
+        # count = 0
+        # while True:
+        #     TestID = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(length))
+        #     if cache.get(TestID) == None:
+        #         break
+        #     count += 1
+        #     if count == 3:
+        #     count = 0
+        #     #set length to be length += 1
+
+        print(cache.get(2338))
+        Test_json = {
+            'TestID': TestID,
+            'Test': formated_json_list
+        }
+        print(Test_json)
+        cache.set(key=TestID, value=formated_json_list)
+        return Response(data=Test_json, status=status.HTTP_200_OK)
 
 
 
