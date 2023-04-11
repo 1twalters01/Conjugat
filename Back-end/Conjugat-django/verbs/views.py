@@ -14,7 +14,7 @@ class VerbRandomRetrieval(APIView):
         lower = 1
         upper = 100
         numbers = sorted(random.sample(range(lower, upper), number))
-        objects =  RomanceMain.objects.filter(rank__in=numbers, conjugation__base__language__language__in=language)
+        objects =  RomanceMain.objects.filter(rank__in=numbers, conjugation__base__language__language__in=language).order_by('pk')
         formated_json_list = []
         for object in objects:
             if len(formated_json_list) == 0:
@@ -44,8 +44,8 @@ class VerbRandomRetrieval(APIView):
                     'Auxiliaries': [object.auxiliary.auxiliary],
                     'Verbs': [object.conjugation.conjugation]
                     })
-        random.shuffle(formated_json_list)
 
+        random.shuffle(formated_json_list)
         TestID = 3333 # placeholder
         # Try random x digit alphanumeric string. Repeat if it is in the the cache. If failed 3 consecutive times then increase the number of digits by one. Store the size of this digit in cache as it is a singular number for all users of the site
         # count = 0
@@ -55,15 +55,13 @@ class VerbRandomRetrieval(APIView):
         #         break
         #     count += 1
         #     if count == 3:
-        #     count = 0
-        #     #set length to be length += 1
+        #       count = 0
+        #       # set length to be length += 1
 
-        print(cache.get(2338))
         Test_json = {
             'TestID': TestID,
             'Test': formated_json_list
         }
-        print(Test_json)
         cache.set(key=TestID, value=formated_json_list)
         return Response(data=Test_json, status=status.HTTP_200_OK)
 
@@ -75,15 +73,20 @@ class VerbTest(APIView):
     def post(self, request):
         data = request.data
 
-        IDs = data['results']['IDs']
+        TestID = data['results']['TestID']
+        IDs = [int(elem) for elem in data['results']['IDs']]
         Answers = data['results']['answers']
-        IDs = [int(elem) for elem in IDs]
+        print(TestID)
+        print(IDs)
+        print(Answers)
 
+        for index, item in enumerate(Answers):
+            print(index, item, IDs[index])
         objects = RomanceMain.objects.filter(pk__in=IDs)
         for index, object in enumerate(objects):
             print(object.conjugation, Answers[index])
             if (str(object.conjugation) == Answers[index]):
-                print(f'Yeah buddy: {object.conjugation}')
+                print(f'Correct answer: {object.conjugation}')
             else:
-                print (f'nah retard: {object.conjugation}')
+                print (f'Incorrect answer: {object.conjugation}')
         return Response(status=status.HTTP_200_OK)
