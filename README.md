@@ -1,74 +1,127 @@
 # Conjugat
-This is a WIP language learning application meant to showcase my full stack programming - django for the back end, react for the website front end, kotlin for the android front end, and postgresql as the main database. Cassandra and Redis will be used to store time series data due to limitations of postgres.
+A WIP Restful Django/Rust application that will test the user's conjugation abilities. This is done by rendering forms with a set verb and tense on them. Users will have to enter the correct answers on the form and submit them.
 
-## Note
-This project was only just uploaded to github. I can provide the old versions on request. See the no DjangoREST Framework branch for something that visibly works - the main branch doesn't have react added yet and I haven't converted all of the views into a form that works with the DjangoREST framework yet.
+![Conjugat main page](https://user-images.githubusercontent.com/115738254/230995339-83261924-0be6-4c96-8a15-e51868631ba3.png)
 
-## Detail
-The application tests the user's conjugation abilities by rendering forms that have a pre-determined verb and tense. The user will have to enter the correct answers for all of the subjects for the verb-tense combination. By serving new words/tenses periodically in a way that will adapt to the user, it will increase their active memory of words in that language.
 
-The order the verbs and tenses will be generated in will be based off of the most common verbs and tenses that speakers of the language in question use, so that they will learn words most likely to appear first unlike many other applications. I think I will use Tensorflow to do this. The difference between users would come from:
+## What is complete
+The following functionality is complete:
+1. Accounts - Everything
+* DjangoRest Knox is used for tokens
+* Remember me functionality
+* Optional email input on registration that sends verification email if filled in
+* Functionality has been built for session authentication if I were to switch to it.
+* 2FA and password reset built
+2. Newsletter
+* Finished other than styling the view when you are logged in
+* Connects to mailchimp
+* Uses webhooks to stay synchronised
+3. Settings
+* Change email, password and username for the user
+* Close the account
+* See/edit your subscription status
+* Add/remove two factor authentication to your account
+4. Subscriptions
+* Stripe, paypal and coinbase-commerce subscription integration
+* Webhooks for all three
+* Free trial period
+* Encryption for the subscription and client IDs
 
-1. How the system learns from the initial use to quickly get the user to the level they are at - we don't want them to have to go through literally every combination.
-    - A similar optional "training" mode should be activated if the user has a long break from the website.
+
+## Scope
+I am starting with 5 languages - English, French, Italian, Portuguese, and Spanish in MVP 1. 
+
+This will be made in the style of a SAAS business (the payment processors will be kept in demo mode). It will be worked on throughout my career as a developer. Storing the users' time series data can get computationally expensive as the data grows both with the number of users and the amount of information sent in. With time, more functionality than just verbs will be added.
+
+Leads will be warmed up via a weekly newsletter. I want to improve my writing abilities, and this project is perfect for that. Mailchimp is used to send the emails, though I may make my own functionality later on.
+
+Payments won't be taken, but a real subscription payment system was made to keep it in the style of a SAAS product. It currently takes Stripe, Paypal and Coinbase, though more options can be added if desired.
+
+
+## How it works
+By serving new words/tenses periodically in a way that will adapt to the user, their active memory of words in the chosen language will increase. Verbs and tenses will be released in order of what is the most common for speakers of the language in question. This way, they will learn words most likely to appear first. Many other applications do not do things in order of what is most likely to be seen, hence this app's creation.
+
+
+## Raison d'etre
+I love languages. I believe that learning multiple will pay dividends as the world continues to become more globalised. As such, I have started learning Spanish. Like many language learners who begin their journey, I was bombarded with Duolingo adverts. I downloaded their app and noticed that the experience was "interesting" to say the least.
+
+![Duolingo sentence - edited](https://user-images.githubusercontent.com/115738254/230331794-e09a29e3-c6e7-4211-93da-ff307189621b.png)
+
+Upon looking into things, it seemed that my suspicions of Duolingo's inefficiencies weren't just a hunch. Take their CRO, for example. [Bob Meese, Duolingo’s 42-year-old chief revenue officer, has been studying Duolingo Spanish for more than six months. In response to the question, “¿Hablas español?” he froze [SIC], then said [SIC], “Could you repeat that?”](https://www.forbes.com/sites/susanadams/2019/07/16/game-of-tongues-how-duolingo-built-a-700-million-business-with-its-addictive-language-learning-app/?sh=28079cb03463)
+I don't want these results for myself, so I decided to start making my own language learning app.
+
+
+## CERF specification
+The highest level someone can be in language learning is C2 on the CEFR standard. It is commonly said that the amount of words you need to know doubles to get to the next level, starting at 500 words for A1. Others say that the number is 10,000+. Therefore, 10,000 - 16,000 words are needed. I read that verbs make up around 15% of all English words. I thus need between 1520 and 2432 verbs. I am choosing 2000 verbs. I am assuming that the romance languages I am using also use this many due to being unable to find data for the percentage of verbs in them.
+
+
+## Initial model
+New words will be added or removed from the user's vocabulary pool as decided by a Tensorflow model. The variance between when different users will learn new words will come from:
+1. How the system learns from the initial uses to judge the user's level - we don't want them to go through everything.
+A similar optional "training" mode should be activated if:
+    - the user has a long break from the website.
     - The user makes more than a certain level of mistakes
     - The user gets a higher percentage of answers correct than a certain threshold amount.
 
-2. How the system reacts to mistakes - repeat mistakes should repeat themselves more often.
-    - Some allowance may be made on accents depending on the frequency.
+2. How the system reacts to mistakes - repeatedly mistaken conjugations should repeat themselves more often.
+    - Some allowance may be made for accents depending on the frequency.
 
-3. If the user chooses to flag a word to add it to a list that repeats more frequently.
-
-The webapp will be fully fleshed out to give a more real feel including: login functionality, payment with 3 different payment processors (on live mode as this is just a practice project) for the stereotypical freemium model, a newsletter sign up, and a fully responsive design. More features will be added as they are thought of / suggested.
-
-## What is finished
-Everything except for the design, the test functionality, and the algorithm for choosing tenses is finished for the version that does not use DRF. Things that are finished are as follows:
-
-### Language database creation - conjugat/verbs/models
-Proper normalisation is critical when working with big databases. It can take your website from being unusable (25s+), even when the page is not accessing the ORM to working fast (<1s). Good indexing is also important. Proper management of primary keys had to be used in the web scraping to prevent data from going wrong. This is a read only database meaning I may consider using direct sql commands rather than the ORM depending on performance as the Django ORM is known to be quite slow for big databases.
-
-### Web scraping - python/verbs and json directories
-The highest level one can be in language learning is C2 on the CEFR standard. It is said commonly that the amount of words you need to know doubles to get to the next level, starting at 500 words for A1. Others say that the number is 10,000+. This means that 10,000 - 16,000 words are needed. Verbs make up [15.2% of English words](https://www.google.com/search?rlz=1C1ONGR_enGB1030GB1030&sxsrf=AJOqlzVCms3En5pgorVT4ZJ9L8YuYRqbQA:1675176090117&q=What+percentage+of+words+are+verbs+in+english&sa=X&ved=2ahUKEwjimKaehfL8AhUILMAKHRinCq4Q1QJ6BAgzEAE&biw=1137&bih=730&dpr=0.9). I thus need between 1520 and 2432 verbs. I am choosing 2000 verbs. I am assuming that the romance languages in question also use this many due to being unable to find data for the percentage of verbs in them. I got the list of the top 2000 most common words from reverso from links such as [this](https://conjugator.reverso.net/index-french-1-250.html).
-
-Web scraping can be found in the python/verbs directory. I used pickle files to share data between the different sections of the web scraping due to the speed. I saved the seperate sections as either dictionaries or tuples so that the primary key - value pairs would be preserved. Each bit of code created a JSON file of a form that can be loaded by Django into the relevant databases. The tenses, subjects and auxiliaries were scraped for every single verb rather than just a few as I didn't know if there would be any irregularities for any of the verbs in a foreign language. Any duplicates were removed.
-
-The main database was split up into the order one would learn them. Some verbs had an irregular amount of tenses so I used a check to see if the tense was found. If not then it ran a for loop until the tense was found. I could have done a search starting from the list index that had failed rather than a for loop as the fail case but didn't as it ran relatively fast. JSON was created and then loaded into the database.
-
-### Account functionality - conjugat/account with 2FA being in conjugat/settings/totp
-This is a fully fleshed out account system with: login and log out functionality that works for both username and email, password reset, registration with email verification and optional totp.
-
-There is also google, twitter and facebook authentication using their APIs as an optional second choice for loging in which was added through use of social_django. I did not add apple authentication as you need to pay £99/year to access their API and use the functionality. A fake SSL is created for https requests using pyOpenSSL. This was required to get google, facebook and twitter authentication to work in testing.
-
-Django-two-factor-auth forced me to use their login view and not my own html template so I created my own functionality. I had some trouble with integrating it with the login system due to not wanting to store a password in a session variable or use get instead of post but came up with a work around that saves the username to sessions, checks to see if totp is enabled, and then returns the relevant form that looked and worked really well.
-
-Email verification makes use of the reset password token generator class based view that comes with django contrib auth, and creates the hash by using the user's pk, the timestamp and their active state. It thus gets invalidated once used once.
-
-### Subscriptions - conjugat/subscription and conjugat/settings directories.
-I am using paypal, stripe and coinbase for payment options due to their popularity. I made the design choice to have their success pages seperate here and NOT due to inability - I put their success pages all together in conjugat/settings in the premium view/template so that users could access this in a singular place.
-
-We are moving towards a software as a service (Saas) world, and if you can't beat them join them. I thus used the subscriptions with a free trial for stripe and paypal. Coinbase commerce doesn't allow for subscriptions so functionality will have to be added to check if the date for subscription has expired. It also doesn't allow a free trial option so I put a nominal fee of 1p rather than just activate the subscription ~~because common psychology says that getting someone to input their detail will make them more likely to pay with real money next time~~ so that it is fair between all three payment providers. I will likely use a chronjob though may check whenever they go on the website (once per day) as it may have the potential of being slow if lots of users were to be added.
-
-Requests is used with paypal to properly post to their api to access the user's subscription status. This lets them make changes. The stripe cli client is used for working in test mode on stripe.
-
-Webhooks are used to ensure that my database is correct. Webhook urls had to be created, along with correct processing of the payloads sent. A json  with the success code 200 is to be sent back in the event of a success. No response is sent if it doesn't work as that is the signal for an internal error, although I may change this to an error code. An email is sent if the subscription trial is ending.
-
-### General settings - conjugat/settings
-This has common functionality - changing email, username and password, closing account, viewing premium subscription status, theme change and reseting progress on the account.
-
-The qr code works well in light mode, however it didn't work at all in dark mode with the google authenticator app. A white border around the qr code was required for it to be scannable by the google authenticator app when in dark mode.
-
-The theme change was made using a context processor. I could have used a session variable instead, but thought that users would rather their theme settings be associated to their account rather than their pc. I will use the session variable option for when users are not logged in.
-
-### Newsletter
-This simply gets the user to enter their email (or use the one that is tied to their account) and sends it to mailchimp so that they can receive marketing emails. I was going to use webhooks to sync a copy to the app but then decided not to as mailchimp host everything and my site doesn't need to store or check any data for this, unlike with the payment processors where I had to make sure everything was synchronised.
-
-I connected to their API and send the data that gets input into my website over.
+3. If the user chooses to flag a word, add it to a list that repeats more frequently.
 
 
-## To do
-Finish designing the PC version
-Finish designing the mobile site
-Add sesion variable for the theme when not logged in.
-Add functionality to unsubscribe user if subscription date has expired.
-Create form functionality, along with verification for if it is correct or not
-Algorithm to determine what verbs/tenses should be tested.
+## Stack
+### Overview
+Back-end - Python, Django (REST Framework), BS4, Rust, PostgreSQL, Redis, Cassandra
+
+Front-end (Website) - TypeScript, React, React-redux, Redux persist, SCSS
+
+Front-end (Android) - Kotlin
+
+Main external APIs - Stripe, Paypal, Coinbase commerce, MailChimp
+
+### Back-end
+#### Django
+I want to use a relational database for the most part so there would be no problem using Django's inbuilt ORM. Things like Djongo can be questionable sometimes, so using Flask would make more sense. I also knew I wanted to add many different features, and Django's automatically built structure is helpful here. This is why I chose it over Flask.
+
+Speed shouldn't be too much of an issue, as I will build much of the site in Rust. FastAPI thus won't be needed. PyO3 and Maturin will be used to interface the Rust code with the Python code. See an example of me doing this [here.](https://github.com/1twalters01/Challenges/tree/master/Project%20Euler/Problem%201%20-%20Multiples%20of%203%20or%205/Answers/PyO3) Fast API is also extremely lightweight, having similar drawbacks to Flask. DjangoREST framework will be used to expose the endpoints.
+
+#### Rust
+PyO3 and Maturin are used to integrate them with Python. This lets me have the flexibility of Python with the speed of a lower-level language like Rust. I will use it for computationally heavy functions. The plan is to prototype everything in Python and then remake said functions in Rust. It has a robust typing system which helps reduce mistakes.
+
+#### PostgreSQL
+I chose PostgreSQL over MySQL as it supports more data types such as timezone-aware timestamps. You can also add your own data types. I will need to store audio files of people speaking, hence the need for this.
+
+#### Cassandra
+The idea to use Cassandra and Redis was taken from a [netflix article](https://netflixtechblog.com/scaling-time-series-data-storage-part-i-ec2b6d44ba39)
+I will use Cassandra to store time series data (the test results) as it is good at handling this. It has fast read times but slower write times which is alright as the application will be much heavier on the read side. Lots of data will be read (on loading the home page to view graphs, on seeing past tests, from the back-end when generating tests, etc.)
+
+#### Redis
+Writing will still be done a lot, (whenever the user completes a test), and I intend to use Redis to store the day's write operations. Since it is a cache, it cannot save too much data so I will store past data in Cassandra. I will either use a chron-job to schedule backups to Cassandra daily, or asynchronously write to both Redis and Cassandra.
+
+### Front-end
+#### React (TypeScript) + Redux
+React was chosen because of its avant-garde, component-based feel. TypeScript was used as the typing system will detect many bugs that can get hidden when using regular JS. Many small reusable components mean that the look and feel of the site will be much more continuous throughout the entire application.
+
+Redux will be used as the state management system over context due to the dev tools. I needed a state management system due to prop drilling while making the app.
+
+#### SCSS
+SCSS was chosen over CSS as it makes code more concise. I didn't use any of the many CSS in JS libraries as I didn't want to have a bloated code base - many styles are reusable between components in this app (e.g. for the form fields), and these libraries wouldn't let me do that.
+
+### Design
+I used the AI [Midjourney](https://www.midjourney.com/home/) to create the [initial look](https://user-images.githubusercontent.com/115738254/230511571-fe83ab75-4c28-4d2e-8eae-2ce2e0b10c52.png) of the landing page website. I then created a design based off of that in Figma[Image landing page Figma]. I used this as a guide to create other pages.
+
+I then recreated them in HTML and CSS. I created versions of everything for: [Screens](https://user-images.githubusercontent.com/115738254/230515508-f97e7c83-9e33-48f2-ac1a-e178749ec27e.png), [Desktops](https://user-images.githubusercontent.com/115738254/230515649-ba309d1d-d2a3-4e77-a5e9-73b084cd357f.png), Laptops, [Tablets](https://user-images.githubusercontent.com/115738254/230515697-c0286c6a-ee3e-4121-b33d-b777dd6ced4f.png)
+, and [Phones](https://user-images.githubusercontent.com/115738254/230515718-89b25980-3052-4110-a3b5-04c1721a9299.png).
+
+
+## Todo
+All functionality is finished except for:
+* Making expired subscriptions automatically turn off
+* The tensorflow functionality to choose verbs
+* The reset account progress functionality
+* Finishing the scss
+* Graphs on the home page using chart.js
+* Refactoring code in rust
+
+More details are in the Todo file.
+Once this is done I will get real api keys rather than test one and launch. 
