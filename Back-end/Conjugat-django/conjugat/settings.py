@@ -112,18 +112,18 @@ DATABASES = {
         'USER': config('DB1_USER'),
         'PASSWORD': config('DB1_PASSWORD')
     },
-    'cassandra': {
-         'ENGINE': 'django_cassandra_engine',
-         'NAME': config('DB2_NAME'),
-         'TEST_NAME': 'test_db',
-         'HOST': 'db1.example.com,db2.example.com',
-         'OPTIONS': {
-             'replication': {
-                 'strategy_class': 'SimpleStrategy',
-                 'replication_factor': 1
-             }
-         }
-     }
+    # 'cassandra': {
+    #      'ENGINE': 'django_cassandra_engine',
+    #      'NAME': config('DB2_NAME'),
+    #      'TEST_NAME': 'test_db',
+    #      'HOST': 'db1.example.com,db2.example.com',
+    #      'OPTIONS': {
+    #          'replication': {
+    #              'strategy_class': 'SimpleStrategy',
+    #              'replication_factor': 1
+    #          }
+    #      }
+    #  }
 }
 
 CACHES = {
