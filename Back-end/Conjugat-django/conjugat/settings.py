@@ -64,6 +64,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_social_auth',
     'knox',
+    'adjectives.apps.AdjectivesConfig',
+    'nouns.apps.NounsConfig',
+    'testFunctionality.apps.TestfunctionalityConfig'
 ]
 
 MIDDLEWARE = [

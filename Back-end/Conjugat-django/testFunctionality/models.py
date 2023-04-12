@@ -4,6 +4,11 @@ from verbs.models import RomanceMain
 from nouns.models import RomanceNoun
 from adjectives.models import RomanceAdjectives
 
+class TestIdDigits(models.Model):
+    digits = models.IntegerField(default=1)
+    def __str__(self):
+        return str(self.digits)
+
 class Flags(models.Model):
     flag = models.CharField(max_length=20)
     def __str__(self):
@@ -34,21 +39,21 @@ class CustomDifficulty(models.Model):
     def __str__(self):
         return self.difficulty
 
-class VerbTimer(models.Model):
+class VerbTestTime(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     dateTime = models.DateTimeField()
     test = models.ForeignKey(RomanceMain, on_delete=models.CASCADE, related_name='verb_timer')
     def __str__(self):
         return f'{self.test.conjugation.conjugation} {self.dateTime}'
     
-class NounTimer(models.Model):
+class NounTestTime(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     dateTime = models.DateTimeField()
     test = models.ForeignKey(RomanceNoun, on_delete=models.CASCADE, related_name='noun_timer')
     def __str__(self):
         return f'{self.test.noun} {self.dateTime}'
 
-class AdjectiveTimer(models.Model):
+class AdjectiveTestTime(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     dateTime = models.DateTimeField()
     test = models.ForeignKey(RomanceAdjectives, on_delete=models.CASCADE, related_name='noun_timer')
