@@ -1,11 +1,13 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react"
-import { Link } from "react-router-dom"
 import { toast } from "react-toastify"
 import AxiosInstance from "../../functions/AxiosInstance"
 import '../../sass/Components/Input fields/TextField.scss'
 import '../../sass/Components/Input fields/SubmitBtn.scss'
 import '../../sass/pages/verbs/Test.scss'
 import '../../sass/Components/account/DualLinks.scss'
+import TextSlideshow from "../../components/test/TestSlideshow"
+import TestHeader from "../../components/test/TestHeader"
+import TestForm from "../../components/test/TestForm"
 
 function Test() {
     type ITestID = null|number
@@ -44,14 +46,10 @@ function Test() {
         setInputValues({...inputValues, [e.target.id]: e.target.value})
     }
 
-    function handlePrevious(i:number) {
-        if (i > 0) {
-            setPage(i - 1)
-        }
-    }
     function handleNext(i:number) {
-        if (i < QuestionData.length-1)
-        setPage(i + 1)
+        if (i < QuestionData.length-1) {
+            setPage(i + 1)
+        }
     }
 
     function submit(e:FormEvent<HTMLFormElement>) {
@@ -81,55 +79,31 @@ function Test() {
     return (
         <div>
             {QuestionData.map((test, i) => (
-                // <div className='Test-container container'>
                 <div className={`Test-container container${page == i ? ' active' : ''}`}>
                     <div className="Header-spacer">
-                        <h1 className="title header">{test.Base.charAt(0).toUpperCase()+test.Base.slice(1)}</h1>
-                        <h2 className="subtitle subheader">{test.Tense}</h2>
+                        <TestHeader
+                            test={test}
+                        />
                     </div>
 
                     <div className="view-answers-spacer">
-                        <div className="dual-links">
-                            <div className="link weak-gold-btn" onClick={() =>handlePrevious(i)}>Previous</div>
-                            <div className="link weak-gold-btn" onClick={() =>handleNext(i)}>Next</div>
-                        </div>
+                        <TextSlideshow
+                            setPage={setPage}
+                            QuestionData={QuestionData}
+                            i={i}
+                        />
                     </div>
 
                     <div className="form-width">
-                        <form action="" autoComplete="off" key={i} onSubmit={(e) => submit(e)}>
-                            {test.IDs.map((id, j) => (
-                            
-                                <div className="text-spacer" key={id}>
-                                    <p className="text">{test.Subjects[j]}</p>
-                                    
-                                    <div className="text-field">
-                                        <input
-                                        id={id.toString()}
-                                        type="text"
-                                        name="text"
-                                        className='line'
-                                        onChange={(e:ChangeEvent<HTMLInputElement>) => handleChange(e)} />
-                                    </div>
-                                </div>                   
-                            ))}
-                            
-                            <div className="btn">
-                                {i === QuestionData.length-1 ?
-                                <div className="submit-btn">
-                                    <input type="submit" value="Submit" className="strong-btn strong-gold-btn"/>
-                                </div>
-                                :
-                                <div className="submit-btn">
-                                    <button type="button"  className="strong-btn strong-gold-btn" onClick={() =>handleNext(i)}>Continue</button>
-                                </div>
-                                }
-                            </div>
-                            
-                        </form> 
-                        
+                        <TestForm
+                            submit={submit}
+                            handleNext={handleNext}
+                            handleChange={handleChange}
+                            QuestionData={QuestionData}
+                            test={test}
+                            i={i}
+                        />
                     </div>
-
-                    
                 </div>
             ))}
         </div>

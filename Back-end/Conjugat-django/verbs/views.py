@@ -62,31 +62,31 @@ class VerbRandomRetrieval(APIView):
             'TestID': TestID,
             'Test': formated_json_list
         }
-        cache.set(key=TestID, value=formated_json_list)
+        cache.set(key=TestID, value=numbers)
         return Response(data=Test_json, status=status.HTTP_200_OK)
 
 
 
 class VerbTest(APIView):
     permission_classes = (permissions.AllowAny,)
-    # authentication_classes = (SessionAuthentication,)
     def post(self, request):
         data = request.data
 
         TestID = data['results']['TestID']
         IDs = [int(elem) for elem in data['results']['IDs']]
-        Answers = data['results']['answers']
-        print(TestID)
-        print(IDs)
-        print(Answers)
+        Submitted = data['results']['answers']
+        Answers = cache.get(key=int(TestID))
 
-        for index, item in enumerate(Answers):
-            print(index, item, IDs[index])
-        objects = RomanceMain.objects.filter(pk__in=IDs)
+        results = []
+        objects = RomanceMain.objects.filter(pk__in=Answers)
         for index, object in enumerate(objects):
-            print(object.conjugation, Answers[index])
-            if (str(object.conjugation) == Answers[index]):
-                print(f'Correct answer: {object.conjugation}')
+            print(IDs, object.pk)
+            if object.pk in IDs:
+                SubmittedIndex = IDs.index(object.pk)
+                if (str(object.conjugation) == Submitted[SubmittedIndex]):
+                    print(f'Correct answer: {object.conjugation}')
+                else:
+                    print (f'Incorrect answer: {Submitted[SubmittedIndex]} instead of {object.conjugation}')
             else:
-                print (f'Incorrect answer: {object.conjugation}')
+                print(f'Not found {object.conjugation, object.pk}')
         return Response(status=status.HTTP_200_OK)
