@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Language, RomanceBase, RomanceTense, RomanceSubject, RomanceAuxiliary, RomanceConjugation, RomanceMain, Progress
+from .models import Language, RomanceBase, RomanceTense, RomanceSubject, RomanceAuxiliary, RomanceConjugation, RomanceMain, RomanceTestResult, Progress
 
 @admin.register(Language)
 class LanguageAdmin(admin.ModelAdmin):
@@ -41,6 +41,10 @@ class RomanceMainAdmin(admin.ModelAdmin):
     list_display = ['rank', 'tense', 'subject', 'auxiliary', 'conjugation', 'id']
     list_filter = ['tense', 'tense__language', 'subject']
     search_fields = ['subject', 'auxiliary', 'conjugation', 'id']
+
+@admin.register(RomanceTestResult)
+class RomanceTestResultAdmin(admin.ModelAdmin):
+    list_display = ['testID', 'user', 'dateTime', 'language', 'rank', 'answers', 'status', 'timer']
 
 @admin.register(Progress)
 class ProgressAdmin(admin.ModelAdmin):

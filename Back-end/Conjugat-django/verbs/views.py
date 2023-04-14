@@ -1,10 +1,13 @@
 from django.core.cache import cache
-from .models import RomanceMain
+from .models import RomanceMain, RomanceTestResult
 from rest_framework import status, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
 import random, string
 from testFunctionality.models import TestIdDigits
+
+from django_cassandra_engine import connection
+from datetime import datetime, timedelta
 
 class VerbRandomRetrieval(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -67,7 +70,7 @@ class VerbRandomRetrieval(APIView):
             'Test': formated_json_list
         }
 
-        cache.set(key=TestID, value=numbers, timeout=(1*60))
+        cache.set(key=TestID, value=numbers, timeout=(10*60))
         return Response(data=Test_json, status=status.HTTP_200_OK)
 
 
@@ -85,18 +88,22 @@ class VerbTest(APIView):
         results = []
         result = None
         objects = RomanceMain.objects.filter(pk__in=Answers)
+        
         for object in objects:
             print(IDs, object.pk)
             if object.pk in IDs:
                 SubmittedIndex = IDs.index(object.pk)
                 if (str(object.conjugation) == Submitted[SubmittedIndex]):
                     result = True
+                    answer = Submitted[SubmittedIndex]
                     print(f'Correct answer: {object.conjugation}')
                 else:
                     result = False
+                    answer = Submitted[SubmittedIndex]
                     print (f'Incorrect answer: {Submitted[SubmittedIndex]} instead of {object.conjugation}')
             else:
                 result = None
+                answer = ''
                 print(f'Not found {object.conjugation, object.pk}')
             
             if len(results) == 0:
@@ -108,7 +115,8 @@ class VerbTest(APIView):
                     'Subjects': [object.subject.subject],
                     'Auxiliaries': [object.auxiliary.auxiliary],
                     'Verbs': [object.conjugation.conjugation],
-                    'Result': [result]
+                    'Answers': [answer],
+                    'Results': [result]
                 }
                 results.append(formated_json)
             else:
@@ -117,7 +125,8 @@ class VerbTest(APIView):
                     results[-1]['Subjects'].append(object.subject.subject)
                     results[-1]['Auxiliaries'].append(object.auxiliary.auxiliary)
                     results[-1]['Verbs'].append(object.conjugation.conjugation)
-                    results[-1]['Result'].append(result)
+                    results[-1]['Answers'].append(answer)
+                    results[-1]['Results'].append(result)
                 else:
                     results.append({
                         'Language': object.subject.language.language,
@@ -127,6 +136,24 @@ class VerbTest(APIView):
                         'Subjects': [object.subject.subject],
                         'Auxiliaries': [object.auxiliary.auxiliary],
                         'Verbs': [object.conjugation.conjugation],
-                        'Result': [result]
+                        'Answers': [answer],
+                        'Results': [result]
                     })
+        # Save to cassandra database
+        StoreAnswers = RomanceTestResult(
+            testID=TestID,
+            user = request.user.id,
+            dateTime = datetime.now(),
+            language = 'English', #Change to a list
+            timer = timedelta(minutes=5),
+
+            rank = [50, 52],
+            answers = ['try', 'try'],
+            status = [True, False],
+            # rank = Answers,
+            # answers = columns.List(value_type=columns.Text),
+            # status = columns.List(value_type=columns.Boolean)
+        )
+        StoreAnswers.save()
+
         return Response(data=results, status=status.HTTP_200_OK)

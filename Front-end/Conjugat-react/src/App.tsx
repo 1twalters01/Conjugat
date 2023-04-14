@@ -41,6 +41,7 @@ import Process from './pages/subscriptions/Process'
 import Success from './pages/subscriptions/Success'
 
 import Test from "./pages/verbs/Test";
+import TestResults from "./pages/verbs/TestResults";
 
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -103,6 +104,7 @@ const router = createBrowserRouter(
 
       <Route path="verbs">
         <Route path="test" element={<Test />} />
+        <Route path="test/results/:testID" element={<TestResults />} />
       </Route>
 
     </Route>

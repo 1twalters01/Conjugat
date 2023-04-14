@@ -9,12 +9,6 @@ function TextSlideshow({setPage, QuestionData, i} : {setPage:Function, QuestionD
         }
     }
 
-    function handleNumber(e:ChangeEvent<HTMLInputElement>) {
-        if (isNaN(+e.target.value) == false) {
-            setInputNumber(e.target.value)
-        }
-    }
-
     const numInput = useRef<HTMLInputElement>(null);
     function handleNumberSubmit(e:ChangeEvent<HTMLInputElement>) {
         if (e.key === 'Enter') {
@@ -34,7 +28,7 @@ function TextSlideshow({setPage, QuestionData, i} : {setPage:Function, QuestionD
     return (
         <div className="Test-Slideshow-container">
             <div className="link weak-gold-btn" onClick={() =>handlePrevious(i)}>Previous</div>
-            <input type="number" name="" ref={numInput} id="" value={InputNumber} placeholder={(i+1).toString()} className='page-number' onChange={handleNumber} onKeyDown={handleNumberSubmit}/>
+            <input type="number" name="" ref={numInput} id="" placeholder={(i+1).toString()} className='page-number' onKeyDown={handleNumberSubmit}/>
             <div className="link weak-gold-btn" onClick={() =>handleNext(i)}>Next</div>
         </div>
     )

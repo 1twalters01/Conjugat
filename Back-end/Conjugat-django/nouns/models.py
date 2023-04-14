@@ -14,7 +14,7 @@ class RomancePlurality(models.Model):
     plural = models.BooleanField()
     def __str__(self):
         return self.plural
-    
+
 class RomanceNoun(models.Model):
     language = models.ForeignKey(Language, on_delete=models.CASCADE, related_name='noun_language')
     gender = models.ForeignKey(RomanceGender, on_delete=models.CASCADE, related_name='noun_gender')

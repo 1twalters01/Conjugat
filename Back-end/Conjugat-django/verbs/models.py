@@ -1,6 +1,10 @@
 from django.conf import settings
 from django.db import models
 
+import uuid
+from cassandra.cqlengine import columns
+from django_cassandra_engine.models import DjangoCassandraModel
+
 class Language(models.Model):
     language = models.CharField(max_length=30)
     def __str__(self):
@@ -135,6 +139,18 @@ class RomanceMain(models.Model):
     def __str__(self):
         return f'{self.subject.language} {self.rank}'
 
+
+class RomanceTestResult(DjangoCassandraModel):
+    testID = columns.Integer(primary_key=True)
+    user = columns.Integer()
+    dateTime = columns.DateTime()
+    language = columns.Text()
+    rank = columns.List(value_type=columns.Integer)
+    answers = columns.List(value_type=columns.Text)
+    status = columns.List(value_type=columns.Boolean)
+    timer = columns.timedelta()
+
+    
 
 class Progress(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

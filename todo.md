@@ -18,6 +18,21 @@ Finish designing web pages, style and add colour to:
 Remove all cases of duplication in the scss
 Light theme
 
+Create Test complete page in react
+
+Create Reset account functionality
+
+Add chart.js to the home page
+
+Create timer mode
+
+Web Scrape for Nouns and adjectives
+
+Make expired subscriptions turn off
+
+Create functionality in Django and React for:
+* Settings: Reset account
+
 # Medium term goals
 Add Twitter authentication once approved
 
@@ -51,15 +66,6 @@ Refactor react code once again
 * Landing page
 * Privacy
 * Terms
-
-Create and test verbs functionality
-
-Create verb functionality for react
-
-Make expired subscriptions turn off
-
-Create functionality in Django and React for:
-* Settings: Reset account
 
 Create sitemap
 

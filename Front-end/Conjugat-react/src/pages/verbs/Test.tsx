@@ -144,7 +144,6 @@ function Test() {
 //         Subjects: ['He/She/It', 'We', 'You', 'They'],
 //         Auxiliaries: ["", "", "", "", ""],
 //         Verbs: ["know", "know", "knows", "know"],
-
 //     }
 // ]
 
