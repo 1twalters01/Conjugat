@@ -18,15 +18,13 @@ Finish designing web pages, style and add colour to:
 Remove all cases of duplication in the scss
 Light theme
 
+Change TestID fields to UUID fields rather than text fields for cassandra
+
 Create Test complete page in react
 
 Create Reset account functionality
 
 Add chart.js to the home page
-
-Create timer mode
-
-Web Scrape for Nouns and adjectives
 
 Make expired subscriptions turn off
 
@@ -66,6 +64,10 @@ Refactor react code once again
 * Landing page
 * Privacy
 * Terms
+
+Create timer mode
+
+Web Scrape for Nouns and adjectives
 
 Create sitemap
 

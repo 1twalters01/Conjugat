@@ -141,16 +141,37 @@ class RomanceMain(models.Model):
 
 
 class RomanceTestResult(DjangoCassandraModel):
-    testID = columns.Integer(primary_key=True)
+    # testID = columns.Text(default=uuid.uuid4().hex, primary_key=True)
+    testID = columns.UUID(default=uuid.uuid4(), primary_key=True)
     user = columns.Integer()
-    dateTime = columns.DateTime()
-    language = columns.Text()
-    rank = columns.List(value_type=columns.Integer)
-    answers = columns.List(value_type=columns.Text)
-    status = columns.List(value_type=columns.Boolean)
-    timer = columns.timedelta()
+    language = columns.List(value_type=columns.Text())
+    StartDateTime = columns.DateTime()
+    EndDateTime = columns.DateTime()
+    status = columns.List(value_type=columns.Boolean())
+    rank = columns.List(value_type=columns.Integer())
+    answers = columns.List(value_type=columns.Text())
+    flags = columns.List(value_type=columns.Text())
 
-    
+class RomanceTestResult_by_user_and_language(DjangoCassandraModel):
+    # testID = columns.Text(default=uuid.uuid4().hex)
+    testID = columns.UUID(default=uuid.uuid4())
+    user = columns.Integer(primary_key=True)
+    language = columns.Text(primary_key=True)
+    class Meta:
+        get_pk_field='user'
+
+class RomanceTestResult_by_user_and_date(DjangoCassandraModel):
+    # testID = columns.Text(default=uuid.uuid4().hex)
+    testID = columns.UUID(default=uuid.uuid4())
+    user = columns.Integer(primary_key=True)
+    EndDateTime = columns.DateTime(primary_key=True)
+    class Meta:
+        get_pk_field='user'
+
+
+
+
+
 
 class Progress(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)

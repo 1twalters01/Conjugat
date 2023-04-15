@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Language, RomanceBase, RomanceTense, RomanceSubject, RomanceAuxiliary, RomanceConjugation, RomanceMain, RomanceTestResult, Progress
+from .models import Language, RomanceBase, RomanceTense, RomanceSubject, RomanceAuxiliary, RomanceConjugation, RomanceMain, RomanceTestResult, RomanceTestResult_by_user_and_date, RomanceTestResult_by_user_and_language, Progress
 
 @admin.register(Language)
 class LanguageAdmin(admin.ModelAdmin):
@@ -44,7 +44,15 @@ class RomanceMainAdmin(admin.ModelAdmin):
 
 @admin.register(RomanceTestResult)
 class RomanceTestResultAdmin(admin.ModelAdmin):
-    list_display = ['testID', 'user', 'dateTime', 'language', 'rank', 'answers', 'status', 'timer']
+    list_display = ['testID', 'user', 'language', 'rank', 'answers', 'status', 'StartDateTime', 'EndDateTime']
+
+@admin.register(RomanceTestResult_by_user_and_date)
+class RomanceTestResult_by_user_and_dateAdmin(admin.ModelAdmin):
+    list_display = ['testID', 'user', 'EndDateTime']
+
+@admin.register(RomanceTestResult_by_user_and_language)
+class RomanceTestResult_by_user_and_languageAdmin(admin.ModelAdmin):
+    list_display = ['testID', 'user', 'language']
 
 @admin.register(Progress)
 class ProgressAdmin(admin.ModelAdmin):

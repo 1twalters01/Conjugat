@@ -1,12 +1,13 @@
 from django.core.cache import cache
-from .models import RomanceMain, RomanceTestResult
+from .models import RomanceMain, RomanceTestResult, RomanceTestResult_by_user_and_language, RomanceTestResult_by_user_and_date
 from rest_framework import status, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
 import random, string
 from testFunctionality.models import TestIdDigits
 
-from django_cassandra_engine import connection
+import uuid
+from cassandra.cqlengine import columns
 from datetime import datetime, timedelta
 
 class VerbRandomRetrieval(APIView):
@@ -70,13 +71,21 @@ class VerbRandomRetrieval(APIView):
             'Test': formated_json_list
         }
 
-        cache.set(key=TestID, value=numbers, timeout=(10*60))
+        cache.set(key=TestID, value=numbers, timeout=(30*60))
         return Response(data=Test_json, status=status.HTTP_200_OK)
 
 
 
 class VerbTest(APIView):
     permission_classes = (permissions.AllowAny,)
+    def format_duration(self, delta):
+        hours, remainder = divmod(delta.seconds, 3600)
+        minutes, seconds = divmod(remainder, 60)
+        duration_string = 'P[0000]-[00]-[00]-T0{}:0{}:0{}'.format(hours, minutes, seconds)
+        if delta.days > 0:
+            duration_string = '{}d{}h{}m{}s'.format(delta.days, duration_string[1:])
+        return duration_string
+    
     def post(self, request):
         data = request.data
 
@@ -89,22 +98,36 @@ class VerbTest(APIView):
         result = None
         objects = RomanceMain.objects.filter(pk__in=Answers)
         
+        languageList = []
+        rankList = []
+        answersList = []
+        statusList = []
+
         for object in objects:
-            print(IDs, object.pk)
+            rankList.append(object.pk)
+            if object.subject.language.language not in languageList:
+                languageList.append(object.subject.language.language)
+
             if object.pk in IDs:
                 SubmittedIndex = IDs.index(object.pk)
                 if (str(object.conjugation) == Submitted[SubmittedIndex]):
                     result = True
+                    statusList.append(True)
                     answer = Submitted[SubmittedIndex]
-                    print(f'Correct answer: {object.conjugation}')
+                    answersList.append(Submitted[SubmittedIndex])
+                    # print(f'Correct answer: {object.conjugation}')
                 else:
                     result = False
+                    statusList.append(False)
                     answer = Submitted[SubmittedIndex]
-                    print (f'Incorrect answer: {Submitted[SubmittedIndex]} instead of {object.conjugation}')
+                    answersList.append(Submitted[SubmittedIndex])
+                    # print (f'Incorrect answer: {Submitted[SubmittedIndex]} instead of {object.conjugation}')
             else:
                 result = None
+                statusList.append(False)
                 answer = ''
-                print(f'Not found {object.conjugation, object.pk}')
+                answersList.append('')
+                # print(f'Not found {object.conjugation, object.pk}')
             
             if len(results) == 0:
                 formated_json = {
@@ -139,21 +162,41 @@ class VerbTest(APIView):
                         'Answers': [answer],
                         'Results': [result]
                     })
+
+        
+        # TestID = uuid.uuid4().hex
+        TestID = uuid.uuid4()
+
+        print(TestID, type(TestID))
+        StartDateTime = datetime.now()
+        EndDateTime = datetime.now()+timedelta(minutes=5)
+
         # Save to cassandra database
-        StoreAnswers = RomanceTestResult(
+        TestResult = RomanceTestResult(
             testID=TestID,
             user = request.user.id,
-            dateTime = datetime.now(),
-            language = 'English', #Change to a list
-            timer = timedelta(minutes=5),
-
-            rank = [50, 52],
-            answers = ['try', 'try'],
-            status = [True, False],
-            # rank = Answers,
-            # answers = columns.List(value_type=columns.Text),
-            # status = columns.List(value_type=columns.Boolean)
+            StartDateTime = StartDateTime,
+            EndDateTime = EndDateTime,
+            rank = rankList,
+            language = languageList,
+            answers = answersList,
+            status = statusList,
         )
-        StoreAnswers.save()
+        for language in languageList:
+            TestResultByLanguage = RomanceTestResult_by_user_and_language(
+                testID=TestID,
+                user = request.user.id,
+                language = language,
+            )
+            
+        TestResultByDate = RomanceTestResult_by_user_and_date(
+            testID=TestID,
+            user = request.user.id,
+            EndDateTime = EndDateTime
+        )
+
+        TestResult.save()
+        TestResultByLanguage.save()
+        TestResultByDate.save()
 
         return Response(data=results, status=status.HTTP_200_OK)
