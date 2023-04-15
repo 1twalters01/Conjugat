@@ -48,7 +48,7 @@ class RomanceTestResultAdmin(admin.ModelAdmin):
 
 @admin.register(RomanceTestResult_by_user_and_date)
 class RomanceTestResult_by_user_and_dateAdmin(admin.ModelAdmin):
-    list_display = ['testID', 'user', 'EndDateTime']
+    list_display = ['EndDateTime', 'testID', 'user']
 
 @admin.register(RomanceTestResult_by_user_and_language)
 class RomanceTestResult_by_user_and_languageAdmin(admin.ModelAdmin):

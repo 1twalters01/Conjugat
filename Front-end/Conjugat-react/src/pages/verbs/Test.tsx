@@ -1,13 +1,14 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react"
 import { toast } from "react-toastify"
 import AxiosInstance from "../../functions/AxiosInstance"
-import '../../sass/Components/Input fields/TextField.scss'
-import '../../sass/Components/Input fields/SubmitBtn.scss'
-import '../../sass/pages/verbs/Test.scss'
-import '../../sass/Components/account/DualLinks.scss'
 import TextSlideshow from "../../components/test/TestSlideshow"
 import TestHeader from "../../components/test/TestHeader"
 import TestForm from "../../components/test/TestForm"
+import SettingsNavbar from "../../components/settings/SettingsNavbar"
+import '../../sass/Components/Input fields/TextField.scss'
+import '../../sass/Components/Input fields/SubmitBtn.scss'
+import '../../sass/Components/account/DualLinks.scss'
+import '../../sass/pages/verbs/Test.scss'
 
 function Test() {
     type ITestID = null|number
@@ -78,6 +79,10 @@ function Test() {
 
     return (
         <div>
+            <div className="Settings-navbar-container container">
+                <SettingsNavbar />
+            </div>
+
             {QuestionData.map((test, i) => (
                 <div className={`Test-container container${page == i ? ' active' : ''}`}>
                     <div className="Header-spacer">

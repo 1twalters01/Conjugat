@@ -141,7 +141,6 @@ class RomanceMain(models.Model):
 
 
 class RomanceTestResult(DjangoCassandraModel):
-    # testID = columns.Text(default=uuid.uuid4().hex, primary_key=True)
     testID = columns.UUID(default=uuid.uuid4(), primary_key=True)
     user = columns.Integer()
     language = columns.List(value_type=columns.Text())
@@ -153,7 +152,6 @@ class RomanceTestResult(DjangoCassandraModel):
     flags = columns.List(value_type=columns.Text())
 
 class RomanceTestResult_by_user_and_language(DjangoCassandraModel):
-    # testID = columns.Text(default=uuid.uuid4().hex)
     testID = columns.UUID(default=uuid.uuid4())
     user = columns.Integer(primary_key=True)
     language = columns.Text(primary_key=True)
@@ -161,7 +159,6 @@ class RomanceTestResult_by_user_and_language(DjangoCassandraModel):
         get_pk_field='user'
 
 class RomanceTestResult_by_user_and_date(DjangoCassandraModel):
-    # testID = columns.Text(default=uuid.uuid4().hex)
     testID = columns.UUID(default=uuid.uuid4())
     user = columns.Integer(primary_key=True)
     EndDateTime = columns.DateTime(primary_key=True)

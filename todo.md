@@ -18,8 +18,6 @@ Finish designing web pages, style and add colour to:
 Remove all cases of duplication in the scss
 Light theme
 
-Change TestID fields to UUID fields rather than text fields for cassandra
-
 Create Test complete page in react
 
 Create Reset account functionality

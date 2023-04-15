@@ -158,6 +158,7 @@ class ResetAccount(APIView):
         account = Progress.objects.filter(user=request.user)
         try:
             languages = [account[x].language for x in account]
+            languages = ['English', 'Portuguese']
         except:
             languages = None
         return Response({'languages':languages})

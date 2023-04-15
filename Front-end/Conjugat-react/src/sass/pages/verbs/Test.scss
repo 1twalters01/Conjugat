@@ -2,6 +2,12 @@
 
 /* TV screens */
 @media only screen and (min-width: $TV-breakpoint){
+    .Settings-navbar-container{
+        width: 1030px;
+        padding-left: 50px;
+        border-radius: 25px;
+        margin: 2% auto auto auto;
+    }
     .Test-container{
         display: none;
         &.active{

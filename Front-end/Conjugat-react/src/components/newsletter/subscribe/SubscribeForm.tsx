@@ -75,6 +75,8 @@ function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:stri
                 <SelectField
                 languages={languages}
                 changeLanguage={changeLanguage}
+                FieldList = {FieldList}
+                FieldListValues = {FieldList}
                 />
             </div>
                 
@@ -88,4 +90,5 @@ function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:stri
     )
 }
 
+const FieldList = ['English', 'French', 'Italian', 'Portuguese', 'Spanish']
 export default SubscribeForm
