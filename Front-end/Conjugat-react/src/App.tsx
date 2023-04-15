@@ -1,9 +1,6 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import './index.css'
 
-// Layouts
-import SubscriptionsLayout from './layouts/SubscriptionsLayout'
-
 // pages
 import Index from './pages/home/LandingPage'
 import Contact from './pages/home/Contact'
@@ -36,6 +33,7 @@ import ResetAccount from './pages/settings/ResetAccount'
 import Themes from './pages/settings/Themes'
 import TwoFactorAuth from './pages/settings/TwoFactorAuth'
 
+import Subscriptions from "./pages/subscriptions/Subscriptions";
 import Cancelled from './pages/subscriptions/Cancelled'
 import Process from './pages/subscriptions/Process'
 import Success from './pages/subscriptions/Success'
@@ -96,7 +94,7 @@ const router = createBrowserRouter(
       </Route>
 
 
-      <Route path="subscriptions" element={<SubscriptionsLayout />}>
+      <Route path="subscriptions" element={<Subscriptions />}>
         <Route path="cancelled" element={<Cancelled />} />
         <Route path="process" element={<Process />} />
         <Route path="success" element={<Success />} />

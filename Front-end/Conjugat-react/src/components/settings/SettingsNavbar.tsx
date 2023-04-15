@@ -17,7 +17,7 @@ function SettingsNavbar() {
             </div>
 
             <div className="settings">
-                <Link to='/settings/' className="text-gold-link">Settings</Link>
+                <Link to='/settings/change-email/' className="text-gold-link">Settings</Link>
             </div>
 
             <div className="Logout">

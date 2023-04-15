@@ -15,12 +15,17 @@ Finish designing web pages, style and add colour to:
 * Home
 * Premium
 
+Move base url to env
+
+Add a page before verb test to choose options
+
 Remove all cases of duplication in the scss
+
 Light theme
 
 Create Test complete page in react
 
-Create Reset account functionality
+Finish reset account back end
 
 Add chart.js to the home page
 
@@ -28,6 +33,7 @@ Make expired subscriptions turn off
 
 Create functionality in Django and React for:
 * Settings: Reset account
+
 
 # Medium term goals
 Add Twitter authentication once approved

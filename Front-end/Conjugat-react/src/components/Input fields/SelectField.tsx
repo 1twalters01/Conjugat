@@ -4,7 +4,7 @@ function SelectField({languages, changeLanguage, FieldList, FieldListValues}: {l
     return(
         <div className="select-field">
             <label htmlFor="languages" className="field-text line-label">Languages</label>
-            <select name="languages" size={3} id="languages" value={languages || []} onChange={(e) => changeLanguage(e)} multiple={true}>
+            <select name="languages" size={Math.max(FieldList.length, 1)} id="languages" value={languages || []} onChange={(e) => changeLanguage(e)} multiple={true}>
                 {FieldList.map((option, i) => (
                     <option value={FieldListValues[i]}>{option}</option>
                 ))}

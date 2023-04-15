@@ -5,6 +5,7 @@ import LoadSubscribeForm from "../../components/newsletter/subscribe/LoadSubscri
 import NewsletterLinks from "../../components/newsletter/NewsletterLinks";
 import NewsletterResponse from "../../components/newsletter/NewsletterResponse";
 import '../../sass/pages/newsletter/Subscribe.scss';
+import SettingsNavbar from "../../components/settings/SettingsNavbar";
 
 function Subscribe() {
     const [loading, setLoading] = useState(true);
@@ -73,37 +74,53 @@ function Subscribe() {
     else if (isLoggedIn == true) {
         if (done == false) {
             return (
-                <div className="Newsletter-auth-container container">
+                <>
+                    <div className="Settings-navbar-container container">
+                        <SettingsNavbar />
+                    </div>
 
-                    <div className="para">
-                        <p className="text">Thank you for your interest in joining our newsletter!</p>
-                        <p className="text">Fill in the form below to subscribe.</p>
+                    <div className="Newsletter-auth-container container">
+                        <div className="Header-spacer">
+                            <h1 className="header">Newsletter</h1>
+                        </div>
+
+                        <div className="para">
+                            <p className="text">Thank you for your interest in joining our newsletter!</p>
+                            <p className="text">Fill in the form below to subscribe.</p>
+                        </div>
+        
+                        <div className="form-width">
+                            <LoadSubscribeForm
+                            loading={loading}
+                            setDone={setDone}
+                            setLoading={setLoading}
+                            />
+                        </div>
+                        
+                        <div className="unsubscribe-link">
+                            <Link to="../unsubscribe/"><p className="text">Unsubscribe from the newsletter</p></Link>
+                        </div>
                     </div>
-    
-                    <div className="form-width">
-                        <LoadSubscribeForm
-                          loading={loading}
-                          setDone={setDone}
-                          setLoading={setLoading}
-                        />
-                    </div>
-                    
-                    <div className="unsubscribe-link">
-                        <Link to="../unsubscribe/"><p className="text">Unsubscribe from the newsletter</p></Link>
-                    </div>
-                </div>
+                </>
             )
         }
         else if (done === true) {
             return (
-                <div className="Newsletter-auth-container container">
-                    
-                    <div className="logout-response-spacer">
-                        <NewsletterResponse
-                        text={"You have successfully subscribed to the newsletter"}
-                        />
+                <>
+                    <div className="Settings-navbar-container container">
+                        <SettingsNavbar />
                     </div>
-                </div>
+                    
+                    <div className="Newsletter-auth-container container">
+                        
+                        <div className="logout-response-spacer">
+                            <NewsletterResponse
+                            text={"You have successfully subscribed to the newsletter"}
+                            />
+                        </div>
+                    </div>
+
+                </>
             )
         }
     }
