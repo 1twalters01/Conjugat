@@ -14,39 +14,25 @@ function OauthLogin() {
     const dispatch = useDispatch()
 
     const url = window.location.href
+    var code:string|null = ''
+
+    var postURL
     if (url.includes('google')) {
-        var code:string|null = decodeURIComponent(url.match(/code=(.*?)&/i)[1])
-        AxiosInstance.Unauthorised
-        .post('account/login/Oauth/social/knox/google-oauth2/',{
-            "code": code
-        })
-        .then(res => {
-            localStorage.setItem("token", res.data.token)
-            axios
-            .get ('settings/themes/', {
-                headers: {
-                    'Authorization': 'Token '+ localStorage.getItem("token"),
-                    'Content-Type': 'application/json',
-                    accept: 'application/json',
-                }
-            })
-            .then ((result: { data: { theme: string; }; }) => {
-                dispatch(onThemeChange(result.data.theme))
-                window.location.href = '/home'
-            })
-            .catch (err=>{
-                console.log(err.response.data)
-            })
-        })
-        .catch(err=>{
-            console.log(err.response.data)
-        })
+        code = decodeURIComponent(url.match(/code=(.*?)&/i)[1])
+        postURL = 'account/login/Oauth/social/knox/google-oauth2/'
     }
-
     else if (url.includes('facebook')) {
-        var code:string|null = decodeURIComponent(url.match(/code=(.*?)&/i)[1])
+        code = decodeURIComponent(url.match(/code=(.*?)&/i)[1])
+        postURL = 'account/login/Oauth/social/knox/facebook/'
+    }
+    else if (url.includes('twitter')) {
+        code = decodeURIComponent(url.split('code=')[1])
+        postURL = 'account/login/Oauth/social/knox/twitter/'
+    }
+
+    if (postURL && code !== '') {
         AxiosInstance.Unauthorised
-        .post('account/login/Oauth/social/knox/facebook/',{
+        .post(postURL, {
             "code": code
         })
         .then(res => {
@@ -68,12 +54,9 @@ function OauthLogin() {
             })
         })
         .catch(err=>{
-            console.log(err.response.data)
+            // console.log(err.response.data)
+            console.log(err)
         })
-    }
-
-    else if (url.includes('twitter')) {
-        console.log('twitter')
     }
     
     return (

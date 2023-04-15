@@ -2,14 +2,15 @@ import '../../../sass/Components/account/Login/TwitterBtn.scss'
 
 function GetTwitterURL() {
     const getTwitterUrl = () => {
-        const rootUrl = ''
+        const rootUrl = 'https://twitter.com/i/oauth2/authorize'
 
         const options = {
             client_id: import.meta.env.VITE_Twitter_OAUTH_CLIENT_ID as string,
-            redirect_uri: import.meta.env.VITE_OAUTH_REDIRECT as string,
+            redirect_uri: 'http://www.localhost:5000/account/oauth', 
             response_type: "code",
-            prompt: "consent",
-            scope: 'email',
+            scope: 'offline.access',
+            code_challenge: "challenge",
+            code_challenge_method: "plain",
             state: 'twitter-Conjugat',
         };
         const qs = new URLSearchParams(options);

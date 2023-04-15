@@ -15,6 +15,8 @@ Finish designing web pages, style and add colour to:
 * Home
 * Premium
 
+fix twitter backend code
+
 Add a page before verb test to choose options
 
 Remove all cases of duplication in the scss
@@ -34,8 +36,6 @@ Create functionality in Django and React for:
 
 
 # Medium term goals
-Add Twitter authentication once approved
-
 Refactor react code once again
 1. account
 * Activate

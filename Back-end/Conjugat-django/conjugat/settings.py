@@ -237,6 +237,7 @@ MAILCHIMP_MARKETING_AUDIENCE_ID = config('MAILCHIMP_MARKETING_AUDIENCE_ID')
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5000",
+    "http://www.localhost:5000"
 ]
 
 # CORS_ALLOW_CREDENTIALS = True
