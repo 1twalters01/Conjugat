@@ -16,11 +16,11 @@ function RetrieveStatus() {
     
     if (loading == true) {
       setLoading(false)
-
+      const base = import.meta.env.VITE_CLIENT_URL as string
       AxiosInstance.Authorised
       .post('subscriptions/retrieve-status/', {
-        success_url: 'http://localhost:5000/subscriptions/success',
-        cancel_url: 'http://localhost:5000/subscriptions/cancelled',
+        success_url: base+'subscriptions/success',
+        cancel_url: base+'subscriptions/cancelled',
       })
       .then(res =>{
         setSubscribed(res.data.subscribed)

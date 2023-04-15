@@ -22,12 +22,12 @@ function RetrievePremiumStatus() {
 
     if(loading == true) {
       setLoading(false)
-
+      const base = import.meta.env.VITE_CLIENT_URL as string
       AxiosInstance.Authorised
       .post('settings/premium/',{
         return_url: window.location.href,
-        success_url: 'http://localhost:5000/subscriptions/success',
-        cancel_url: 'http://localhost:5000/settings/premium',
+        success_url: base+'subscriptions/success',
+        cancel_url: base+'settings/premium',
         lookup_key: 'Conjugat Premium',
         method: null
       })

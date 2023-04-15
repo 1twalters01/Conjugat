@@ -8,7 +8,7 @@ import Authorization from "../../functions/Authorization"
 function Settings() {
     Authorization.AuthRequired()
     const navigate = useNavigate()
-    const base = 'http://localhost:5000/'
+    const base = import.meta.env.VITE_CLIENT_URL as string
     useEffect(() => {
         if (window.location.href == base + 'settings/' || window.location.href == base + 'settings') {
         navigate('change-email/'), []

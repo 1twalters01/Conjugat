@@ -15,8 +15,6 @@ Finish designing web pages, style and add colour to:
 * Home
 * Premium
 
-Move base url to env
-
 Add a page before verb test to choose options
 
 Remove all cases of duplication in the scss

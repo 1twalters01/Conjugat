@@ -4,7 +4,7 @@ import axios from 'axios'
 // axios.defaults.withCredentials = true
 // axios.defaults.xsrfCookieName = 'Cookie'
 // axios.defaults.xsrfHeaderName = "X-CSRFToken"
-axios.defaults.baseURL = 'http://conjugat.io:8000/'
+axios.defaults.baseURL = import.meta.env.VITE_SERVER_URL as string
 axios.defaults.timeout = 5000
 
 const token = localStorage.getItem("token")

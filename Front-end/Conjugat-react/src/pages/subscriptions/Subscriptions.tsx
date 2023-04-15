@@ -7,15 +7,15 @@ function Subscriptions() {
     Authorization.AuthRequired()
     const navigate = useNavigate()
     const [subscribed, setSubscribed] = useState(null)
-    const base = 'http://localhost:5000/'
+    const base = import.meta.env.VITE_CLIENT_URL as string
     
     if (window.location.href == base + 'subscriptions/' || window.location.href == base + 'subscriptions') {
         async function getStatus() {
             const res = await (
                 AxiosInstance.Authorised
                 .post('subscriptions/retrieve-status/', {
-                    success_url: 'http://localhost:5000/subscriptions/success',
-                    cancel_url: 'http://localhost:5000/subscriptions/cancelled',
+                    success_url: base+'subscriptions/success',
+                    cancel_url: base+'subscriptions/cancelled',
                 })
             )
             setSubscribed(res.data.subscribed)
