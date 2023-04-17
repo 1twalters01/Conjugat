@@ -1,8 +1,22 @@
 import { Link } from "react-router-dom"
 import Authorization from "../../functions/Authorization"
+import AxiosInstance from "../../functions/AxiosInstance"
+import { useEffect } from "react"
 
 function Home() {
     Authorization.AuthRequired()
+    async function retrieveData() {
+      const res = await(
+        AxiosInstance.Authorised
+        .get('/home')
+      )
+      console.log(res)
+    }
+
+    useEffect(() => {
+      retrieveData(), []
+    })
+
     return (
       <div>
         <h1>Home</h1>

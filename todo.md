@@ -1,6 +1,4 @@
 # Short term goals
-Update Readme
-
 Finish designing web pages, style and add colour to:
 2. newsletter
 * Subscribe auth

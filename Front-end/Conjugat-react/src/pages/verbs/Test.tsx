@@ -70,7 +70,7 @@ function Test() {
             results: results
         })
         .then(res=>{
-            
+            console.log(res.data)
         })
         .catch(err=>{
             toast.error(err.response.data.error)

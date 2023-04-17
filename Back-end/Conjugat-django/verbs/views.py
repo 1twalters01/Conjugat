@@ -7,7 +7,6 @@ import random, string
 from testFunctionality.models import TestIdDigits
 
 import uuid
-from cassandra.cqlengine import columns
 from datetime import datetime, timedelta
 
 class VerbRandomRetrieval(APIView):
@@ -80,91 +79,89 @@ class VerbTest(APIView):
     permission_classes = (permissions.AllowAny,)
     
     def post(self, request):
+        # Get data from the post request
         data = request.data
-
-        TestID = data['results']['TestID']
+        tempTestID = data['results']['TestID']
         IDs = [int(elem) for elem in data['results']['IDs']]
         Submitted = data['results']['answers']
-        Answers = cache.get(key=int(TestID))
-
-        results = []
-        result = None
-        objects = RomanceMain.objects.filter(pk__in=Answers)
+        object_pks = cache.get(key=int(tempTestID))
+        StartDateTime = datetime.now()
+        EndDateTime = datetime.now()+timedelta(minutes=5)
+       
+        # Initialise key variables
+        while True:
+            TestID = uuid.uuid4() # Generate permanent TestID
+            try:
+                ValidateUUID = RomanceTestResult.objects.get(pk=TestID)
+            except:
+                ValidateUUID = None
+            if not ValidateUUID:
+                break
         
-        languageList = []
-        languageListDuplicates = []
-        rankList = []
+        try:
+            objects = RomanceMain.objects.filter(pk__in=object_pks) # Get list of conjugations tested
+        except:
+            objects = None
+        if not objects:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        
+        #Create blank lists for relevant properties
+        languages = []
+        ranks = []
+        tenses = []
+        bases = []
+        subjects = []
+        auxiliaries = []
+        verbs = []
         answersList = []
         statusList = []
 
+        # Fill in blank lists by looping through objects
         for object in objects:
-            rankList.append(object.pk)
-            languageList.append(object.subject.language.language)
+            languages.append(object.subject.language.language)
+            ranks.append(object.pk)
+            tenses.append(object.tense.tense)
+            bases.append(object.conjugation.base.base)
+            subjects.append(object.subject.subject)
+            auxiliaries.append(object.auxiliary.auxiliary)
+            verbs.append(object.conjugation.conjugation)
 
-            if object.pk in IDs:
+            if object.pk in IDs: # Filled in answers
                 SubmittedIndex = IDs.index(object.pk)
-                if (str(object.conjugation) == Submitted[SubmittedIndex]):
-                    result = True
+                if (str(object.conjugation) == Submitted[SubmittedIndex]): # Correctly answered
+                    answersList.append(Submitted[SubmittedIndex])
                     statusList.append(True)
-                    answer = Submitted[SubmittedIndex]
+                    # print (f'Correct answer: {object.conjugation}')
+
+                else: # Incorrect answered
                     answersList.append(Submitted[SubmittedIndex])
-                    # print(f'Correct answer: {object.conjugation}')
-                else:
-                    result = False
                     statusList.append(False)
-                    answer = Submitted[SubmittedIndex]
-                    answersList.append(Submitted[SubmittedIndex])
                     # print (f'Incorrect answer: {Submitted[SubmittedIndex]} instead of {object.conjugation}')
-            else:
-                result = None
+
+            else: # Left blank
                 statusList.append(False)
-                answer = ''
                 answersList.append('')
-                # print(f'Not found {object.conjugation, object.pk}')
-            
-            if len(results) == 0:
-                formated_json = {
-                    'Language': object.subject.language.language,
-                    'Base': object.conjugation.base.base,
-                    'Tense': object.tense.tense,
-                    'IDs': [object.pk],
-                    'Subjects': [object.subject.subject],
-                    'Auxiliaries': [object.auxiliary.auxiliary],
-                    'Verbs': [object.conjugation.conjugation],
-                    'Answers': [answer],
-                    'Results': [result]
-                }
-                results.append(formated_json)
-            else:
-                if object.tense.tense == results[-1]['Tense'] and object.conjugation.base.base == results[-1]['Base']:
-                    results[-1]['IDs'].append(object.pk)
-                    results[-1]['Subjects'].append(object.subject.subject)
-                    results[-1]['Auxiliaries'].append(object.auxiliary.auxiliary)
-                    results[-1]['Verbs'].append(object.conjugation.conjugation)
-                    results[-1]['Answers'].append(answer)
-                    results[-1]['Results'].append(result)
-                else:
-                    results.append({
-                        'Language': object.subject.language.language,
-                        'Base': object.conjugation.base.base,
-                        'Tense': object.tense.tense,
-                        'IDs': [object.pk],
-                        'Subjects': [object.subject.subject],
-                        'Auxiliaries': [object.auxiliary.auxiliary],
-                        'Verbs': [object.conjugation.conjugation],
-                        'Answers': [answer],
-                        'Results': [result]
-                    })
+                # print(f'Not answered: {object.conjugation, object.pk}')
 
-        
-        TestID = uuid.uuid4()
+        # Save to redis cache
+        # part 1 - save user and test ids
+        timeoutTime = 10*24*3600 # Safety factor of 3 days so chronjob has time to clean up
+        currentUserTestValues = cache.get(key=request.user.username)
+        if currentUserTestValues == None:
+            currentUserTestValues = []
+        currentUserTestValues.append(TestID)
+        cache.set(key = request.user.username, value=currentUserTestValues, timeout=timeoutTime)
 
-        print(TestID, type(TestID))
-        StartDateTime = datetime.now()
-        EndDateTime = datetime.now()+timedelta(minutes=5)
-
-        RomanceTestResult_by_user_and_date.objects.filter(pk=request.user.id).delete()
-        RomanceTestResult_by_user_and_language.objects.filter(pk=request.user.id).delete()
+        # part 2 - save test id results
+        timeoutTime = 7*24*3600 # Tests last 7 days in cache
+        cache.set(key=TestID, timeout=timeoutTime, value=({
+            'rank':ranks,
+            'language':languages,
+            'StartDateTime':StartDateTime,
+            'EndDateTime':EndDateTime,
+            'answers':answersList,
+            'status':statusList
+        }))
 
         # Save to cassandra database
         TestResult = RomanceTestResult(
@@ -172,15 +169,13 @@ class VerbTest(APIView):
             user = request.user.id,
             StartDateTime = StartDateTime,
             EndDateTime = EndDateTime,
-            rank = rankList,
-            language = languageList,
+            ranks = ranks,
+            languages = languages,
             answers = answersList,
             status = statusList,
         )
-        print(languageList)
-        languageList = set(languageList)
-        print(languageList)
-        for language in languageList:
+
+        for language in languages:
             TestResultByLanguage = RomanceTestResult_by_user_and_language(
                 testID=TestID,
                 user = request.user.id,
@@ -193,8 +188,13 @@ class VerbTest(APIView):
             EndDateTime = EndDateTime
         )
 
+        print(cache.get(key=TestID))
+
         TestResult.save()
         TestResultByLanguage.save()
         TestResultByDate.save()
 
-        return Response(data=results, status=status.HTTP_200_OK)
+        # Delete the temporary testID data once it has been saved
+        cache.delete(key=tempTestID)
+
+        return Response(data=TestID, status=status.HTTP_200_OK)
