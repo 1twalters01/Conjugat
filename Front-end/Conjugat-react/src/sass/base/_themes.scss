@@ -124,6 +124,8 @@
     // Text
     .text { color: $shades-0; }
     .blue-text { color: $primary-300;}
+    .green-text{ color: $success-700;}
+    .red-text{ color: $error-500;}
     .text-blue-link {
         color: $shades-0;
         &:hover {

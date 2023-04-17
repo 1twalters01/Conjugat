@@ -145,7 +145,7 @@ class VerbTest(APIView):
 
             else: # Left blank
                 statusList.append(False)
-                answersList.append('')
+                answersList.append(' ')
                 # print(f'Not answered: {object.conjugation, object.pk}')
 
         # Save to redis cache
