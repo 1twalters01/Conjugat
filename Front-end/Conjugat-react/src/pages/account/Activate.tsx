@@ -52,7 +52,6 @@ function Activate() {
         )
     }
     if (Error == true && Activated == false) {
-      console.log('hi')
         return (
           <div className="Activate-container container">
               <div className="header-spacer">

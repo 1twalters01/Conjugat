@@ -9,8 +9,10 @@ import '../../sass/Components/Input fields/TextField.scss'
 import '../../sass/Components/Input fields/SubmitBtn.scss'
 import '../../sass/Components/account/DualLinks.scss'
 import '../../sass/pages/verbs/Test.scss'
+import { useNavigate } from "react-router-dom"
 
 function Test() {
+    const navigate = useNavigate()
     type ITestID = null|number
     const [page, setPage] = useState(0)
     const [inputValues, setInputValues] = useState({})
@@ -33,7 +35,6 @@ function Test() {
                 number: 50
             })
         )
-        console.log(res.data)
         setPage(0)
         SetQuestionData(res.data.Test)
         setTestID(res.data.TestID)
@@ -70,7 +71,8 @@ function Test() {
             results: results
         })
         .then(res=>{
-            console.log(res.data)
+            navigate(`/verbs/test/results/${res.data}`)
+            
         })
         .catch(err=>{
             toast.error(err.response.data.error)

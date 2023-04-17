@@ -78,7 +78,6 @@ const router = createBrowserRouter(
 
 
       <Route path="settings" element={<Settings />}>
-      {/* <Route path="settings"> */}
         <Route path="change-email" element={<Email />} />
         <Route path="change-password" element={<Password />} />
         <Route path="change-username" element={<Username />} />

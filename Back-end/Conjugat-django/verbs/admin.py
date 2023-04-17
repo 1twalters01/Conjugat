@@ -44,7 +44,7 @@ class RomanceMainAdmin(admin.ModelAdmin):
 
 @admin.register(RomanceTestResult)
 class RomanceTestResultAdmin(admin.ModelAdmin):
-    list_display = ['testID', 'user', 'language', 'rank', 'answers', 'status', 'StartDateTime', 'EndDateTime']
+    list_display = ['testID', 'user', 'languages', 'ranks', 'answers', 'status', 'StartDateTime', 'EndDateTime']
 
 @admin.register(RomanceTestResult_by_user_and_date)
 class RomanceTestResult_by_user_and_dateAdmin(admin.ModelAdmin):

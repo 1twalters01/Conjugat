@@ -1,9 +1,31 @@
+import { useEffect } from "react"
+import { useParams } from "react-router-dom"
+import AxiosInstance from "../../functions/AxiosInstance"
+
 function TestResults() {
+    const { testID } = useParams()
+    const activateAccount = async () => {const res = await (
+        AxiosInstance.Unauthorised
+        .post('verbs/verb-test-results', {
+            testID: testID,
+        })
+        .then(res =>
+            console.log(res.data)
+        )
+        .catch(err => {
+            console.log(err)
+        })
+    )}
+
+    useEffect(() => {
+      activateAccount();
+    }, [])
+    
     return (
         <>
         {exampleAnswerData.map((answer, i) => (
             <div>
-                <p>{i}</p>
+                
             </div>
         ))}
         </>

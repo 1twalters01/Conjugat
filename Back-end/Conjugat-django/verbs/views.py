@@ -88,6 +88,9 @@ class VerbTest(APIView):
         StartDateTime = datetime.now()
         EndDateTime = datetime.now()+timedelta(minutes=5)
        
+        # Delete the temporary testID data once it has been saved
+        cache.delete(key=tempTestID)
+
         # Initialise key variables
         while True:
             TestID = uuid.uuid4() # Generate permanent TestID
@@ -107,24 +110,26 @@ class VerbTest(APIView):
         
         #Create blank lists for relevant properties
         languages = []
+        pks = []
         ranks = []
         tenses = []
         bases = []
         subjects = []
         auxiliaries = []
-        verbs = []
+        conjugations = []
         answersList = []
         statusList = []
 
         # Fill in blank lists by looping through objects
         for object in objects:
             languages.append(object.subject.language.language)
-            ranks.append(object.pk)
+            pks.append(object.pk)
+            ranks.append(object.rank)
             tenses.append(object.tense.tense)
             bases.append(object.conjugation.base.base)
             subjects.append(object.subject.subject)
             auxiliaries.append(object.auxiliary.auxiliary)
-            verbs.append(object.conjugation.conjugation)
+            conjugations.append(object.conjugation.conjugation)
 
             if object.pk in IDs: # Filled in answers
                 SubmittedIndex = IDs.index(object.pk)
@@ -155,10 +160,17 @@ class VerbTest(APIView):
         # part 2 - save test id results
         timeoutTime = 7*24*3600 # Tests last 7 days in cache
         cache.set(key=TestID, timeout=timeoutTime, value=({
-            'rank':ranks,
-            'language':languages,
+            'pks':pks,
+            'ranks':ranks,
+            'languages':languages,
             'StartDateTime':StartDateTime,
             'EndDateTime':EndDateTime,
+            'pks':pks,
+            'bases':bases,
+            'tenses':tenses,
+            'subjects':subjects,
+            'auxiliaries':auxiliaries,
+            'conjugations':conjugations,
             'answers':answersList,
             'status':statusList
         }))
@@ -167,10 +179,16 @@ class VerbTest(APIView):
         TestResult = RomanceTestResult(
             testID=TestID,
             user = request.user.id,
-            StartDateTime = StartDateTime,
-            EndDateTime = EndDateTime,
+            pks = pks,
             ranks = ranks,
             languages = languages,
+            StartDateTime = StartDateTime,
+            EndDateTime = EndDateTime,
+            bases = bases,
+            tenses = tenses,
+            subjects = subjects,
+            auxiliaries = auxiliaries,
+            conjugations = conjugations,
             answers = answersList,
             status = statusList,
         )
@@ -189,12 +207,77 @@ class VerbTest(APIView):
         )
 
         print(cache.get(key=TestID))
-
+        
         TestResult.save()
         TestResultByLanguage.save()
         TestResultByDate.save()
 
-        # Delete the temporary testID data once it has been saved
-        cache.delete(key=tempTestID)
-
         return Response(data=TestID, status=status.HTTP_200_OK)
+    
+
+class VerbTestResults(APIView):
+    permission_classes = (permissions.AllowAny,)
+    
+    def post(self, request):
+        data = request.data
+        testID = data['testID']
+
+        # First try the cache. If not, then try cassandra
+        try:
+            test = cache.get(key=testID)
+        except:
+            test = None
+        
+        if not test:
+            try:
+                test = RomanceTestResult.objects.get(pk=testID)
+            except:
+                test = None
+        
+        if not test:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        
+        # test = RomanceTestResult.objects.get(pk=testID)
+
+        results = []
+        timer = test['EndDateTime'] - test['StartDateTime'],
+        for index, item in enumerate(test['status']):
+            print(item)
+            if len(results) == 0:
+                formated_json = {
+                    'Language': test['languages'][index],
+                    'Base': test['bases'][index],
+                    'Tense':test['tenses'][index],
+                    'IDs': [test['pks'][index]],
+                    'Ranks':[test['ranks'][index]],
+                    'Subjects':[test['subjects'][index]],
+                    'Auxiliaries':[test['auxiliaries'][index]],
+                    'Conjugations':[test['conjugations'][index]],
+                    'Answers':[test['answers'][index]],
+                    'Status': [item]
+                }
+                results.append(formated_json)
+            else:
+                if test['tenses'][index] == results[-1]['Tense'] and test['bases'][index] == results[-1]['Base']:
+                    results[-1]['IDs'].append(test['pks'][index])
+                    results[-1]['Ranks'].append(test['ranks'][index])
+                    results[-1]['Subjects'].append(test['subjects'][index])
+                    results[-1]['Auxiliaries'].append(test['auxiliaries'][index])
+                    results[-1]['Conjugations'].append(test['conjugations'][index])
+                    results[-1]['Answers'].append(test['answers'][index])
+                    results[-1]['Status'].append(item)
+                else:
+                    results.append({
+                        'Language': test['languages'][index],
+                        'Base': test['bases'][index],
+                        'Tense':test['tenses'][index],
+                        'IDs': [test['pks'][index]],
+                        'Ranks':[test['ranks'][index]],
+                        'Subjects':[test['subjects'][index]],
+                        'Auxiliaries':[test['auxiliaries'][index]],
+                        'Conjugations':[test['conjugations'][index]],
+                        'Answers':[test['answers'][index]],
+                        'Status': [item]
+                    })
+
+        return Response(data=results, status=status.HTTP_200_OK)

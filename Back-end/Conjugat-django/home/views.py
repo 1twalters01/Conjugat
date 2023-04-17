@@ -8,12 +8,17 @@ from datetime import datetime, timedelta
 class homeView(APIView):
     permission_classes = [permissions.IsAuthenticated]
     def get(self, request):
-        # RomanceTestResult_by_user_and_date.objects.filter(pk=request.user.id).delete()
-        # RomanceTestResult_by_user_and_language.objects.filter(pk=request.user.id).delete()
-        tests = RomanceTestResult_by_user_and_date.objects.get(pk=request.user.id)
-        print(tests)
-        tests.objects.filter(EndDateTime__gte=(datetime.today() - timedelta(days=7)))
-        print(tests.testID)
+        # pk = request.user.id
+        # RomanceTestResult_by_user_and_date.objects.filter(pk=pk).delete()
+        # RomanceTestResult_by_user_and_language.objects.filter(pk=pk).delete()
+        
+        # tests = RomanceTestResult_by_user_and_date.objects.filter(pk=request.user.id)
+        tests = RomanceTestResult_by_user_and_date.objects.filter(pk=78)
+        tests = tests.filter(EndDateTime__gte=(datetime.today() - timedelta(days=7)))
+        for test in tests:
+            print(test.testID)
+        
+        # print(tests.testID)
         return Response(status=status.HTTP_200_OK)
     
 # class homeAltView(APIView):
