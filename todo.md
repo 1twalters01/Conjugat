@@ -15,6 +15,8 @@ Finish designing web pages, style and add colour to:
 
 fix twitter backend code
 
+Make authentication function in react check the backend for if token is valid
+
 Add a page before verb test to choose options
 
 Remove all cases of duplication in the scss

@@ -10,7 +10,7 @@ import '../../sass/pages/account/Register.scss'
 function Register() {
     Authorization.NotAuthRequired()
     const [done, setDone] = useState(false)
-    const [returnedEmail, setReturnedEmail] = useState(true)
+    const [returnedEmail, setReturnedEmail] = useState(null)
 
     if (done == false) {
         return (
