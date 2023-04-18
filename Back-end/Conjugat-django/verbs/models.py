@@ -143,9 +143,9 @@ class RomanceMain(models.Model):
 class RomanceTestResult(DjangoCassandraModel):
     testID = columns.UUID(default=uuid.uuid4(), primary_key=True)
     user = columns.Integer()
-    languages = columns.List(value_type=columns.Text())
     StartDateTime = columns.DateTime()
     EndDateTime = columns.DateTime()
+    languages = columns.List(value_type=columns.Text())
     pks = columns.List(value_type=columns.Integer())
     tenses = columns.List(value_type=columns.Text())
     bases = columns.List(value_type=columns.Text())

@@ -13,14 +13,37 @@ class homeView(APIView):
         # pk = request.user.id
         # RomanceTestResult_by_user_and_date.objects.filter(pk=pk).delete()
         # RomanceTestResult_by_user_and_language.objects.filter(pk=pk).delete()
-        
-        # tests = RomanceTestResult_by_user_and_date.objects.filter(pk=request.user.id)
-        # tests = tests.filter(EndDateTime__gte=(datetime.today() - timedelta(days=7)))
-        # for test in tests:
-        #     print(test.testID)
-        
-        # print(tests.testID)
-        return Response(status=status.HTTP_200_OK)
+
+        testIDs = cache.get(key=request.user.username)
+        tests = [cache.get(testID) for testID in testIDs]
+        tests = sorted(tests, key=lambda x: x['EndDateTime'])
+        data = []
+        for test in tests:
+            date = test['EndDateTime'].date()
+            incorrect_count = test['status'].count(False)
+            correct_count = test['status'].count(True)
+
+            if len(data) == 0:
+                formated_json = {
+                    'Date': [date],
+                    'Incorrect': [incorrect_count],
+                    'Correct': [correct_count],
+                }
+                data.append(formated_json)
+
+            else:
+                if date == data[-1]['Date'][0]:
+                    data[-1]['Incorrect'].append(incorrect_count)
+                    data[-1]['Correct'].append(correct_count)
+                else:
+                    formated_json = {
+                        'Date': [date],
+                        'Incorrect': [incorrect_count],
+                        'Correct': [correct_count],
+                    }
+                    data.append(formated_json)
+
+        return Response(data=data, status=status.HTTP_200_OK)
     
 class authTokenValidator(APIView):
     permission_classes = (permissions.AllowAny,)
