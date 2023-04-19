@@ -44,7 +44,7 @@ The following functionality is complete:
 [Front-end](https://github.com/1twalters01/Conjugat/tree/main/Front-end/Conjugat-react/src/pages/verbs)
 * Redis and Cassandra has been integrated
 * Initial database structure has been designed
-* [Verb uml diagram](https://user-images.githubusercontent.com/115738254/233082475-d972082c-0a19-4bb0-aabc-e99d27b2e0a5.png)[Noun uml diagram](https://user-images.githubusercontent.com/115738254/233082587-80175408-7fb0-43ed-bb6b-a032be01d9ed.png)[Adjectives uml diagram](https://user-images.githubusercontent.com/115738254/233082851-aa7ba5d3-8106-4176-8cbd-d40214e19235.png)
+* [Verb uml diagram](https://user-images.githubusercontent.com/115738254/233082475-d972082c-0a19-4bb0-aabc-e99d27b2e0a5.png) [Noun uml diagram](https://user-images.githubusercontent.com/115738254/233082587-80175408-7fb0-43ed-bb6b-a032be01d9ed.png) [Adjectives uml diagram](https://user-images.githubusercontent.com/115738254/233082851-aa7ba5d3-8106-4176-8cbd-d40214e19235.png)
 
 
 
