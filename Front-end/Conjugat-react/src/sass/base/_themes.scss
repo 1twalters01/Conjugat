@@ -9,16 +9,119 @@
     .container { background-color: $secondary-200;}
 
     // Headers
-    .header { color: $secondary-600; }
-    .subheader { color: $shades-0; }
+    .header { color: $primary-500; }
+    .subheader { color: $shades-1000; }
 
     // Inputs
-    .line-label { color: $shades-0; }
+    .line-label { color: $shades-1000; }
     .line {
         background-color: transparent;
         color-scheme: light;
         border-bottom-color: $primary-900;
         color: $shades-1000;
+    }
+
+    // Strong buttons
+    .strong-white-btn {
+        background-color: $shades-0;
+        color: $primary-800;
+        &:hover{
+            background-color: #ececec;
+            transition: 0.4s;
+        }
+    }
+    .strong-gold-btn {
+        background-color: $secondary-700;
+        color: $primary-800;
+        &:hover{
+            background-color: $secondary-800;
+            transition: 0.4s;
+        }
+    }
+    .strong-green-btn {
+        background-color: $success-900;
+        color: $secondary-100;
+        border-color: $success-900;
+        &:hover{
+            background-color: $success-700;
+            border-color: $success-700;
+            transition: 0.4s;
+        }
+    }
+    .strong-blue-btn {
+        background-color: $primary-500;
+        color: $secondary-100;
+        border-color: $primary-500;
+        &:hover{
+            background-color: $primary-400;
+            transition: 0.4s;
+        }
+    }
+    .strong-red-btn {
+        background-color: #E74C3C;
+        color: $shades-0;
+        border-color: #E74C3C;
+        &:hover{
+            background-color: $error-700;
+            border-color: $error-700;
+            transition: 0.4s;
+        }
+    }
+
+    // Weak buttons
+    .weak-gold-btn {
+        background-color: transparent;
+        color: $primary-800;
+        border-color: $secondary-700;
+        &:hover {
+            background-color: #e9e8d6;
+            transition: 0.4s;
+        }
+    }
+
+    .weak-green-btn {
+        background-color: transparent;
+        color: $primary-800;  
+        border-color: $success-700;
+        &:hover {
+            background-color: #dfdecb;
+            transition: 0.4s;
+        }
+    }
+
+    .weak-blue-btn {
+        background-color: transparent;
+        color: $primary-800;  
+        border-color: $primary-400;
+        &:hover {
+            background-color: #dfdecb;
+            transition: 0.4s;
+        }
+    }
+
+    // Text
+    .text { color: $shades-1000; }
+    .white-text { color: $shades-0; }
+    .black-text { color: $shades-1000; }
+    .blue-text { color: $primary-300;}
+    .green-text{ color: $success-700;}
+    .red-text{ color: $error-500;}
+    .text-blue-link {
+        color: $shades-1000;
+        &:hover {
+            color: $primary-400;
+            transition: 0.2s;
+        }
+        &:active {
+            color: $primary-500;
+        }
+    }
+    .text-gold-link {
+        color: $shades-1000;
+        &:hover {
+            color: $secondary-700;
+            transition: 0.2s;
+        }
     }
 
     h1, h2, p, label, li {
@@ -85,7 +188,8 @@
         color: $shades-0;
         border-color: #E74C3C;
         &:hover{
-            background-color: $error-900;
+            background-color: $error-700;
+            border-color: $error-700;
             transition: 0.4s;
         }
     }
@@ -123,6 +227,8 @@
 
     // Text
     .text { color: $shades-0; }
+    .white-text { color: $shades-0; }
+    .black-text { color: $shades-1000}
     .blue-text { color: $primary-300;}
     .green-text{ color: $success-700;}
     .red-text{ color: $error-500;}

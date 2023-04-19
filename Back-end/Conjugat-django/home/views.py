@@ -3,9 +3,9 @@ from verbs.models import RomanceTestResult, RomanceTestResult_by_user_and_langua
 from rest_framework import status, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from datetime import datetime, timedelta
 from knox.models import AuthToken
 
+# Have not refactored this code in any way yet
 
 class homeView(APIView):
     permission_classes = (permissions.IsAuthenticated,)

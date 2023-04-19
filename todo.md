@@ -10,8 +10,11 @@ Finish designing web pages, style and add colour to:
 * Process
 * Success
 5. Misc
+Landing page
 * Home
 * Premium
+
+Improve theme / colour naming conventions
 
 fix twitter backend code
 
@@ -19,18 +22,13 @@ Add a page before verb test to choose options
 
 Remove all cases of duplication in the scss
 
-Light theme
-
-Create Test complete page in react
+Style the test complete page
 
 Finish reset account back end
 
 Add chart.js to the home page
 
 Make expired subscriptions turn off
-
-Create functionality in Django and React for:
-* Settings: Reset account
 
 
 # Medium term goals
