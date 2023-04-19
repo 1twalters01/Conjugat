@@ -6,27 +6,44 @@ A WIP Restful Django/Rust application that will test the user's conjugation abil
 
 ## What is complete
 The following functionality is complete:
-1. Accounts - Everything
+1. WebScraping - Everything except running everything
+[Link](https://github.com/1twalters01/Conjugat/tree/main/Back-end/python/verbs)
+* Webscrapped Reverso for all subjects, auxiliaries, and tenses for 5 languages. Got the desired 2000 bases for the bases, and all of the conjugations
+* Got part way through scapping the sentence structure but recieved a 429 error
+* Got a 429 Too many reque
+2. Accounts - Everything
+[Back-end](https://github.com/1twalters01/Conjugat/tree/main/Back-end/Conjugat-django/account)
+[Front-end](https://github.com/1twalters01/Conjugat/tree/main/Front-end/Conjugat-react/src/pages/account)
 * DjangoRest Knox is used for tokens
 * Remember me functionality
 * Optional email input on registration that sends verification email if filled in
 * Functionality has been built for session authentication if I were to switch to it.
 * 2FA and password reset built
-2. Newsletter
+3. Newsletter - Back-end is finished, Front-end is not
+[Back-end](https://github.com/1twalters01/Conjugat/tree/main/Back-end/Conjugat-django/newsletter)
+[Front-end](https://github.com/1twalters01/Conjugat/tree/main/Front-end/Conjugat-react/src/pages/newsletter)
 * Finished other than styling the view when you are logged in
 * Connects to mailchimp
 * Uses webhooks to stay synchronised
-3. Settings
+4. Settings - Everything except the reset functionality
+[Back-end](https://github.com/1twalters01/Conjugat/tree/main/Back-end/Conjugat-django/settings)
+[Front-end](https://github.com/1twalters01/Conjugat/tree/main/Front-end/Conjugat-react/src/pages/settings)
 * Change email, password and username for the user
 * Close the account
 * See/edit your subscription status
 * Add/remove two factor authentication to your account
-4. Subscriptions
+5. Subscriptions - Back-end is finished, Front-end is not
+[Back-end](https://github.com/1twalters01/Conjugat/tree/main/Back-end/Conjugat-django/subscription)
+[Front-end](https://github.com/1twalters01/Conjugat/tree/main/Front-end/Conjugat-react/src/pages/subscriptions)
 * Stripe, paypal and coinbase-commerce subscription integration
 * Webhooks for all three
 * Free trial period
 * Encryption for the subscription and client IDs
-
+6. Test functionality - Initial back-end is finished, Front-end for the test is as well
+[Back-end](https://github.com/1twalters01/Conjugat/tree/main/Back-end/Conjugat-django/verbs)
+[Front-end](https://github.com/1twalters01/Conjugat/tree/main/Front-end/Conjugat-react/src/pages/verbs)
+* Redis and Cassandra has been integrated
+* Initial database structure has been designed
 
 ## Scope
 I am starting with 5 languages - English, French, Italian, Portuguese, and Spanish in MVP 1. 
