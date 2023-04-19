@@ -13,8 +13,7 @@ from .serializers import ChangeEmailSerializer, ChangePasswordSerializer, \
 from subscription.encryption import decrypt, encrypt
 from .totp import create_key_of_length, generate_QR_string_and_code
 from .validations import *
-from verbs.models import Progress
-
+from verbs.models import RomanceTestResult_by_user_and_language
 
 
 ''' Routes '''
@@ -155,12 +154,16 @@ class ResetAccount(APIView):
     permission_classes = (permissions.AllowAny,)
     # authentication_classes = (SessionAuthentication,)
     def get(self, request):
-        account = Progress.objects.filter(user=request.user)
-        try:
-            languages = [account[x].language for x in account]
-            languages = ['English', 'Portuguese']
-        except:
-            languages = None
+        languages = []
+        options = ['English', 'French', 'Italian', 'Portuguese', 'Spanish']
+        for option in options:
+            try:
+                # Move this to cache?
+                language = RomanceTestResult_by_user_and_language.objects.filter(pk=request.user.id, language=option).first()
+            except:
+                language = None
+            if language:
+                languages.append(option)
         return Response({'languages':languages})
 
     def post(self, request):

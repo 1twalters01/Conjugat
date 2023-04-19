@@ -14,19 +14,23 @@ Landing page
 * Home
 * Premium
 
-Improve theme / colour naming conventions
+Add a page before verb test to choose test options
 
-fix twitter backend code
+Add chart.js to the home page
 
-Add a page before verb test to choose options
-
-Remove all cases of duplication in the scss
-
-Style the test complete page
+Fix RomanceTestResult_by_user_and_language
 
 Finish reset account back end
 
-Add chart.js to the home page
+Update CloseAccount back end
+
+fix twitter backend code
+
+Style the test complete page
+
+Improve theme/colour naming conventions
+
+Remove all cases of duplication in the scss
 
 Make expired subscriptions turn off
 
