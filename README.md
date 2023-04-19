@@ -6,8 +6,8 @@ A WIP Restful Django/Rust application that will test the user's conjugation abil
 
 ## What is complete
 The following functionality is complete:
-1. WebScraping - Everything except running everything
-[Link](https://github.com/1twalters01/Conjugat/tree/main/Back-end/python/verbs)
+1. WebScraping - Everything except running the final python script to completion
+[Code](https://github.com/1twalters01/Conjugat/tree/main/Back-end/python/verbs) [JSON](https://github.com/1twalters01/Conjugat/tree/main/Back-end/Conjugat-data/verbs)
 * Webscrapped Reverso for all subjects, auxiliaries, and tenses for 5 languages. Got the desired 2000 bases for the bases, and all of the conjugations
 * Got part way through scapping the sentence structure but recieved a 429 error
 * Got a 429 Too many reque
