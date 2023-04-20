@@ -20,8 +20,6 @@ Add chart.js to the home page
 
 Fix RomanceTestResult_by_user_and_language
 
-Finish reset account back end
-
 Update CloseAccount back end
 
 fix twitter backend code
