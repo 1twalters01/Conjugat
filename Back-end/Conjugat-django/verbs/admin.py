@@ -52,7 +52,7 @@ class RomanceTestResult_by_user_and_dateAdmin(admin.ModelAdmin):
 
 @admin.register(RomanceTestResult_by_user_and_language)
 class RomanceTestResult_by_user_and_languageAdmin(admin.ModelAdmin):
-    list_display = ['testID', 'user', 'language']
+    list_display = ['language', 'testID', 'user']
 
 @admin.register(Progress)
 class ProgressAdmin(admin.ModelAdmin):

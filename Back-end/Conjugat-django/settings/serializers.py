@@ -9,7 +9,8 @@ from subscription.encryption import decrypt
 from subscription.models import UserProfile
 from subscription.paypal import show_sub_details, suspend_sub, activate_sub, cancel_sub
 import stripe
-from verbs.models import Progress
+from verbs.models import RomanceTestResult_by_user_and_language, RomanceTestResult_by_user_and_date, RomanceTestResult
+from django.core.cache import cache
 
 class ChangeEmailSerializer(serializers.Serializer):
     email = serializers.CharField()
@@ -105,7 +106,7 @@ class ResetAccountSerializer(serializers.Serializer):
         languages = data["languages"]
         password = data["password"]
 
-        req_user = self.context['username']
+        req_user = self.context['user']
         user = User.objects.get(username=req_user.username)
         if user.check_password(password) == False:
             error = 'Incorrect password'
@@ -113,14 +114,71 @@ class ResetAccountSerializer(serializers.Serializer):
 
         for language in languages:
             try:
-                account = Progress.objects.get(user=req_user, language=language)
+                testIDs = RomanceTestResult_by_user_and_language.objects.filter(pk=language, user=req_user.id)
+                for testID in testIDs:
+                    try:
+                        testCache = cache.get(key=testID.testID)
+                    except:
+                        testCache = []
+                    print(testCache)
+                    values = []
+                    for index, choice in enumerate(testCache['languages']):
+                        if choice == language:
+                            values.append(index)
+
+                    testCache['pks'] = [v for i, v in enumerate(testCache['pks']) if i not in values]
+                    testCache['ranks'] = [v for i, v in enumerate(testCache['ranks']) if i not in values]
+                    testCache['languages'] = [v for i, v in enumerate(testCache['languages']) if i not in values]
+                    testCache['bases'] = [v for i, v in enumerate(testCache['bases']) if i not in values]
+                    testCache['tenses'] = [v for i, v in enumerate(testCache['tenses']) if i not in values]
+                    testCache['subjects'] = [v for i, v in enumerate(testCache['subjects']) if i not in values]
+                    testCache['auxiliaries'] = [v for i, v in enumerate(testCache['auxiliaries']) if i not in values]
+                    testCache['conjugations'] = [v for i, v in enumerate(testCache['conjugations']) if i not in values]
+                    testCache['answers'] = [v for i, v in enumerate(testCache['answers']) if i not in values]
+                    testCache['status'] = [v for i, v in enumerate(testCache['status']) if i not in values]
+                    print('l')
+                    if not testCache['pks'] and not testCache['ranks'] and not testCache['languages'] and not testCache['bases'] and not testCache['tenses'] and not testCache['subjects'] and not testCache['auxiliaries'] and not testCache['conjugations'] and not testCache['answers'] and not testCache['status']:
+
+                        # Delete the cache's testID result
+                        cache.delete(key=testID.testID)
+
+                        # Delete the cache from the cache's user lists
+                        cacheList = cache.get(key=req_user.username)
+                        try:
+                            cacheList.remove(testID.testID)
+                            cache.set(key=req_user.username, value=cacheList)
+                        except:
+                            None
+
+                        # Delete the user and date
+                        try:
+                            datedResult = RomanceTestResult_by_user_and_date.objects.get(pk=req_user.id, testID=testID.testID)
+                        except:
+                            datedResult = None
+                        if datedResult:
+                            datedResult.delete()
+                        
+                        # Delete the main cassandra entry
+                        try:
+                            mainResult = RomanceTestResult.objects.get(pk=testID.testID)
+                        except:
+                            mainResult = None
+                        if mainResult:
+                            mainResult.delete()
+
+                        # Delete the user and language
+                        try:
+                            languageResult = RomanceTestResult_by_user_and_language.objects.get(pk=language, testID=testID.testID)
+                        except:
+                            languageResult = None
+                        if languageResult:
+                            languageResult.delete()
             except:
-                account = None
-            if account:
-                    account.delete()
+                None
+
         response = 'Account was successfully reset'
         return response, True
-                
+
 class CloseAccountSerializer(serializers.Serializer):
     password = serializers.CharField()
     def totp_validation(self, user, totp):

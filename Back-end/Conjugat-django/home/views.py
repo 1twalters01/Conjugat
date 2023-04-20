@@ -4,44 +4,48 @@ from rest_framework import status, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from knox.models import AuthToken
-
+from operator import itemgetter
 # Have not refactored this code in any way yet
 
 class homeView(APIView):
     permission_classes = (permissions.IsAuthenticated,)
     def get(self, request):
-        # pk = request.user.id
-        # RomanceTestResult_by_user_and_date.objects.filter(pk=pk).delete()
-        # RomanceTestResult_by_user_and_language.objects.filter(pk=pk).delete()
+        # RomanceTestResult_by_user_and_date.objects.filter(pk=request.user.id).delete()
+        # RomanceTestResult_by_user_and_language.objects.filter(pk='English', user=request.user.id).delete()
 
         testIDs = cache.get(key=request.user.username)
-        tests = [cache.get(testID) for testID in testIDs]
-        tests = sorted(tests, key=lambda x: x['EndDateTime'])
+        if testIDs:
+            tests = [cache.get(testID) for testID in testIDs]
+        else: tests=None
+        if tests:
+            tests = sorted(tests, key=lambda x: x['EndDateTime'])
+        
         data = []
-        for test in tests:
-            date = test['EndDateTime'].date()
-            incorrect_count = test['status'].count(False)
-            correct_count = test['status'].count(True)
+        if tests:
+            for test in tests:
+                date = test['EndDateTime'].date()
+                incorrect_count = test['status'].count(False)
+                correct_count = test['status'].count(True)
 
-            if len(data) == 0:
-                formated_json = {
-                    'Date': [date],
-                    'Incorrect': [incorrect_count],
-                    'Correct': [correct_count],
-                }
-                data.append(formated_json)
-
-            else:
-                if date == data[-1]['Date'][0]:
-                    data[-1]['Incorrect'].append(incorrect_count)
-                    data[-1]['Correct'].append(correct_count)
-                else:
+                if len(data) == 0:
                     formated_json = {
                         'Date': [date],
                         'Incorrect': [incorrect_count],
                         'Correct': [correct_count],
                     }
                     data.append(formated_json)
+
+                else:
+                    if date == data[-1]['Date'][0]:
+                        data[-1]['Incorrect'].append(incorrect_count)
+                        data[-1]['Correct'].append(correct_count)
+                    else:
+                        formated_json = {
+                            'Date': [date],
+                            'Incorrect': [incorrect_count],
+                            'Correct': [correct_count],
+                        }
+                        data.append(formated_json)
 
         return Response(data=data, status=status.HTTP_200_OK)
     

@@ -9,11 +9,11 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import ChangeEmailSerializer, ChangePasswordSerializer, \
     ChangeUsernameSerializer, ThemeSerializer, TwoFactorAuthSerializer, \
-    CloseAccountSerializer, PremiumSerializer
+    ResetAccountSerializer, CloseAccountSerializer, PremiumSerializer
 from subscription.encryption import decrypt, encrypt
 from .totp import create_key_of_length, generate_QR_string_and_code
 from .validations import *
-from verbs.models import RomanceTestResult_by_user_and_language
+from verbs.models import RomanceTestResult_by_user_and_language, RomanceTestResult
 
 
 ''' Routes '''
@@ -148,7 +148,7 @@ class Logout_all(APIView):
         return Response({"success": success},
                     status=status.HTTP_204_NO_CONTENT)
 
-
+from django.core.cache import cache
 ''' Reset account '''
 class ResetAccount(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -159,7 +159,7 @@ class ResetAccount(APIView):
         for option in options:
             try:
                 # Move this to cache?
-                language = RomanceTestResult_by_user_and_language.objects.filter(pk=request.user.id, language=option).first()
+                language = RomanceTestResult_by_user_and_language.objects.filter(pk=option, user=request.user.id).first()
             except:
                 language = None
             if language:
@@ -172,8 +172,8 @@ class ResetAccount(APIView):
         if validated_password[0] == False:
             return Response(data=validated_password[1], status=validated_password[2])
     
-        context = {'username': request.user}
-        serializer = CloseAccountSerializer(data=data, context=context)
+        context = {'user': request.user}
+        serializer = ResetAccountSerializer(data=data, context=context)
         if serializer.is_valid(raise_exception=True):
             response = serializer.reset_account(data)
             if response[1] == True:

@@ -94,6 +94,7 @@ class VerbTest(APIView):
         # Initialise key variables
         while True:
             TestID = uuid.uuid4() # Generate permanent TestID
+            print(TestID)
             try:
                 ValidateUUID = RomanceTestResult.objects.get(pk=TestID)
             except:
@@ -205,8 +206,6 @@ class VerbTest(APIView):
             user = request.user.id,
             EndDateTime = EndDateTime
         )
-
-        print(cache.get(key=TestID))
         
         TestResult.save()
         TestResultByLanguage.save()
@@ -242,7 +241,6 @@ class VerbTestResults(APIView):
         results = []
         timer = test['EndDateTime'] - test['StartDateTime'],
         for index, item in enumerate(test['status']):
-            print(item)
             if len(results) == 0:
                 formated_json = {
                     'Language': test['languages'][index],
