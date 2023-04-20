@@ -236,8 +236,8 @@ class CloseAccountSerializer(serializers.Serializer):
     def close_account(self, data):
         password = data['password']
         totp = data['totp']
-        req_username = self.context['username']
-        user = User.objects.get(username=req_username)
+        req_user = self.context['user']
+        user = User.objects.get(username=req_user.username)
 
         if user.check_password(password) == False:
             error = 'Incorrect password'
@@ -247,9 +247,33 @@ class CloseAccountSerializer(serializers.Serializer):
         if validated_totp[1] == False:
             return validated_totp[0], validated_totp[1], validated_totp[2]
 
-        delete_premium_check = self.delete_premium(req_username)
+        delete_premium_check = self.delete_premium(req_user.username)
         if delete_premium_check[1] == False:
             return delete_premium_check[0], delete_premium_check[1], delete_premium_check[2]
+
+        # Delete Cassandra
+        try:
+            testIDs = RomanceTestResult_by_user_and_language.objects.filter(pk__in=['English', 'French', 'Italian', 'Portuguese', 'Spanish'], user=request.user.id)
+        except:
+            testIDs = None
+        if testIDs:
+            for testID in testIDs:
+                test = RomanceTestResult.objects.filter(pk=testID.testID)
+                test.delete()
+            testIDs.delete()
+        try:
+            testIDs = RomanceTestResult_by_user_and_date.objects.filter(pk=request.user.id, EndDateTime__gte=(datetime(year=2021, month=1, day=1)))
+        except:
+            testIDs = None
+        if testIDs:
+            testIDs.delete()
+        
+        # Delete redis
+        cachedResults = cache.get(key=req_user.username)
+        if cachedResults:
+            for cachedResult in cachedResults:
+                cache.delete(key=cachedResult)
+            cache.delete(key=req_user.username)
 
         user.delete()
         response = 'Account deleted successfully'

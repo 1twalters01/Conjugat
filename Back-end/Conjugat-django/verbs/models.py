@@ -159,8 +159,8 @@ class RomanceTestResult(DjangoCassandraModel):
 
 class RomanceTestResult_by_user_and_language(DjangoCassandraModel):
     language = columns.Text(primary_key=True)
+    user = columns.Integer(primary_key=True)
     testID = columns.UUID(default=uuid.uuid4(), primary_key=True)
-    user = columns.Integer()
     class Meta:
         get_pk_field='language'
 

@@ -191,7 +191,7 @@ class CloseAccount(APIView):
         if validated_password[0] == False:
             return Response(data=validated_password[1], status=validated_password[2])
 
-        context = {'username': request.user.username}
+        context = {'user': request.user}
         serializer = CloseAccountSerializer(data=data, context=context)
         if serializer.is_valid(raise_exception=True):
             response = serializer.close_account(data)

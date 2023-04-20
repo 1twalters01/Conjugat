@@ -18,10 +18,6 @@ Add a page before verb test to choose test options
 
 Add chart.js to the home page
 
-Fix RomanceTestResult_by_user_and_language
-
-Update CloseAccount back end
-
 fix twitter backend code
 
 Style the test complete page
