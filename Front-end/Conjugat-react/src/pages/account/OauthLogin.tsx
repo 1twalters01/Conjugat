@@ -17,12 +17,13 @@ function OauthLogin() {
     var code:string|null = ''
 
     var postURL
+    // https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#non-null-assertion-operator-postfix-
     if (url.includes('google')) {
-        code = decodeURIComponent(url.match(/code=(.*?)&/i)[1])
+        code = decodeURIComponent(url.match(/code=(.*?)&/i)![1])
         postURL = 'account/login/Oauth/social/knox/google-oauth2/'
     }
     else if (url.includes('facebook')) {
-        code = decodeURIComponent(url.match(/code=(.*?)&/i)[1])
+        code = decodeURIComponent(url.match(/code=(.*?)&/i)![1])
         postURL = 'account/login/Oauth/social/knox/facebook/'
     }
     else if (url.includes('twitter')) {

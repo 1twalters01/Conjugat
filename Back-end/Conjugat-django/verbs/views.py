@@ -86,7 +86,7 @@ class VerbTest(APIView):
         Submitted = data['results']['answers']
         object_pks = cache.get(key=int(tempTestID))
         StartDateTime = datetime.now() + timedelta(days=1)
-        EndDateTime = datetime.now()+timedelta(minutes=5) + timedelta(days=1)
+        EndDateTime = datetime.now()+timedelta(minutes=5) - timedelta(days=1)
        
         # Delete the temporary testID data once it has been saved
         cache.delete(key=tempTestID)

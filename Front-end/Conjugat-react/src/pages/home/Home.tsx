@@ -1,44 +1,68 @@
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import Authorization from "../../functions/Authorization"
 import AxiosInstance from "../../functions/AxiosInstance"
-import { useEffect } from "react"
+
+import SettingsNavbar from "../../components/settings/SettingsNavbar"
+import HomeChart from "../../components/home/Home/HomeChart"
+
+
+import {Bar} from 'react-chartjs-2'
+import {Chart as ChartJS} from 'chart.js/auto'
 
 function Home() {
     Authorization.AuthRequired()
+    type TData = null|{
+        labels: any;
+        datasets: {
+            label: string;
+            data: any;
+        }[];
+    }
+    const [basicData, setBasicData] = useState<TData>(null)
     async function retrieveData() {
       const res = await(
         AxiosInstance.Authorised
         .get('/home')
       )
-      console.log(res)
+      const formatted_data = {
+        labels: res.data?.map((data: { Date: String }) => data.Date),
+        datasets: [{
+          label: "Test Results",
+          data: res.data?.map((data: { Correct: String }) => data.Correct)
+        }],
+      }
+      setBasicData(formatted_data)
+      
     }
 
     useEffect(() => {
-      retrieveData(), []
-    })
+      retrieveData()
+    }, [])
+    console.log(basicData)
 
-    return (
-        <div>
-            <h1>Home</h1>
-            <Link to='../account/logout/' className="text-blue-link">Log out</Link>
+    if (basicData != null) {
+      return (
+        <>
+            <SettingsNavbar />
+            <div>
+                <Link to='../subscriptions/' className="text-blue-link">Subscribe</Link>
+                
+                <h1>Home</h1>
 
-            <br />
-            
-            <Link to='../settings/change-email/' className="text-blue-link">Settings</Link>
-            
-            <br />
-            
-            <Link to='../subscriptions/' className="text-blue-link">Subscribe</Link>
-            
-            <br />
-            
-            <Link to='../newsletter/' className="text-blue-link">Newsletter</Link>
-
-            <br />
-            
-            <Link to='../verbs/test' className="text-blue-link">verb test</Link>
-        </div>
-    )
+                <Bar data={basicData}/>
+                
+                
+                <br />
+            </div>
+        </>
+      )
+    }
+    else{
+        return(
+            <></>
+        )
+    }
 }
 
 export default Home

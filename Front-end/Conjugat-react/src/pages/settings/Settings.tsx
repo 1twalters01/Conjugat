@@ -1,9 +1,9 @@
 import { Outlet, useNavigate } from "react-router-dom"
 import SettingsLinks from "../../components/settings/SettingsLinks"
 import SettingsNavbar from "../../components/settings/SettingsNavbar"
-import '../../sass/pages/settings/Settings.scss'
 import { useEffect } from "react"
 import Authorization from "../../functions/Authorization"
+import '../../sass/pages/settings/Settings.scss'
 
 function Settings() {
     Authorization.AuthRequired()

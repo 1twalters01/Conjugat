@@ -10,7 +10,8 @@ function TextSlideshow({setPage, QuestionData, i} : {setPage:Function, QuestionD
     }
 
     const numInput = useRef<HTMLInputElement>(null);
-    function handleNumberSubmit(e:ChangeEvent<HTMLInputElement>) {
+    // function handleNumberSubmit(e:ChangeEvent<HTMLInputElement> | KeyboardEvent) {
+    function handleNumberSubmit(e:any) {
         if (e.key === 'Enter') {
             if (isNaN(+e.target.value) == false && +e.target.value > 0 && e.target.value < QuestionData.length+1 && numInput.current) {
                 setPage(+e.target.value - 1)

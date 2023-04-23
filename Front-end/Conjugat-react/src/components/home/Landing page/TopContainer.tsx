@@ -3,22 +3,23 @@ import { Link } from 'react-router-dom'
 import '../../../sass/Components/home/Landing page/TopContainer.scss'
 
 function TopContainer() {
-    const para1 = useRef(null);
-    const para2 = useRef(null);
-    const dot1 = useRef(null);
-    const dot2 = useRef(null);
+    const para1 = useRef<HTMLDivElement>(null);
+    const para2 = useRef<HTMLDivElement>(null);
+    const dot1 = useRef<HTMLSpanElement>(null);
+    const dot2 = useRef<HTMLSpanElement>(null);
     
     function leftBtn() {
-        para1.current.style.display = "block"
-        para2.current.style.display = "none"
-        dot1.current.style.backgroundColor = '#00c04b'
-        dot2.current.style.backgroundColor = '#b9b8b9'
+        // https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#non-null-assertion-operator-postfix-
+        para1.current!.style.display = "block"
+        para2.current!.style.display = "none"
+        dot1.current!.style.backgroundColor = '#00c04b'
+        dot2.current!.style.backgroundColor = '#b9b8b9'
     }
     function rightBtn() {
-        para1.current.style.display = "none"
-        para2.current.style.display = "block"
-        dot1.current.style.backgroundColor = "#b9b8b9"
-        dot2.current.style.backgroundColor = "#00c04b"
+        para1.current!.style.display = "none"
+        para2.current!.style.display = "block"
+        dot1.current!.style.backgroundColor = "#b9b8b9"
+        dot2.current!.style.backgroundColor = "#00c04b"
     }
     return (
         <div className="Landing-page-top-container">

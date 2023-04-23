@@ -31,6 +31,7 @@ function PaypalProcess({trial} : {trial:boolean|null}) {
       .then(res=>{
         window.location.href = "/subscriptions/success"
       })
+      return Promise.resolve();
     };
   
     if (trial==true || trial==false) {

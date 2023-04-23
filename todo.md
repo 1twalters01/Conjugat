@@ -10,15 +10,17 @@ Finish designing web pages, style and add colour to:
 * Process
 * Success
 5. Misc
-Landing page
+* Landing page
 * Home
 * Premium
 
 Add a page before verb test to choose test options
 
+Create timer mode
+
 Add chart.js to the home page
 
-fix twitter backend code
+Fix twitter backend code
 
 Style the test complete page
 
@@ -28,6 +30,7 @@ Remove all cases of duplication in the scss
 
 Make expired subscriptions turn off
 
+Create sitemap
 
 # Medium term goals
 Refactor react code once again
@@ -61,11 +64,7 @@ Refactor react code once again
 * Privacy
 * Terms
 
-Create timer mode
-
 Web Scrape for Nouns and adjectives
-
-Create sitemap
 
 Get real api keys for everything rather than test api keys
 

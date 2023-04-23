@@ -22,13 +22,16 @@ class homeView(APIView):
         
         data = []
         if tests:
-            for test in tests:
+            for index, test in enumerate(tests):
                 date = test['EndDateTime'].date()
+                date = str(date)
+                print(date)
                 incorrect_count = test['status'].count(False)
                 correct_count = test['status'].count(True)
 
                 if len(data) == 0:
                     formated_json = {
+                        'id': index+1,
                         'Date': [date],
                         'Incorrect': [incorrect_count],
                         'Correct': [correct_count],
@@ -41,6 +44,7 @@ class homeView(APIView):
                         data[-1]['Correct'].append(correct_count)
                     else:
                         formated_json = {
+                            'id': index+1,
                             'Date': [date],
                             'Incorrect': [incorrect_count],
                             'Correct': [correct_count],

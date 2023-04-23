@@ -32,8 +32,10 @@ const CSRFToken = () => {
         }
 
         fetchData()
-        setcsrftoken(getCookie('csrftoken'))
-        console.log(csrftoken)
+        const csrfCookie = getCookie('csrftoken')
+        if (csrfCookie) {
+            setcsrftoken(csrfCookie)
+        }
     })
     return (
         <input type='hidden' name='csrfmiddlewaretoken' value={csrftoken} />

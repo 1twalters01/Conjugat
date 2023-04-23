@@ -34,6 +34,7 @@ function PasswordResetForm({onDoneChange}: {onDoneChange:Function}) {
                   email={email}
                   labelText='Email'
                   handleEmail={(e:ChangeEvent<HTMLInputElement>) => handleText(e, setEmail)}
+                  required={true}
                   />
               </div>
 

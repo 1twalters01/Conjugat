@@ -118,10 +118,12 @@ var persistor = persistStore(store)
 function App() {
   const{ theme } = useSelector((state: RootState) => state.persistedReducer.theme)
   if (theme == 'Dark') {
-     document.body.style = 'background: #060607;'
+    document.body.setAttribute('style', 'background: #060607;');
+    // document.body.style = 'background: #060607;'
   }
   else if (theme == 'Light') {
-    document.body.style = 'background: #ffffff;'
+    document.body.setAttribute('style', 'background: #ffffff;');
+    // document.body.style = 'background: #ffffff;'
   }
   return (
     <Provider store={store}>

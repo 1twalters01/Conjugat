@@ -4,7 +4,7 @@ import '../../sass/Components/settings/SettingsLinks.scss'
 function SettingsLinks() {
     return (
         <div className="settings-links">
-            <h1 className="text"><Link to='/settings/' className="text-gold-link">Settings</Link></h1>
+            <h1 className="text"><Link to='/settings/change-email/' className="text-gold-link">Settings</Link></h1>
             <div className="profile">
                 <p className="profile-text header">Profile</p>
                 <Link to='/settings/change-email/' className="text-blue-link">Change email</Link>
