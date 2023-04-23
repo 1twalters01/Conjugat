@@ -41,7 +41,8 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:8000',
     'http://conjugat.io',
     'https://conjugat.io',
-    'http://localhost:5000'
+    'http://localhost:5000',
+    'http://localhost:4173'
 ]
 
 # Application definition
@@ -237,7 +238,8 @@ MAILCHIMP_MARKETING_AUDIENCE_ID = config('MAILCHIMP_MARKETING_AUDIENCE_ID')
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5000",
-    "http://www.localhost:5000"
+    "http://www.localhost:5000",
+    "http://localhost:4173"
 ]
 
 # CORS_ALLOW_CREDENTIALS = True
