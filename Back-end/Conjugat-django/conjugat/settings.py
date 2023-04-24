@@ -68,7 +68,8 @@ INSTALLED_APPS = [
     'adjectives.apps.AdjectivesConfig',
     'nouns.apps.NounsConfig',
     'testFunctionality.apps.TestfunctionalityConfig',
-    'django_cassandra_engine'
+    'django_cassandra_engine',
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -264,3 +265,7 @@ REST_FRAMEWORK = {
 }
 
 REST_SOCIAL_OAUTH_ABSOLUTE_REDIRECT_URI = 'http://localhost:5000/account/oauth'
+
+CRONJOBS = [
+    ('*/5 * * * *', 'django.core.management.call_command', ['cache-date-check']),
+]
