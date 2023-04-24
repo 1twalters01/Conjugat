@@ -18,7 +18,9 @@ Add a page before verb test to choose test options
 
 Create timer mode
 
-Add chart.js to the home page
+Add click events to chartjs
+
+Add clean up chronjob
 
 Fix twitter backend code
 

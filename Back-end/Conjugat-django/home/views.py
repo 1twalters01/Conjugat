@@ -5,14 +5,13 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from knox.models import AuthToken
 from operator import itemgetter
+from datetime import datetime, timedelta
 # Have not refactored this code in any way yet
 
 class homeView(APIView):
     permission_classes = (permissions.IsAuthenticated,)
     def get(self, request):
-        # RomanceTestResult_by_user_and_date.objects.filter(pk=request.user.id).delete()
-        # RomanceTestResult_by_user_and_language.objects.filter(pk='English', user=request.user.id).delete()
-
+        # Get tests ordered by date in ascending order
         testIDs = cache.get(key=request.user.username)
         if testIDs:
             tests = [cache.get(testID) for testID in testIDs]
@@ -20,36 +19,36 @@ class homeView(APIView):
         if tests:
             tests = sorted(tests, key=lambda x: x['EndDateTime'])
         
-        data = []
+        # Get the dates
+        dates = [(datetime.now().date() - timedelta(days=i)) for i in range(6, -1, -1)]
+
+        # Create the initial data
+        data = [{'id':i, 'Date': dates[i], 'Correct':None, 'Incorrect':None} for i in range(7)]
+
         if tests:
-            for index, test in enumerate(tests):
+            id = 0
+            for test in tests:
                 date = test['EndDateTime'].date()
-                date = str(date)
-                print(date)
                 incorrect_count = test['status'].count(False)
                 correct_count = test['status'].count(True)
 
-                if len(data) == 0:
-                    formated_json = {
-                        'id': index+1,
-                        'Date': [date],
-                        'Incorrect': [incorrect_count],
-                        'Correct': [correct_count],
-                    }
-                    data.append(formated_json)
-
+                while data[id]['Date'] < date:
+                    id += 1
+                if data[id]['Correct'] == None:
+                    data[id]['Correct'] = correct_count
                 else:
-                    if date == data[-1]['Date'][0]:
-                        data[-1]['Incorrect'].append(incorrect_count)
-                        data[-1]['Correct'].append(correct_count)
-                    else:
-                        formated_json = {
-                            'id': index+1,
-                            'Date': [date],
-                            'Incorrect': [incorrect_count],
-                            'Correct': [correct_count],
-                        }
-                        data.append(formated_json)
+                    data[id]['Correct'] = int(data[id]['Correct']) + int(correct_count)
+                
+                if data[id]['Incorrect'] == None:
+                    data[id]['Incorrect'] = incorrect_count
+                else:
+                    data[id]['Incorrect'] = int(data[id]['Incorrect']) + int(incorrect_count)
+                
+        for id, elem in enumerate(data):
+            if elem['Correct'] == None:
+                elem['Correct'] = 0
+            if elem['Incorrect'] == None:
+                elem['Incorrect'] = 0
 
         return Response(data=data, status=status.HTTP_200_OK)
     

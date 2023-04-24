@@ -8,12 +8,13 @@ import HomeChart from "../../components/home/Home/HomeChart"
 
 import { Bar } from 'react-chartjs-2';
 import { Chart, registerables } from 'chart.js';
+
 Chart.register(...registerables);
 
 
 function Home() {
     Authorization.AuthRequired()
-    type TData = null|{
+    type TData = null | {
         labels: any;
         datasets: {
             label: string;
@@ -21,14 +22,6 @@ function Home() {
         }[];
     }
     const [basicData, setBasicData] = useState<TData>(null)
-    // const [basicData, setBasicData] = useState<TData>({
-    //   labels: ['2023-04-19', '2023-04-20','2023-04-22', '2023-04-23'],
-    //     datasets: [{
-    //       label: "Test Results",
-    //       data: [5, 4, 8, 1]
-    //     }]
-    //   }
-    // )
 
     async function retrieveData() {
       const res = await(
@@ -41,7 +34,7 @@ function Home() {
           
           datasets: [{
               label: "Correct",
-              data: res.data?.map((data: { Correct: String }) => data.Correct[0]),
+              data: res.data?.map((data: { Correct: String }) => data.Correct),
               backgroundColor: 'rgba(10, 199, 53, 0.8)',
               hoverBackgroundColor: 'rgba(10, 199, 53, 0.95)',
               borderColor: 'rgba(0,0,0,1)',
@@ -49,7 +42,7 @@ function Home() {
             },
             {
               label: "Incorrect",
-              data: res.data?.map((data: { Incorrect: String }) => data.Incorrect[0]),
+              data: res.data?.map((data: { Incorrect: String }) => data.Incorrect),
               backgroundColor: 'rgba(204, 10, 10, 0.8)',
               hoverBackgroundColor: 'rgba(204, 10, 10, 0.95)',
               borderColor: 'rgba(0,0,0,1)',
