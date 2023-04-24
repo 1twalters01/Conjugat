@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from datetime import datetime, timedelta
 from django.core.cache import cache
 
+# Remove tests older than 1 week from cache
 class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         users = User.objects.filter(is_active=True)
@@ -21,6 +22,7 @@ class Command(BaseCommand):
                     if result['EndDateTime'].date() <= datetime.now().date() - timedelta(days=backtrace):
                         cacheData.remove(data)
                         cache.delete(key=data)
+
                 if cacheData != None:
                     cache.set(key=user.username, value=cacheData)
                 else:
