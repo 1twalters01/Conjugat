@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef, MouseEvent } from "react"
 import { Link } from "react-router-dom"
 import Authorization from "../../functions/Authorization"
 import AxiosInstance from "../../functions/AxiosInstance"
@@ -6,11 +6,10 @@ import AxiosInstance from "../../functions/AxiosInstance"
 import SettingsNavbar from "../../components/settings/SettingsNavbar"
 import HomeChart from "../../components/home/Home/HomeChart"
 
-import { Bar } from 'react-chartjs-2';
-import { Chart, registerables } from 'chart.js';
+import { Bar, getElementAtEvent } from 'react-chartjs-2';
+import { Chart, registerables, ChartType } from 'chart.js';
 
 Chart.register(...registerables);
-
 
 function Home() {
     Authorization.AuthRequired()
@@ -24,11 +23,11 @@ function Home() {
     const [basicData, setBasicData] = useState<TData>(null)
 
     async function retrieveData() {
-      const res = await(
-        AxiosInstance.Authorised
-        .get('/home')
-      )
-      const formatted_data =
+        const res = await(
+            AxiosInstance.Authorised
+            .get('/home')
+        )
+        const formatted_data =
         {
           labels: res.data?.map((data: { Date: String }) => data.Date),
           
@@ -49,14 +48,30 @@ function Home() {
               borderWidth: 1,
             }],
         }    
-      setBasicData(formatted_data)
       
+        setBasicData(formatted_data)
     }
 
     useEffect(() => {
       retrieveData()
     }, [])
-    // console.log(basicData)
+    
+    const options = {
+
+    }
+
+    // const chartRef = useRef<Chart<"bar", number[]>>(null)
+    const chartRef = useRef<any>(null)
+    const onClick = (event: MouseEvent<HTMLCanvasElement>) => {
+      if (getElementAtEvent(chartRef.current, event).length > 0){
+        if (getElementAtEvent(chartRef.current, event)[0].datasetIndex === 0){
+          console.log('Correct')
+        }
+        else if(getElementAtEvent(chartRef.current, event)[0].datasetIndex === 1){
+          console.log('Incorrect')
+        }
+      }
+    }
 
     if (basicData != null) {
       return (
@@ -67,9 +82,13 @@ function Home() {
                 
                 <h1>Home</h1>
 
-                <Bar data={basicData} options={{
-                  color: "white",
-                }}/>
+                <Bar
+                ref={chartRef}
+                data={basicData}
+                options={options}
+                onClick={onClick}
+                />
+                
             </div>
         </>
       )
