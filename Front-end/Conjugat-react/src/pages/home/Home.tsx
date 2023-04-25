@@ -8,11 +8,14 @@ import HomeChart from "../../components/home/Home/HomeChart"
 
 import { Bar, getElementAtEvent } from 'react-chartjs-2';
 import { Chart, registerables, ChartType } from 'chart.js';
+import HomeModal from "../../components/home/Home/HomeModal"
 
 Chart.register(...registerables);
 
 function Home() {
     Authorization.AuthRequired()
+    const [isOpen, setIsOpen] = useState(false)
+
     type TData = null | {
         labels: any;
         datasets: {
@@ -21,6 +24,7 @@ function Home() {
         }[];
     }
     const [basicData, setBasicData] = useState<TData>(null)
+    const [modalFetchedData, setModalFetchedData] = useState('')
 
     async function retrieveData() {
         const res = await(
@@ -60,15 +64,42 @@ function Home() {
 
     }
 
+    const[modalData, setModalData] = useState({status:'', modalFetchedData:''})
+
     // const chartRef = useRef<Chart<"bar", number[]>>(null)
     const chartRef = useRef<any>(null)
     const onClick = (event: MouseEvent<HTMLCanvasElement>) => {
       if (getElementAtEvent(chartRef.current, event).length > 0){
+        const index = getElementAtEvent(chartRef.current, event)[0].index
+
+        const fetchData = async () => {
+            var res: any = await (
+                AxiosInstance.Authorised
+                .post('home/modal-data', {
+                    date: basicData?.labels[index]
+                })
+            )
+            setModalFetchedData(res.data)
+            console.log(res.data)
+            console.log(modalFetchedData)
+            // return res.data
+        }
+        // useEffect(() => {
+          fetchData()
+        // }, [])
+        // setModalFetchedData(fetchData())
+
+        // console.log(modalFetchedData)
+
         if (getElementAtEvent(chartRef.current, event)[0].datasetIndex === 0){
-          console.log('Correct')
+            var status = 'Correct'
+            setModalData({status:status, modalFetchedData:modalFetchedData})
+            setIsOpen(true)
         }
         else if(getElementAtEvent(chartRef.current, event)[0].datasetIndex === 1){
-          console.log('Incorrect')
+          var status = 'Incorrect'
+          setModalData({status:status, modalFetchedData:modalFetchedData})
+          setIsOpen(true)
         }
       }
     }
@@ -88,8 +119,16 @@ function Home() {
                 options={options}
                 onClick={onClick}
                 />
-                
             </div>
+
+            <HomeModal open={isOpen} setOpen={setIsOpen}>
+                <p style={{'color':'white', 'padding':'20px'}}>
+                    {modalData.status}
+                </p>
+                <p style={{'color':'white', 'padding':'20px'}}>
+                    {modalData.modalFetchedData}
+                </p>
+            </HomeModal>
         </>
       )
     }

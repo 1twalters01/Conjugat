@@ -51,7 +51,26 @@ class homeView(APIView):
                 elem['Incorrect'] = 0
 
         return Response(data=data, status=status.HTTP_200_OK)
-    
+
+class homeModalView(APIView):
+    permission_classes = (permissions.IsAuthenticated,)
+    def post(self, request):
+        date = request.data['date']
+
+        # Get tests that have the requested end date
+        testIDs = cache.get(key=request.user.username)
+        if testIDs:
+            tests = [cache.get(testID) for testID in testIDs]
+        else: tests=None
+        if tests:
+            tests = [test for test in tests if str(test['EndDateTime'].date()) == date]
+
+        for test in tests:
+            print(test['EndDateTime'])
+        
+        data=date
+        return Response(data=data, status=status.HTTP_200_OK)
+
 class authTokenValidator(APIView):
     permission_classes = (permissions.AllowAny,)
     def get(self, request):
