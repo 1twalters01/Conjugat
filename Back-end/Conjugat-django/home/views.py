@@ -95,9 +95,7 @@ class homeModalView(APIView):
         for i in range(len(tests)):
             results.append(Results())
 
-        # print(testIDs)
         for i, test in enumerate(tests):
-            print(i)
             results[i].TestID = str(testIDs[i])
             for index, item in enumerate(test['status']):
                 if len(results[i].Test[0]['IDs']) == 0:
@@ -139,7 +137,7 @@ class homeModalView(APIView):
 
         for i in range(len(results)):
             results[i] = results[i].__dict__
-            
+
         return Response(data=results, status=status.HTTP_200_OK)
 
 
