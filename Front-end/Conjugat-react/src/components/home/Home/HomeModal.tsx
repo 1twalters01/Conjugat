@@ -1,7 +1,8 @@
 import { useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
+import { Link } from "react-router-dom";
 
-const Modal_styles = {
+const Modal_styles:any = {
     position: 'fixed',
     top: '50%',
     left: '50%',
@@ -11,13 +12,14 @@ const Modal_styles = {
     height: '620px',
     width: '900px',
     textAlign: 'center',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    zIndex: 1000
+    // display: 'flex',
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    zIndex: 1000,
+    overflowY: 'auto',
 }
 
-const overlay_styles = {
+const overlay_styles:any = {
     position: 'fixed',
     top: 0,
     left: 0,
@@ -29,6 +31,14 @@ const overlay_styles = {
 
 
 function HomeModal({ modalData, open, setOpen }: {modalData: any, open: boolean, setOpen: Function}) {
+    function CorrectClick() {
+
+    }
+
+    function IncorrectClick() {
+
+    }
+    
     function useOutsideAlerter(ref: any) {
         useEffect(() => {
           /**
@@ -54,15 +64,35 @@ function HomeModal({ modalData, open, setOpen }: {modalData: any, open: boolean,
         return null
     }
     else{
+        console.log(modalData.modalFetchedData[0].Test[0].Subjects)
         return ReactDOM.createPortal(
             <>
                 <div style={overlay_styles}/>
+
                 <div ref={HomeModalRef} style={Modal_styles}>
+                    <div>
+                        <p className={`${modalData.correct == true? ' correct': ''}`} onClick={CorrectClick}>Correct</p>
+                        <p className={`${modalData.incorrect == true? ' incorrect': ''}`} onClick={IncorrectClick}>Incorrect</p>
+                    </div>
+
                     <p style={{'color':'white', 'padding':'20px'}}>
-                        {modalData.status}
-                    </p>
-                    <p style={{'color':'white', 'padding':'20px'}}>
-                        {/* {modalData.modalFetchedData} */}
+                        {modalData.modalFetchedData.map((data:any, i:number) => (
+                            <>
+                                <Link to={`/verbs/test/results/${data.TestID}`}>Test {i+1}</Link>
+                                {data.Test.map((res:any, j:any) => (
+                                    <>
+                                        <p>{res.Base}</p>
+                                            {res.Subjects.map((subject:any, k:any) => (
+                                                <>
+                                                    <p className={`${res.Status == true? ' isCorrect': ' isFalse'}`}>
+                                                        {subject} {res.Auxiliaries[k]} {res.Conjugations[k]}
+                                                    </p>
+                                                </>
+                                            ))}
+                                    </>
+                                ))}
+                            </>
+                        ))}
                     </p>
                 </div>    
             </>,

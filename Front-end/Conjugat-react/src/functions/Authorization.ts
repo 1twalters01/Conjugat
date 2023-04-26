@@ -29,7 +29,12 @@ function AuthRequired() {
                     return navigate('/');
                 }
             })
-        }        
+        }
+        else {
+            setIsLoggedIn(false);
+            localStorage.removeItem('token');
+            return navigate('/');
+        }
     }
     useEffect(() => {checkUserToken()}, [isLoggedIn]);
 }

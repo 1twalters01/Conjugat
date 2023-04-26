@@ -14,7 +14,9 @@ Chart.register(...registerables);
 
 function Home() {
     Authorization.AuthRequired()
-    const [status, setStatus] = useState('')
+    // const [status, setStatus] = useState('')
+    const [correct, setCorrect] = useState<Boolean|null>(null)
+    const [incorrect, setIncorrect] = useState<Boolean|null>(null)
     const [isOpen, setIsOpen] = useState(false)
 
     type TData = null | {
@@ -25,7 +27,21 @@ function Home() {
         }[];
     }
     const [basicData, setBasicData] = useState<TData>(null)
-    const [modalFetchedData, setModalFetchedData] = useState('')
+    const [modalFetchedData, setModalFetchedData] = useState([{
+      TestID:'',
+      Test:[{
+        Answers:[''],
+        Auxiliaries:[''],
+        Base:"",
+        Conjugations:[''],
+        IDs:[],
+        Language:"",
+        Ranks:[],
+        Status:[],
+        Subjects:[''],
+        Tense: ""
+      }]
+    }])
 
     async function retrieveData() {
         const res = await(
@@ -65,7 +81,44 @@ function Home() {
 
     }
 
-    const[modalData, setModalData] = useState({status:'', modalFetchedData:''})
+    type Ttest = [{
+        TestID: string;
+        Test: {
+            Answers: string[];
+            Auxiliaries: string[];
+            Base: string;
+            Conjugations: string[];
+            IDs: never[];
+            Language: string;
+            Ranks: never[];
+            Status: never[];
+            Subjects: string[];
+            Tense: string;
+        }[];
+    }]
+    
+
+    type TModalData = {
+      correct: Boolean|null;
+      incorrect: Boolean|null;
+      modalFetchedData: { TestID: string; Test: { Answers: string[]; Auxiliaries: string[]; Base: string; Conjugations: string[]; IDs: never[]; Language: string; Ranks: never[]; Status: never[]; Subjects: string[]; Tense: string; }[]; }[]
+    }
+    
+    const[modalData, setModalData] = useState<TModalData>({correct:null, incorrect:null, modalFetchedData:[{
+      TestID:'',
+      Test:[{
+        Answers:[''],
+        Auxiliaries:[''],
+        Base:"",
+        Conjugations:[''],
+        IDs:[],
+        Language:"",
+        Ranks:[],
+        Status:[],
+        Subjects:[''],
+        Tense: ""
+      }]
+    }]})
 
     // const chartRef = useRef<Chart<"bar", number[]>>(null)
     const chartRef = useRef<any>(null)
@@ -86,29 +139,28 @@ function Home() {
         fetchData()
 
         if (getElementAtEvent(chartRef.current, event)[0].datasetIndex === 0){
-            setStatus('Correct')
-            setModalData({status:status, modalFetchedData:modalFetchedData})
+            setCorrect(true)
+            setIncorrect(false)
+            setModalData({correct:correct, incorrect:incorrect, modalFetchedData:modalFetchedData})
             setIsOpen(true)
         }
         else if(getElementAtEvent(chartRef.current, event)[0].datasetIndex === 1){
-          setStatus('Incorrect')
-          setModalData({status:status, modalFetchedData:modalFetchedData})
+          setCorrect(false)
+          setIncorrect(true)
+          setModalData({correct:correct, incorrect:incorrect, modalFetchedData:modalFetchedData})
           setIsOpen(true)
         }
       }
     }
 
     useEffect(() => {
-      setModalData({status:status, modalFetchedData:modalFetchedData})
-      const value = 8
-      if (modalData.status != '' && modalData.modalFetchedData != ''){
-        console.log(modalFetchedData)
-      }
-    }, [modalFetchedData, status])
+      setModalData({correct:correct, incorrect:incorrect, modalFetchedData:modalFetchedData})
+    }, [modalFetchedData, correct, incorrect])
 
     useEffect(() => {
-      if (modalData.status != '' && modalData.modalFetchedData != '')
-      setIsOpen(true)
+      if (modalData.correct != null || modalData.incorrect != null){
+        setIsOpen(true)
+      }
     }, [modalData])
 
     if (basicData != null) {
