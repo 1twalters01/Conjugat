@@ -28,7 +28,7 @@ const overlay_styles = {
 }
 
 
-function HomeModal({ children, open, setOpen }: {children: any, open: boolean, setOpen: Function}) {
+function HomeModal({ modalData, open, setOpen }: {modalData: any, open: boolean, setOpen: Function}) {
     function useOutsideAlerter(ref: any) {
         useEffect(() => {
           /**
@@ -58,7 +58,12 @@ function HomeModal({ children, open, setOpen }: {children: any, open: boolean, s
             <>
                 <div style={overlay_styles}/>
                 <div ref={HomeModalRef} style={Modal_styles}>
-                    {children}
+                    <p style={{'color':'white', 'padding':'20px'}}>
+                        {modalData.status}
+                    </p>
+                    <p style={{'color':'white', 'padding':'20px'}}>
+                        {/* {modalData.modalFetchedData} */}
+                    </p>
                 </div>    
             </>,
             document.getElementById('portal')!

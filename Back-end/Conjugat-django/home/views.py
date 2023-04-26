@@ -54,22 +54,97 @@ class homeView(APIView):
 
 class homeModalView(APIView):
     permission_classes = (permissions.IsAuthenticated,)
+    def obtain_tests_and_testIDs(self, username, date):
+        # Obtain tests and test IDs filtered to the date specified
+        RAWTestIDs = cache.get(key=username)
+        if RAWTestIDs:
+            RAWTests = [(cache.get(RAWTestIDs), RAWTestIDs) for RAWTestIDs in RAWTestIDs]
+        else:
+            RAWTests=None
+
+        tests, testIDs = [], []
+        if RAWTests:
+            for RAWtest in RAWTests:
+                if str(RAWtest[0]['EndDateTime'].date()) == date:
+                    tests.append(RAWtest[0])
+                    testIDs.append(RAWtest[1])
+        return tests, testIDs
+    
     def post(self, request):
-        date = request.data['date']
+        data = request.data
+        date = data['date']
+        tests, testIDs = self.obtain_tests_and_testIDs(request.user.username, date)
 
-        # Get tests that have the requested end date
-        testIDs = cache.get(key=request.user.username)
-        if testIDs:
-            tests = [cache.get(testID) for testID in testIDs]
-        else: tests=None
-        if tests:
-            tests = [test for test in tests if str(test['EndDateTime'].date()) == date]
+        class Results:
+            def __init__(self):
+                self.TestID =  ''
+                self.Test = [{
+                    'Language': [],
+                    'Base': [],
+                    'Tense': [],
+                    'IDs':  [],
+                    'Ranks': [],
+                    'Subjects': [],
+                    'Auxiliaries': [],
+                    'Conjugations': [],
+                    'Answers': [],
+                    'Status': [],
+                }]
 
-        for test in tests:
-            print(test['EndDateTime'])
-        
-        data=date
-        return Response(data=data, status=status.HTTP_200_OK)
+        results = []
+        for i in range(len(tests)):
+            results.append(Results())
+
+        # print(testIDs)
+        for i, test in enumerate(tests):
+            print(i)
+            results[i].TestID = str(testIDs[i])
+            for index, item in enumerate(test['status']):
+                if len(results[i].Test[0]['IDs']) == 0:
+                    formated_json = {
+                        'Language': test['languages'][index],
+                        'Base': test['bases'][index],
+                        'Tense':test['tenses'][index],
+                        'IDs': [test['pks'][index]],
+                        'Ranks':[test['ranks'][index]],
+                        'Subjects':[test['subjects'][index]],
+                        'Auxiliaries':[test['auxiliaries'][index]],
+                        'Conjugations':[test['conjugations'][index]],
+                        'Answers':[test['answers'][index]],
+                        'Status': [item]
+                    }
+                    results[i].Test[0] = formated_json
+                else:
+                    if test['tenses'][index] == results[i].Test[-1]['Tense'] and test['bases'][index] == results[i].Test[-1]['Base']:
+                        results[i].Test[-1]['IDs'].append(test['pks'][index])
+                        results[i].Test[-1]['Ranks'].append(test['ranks'][index])
+                        results[i].Test[-1]['Subjects'].append(test['subjects'][index])
+                        results[i].Test[-1]['Auxiliaries'].append(test['auxiliaries'][index])
+                        results[i].Test[-1]['Conjugations'].append(test['conjugations'][index])
+                        results[i].Test[-1]['Answers'].append(test['answers'][index])
+                        results[i].Test[-1]['Status'].append(item)
+                    else:
+                        results[i].Test.append({
+                            'Language': test['languages'][index],
+                            'Base': test['bases'][index],
+                            'Tense':test['tenses'][index],
+                            'IDs': [test['pks'][index]],
+                            'Ranks':[test['ranks'][index]],
+                            'Subjects':[test['subjects'][index]],
+                            'Auxiliaries':[test['auxiliaries'][index]],
+                            'Conjugations':[test['conjugations'][index]],
+                            'Answers':[test['answers'][index]],
+                            'Status': [item]
+                        })
+
+        for i in range(len(results)):
+            results[i] = results[i].__dict__
+            
+        return Response(data=results, status=status.HTTP_200_OK)
+
+
+
+
 
 class authTokenValidator(APIView):
     permission_classes = (permissions.AllowAny,)

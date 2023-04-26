@@ -14,6 +14,7 @@ Chart.register(...registerables);
 
 function Home() {
     Authorization.AuthRequired()
+    const [status, setStatus] = useState('')
     const [isOpen, setIsOpen] = useState(false)
 
     type TData = null | {
@@ -80,29 +81,35 @@ function Home() {
                 })
             )
             setModalFetchedData(res.data)
-            console.log(res.data)
-            console.log(modalFetchedData)
-            // return res.data
         }
-        // useEffect(() => {
-          fetchData()
-        // }, [])
-        // setModalFetchedData(fetchData())
 
-        // console.log(modalFetchedData)
+        fetchData()
 
         if (getElementAtEvent(chartRef.current, event)[0].datasetIndex === 0){
-            var status = 'Correct'
+            setStatus('Correct')
             setModalData({status:status, modalFetchedData:modalFetchedData})
             setIsOpen(true)
         }
         else if(getElementAtEvent(chartRef.current, event)[0].datasetIndex === 1){
-          var status = 'Incorrect'
+          setStatus('Incorrect')
           setModalData({status:status, modalFetchedData:modalFetchedData})
           setIsOpen(true)
         }
       }
     }
+
+    useEffect(() => {
+      setModalData({status:status, modalFetchedData:modalFetchedData})
+      const value = 8
+      if (modalData.status != '' && modalData.modalFetchedData != ''){
+        console.log(modalFetchedData)
+      }
+    }, [modalFetchedData, status])
+
+    useEffect(() => {
+      if (modalData.status != '' && modalData.modalFetchedData != '')
+      setIsOpen(true)
+    }, [modalData])
 
     if (basicData != null) {
       return (
@@ -121,14 +128,7 @@ function Home() {
                 />
             </div>
 
-            <HomeModal open={isOpen} setOpen={setIsOpen}>
-                <p style={{'color':'white', 'padding':'20px'}}>
-                    {modalData.status}
-                </p>
-                <p style={{'color':'white', 'padding':'20px'}}>
-                    {modalData.modalFetchedData}
-                </p>
-            </HomeModal>
+            <HomeModal open={isOpen} setOpen={setIsOpen} modalData={modalData} />
         </>
       )
     }
