@@ -55,7 +55,7 @@ def validate_first_name(data):
 def validate_choice(data):
     choice = data['choice'].strip()
     if not choice:
-        error = 'No theme provided'
+        error = 'No value provided'
         return False, error, status.HTTP_400_BAD_REQUEST
     return True, 'valid'
 

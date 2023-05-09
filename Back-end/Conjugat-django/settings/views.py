@@ -2,13 +2,13 @@ from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect
-from .models import Theme, TwoFactorAuth
+from .models import Theme, Language, TwoFactorAuth
 from rest_framework import status, permissions
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import ChangeEmailSerializer, ChangePasswordSerializer, \
-    ChangeUsernameSerializer, ThemeSerializer, TwoFactorAuthSerializer, \
+    ChangeUsernameSerializer, ThemeSerializer, LanguageSerializer, TwoFactorAuthSerializer, \
     ResetAccountSerializer, CloseAccountSerializer, PremiumSerializer
 from subscription.encryption import decrypt, encrypt
 from .totp import create_key_of_length, generate_QR_string_and_code
@@ -238,6 +238,32 @@ class ChangeTheme(APIView):
         serializer = ThemeSerializer(data=data, context=context)
         if serializer.is_valid(raise_exception=True):
             response = serializer.change_theme(data)
+            if response[1] == True:
+                return Response(data=response[0], status=status.HTTP_200_OK)
+            return Response({'error':response[0]}, status=response[2])
+
+
+''' Language '''
+# @method_decorator(csrf_protect, name='dispatch')
+class ChangeLanguage(APIView):
+    permission_classes = (permissions.AllowAny,)
+    def get(self, request):
+        try:
+            language = Language.objects.get(user=request.user).language
+        except:
+            language = Language.objects.create(user=request.user).language
+        return Response({'language':language}, status=status.HTTP_200_OK)
+    
+    def post(self, request):
+        data = request.data
+        validated_choice = validate_choice(data)
+        if validated_choice[0] == False:
+            return Response(data=validated_choice[1], status=validated_choice[2])
+
+        context = {'username': request.user}
+        serializer = LanguageSerializer(data=data, context=context)
+        if serializer.is_valid(raise_exception=True):
+            response = serializer.change_language(data)
             if response[1] == True:
                 return Response(data=response[0], status=status.HTTP_200_OK)
             return Response({'error':response[0]}, status=response[2])

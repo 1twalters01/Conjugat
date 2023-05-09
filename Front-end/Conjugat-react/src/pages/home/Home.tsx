@@ -14,7 +14,6 @@ Chart.register(...registerables);
 
 function Home() {
     Authorization.AuthRequired()
-    // const [status, setStatus] = useState('')
     const [correct, setCorrect] = useState<Boolean|null>(null)
     const [incorrect, setIncorrect] = useState<Boolean|null>(null)
     const [isOpen, setIsOpen] = useState(false)
@@ -81,7 +80,8 @@ function Home() {
 
     }
 
-    const[modalData, setModalData] = useState({status:'', modalFetchedData:''})
+    type TmodalData = {correct:Boolean|null, incorrect: Boolean|null, modalFetchedData: null | { TestID: string; Test: { Answers: string[]; Auxiliaries: string[]; Base: string; Conjugations: string[]; IDs: never[]; Language: string; Ranks: never[]; Status: never[]; Subjects: string[]; Tense: string; }[]; }[]}
+    const[modalData, setModalData] = useState<TmodalData>({correct:null, incorrect:null, modalFetchedData:null})
 
     // const chartRef = useRef<Chart<"bar", number[]>>(null)
     const chartRef = useRef<any>(null)
