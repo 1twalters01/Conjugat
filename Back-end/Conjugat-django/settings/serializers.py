@@ -1,16 +1,18 @@
 from coinbase_commerce.client import Client
+import datetime
 from django.conf import settings
 from django.contrib.auth.models import User
+from django.core.cache import cache
 from subscription.encryption import decrypt, encrypt
 from rest_framework import serializers, status
-from settings.models import Theme, TwoFactorAuth
+from settings.models import Theme, Language, TwoFactorAuth
 from settings.totp import generate_totp
 from subscription.encryption import decrypt
 from subscription.models import UserProfile
 from subscription.paypal import show_sub_details, suspend_sub, activate_sub, cancel_sub
 import stripe
 from verbs.models import RomanceTestResult_by_user_and_language, RomanceTestResult_by_user_and_date, RomanceTestResult
-from django.core.cache import cache
+
 
 class ChangeEmailSerializer(serializers.Serializer):
     email = serializers.CharField()
@@ -253,7 +255,7 @@ class CloseAccountSerializer(serializers.Serializer):
 
         # Delete Cassandra
         try:
-            testIDs = RomanceTestResult_by_user_and_language.objects.filter(pk__in=['English', 'French', 'Italian', 'Portuguese', 'Spanish'], user=request.user.id)
+            testIDs = RomanceTestResult_by_user_and_language.objects.filter(pk__in=['English', 'French', 'Italian', 'Portuguese', 'Spanish'], user=req_user.id.id)
         except:
             testIDs = None
         if testIDs:
@@ -262,7 +264,7 @@ class CloseAccountSerializer(serializers.Serializer):
                 test.delete()
             testIDs.delete()
         try:
-            testIDs = RomanceTestResult_by_user_and_date.objects.filter(pk=request.user.id, EndDateTime__gte=(datetime(year=2021, month=1, day=1)))
+            testIDs = RomanceTestResult_by_user_and_date.objects.filter(pk=req_user.id, EndDateTime__gte=(datetime(year=2021, month=1, day=1)))
         except:
             testIDs = None
         if testIDs:
@@ -517,8 +519,8 @@ class PremiumSerializer(serializers.Serializer):
 class ThemeSerializer(serializers.Serializer):
     choice = serializers.CharField()
     def validate_choice(self, choice):
-        if choice != 'Light':
-            if choice != 'Dark':
+        options = ['Dark', 'Light']
+        if choice not in options:
                 error = 'Invalid option'
                 return error, False, status.HTTP_400_BAD_REQUEST
         return True, True
@@ -537,7 +539,32 @@ class ThemeSerializer(serializers.Serializer):
         theme.save()
         response = {"success":"Theme changed successfully", "theme":choice}
         return response, True
-    
+
+class LanguageSerializer(serializers.Serializer):
+    choice = serializers.CharField()
+    def validate_choice(self, choice):
+        options = ["English", "French", "Italian", "Portuguese", "Spanish"]
+        if choice not in options:
+                error = 'Invalid option'
+                return error, False, status.HTTP_400_BAD_REQUEST
+        return True, True
+            
+    def change_language(self, data):
+        choice = data['choice']
+        req_username =  self.context['username']
+
+        language = Language.objects.get_or_create(user=req_username)[0]
+
+        validated_choice = self.validate_choice(choice)
+        if validated_choice[1] == False:
+            return validated_choice[0], validated_choice[1], validated_choice[2]
+        
+        language.language = choice
+        language.save()
+        response = {"success":"Language changed successfully", "language":choice}
+        return response, True
+
+
 class TwoFactorAuthSerializer(serializers.Serializer):
     password = serializers.CharField()
     totp = serializers.CharField()
