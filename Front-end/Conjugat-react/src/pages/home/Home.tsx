@@ -81,44 +81,7 @@ function Home() {
 
     }
 
-    type Ttest = [{
-        TestID: string;
-        Test: {
-            Answers: string[];
-            Auxiliaries: string[];
-            Base: string;
-            Conjugations: string[];
-            IDs: never[];
-            Language: string;
-            Ranks: never[];
-            Status: never[];
-            Subjects: string[];
-            Tense: string;
-        }[];
-    }]
-    
-
-    type TModalData = {
-      correct: Boolean|null;
-      incorrect: Boolean|null;
-      modalFetchedData: { TestID: string; Test: { Answers: string[]; Auxiliaries: string[]; Base: string; Conjugations: string[]; IDs: never[]; Language: string; Ranks: never[]; Status: never[]; Subjects: string[]; Tense: string; }[]; }[]
-    }
-    
-    const[modalData, setModalData] = useState<TModalData>({correct:null, incorrect:null, modalFetchedData:[{
-      TestID:'',
-      Test:[{
-        Answers:[''],
-        Auxiliaries:[''],
-        Base:"",
-        Conjugations:[''],
-        IDs:[],
-        Language:"",
-        Ranks:[],
-        Status:[],
-        Subjects:[''],
-        Tense: ""
-      }]
-    }]})
+    const[modalData, setModalData] = useState({status:'', modalFetchedData:''})
 
     // const chartRef = useRef<Chart<"bar", number[]>>(null)
     const chartRef = useRef<any>(null)
