@@ -14,6 +14,8 @@ Finish designing web pages, style and add colour to:
 * Home
 * Premium
 
+Make react landing page switch to more languages
+
 Add a page before verb test to choose test options
 
 Create timer mode

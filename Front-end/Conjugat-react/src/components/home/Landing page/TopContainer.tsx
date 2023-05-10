@@ -1,8 +1,17 @@
 import { useRef } from 'react';
+import { useSelector } from "react-redux"
+import { RootState } from '../../../redux/store';
 import { Link } from 'react-router-dom'
+import { translations } from '../../../content/home/Landing page/TopContainer'
 import '../../../sass/Components/home/Landing page/TopContainer.scss'
 
+
 function TopContainer() {
+    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
+    const getTranslation = (language, text) => {
+        return translations[language][text];
+    }
+
     const para1 = useRef<HTMLDivElement>(null);
     const para2 = useRef<HTMLDivElement>(null);
     const dot1 = useRef<HTMLSpanElement>(null);
@@ -29,17 +38,17 @@ function TopContainer() {
             <div className="left-container">
                 <div className="title">
                     <h1 className='header'>Conjugat</h1>
-                    <h2 className='subheader'>Helping you to perfect your verb conjugations</h2>
+                    <h2 className='subheader'>{getTranslation(language, 'Subheader')}</h2>
                 </div>
                 <div className="main-section">
                     <div className="paragraphs">
                         <div className="para para-1" ref={para1}>
-                            <p className="text">At Conjugat we are here to help you learn verbs and tenses in the order that you will be most likely to encounter them. We use spaced repetition to get you to memorise them.</p>
-                            <p className="text">We have 5 languages to choose from and growing. Perfect any of our growing list of languages to be able to make friends on your travels around the globe.</p>
+                            <p className="text">{getTranslation(language, 'Text1')}</p>
+                            <p className="text">{getTranslation(language, 'Text2')}</p>
                         </div>
                         <div className="para para-2" ref={para2}>
-                            <p className="text">We have 2000 verbs for each language so that you won't mess up your grammar again. Practice the different types of irregular verbs and never make a mistake with them again.</p>
-                            <p className="text">Practice more than verbs - you can practice noun and adjective genders in the same fun way with Conjugat Premium. Let us know what else we should add! </p>
+                            <p className="text">{getTranslation(language, 'Text3')}</p>
+                            <p className="text">{getTranslation(language, 'Text4')}</p>
                         </div>
                     </div>
                     

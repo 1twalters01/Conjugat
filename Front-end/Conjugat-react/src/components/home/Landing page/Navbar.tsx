@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { onThemeChange } from "../../../redux/slices/themeSlice"
+import { onLanguageChange } from "../../../redux/slices/languageSlice"
 import { RootState } from "../../../redux/store"
 import '../../../sass/Components/home/Landing page/Navbar.scss'
 import { useState } from "react"
@@ -8,6 +9,7 @@ import { useState } from "react"
 function Navbar() {
     const dispatch = useDispatch();
     const{ theme } = useSelector((state: RootState) => state.persistedReducer.theme)
+    const{ language } = useSelector((state: RootState) => state.persistedReducer.language)
     const [navbarOpen, setNavbarOpen] = useState(false);
 
     function NavbarSwitch() {
@@ -21,8 +23,17 @@ function Navbar() {
         else {
             dispatch(onThemeChange('Dark'))
         }
-        
     }
+
+    function LanguageSwitch_EnAndFr_only() {
+        if (language == 'English') {
+            dispatch(onLanguageChange('French'))
+        }
+        else {
+            dispatch(onLanguageChange('English'))
+        }
+    }
+
     return(
         <nav className="Landing-page-navbar container">
             <div className="logo">
@@ -39,7 +50,7 @@ function Navbar() {
             </div>
             <div className={`settings${navbarOpen? ' show-menu container' : ''}`}>
                 <Link to='/' ><p className="link text-blue-link" onClick={ThemeSwitch}>Theme</p></Link>
-                <Link to='/' ><p className="link text-gold-link">Language</p></Link>
+                <Link to='/' ><p className="link text-gold-link" onClick={LanguageSwitch_EnAndFr_only}>Language</p></Link>
                 <Link to='/Premium' ><p className="link text-gold-link">Premium</p></Link>
             </div>
             <div className={`login-div${navbarOpen? ' show-menu container' : ''}`}><Link to='/account/Login' >

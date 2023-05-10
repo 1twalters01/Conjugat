@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { toast } from "react-toastify"
 import { RootState } from "../../../redux/store"
 import { onThemeChange } from "../../../redux/slices/themeSlice"
+import { onLanguageChange } from "../../../redux/slices/languageSlice"
 import axios from "axios"
 import AxiosInstance from '../../../functions/AxiosInstance'
 import handleText from "../../../functions/handlers/handleText"
@@ -23,6 +24,34 @@ function PasswordForm() {
     const [totp, setTotp] = useState('')
     const [rememberMe, setRememberMe] = useState(false)
 
+    async function get_theme(token:string){
+        const result = await(
+            AxiosInstance.Authorised
+            .get ('settings/themes/', {
+                headers: {
+                    'Authorization': 'Token '+ localStorage.getItem("token"),
+                    'Content-Type': 'application/json',
+                    accept: 'application/json',
+                }
+            })
+        )
+        dispatch(onThemeChange(result.data.theme))
+    }
+
+    async function get_language(token:string){
+      const result = await(
+          AxiosInstance.Authorised
+          .get ('settings/languages/', {
+              headers: {
+                  'Authorization': 'Token '+ localStorage.getItem("token"),
+                  'Content-Type': 'application/json',
+                  accept: 'application/json',
+              }
+          })
+      )
+      dispatch(onLanguageChange(result.data.language))
+  }
+
     function submit(e:FormEvent<HTMLFormElement>) {
         e.preventDefault();
         AxiosInstance.Unauthorised
@@ -34,21 +63,9 @@ function PasswordForm() {
         })
         .then(res=>{
             localStorage.setItem("token", res.data.token)
-            axios
-            .get ('settings/themes/', {
-                headers: {
-                    'Authorization': 'Token '+ localStorage.getItem("token"),
-                    'Content-Type': 'application/json',
-                    accept: 'application/json',
-                }
-            })
-            .then ((result: { data: { theme: string; }; }) => {
-                dispatch(onThemeChange(result.data.theme))
+            Promise.all([get_theme(res.data.token), get_language(res.data.token)]).then((values) => {
                 window.location.href = '/home'
-            })
-            .catch (err=>{
-                console.log(err.response.data)
-            })
+            });
         })
         .catch(err=>{
             toast.error(err.response.data.error)
