@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom'
 import { getTranslation } from '../../../functions/getTranslation';
 import { translations } from '../../../content/home/Landing page/TopContainer'
+import { translations as translationsHeader } from '../../../content/Header'
 import '../../../sass/Components/home/Landing page/TopContainer.scss'
 
 
@@ -31,8 +32,8 @@ function TopContainer({language}: {language:string}) {
             </div>
             <div className="left-container">
                 <div className="title">
-                    <h1 className='header'>Conjugat</h1>
-                    <h2 className='subheader'>{getTranslation(translations, language, 'Subheader')}</h2>
+                    <h1 className='header'>{getTranslation(translationsHeader, language, 'Header')}</h1>
+                    <h2 className='subheader'>{getTranslation(translationsHeader, language, 'Subheader')}</h2>
                 </div>
                 <div className="main-section">
                     <div className="paragraphs">
