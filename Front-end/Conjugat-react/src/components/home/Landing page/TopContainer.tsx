@@ -1,17 +1,11 @@
 import { useRef } from 'react';
-import { useSelector } from "react-redux"
-import { RootState } from '../../../redux/store';
 import { Link } from 'react-router-dom'
+import { getTranslation } from '../../../functions/getTranslation';
 import { translations } from '../../../content/home/Landing page/TopContainer'
 import '../../../sass/Components/home/Landing page/TopContainer.scss'
 
 
-function TopContainer() {
-    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
-    const getTranslation = (language, text) => {
-        return translations[language][text];
-    }
-
+function TopContainer({language}: {language:string}) {
     const para1 = useRef<HTMLDivElement>(null);
     const para2 = useRef<HTMLDivElement>(null);
     const dot1 = useRef<HTMLSpanElement>(null);
@@ -38,17 +32,17 @@ function TopContainer() {
             <div className="left-container">
                 <div className="title">
                     <h1 className='header'>Conjugat</h1>
-                    <h2 className='subheader'>{getTranslation(language, 'Subheader')}</h2>
+                    <h2 className='subheader'>{getTranslation(translations, language, 'Subheader')}</h2>
                 </div>
                 <div className="main-section">
                     <div className="paragraphs">
                         <div className="para para-1" ref={para1}>
-                            <p className="text">{getTranslation(language, 'Text1')}</p>
-                            <p className="text">{getTranslation(language, 'Text2')}</p>
+                            <p className="text">{getTranslation(translations, language, 'Text1')}</p>
+                            <p className="text">{getTranslation(translations, language, 'Text2')}</p>
                         </div>
                         <div className="para para-2" ref={para2}>
-                            <p className="text">{getTranslation(language, 'Text3')}</p>
-                            <p className="text">{getTranslation(language, 'Text4')}</p>
+                            <p className="text">{getTranslation(translations, language, 'Text3')}</p>
+                            <p className="text">{getTranslation(translations, language, 'Text4')}</p>
                         </div>
                     </div>
                     
@@ -62,7 +56,7 @@ function TopContainer() {
 
 
                 <Link to='/account/register'>
-                    <p className="join strong-blue-btn">Join now</p>
+                    <p className="join strong-blue-btn">{getTranslation(translations, language, 'Join now')}</p>
                 </Link>
             </div>
     

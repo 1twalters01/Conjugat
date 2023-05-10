@@ -118,6 +118,9 @@ import { persistStore } from "redux-persist"
 var persistor = persistStore(store)
 
 function App() {
+  const { language } = useSelector((state: RootState) => state.persistedReducer.language)
+  
+
   const{ theme } = useSelector((state: RootState) => state.persistedReducer.theme)
   if (theme == 'Dark') {
     document.body.setAttribute('style', 'background: #060607;');
@@ -127,6 +130,7 @@ function App() {
     document.body.setAttribute('style', 'background: #ffffff;');
     // document.body.style = 'background: #ffffff;'
   }
+
   return (
     <Provider store={store}>
       <div className={theme}>
