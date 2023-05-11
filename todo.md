@@ -38,7 +38,6 @@ Add multiple language support to:
 * Process
 * Success
 5. Misc
-* Contact
 * Home
 
 Add things to landing page footer
