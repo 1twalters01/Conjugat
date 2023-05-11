@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../redux/store'
 import { Link, useParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import Header from '../../components/account/Header'
 import Authorization from '../../functions/Authorization'
 import AxiosInstance from '../../functions/AxiosInstance'
 import '../../sass/pages/account/Activate.scss'
+import { getTranslation } from '../../functions/getTranslation'
+import { translations } from '../../content/account/Activate'
 
 function Activate() {
+    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
     Authorization.NotAuthRequired()
     const [Activated, SetActivated] = useState(false)
     const [Error, SetError] = useState(false)
@@ -38,15 +43,15 @@ function Activate() {
         return (
           <div className='Activate-container container'>
               <div className="header-spacer">
-                  <Header />
+                  <Header language={language} />
               </div>
 
               <div className="text-spacer">
-                  <p className='text'>You have successfully activated your account.</p>
+                  <p className='text'>{getTranslation(translations, language, 'Text1')}</p>
               </div>
 
               <div className="btn-spacer">
-                  <Link to='../Login' ><div className="login-btn strong-gold-btn">Login</div></Link>
+                  <Link to='../Login' ><div className="login-btn strong-gold-btn">{getTranslation(translations, language, 'Login')}</div></Link>
               </div>
           </div>
         )
@@ -55,15 +60,15 @@ function Activate() {
         return (
           <div className="Activate-container container">
               <div className="header-spacer">
-                  <Header />
+                  <Header language={language} />
               </div>
 
               <div className="text-spacer">
-                  <p className='text'>Something went wrong. Please try again later.</p>
+                  <p className='text'>{getTranslation(translations, language, 'Text2')}</p>
               </div>
 
               <div className="btn-spacer">
-                  <Link to='../Login' ><div className="login-btn strong-gold-btn">Login</div></Link>
+                  <Link to='../Login' ><div className="login-btn strong-gold-btn">{getTranslation(translations, language, 'Login')}</div></Link>
               </div>
           </div>
         )
