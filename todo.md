@@ -19,6 +19,7 @@ Add multiple language support to:
 * Logout
 * Password reset
 * Password reset token
+* Register
 2. newsletter
 * Subscribe
 * Unsubscribe
@@ -32,7 +33,6 @@ Add multiple language support to:
 * Themes
 * Two factor authentication
 4. subscriptions
-* Cancelled
 * Process
 * Success
 5. Misc

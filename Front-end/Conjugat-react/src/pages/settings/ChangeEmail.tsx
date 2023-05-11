@@ -1,9 +1,12 @@
 import { useState } from "react"
+import { useSelector } from "react-redux"
+import { RootState } from "../../redux/store"
 import Authorization from '../../functions/Authorization'
 import EmailChangeForm from "../../components/settings/Change email/EmailChangeForm"
 
 function ChangeEmail() {
     Authorization.AuthRequired()
+    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
     const [done, setDone] = useState(false)
 
     if (done == false) {

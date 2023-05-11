@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { useSelector } from "react-redux"
+import { RootState } from "../../redux/store"
 import Authorization from '../../functions/Authorization'
 import Header from "../../components/account/Header"
 import RegisterDoneFalse from "../../components/account/Register/RegisterDoneFalse"
@@ -9,6 +11,8 @@ import '../../sass/pages/account/Register.scss'
 
 function Register() {
     Authorization.NotAuthRequired()
+    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
+
     const [done, setDone] = useState(false)
     const [returnedEmail, setReturnedEmail] = useState(null)
 
@@ -16,7 +20,7 @@ function Register() {
         return (
             <div className="Register-container container">
                 <div className="Header-spacer">
-                    <Header />
+                    <Header language={language} />
                 </div>
 
                 
@@ -41,7 +45,7 @@ function Register() {
             return (
                 <div className="Register-container container">
                     <div className="Header-spacer">
-                        <Header />
+                        <Header language={language} />
                     </div>
 
                     <div className="Register-done-spacer">
@@ -54,7 +58,7 @@ function Register() {
             return (
                 <div className="Register-container container">
                     <div className="Header-spacer">
-                        <Header />
+                        <Header language={language} />
                     </div>
                     
                     <div className="Register-done-spacer">

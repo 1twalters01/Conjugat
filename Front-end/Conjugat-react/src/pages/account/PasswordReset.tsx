@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { useSelector } from "react-redux"
+import { RootState } from "../../redux/store"
 import Authorization from '../../functions/Authorization'
 import Header from "../../components/account/Header"
 import PasswordResetDone from "../../components/account/Password reset/PasswordResetDone"
@@ -8,13 +10,14 @@ import '../../sass/pages/account/PasswordReset.scss'
 
 function PasswordReset() {
     Authorization.NotAuthRequired()
+    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
     const [done, setDone] = useState(false)
 
     if (done == false) {
         return (
             <div className="PasswordReset-container container">
                 <div className="Header-spacer">
-                    <Header />
+                    <Header language={language} />
                 </div>
                 
                 
@@ -32,7 +35,7 @@ function PasswordReset() {
         return(
             <div className="PasswordReset-container container">
                 <div className="Header-spacer">
-                    <Header />
+                    <Header language={language} />
                 </div>
                 
                 <PasswordResetDone />

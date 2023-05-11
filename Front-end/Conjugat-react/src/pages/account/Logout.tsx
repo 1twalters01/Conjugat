@@ -1,13 +1,16 @@
 import { useState } from 'react'
 import Authorization from '../../functions/Authorization'
+import SettingsNavbar from '../../components/settings/SettingsNavbar'
 import Header from '../../components/account/Header'
 import LogoutBtn from '../../components/account/Logout/LogoutBtn'
 import LogoutResponse from '../../components/account/Logout/LogoutResponse'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../redux/store'
 import '../../sass/pages/account/Logout.scss'
-import SettingsNavbar from '../../components/settings/SettingsNavbar'
 
 function Logout() {
   Authorization.AuthRequired()
+  const { language } = useSelector((state: RootState) => state.persistedReducer.language)
   const [LoggedOut, SetLoggedOut] = useState(false)
   if (LoggedOut==false) {
     return (
@@ -18,7 +21,7 @@ function Logout() {
             
             <div className="Logout-container container">
                 <div className="header-spacer">
-                    <Header />
+                    <Header language={language} />
                 </div>
                 
                 <div className="text-spacer">
@@ -37,7 +40,7 @@ function Logout() {
     return (
       <div className="Logout-container container">
         <div className="header-spacer">
-            <Header />
+            <Header language={language} />
         </div>
         
         <div className="logout-response-spacer">
