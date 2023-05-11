@@ -4,8 +4,8 @@ import Authorization from "../../functions/Authorization"
 import BottomContainer from "../../components/home/Landing page/BottomContainer"
 import Navbar from "../../components/home/Landing page/Navbar"
 import TopContainer from "../../components/home/Landing page/TopContainer"
-import '../../sass/pages/home/LandingPage.scss'
 import LPFooter from "../../components/home/Landing page/LPFooter"
+import '../../sass/pages/home/LandingPage.scss'
 
 function Index() {
     Authorization.NotAuthRequired()
