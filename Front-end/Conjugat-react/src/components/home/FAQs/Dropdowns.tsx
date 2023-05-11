@@ -1,7 +1,10 @@
 import { useState } from 'react'
+import { getTranslation, getTranslationList } from '../../../functions/getTranslation'
+import { dropdownTranslations, generalData, accountData } from "../../../content/home/Faq"
 import '../../../sass/Components/home/FAQ/Dropdowns.scss'
 
-function Dropdowns() {
+
+function Dropdowns({language}: {language:string}) {
     type TSelected = number|null
     const [generalSelected, setGeneralSelected] = useState<TSelected>(null)
     const [actionSelect, setActionSelected] = useState<TSelected>(null)
@@ -23,9 +26,9 @@ function Dropdowns() {
         <div className="Dropdown-container">
 
             <div className="section">
-                <h2 className="text subtitle">General questions</h2>
+                <h2 className="text subtitle">{getTranslation(dropdownTranslations, language, 'Title1')}</h2>
                 
-                {generalData.map((item, i) => (
+                {getTranslationList(generalData, language).map((item:any, i:number) => (
                     <div className={`faq${generalSelected == i ? ' active' : ''}`} onClick={() => generalToggle(i)}>
                         <h3 className="question text-blue-link">
                             {item.question}
@@ -42,9 +45,9 @@ function Dropdowns() {
             </div>
             
             <div className="section">
-                <h2 className="text">Account</h2>
+                <h2 className="text">{getTranslation(dropdownTranslations, language, 'Title2')}</h2>
                 
-                {accountData.map((item, j) => (
+                {getTranslationList(accountData, language).map((item:any, j:number) => (
                     <div className={`faq${actionSelect == j ? ' active' : ''}`} onClick={() => actionToggle(j)}>
                         <h3 className="question text-blue-link">
                             {item.question}
@@ -64,38 +67,6 @@ function Dropdowns() {
     )
 }
 
-const generalData = [
-    {
-        question: 'What is conjugat?',
-        answer: 'Conjugat is an app made to practice verb conjugations. It is currently on browsers only, though mobile and pc apps will be made soon.'
-    },
-    {
-        question: 'Can you become fluent with conjugat?',
-        answer: 'Conjugat alone most likely will not be enough for you to become fluent. It is made to help you become fluent in addition to other things, not by itself alone.'
-    },
-    {
-        question: 'What else should you do to become fluent?',
-        answer: 'You should practice the language in practical senses, spending the majority of your time getting input rather than output. This means doing things such as reacing and listening to the language.'
-    },
-    {
-        question: 'What is in the newsletter?',
-        answer: 'The newsletter is sent weekly and includes helpful things I find on my language learning journey.'
-    }
-]
 
-const accountData = [
-    {
-        question: 'How do I change my username/email/password?',
-        answer: 'Go to settings once you have logged in and go to the appropriate section.'
-    },
-    {
-        question: 'How do I reset my account?',
-        answer: 'Go to settings once you have logged in and go to the appropriate section.'
-    },
-    {
-        question: 'How do I change the theme?',
-        answer: 'Go to settings once you have logged in and go to the appropriate section.'
-    }
-]
 
 export default Dropdowns

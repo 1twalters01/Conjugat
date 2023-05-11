@@ -20,11 +20,11 @@ function Faq() {
             </div>
             
             <div className="para">
-                <h1 className="text">FAQ</h1>
+                <h1 className="text">{getTranslation(translations, language, 'Title')}</h1>
             </div>
 
             <div className="dropdown-spacer">
-                <Dropdowns />
+                <Dropdowns language={language} />
             </div>
         </div>
     )

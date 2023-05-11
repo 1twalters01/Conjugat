@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom'
 import { getTranslation } from '../../../functions/getTranslation';
-import { translations } from '../../../content/home/Landing page/TopContainer'
+import { TopContainerTranslations } from '../../../content/home/LandingPage'
 import { translations as translationsHeader } from '../../../content/Header'
 import '../../../sass/Components/home/Landing page/TopContainer.scss'
 
@@ -38,12 +38,12 @@ function TopContainer({language}: {language:string}) {
                 <div className="main-section">
                     <div className="paragraphs">
                         <div className="para para-1" ref={para1}>
-                            <p className="text">{getTranslation(translations, language, 'Text1')}</p>
-                            <p className="text">{getTranslation(translations, language, 'Text2')}</p>
+                            <p className="text">{getTranslation(TopContainerTranslations, language, 'Text1')}</p>
+                            <p className="text">{getTranslation(TopContainerTranslations, language, 'Text2')}</p>
                         </div>
                         <div className="para para-2" ref={para2}>
-                            <p className="text">{getTranslation(translations, language, 'Text3')}</p>
-                            <p className="text">{getTranslation(translations, language, 'Text4')}</p>
+                            <p className="text">{getTranslation(TopContainerTranslations, language, 'Text3')}</p>
+                            <p className="text">{getTranslation(TopContainerTranslations, language, 'Text4')}</p>
                         </div>
                     </div>
                     
@@ -57,7 +57,7 @@ function TopContainer({language}: {language:string}) {
 
 
                 <Link to='/account/register'>
-                    <p className="join strong-blue-btn">{getTranslation(translations, language, 'Join now')}</p>
+                    <p className="join strong-blue-btn">{getTranslation(TopContainerTranslations, language, 'Join now')}</p>
                 </Link>
             </div>
     

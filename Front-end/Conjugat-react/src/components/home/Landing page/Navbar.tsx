@@ -5,7 +5,7 @@ import { onThemeChange } from "../../../redux/slices/themeSlice"
 import { onLanguageChange } from "../../../redux/slices/languageSlice"
 import { RootState } from "../../../redux/store"
 import { getTranslation } from "../../../functions/getTranslation"
-import { translations } from "../../../content/home/Landing page/Navbar"
+import { NavbarTranslations } from "../../../content/home/LandingPage"
 import '../../../sass/Components/home/Landing page/Navbar.scss'
 
 function Navbar({language}: {language:string}) {
@@ -44,18 +44,18 @@ function Navbar({language}: {language:string}) {
                 <h1 className="logo"><Link to='/' className="logoLink text">Conjugat</Link></h1>
             </div>
             <div className={`options${navbarOpen? ' show-menu container' : ''}`}>
-                <Link to='/Contact' ><p className="link text-gold-link">{getTranslation(translations, language, 'Contact')}</p></Link>
-                <Link to='/Faq' ><p className="link text-gold-link">{getTranslation(translations, language, 'Faq')}</p></Link>
-                <Link to='/Privacy' ><p className="link text-gold-link">{getTranslation(translations, language, 'Privacy')}</p></Link>
-                <Link to='/Terms' ><p className="link text-gold-link">{getTranslation(translations, language, 'Terms')}</p></Link>
+                <Link to='/Contact' ><p className="link text-gold-link">{getTranslation(NavbarTranslations, language, 'Contact')}</p></Link>
+                <Link to='/Faq' ><p className="link text-gold-link">{getTranslation(NavbarTranslations, language, 'Faq')}</p></Link>
+                <Link to='/Privacy' ><p className="link text-gold-link">{getTranslation(NavbarTranslations, language, 'Privacy')}</p></Link>
+                <Link to='/Terms' ><p className="link text-gold-link">{getTranslation(NavbarTranslations, language, 'Terms')}</p></Link>
             </div>
             <div className={`settings${navbarOpen? ' show-menu container' : ''}`}>
-                <Link to='/' ><p className="link text-blue-link" onClick={ThemeSwitch}>{getTranslation(translations, language, 'Theme')}</p></Link>
-                <Link to='/' ><p className="link text-gold-link" onClick={LanguageSwitch_EnAndFr_only}>{getTranslation(translations, language, 'Language')}</p></Link>
-                <Link to='/Premium' ><p className="link text-gold-link">{getTranslation(translations, language, 'Premium')}</p></Link>
+                <Link to='/' ><p className="link text-blue-link" onClick={ThemeSwitch}>{getTranslation(NavbarTranslations, language, 'Theme')}</p></Link>
+                <Link to='/' ><p className="link text-gold-link" onClick={LanguageSwitch_EnAndFr_only}>{getTranslation(NavbarTranslations, language, 'Language')}</p></Link>
+                <Link to='/Premium' ><p className="link text-gold-link">{getTranslation(NavbarTranslations, language, 'Premium')}</p></Link>
             </div>
             <div className={`login-div${navbarOpen? ' show-menu container' : ''}`}><Link to='/account/Login' >
-                <p className="login strong-gold-btn">{getTranslation(translations, language, 'Log in')}</p>
+                <p className="login strong-gold-btn">{getTranslation(NavbarTranslations, language, 'Log in')}</p>
             </Link></div>
         </nav>
     )
