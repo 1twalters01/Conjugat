@@ -11,8 +11,8 @@ import { getTranslation } from '../../functions/getTranslation'
 import { translations } from '../../content/account/Activate'
 
 function Activate() {
-    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
     Authorization.NotAuthRequired()
+    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
     const [Activated, SetActivated] = useState(false)
     const [Error, SetError] = useState(false)
     const { uidb64, token } = useParams()

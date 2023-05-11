@@ -16,8 +16,6 @@ Finish designing web pages, style and add colour to:
 
 Add multiple language support to:
 1. account
-* Activate
-* Login
 * Logout
 * Password reset
 * Password reset token

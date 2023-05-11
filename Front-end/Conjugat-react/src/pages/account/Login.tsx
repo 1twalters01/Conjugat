@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { useSelector } from "react-redux"
+import { RootState } from "../../redux/store"
 import Authorization from '../../functions/Authorization'
 import AlternateLogins from '../../components/account/Login/AlternateLogins'
 import Header from '../../components/account/Header'
@@ -11,28 +13,29 @@ import '../../sass/pages/account/Login-password.scss'
 
 function Login() {
     Authorization.NotAuthRequired()
+    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
     const [page, setPage] = useState('username')
 
     if (page == 'username') {
         return (
             <div className="Login-username-container container">
                 <div className="Header-spacer">
-                    <Header />
+                    <Header language={language} />
                 </div>
 
                 <div className="UsernameLinks-spacer">
-                    <UsernameLinks />
+                    <UsernameLinks language={language} />
                 </div>
 
                 <div className="form-width">
-                    <UsernameForm onPageChange={setPage} />
+                    <UsernameForm language={language} onPageChange={setPage} />
                 </div>
                 
                 <div className="UsernameForm-spacer"></div>
 
                 
                 <div className="AlternameLogins-spacer">
-                    <AlternateLogins />
+                    <AlternateLogins language={language} />
                 </div>
             </div>          
         )
@@ -42,16 +45,16 @@ function Login() {
         return (
             <div className="Login-password-container container">
                 <div className="Header-spacer">
-                    <Header />
+                    <Header language={language} />
                 </div>
                 
 
                 <div className="ResetUsername-spacer form-width">
-                    <ResetUsername onPageChange={setPage} />
+                    <ResetUsername language={language} onPageChange={setPage} />
                 </div>
 
                 <div className="form-width">
-                    <PasswordForm/>
+                    <PasswordForm language={language} />
                 </div>
             </div>
         )

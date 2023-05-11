@@ -6,10 +6,12 @@ import AxiosInstance from '../../../functions/AxiosInstance'
 import handleText from "../../../functions/handlers/handleText";
 import TextField from '../../Input fields/TextField'
 import SubmitBtn from "../../Buttons/SubmitBtn";
+import { getTranslation } from "../../../functions/getTranslation"
+import { LabelTextTranslation } from "../../../content/account/Login"
 import '../../../sass/Components/account/Login/UsernameForm.scss'
 
 
-function UsernameForm({ onPageChange, }: { onPageChange:Function }) {
+function UsernameForm({ language, onPageChange, }: { language:string, onPageChange:Function }) {
     const dispatch = useDispatch()
     const [username, setUsername] = useState('')
 
@@ -37,13 +39,13 @@ function UsernameForm({ onPageChange, }: { onPageChange:Function }) {
                     id="username"
                     value={ username }
                     handleText={(e:ChangeEvent<HTMLInputElement>) => handleText(e, setUsername)}
-                    labelText = "Email or Username"
+                    labelText = {getTranslation(LabelTextTranslation, language, 'Label')}
                     required={true}
                   />
               </div>
 
               <SubmitBtn
-                value="Continue"
+                value={getTranslation(LabelTextTranslation, language, 'Label')}
                 style= 'strong-gold-btn'
               />
           </form>

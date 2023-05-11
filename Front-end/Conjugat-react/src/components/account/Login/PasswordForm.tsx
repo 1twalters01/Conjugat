@@ -14,9 +14,11 @@ import handleCheckbox from "../../../functions/handlers/handleCheckbox"
 import RememberMeField from '../../Input fields/RememberMeField'
 import PasswordReset from './PasswordReset'
 import SubmitBtn from "../../Buttons/SubmitBtn"
+import { getTranslation } from "../../../functions/getTranslation"
+import { PasswordFormTranslation } from "../../../content/account/Login"
 import '../../../sass/Components/account/Login/PasswordForm.scss'
 
-function PasswordForm() {
+function PasswordForm({language}:{language:string}) {
     const dispatch = useDispatch()
     const { confirmed } = useSelector((state: RootState) => state.persistedReducer.login)
     const { username } = useSelector((state: RootState) => state.persistedReducer.login)
@@ -80,7 +82,7 @@ function PasswordForm() {
                   password = {password}
                   handlePassword = {(e:ChangeEvent<HTMLInputElement>) => handleText(e, setPassword)}
                   id = "password"
-                  labelText="Password"
+                  labelText={getTranslation(PasswordFormTranslation, language, 'Password')}
                 />
             </div>
 
@@ -92,7 +94,7 @@ function PasswordForm() {
                 <TotpField
                   totp = {totp}
                   handleTotp = {(e:ChangeEvent<HTMLInputElement>) => handleTotp(e, setTotp)}
-                  labelText="Totp"
+                  labelText={getTranslation(PasswordFormTranslation, language, 'Totp')}
                 />
             </div>
             </>
@@ -100,13 +102,14 @@ function PasswordForm() {
 
           <div className="rememberMe-spacer">
               <RememberMeField
+                labelText={getTranslation(PasswordFormTranslation, language, 'RememberMe')}
                 rememberMe = {rememberMe}
                 handleRememberMe = {(e:ChangeEvent<HTMLInputElement>) => handleCheckbox(e, setRememberMe)}
               />
           </div>
 
           <div className="passwordReset-spacer">
-              <PasswordReset />
+              <PasswordReset linkText={getTranslation(PasswordFormTranslation, language, 'LinkText')} />
           </div>
 
           <SubmitBtn
