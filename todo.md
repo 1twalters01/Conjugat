@@ -41,7 +41,6 @@ Add multiple language support to:
 * Contact
 * FAQs
 * Home
-* Terms
 
 Add things to landing page footer
 
