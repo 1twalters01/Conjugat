@@ -20,8 +20,6 @@ Add multiple language support to:
 * Register
 * Password reset
 * Password reset token
-2. newsletter
-* Unsubscribe
 3. settings
 * Change email
 * Change password
