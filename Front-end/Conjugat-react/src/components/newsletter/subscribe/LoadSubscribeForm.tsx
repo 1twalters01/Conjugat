@@ -2,7 +2,7 @@ import { useState } from "react"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import SubscribeForm from "./SubscribeForm"
 
-function LoadSubscribeForm({setDone, loading, setLoading}: {setDone:Function, loading:boolean, setLoading:Function}) {
+function LoadSubscribeForm({language, setDone, loading, setLoading}: {language:string, setDone:Function, loading:boolean, setLoading:Function}) {
     const [email, setEmail] = useState('')
   
     if (loading) {
@@ -17,6 +17,7 @@ function LoadSubscribeForm({setDone, loading, setLoading}: {setDone:Function, lo
       })
       return (
         <SubscribeForm
+        language={language}
         email={email}
         setDone={setDone}
         setEmail={setEmail}
@@ -25,6 +26,7 @@ function LoadSubscribeForm({setDone, loading, setLoading}: {setDone:Function, lo
     }
     return (
       <SubscribeForm
+        language={language}
         email={email}
         setDone={setDone}
         setEmail={setEmail}

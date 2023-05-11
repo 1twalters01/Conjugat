@@ -2,7 +2,7 @@ import { useState } from "react"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import UnsubscribeForm from "./UnsubscribeForm"
 
-function LoadUnsubscribeForm({setDone, loading, setLoading}: {setDone:Function, loading:boolean, setLoading:Function}) {
+function LoadUnsubscribeForm({language, setDone, loading, setLoading}: {language:string, setDone:Function, loading:boolean, setLoading:Function}) {
     const [email, setEmail] = useState('')
   
     if (loading) {

@@ -17,11 +17,10 @@ Finish designing web pages, style and add colour to:
 Add multiple language support to:
 1. account
 * Logout
+* Register
 * Password reset
 * Password reset token
-* Register
 2. newsletter
-* Subscribe
 * Unsubscribe
 3. settings
 * Change email

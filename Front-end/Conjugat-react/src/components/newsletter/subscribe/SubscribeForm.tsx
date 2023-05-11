@@ -5,9 +5,11 @@ import TextField from "../../Input fields/TextField";
 import SelectField from "../../Input fields/SelectField";
 import AxiosInstance from "../../../functions/AxiosInstance"
 import SubmitBtn from "../../Buttons/SubmitBtn";
+import { getTranslation, getTranslationList } from "../../../functions/getTranslation"
+import { subscribeFormTranslations, FieldList } from '../../../content/newsletter/Subscribe'
 import '../../../sass/Components/newsletter/subscribe/SubscribeForm.scss'
 
-function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:string, setEmail:Function}) {
+function SubscribeForm({language, setDone, email, setEmail}: {language:string, setDone:Function, email:string, setEmail:Function}) {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [languages, setLanguage] = useState<string[]>([]);
@@ -45,7 +47,7 @@ function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:stri
                 <EmailField
                   id='email'
                   email={email}
-                  labelText="Email"
+                  labelText={getTranslation(subscribeFormTranslations, language, 'Email')}
                   handleEmail={(e:ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                   required={true}
                 />
@@ -54,7 +56,7 @@ function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:stri
             <div className="text-spacer">
                 <TextField
                   id={"firstName"}
-                  labelText="First name"
+                  labelText={getTranslation(subscribeFormTranslations, language, 'FirstName')}
                   required={true}
                   handleText={(e:ChangeEvent<HTMLInputElement>) => setFirstName(e.target.value)}
                   value={firstName}
@@ -64,7 +66,7 @@ function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:stri
             <div className="text-spacer">
                 <TextField
                   id={"lastName"}
-                  labelText="Last name (optional)"
+                  labelText={getTranslation(subscribeFormTranslations, language, 'LastName')}
                   required={false}
                   handleText={(e:ChangeEvent<HTMLInputElement>) => setLastName(e.target.value)}
                   value={lastName}
@@ -73,16 +75,17 @@ function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:stri
                 
             <div className="select-spacer">
                 <SelectField
+                labelText={getTranslation(subscribeFormTranslations, language, 'Select')}
                 languages={languages}
                 changeLanguage={changeLanguage}
-                FieldList = {FieldList}
-                FieldListValues = {FieldList}
+                FieldList = {getTranslationList(FieldList, language)}
+                FieldListValues = {getTranslationList(FieldList, language)}
                 />
             </div>
                 
 
               <SubmitBtn
-                value="Submit"
+                value={getTranslation(subscribeFormTranslations, language, 'Submit')}
                 style="strong-gold-btn"
               />
           </form>
@@ -90,5 +93,4 @@ function SubscribeForm({setDone, email, setEmail}: {setDone:Function, email:stri
     )
 }
 
-const FieldList = ['English', 'French', 'Italian', 'Portuguese', 'Spanish']
 export default SubscribeForm

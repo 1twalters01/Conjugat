@@ -17,7 +17,6 @@ function Cancelled() {
       <div className="text-spacer">
           <p className='text'>{getTranslation(translations, language, 'Text2')}</p>
       </div>
-      
 
       <div className="btn-spacer">
           <Link to="../process" className='retry-btn strong-gold-btn'>{getTranslation(translations, language, 'Link')}</Link>

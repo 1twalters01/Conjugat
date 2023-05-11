@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react"
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 import { Link } from "react-router-dom";
 import Header from "../../components/account/Header";
 import LoadSubscribeForm from "../../components/newsletter/subscribe/LoadSubscribeForm";
 import NewsletterLinks from "../../components/newsletter/NewsletterLinks";
 import NewsletterResponse from "../../components/newsletter/NewsletterResponse";
-import '../../sass/pages/newsletter/Subscribe.scss';
 import SettingsNavbar from "../../components/settings/SettingsNavbar";
+import { getTranslation } from "../../functions/getTranslation"
+import { translations } from '../../content/newsletter/Subscribe'
+import '../../sass/pages/newsletter/Subscribe.scss';
 
 function Subscribe() {
+    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
     const [loading, setLoading] = useState(true);
     const [done, setDone] = useState(false)
 
@@ -29,28 +34,29 @@ function Subscribe() {
             return (
                 <div className="Newsletter-unauth-subscribe-container container">
                     <div className="Header-spacer">
-                        <Header />
+                        <Header language={language} />
                     </div>
     
                     <div className="NewsletterLinks-spacer">
-                        <NewsletterLinks />
+                        <NewsletterLinks language={language} />
                     </div>
                     
                     <div className="para">
-                        <p className="text">Thank you for your interest in joining our newsletter!</p>
-                        <p className="text">Fill in the form below to subscribe.</p>
+                        <p className="text">{getTranslation(translations, language, 'Text1')}</p>
+                        <p className="text">{getTranslation(translations, language, 'Text2')}</p>
                     </div>
     
                     <div className="form-width">
                         <LoadSubscribeForm
-                          loading={loading}
-                          setDone={setDone}
-                          setLoading={setLoading}
+                            language={language}
+                            loading={loading}
+                            setDone={setDone}
+                            setLoading={setLoading}
                         />
                     </div>
                     
                     <div className="unsubscribe-link">
-                        <Link to="../unsubscribe/"><p className="text">Unsubscribe from the newsletter</p></Link>
+                        <Link to="../unsubscribe/"><p className="text">{getTranslation(translations, language, 'Text3')}</p></Link>
                     </div>
                 </div>
             )
@@ -59,12 +65,13 @@ function Subscribe() {
             return (
                 <div className="Newsletter-unauth-subscribe-container container">
                     <div className="Header-spacer">
-                        <Header />
+                        <Header language={language} />
                     </div>
                     
                     <div className="logout-response-spacer">
                         <NewsletterResponse
-                        text={"You have successfully subscribed to the newsletter"}
+                            language={language}
+                            text={getTranslation(translations, language, 'Text4')}
                         />
                     </div>
                 </div>
@@ -76,21 +83,22 @@ function Subscribe() {
             return (
                 <>
                     <div className="Settings-navbar-container container">
-                        <SettingsNavbar />
+                        <SettingsNavbar language={language} />
                     </div>
 
                     <div className="Newsletter-auth-container container">
                         <div className="Header-spacer">
-                            <h1 className="header">Newsletter</h1>
+                            <h1 className="header">{getTranslation(translations, language, 'Text5')}</h1>
                         </div>
 
                         <div className="para">
-                            <p className="text">Thank you for your interest in joining our newsletter!</p>
-                            <p className="text">Fill in the form below to subscribe.</p>
+                            <p className="text">{getTranslation(translations, language, 'Text6')}</p>
+                            <p className="text">{getTranslation(translations, language, 'Text7')}</p>
                         </div>
         
                         <div className="form-width">
                             <LoadSubscribeForm
+                            language={language}
                             loading={loading}
                             setDone={setDone}
                             setLoading={setLoading}
@@ -98,7 +106,7 @@ function Subscribe() {
                         </div>
                         
                         <div className="unsubscribe-link">
-                            <Link to="../unsubscribe/"><p className="text">Unsubscribe from the newsletter</p></Link>
+                            <Link to="../unsubscribe/"><p className="text">{getTranslation(translations, language, 'Text8')}</p></Link>
                         </div>
                     </div>
                 </>
@@ -108,14 +116,15 @@ function Subscribe() {
             return (
                 <>
                     <div className="Settings-navbar-container container">
-                        <SettingsNavbar />
+                        <SettingsNavbar language={language} />
                     </div>
                     
                     <div className="Newsletter-auth-container container">
                         
                         <div className="logout-response-spacer">
                             <NewsletterResponse
-                            text={"You have successfully subscribed to the newsletter"}
+                            language={language}
+                            text={getTranslation(translations, language, 'Text9')}
                             />
                         </div>
                     </div>
