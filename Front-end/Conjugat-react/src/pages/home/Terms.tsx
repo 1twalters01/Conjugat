@@ -28,7 +28,6 @@ function Terms() {
                     <li className="text">
                         <h3 className="text">{getTranslation(translations, language, 'Heading1')}</h3>
                         <p className="text">{getTranslation(translations, language, 'Text1-1')}</p>
-
                         <p className="text bold"><span>{getTranslation(translations, language, 'Text1-2')}</span></p>
                     </li>
 

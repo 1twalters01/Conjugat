@@ -14,6 +14,38 @@ Finish designing web pages, style and add colour to:
 * Home
 * Premium
 
+Add multiple language support to:
+1. account
+* Activate
+* Login
+* Logout
+* Password reset
+* Password reset token
+2. newsletter
+* Subscribe
+* Unsubscribe
+3. settings
+* Change email
+* Change password
+* Change username
+* Close account
+* Premium
+* Reset account
+* Themes
+* Two factor authentication
+4. subscriptions
+* Cancelled
+* Process
+* Success
+5. Misc
+* Contact
+* FAQs
+* Home
+* Privacy
+* Terms
+
+Add things to landing page footer
+
 Update navbar css
 
 Make react landing page switch to more languages
