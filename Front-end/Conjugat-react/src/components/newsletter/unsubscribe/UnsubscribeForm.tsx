@@ -3,9 +3,11 @@ import { toast } from "react-toastify"
 import EmailField from "../../Input fields/EmailField"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import SubmitBtn from "../../Buttons/SubmitBtn"
+import { getTranslation } from "../../../functions/getTranslation";
+import { unsubscribeFormTranslations } from "../../../content/newsletter/Unsubscribe";
 import '../../../sass/Components/newsletter/unsubscribe/UnsubscribeForm.scss'
 
-function UnsubscribeForm({setDone, email, setEmail}: {setDone:Function, email:string, setEmail:Function}) {
+function UnsubscribeForm({language, setDone, email, setEmail}: {language:string, setDone:Function, email:string, setEmail:Function}) {
     function submit(e:FormEvent<HTMLFormElement>) {
       e.preventDefault();
       AxiosInstance.Unauthorised
@@ -32,7 +34,7 @@ function UnsubscribeForm({setDone, email, setEmail}: {setDone:Function, email:st
                 <EmailField
                 id='email'
                 email={email}
-                labelText="Email"
+                labelText={getTranslation(unsubscribeFormTranslations, language, 'Email')}
                 handleEmail={(e:ChangeEvent<HTMLInputElement>) => handleEmail(e)}
                 required={true}
                 />

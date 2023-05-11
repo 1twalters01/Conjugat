@@ -6,9 +6,9 @@ import Header from "../../components/account/Header";
 import NewsletterLinks from "../../components/newsletter/NewsletterLinks";
 import NewsletterResponse from "../../components/newsletter/NewsletterResponse";
 import LoadUnsubscribeForm from "../../components/newsletter/unsubscribe/LoadUnsubscribeform"
-import '../../sass/pages/newsletter/Unsubscribe.scss';
 import { getTranslation } from "../../functions/getTranslation";
 import { translations } from "../../content/newsletter/Unsubscribe";
+import '../../sass/pages/newsletter/Unsubscribe.scss';
 
 function Unsubscribe() {
     const { language } = useSelector((state: RootState) => state.persistedReducer.language)
@@ -67,6 +67,7 @@ function Unsubscribe() {
                     
                     <div className="logout-response-spacer">
                         <NewsletterResponse
+                        language={language}
                         text={getTranslation(translations, language, 'Text3')}
                         />
                     </div>
@@ -104,6 +105,7 @@ function Unsubscribe() {
                     
                     <div className="logout-response-spacer">
                         <NewsletterResponse
+                        language={language}
                         text={getTranslation(translations, language, 'Text6')}
                         />
                     </div>

@@ -55,3 +55,21 @@ export const translations = {
         'Text9': 'Se ha suscrito correctamente al boletín de noticias'
     }
 }
+
+export const unsubscribeFormTranslations = {
+    'English': {
+        'Email': 'email'
+    },
+    'French': {
+        'Email': 'Courriel'
+    },
+    'Italian': {
+        'Email': 'E-mail'
+    },
+    'Portuguese': {
+        'Email': 'Correio electrónico'
+    },
+    'Spanish': {
+        'Email': 'Correo electrónico'
+    },
+}

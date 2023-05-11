@@ -17,6 +17,7 @@ function LoadUnsubscribeForm({language, setDone, loading, setLoading}: {language
       })
       return (
           <UnsubscribeForm
+          language={language}
           email={email}
           setDone={setDone}
           setEmail={setEmail}
@@ -25,6 +26,7 @@ function LoadUnsubscribeForm({language, setDone, loading, setLoading}: {language
     }
     return (
       <UnsubscribeForm
+        language={language}
         email={email}
         setDone={setDone}
         setEmail={setEmail}
