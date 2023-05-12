@@ -25,19 +25,19 @@ function Register() {
 
                 
                 <div className="RegisterLinks-spacer">
-                    <RegisterLinks />
+                    <RegisterLinks language={language} />
                 </div>
                 
                 <div className="form-width">
                     <RegisterForm
-                    onDoneChange={setDone}
-                    setReturnedEmail={setReturnedEmail}
+                        language={language}
+                        onDoneChange={setDone}
+                        setReturnedEmail={setReturnedEmail}
                     />
                 </div>
                 
                 <div className="RegisterForm-spacer"></div>
             </div>
-
         )
     }
     else {
@@ -49,10 +49,10 @@ function Register() {
                     </div>
 
                     <div className="Register-done-spacer">
-                        <RegisterDoneTrue />
+                        <RegisterDoneTrue language={language} />
                     </div>
                 </div>
-              )
+            )
         }
         else {
             return (
@@ -62,13 +62,12 @@ function Register() {
                     </div>
                     
                     <div className="Register-done-spacer">
-                         <RegisterDoneFalse />
+                         <RegisterDoneFalse language={language} />
                     </div>
                   
                 </div>
-              )
+            )
         }
-        
     }
 }
 

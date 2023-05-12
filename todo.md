@@ -15,9 +15,6 @@ Finish designing web pages, style and add colour to:
 * Premium
 
 Add multiple language support to:
-1. account
-* Logout
-* Register
 3. settings
 * Change email
 * Change password

@@ -6,9 +6,11 @@ import TextField from "../../Input fields/TextField"
 import EmailField from "../../Input fields/EmailField"
 import PasswordField from "../../Input fields/PasswordField"
 import SubmitBtn from "../../Buttons/SubmitBtn"
+import { getTranslation } from "../../../functions/getTranslation"
+import { RegisterFormTranslations } from "../../../content/account/Register"
 import '../../../sass/Components/account/Register/RegisterForm.scss'
 
-function RegisterForm({ onDoneChange, setReturnedEmail }: {onDoneChange:Function, setReturnedEmail:Function}) {
+function RegisterForm({ language, onDoneChange, setReturnedEmail }: {language:string, onDoneChange:Function, setReturnedEmail:Function}) {
     const domain = window.location.origin + "/account/"
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -49,7 +51,7 @@ function RegisterForm({ onDoneChange, setReturnedEmail }: {onDoneChange:Function
                   id='username'
                   value = {username}
                   handleText={(e:ChangeEvent<HTMLInputElement>) => handleText(e, setUsername)}
-                  labelText = "Username"
+                  labelText = {getTranslation(RegisterFormTranslations, language, 'Username')}
                   required={false}
                   />
               </div>
@@ -58,7 +60,7 @@ function RegisterForm({ onDoneChange, setReturnedEmail }: {onDoneChange:Function
                   <EmailField
                   id='email'
                   email={email}
-                  labelText="Email (optional)"
+                  labelText={getTranslation(RegisterFormTranslations, language, 'Email')}
                   handleEmail={(e:ChangeEvent<HTMLInputElement>) => handleText(e, setEmail)}
                   required={false}
                   />
@@ -69,7 +71,7 @@ function RegisterForm({ onDoneChange, setReturnedEmail }: {onDoneChange:Function
                     password = {password}
                     handlePassword = {(e:ChangeEvent<HTMLInputElement>) => handleText(e, setPassword)}
                     id = "password"
-                    labelText="Password"
+                    labelText={getTranslation(RegisterFormTranslations, language, 'Password')}
                   />
               </div>
               
@@ -78,12 +80,12 @@ function RegisterForm({ onDoneChange, setReturnedEmail }: {onDoneChange:Function
                     password = {password2}
                     handlePassword = {(e:ChangeEvent<HTMLInputElement>) => handleText(e, setPassword2)}
                     id = "password2"
-                    labelText="Repeat password"
+                    labelText={getTranslation(RegisterFormTranslations, language, 'Password2')}
                   />
               </div>
       
               <SubmitBtn
-                value="Sign up"
+                value={getTranslation(RegisterFormTranslations, language, 'Sign up')}
                 style="strong-gold-btn"
               />
           </form>

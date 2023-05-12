@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom"
+import { getTranslation } from "../../../functions/getTranslation"
+import { RegisterDoneTrueTranslations } from "../../../content/account/Register"
 
-function RegisterDoneTrue() {
+function RegisterDoneTrue({language}: {language:string}) {
     return(
         <div className="Register-done">  
             <div className="para">
-                <p className="text">We've emailed you instructions for setting your password.</p>
-                <p className="text">If you don't receive an email, please make sure you've entered the address you registered with.</p>
+                <p className="text">{getTranslation(RegisterDoneTrueTranslations, language, 'Text1')}</p>
+                <p className="text">{getTranslation(RegisterDoneTrueTranslations, language, 'Text2')}</p>
             </div>  
             <Link to="../../"><div className="btn strong-gold-btn">Home</div></Link>
         </div>
