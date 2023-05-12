@@ -18,7 +18,6 @@ Add multiple language support to:
 1. account
 * Logout
 * Register
-* Password reset
 * Password reset token
 3. settings
 * Change email
@@ -34,6 +33,8 @@ Add multiple language support to:
 * Success
 5. Misc
 * Home
+
+Social system
 
 Add things to landing page footer
 

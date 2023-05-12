@@ -22,11 +22,11 @@ function PasswordReset() {
                 
                 
                 <div className="RegisterLinks-spacer">
-                    <RegisterLinks />
+                    <RegisterLinks language={language} />
                 </div>
                 
                 <div className="form-width">
-                    <PasswordResetForm onDoneChange={setDone} />
+                    <PasswordResetForm language={language} onDoneChange={setDone} />
                 </div>
             </div>
         )
@@ -38,7 +38,7 @@ function PasswordReset() {
                     <Header language={language} />
                 </div>
                 
-                <PasswordResetDone />
+                <PasswordResetDone language={language} />
             </div>
         )
     }

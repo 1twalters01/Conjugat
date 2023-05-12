@@ -4,9 +4,11 @@ import AxiosInstance from "../../../functions/AxiosInstance"
 import handleText from "../../../functions/handlers/handleText"
 import EmailField from "../../Input fields/EmailField"
 import SubmitBtn from "../../Buttons/SubmitBtn"
+import { getTranslation } from "../../../functions/getTranslation"
+import { PasswordResetFormTranslations } from '../../../content/account/PasswordReset'
 import '../../../sass/Components/account/Password reset/PasswordResetForm.scss'
 
-function PasswordResetForm({onDoneChange}: {onDoneChange:Function}) {
+function PasswordResetForm({language, onDoneChange}: {language:string, onDoneChange:Function}) {
     const domain = window.location.origin + "/account/"
     const [email, setEmail] = useState('')
   
@@ -32,14 +34,14 @@ function PasswordResetForm({onDoneChange}: {onDoneChange:Function}) {
                   <EmailField
                   id='email'
                   email={email}
-                  labelText='Email'
+                  labelText={getTranslation(PasswordResetFormTranslations, language, 'Email')}
                   handleEmail={(e:ChangeEvent<HTMLInputElement>) => handleText(e, setEmail)}
                   required={true}
                   />
               </div>
 
               <SubmitBtn
-              value="Reset Password"
+              value={getTranslation(PasswordResetFormTranslations, language, 'Reset Password')}
               style="strong-gold-btn"
               />
           </form>
