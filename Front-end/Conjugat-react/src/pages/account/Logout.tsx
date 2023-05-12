@@ -1,11 +1,13 @@
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../redux/store'
 import Authorization from '../../functions/Authorization'
 import SettingsNavbar from '../../components/settings/SettingsNavbar'
 import Header from '../../components/account/Header'
 import LogoutBtn from '../../components/account/Logout/LogoutBtn'
 import LogoutResponse from '../../components/account/Logout/LogoutResponse'
-import { useSelector } from 'react-redux'
-import { RootState } from '../../redux/store'
+import { getTranslation } from "../../functions/getTranslation"
+import { Translations } from "../../content/account/Logout"
 import '../../sass/pages/account/Logout.scss'
 
 function Logout() {
@@ -16,7 +18,7 @@ function Logout() {
     return (
         <>
             <div className="Settings-navbar-container container">
-                <SettingsNavbar />
+                <SettingsNavbar language={language} />
             </div>
             
             <div className="Logout-container container">
@@ -25,11 +27,11 @@ function Logout() {
                 </div>
                 
                 <div className="text-spacer">
-                    <p className='text'>Are you sure that you want to log out?</p>
+                    <p className='text'>{getTranslation(Translations, language, 'Text')}</p>
                 </div>
                 
                 <div className="logout-spacer">
-                    <LogoutBtn onLoggedOutChange={SetLoggedOut} />
+                    <LogoutBtn language={language} onLoggedOutChange={SetLoggedOut} />
                 </div>
             </div>
         </>
@@ -44,7 +46,7 @@ function Logout() {
         </div>
         
         <div className="logout-response-spacer">
-            <LogoutResponse />
+            <LogoutResponse language={language} />
         </div>
       </div>
     )
