@@ -31,15 +31,15 @@ export const PasswordResetFormTranslations = {
         'Reset Password': 'Réinitialiser le mot de passe'
     },
     'Italian': {
-        'Login': 'Accesso',
+        'Email': 'Email',
         'Reset Password': 'Reimpostare la password'
     },
     'Portuguese': {
-        'Login': 'Iniciar sessão',
+        'Email': 'Correio electrónico',
         'Reset Password': 'Redefinir a palavra-passe'
     },
     'Spanish': {
-        'Login': 'Inicio de sesión',
+        'Email': 'Correo electrónico',
         'Reset Password': 'Restablecer contraseña'
     },
 }

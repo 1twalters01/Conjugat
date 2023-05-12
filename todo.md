@@ -18,7 +18,6 @@ Add multiple language support to:
 1. account
 * Logout
 * Register
-* Password reset token
 3. settings
 * Change email
 * Change password

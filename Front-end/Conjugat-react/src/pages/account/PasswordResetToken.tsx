@@ -5,6 +5,8 @@ import Header from "../../components/account/Header"
 import Authorization from '../../functions/Authorization'
 import PasswordResetTokenDone from "../../components/account/Password reset token/PasswordResetTokenDone"
 import PasswordChangeForm from "../../components/account/Password reset token/PasswordChangeForm"
+import { getTranslation } from "../../functions/getTranslation"
+import { Translations } from "../../content/account/PasswordResetToken"
 import '../../sass/pages/account/PasswordResetToken.scss'
 
 function PasswordResetToken() {
@@ -20,11 +22,12 @@ function PasswordResetToken() {
                 </div>
                 
                 <div className="Title-spacer">
-                    <h1 className="blue-text">Change Password</h1>
+                    <h1 className="blue-text">{getTranslation(Translations, language, 'Text')}</h1>
                 </div>
 
                 <div className="form-width">
                     <PasswordChangeForm
+                    language={language}
                     onDoneChange={setDone}
                     />
                 </div>
@@ -39,7 +42,7 @@ function PasswordResetToken() {
               </div>
 
               <div className="password-reset-token-spacer">
-                  <PasswordResetTokenDone />
+                  <PasswordResetTokenDone language={language} />
               </div>
           </div>
         )
