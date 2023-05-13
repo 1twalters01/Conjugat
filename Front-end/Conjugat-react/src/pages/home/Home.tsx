@@ -8,12 +8,18 @@ import HomeChart from "../../components/home/Home/HomeChart"
 
 import { Bar, getElementAtEvent } from 'react-chartjs-2';
 import { Chart, registerables, ChartType } from 'chart.js';
+import { useSelector } from "react-redux"
+import { RootState } from "../../redux/store"
 import HomeModal from "../../components/home/Home/HomeModal"
+import { getTranslation } from "../../functions/getTranslation"
+import { translations } from "../../content/home/Home"
 
 Chart.register(...registerables);
 
 function Home() {
     Authorization.AuthRequired()
+    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
+    
     const [correct, setCorrect] = useState<Boolean|null>(null)
     const [incorrect, setIncorrect] = useState<Boolean|null>(null)
     const [isOpen, setIsOpen] = useState(false)
@@ -129,11 +135,11 @@ function Home() {
     if (basicData != null) {
       return (
         <>
-            <SettingsNavbar />
+            <SettingsNavbar language={language} />
             <div>
                 <Link to='../subscriptions/' className="text-blue-link">Subscribe</Link>
                 
-                <h1>Home</h1>
+                <h1>{getTranslation(translations, language, 'Title1')}</h1>
 
                 <Bar
                 ref={chartRef}

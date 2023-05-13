@@ -10,8 +10,12 @@ import '../../sass/Components/Input fields/SubmitBtn.scss'
 import '../../sass/Components/account/DualLinks.scss'
 import '../../sass/pages/verbs/Test.scss'
 import { useNavigate } from "react-router-dom"
+import { useSelector } from "react-redux"
+import { RootState } from "../../redux/store"
 
 function Test() {
+    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
+    
     const navigate = useNavigate()
     type ITestID = null|number
     const [page, setPage] = useState(0)
@@ -82,7 +86,7 @@ function Test() {
     return (
         <div>
             <div className="Settings-navbar-container container">
-                <SettingsNavbar />
+                <SettingsNavbar language={language} />
             </div>
 
             {QuestionData.map((test, i) => (
@@ -95,6 +99,7 @@ function Test() {
 
                     <div className="view-answers-spacer">
                         <TextSlideshow
+                            language={language}
                             setPage={setPage}
                             QuestionData={QuestionData}
                             i={i}
@@ -103,6 +108,7 @@ function Test() {
 
                     <div className="form-width">
                         <TestForm
+                            language={language}
                             submit={submit}
                             handleNext={handleNext}
                             handleChange={handleChange}
@@ -116,76 +122,5 @@ function Test() {
         </div>
     )
 }
-
-// const idealAnswers = [
-//     {
-//         IDs: [1, 5, 6],
-//         answers: ["am", "are", "ar"],
-//     }
-// ]
-
-// const exampleQustionData = [
-//     {
-//         language: 'English',
-//         Base: 'be',
-//         Tense: 'Present',
-//         IDs: [1, 2, 3, 4, 5, 6],
-//         Subjects: ['I', 'You', 'He/She/It', 'We', 'You', 'They'],
-//         Auxiliaries: ["", "", "", "", "", "", ""],
-//         Verbs: ["am", "are", "is", "are", "are", "are"],
-//     },
-//     {
-//         language: 'English',
-//         Base: 'have',
-//         Tense: 'Present',
-//         IDs: [7, 8, 9, 10, 11, 12],
-//         Subjects: ['I', 'You', 'He/She/It', 'We', 'You', 'They'],
-//         Auxiliaries: ["", "", "", "", "", "", ""],
-//         Verbs: ["have", "have", "have", "have", "have", "have"],
-//     },
-//     {
-//         language: 'English',
-//         Base: 'know',
-//         Tense: 'Present',
-//         IDs: [25, 14, 15, 16],
-//         Subjects: ['He/She/It', 'We', 'You', 'They'],
-//         Auxiliaries: ["", "", "", "", ""],
-//         Verbs: ["know", "know", "knows", "know"],
-//     }
-// ]
-
-// const exampleQustionDataNew = [
-//     {   TestID: 234594,
-//         Test: [
-//             {
-//                 language: 'English',
-//                 Base: 'be',
-//                 Tense: 'Present',
-//                 IDs: [1, 2, 3, 4, 5, 6],
-//                 Subjects: ['I', 'You', 'He/She/It', 'We', 'You', 'They'],
-//                 Auxiliaries: ["", "", "", "", "", "", ""],
-//                 Verbs: ["am", "are", "is", "are", "are", "are"],
-//             },
-//             {
-//                 language: 'English',
-//                 Base: 'have',
-//                 Tense: 'Present',
-//                 IDs: [7, 8, 9, 10, 11, 12],
-//                 Subjects: ['I', 'You', 'He/She/It', 'We', 'You', 'They'],
-//                 Auxiliaries: ["", "", "", "", "", "", ""],
-//                 Verbs: ["have", "have", "have", "have", "have", "have"],
-//             },
-//             {
-//                 language: 'English',
-//                 Base: 'know',
-//                 Tense: 'Present',
-//                 IDs: [25, 14, 15, 16],
-//                 Subjects: ['He/She/It', 'We', 'You', 'They'],
-//                 Auxiliaries: ["", "", "", "", ""],
-//                 Verbs: ["know", "know", "knows", "know"],
-//             }
-//         ]
-//     }
-// ]
 
 export default Test

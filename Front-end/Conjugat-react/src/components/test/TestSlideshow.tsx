@@ -1,8 +1,10 @@
 import { ChangeEvent, useRef, useState } from 'react'
+import { getTranslation } from '../../functions/getTranslation'
+import { testSlideshowTranslations } from '../../content/verbs/Test';
 import '../../sass/Components/verbs/Test/TestSlideshow.scss'
 
-function TextSlideshow({setPage, QuestionData, i} : {setPage:Function, QuestionData:any, i:number}) {
-    const [InputNumber, setInputNumber] = useState('')
+function TextSlideshow({language, setPage, QuestionData, i} : {language:string, setPage:Function, QuestionData:any, i:number}) {
+    // const [InputNumber, setInputNumber] = useState('')
     function handlePrevious(i:number) {
         if (i > 0) {
             setPage(i - 1)
@@ -28,9 +30,9 @@ function TextSlideshow({setPage, QuestionData, i} : {setPage:Function, QuestionD
 
     return (
         <div className="Test-Slideshow-container">
-            <div className="link weak-gold-btn" onClick={() =>handlePrevious(i)}>Previous</div>
+            <div className="link weak-gold-btn" onClick={() =>handlePrevious(i)}>{getTranslation(testSlideshowTranslations, language, 'Title1')}</div>
             <input type="number" name="" ref={numInput} id="" placeholder={(i+1).toString()} className='page-number' onKeyDown={handleNumberSubmit}/>
-            <div className="link weak-gold-btn" onClick={() =>handleNext(i)}>Next</div>
+            <div className="link weak-gold-btn" onClick={() =>handleNext(i)}>{getTranslation(testSlideshowTranslations, language, 'Title2')}</div>
         </div>
     )
 }

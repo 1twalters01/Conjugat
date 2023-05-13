@@ -14,13 +14,6 @@ Finish designing web pages, style and add colour to:
 * Home
 * Premium
 
-Add multiple language support to:
-5. Home
-* Home
-7. Verbs
-* Test
-* Test results
-
 Social system
 
 Add things to landing page footer
@@ -80,6 +73,9 @@ Web Scrape for Nouns and adjectives
 Get real api keys for everything rather than test api keys
 
 Launch web app
+
+Battle mode - Random people and chosen person
+    - Elo system?
 
 
 # Long term goals

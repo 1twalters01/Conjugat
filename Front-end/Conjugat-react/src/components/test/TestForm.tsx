@@ -1,6 +1,8 @@
 import { ChangeEvent } from "react"
+import { getTranslation } from "../../functions/getTranslation";
+import { testFormTranslations } from "../../content/verbs/Test";
 
-function TestForm({submit, test, handleChange, i, QuestionData, handleNext}: {submit:Function, test:{ language: string; Base: string; Tense: string; IDs: string[]; Subjects: string[]; Auxiliaries: string[]; Verbs: string[]; }, handleChange:Function, i:number, QuestionData:any, handleNext:Function}) {
+function TestForm({language, submit, test, handleChange, i, QuestionData, handleNext}: {language:string, submit:Function, test:{ language: string; Base: string; Tense: string; IDs: string[]; Subjects: string[]; Auxiliaries: string[]; Verbs: string[]; }, handleChange:Function, i:number, QuestionData:any, handleNext:Function}) {
     return (
         <form action="" autoComplete="off" key={i} onSubmit={(e) => submit(e)}>
             {test.IDs.map((id, j) => (
@@ -22,11 +24,11 @@ function TestForm({submit, test, handleChange, i, QuestionData, handleNext}: {su
             <div className="btn">
                 {i === QuestionData.length-1 ?
                 <div className="submit-btn">
-                    <input type="submit" value="Submit" className="strong-btn strong-gold-btn"/>
+                    <input type="submit" className="strong-btn strong-gold-btn" value={getTranslation(testFormTranslations, language, 'Title1')} />
                 </div>
                 :
                 <div className="submit-btn">
-                    <button type="button"  className="strong-btn strong-gold-btn" onClick={() =>handleNext(i)}>Continue</button>
+                    <button type="button"  className="strong-btn strong-gold-btn" onClick={() =>handleNext(i)}>{getTranslation(testFormTranslations, language, 'Title2')}</button>
                 </div>
                 }
             </div>
