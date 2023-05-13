@@ -15,8 +15,6 @@ Finish designing web pages, style and add colour to:
 * Premium
 
 Add multiple language support to:
-3. settings
-* Premium
 4. subscriptions
 * Process
 * Success

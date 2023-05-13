@@ -1,7 +1,13 @@
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js"
-import AxiosInstance from "../../../functions/AxiosInstance";
+import { useSelector } from "react-redux"
+import { RootState } from "../../../redux/store"
+import AxiosInstance from "../../../functions/AxiosInstance"
+import { getTranslation } from "../../../functions/getTranslation"
+import { StripeSuccessTranslations } from "../../../content/settings/Premium"
 
 function PaypalProcess({trial} : {trial:boolean|null}) {
+    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
+
     const paypalSubscribe = (data:any, actions:any) => {
       if (trial==false) {
         return actions.subscription.create({
@@ -37,7 +43,7 @@ function PaypalProcess({trial} : {trial:boolean|null}) {
     if (trial==true || trial==false) {
       return(
         <div>
-          <p>Paypal</p>
+          <p>{getTranslation(StripeSuccessTranslations, language, 'Text1')}</p>
           <PayPalScriptProvider
             options={{"client-id":`${import.meta.env.VITE_paypal_client_id}`, vault:true}}
           >
@@ -54,7 +60,7 @@ function PaypalProcess({trial} : {trial:boolean|null}) {
   
     return (
       <div>
-        <p>Paypal</p>
+        <p>{getTranslation(StripeSuccessTranslations, language, 'Text2')}</p>
       </div>
     )
 }
