@@ -7,8 +7,10 @@ import PasswordField from "../../Input fields/PasswordField"
 import TotpField from "../../Input fields/TotpField"
 import SubmitBtn from "../../Buttons/SubmitBtn"
 import SelectField from "../../Input fields/SelectField"
+import { getTranslation } from '../../../functions/getTranslation'
+import { AccountResetFormTranslations } from '../../../content/settings/ResetAccount'
 
-function AccountResetForm({ onDoneChange }: {onDoneChange:Function}){
+function AccountResetForm({ language, onDoneChange }: { language:string, onDoneChange:Function }){
     const { confirmed } = useSelector((state: RootState) => state.persistedReducer.login)
     const [FieldList, setFieldList] = useState<string[]>([])
     const [languages, setLanguage] = useState<string[]>([])
@@ -64,6 +66,7 @@ function AccountResetForm({ onDoneChange }: {onDoneChange:Function}){
             <form onSubmit={(e) => submit(e)}>
                 <div className="password-spacer">
                     <SelectField
+                    labelText={getTranslation(AccountResetFormTranslations, language, 'Select')}
                     languages={languages}
                     changeLanguage={changeLanguage}
                     FieldList = {FieldList}
@@ -76,7 +79,7 @@ function AccountResetForm({ onDoneChange }: {onDoneChange:Function}){
                         password = {password}
                         handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
                         id = "password"
-                        labelText="Password"
+                        labelText={getTranslation(AccountResetFormTranslations, language, 'Password')}
                     />
                 </div>
 
@@ -87,13 +90,13 @@ function AccountResetForm({ onDoneChange }: {onDoneChange:Function}){
                         <TotpField
                         totp = {totp}
                         handleTotp = {(e:ChangeEvent<HTMLInputElement>) => handleTotp(e)}
-                        labelText="Totp"
+                        labelText={getTranslation(AccountResetFormTranslations, language, 'Totp')}
                         />
                     </div>
                 }
 
                 <SubmitBtn
-                    value="Reset account"
+                    value={getTranslation(AccountResetFormTranslations, language, 'Submit')}
                     style="strong-red-btn"
                 />
             </form>
