@@ -40,8 +40,8 @@ const Cancelled = lazy(() => import('./pages/subscriptions/Cancelled'))
 const Process = lazy(() => import('./pages/subscriptions/Process'))
 const Success = lazy(() => import('./pages/subscriptions/Success'))
 
-const Test = lazy(() => import('./pages/verbs/Test'))
-const TestResults = lazy(() => import('./pages/verbs/TestResults'))
+const Test = lazy(() => import('./pages/test/Test'))
+const TestResults = lazy(() => import('./pages/test/TestResults'))
 
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';

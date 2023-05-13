@@ -5,7 +5,13 @@ Finish designing web pages, style and add colour to:
 * Unsubscribe auth
 * Subscribe auth done
 * Unsubscribe auth done
-3. settings - Mobile scss, Navbar SCSS, Reset account, Themes, premium
+3. settings
+* Font
+* Mobile scss
+* Navbar SCSS
+* Reset account
+* Themes
+* premium
 4. subscriptions
 * Process
 * Success
@@ -13,14 +19,18 @@ Finish designing web pages, style and add colour to:
 * Landing page
 * Home
 * Premium
+6. Test
+* Test Options
 
-Social system
+Make expired subscriptions turn off
+
+Create sitemap
 
 Update navbar css
 
-Add a page before verb test to choose test options
-
 Create timer mode
+
+Social system
 
 Remove any from types
 
@@ -29,10 +39,6 @@ Fix twitter backend code
 Improve theme/colour naming conventions
 
 Remove all cases of duplication in the scss
-
-Make expired subscriptions turn off
-
-Create sitemap
 
 # Medium term goals
 Refactor react code once again
