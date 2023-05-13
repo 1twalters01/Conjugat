@@ -1,5 +1,5 @@
-import QRCode from "react-qr-code"
 import { useState } from "react";
+import QRCode from "react-qr-code"
 
 function Qrcode({qrString}: { qrString:string}) {
     var init_width

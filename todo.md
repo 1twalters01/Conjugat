@@ -17,7 +17,6 @@ Finish designing web pages, style and add colour to:
 Add multiple language support to:
 3. settings
 * Premium
-* Two factor authentication
 4. subscriptions
 * Process
 * Success

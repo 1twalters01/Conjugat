@@ -1,4 +1,6 @@
 import { ChangeEvent, FormEvent, useState} from "react"
+import { useSelector } from "react-redux"
+import { RootState } from "../../../redux/store"
 import { useDispatch } from "react-redux"
 import { toast } from "react-toastify"
 import { onConfirmedChange } from "../../../redux/slices/loginSlice"
@@ -6,9 +8,12 @@ import PasswordField from "../../Input fields/PasswordField"
 import TotpField from "../../Input fields/TotpField"
 import SubmitBtn from "../../Buttons/SubmitBtn"
 import AxiosInstance from "../../../functions/AxiosInstance"
+import { getTranslation } from '../../../functions/getTranslation'
+import { QrFormTranslations } from '../../../content/settings/TwoFactorAuth'
 import '../../../sass/Components/settings/Two factor auth/QrForm.scss'
 
 function QrForm({setDone}: {setDone:Function}) {
+  const { language } = useSelector((state: RootState) => state.persistedReducer.language)
     const dispatch = useDispatch()
     const [password, setPassword] = useState('')
     const [totp, setTotp] = useState('')
@@ -46,7 +51,7 @@ function QrForm({setDone}: {setDone:Function}) {
                   id="password"
                   password={password}
                   handlePassword={(e:ChangeEvent<HTMLInputElement>) => handlePassword(e)}
-                  labelText="Password"
+                  labelText={getTranslation(QrFormTranslations, language, 'Password')}
                 />
             </div>
 
@@ -54,12 +59,12 @@ function QrForm({setDone}: {setDone:Function}) {
                 <TotpField
                 totp={totp}
                 handleTotp={(e:ChangeEvent<HTMLInputElement>) => handleTotp(e)}
-                labelText="Totp"
+                labelText={getTranslation(QrFormTranslations, language, 'Totp')}
                 />
             </div>
     
             <SubmitBtn
-              value="Submit"
+              value={getTranslation(QrFormTranslations, language, 'Submit')}
               style="strong-gold-btn"
             />
         </form>
