@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import AxiosInstance from "../../../functions/AxiosInstance";
 import { onThemeChange } from "../../../redux/slices/themeSlice";
 import { RootState } from "../../../redux/store";
+import { getTranslation } from '../../../functions/getTranslation'
+import { ThemeFunctionalityTranslations } from '../../../content/settings/Themes'
 import '../../../sass/Components/settings/Themes/ThemeFunctionality.scss'
 
-function ThemeFunctionality() {
+function ThemeFunctionality({ language }: { language:string }) {
     const{ theme } = useSelector((state: RootState) => state.persistedReducer.theme)
     const dispatch = useDispatch();
 
@@ -52,9 +54,11 @@ function ThemeFunctionality() {
         <div onClick={(e) => submit('Dark', e)} style={{height: `${themeSize}px`, width: `${themeSize}px`, background: 'black'}}>
         
         </div>
+        {getTranslation(ThemeFunctionalityTranslations, language, 'Dark')}
         <div onClick={(e) => submit('Light', e)} style={{height: `${themeSize}px`, width: `${themeSize}px`, background: 'yellow'}}>
         
         </div>
+        {getTranslation(ThemeFunctionalityTranslations, language, 'Light')}
       </div>
     )
 }

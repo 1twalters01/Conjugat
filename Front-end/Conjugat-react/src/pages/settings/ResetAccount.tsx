@@ -20,8 +20,8 @@ function ResetAccount() {
                 
                 <div className="form-spacer">
                     <AccountResetForm
-                    language={language}
-                    onDoneChange={setDone}
+                        language={language}
+                        onDoneChange={setDone}
                     />
                 </div>
             </div>
