@@ -3,6 +3,8 @@ import { toast } from "react-toastify"
 import AxiosInstance from "../../../functions/AxiosInstance"
 import PasswordField from "../../Input fields/PasswordField"
 import SubmitBtn from "../../Buttons/SubmitBtn"
+import { getTranslation } from '../../../functions/getTranslation'
+import { PasswordChangeFormTranslations } from '../../../content/settings/ChangePassword'
 import '../../../sass/Components/settings/Change password/PasswordChangeForm.scss'
 
 function PasswordChangeForm({ onDoneChange }: {onDoneChange:Function}){

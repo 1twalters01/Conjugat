@@ -4,10 +4,11 @@ import AxiosInstance from "../../../functions/AxiosInstance"
 import TextField from "../../Input fields/TextField"
 import PasswordField from "../../Input fields/PasswordField"
 import SubmitBtn from "../../Buttons/SubmitBtn"
+import { getTranslation } from '../../../functions/getTranslation'
+import { UsernameChangeFormTranslations } from '../../../content/settings/ChangeUsername'
 import '../../../sass/Components/settings/Change username/UsernameChangeForm.scss'
 
-
-function UsernameChangeForm({ onDoneChange }: {onDoneChange:Function}){
+function UsernameChangeForm({ language, onDoneChange }: { language:string, onDoneChange:Function }){
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
   
@@ -32,7 +33,7 @@ function UsernameChangeForm({ onDoneChange }: {onDoneChange:Function}){
             <div className="username-spacer">
                 <TextField
                 id = "username"
-                labelText = "Username"
+                labelText={getTranslation(UsernameChangeFormTranslations, language, 'Username')}
                 value = { username }
                 handleText = {(e:ChangeEvent<HTMLInputElement>) => setUsername(e.target.value)}
                 required = {true}
@@ -45,12 +46,12 @@ function UsernameChangeForm({ onDoneChange }: {onDoneChange:Function}){
                 password = {password}
                 handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
                 id = "password"
-                labelText="Password"
+                labelText={getTranslation(UsernameChangeFormTranslations, language, 'Password')}
                 />
             </div>
   
             <SubmitBtn
-              value="Submit"
+              value={getTranslation(UsernameChangeFormTranslations, language, 'Submit')}
               style="strong-gold-btn"
             />
         </form>

@@ -21,7 +21,7 @@ export const translations = {
     },
     'Spanish': {
         'Text1': 'Pago anulado',
-        'Text2': 'RegiHa habido un problema al procesar su pago.ter',
+        'Text2': 'Ha habido un problema al procesar su pago.',
         'Link': 'Inténtalo de nuevo',
     }
 }

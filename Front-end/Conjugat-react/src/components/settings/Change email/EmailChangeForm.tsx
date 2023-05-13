@@ -6,9 +6,11 @@ import AxiosInstance from "../../../functions/AxiosInstance"
 import EmailField from "../../Input fields/EmailField"
 import PasswordField from "../../Input fields/PasswordField"
 import SubmitBtn from "../../Buttons/SubmitBtn"
+import { getTranslation } from '../../../functions/getTranslation'
+import { EmailChangeFormTranslations } from '../../../content/settings/ChangeEmail'
 import '../../../sass/Components/settings/Change email/EmailChangeForm.scss'
 
-function EmailChangeForm({ onDoneChange }: {onDoneChange:Function}){
+function EmailChangeForm({ language, onDoneChange }: { language:string, onDoneChange:Function}){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
   
@@ -36,7 +38,7 @@ function EmailChangeForm({ onDoneChange }: {onDoneChange:Function}){
                 id="email"
                 email={email}
                 handleEmail={(e:ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                labelText="Email"
+                labelText={getTranslation(EmailChangeFormTranslations, language, 'Email')}
                 required={true}
                 />
             </div>
@@ -46,13 +48,13 @@ function EmailChangeForm({ onDoneChange }: {onDoneChange:Function}){
                 password = {password}
                 handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
                 id = "password"
-                labelText="Password"
+                labelText={getTranslation(EmailChangeFormTranslations, language, 'Password')}
                 />
             </div>
             
   
             <SubmitBtn
-              value="Submit"
+              value={getTranslation(EmailChangeFormTranslations, language, 'Submit')}
               style="strong-gold-btn"
             />
         </form>

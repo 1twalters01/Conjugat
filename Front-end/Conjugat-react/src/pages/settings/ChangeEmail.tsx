@@ -2,6 +2,8 @@ import { useState } from "react"
 import { useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
 import Authorization from '../../functions/Authorization'
+import { getTranslation } from '../../functions/getTranslation'
+import { translations } from '../../content/settings/ChangeEmail'
 import EmailChangeForm from "../../components/settings/Change email/EmailChangeForm"
 
 function ChangeEmail() {
@@ -13,11 +15,12 @@ function ChangeEmail() {
         return (        
             <div className="rhs container">
                 <div className="Header-spacer">
-                    <h1 className="text">Change email</h1>
+                    <h1 className="text">{getTranslation(translations, language, 'Text1')}</h1>
                 </div>
                 
                 <div className="form-spacer">
                     <EmailChangeForm
+                    language={language}
                     onDoneChange={setDone}
                     />
                 </div>
@@ -28,11 +31,11 @@ function ChangeEmail() {
         return (
             <div className="rhs container">
                 <div className="Header-spacer">
-                    <h1 className="text">Change email done</h1>
+                    <h1 className="text">{getTranslation(translations, language, 'Text2')}</h1>
                 </div>                
 
                 <div className="para">
-                    <p className="text">Email has been updated.</p>
+                    <p className="text">{getTranslation(translations, language, 'Text3')}</p>
                 </div>
                 
             </div>

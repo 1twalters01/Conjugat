@@ -6,9 +6,11 @@ import { RootState } from "../../../redux/store";
 import PasswordField from "../../Input fields/PasswordField"
 import SubmitBtn from "../../Buttons/SubmitBtn";
 import TotpField from "../../Input fields/TotpField";
+import { getTranslation } from '../../../functions/getTranslation'
+import { AccountDeleteFormTranslations } from '../../../content/settings/CloseAccount'
 import '../../../sass/Components/settings/Close account/AccountDeleteForm.scss'
 
-function AccountDeleteForm({ onDoneChange }: {onDoneChange:Function}){
+function AccountDeleteForm({ language, onDoneChange }: {language:string, onDoneChange:Function}){
     const { confirmed } = useSelector((state: RootState) => state.persistedReducer.login)
     const [password, setPassword] = useState('')
     const [totp, setTotp] = useState('')
@@ -43,7 +45,7 @@ function AccountDeleteForm({ onDoneChange }: {onDoneChange:Function}){
                     password = {password}
                     handlePassword = {(e:ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
                     id = "password"
-                    labelText="Password"
+                    labelText={getTranslation(AccountDeleteFormTranslations, language, 'Password')}
                   />
               </div>
 
@@ -54,13 +56,13 @@ function AccountDeleteForm({ onDoneChange }: {onDoneChange:Function}){
                       <TotpField
                       totp = {totp}
                       handleTotp = {(e:ChangeEvent<HTMLInputElement>) => handleTotp(e)}
-                      labelText="Totp"
+                      labelText={getTranslation(AccountDeleteFormTranslations, language, 'Totp')}
                       />
                   </div>
               }
 
               <SubmitBtn
-                value="Delete account"
+                value={getTranslation(AccountDeleteFormTranslations, language, 'Submit')}
                 style="strong-red-btn"
               />
           </form>

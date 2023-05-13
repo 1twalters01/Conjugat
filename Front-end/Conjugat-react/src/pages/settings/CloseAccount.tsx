@@ -1,21 +1,27 @@
 import { useState} from "react"
+import { useSelector } from "react-redux"
+import { RootState } from "../../redux/store"
 import Authorization from '../../functions/Authorization'
+import { getTranslation } from '../../functions/getTranslation'
+import { translations } from '../../content/settings/CloseAccount'
 import AccountDeleteForm from "../../components/settings/Close account/AccountDeleteForm"
 
 function CloseAccount() {
     Authorization.AuthRequired()
+    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
     const [done, setDone] = useState(false)
 
     if (done == false) {
       return (
         <div className="rhs container">
             <div className="Header-spacer">
-                <h1 className="text">Close account</h1>
+                <h1 className="text">{getTranslation(translations, language, 'Text1')}</h1>
             </div>
             
             <div className="form-spacer">
                 <AccountDeleteForm
-                  onDoneChange={setDone}
+                    language={language}
+                    onDoneChange={setDone}
                 />
             </div>
         </div>
@@ -25,11 +31,11 @@ function CloseAccount() {
         return (
             <div className="rhs container">
                 <div className="Header-spacer">
-                    <h1 className="text">Close account</h1>
-                </div>                
+                    <h1 className="text">{getTranslation(translations, language, 'Text2')}</h1>
+                </div>
 
                 <div className="para">
-                    <p className="text">Account has been successfully deleted</p>
+                    <p className="text">{getTranslation(translations, language, 'Text3')}</p>
                 </div>
             </div>
         )

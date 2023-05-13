@@ -16,10 +16,6 @@ Finish designing web pages, style and add colour to:
 
 Add multiple language support to:
 3. settings
-* Change email
-* Change password
-* Change username
-* Close account
 * Premium
 * Reset account
 * Themes
@@ -27,8 +23,11 @@ Add multiple language support to:
 4. subscriptions
 * Process
 * Success
-5. Misc
+5. Home
 * Home
+7. Verbs
+* Test
+* Test results
 
 Social system
 
@@ -36,21 +35,13 @@ Add things to landing page footer
 
 Update navbar css
 
-Make react landing page switch to more languages
-
 Add a page before verb test to choose test options
 
 Create timer mode
 
-Add modal to click event on home page
-
 Remove any from types
 
-Add filters to home page
-
 Fix twitter backend code
-
-Style the test complete page
 
 Improve theme/colour naming conventions
 
