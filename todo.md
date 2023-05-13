@@ -16,8 +16,6 @@ Finish designing web pages, style and add colour to:
 
 Social system
 
-Add things to landing page footer
-
 Update navbar css
 
 Add a page before verb test to choose test options
