@@ -37,8 +37,9 @@ Add helmet meta tags to the following:
 * Change password
 * Change username
 * Close account
-* Premium
 * Reset account
+* Logout all
+* Premium
 * Themes
 * Two factor authentication
 4. subscriptions
@@ -54,9 +55,11 @@ Add helmet meta tags to the following:
 * Terms
 6. Test
 
-Make expired subscriptions turn off
-
 Create sitemap
+
+Remove any from types
+
+Fonts
 
 Update navbar css
 
@@ -64,13 +67,12 @@ Create timer mode
 
 Social system
 
-Remove any from types
-
 Fix twitter backend code
 
 Improve theme/colour naming conventions
 
 Remove all cases of duplication in the scss
+
 
 # Medium term goals
 Refactor react code once again

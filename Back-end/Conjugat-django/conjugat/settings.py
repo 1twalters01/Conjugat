@@ -269,4 +269,5 @@ REST_SOCIAL_OAUTH_ABSOLUTE_REDIRECT_URI = 'http://localhost:5000/account/oauth'
 CRONJOBS = [
     ('* * 1 * *', 'django.core.management.call_command', ['cache-date-check']),
     ('* * 1 * *', 'django.core.management.call_command', ['unactivated-user-check']),
+    ('* * 1 * *', 'django.core.management.call_command', ['subscription-removal-check']),
 ]
