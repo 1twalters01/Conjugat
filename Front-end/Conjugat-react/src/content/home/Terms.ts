@@ -1,5 +1,8 @@
 export const translations = {
     'English': {
+        'Title1': 'Terms',
+        'metaContent1': '',
+
         'Title': 'Terms',
         'Subtitle': 'Please note that these Terms and Conditions of Service are an extract that was copied from Duolingo',
         'Heading1': 'General',
@@ -25,6 +28,9 @@ export const translations = {
         'Text6-2': 'You represent and warrant that you are not: (1) organized under the laws of, operating from, or otherwise ordinarily resident in a country or territory that is the target of comprehensive U.S. economic or trade sanctions (i.e., an embargo); (2) identified on a list of prohibited or restricted persons, such as the U.S. Treasury Department’s List of Specially Designated Nationals and Blocked Persons; or (3) otherwise the target of U.S. sanctions.'
     },
     'French': {
+        'Title1': 'Conditions',
+        'metaContent1': '',
+
         'Title': 'Conditions',
         'Subtitle': 'Veuillez noter que ces conditions d\'utilisation sont un extrait copié de Duolingo',
         'Heading1': 'Général',
@@ -50,6 +56,9 @@ export const translations = {
         'Text6-2': 'Vous déclarez et garantissez que vous n\'êtes pas : (1) organisé en vertu des lois d\'un pays ou d\'un territoire qui est la cible de sanctions économiques ou commerciales américaines (c\'est-à-dire un embargo) ; (2) identifiée sur une liste de personnes interdites ou restreintes, telle que la liste des ressortissants spécialement désignés et des personnes bloquées du département du Trésor des États-Unis ; ou (3) autrement la cible de sanctions américaines.'
     },
     'Italian': {
+        'Title1': 'Termini',
+        'metaContent1': '',
+
         'Title': 'Termini',
         'Subtitle': 'Si prega di notare che i presenti Termini e condizioni del servizio sono un estratto copiato da Duolingo',
         
@@ -74,6 +83,9 @@ export const translations = {
         'Text6-2': 'L\'utente dichiara e garantisce di non essere: (1) organizzato secondo le leggi di, operante da, o comunque abitualmente residente in un paese o territorio oggetto di sanzioni economiche o commerciali degli Stati Uniti (ad esempio, un embargo); (2) identificato in un elenco di persone vietate o soggette a restrizioni, come l\'elenco del Dipartimento del Tesoro degli Stati Uniti di Specially Designated Nationals e Blocked Persons; o (3) in altro modo oggetto di sanzioni degli Stati Uniti.'
     },
     'Portuguese': {
+        'Title1': 'Termos e condições',
+        'metaContent1': '',
+
         'Title': 'Termos',
         'Subtitle': 'Tenha em atenção que estes Termos e Condições de Serviço são um extracto que foi copiado do Duolingo',
         
@@ -98,6 +110,9 @@ export const translations = {
         'Text6-2': 'O utilizador declara e garante que não é: (1) organizado ao abrigo das leis de, operando a partir de, ou de outra forma habitualmente residente num país ou território que seja alvo de sanções económicas ou comerciais abrangentes dos EUA (ou seja, um embargo); (2) identificado numa lista de pessoas proibidas ou restritas, tal como a Lista de Cidadãos Especialmente Designados e Pessoas Bloqueadas do Departamento do Tesouro dos EUA; ou (3) de outra forma alvo de sanções dos EUA.'
     },
     'Spanish': {
+        'Title1': 'Términos',
+        'metaContent1': '',
+
         'Title': 'Términos',
         'Subtitle': 'Tenga en cuenta que estos Términos y Condiciones del Servicio son un extracto que se copió de Duolingo',
         

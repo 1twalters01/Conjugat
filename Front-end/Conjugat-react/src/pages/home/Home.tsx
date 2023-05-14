@@ -1,10 +1,10 @@
 import { useEffect, useState, useRef, MouseEvent } from "react"
+import { Helmet } from "react-helmet"
 import { Link } from "react-router-dom"
 import Authorization from "../../functions/Authorization"
 import AxiosInstance from "../../functions/AxiosInstance"
 
 import SettingsNavbar from "../../components/settings/SettingsNavbar"
-import HomeChart from "../../components/home/Home/HomeChart"
 
 import { Bar, getElementAtEvent } from 'react-chartjs-2';
 import { Chart, registerables, ChartType } from 'chart.js';
@@ -135,6 +135,13 @@ function Home() {
     if (basicData != null) {
       return (
         <>
+            <Helmet>
+                <title>{getTranslation(translations, language, 'Title1')}</title>
+                <meta name="description"
+                    content={getTranslation(translations, language, 'metaContent1')}
+                />
+            </Helmet>
+
             <SettingsNavbar language={language} />
             <div>
                 <Link to='../subscriptions/' className="text-blue-link">Subscribe</Link>
@@ -155,7 +162,14 @@ function Home() {
     }
     else{
         return(
-            <></>
+            <>
+                <Helmet>
+                    <title>{getTranslation(translations, language, 'Title2')}</title>
+                    <meta name="description"
+                        content={getTranslation(translations, language, 'metaContent2')}
+                    />
+                </Helmet>
+            </>
         )
     }
 }

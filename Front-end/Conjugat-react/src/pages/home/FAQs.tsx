@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import { useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
 import Dropdowns from "../../components/home/FAQs/Dropdowns"
@@ -10,23 +11,32 @@ import '../../sass/pages/home/FAQ.scss'
 function Faq() {
     const { language } = useSelector((state: RootState) => state.persistedReducer.language)
     return (
-        <div className="FAQ-container container">
-            <div className="Header-spacer">
-                <Header language={language} />
-            </div>
+        <>
+            <Helmet>
+                <title>{getTranslation(translations, language, 'Title1')}</title>
+                <meta name="description"
+                    content={getTranslation(translations, language, 'metaContent1')}
+                />
+            </Helmet>
 
-            <div className="navbar">
-                <MiscNavbar language={language} />
-            </div>
-            
-            <div className="para">
-                <h1 className="text">{getTranslation(translations, language, 'Title')}</h1>
-            </div>
+            <div className="FAQ-container container">
+                <div className="Header-spacer">
+                    <Header language={language} />
+                </div>
 
-            <div className="dropdown-spacer">
-                <Dropdowns language={language} />
+                <div className="navbar">
+                    <MiscNavbar language={language} />
+                </div>
+                
+                <div className="para">
+                    <h1 className="text">{getTranslation(translations, language, 'Title')}</h1>
+                </div>
+
+                <div className="dropdown-spacer">
+                    <Dropdowns language={language} />
+                </div>
             </div>
-        </div>
+        </>
     )
   }
 

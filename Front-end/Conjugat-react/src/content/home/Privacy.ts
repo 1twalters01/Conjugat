@@ -1,5 +1,8 @@
 export const translations = {
     'English': {
+        'Title1': 'Privacy',
+        'metaContent1': '',
+
         'Title': 'Privacy',
         'Subtitle': 'Please note that this Privacy policy is an extract that was copied from Duolingo',
 
@@ -17,6 +20,9 @@ export const translations = {
         'Text2-5': 'When you use Duolingo in our app or on our website, we use a service named FullStory to log your activity. This provides us with a set of data and a session replay of your activity on Duolingo in the form of a video. FullSory captures and analyzes your usage data to help us make your Duolingo experience better.'
     },
     'French': {
+        'Title1': 'Vie privée',
+        'metaContent1': '',
+
         'Title': 'Confidentialité',
         'Subtitle': 'Veuillez noter que cette politique de confidentialité est un extrait copié de Duolingo',
         'Heading1': 'Général',
@@ -34,6 +40,9 @@ export const translations = {
         'Text2-5': 'Lorsque vous utilisez Duolingo dans notre application ou sur notre site Web, nous utilisons un service nommé FullStory pour enregistrer votre activité. Celui-ci nous fournit un ensemble de données et un replay de session de votre activité sur Duolingo sous forme de vidéo. FullSory capture et analyse vos données d\'utilisation pour nous aider à améliorer votre expérience Duolingo.'
     },
     'Italian': {
+        'Title1': 'La privacy',
+        'metaContent1': '',
+
         'Title': 'Privacy',
         'Subtitle': 'Si prega di notare che questa informativa sulla privacy è un estratto copiato da Duolingo',
 
@@ -51,6 +60,9 @@ export const translations = {
         'Text2-5': 'Quando utilizzate Duolingo nella nostra applicazione o sul nostro sito web, utilizziamo un servizio chiamato FullStory per registrare la vostra attività. Questo ci fornisce una serie di dati e una sessione di replay della tua attività su Duolingo sotto forma di video. FullSory acquisisce e analizza i dati di utilizzo per aiutarci a migliorare l\'esperienza di Duolingo'
     },
     'Portuguese': {
+        'Title1': 'Privacidade',
+        'metaContent1': '',
+
         'Title': 'Privacidade',
         'Subtitle': 'Por favor, note que esta política de privacidade é um extracto que foi copiado do Duolingo',
 
@@ -68,6 +80,9 @@ export const translations = {
         'Text2-5': 'Quando usa o Duolingo na nossa aplicação ou no nosso site, usamos um serviço chamado FullStory para registar a sua actividade. Este serviço fornece-nos um conjunto de dados e uma repetição da sessão da sua actividade no Duolingo sob a forma de um vídeo. O FullSory capta e analisa os seus dados de utilização para nos ajudar a melhorar a sua experiência no Duolingo.'
     },
     'Spanish': {
+        'Title1': 'Privacidad',
+        'metaContent1': '',
+
         'Title': 'Privacidad',
         'Subtitle': 'Tenga en cuenta que esta política de privacidad es un extracto copiado de Duolingo',
 

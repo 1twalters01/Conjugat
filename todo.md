@@ -36,13 +36,6 @@ Add helmet title tags to the following:
 * Cancelled
 * Process
 * Success
-5. Misc
-* Contact
-* FAQs
-* Home
-* Landing page
-* Privacy
-* Terms
 6. Test
 
 Add helmet meta tags to the following:

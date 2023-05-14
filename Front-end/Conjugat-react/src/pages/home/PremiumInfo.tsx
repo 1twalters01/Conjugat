@@ -1,8 +1,25 @@
+import { Helmet } from "react-helmet"
+import { useSelector } from "react-redux"
+import { RootState } from "../../redux/store"
+import { getTranslation } from "../../functions/getTranslation"
+import { translations } from "../../content/home/PremiumInfo"
+
+
 function PremiumInfo() {
+    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
     return (
-        <div className="Premium-container container">
-            
-        </div>
+        <>
+            <Helmet>
+                <title>{getTranslation(translations, language, 'Title1')}</title>
+                <meta name="description"
+                    content={getTranslation(translations, language, 'metaContent1')}
+                />
+            </Helmet>
+
+            <div className="Premium-container container">
+                
+            </div>
+        </>
     )
 }
 
