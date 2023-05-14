@@ -28,30 +28,55 @@ export const translations = {
 
 export const PasswordChangeFormTranslations = {
     'English': {
+        'Title1': 'Change Password',
+        'Title2': 'Password changed successfully',
+        'metaContent1': '',
+        'metaContent2': '',
+
         'Password': 'Password',
         'newPassword1': 'New password',
         'newPassword2': 'Re-enter new password',
         'Submit': 'Submit'
     },
     'French': {
+        'Title1': 'Modifier le mot de passe',
+        'Title2': 'Le mot de passe a été modifié avec succès',
+        'metaContent1': '',
+        'metaContent2': '',
+
         'Password': 'Mot de passe',
         'newPassword1': 'Nouveau mot de passe',
         'newPassword2': 'Saisir à nouveau le nouveau mot de passe',
         'Submit': 'Soumettre'
     },
     'Italian': {
+        'Title1': 'Modifica della password',
+        'Title2': 'La password è stata modificata con successo',
+        'metaContent1': '',
+        'metaContent2': '',
+
         'Password': 'Password di accesso',
         'newPassword1': 'Nuova password ',
         'newPassword2': 'Reinserire la nuova password',
         'Submit': 'Invia'
     },
     'Portuguese': {
+        'Title1': 'Alterar a palavra-passe',
+        'Title2': 'Palavra-passe alterada com sucesso',
+        'metaContent1': '',
+        'metaContent2': '',
+
         'Password': 'Palavra-passe',
         'newPassword1': 'Nova palavra-passe',
         'newPassword2': 'Reintroduzir a nova palavra-passe',
         'Submit': 'Enviar'
     },
     'Spanish': {
+        'Title1': 'Cambiar contraseña',
+        'Title2': 'Contraseña cambiada con éxito',
+        'metaContent1': '',
+        'metaContent2': '',
+
         'Password': 'Contraseña',
         'newPassword1': 'Nueva contraseña',
         'newPassword2': 'Vuelva a introducir la nueva contraseña',

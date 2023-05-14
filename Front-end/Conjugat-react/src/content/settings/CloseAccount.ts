@@ -1,25 +1,50 @@
 export const translations = {
     'English': {
+        'Title1': 'Close account',
+        'Title2': 'Account closed successfully',
+        'metaContent1': '',
+        'metaContent2': '',
+
         'Text1': 'Close account',
         'Text2': 'Close account',
         'Text3': 'Account has been successfully deleted',
     },
     'French': {
+        'Title1': 'Fermer le compte',
+        'Title2': 'Compte clôturé avec succès',
+        'metaContent1': '',
+        'metaContent2': '',
+
         'Text1': 'Fermer le compte',
         'Text2': 'Fermer le compte',
         'Text3': 'Le compte a été supprimé avec succès',
     },
     'Italian': {
+        'Title1': 'Chiudere il conto',
+        'Title2': 'Conto chiuso con successo',
+        'metaContent1': '',
+        'metaContent2': '',
+
         'Text1': 'Chiudere l\'account',
         'Text2': 'Chiudere l\'account',
         'Text3': 'L\'account è stato eliminato con successo',
     },
     'Portuguese': {
+        'Title1': 'Fechar conta',
+        'Title2': 'Conta encerrada com sucesso',
+        'metaContent1': '',
+        'metaContent2': '',
+
         'Text1': 'Fechar conta',
         'Text2': 'Fechar conta',
         'Text3': 'A conta foi eliminada com êxito',
     },
     'Spanish': {
+        'Title1': 'Cerrar cuenta',
+        'Title2': 'Cuenta cerrada con éxito',
+        'metaContent1': '',
+        'metaContent2': '',
+
         'Text1': 'Cerrar la cuenta',
         'Text2': 'Cerrar la cuenta',
         'Text3': 'La cuenta se ha eliminado correctamente',

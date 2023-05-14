@@ -1,17 +1,32 @@
 export const translations = {
     'English': {
+        'Title1': 'Change theme',
+        'metaContent1': '',
+        
         'Text1': 'Theme',
     },
     'French': {
+        'Title1': 'Changer de thème',
+        'metaContent1': '',
+
         'Text1': 'Thème',
     },
     'Italian': {
+        'Title1': 'Cambia tema',
+        'metaContent1': '',
+
         'Text1': 'Tema',
     },
     'Portuguese': {
+        'Title1': 'Alterar o tema',
+        'metaContent1': '',
+
         'Text1': 'Tema',
     },
     'Spanish': {
+        'Title1': 'Cambiar de tema',
+        'metaContent1': '',
+
         'Text1': 'Tema',
     }
 }

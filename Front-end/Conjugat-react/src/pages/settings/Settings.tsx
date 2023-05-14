@@ -4,9 +4,12 @@ import SettingsNavbar from "../../components/settings/SettingsNavbar"
 import { useEffect } from "react"
 import Authorization from "../../functions/Authorization"
 import '../../sass/pages/settings/Settings.scss'
+import { useSelector } from "react-redux"
+import { RootState } from "../../redux/store"
 
 function Settings() {
     Authorization.AuthRequired()
+    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
     const navigate = useNavigate()
     const base = import.meta.env.VITE_CLIENT_URL as string
     useEffect(() => {
@@ -18,7 +21,7 @@ function Settings() {
     return (
         <div className="Settings-container">
             <div className="Settings-navbar-container container">
-                <SettingsNavbar />
+                <SettingsNavbar language={language} />
             </div>
             
             <div className="Settings-main-container">

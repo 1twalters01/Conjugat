@@ -23,15 +23,6 @@ Finish designing web pages, style and add colour to:
 * Test Options
 
 Add helmet title tags to the following:
-3. settings
-* Change email
-* Change password
-* Change username
-* Close account
-* Premium
-* Reset account
-* Themes
-* Two factor authentication
 6. Test
 
 Add helmet meta tags to the following:

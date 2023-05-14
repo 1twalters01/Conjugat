@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import { useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
 import Authorization from '../../functions/Authorization'
@@ -9,15 +10,24 @@ function Premium() {
     Authorization.AuthRequired()
     const { language } = useSelector((state: RootState) => state.persistedReducer.language)
     return (
-        <div className="rhs container">
-            <div className="Header-spacer">
-                <h1 className="text">{getTranslation(translations, language, 'Text1')}</h1>
-            </div>
+        <>
+            <Helmet>
+                <title>{getTranslation(translations, language, 'Title1')}</title>
+                <meta name="description"
+                    content={getTranslation(translations, language, 'metaContent1')}
+                />
+            </Helmet>
 
-            <div className="form-spacer">
-                <RetrievePremiumStatus />
+            <div className="rhs container">
+                <div className="Header-spacer">
+                    <h1 className="text">{getTranslation(translations, language, 'Text1')}</h1>
+                </div>
+
+                <div className="form-spacer">
+                    <RetrievePremiumStatus />
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

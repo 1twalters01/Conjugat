@@ -1,17 +1,32 @@
 export const translations = {
     'English': {
+        'Title1': 'Conjugat Premium',
+        'metaContent1': '',
+
         'Text1': 'Premium',
     },
     'French': {
+        'Title1': 'Conjugat Prime',
+        'metaContent1': '',
+
         'Text1': 'Prime',
     },
     'Italian': {
+        'Title1': 'Conjugat Premio',
+        'metaContent1': '',
+
         'Text1': 'Premio',
     },
     'Portuguese': {
+        'Title1': 'Conjugat Prémio',
+        'metaContent1': '',
+
         'Text1': 'Prémio',
     },
     'Spanish': {
+        'Title1': 'Conjugat Premium',
+        'metaContent1': '',
+
         'Text1': 'Premium',
     }
 }

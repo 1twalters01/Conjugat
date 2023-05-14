@@ -1,10 +1,11 @@
 import { useState } from "react"
+import { Helmet } from "react-helmet"
 import { useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
 import Authorization from '../../functions/Authorization'
+import EmailChangeForm from "../../components/settings/Change email/EmailChangeForm"
 import { getTranslation } from '../../functions/getTranslation'
 import { translations } from '../../content/settings/ChangeEmail'
-import EmailChangeForm from "../../components/settings/Change email/EmailChangeForm"
 
 function ChangeEmail() {
     Authorization.AuthRequired()
@@ -12,33 +13,51 @@ function ChangeEmail() {
     const [done, setDone] = useState(false)
 
     if (done == false) {
-        return (        
-            <div className="rhs container">
-                <div className="Header-spacer">
-                    <h1 className="text">{getTranslation(translations, language, 'Text1')}</h1>
-                </div>
-                
-                <div className="form-spacer">
-                    <EmailChangeForm
-                    language={language}
-                    onDoneChange={setDone}
+        return (
+            <>
+                <Helmet>
+                    <title>{getTranslation(translations, language, 'Title1')}</title>
+                    <meta name="description"
+                        content={getTranslation(translations, language, 'metaContent1')}
                     />
+                </Helmet>
+            
+                <div className="rhs container">
+                    <div className="Header-spacer">
+                        <h1 className="text">{getTranslation(translations, language, 'Text1')}</h1>
+                    </div>
+                    
+                    <div className="form-spacer">
+                        <EmailChangeForm
+                        language={language}
+                        onDoneChange={setDone}
+                        />
+                    </div>
                 </div>
-            </div>
+            </>
         )
     }
     else {
         return (
-            <div className="rhs container">
-                <div className="Header-spacer">
-                    <h1 className="text">{getTranslation(translations, language, 'Text2')}</h1>
-                </div>                
+            <>
+                <Helmet>
+                    <title>{getTranslation(translations, language, 'Title2')}</title>
+                    <meta name="description"
+                        content={getTranslation(translations, language, 'metaContent2')}
+                    />
+                </Helmet>
 
-                <div className="para">
-                    <p className="text">{getTranslation(translations, language, 'Text3')}</p>
+                <div className="rhs container">
+                    <div className="Header-spacer">
+                        <h1 className="text">{getTranslation(translations, language, 'Text2')}</h1>
+                    </div>                
+
+                    <div className="para">
+                        <p className="text">{getTranslation(translations, language, 'Text3')}</p>
+                    </div>
+                    
                 </div>
-                
-            </div>
+            </>
         )
     }
 }
