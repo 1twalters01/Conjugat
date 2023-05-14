@@ -1,3 +1,26 @@
+export const translations = {
+    'English': {
+        'Title1': 'Conjugat Test',
+        'metaContent1': '',
+    },
+    'French': {
+        'Title1': 'Conjugat Test',
+        'metaContent1': '',
+    },
+    'Italian': {
+        'Title1': 'Conjugat Test',
+        'metaContent1': '',
+    },
+    'Portuguese': {
+        'Title1': 'Conjugat Test',
+        'metaContent1': '',
+    },
+    'Spanish': {
+        'Title1': 'Conjugat Test',
+        'metaContent1': '',
+    }
+}
+
 export const testSlideshowTranslations = {
     'English': {
         'Text1': 'Previous',

@@ -22,9 +22,6 @@ Finish designing web pages, style and add colour to:
 6. Test
 * Test Options
 
-Add helmet title tags to the following:
-6. Test
-
 Add helmet meta tags to the following:
 1. account
 * Activate

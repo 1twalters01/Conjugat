@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Helmet } from "react-helmet"
 import { useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
 import SettingsNavbar from "../../components/settings/SettingsNavbar"
@@ -6,6 +7,8 @@ import TestNavbar from "../../components/test/Test Options/TestNavbar"
 import ExampleTest from "../../components/test/Test Options/ExampleTest"
 import TestControls from "../../components/test/Test Options/TestControls"
 import TestSettings from "../../components/test/Test Options/TestSettings"
+import { getTranslation } from "../../functions/getTranslation"
+import { translations } from "../../content/verbs/TestOptions"
 
 
 function TestOptions() {
@@ -27,25 +30,34 @@ function TestOptions() {
     const [questionCount, setQuestionCount] = useState()
 
     return (
-        <div>
-            <SettingsNavbar language={language} />
-
+        <>
+            <Helmet>
+                <title>{getTranslation(translations, language, 'Title1')}</title>
+                <meta name="description"
+                    content={getTranslation(translations, language, 'metaContent1')}
+                />
+            </Helmet>
+            
             <div>
-                <TestNavbar />
-            </div>
+                <SettingsNavbar language={language} />
 
-            <div>
-                <ExampleTest />
-            </div>
+                <div>
+                    <TestNavbar />
+                </div>
 
-            <div>
-                <TestControls />
-            </div>
+                <div>
+                    <ExampleTest />
+                </div>
 
-            <div>
-                <TestSettings />
+                <div>
+                    <TestControls />
+                </div>
+
+                <div>
+                    <TestSettings />
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

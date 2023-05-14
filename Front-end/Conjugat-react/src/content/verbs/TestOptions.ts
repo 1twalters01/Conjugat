@@ -1,22 +1,22 @@
 export const translations = {
     'English': {
-        'Title1': 'Test results',
+        'Title1': 'Duolingo Test settings',
         'metaContent1': '',
     },
     'French': {
-        'Title1': 'Résultats des tests',
+        'Title1': 'Paramètres du test Duolingo',
         'metaContent1': '',
     },
     'Italian': {
-        'Title1': 'Risultati del test',
+        'Title1': 'Impostazioni del test di Duolingo',
         'metaContent1': '',
     },
     'Portuguese': {
-        'Title1': 'Resultados dos testes',
+        'Title1': 'Definições do teste Duolingo',
         'metaContent1': '',
     },
     'Spanish': {
-        'Title1': 'Resultados de las pruebas',
+        'Title1': 'Configuración de Duolingo Test',
         'metaContent1': '',
     }
 }
