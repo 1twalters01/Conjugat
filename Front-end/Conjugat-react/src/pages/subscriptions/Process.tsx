@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import { useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
 
@@ -12,13 +13,22 @@ function Process() {
     Authorization.AuthRequired()
     const { language } = useSelector((state: RootState) => state.persistedReducer.language)
     return (
-        <div className='Process-container container'>
-            <h1>{getTranslation(translations, language, 'Text1')}</h1>
+        <>
+            <Helmet>
+                <title>{getTranslation(translations, language, 'Title1')}</title>
+                <meta name="description"
+                    content={getTranslation(translations, language, 'metaContent1')}
+                />
+            </Helmet>
+            
+            <div className='Process-container container'>
+                <h1>{getTranslation(translations, language, 'Text1')}</h1>
 
-            <div className="status-container">
-                <RetrieveStatus />
+                <div className="status-container">
+                    <RetrieveStatus />
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

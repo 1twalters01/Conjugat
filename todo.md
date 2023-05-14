@@ -32,10 +32,6 @@ Add helmet title tags to the following:
 * Reset account
 * Themes
 * Two factor authentication
-4. subscriptions
-* Cancelled
-* Process
-* Success
 6. Test
 
 Add helmet meta tags to the following:
