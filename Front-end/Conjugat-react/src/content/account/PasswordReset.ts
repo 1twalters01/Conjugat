@@ -1,3 +1,41 @@
+export const translations = {
+    'English': {
+        'Title1': 'Password reset',
+        'Title2': 'Password reset successful',
+        'metaContent1': '',
+        'metaContent2': '',
+        'Text': 'Loading...',
+    },
+    'French': {
+        'Title1': 'Réinitialisation du mot de passe',
+        'Title2': 'Réinitialisation du mot de passe réussie',
+        'metaContent1': '',
+        'metaContent2': '',
+        'Text': 'Chargement...',
+    },
+    'Italian': {
+        'Title1': 'Reimpostazione della password',
+        'Title2': 'Azzeramento della password riuscito',
+        'metaContent1': '',
+        'metaContent2': '',
+        'Text': 'Caricamento...',
+    },
+    'Portuguese': {
+        'Title1': 'Reposição da palavra-passe',
+        'Title2': 'Reinicialização da palavra-passe bem sucedida',
+        'metaContent1': '',
+        'metaContent2': '',
+        'Text': 'Carregando...',
+    },
+    'Spanish': {
+        'Title1': 'Restablecer contraseña',
+        'Title2': 'Restablecimiento de contraseña correcto',
+        'metaContent1': '',
+        'metaContent2': '',
+        'Text': 'Cargando...',
+    },
+}
+
 export const RegisterLinksTranslations = {
     'English': {
         'Login': 'Login',

@@ -1,18 +1,38 @@
-export const Translations = {
+export const translations = {
     'English': {
-        'Text': 'Logout',
+        'Title1': 'Logout',
+        'Title2': 'Logout successful',
+        'metaContent1': '',
+        'metaContent2': '',
+        'Text': 'Are you sure that you want to log out?',
     },
     'French': {
-        'Password': 'Êtes-vous sûr de vouloir vous déconnecter ?',
+        'Title1': 'Déconnexion',
+        'Title2': 'Déconnexion réussie',
+        'metaContent1': '',
+        'metaContent2': '',
+        'Text': 'Êtes-vous sûr de vouloir vous déconnecter ?',
     },
     'Italian': {
-        'Password': 'Siete sicuri di volervi disconnettere?',
+        'Title1': 'Disconnessione',
+        'Title2': 'Logout effettuato con successo',
+        'metaContent1': '',
+        'metaContent2': '',
+        'Text': 'Siete sicuri di volervi disconnettere?',
     },
     'Portuguese': {
-        'Password': 'Tem a certeza de que pretende terminar a sessão?',
+        'Title1': 'Terminar sessão',
+        'Title2': 'Terminou a sessão com sucesso',
+        'metaContent1': '',
+        'metaContent2': '',
+        'Text': 'Tem a certeza de que pretende terminar a sessão?',
     },
     'Spanish': {
-        'Password': '¿Estás seguro de que quieres cerrar la sesión?',
+        'Title1': 'Cierre de sesión',
+        'Title2': 'Se ha desconectado correctamente',
+        'metaContent1': '',
+        'metaContent2': '',
+        'Text': '¿Estás seguro de que quieres cerrar la sesión?',
     },
 }
 
@@ -21,16 +41,16 @@ export const LogoutBtnTranslations = {
         'Text': 'Log out',
     },
     'French': {
-        'Password': 'Déconnexion',
+        'Text': 'Déconnexion',
     },
     'Italian': {
-        'Password': 'Disconnettersi',
+        'Text': 'Disconnettersi',
     },
     'Portuguese': {
-        'Password': 'Terminar sessão',
+        'Text': 'Terminar sessão',
     },
     'Spanish': {
-        'Password': 'Cerrar sesión',
+        'Text': 'Cerrar sesión',
     },
 }
 

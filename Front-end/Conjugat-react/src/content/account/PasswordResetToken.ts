@@ -1,17 +1,37 @@
-export const Translations = {
+export const translations = {
     'English': {
+        'Title1': 'Password reset',
+        'Title2': 'Password reset successful',
+        'metaContent1': '',
+        'metaContent2': '',
         'Text': 'Change Password',
     },
     'French': {
+        'Title1': 'Password reset',
+        'Title2': 'Password reset successful',
+        'metaContent1': '',
+        'metaContent2': '',
         'Password': 'Modifier le mot de passe',
     },
     'Italian': {
+        'Title1': 'Password reset',
+        'Title2': 'Password reset successful',
+        'metaContent1': '',
+        'metaContent2': '',
         'Password': 'Modifica della password',
     },
     'Portuguese': {
+        'Title1': 'Password reset',
+        'Title2': 'Password reset successful',
+        'metaContent1': '',
+        'metaContent2': '',
         'Password': 'Alterar a palavra-passe',
     },
     'Spanish': {
+        'Title1': 'Password reset',
+        'Title2': 'Password reset successful',
+        'metaContent1': '',
+        'metaContent2': '',
         'Password': 'Cambiar contraseña',
     },
 }

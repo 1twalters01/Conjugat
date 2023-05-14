@@ -1,8 +1,12 @@
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { Helmet } from "react-helmet";
+import { useDispatch, useSelector } from "react-redux";
 import Authorization from "../../functions/Authorization";
 import AxiosInstance from "../../functions/AxiosInstance";
 import { onThemeChange } from "../../redux/slices/themeSlice";
+import { getTranslation } from "../../functions/getTranslation";
+import { translations } from "../../content/account/OauthLogin";
+import { RootState } from "../../redux/store";
 
 
 // I am repeating the functions here as I don't know if the twitter one works yet
@@ -11,6 +15,7 @@ import { onThemeChange } from "../../redux/slices/themeSlice";
 
 function OauthLogin() {
     Authorization.NotAuthRequired()
+    const { language } = useSelector((state: RootState) => state.persistedReducer.language)
     const dispatch = useDispatch()
 
     const url = window.location.href
@@ -61,7 +66,16 @@ function OauthLogin() {
     }
     
     return (
-        <p className="text">Loading...</p>
+        <>
+            <Helmet>
+                <title>{getTranslation(translations, language, 'Title1')}</title>
+                <meta name="description"
+                    content={getTranslation(translations, language, 'metaContent1')}
+                />
+            </Helmet>
+
+            <p className="text">{getTranslation(translations, language, 'Text')}</p>
+        </>
     )
 }
 

@@ -22,6 +22,64 @@ Finish designing web pages, style and add colour to:
 6. Test
 * Test Options
 
+Add helmet title tags to the following:
+2. newsletter
+* Subscribe
+* Unsubscribe
+3. settings
+* Change email
+* Change password
+* Change username
+* Close account
+* Premium
+* Reset account
+* Themes
+* Two factor authentication
+4. subscriptions
+* Cancelled
+* Process
+* Success
+5. Misc
+* Contact
+* FAQs
+* Home
+* Landing page
+* Privacy
+* Terms
+6. Test
+
+Add helmet meta tags to the following:
+1. account
+* Activate
+* Login
+* Logout
+* Password reset
+* Password reset token
+2. newsletter
+* Subscribe
+* Unsubscribe
+3. settings
+* Change email
+* Change password
+* Change username
+* Close account
+* Premium
+* Reset account
+* Themes
+* Two factor authentication
+4. subscriptions
+* Cancelled
+* Process
+* Success
+5. Misc
+* Contact
+* FAQs
+* Home
+* Landing page
+* Privacy
+* Terms
+6. Test
+
 Make expired subscriptions turn off
 
 Create sitemap

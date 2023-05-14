@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
 import { Link, useParams } from 'react-router-dom'
@@ -41,36 +42,54 @@ function Activate() {
     }
     else if(Activated == true) {
         return (
-          <div className='Activate-container container'>
-              <div className="header-spacer">
-                  <Header language={language} />
-              </div>
+            <>
+                <Helmet>
+                    <title>{getTranslation(translations, language, 'Title1')}</title>
+                    <meta name="description"
+                        content={getTranslation(translations, language, 'metaContent1')}
+                    />
+                </Helmet>
 
-              <div className="text-spacer">
-                  <p className='text'>{getTranslation(translations, language, 'Text1')}</p>
-              </div>
+                <div className='Activate-container container'>
+                    <div className="header-spacer">
+                        <Header language={language} />
+                    </div>
 
-              <div className="btn-spacer">
-                  <Link to='../Login' ><div className="login-btn strong-gold-btn">{getTranslation(translations, language, 'Login')}</div></Link>
-              </div>
-          </div>
+                    <div className="text-spacer">
+                        <p className='text'>{getTranslation(translations, language, 'Text1')}</p>
+                    </div>
+
+                    <div className="btn-spacer">
+                        <Link to='../Login' ><div className="login-btn strong-gold-btn">{getTranslation(translations, language, 'Login')}</div></Link>
+                    </div>
+                </div>
+            </>
         )
     }
     if (Error == true && Activated == false) {
         return (
-          <div className="Activate-container container">
-              <div className="header-spacer">
-                  <Header language={language} />
-              </div>
+            <>
+                <Helmet>
+                    <title>{getTranslation(translations, language, 'Title2')}</title>
+                    <meta name="description"
+                        content={getTranslation(translations, language, 'metaContent2')}
+                    />
+                </Helmet>
 
-              <div className="text-spacer">
-                  <p className='text'>{getTranslation(translations, language, 'Text2')}</p>
-              </div>
+                <div className="Activate-container container">
+                    <div className="header-spacer">
+                        <Header language={language} />
+                    </div>
 
-              <div className="btn-spacer">
-                  <Link to='../Login' ><div className="login-btn strong-gold-btn">{getTranslation(translations, language, 'Login')}</div></Link>
-              </div>
-          </div>
+                    <div className="text-spacer">
+                        <p className='text'>{getTranslation(translations, language, 'Text2')}</p>
+                    </div>
+
+                    <div className="btn-spacer">
+                        <Link to='../Login' ><div className="login-btn strong-gold-btn">{getTranslation(translations, language, 'Login')}</div></Link>
+                    </div>
+                </div>
+            </>
         )
     }
     return <></>

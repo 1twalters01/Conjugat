@@ -1,3 +1,51 @@
+export const translations = {
+    'English': {
+        'Title1': 'Registration',
+        'Title2': 'Registration successful',
+        'Title3': 'Registration unsuccessful',
+        'metaContent1': '',
+        'metaContent2': '',
+        'metaContent3': '',
+        'Text': 'Change Password',
+    },
+    'French': {
+        'Title1': 'Enregistrement',
+        'Title2': 'Enregistrement réussie',
+        'Title3': 'L\'enregistrement n\'a pas abouti',
+        'metaContent1': '',
+        'metaContent2': '',
+        'metaContent3': '',
+        'Password': 'Modifier le mot de passe',
+    },
+    'Italian': {
+        'Title1': 'Registrazione',
+        'Title2': 'Registrazione riuscita',
+        'Title3': 'Registrazione non riuscita',
+        'metaContent1': '',
+        'metaContent2': '',
+        'metaContent': '',
+        'Password': 'Modifica della password',
+    },
+    'Portuguese': {
+        'Title1': 'Registo',
+        'Title2': 'Registo bem sucedido',
+        'Title3': 'Registo mal sucedido',
+        'metaContent1': '',
+        'metaContent2': '',
+        'metaContent3': '',
+        'Password': 'Alterar a palavra-passe',
+    },
+    'Spanish': {
+        'Title1': 'Inscripción',
+        'Title2': 'Registro correcto',
+        'Title3': 'Registro fallido',
+        'metaContent1': '',
+        'metaContent2': '',
+        'metaContent3': '',
+        'Password': 'Cambiar contraseña',
+    },
+}
+
 export const RegisterFormTranslations = {
     'English': {
         'Username': 'Username',

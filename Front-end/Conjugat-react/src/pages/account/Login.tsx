@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {Helmet} from "react-helmet";
 import { useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
 import Authorization from '../../functions/Authorization'
@@ -8,6 +9,8 @@ import PasswordForm from '../../components/account/Login/PasswordForm'
 import ResetUsername from '../../components/account/Login/ResetUsername'
 import UsernameForm from '../../components/account/Login/UsernameForm'
 import UsernameLinks from '../../components/account/Login/UsernameLinks'
+import { getTranslation } from "../../functions/getTranslation";
+import { translations } from "../../content/account/Login";
 import '../../sass/pages/account/Login-username.scss'
 import '../../sass/pages/account/Login-password.scss'
 
@@ -18,45 +21,63 @@ function Login() {
 
     if (page == 'username') {
         return (
-            <div className="Login-username-container container">
-                <div className="Header-spacer">
-                    <Header language={language} />
-                </div>
+            <>
+                <Helmet>
+                    <title>{getTranslation(translations, language, 'Title1')}</title>
+                    <meta name="description"
+                        content={getTranslation(translations, language, 'metaContent')}
+                    />
+                </Helmet>
 
-                <div className="UsernameLinks-spacer">
-                    <UsernameLinks language={language} />
-                </div>
+                <div className="Login-username-container container">
+                    <div className="Header-spacer">
+                        <Header language={language} />
+                    </div>
 
-                <div className="form-width">
-                    <UsernameForm language={language} onPageChange={setPage} />
-                </div>
-                
-                <div className="UsernameForm-spacer"></div>
+                    <div className="UsernameLinks-spacer">
+                        <UsernameLinks language={language} />
+                    </div>
 
-                
-                <div className="AlternameLogins-spacer">
-                    <AlternateLogins language={language} />
+                    <div className="form-width">
+                        <UsernameForm language={language} onPageChange={setPage} />
+                    </div>
+                    
+                    <div className="UsernameForm-spacer"></div>
+
+                    
+                    <div className="AlternameLogins-spacer">
+                        <AlternateLogins language={language} />
+                    </div>
                 </div>
-            </div>          
+            </>
         )
     }
 
     if (page == 'password') {
         return (
-            <div className="Login-password-container container">
-                <div className="Header-spacer">
-                    <Header language={language} />
-                </div>
-                
+            <>
+                <Helmet>
+                    <title>{getTranslation(translations, language, 'Title2')}</title>
+                    <meta name="description"
+                        content={getTranslation(translations, language, 'metaContent1')}
+                    />
+                </Helmet>
 
-                <div className="ResetUsername-spacer form-width">
-                    <ResetUsername language={language} onPageChange={setPage} />
-                </div>
+                <div className="Login-password-container container">
+                    <div className="Header-spacer">
+                        <Header language={language} />
+                    </div>
+                    
 
-                <div className="form-width">
-                    <PasswordForm language={language} />
+                    <div className="ResetUsername-spacer form-width">
+                        <ResetUsername language={language} onPageChange={setPage} />
+                    </div>
+
+                    <div className="form-width">
+                        <PasswordForm language={language} />
+                    </div>
                 </div>
-            </div>
+            </>
         )
     }
     return <div></div>

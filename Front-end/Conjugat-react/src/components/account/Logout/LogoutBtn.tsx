@@ -11,7 +11,7 @@ function LogoutBtn({language, onLoggedOutChange} : {language:string, onLoggedOut
     
     function submit(e:FormEvent<HTMLButtonElement>) {
       e.preventDefault();
-      console.log(localStorage.getItem('token'), 'hiii')
+      
       AxiosInstance.Authorised
       .post('/account/logout/')
       .then(res=>{
