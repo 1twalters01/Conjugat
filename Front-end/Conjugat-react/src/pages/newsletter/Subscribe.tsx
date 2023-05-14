@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Helmet } from "react-helmet";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { Link } from "react-router-dom";
@@ -32,49 +33,67 @@ function Subscribe() {
     if (isLoggedIn == false) {
         if (done == false) {
             return (
-                <div className="Newsletter-unauth-subscribe-container container">
-                    <div className="Header-spacer">
-                        <Header language={language} />
-                    </div>
-    
-                    <div className="NewsletterLinks-spacer">
-                        <NewsletterLinks language={language} />
-                    </div>
-                    
-                    <div className="para">
-                        <p className="text">{getTranslation(translations, language, 'Text1')}</p>
-                        <p className="text">{getTranslation(translations, language, 'Text2')}</p>
-                    </div>
-    
-                    <div className="form-width">
-                        <LoadSubscribeForm
-                            language={language}
-                            loading={loading}
-                            setDone={setDone}
-                            setLoading={setLoading}
+                <>
+                    <Helmet>
+                        <title>{getTranslation(translations, language, 'Title1')}</title>
+                        <meta name="description"
+                            content={getTranslation(translations, language, 'metaContent1')}
                         />
+                    </Helmet>
+
+                    <div className="Newsletter-unauth-subscribe-container container">
+                        <div className="Header-spacer">
+                            <Header language={language} />
+                        </div>
+        
+                        <div className="NewsletterLinks-spacer">
+                            <NewsletterLinks language={language} />
+                        </div>
+                        
+                        <div className="para">
+                            <p className="text">{getTranslation(translations, language, 'Text1')}</p>
+                            <p className="text">{getTranslation(translations, language, 'Text2')}</p>
+                        </div>
+        
+                        <div className="form-width">
+                            <LoadSubscribeForm
+                                language={language}
+                                loading={loading}
+                                setDone={setDone}
+                                setLoading={setLoading}
+                            />
+                        </div>
+                        
+                        <div className="unsubscribe-link">
+                            <Link to="../unsubscribe/"><p className="text">{getTranslation(translations, language, 'Text3')}</p></Link>
+                        </div>
                     </div>
-                    
-                    <div className="unsubscribe-link">
-                        <Link to="../unsubscribe/"><p className="text">{getTranslation(translations, language, 'Text3')}</p></Link>
-                    </div>
-                </div>
+                </>
             )
         }
         else if (done === true) {
             return (
-                <div className="Newsletter-unauth-subscribe-container container">
-                    <div className="Header-spacer">
-                        <Header language={language} />
-                    </div>
-                    
-                    <div className="logout-response-spacer">
-                        <NewsletterResponse
-                            language={language}
-                            text={getTranslation(translations, language, 'Text4')}
+                <>
+                    <Helmet>
+                        <title>{getTranslation(translations, language, 'Title2')}</title>
+                        <meta name="description"
+                            content={getTranslation(translations, language, 'metaContent2')}
                         />
+                    </Helmet>
+
+                    <div className="Newsletter-unauth-subscribe-container container">
+                        <div className="Header-spacer">
+                            <Header language={language} />
+                        </div>
+                        
+                        <div className="logout-response-spacer">
+                            <NewsletterResponse
+                                language={language}
+                                text={getTranslation(translations, language, 'Text4')}
+                            />
+                        </div>
                     </div>
-                </div>
+                </>
             )
         }
     }
@@ -82,6 +101,13 @@ function Subscribe() {
         if (done == false) {
             return (
                 <>
+                    <Helmet>
+                        <title>{getTranslation(translations, language, 'Title3')}</title>
+                        <meta name="description"
+                            content={getTranslation(translations, language, 'metaContent3')}
+                        />
+                    </Helmet>
+
                     <div className="Settings-navbar-container container">
                         <SettingsNavbar language={language} />
                     </div>
@@ -115,6 +141,13 @@ function Subscribe() {
         else if (done === true) {
             return (
                 <>
+                    <Helmet>
+                        <title>{getTranslation(translations, language, 'Title4')}</title>
+                        <meta name="description"
+                            content={getTranslation(translations, language, 'metaContent4')}
+                        />
+                    </Helmet>
+
                     <div className="Settings-navbar-container container">
                         <SettingsNavbar language={language} />
                     </div>

@@ -23,9 +23,6 @@ Finish designing web pages, style and add colour to:
 * Test Options
 
 Add helmet title tags to the following:
-2. newsletter
-* Subscribe
-* Unsubscribe
 3. settings
 * Change email
 * Change password
