@@ -73,6 +73,7 @@ function OauthLogin() {
                     content={getTranslation(translations, language, 'metaContent1')}
                 />
                 <link rel="canonical" href={`/account/oauth?${decodeURIComponent(url.match(/account/i)![1])}`} />
+                <meta name="robots" content="noindex"/>
             </Helmet>
 
             <p className="text">{getTranslation(translations, language, 'Text')}</p>

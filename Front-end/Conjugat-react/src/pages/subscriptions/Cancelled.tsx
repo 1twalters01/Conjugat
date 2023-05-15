@@ -18,6 +18,7 @@ function Cancelled() {
             <meta name="description"
                 content={getTranslation(translations, language, 'metaContent1')}
             />
+            <link rel="canonical" href="/subscriptions/cancelled" />
         </Helmet>
         
         <div className='Cancelled-container container'>

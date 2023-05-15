@@ -19,6 +19,7 @@ function Process() {
                 <meta name="description"
                     content={getTranslation(translations, language, 'metaContent1')}
                 />
+                <link rel="canonical" href="/subscriptions/process" />
             </Helmet>
             
             <div className='Process-container container'>

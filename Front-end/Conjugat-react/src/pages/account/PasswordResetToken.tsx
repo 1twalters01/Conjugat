@@ -26,6 +26,7 @@ function PasswordResetToken() {
                         content={getTranslation(translations, language, 'metaContent1')}
                     />
                     <link rel="canonical" href={`/account/password-reset/${uidb64}/${token}`} />
+                    <meta name="robots" content="noindex"/>
                 </Helmet>
 
                 <div className="Password-change-container container">

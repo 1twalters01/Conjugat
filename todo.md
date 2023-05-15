@@ -36,10 +36,6 @@ Add helmet meta tags to the following:
 * Premium
 * Themes
 * Two factor authentication
-4. subscriptions
-* Cancelled
-* Process
-* Success
 5. Misc
 * Contact
 * FAQs
