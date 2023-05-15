@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet-async"
 import { useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
 import Authorization from '../../functions/Authorization'
@@ -27,6 +27,7 @@ function Register() {
                     <meta name="description"
                         content={getTranslation(translations, language, 'metaContent1')}
                     />
+                    <link rel="canonical" href="/account/activate/register" />
                 </Helmet>
 
                 <div className="Register-container container">
@@ -61,6 +62,7 @@ function Register() {
                         <meta name="description"
                             content={getTranslation(translations, language, 'metaContent2')}
                         />
+                        <link rel="canonical" href="/account/activate/register" />
                     </Helmet>
 
                     <div className="Register-container container">
@@ -83,6 +85,7 @@ function Register() {
                         <meta name="description"
                             content={getTranslation(translations, language, 'metaContent3')}
                         />
+                        <link rel="canonical" href="/account/activate/register" />
                     </Helmet>
                 
                     <div className="Register-container container">

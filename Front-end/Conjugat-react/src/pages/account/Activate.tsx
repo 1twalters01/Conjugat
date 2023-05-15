@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
 import { Link, useParams } from 'react-router-dom'
-import { toast } from 'react-toastify'
+// import { toast } from 'react-toastify'
 import Header from '../../components/account/Header'
 import Authorization from '../../functions/Authorization'
 import AxiosInstance from '../../functions/AxiosInstance'
-import '../../sass/pages/account/Activate.scss'
 import { getTranslation } from '../../functions/getTranslation'
 import { translations } from '../../content/account/Activate'
+import '../../sass/pages/account/Activate.scss'
 
 function Activate() {
     Authorization.NotAuthRequired()
@@ -37,17 +37,26 @@ function Activate() {
 
     if(Activated == false && Error == false) {
         return (
-          <></>
+          <>
+            <Helmet>
+                <title>{getTranslation(translations, language, 'Title1')}</title>
+                <meta name="description"
+                    content={getTranslation(translations, language, 'metaContent1')}
+                />
+                <link rel="canonical" href={`/account/activate/${uidb64}/${token}`} />
+            </Helmet>
+          </>
         )
     }
     else if(Activated == true) {
         return (
             <>
                 <Helmet>
-                    <title>{getTranslation(translations, language, 'Title1')}</title>
+                    <title>{getTranslation(translations, language, 'Title2')}</title>
                     <meta name="description"
-                        content={getTranslation(translations, language, 'metaContent1')}
+                        content={getTranslation(translations, language, 'metaContent2')}
                     />
+                    <link rel="canonical" href={`/account/activate/${uidb64}/${token}`} />
                 </Helmet>
 
                 <div className='Activate-container container'>
@@ -70,10 +79,11 @@ function Activate() {
         return (
             <>
                 <Helmet>
-                    <title>{getTranslation(translations, language, 'Title2')}</title>
+                    <title>{getTranslation(translations, language, 'Title3')}</title>
                     <meta name="description"
-                        content={getTranslation(translations, language, 'metaContent2')}
+                        content={getTranslation(translations, language, 'metaContent3')}
                     />
+                    <link rel="canonical" href={`/account/activate/${uidb64}/${token}`} />
                 </Helmet>
 
                 <div className="Activate-container container">

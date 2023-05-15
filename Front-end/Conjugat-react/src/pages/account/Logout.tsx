@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
 import Authorization from '../../functions/Authorization'
@@ -23,6 +23,7 @@ function Logout() {
                 <meta name="description"
                     content={getTranslation(translations, language, 'metaContent1')}
                 />
+                <link rel="canonical" href={`/account/logout`} />
             </Helmet>
 
             <div className="Settings-navbar-container container">

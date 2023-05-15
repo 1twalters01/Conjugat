@@ -2,27 +2,32 @@ export const translations = {
     'English': {
         'Title1': 'Login - Username',
         'Title2': 'Login - Password',
-        'metaContent1': '',
+        'metaContent1': 'Log into Conjugat',
+        'metaContent2': 'Log into Conjugat',
     },
     'French': {
         'Title1': 'Connexion - Nom d\'utilisateur',
         'Title2': 'Connexion - Mot de passe',
-        'metaContent1': '',
+        'metaContent1': 'Se connecter à Conjugat',
+        'metaContent2': 'Se connecter à Conjugat',
     },
     'Italian': {
         'Title1': 'Accesso - Nome utente',
         'Title2': 'Accesso - Password',
-        'metaContent1': '',
+        'metaContent1': 'Accedi a Conjugat',
+        'metaContent2': 'Accedi a Conjugat',
     },
     'Portuguese': {
         'Title1': 'Iniciar sessão - Nome de utilizador',
         'Title2': 'Iniciar sessão - Palavra-passe',
-        'metaContent1': '',
+        'metaContent1': 'Iniciar sessão no Conjugat',
+        'metaContent2': 'Iniciar sessão no Conjugat',
     },
     'Spanish': {
         'Title1': 'Inicio de sesión - Nombre de usuario',
         'Title2': 'Inicio de sesión - Contraseña',
-        'metaContent1': '',
+        'metaContent1': 'Conectarse a Conjugat',
+        'metaContent2': 'Conectarse a Conjugat',
     }
 }
 

@@ -1,7 +1,8 @@
 import { useState } from "react"
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet-async"
 import { useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
+import { useParams } from "react-router-dom"
 import Header from "../../components/account/Header"
 import Authorization from '../../functions/Authorization'
 import PasswordResetTokenDone from "../../components/account/Password reset token/PasswordResetTokenDone"
@@ -12,6 +13,7 @@ import '../../sass/pages/account/PasswordResetToken.scss'
 
 function PasswordResetToken() {
     Authorization.NotAuthRequired()
+    const { uidb64, token } = useParams()
     const { language } = useSelector((state: RootState) => state.persistedReducer.language)
     const [done, setDone] = useState(false)
 
@@ -23,6 +25,7 @@ function PasswordResetToken() {
                     <meta name="description"
                         content={getTranslation(translations, language, 'metaContent1')}
                     />
+                    <link rel="canonical" href={`/account/password-reset/${uidb64}/${token}`} />
                 </Helmet>
 
                 <div className="Password-change-container container">
@@ -52,6 +55,7 @@ function PasswordResetToken() {
                     <meta name="description"
                         content={getTranslation(translations, language, 'metaContent2')}
                     />
+                    <link rel="canonical" href={`/account/password-reset/${uidb64}/${token}`} />
                 </Helmet>
 
                 <div className="Password-change-container container">

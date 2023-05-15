@@ -23,12 +23,6 @@ Finish designing web pages, style and add colour to:
 * Test Options
 
 Add helmet meta tags to the following:
-1. account
-* Activate
-* Login
-* Logout
-* Password reset
-* Password reset token
 2. newsletter
 * Subscribe
 * Unsubscribe
@@ -54,6 +48,10 @@ Add helmet meta tags to the following:
 * Privacy
 * Terms
 6. Test
+
+Add prefetching
+
+switch to react-helmet-async
 
 Create sitemap
 

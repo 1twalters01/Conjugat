@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { useDispatch, useSelector } from "react-redux";
 import Authorization from "../../functions/Authorization";
 import AxiosInstance from "../../functions/AxiosInstance";
@@ -72,6 +72,7 @@ function OauthLogin() {
                 <meta name="description"
                     content={getTranslation(translations, language, 'metaContent1')}
                 />
+                <link rel="canonical" href={`/account/oauth?${decodeURIComponent(url.match(/account/i)![1])}`} />
             </Helmet>
 
             <p className="text">{getTranslation(translations, language, 'Text')}</p>

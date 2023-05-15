@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet-async"
 import { useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
 import Authorization from '../../functions/Authorization'
@@ -24,6 +24,7 @@ function PasswordReset() {
                     <meta name="description"
                         content={getTranslation(translations, language, 'metaContent1')}
                     />
+                    <link rel="canonical" href="/account/activate/password-reset" />
                 </Helmet>
 
                 <div className="PasswordReset-container container">

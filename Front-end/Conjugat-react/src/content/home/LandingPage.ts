@@ -1,22 +1,22 @@
 export const translations = {
     'English': {
-        'Title1': 'Conjugat',
+        'Title1': 'Conjugat - Helping you to perfect your verb conjugations',
         'metaContent1': '',
     },
     'French': {
-        'Title1': 'Conjugat',
+        'Title1': 'Conjugat - Nous vous aidons à perfectionner vos conjugaisons de verbes',
         'metaContent1': '',
     },
     'Italian': {
-        'Title1': 'Conjugat',
+        'Title1': 'Conjugat - Aiutare a perfezionare le coniugazioni dei verbi',
         'metaContent1': '',
     },
     'Portuguese': {
-        'Title1': 'Conjugat',
+        'Title1': 'Conjugat - Ajudá-lo a aperfeiçoar as suas conjugações verbais',
         'metaContent1': '',
     },
     'Spanish': {
-        'Title1': 'Conjugat',
+        'Title1': 'Conjugat - Perfeccionar las conjugaciones verbales',
         'metaContent1': '',
     },
 }

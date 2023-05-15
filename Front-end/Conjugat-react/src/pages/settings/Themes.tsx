@@ -4,7 +4,7 @@ import ThemeFunctionality from '../../components/settings/Theme/ThemeFunctionali
 import Authorization from '../../functions/Authorization'
 import { getTranslation } from '../../functions/getTranslation'
 import { translations } from '../../content/settings/Themes'
-import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet-async"
 
 function Themes() {
     Authorization.AuthRequired()

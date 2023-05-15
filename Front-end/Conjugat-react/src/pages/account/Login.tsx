@@ -1,5 +1,5 @@
 import { useState } from "react"
-import {Helmet} from "react-helmet";
+import {Helmet} from "react-helmet-async";
 import { useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
 import Authorization from '../../functions/Authorization'
@@ -25,8 +25,9 @@ function Login() {
                 <Helmet>
                     <title>{getTranslation(translations, language, 'Title1')}</title>
                     <meta name="description"
-                        content={getTranslation(translations, language, 'metaContent')}
+                        content={getTranslation(translations, language, 'metaContent1')}
                     />
+                    <link rel="canonical" href="/account/login" />
                 </Helmet>
 
                 <div className="Login-username-container container">
@@ -59,7 +60,7 @@ function Login() {
                 <Helmet>
                     <title>{getTranslation(translations, language, 'Title2')}</title>
                     <meta name="description"
-                        content={getTranslation(translations, language, 'metaContent1')}
+                        content={getTranslation(translations, language, 'metaContent2')}
                     />
                 </Helmet>
 
