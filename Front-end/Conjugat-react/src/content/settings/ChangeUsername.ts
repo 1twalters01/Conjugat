@@ -2,8 +2,8 @@ export const translations = {
     'English': {
         'Title1': 'Change Username',
         'Title2': 'Username changed successfully',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Change Username',
+        'metaContent2': 'Username changed successfully',
 
         'Text1': 'Change Username',
         'Text2': 'Change Username done',
@@ -12,8 +12,8 @@ export const translations = {
     'French': {
         'Title1': 'Changer le nom d\'utilisateur',
         'Title2': 'Le nom d\'utilisateur a été modifié avec succès',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Changer le nom d\'utilisateur',
+        'metaContent2': 'Le nom d\'utilisateur a été modifié avec succès',
 
         'Text1': 'Changer de nom d\'utilisateur',
         'Text2': 'Changement de nom d\'utilisateur effectué',
@@ -22,8 +22,8 @@ export const translations = {
     'Italian': {
         'Title1': 'Cambia nome utente',
         'Title2': 'Nome utente modificato con successo',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Cambia nome utente',
+        'metaContent2': 'Nome utente modificato con successo',
 
         'Text1': 'Cambiare nome utente',
         'Text2': 'Modifica del nome utente effettuata',
@@ -32,8 +32,8 @@ export const translations = {
     'Portuguese': {
         'Title1': 'Alterar nome de utilizador',
         'Title2': 'Nome de utilizador alterado com sucesso',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Alterar nome de utilizador',
+        'metaContent2': 'Nome de utilizador alterado com sucesso',
 
         'Text1': 'Alterar nome de utilizador',
         'Text2': 'Alterar nome de utilizador concluído',
@@ -42,8 +42,8 @@ export const translations = {
     'Spanish': {
         'Title1': 'Cambiar nombre de usuario',
         'Title2': 'Nombre de usuario cambiado con éxito',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Cambiar nombre de usuario',
+        'metaContent2': 'Nombre de usuario cambiado con éxito',
 
         'Text1': 'Cambiar nombre de usuario',
         'Text2': 'Cambiar nombre de usuario hecho',

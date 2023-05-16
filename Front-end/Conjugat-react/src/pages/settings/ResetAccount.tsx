@@ -20,6 +20,7 @@ function ResetAccount() {
                     <meta name="description"
                         content={getTranslation(translations, language, 'metaContent1')}
                     />
+                    <link rel="canonical" href="/settings/reset-account" />
                 </Helmet>
 
                 <div className="rhs container">
@@ -44,6 +45,7 @@ function ResetAccount() {
                 <meta name="description"
                     content={getTranslation(translations, language, 'metaContent2')}
                 />
+                <link rel="canonical" href="/settings/reset-account" />
             </Helmet>
 
             <div className="rhs container">

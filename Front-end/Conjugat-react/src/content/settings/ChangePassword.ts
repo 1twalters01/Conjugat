@@ -30,8 +30,8 @@ export const PasswordChangeFormTranslations = {
     'English': {
         'Title1': 'Change Password',
         'Title2': 'Password changed successfully',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Change Password',
+        'metaContent2': 'Password changed successfully',
 
         'Password': 'Password',
         'newPassword1': 'New password',
@@ -41,8 +41,8 @@ export const PasswordChangeFormTranslations = {
     'French': {
         'Title1': 'Modifier le mot de passe',
         'Title2': 'Le mot de passe a été modifié avec succès',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Modifier le mot de passe',
+        'metaContent2': 'Le mot de passe a été modifié avec succès',
 
         'Password': 'Mot de passe',
         'newPassword1': 'Nouveau mot de passe',
@@ -52,8 +52,8 @@ export const PasswordChangeFormTranslations = {
     'Italian': {
         'Title1': 'Modifica della password',
         'Title2': 'La password è stata modificata con successo',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Modifica della password',
+        'metaContent2': 'La password è stata modificata con successo',
 
         'Password': 'Password di accesso',
         'newPassword1': 'Nuova password ',
@@ -63,8 +63,8 @@ export const PasswordChangeFormTranslations = {
     'Portuguese': {
         'Title1': 'Alterar a palavra-passe',
         'Title2': 'Palavra-passe alterada com sucesso',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Alterar a palavra-passe',
+        'metaContent2': 'Palavra-passe alterada com sucesso',
 
         'Password': 'Palavra-passe',
         'newPassword1': 'Nova palavra-passe',
@@ -74,8 +74,8 @@ export const PasswordChangeFormTranslations = {
     'Spanish': {
         'Title1': 'Cambiar contraseña',
         'Title2': 'Contraseña cambiada con éxito',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Cambiar contraseña',
+        'metaContent2': 'Contraseña cambiada con éxito',
 
         'Password': 'Contraseña',
         'newPassword1': 'Nueva contraseña',

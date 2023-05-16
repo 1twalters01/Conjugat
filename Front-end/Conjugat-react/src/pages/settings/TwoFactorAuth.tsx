@@ -19,6 +19,7 @@ function TwoFactorAuth() {
               <meta name="description"
                   content={getTranslation(translations, language, 'metaContent1')}
               />
+              <link rel="canonical" href="/settings/two-factor-auth" />
           </Helmet>
 
           <div className="rhs container">
@@ -42,6 +43,7 @@ function TwoFactorAuth() {
             <meta name="description"
                 content={getTranslation(translations, language, 'metaContent2')}
             />
+            <link rel="canonical" href="/settings/two-factor-auth" />
         </Helmet>
         
         <div className="rhs container">

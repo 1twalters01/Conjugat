@@ -77,6 +77,7 @@ function Unsubscribe() {
                         <meta name="description"
                             content={getTranslation(translations, language, 'metaContent2')}
                         />
+                        <link rel="canonical" href="/newsletter/unsubscribe" />
                     </Helmet>
 
                     <div className="Newsletter-unauth-unsubscribe-container container">
@@ -104,6 +105,7 @@ function Unsubscribe() {
                         <meta name="description"
                             content={getTranslation(translations, language, 'metaContent3')}
                         />
+                        <link rel="canonical" href="/newsletter/unsubscribe" />
                     </Helmet>
 
                     <div className="Newsletter-auth-unsubscribe-container container">
@@ -137,6 +139,7 @@ function Unsubscribe() {
                             <meta name="description"
                                 content={getTranslation(translations, language, 'metaContent4')}
                             />
+                            <link rel="canonical" href="/newsletter/unsubscribe" />
                     </Helmet>
                     
                     <div className="Newsletter-auth-unsubscribe-container container">

@@ -2,8 +2,8 @@ export const translations = {
     'English': {
         'Title1': 'Logout all',
         'Title2': 'Logged out',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Log out of Conjugat',
+        'metaContent2': 'Logged out of Conjugat',
 
         'Text1': 'Logout all',
         'Text2': 'Are you sure that you want to log out of all accounts, including this one?',
@@ -14,8 +14,8 @@ export const translations = {
     'French': {
         'Title1': 'Déconnexion de tous',
         'Title2': 'Déconnecté',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Se déconnecter de Conjugat',
+        'metaContent2': 'Déconnexion de Conjugat',
 
         'Text1': 'Déconnexion de tous',
         'Text2': 'Êtes-vous sûr de vouloir vous déconnecter de tous les comptes, y compris celui-ci ?',
@@ -26,8 +26,8 @@ export const translations = {
     'Italian': {
         'Title1': 'Disconnessione di tutti',
         'Title2': 'Disconnesso',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Esci da Conjugat',
+        'metaContent2': 'Uscito da Conjugat',
 
         'Text1': 'Disconnessione di tutti',
         'Text2': 'Siete sicuri di voler uscire da tutti gli account, compreso questo?',
@@ -38,8 +38,8 @@ export const translations = {
     'Portuguese': {
         'Title1': 'Terminar sessão em todos',
         'Title2': 'Terminar sessão',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Sair do Conjugat',
+        'metaContent2': 'Logado fora do Conjugat',
 
         'Text1': 'Terminar sessão em todos',
         'Text2': 'Tem a certeza de que pretende terminar a sessão de todas as contas, incluindo esta?',
@@ -50,8 +50,8 @@ export const translations = {
     'Spanish': {
         'Title1': 'Cerrar sesión en todas',
         'Title2': 'Logged out',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Salir de Conjugat',
+        'metaContent2': 'Salir de Conjugat',
 
         'Text1': 'Cerrar sesión en todas',
         'Text2': '¿Estás seguro de que quieres cerrar la sesión de todas las cuentas, incluida ésta?',

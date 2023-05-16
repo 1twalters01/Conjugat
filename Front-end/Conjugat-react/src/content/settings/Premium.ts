@@ -1,31 +1,31 @@
 export const translations = {
     'English': {
         'Title1': 'Conjugat Premium',
-        'metaContent1': '',
+        'metaContent1': 'View Conjugat Premium subscription status',
 
         'Text1': 'Premium',
     },
     'French': {
         'Title1': 'Conjugat Prime',
-        'metaContent1': '',
+        'metaContent1': 'Voir l\'état de l\'abonnement à Conjugat Premium',
 
         'Text1': 'Prime',
     },
     'Italian': {
         'Title1': 'Conjugat Premio',
-        'metaContent1': '',
+        'metaContent1': 'Visualizza lo stato di sottoscrizione di Conjugat Premium',
 
         'Text1': 'Premio',
     },
     'Portuguese': {
         'Title1': 'Conjugat Prémio',
-        'metaContent1': '',
+        'metaContent1': 'Ver o estado da subscrição do Conjugat Premium',
 
         'Text1': 'Prémio',
     },
     'Spanish': {
         'Title1': 'Conjugat Premium',
-        'metaContent1': '',
+        'metaContent1': 'Ver el estado de la suscripción a Conjugat Premium',
 
         'Text1': 'Premium',
     }

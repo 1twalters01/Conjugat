@@ -2,8 +2,8 @@ export const translations = {
     'English': {
         'Title1': 'Close account',
         'Title2': 'Account closed successfully',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Close account',
+        'metaContent2': 'Account closed successfully',
 
         'Text1': 'Close account',
         'Text2': 'Close account',
@@ -12,8 +12,8 @@ export const translations = {
     'French': {
         'Title1': 'Fermer le compte',
         'Title2': 'Compte clôturé avec succès',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Fermer le compte',
+        'metaContent2': 'Compte clôturé avec succès',
 
         'Text1': 'Fermer le compte',
         'Text2': 'Fermer le compte',
@@ -22,8 +22,8 @@ export const translations = {
     'Italian': {
         'Title1': 'Chiudere il conto',
         'Title2': 'Conto chiuso con successo',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Chiudere il conto',
+        'metaContent2': 'Conto chiuso con successo',
 
         'Text1': 'Chiudere l\'account',
         'Text2': 'Chiudere l\'account',
@@ -32,8 +32,8 @@ export const translations = {
     'Portuguese': {
         'Title1': 'Fechar conta',
         'Title2': 'Conta encerrada com sucesso',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Fechar conta',
+        'metaContent2': 'Conta encerrada com sucesso',
 
         'Text1': 'Fechar conta',
         'Text2': 'Fechar conta',
@@ -42,8 +42,8 @@ export const translations = {
     'Spanish': {
         'Title1': 'Cerrar cuenta',
         'Title2': 'Cuenta cerrada con éxito',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Cerrar cuenta',
+        'metaContent2': 'Cuenta cerrada con éxito',
 
         'Text1': 'Cerrar la cuenta',
         'Text2': 'Cerrar la cuenta',

@@ -2,8 +2,8 @@ export const translations = {
     'English': {
         'Title1': '2FA',
         'Title2': '2FA changed successfully',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Set two factor authentication status',
+        'metaContent2': '2FA changed successfully',
 
         'Text1': 'Two Factor Authentication',
         'Text2':'Two Factor Authentication',
@@ -12,8 +12,8 @@ export const translations = {
     'French': {
         'Title1': '2FA',
         'Title2': '2FA modifié avec succès',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Définir l\'état de l\'authentification à deux facteurs',
+        'metaContent2': '2FA modifié avec succès',
 
         'Text1': 'Authentification à deux facteurs',
         'Text2': 'Authentification à deux facteurs',
@@ -22,8 +22,8 @@ export const translations = {
     'Italian': {
         'Title1': '2FA',
         'Title2': '2FA modificato con successo',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Impostare lo stato dell\'autenticazione a due fattori',
+        'metaContent2': '2FA modificato con successo',
 
         'Text1': 'Autenticazione a due fattori',
         'Text2': 'Autenticazione a due fattori',
@@ -32,8 +32,8 @@ export const translations = {
     'Portuguese': {
         'Title1': '2FA',
         'Title2': '2FA alterado com êxito',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Definir o estado da autenticação de dois factores',
+        'metaContent2': '2FA alterado com êxito',
 
         'Text1': 'Autenticação de dois factores',
         'Text2': 'Autenticação de dois factores',
@@ -42,8 +42,8 @@ export const translations = {
     'Spanish': {
         'Title1': '2FA',
         'Title2': '2FA cambiado con éxito',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Establecer el estado de la autenticación de dos factores',
+        'metaContent2': '2FA cambiado con éxito',
 
         'Text1': 'Autenticación de dos factores',
         'Text2': 'Autenticación de dos factores',

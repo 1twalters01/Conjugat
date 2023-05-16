@@ -1,31 +1,31 @@
 export const translations = {
     'English': {
         'Title1': 'Change theme',
-        'metaContent1': '',
+        'metaContent1': 'Change your theme',
         
         'Text1': 'Theme',
     },
     'French': {
         'Title1': 'Changer de thème',
-        'metaContent1': '',
+        'metaContent1': 'Modifier votre thème',
 
         'Text1': 'Thème',
     },
     'Italian': {
         'Title1': 'Cambia tema',
-        'metaContent1': '',
+        'metaContent1': 'Cambiare il tema',
 
         'Text1': 'Tema',
     },
     'Portuguese': {
         'Title1': 'Alterar o tema',
-        'metaContent1': '',
+        'metaContent1': 'Alterar o seu tema',
 
         'Text1': 'Tema',
     },
     'Spanish': {
         'Title1': 'Cambiar de tema',
-        'metaContent1': '',
+        'metaContent1': 'Cambiar de tema',
 
         'Text1': 'Tema',
     }

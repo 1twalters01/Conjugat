@@ -20,6 +20,7 @@ function ChangeEmail() {
                     <meta name="description"
                         content={getTranslation(translations, language, 'metaContent1')}
                     />
+                    <link rel="canonical" href="/settings/change-email" />
                 </Helmet>
             
                 <div className="rhs container">
@@ -45,6 +46,7 @@ function ChangeEmail() {
                     <meta name="description"
                         content={getTranslation(translations, language, 'metaContent2')}
                     />
+                    <link rel="canonical" href="/settings/change-email" />
                 </Helmet>
 
                 <div className="rhs container">

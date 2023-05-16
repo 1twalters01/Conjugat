@@ -80,6 +80,7 @@ function Subscribe() {
                         <meta name="description"
                             content={getTranslation(translations, language, 'metaContent2')}
                         />
+                        <link rel="canonical" href="/newsletter/subscribe" />
                     </Helmet>
 
                     <div className="Newsletter-unauth-subscribe-container container">

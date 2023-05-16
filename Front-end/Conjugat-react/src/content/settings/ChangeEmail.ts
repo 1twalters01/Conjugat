@@ -2,8 +2,8 @@ export const translations = {
     'English': {
         'Title1': 'Change email',
         'Title2': 'Email changed successfully',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Change email',
+        'metaContent2': 'Email changed successfully',
 
         'Text1': 'Change email',
         'Text2': 'Change email done',
@@ -12,8 +12,8 @@ export const translations = {
     'French': {
         'Title1': 'Changer d\'email',
         'Title2': 'L\'email a été modifié avec succès',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Changer d\'email',
+        'metaContent2': 'L\'email a été modifié avec succès',
 
         'Text1': 'Modifier l\'adresse électronique',
         'Text2': 'Changement d\'email effectué',
@@ -22,8 +22,8 @@ export const translations = {
     'Italian': {
         'Title1': 'Cambiare l\'e-mail',
         'Title2': 'L\'e-mail è stata modificata con successo',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Cambiare l\'e-mail',
+        'metaContent2': 'L\'e-mail è stata modificata con successo',
 
         'Text1': 'Cambiare l\'e-mail',
         'Text2': 'Modifica dell\'e-mail eseguita',
@@ -32,8 +32,8 @@ export const translations = {
     'Portuguese': {
         'Title1': 'Alterar e-mail',
         'Title2': 'Correio electrónico alterado com sucesso',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Alterar e-mail',
+        'metaContent2': 'Correio electrónico alterado com sucesso',
 
         'Text1': 'Alterar o correio electrónico',
         'Text2': 'Alterar e-mail concluído',
@@ -42,8 +42,8 @@ export const translations = {
     'Spanish': {
         'Title1': 'Cambiar correo electrónico',
         'Title2': 'Email cambiado con éxito',
-        'metaContent1': '',
-        'metaContent2': '',
+        'metaContent1': 'Cambiar correo electrónico',
+        'metaContent2': 'Email cambiado con éxito',
 
         'Text1': 'Cambiar email',
         'Text2': 'Cambio de correo electrónico realizado',
