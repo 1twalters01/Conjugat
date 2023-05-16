@@ -37,6 +37,7 @@ function Unsubscribe() {
                         <meta name="description"
                             content={getTranslation(translations, language, 'metaContent1')}
                         />
+                        <link rel="canonical" href="/newsletter/unsubscribe" />
                     </Helmet>
 
                     <div className="Newsletter-unauth-unsubscribe-container container">

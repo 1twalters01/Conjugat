@@ -47,8 +47,6 @@ Add helmet meta tags to the following:
 
 Add prefetching
 
-switch to react-helmet-async
-
 Create sitemap
 
 Remove any from types
