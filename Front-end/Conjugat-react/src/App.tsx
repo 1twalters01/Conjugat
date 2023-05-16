@@ -41,6 +41,7 @@ const Process = lazy(() => import('./pages/subscriptions/Process'))
 const Success = lazy(() => import('./pages/subscriptions/Success'))
 
 const Test = lazy(() => import('./pages/test/Test'))
+const TestOptions = lazy(() => import('./pages/test/TestOptions'))
 const TestResults = lazy(() => import('./pages/test/TestResults'))
 
 import { toast, ToastContainer } from "react-toastify";
@@ -101,9 +102,10 @@ const router = createBrowserRouter(
         <Route path="success" element={<Suspense fallback=''><Success /></Suspense>} />
       </Route>
 
-      <Route path="verbs">
-        <Route path="test" element={<Suspense fallback=''><Test /></Suspense>} />
-        <Route path="test/results/:testID" element={<Suspense fallback=''><TestResults /></Suspense>} />
+      <Route path="test">
+        <Route path="/" element={<Suspense fallback=''><Test /></Suspense>} />
+        <Route path="options" element={<Suspense fallback=''><TestOptions /></Suspense>} />
+        <Route path="results/:testID" element={<Suspense fallback=''><TestResults /></Suspense>} />
       </Route>
 
     </Route>

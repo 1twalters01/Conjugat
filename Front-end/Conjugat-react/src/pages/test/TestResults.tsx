@@ -47,6 +47,7 @@ function TestResults() {
                 <meta name="description"
                     content={getTranslation(translations, language, 'metaContent1')}
                 />
+                <link rel="canonical" href="/test/success" />
             </Helmet>
             
             <div>
