@@ -20,6 +20,7 @@ function Index() {
                 <meta name="description"
                     content={getTranslation(translations, language, 'metaContent1')}
                 />
+                <link rel="canonical" href="/" />
             </Helmet>
 
             <div className="Landing-page-container container">

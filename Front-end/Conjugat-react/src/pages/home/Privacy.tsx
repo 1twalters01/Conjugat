@@ -16,6 +16,7 @@ function Privacy() {
                 <meta name="description"
                     content={getTranslation(translations, language, 'metaContent1')}
                 />
+                <link rel="canonical" href="/privacy" />
             </Helmet>
 
             <div className="Privacy-container container">

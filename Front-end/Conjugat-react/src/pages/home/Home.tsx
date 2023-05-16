@@ -140,6 +140,7 @@ function Home() {
                 <meta name="description"
                     content={getTranslation(translations, language, 'metaContent1')}
                 />
+                <link rel="canonical" href="/home" />
             </Helmet>
 
             <SettingsNavbar language={language} />
@@ -168,6 +169,7 @@ function Home() {
                     <meta name="description"
                         content={getTranslation(translations, language, 'metaContent2')}
                     />
+                    <link rel="canonical" href="/home" />
                 </Helmet>
             </>
         )

@@ -16,6 +16,7 @@ function Terms() {
                 <meta name="description"
                     content={getTranslation(translations, language, 'metaContent1')}
                 />
+                <link rel="canonical" href="/terms" />
             </Helmet>
 
             <div className="Terms-container container">

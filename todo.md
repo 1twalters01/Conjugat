@@ -23,13 +23,6 @@ Finish designing web pages, style and add colour to:
 * Test Options
 
 Add helmet meta tags to the following:
-5. Misc
-* Contact
-* FAQs
-* Home
-* Landing page
-* Privacy
-* Terms
 6. Test
 
 Add prefetching

@@ -17,6 +17,7 @@ function Contact() {
                 <meta name="description"
                     content={getTranslation(translations, language, 'metaContent1')}
                 />
+                <link rel="canonical" href="/contact" />
             </Helmet>
             
             <div className="Contact-container container">

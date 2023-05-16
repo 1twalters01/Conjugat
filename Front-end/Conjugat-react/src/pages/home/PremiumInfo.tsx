@@ -14,6 +14,7 @@ function PremiumInfo() {
                 <meta name="description"
                     content={getTranslation(translations, language, 'metaContent1')}
                 />
+                <link rel="canonical" href="/premium" />
             </Helmet>
 
             <div className="Premium-container container">

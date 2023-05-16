@@ -1,7 +1,7 @@
 export const translations = {
     'English': {
         'Title1': 'Terms',
-        'metaContent1': '',
+        'metaContent1': 'Conjugat terms and conditions',
 
         'Title': 'Terms',
         'Subtitle': 'Please note that these Terms and Conditions of Service are an extract that was copied from Duolingo',
@@ -29,7 +29,7 @@ export const translations = {
     },
     'French': {
         'Title1': 'Conditions',
-        'metaContent1': '',
+        'metaContent1': 'Conditions d\'utilisation de Conjugat',
 
         'Title': 'Conditions',
         'Subtitle': 'Veuillez noter que ces conditions d\'utilisation sont un extrait copié de Duolingo',
@@ -57,7 +57,7 @@ export const translations = {
     },
     'Italian': {
         'Title1': 'Termini',
-        'metaContent1': '',
+        'metaContent1': 'Termini e condizioni di Conjugat',
 
         'Title': 'Termini',
         'Subtitle': 'Si prega di notare che i presenti Termini e condizioni del servizio sono un estratto copiato da Duolingo',
@@ -84,7 +84,7 @@ export const translations = {
     },
     'Portuguese': {
         'Title1': 'Termos e condições',
-        'metaContent1': '',
+        'metaContent1': 'Termos e condições da Conjugat',
 
         'Title': 'Termos',
         'Subtitle': 'Tenha em atenção que estes Termos e Condições de Serviço são um extracto que foi copiado do Duolingo',
@@ -111,7 +111,7 @@ export const translations = {
     },
     'Spanish': {
         'Title1': 'Términos',
-        'metaContent1': '',
+        'metaContent1': 'Términos y condiciones de Conjugat',
 
         'Title': 'Términos',
         'Subtitle': 'Tenga en cuenta que estos Términos y Condiciones del Servicio son un extracto que se copió de Duolingo',

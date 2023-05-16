@@ -1,7 +1,7 @@
 export const translations = {
     'English': {
         'Title1': 'Conjugat',
-        'Title2': 'Conjugat',
+        'Title2': 'Conjugat home page',
         'metaContent1': '',
         'metaContent2': '',
 
@@ -9,7 +9,7 @@ export const translations = {
     },
     'French': {
         'Title1': 'Conjugat',
-        'Title2': 'Conjugat',
+        'Title2': 'Page d\'accueil de Conjugat',
         'metaContent1': '',
         'metaContent2': '',
 
@@ -17,7 +17,7 @@ export const translations = {
     },
     'Italian': {
         'Title1': 'Conjugat',
-        'Title2': 'Conjugat',
+        'Title2': 'Pagina iniziale di Conjugat',
         'metaContent1': '',
         'metaContent2': '',
 
@@ -25,7 +25,7 @@ export const translations = {
     },
     'Portuguese': {
         'Title1': 'Conjugat',
-        'Title2': 'Conjugat',
+        'Title2': 'Página inicial do Conjugat',
         'metaContent1': '',
         'metaContent2': '',
 
@@ -33,7 +33,7 @@ export const translations = {
     },
     'Spanish': {
         'Title1': 'Conjugat',
-        'Title2': 'Conjugat',
+        'Title2': 'Página de inicio de Conjugat',
         'metaContent1': '',
         'metaContent2': '',
 

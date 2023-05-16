@@ -1,7 +1,7 @@
 export const translations = {
     'English': {
         'Title1': 'Contact us',
-        'metaContent1': '',
+        'metaContent1': 'Contact us',
 
         'Title': 'Contact us',
         'Text1': 'Have any troubles or suggestions? Email us at:',
@@ -9,7 +9,7 @@ export const translations = {
     },
     'French': {
         'Title1': 'Contactez nous',
-        'metaContent1': '',
+        'metaContent1': 'Contactez nous',
 
         'Title': 'Contactez-nous',
         'Text1': 'Vous avez des problèmes ou des suggestions ? Envoyez-nous un e-mail à :',
@@ -17,7 +17,7 @@ export const translations = {
     },
     'Italian': {
         'Title1': 'Contattateci',
-        'metaContent1': '',
+        'metaContent1': 'Contattateci',
 
         'Title': 'Contattateci',
         'Text1': 'Avete problemi o suggerimenti? Inviateci un\'e-mail a:',
@@ -25,7 +25,7 @@ export const translations = {
     },
     'Portuguese': {
         'Title1': 'Contactar-nos',
-        'metaContent1': '',
+        'metaContent1': 'Contactar-nos',
 
         'Title': 'Contactar-nos',
         'Text1': 'Tem algum problema ou sugestão? Envie-nos um e-mail para:',
@@ -33,7 +33,7 @@ export const translations = {
     },
     'Spanish': {
         'Title1': 'Contáctenos',
-        'metaContent1': '',
+        'metaContent1': 'Contáctenos',
 
         'Title': 'Contáctenos',
         'Text1': '¿Tiene algún problema o sugerencia? Envíenos un correo electrónico a:',

@@ -21,7 +21,7 @@ export const translations = {
     },
     'French': {
         'Title1': 'Vie privée',
-        'metaContent1': '',
+        'metaContent1': 'Déclaration de confidentialité de Conjugat',
 
         'Title': 'Confidentialité',
         'Subtitle': 'Veuillez noter que cette politique de confidentialité est un extrait copié de Duolingo',
@@ -41,7 +41,7 @@ export const translations = {
     },
     'Italian': {
         'Title1': 'La privacy',
-        'metaContent1': '',
+        'metaContent1': 'Dichiarazione sulla privacy di Conjugat',
 
         'Title': 'Privacy',
         'Subtitle': 'Si prega di notare che questa informativa sulla privacy è un estratto copiato da Duolingo',
@@ -61,7 +61,7 @@ export const translations = {
     },
     'Portuguese': {
         'Title1': 'Privacidade',
-        'metaContent1': '',
+        'metaContent1': 'Declaração de privacidade da Conjugat',
 
         'Title': 'Privacidade',
         'Subtitle': 'Por favor, note que esta política de privacidade é um extracto que foi copiado do Duolingo',
@@ -81,7 +81,7 @@ export const translations = {
     },
     'Spanish': {
         'Title1': 'Privacidad',
-        'metaContent1': '',
+        'metaContent1': 'Declaración de privacidad de Conjugat',
 
         'Title': 'Privacidad',
         'Subtitle': 'Tenga en cuenta que esta política de privacidad es un extracto copiado de Duolingo',

@@ -17,6 +17,7 @@ function Faq() {
                 <meta name="description"
                     content={getTranslation(translations, language, 'metaContent1')}
                 />
+                <link rel="canonical" href="/faq" />
             </Helmet>
 
             <div className="FAQ-container container">

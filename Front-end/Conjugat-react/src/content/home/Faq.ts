@@ -1,31 +1,31 @@
 export const translations = {
     'English': {
         'Title1': 'Faq',
-        'metaContent1': '',
+        'metaContent1': 'Frequently asked questions',
 
         'Title': 'Faq',
     },
     'French': {
         'Title1': 'Faq',
-        'metaContent1': '',
+        'metaContent1': 'Questions fréquemment posées',
 
         'Title': 'Faq',
     },
     'Italian': {
         'Title1': 'Domande Frequenti',
-        'metaContent1': '',
+        'metaContent1': 'Domande frequenti',
 
         'Title': 'Domande Frequenti',
     },
     'Portuguese': {
         'Title1': 'Faq',
-        'metaContent1': '',
+        'metaContent1': 'Perguntas mais frequentes',
 
         'Title': 'Faq',
     },
     'Spanish': {
         'Title1': 'Preguntas Frecuentes',
-        'metaContent1': '',
+        'metaContent1': 'Preguntas más frecuentes',
 
         'Title': 'Preguntas Frecuentes',
     },
