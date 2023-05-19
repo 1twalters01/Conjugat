@@ -22,9 +22,6 @@ Finish designing web pages, style and add colour to:
 6. Test
 * Test Options
 
-Add helmet meta tags to the following:
-6. Test
-
 Add prefetching
 
 Create sitemap

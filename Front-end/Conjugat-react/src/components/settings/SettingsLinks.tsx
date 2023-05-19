@@ -12,6 +12,12 @@ function SettingsLinks() {
                 <Link to='/settings/change-username/' className="text-blue-link">Change username</Link>
             </div>
 
+            <div className="application">
+                <p className="profile-text header">Application</p>
+                <Link to='/settings/language/' className="text-blue-link">Language</Link>
+                <Link to='/settings/font/' className="text-blue-link">Font</Link>
+            </div>
+
             <div className="options">
                 <p className="options-text header">Options</p>
                 <Link to='/settings/premium' className="text-blue-link">Premium</Link>

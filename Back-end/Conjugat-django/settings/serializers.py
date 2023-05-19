@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.core.cache import cache
 from subscription.encryption import decrypt, encrypt
 from rest_framework import serializers, status
-from settings.models import Theme, Language, TwoFactorAuth
+from settings.models import Theme, Language, Font, TwoFactorAuth
 from settings.totp import generate_totp
 from subscription.encryption import decrypt
 from subscription.models import UserProfile
@@ -516,13 +516,14 @@ class PremiumSerializer(serializers.Serializer):
                         }
                         return response, True, status.HTTP_200_OK
 
+
 class ThemeSerializer(serializers.Serializer):
     choice = serializers.CharField()
     def validate_choice(self, choice):
         options = ['Dark', 'Light']
         if choice not in options:
-                error = 'Invalid option'
-                return error, False, status.HTTP_400_BAD_REQUEST
+            error = 'Invalid option'
+            return error, False, status.HTTP_400_BAD_REQUEST
         return True, True
             
     def change_theme(self, data):
@@ -540,13 +541,14 @@ class ThemeSerializer(serializers.Serializer):
         response = {"success":"Theme changed successfully", "theme":choice}
         return response, True
 
+
 class LanguageSerializer(serializers.Serializer):
     choice = serializers.CharField()
     def validate_choice(self, choice):
         options = ["English", "French", "Italian", "Portuguese", "Spanish"]
         if choice not in options:
-                error = 'Invalid option'
-                return error, False, status.HTTP_400_BAD_REQUEST
+            error = 'Invalid option'
+            return error, False, status.HTTP_400_BAD_REQUEST
         return True, True
             
     def change_language(self, data):
@@ -564,6 +566,30 @@ class LanguageSerializer(serializers.Serializer):
         response = {"success":"Language changed successfully", "language":choice}
         return response, True
 
+
+class FontSerializer(serializers.Serializer):
+    choice = serializers.CharField()
+    def validate_choice(self, choice):
+        options = ["English", "French", "Italian", "Portuguese", "Spanish"]
+        if choice not in options:
+            error = 'Invalid option'
+            return error, False, status.HTTP_400_BAD_REQUEST
+        return True, True
+            
+    def change_font(self, data):
+        choice = data['choice']
+        req_username =  self.context['username']
+
+        font = Font.objects.get_or_create(user=req_username)[0]
+
+        validated_choice = self.validate_choice(choice)
+        if validated_choice[1] == False:
+            return validated_choice[0], validated_choice[1], validated_choice[2]
+        
+        font.font = choice
+        font.save()
+        response = {"success": "Font changed successfully", "font":choice}
+        return response, True
 
 class TwoFactorAuthSerializer(serializers.Serializer):
     password = serializers.CharField()

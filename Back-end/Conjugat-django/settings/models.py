@@ -11,6 +11,11 @@ class Language(models.Model):
     choices = (("English", "English"), ("French", "French"), ("Italian", "Italian"), ("Portuguese", "Portuguese"), ("Spanish", "Spanish"))
     language = models.CharField(max_length=255, default='English', choices=choices)
 
+class Font(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    choices = (("Light", "Light"), ("Dark", "Dark"))
+    font = models.CharField(max_length=255, default='Light', choices=choices)
+
 class TwoFactorAuth(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     key = models.CharField(max_length=500)

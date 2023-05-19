@@ -8,7 +8,7 @@ import { StripeSuccessTranslations } from "../../../content/settings/Premium"
 function PaypalProcess({trial} : {trial:boolean|null}) {
     const { language } = useSelector((state: RootState) => state.persistedReducer.language)
 
-    const paypalSubscribe = (data:any, actions:any) => {
+    const paypalSubscribe = (_data: any, actions: any) => {
       if (trial==false) {
         return actions.subscription.create({
           'plan_id': `${import.meta.env.VITE_paypal_no_trial_plan_id}`,

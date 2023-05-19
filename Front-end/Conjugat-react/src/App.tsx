@@ -27,6 +27,8 @@ const Settings = lazy(() => import('./pages/settings/Settings'))
 const Email = lazy(() => import('./pages/settings/ChangeEmail'))
 const Password = lazy(() => import('./pages/settings/ChangePassword'))
 const Username = lazy(() => import('./pages/settings/ChangeUsername'))
+const Font = lazy(() => import('./pages/settings/Font'))
+const Language = lazy(() => import('./pages/settings/Language'))
 const LogoutAll = lazy(() => import('./pages/settings/LogoutAll'))
 const Account = lazy(() => import('./pages/settings/CloseAccount'))
 const Premium = lazy(() => import('./pages/settings/Premium'))
@@ -84,6 +86,9 @@ const router = createBrowserRouter(
         <Route path="change-email" element={<Suspense fallback=''><Email /></Suspense>} />
         <Route path="change-password" element={<Suspense fallback=''><Password /></Suspense>} />
         <Route path="change-username" element={<Suspense fallback=''><Username /></Suspense>} />
+
+        <Route path="font" element={<Suspense fallback=''><Font /></Suspense>} />
+        <Route path="language" element={<Suspense fallback=''><Language /></Suspense>} />
 
         <Route path="logout-all" element={<Suspense fallback=''><LogoutAll /></Suspense>} />
         <Route path="reset-account" element={<Suspense fallback=''><ResetAccount /></Suspense>} />
