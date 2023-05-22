@@ -26,7 +26,7 @@ function Font() {
 					</div>
 					
 					<div className="form-spacer">
-						<FontForm language={language} onDoneChange={setDone}
+						<FontForm language={language} onDoneChange={setDone} />
 					</div
         		</div>
         	</>
