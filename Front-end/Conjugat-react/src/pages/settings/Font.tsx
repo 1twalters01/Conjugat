@@ -8,8 +8,7 @@ import { translations } from "../../content/settings/Font"
 function Font() {
     Authorization.AuthRequired()
     const { language } = useSelector((state: RootState) => state.persistedReducer.language)
- 	const [loaded, isLoaded] = useState(true)
-	const [done, isDone] = useState(false)
+	const [done, setDone] = useState(false)
 	if (done === false) {
 		return (
 	        <>
@@ -21,8 +20,14 @@ function Font() {
             		<link rel="canonical" href="/settings/font" />
         		</Helmet>
 
-        		<div>
-            
+        		<div className="rhs container">
+					<div className="Header-spacer">
+						<h1 className="text">{getTranslation(translations, language, 'Text1'</h1
+					</div>
+					
+					<div className="form-spacer">
+						<FontForm language={language} onDoneChange={setDone}
+					</div
         		</div>
         	</>
 	    )
@@ -37,8 +42,14 @@ function Font() {
             		<link rel="canonical" href="/settings/font" />
 				</Helmet>
 
-				<div>
-				
+				<div className="rhs container">
+					<div className="Header-spacer">
+						<h1 className="text">{getTranslation(translations, language, 'Text2')}</h1>
+					</div>
+
+					<div className="para">
+						<p className="text">{getTranslation(translations, language, 'Text3')}</p>
+					</div>
 				</div>
 			</>
 		)
