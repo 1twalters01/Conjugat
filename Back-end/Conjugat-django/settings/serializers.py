@@ -569,9 +569,8 @@ class LanguageSerializer(serializers.Serializer):
 
 class FontSerializer(serializers.Serializer):
     choice = serializers.CharField()
-    def validate_choice(self, choice, req_username):
-        options = Font.objects.get(user=req_username).choices
-        options = ["English", "French", "Italian", "Portuguese", "Spanish"]
+    def validate_choice(self, choice):
+        options = ["open-dyslexic", "open-sans", "times-new-roman", "georgia", "lato"]
         if choice not in options:
             error = 'Invalid option'
             return error, False, status.HTTP_400_BAD_REQUEST
