@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import loginReducer from './slices/loginSlice'
 import themeReducer from './slices/themeSlice'
+import fontReducer from './slices/fontSlice'
 import languageReducer from './slices/languageSlice'
 
 import thunk from 'redux-thunk';
@@ -17,6 +18,7 @@ const persistConfig = {
 const reducer = combineReducers({
   login: loginReducer,
   theme: themeReducer,
+  font: fontReducer,
   language: languageReducer,
 })
 

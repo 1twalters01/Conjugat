@@ -9,9 +9,9 @@ urlpatterns = [
     path('change-password/', views.ChangePassword.as_view(), name='change_password'),
     path('change-username/', views.ChangeUsername.as_view(), name='change_username'),
 
-    path('font/read', views.ReadFonts.as_view(), name='read_fonts'),
+    path('font/read/', views.ReadFonts.as_view(), name='read_fonts'),
     path('font/', views.ChangeFont.as_view(), name='change_font'),
-    path('language/read', views.ReadLanguages.as_view(), name='read_languages'),
+    path('language/read/', views.ReadLanguages.as_view(), name='read_languages'),
     path('language/', views.ChangeLanguage.as_view(), name='change_language'),
 
     path('logout-all/', views.Logout_all.as_view(), name='logout_all'),
