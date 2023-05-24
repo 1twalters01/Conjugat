@@ -2,7 +2,7 @@ from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect
-from .models import Theme, Font, Language, TwoFactorAuth
+from .models import Theme, Font, FontDB, Language, TwoFactorAuth
 from rest_framework import status, permissions
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
@@ -140,14 +140,36 @@ class ChangeUsername(APIView):
 
 
 ''' Font '''
+class ReadFonts(APIView):
+    permission_classes = (permissions.IsAuthenticated,)
+    def get(self, request):
+        try:
+            fonts = FontDB.objects.all()
+        except:
+            fonts = None
+        
+        data = {"font": [], "typeface": []}
+        if fonts:
+            for font in fonts:
+                data["font"].append(font.font)
+                data["typeface"].append(font.typeface)
+        return Response(data=data, status=status.HTTP_200_OK)
+
 class ChangeFont(APIView):
     permission_classes = (permissions.AllowAny,)
     def get(self, request):
         try:
-            font = Font.objects.get(user=request.user).font
+            headerFont = Font.objects.get(user=request.user).headerFont
+            bodyFont = Font.objects.get(user=request.user).bodyFont
         except:
-            font = Font.objects.create(user=request.user).font
-        return Response({'font':font}, status=status.HTTP_200_OK)
+            headerFont = Font.objects.create(user=request.user).headerFont
+            bodyFont = Font.objects.create(user=request.user).bodyFont
+
+        data = {
+            "headerFont": headerFont.font,
+            "bodyFont": bodyFont.font
+        }
+        return Response(data=data, status=status.HTTP_200_OK)
     
     def post(self, request):
         data = request.data
@@ -163,7 +185,22 @@ class ChangeFont(APIView):
                 return Response(data=response[0], status=status.HTTP_200_OK)
             return Response({'error':response[0]}, status=response[2])
 
+
 ''' Language '''
+class ReadLanguages(APIView):
+    permission_classes = (permissions.IsAuthenticated,)
+    def get(self, request):
+        try:
+            languages = Language.objects.all()
+        except:
+            languages = None
+        
+        data = {"language": []}
+        if languages:
+            for language in languages:
+                data["language"].append(language.language)
+        return Response(data=data, status=status.HTTP_200_OK)
+
 class ChangeLanguage(APIView):
     permission_classes = (permissions.AllowAny,)
     def get(self, request):
@@ -172,7 +209,7 @@ class ChangeLanguage(APIView):
         except:
             language = Language.objects.create(user=request.user).language
         return Response({'language':language}, status=status.HTTP_200_OK)
-    
+
     def post(self, request):
         data = request.data
         validated_choice = validate_choice(data)
@@ -186,6 +223,7 @@ class ChangeLanguage(APIView):
             if response[1] == True:
                 return Response(data=response[0], status=status.HTTP_200_OK)
             return Response({'error':response[0]}, status=response[2])
+
 
 ''' Logout all '''
 class Logout_all(APIView):

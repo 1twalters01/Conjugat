@@ -569,7 +569,8 @@ class LanguageSerializer(serializers.Serializer):
 
 class FontSerializer(serializers.Serializer):
     choice = serializers.CharField()
-    def validate_choice(self, choice):
+    def validate_choice(self, choice, req_username):
+        options = Font.objects.get(user=req_username).choices
         options = ["English", "French", "Italian", "Portuguese", "Spanish"]
         if choice not in options:
             error = 'Invalid option'
@@ -582,7 +583,7 @@ class FontSerializer(serializers.Serializer):
 
         font = Font.objects.get_or_create(user=req_username)[0]
 
-        validated_choice = self.validate_choice(choice)
+        validated_choice = self.validate_choice(choice, req_username)
         if validated_choice[1] == False:
             return validated_choice[0], validated_choice[1], validated_choice[2]
         

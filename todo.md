@@ -28,8 +28,6 @@ Create sitemap
 
 Remove any from types
 
-Fonts
-
 Update navbar css
 
 Create timer mode
