@@ -4,6 +4,8 @@ import { RootState } from "../../redux/store"
 import Authorization from "../../functions/Authorization"
 import { getTranslation } from "../../functions/getTranslation"
 import { translations } from "../../content/settings/Language"
+import { useState } from "react"
+import LanguageForm from "../../components/settings/Language/LanguageForm"
 
 function Language() {
     Authorization.AuthRequired()
@@ -22,15 +24,16 @@ function Language() {
 
         		<div className="rhs container">
 					<div className="Header-spacer">
-						<h1 className="text">{getTranslation(translations, language, 'Text1'</h1
+						<h1 className="text">{getTranslation(translations, language, 'Text1')}</h1>
 					</div>
 					
 					<div className="form-spacer">
-						<LanguageForm language={language} onDoneChange={setDone} />
-					</div
+						<LanguageForm language={language} />
+					</div>
         		</div>
         	</>
-	    )
+        )
+    }
 	else if (done === true) {
 		return (
 			<>

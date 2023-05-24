@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.core.cache import cache
 from subscription.encryption import decrypt, encrypt
 from rest_framework import serializers, status
-from settings.models import Theme, Language, Font, TwoFactorAuth
+from settings.models import Theme, Language, Font, FontDB, TwoFactorAuth
 from settings.totp import generate_totp
 from subscription.encryption import decrypt
 from subscription.models import UserProfile
@@ -570,7 +570,11 @@ class LanguageSerializer(serializers.Serializer):
 class FontSerializer(serializers.Serializer):
     choice = serializers.CharField()
     def validate_choice(self, choice):
-        options = ["open-dyslexic", "open-sans", "times-new-roman", "georgia", "lato"]
+        fonts = FontDB.objects.all()
+        options = []
+        for font in fonts:
+            options.append(font.font)
+
         if choice not in options:
             error = 'Invalid option'
             return error, False, status.HTTP_400_BAD_REQUEST

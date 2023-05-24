@@ -1,9 +1,11 @@
+import { useState } from "react"
 import { Helmet } from "react-helmet-async"
 import { useSelector } from "react-redux"
 import { RootState } from "../../redux/store"
 import Authorization from "../../functions/Authorization"
 import { getTranslation } from "../../functions/getTranslation"
 import { translations } from "../../content/settings/Font"
+import FontForm from "../../components/settings/Font/FontForm"
 
 function Font() {
     Authorization.AuthRequired()
@@ -22,15 +24,16 @@ function Font() {
 
         		<div className="rhs container">
 					<div className="Header-spacer">
-						<h1 className="text">{getTranslation(translations, language, 'Text1'</h1
+						<h1 className="text">{getTranslation(translations, language, 'Text1')}</h1>
 					</div>
 					
 					<div className="form-spacer">
-						<FontForm language={language} onDoneChange={setDone} />
-					</div
+						<FontForm language={language} />
+					</div>
         		</div>
         	</>
 	    )
+    }
 	else if (done === true) {
 		return (
 			<>
