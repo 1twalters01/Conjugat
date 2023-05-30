@@ -1,8 +1,5 @@
 @use '../abstract/colours' as *;
 
-// These are just used to test the functionality.
-// Real styling will be added later
-// Could use mixins to call a function but for now I will keep it simple
 .Light{
     // Containers
     .body { background-color: $secondary-100; }

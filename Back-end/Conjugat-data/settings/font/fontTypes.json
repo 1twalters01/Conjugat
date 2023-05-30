@@ -1,5 +1,5 @@
 [
-{
+  {
     "model": "settings.typeface",
     "pk": 1,
     "fields": {
@@ -17,19 +17,12 @@
     "model": "settings.typeface",
     "pk": 3,
     "fields": {
-      "typeface": "Display"
-    }
-  },
-  {
-    "model": "settings.typeface",
-    "pk": 4,
-    "fields": {
       "typeface": "Handwriting"
     }
   },
   {
     "model": "settings.typeface",
-    "pk": 5,
+    "pk": 4,
     "fields": {
       "typeface": "Monospace"
     }
