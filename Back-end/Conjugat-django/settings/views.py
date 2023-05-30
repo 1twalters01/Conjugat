@@ -2,7 +2,7 @@ from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect
-from .models import Theme, Font, FontDB, Language, TwoFactorAuth
+from .models import Theme, Font, FontDB, Typeface, Language, TwoFactorAuth
 from rest_framework import status, permissions
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
@@ -148,11 +148,15 @@ class ReadFonts(APIView):
         except:
             fonts = None
         
-        data = {"font": [], "typeface": []}
+        data = {"fonts": {"font": [], "typeface": []}, "typefaces": []}
         if fonts:
             for font in fonts:
-                data["font"].append(font.font)
-                data["typeface"].append(font.typeface)
+                data["fonts"]["font"].append(font.font)
+                data["fonts"]["typeface"].append(font.typeface)
+        typefaces = Typeface.objects.all()
+        if typefaces:
+            for typeface in typefaces:
+                data["typefaces"].append(typeface.typeface)
         return Response(data=data, status=status.HTTP_200_OK)
 
 class ChangeFont(APIView):

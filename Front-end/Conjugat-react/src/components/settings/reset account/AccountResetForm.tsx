@@ -67,8 +67,8 @@ function AccountResetForm({ language, onDoneChange }: { language:string, onDoneC
                 <div className="password-spacer">
                     <SelectField
                     labelText={getTranslation(AccountResetFormTranslations, language, 'Select')}
-                    languages={languages}
-                    changeLanguage={changeLanguage}
+                    field={languages}
+                    changeField={changeLanguage}
                     FieldList = {FieldList}
                     FieldListValues = {FieldList}
                     />

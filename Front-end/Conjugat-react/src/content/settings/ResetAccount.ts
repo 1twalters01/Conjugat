@@ -59,21 +59,25 @@ export const AccountResetFormTranslations = {
         'Submit': 'Reset account'
     },
     'French': {
+        'Select': '',
         'Password': 'Mot de passe',
         'Totp': 'Totp',
         'Submit': 'Réinitialiser le compte'
     },
     'Italian': {
+        'Select': '',
         'Password': 'Password di accesso',
         'Totp': 'Totp',
         'Submit': 'Azzeramento dell\'account'
     },
     'Portuguese': {
+        'Select': '',
         'Password': 'Palavra-passe',
         'Totp': 'Totp',
         'Submit': 'Redefinir a conta'
     },
     'Spanish': {
+        'Select': '',
         'Password': 'Contraseña',
         'Totp': 'Totp',
         'Submit': 'Restablecer cuenta'

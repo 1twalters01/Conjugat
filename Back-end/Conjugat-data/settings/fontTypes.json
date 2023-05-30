@@ -1,0 +1,37 @@
+[
+{
+    "model": "settings.typeface",
+    "pk": 1,
+    "fields": {
+      "typeface": "Serif"
+    }
+  },
+  {
+    "model": "settings.typeface",
+    "pk": 2,
+    "fields": {
+      "typeface": "Sans-serif"
+    }
+  },
+  {
+    "model": "settings.typeface",
+    "pk": 3,
+    "fields": {
+      "typeface": "Display"
+    }
+  },
+  {
+    "model": "settings.typeface",
+    "pk": 4,
+    "fields": {
+      "typeface": "Handwriting"
+    }
+  },
+  {
+    "model": "settings.typeface",
+    "pk": 5,
+    "fields": {
+      "typeface": "Monospace"
+    }
+  }
+]

@@ -1,52 +1,55 @@
 export const translations = {
     'English': {
-        'Title1': 'Change email',
-        'Title2': 'Email changed successfully',
-        'metaContent1': 'Change email',
-        'metaContent2': 'Email changed successfully',
+        'Title1': 'Change font',
+        'metaContent1': 'Change your font for Conjugat here',
 
-        'Text1': 'Change email',
-        'Text2': 'Change email done',
-        'Text3': 'Email has been updated',
+        'Text1': 'Change font',
     },
     'French': {
-        'Title1': 'Changer d\'email',
-        'Title2': 'L\'email a été modifié avec succès',
-        'metaContent1': 'Changer d\'email',
-        'metaContent2': 'L\'email a été modifié avec succès',
+        'Title1': 'Changer de police',
+        'metaContent1': 'Changez votre police pour Conjugat ici',
 
-        'Text1': 'Modifier l\'adresse électronique',
-        'Text2': 'Changement d\'email effectué',
-        'Text3': 'L\'email a été mis à jour',
+        'Text1': 'Changer de police',
     },
     'Italian': {
-        'Title1': 'Cambiare l\'e-mail',
-        'Title2': 'L\'e-mail è stata modificata con successo',
-        'metaContent1': 'Cambiare l\'e-mail',
-        'metaContent2': 'L\'e-mail è stata modificata con successo',
+        'Title1': 'Cambia font',
+        'metaContent1': 'Cambia il tuo font per Conjugat qui',
 
-        'Text1': 'Cambiare l\'e-mail',
-        'Text2': 'Modifica dell\'e-mail eseguita',
-        'Text3': 'L\'e-mail è stata aggiornata',
+        'Text1': 'Cambia font',
     },
     'Portuguese': {
-        'Title1': 'Alterar e-mail',
-        'Title2': 'Correio electrónico alterado com sucesso',
-        'metaContent1': 'Alterar e-mail',
-        'metaContent2': 'Correio electrónico alterado com sucesso',
+        'Title1': 'Alterar o tipo de letra',
+        'metaContent1': 'Altere o seu tipo de letra para Conjugat aqui',
 
-        'Text1': 'Alterar o correio electrónico',
-        'Text2': 'Alterar e-mail concluído',
-        'Text3': 'O correio electrónico foi actualizado',
+        'Text1': 'Alterar o tipo de letra',
     },
     'Spanish': {
-        'Title1': 'Cambiar correo electrónico',
-        'Title2': 'Email cambiado con éxito',
-        'metaContent1': 'Cambiar correo electrónico',
-        'metaContent2': 'Email cambiado con éxito',
+        'Title1': 'Cambiar fuente',
+        'metaContent1': 'Cambie su fuente para Conjugat aquí',
 
-        'Text1': 'Cambiar email',
-        'Text2': 'Cambio de correo electrónico realizado',
-        'Text3': 'Se ha actualizado el correo electrónico',
+        'Text1': 'Cambiar fuente',
+    }
+}
+
+export const FontFormTranslations = {
+    'English': {
+        'Select': '',
+        'Submit': 'Change font'
+    },
+    'French': {
+        'Select': '',
+        'Submit': 'Changer de police',
+    },
+    'Italian': {
+        'Select': '',
+        'Submit': 'Modifica del carattere',
+    },
+    'Portuguese': {
+        'Select': '',
+        'Submit': 'Alterar o tipo de letra',
+    },
+    'Spanish': {
+        'Select': '',
+        'Submit': 'Cambiar fuente',
     }
 }
