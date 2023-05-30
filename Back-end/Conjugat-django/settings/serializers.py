@@ -581,17 +581,22 @@ class FontSerializer(serializers.Serializer):
         return True, True
             
     def change_font(self, data):
-        choice = data['choice']
+        headerFont = data['headerFont']
+        bodyFont = data['bodyFont']
         req_username =  self.context['username']
 
         font = Font.objects.get_or_create(user=req_username)[0]
 
-        validated_choice = self.validate_choice(choice, req_username)
-        if validated_choice[1] == False:
-            return validated_choice[0], validated_choice[1], validated_choice[2]
+        validated_headerFont = self.validate_choice(headerFont, req_username)
+        if validated_headerFont[1] == False:
+            return validated_headerFont[0], validated_headerFont[1], validated_headerFont[2]
         
-        font.bodyFont = choice
-        font.headerFont = choice
+        validated_bodyFont = self.validate_choice(bodyFont, req_username)
+        if validated_bodyFont[1] == False:
+            return validated_bodyFont[0], validated_bodyFont[1], validated_bodyFont[2]
+        
+        font.headerFont = headerFont
+        font.bodyFont = bodyFont
         font.save()
         response = {"headerFont":font.headerFont, "bodyFont":font.bodyFont}
         return response, True

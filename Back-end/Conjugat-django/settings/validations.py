@@ -59,6 +59,20 @@ def validate_choice(data):
         return False, error, status.HTTP_400_BAD_REQUEST
     return True, 'valid'
 
+def validate_header_font(data):
+    choice = data['headerFont'].strip()
+    if not choice:
+        error = 'No value provided'
+        return False, error, status.HTTP_400_BAD_REQUEST
+    return True, 'valid'
+
+def validate_body_font(data):
+    choice = data['bodyFont'].strip()
+    if not choice:
+        error = 'No value provided'
+        return False, error, status.HTTP_400_BAD_REQUEST
+    return True, 'valid'
+
 def validate_return_urls(data):
     success_url = data['success_url'].strip()
     cancel_url = data['cancel_url'].strip()
