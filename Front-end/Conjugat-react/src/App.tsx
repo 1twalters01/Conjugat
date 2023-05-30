@@ -126,21 +126,20 @@ var persistor = persistStore(store)
 
 function App() {
   const { language } = useSelector((state: RootState) => state.persistedReducer.language)
-  
+  const { headerFont } = useSelector((state: RootState) => state.persistedReducer.font)
+  const { bodyFont } = useSelector((state: RootState) => state.persistedReducer.font)
+  const { theme } = useSelector((state: RootState) => state.persistedReducer.theme)
 
-  const{ theme } = useSelector((state: RootState) => state.persistedReducer.theme)
   if (theme == 'Dark') {
     document.body.setAttribute('style', 'background: #060607;');
-    // document.body.style = 'background: #060607;'
   }
   else if (theme == 'Light') {
     document.body.setAttribute('style', 'background: #ffffff;');
-    // document.body.style = 'background: #ffffff;'
   }
 
   return (
     <Provider store={store}>
-      <div className={theme}>
+      <div className={`${theme} ${headerFont} ${bodyFont}`}>
         <PersistGate persistor={persistor}>
           <RouterProvider router={router} />
         </PersistGate>

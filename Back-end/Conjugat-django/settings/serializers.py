@@ -590,9 +590,10 @@ class FontSerializer(serializers.Serializer):
         if validated_choice[1] == False:
             return validated_choice[0], validated_choice[1], validated_choice[2]
         
-        font.font = choice
+        font.bodyFont = choice
+        font.headerFont = choice
         font.save()
-        response = {"success": "Font changed successfully", "font":choice}
+        response = {"headerFont":font.headerFont, "bodyFont":font.bodyFont}
         return response, True
 
 class TwoFactorAuthSerializer(serializers.Serializer):

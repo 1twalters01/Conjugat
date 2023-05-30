@@ -4,12 +4,15 @@ import { getTranslation } from "../../../functions/getTranslation"
 import SubmitBtn from "../../Buttons/SubmitBtn"
 import SelectField from "../../Input fields/SelectField"
 import AxiosInstance from "../../../functions/AxiosInstance"
-import { onFontChange } from "../../../redux/slices/fontSlice"
+import { onHeaderFontChange, onBodyFontChange } from "../../../redux/slices/fontSlice"
 import { toast } from "react-toastify"
+import { useDispatch } from "react-redux"
 
 function FontForm({language}: {language:string}) {
     // fetch list of supported fonts from settings/font/read/
     // Post on update of font to settings/font/
+    const dispatch = useDispatch()
+    
     type TFetchedFonts = {
         "font": '',
         "typeface": ''
@@ -18,7 +21,10 @@ function FontForm({language}: {language:string}) {
     const [fetchedFonts, setfetchedFonts] = useState<TFetchedFonts>([])
     const [typeface, setTypeface] = useState<string[]>([])
     const [FieldList, setFieldList] = useState<string[]>([])
-    const [font, setFont] = useState<string>('')
+    const [FieldList2, setFieldList2] = useState<string[]>([])
+    const [headerFont, setHeaderFont] = useState<string>('')
+    const [bodyFont, setBodyFont] = useState<string>('')
+
 
     const fetchdata = async () => {
         const res = await (
@@ -45,22 +51,34 @@ function FontForm({language}: {language:string}) {
         setFieldList(fontHolder)
     }
 
+    const updateFieldlist2 = async () => {
+        const fontHolder: string[] = []
+        
+        fetchedFonts.map((font, i) => (font.typeface in fetchedFonts) ?
+            fontHolder.push(font["font"]) :
+            fontHolder.push()
+        )
+        setFieldList2(fontHolder)
+    }
+
     useEffect(() =>{
         updateFieldlist()
     }, [typeface])
 
-    function changeFont(e:ChangeEvent<HTMLSelectElement>) {
-        setFont(e.target.value)
+    function changeHeaderFont(e:ChangeEvent<HTMLSelectElement>) {
+        setHeaderFont(e.target.value)
     }
 
     function submit(e:FormEvent<HTMLFormElement>) {
         e.preventDefault();
         AxiosInstance.Authorised
         .post('settings/font/', {
-          font: font,
+            headerFont: headerFont,
+            bodyFont: bodyFont
         })
         .then(res=>{
-            dispatch(onFontChange(res.data.font))
+            dispatch(onHeaderFontChange(res.data.headerFont))
+            dispatch(onBodyFontChange(res.data.bodyFont))
         })
         .catch(err=>{
           toast.error(err.response.data.error)
@@ -70,13 +88,29 @@ function FontForm({language}: {language:string}) {
     return (
         <div>
             <form onSubmit={(e) => submit(e)}>
+                <div>
+                    {/* Change what typefaces are selectable */}
+                </div>
                 <div className="password-spacer">
                     <SelectField
                     labelText={getTranslation(FontFormTranslations, language, 'Select')}
-                    field={[font]}
-                    changeField={changeFont}
+                    field={[headerFont]}
+                    changeField={changeHeaderFont}
                     FieldList = {FieldList}
                     FieldListValues = {FieldList}
+                    />
+                </div>
+
+                <div>
+                    {/* Change what typefaces are selectable */}
+                </div>
+                <div className="password-spacer">
+                    <SelectField
+                    labelText={getTranslation(FontFormTranslations, language, 'Select')}
+                    field={[bodyFont]}
+                    changeField={setBodyFont}
+                    FieldList = {FieldList2}
+                    FieldListValues = {FieldList2}
                     />
                 </div>
 
@@ -90,7 +124,3 @@ function FontForm({language}: {language:string}) {
 }
 
 export default FontForm
-
-function dispatch(arg0: { payload: string; type: "font/onFontChange" }) {
-    throw new Error("Function not implemented.")
-}

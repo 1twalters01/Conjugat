@@ -2,23 +2,28 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 export interface FontState {
-  font: string
+  headerFont: string,
+  bodyFont: string
 }
 const initialState: FontState = {
-  font: 'English'
+  headerFont: 'Lato',
+  bodyFont: 'Lato'
 }
 
 export const fontSlice = createSlice({
   name: 'font',
   initialState,
   reducers: {
-    onFontChange:(state, action: PayloadAction<string>) => {
-        state.font = action.payload
+    onHeaderFontChange:(state, action: PayloadAction<string>) => {
+        state.headerFont = action.payload
+    },
+    onBodyFontChange:(state, action: PayloadAction<string>) => {
+        state.bodyFont = action.payload
     }
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { onFontChange } = fontSlice.actions
+export const { onHeaderFontChange, onBodyFontChange } = fontSlice.actions
 
 export default fontSlice.reducer
