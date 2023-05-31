@@ -30,9 +30,9 @@ function TextSlideshow({language, setPage, QuestionData, i} : {language:string, 
 
     return (
         <div className="Test-Slideshow-container">
-            <div className="link weak-gold-btn" onClick={() =>handlePrevious(i)}>{getTranslation(testSlideshowTranslations, language, 'Title1')}</div>
+            <div className="link weak-gold-btn" onClick={() =>handlePrevious(i)}>{getTranslation(testSlideshowTranslations, language, 'Text1')}</div>
             <input type="number" name="" ref={numInput} id="" placeholder={(i+1).toString()} className='page-number' onKeyDown={handleNumberSubmit}/>
-            <div className="link weak-gold-btn" onClick={() =>handleNext(i)}>{getTranslation(testSlideshowTranslations, language, 'Title2')}</div>
+            <div className="link weak-gold-btn" onClick={() =>handleNext(i)}>{getTranslation(testSlideshowTranslations, language, 'Text2')}</div>
         </div>
     )
 }

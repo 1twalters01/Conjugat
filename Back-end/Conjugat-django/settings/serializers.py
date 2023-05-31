@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.core.cache import cache
 from subscription.encryption import decrypt, encrypt
 from rest_framework import serializers, status
-from settings.models import Theme, Language, Font, FontDB, TwoFactorAuth
+from settings.models import Theme, Language, TwoFactorAuth, Font, FontDB
 from settings.totp import generate_totp
 from subscription.encryption import decrypt
 from subscription.models import UserProfile

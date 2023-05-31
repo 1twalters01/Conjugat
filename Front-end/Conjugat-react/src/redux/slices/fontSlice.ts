@@ -6,8 +6,8 @@ export interface FontState {
   bodyFont: string
 }
 const initialState: FontState = {
-  headerFont: 'Lato',
-  bodyFont: 'Lato'
+  headerFont: 'Open-Dyslexic',
+  bodyFont: 'Open-Dyslexic'
 }
 
 export const fontSlice = createSlice({

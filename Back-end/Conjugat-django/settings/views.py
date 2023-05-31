@@ -2,14 +2,14 @@ from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect
-from .models import Theme, Font, FontDB, Typeface, Language, TwoFactorAuth
+from .models import Theme, Language, TwoFactorAuth, Typeface, Font, FontDB
 from rest_framework import status, permissions
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import ChangeEmailSerializer, ChangePasswordSerializer, \
-    ChangeUsernameSerializer, ThemeSerializer, LanguageSerializer, FontSerializer, \
-TwoFactorAuthSerializer, ResetAccountSerializer, CloseAccountSerializer, PremiumSerializer
+    ChangeUsernameSerializer, ThemeSerializer, LanguageSerializer, TwoFactorAuthSerializer, \
+    ResetAccountSerializer, CloseAccountSerializer, PremiumSerializer, FontSerializer
 from subscription.encryption import decrypt, encrypt
 from .totp import create_key_of_length, generate_QR_string_and_code
 from .validations import *
@@ -148,16 +148,17 @@ class ReadFonts(APIView):
         except:
             fonts = None
         
-        data = {"fonts": {"font": [], "typeface": []}, "typefaces": []}
+        fontsList = {"font": [], "typeface": []}
+        typefacesList = []
         if fonts:
             for font in fonts:
-                data["fonts"]["font"].append(font.font)
-                data["fonts"]["typeface"].append(font.typeface)
+                fontsList["font"].append(font.font)
+                fontsList["typeface"].append(font.typeface.typeface)
         typefaces = Typeface.objects.all()
         if typefaces:
             for typeface in typefaces:
-                data["typefaces"].append(typeface.typeface)
-        return Response(data=data, status=status.HTTP_200_OK)
+                typefacesList.append(typeface.typeface)
+        return Response({"fonts":fontsList, "typefaces":typefacesList}, status=status.HTTP_200_OK)
 
 class ChangeFont(APIView):
     permission_classes = (permissions.AllowAny,)

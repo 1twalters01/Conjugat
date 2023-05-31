@@ -1,0 +1,170 @@
+[
+    {
+        "model": "settings.Fontdb",
+        "pk": 1,
+        "fields": {
+            "typeface": "1",
+            "font":"Merriweather"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 2,
+        "fields": {
+            "typeface": "1",
+            "font":"Playfair-Display"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 3,
+        "fields": {
+            "typeface": "1",
+            "font":"Roboto-Slab"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 4,
+        "fields": {
+            "typeface": "1",
+            "font":"Times-New-Roman"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 5,
+        "fields": {
+            "typeface": "1",
+            "font":"Georgia"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 6,
+        "fields": {
+            "typeface": "2",
+            "font":"Lato"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 7,
+        "fields": {
+            "typeface": "2",
+            "font":"Open-Sans"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 8,
+        "fields": {
+            "typeface": "2",
+            "font":"Roboto"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 9,
+        "fields": {
+            "typeface": "2",
+            "font":"Open-Dyslexic"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 10,
+        "fields": {
+            "typeface": "2",
+            "font":"Arial"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 11,
+        "fields": {
+            "typeface": "2",
+            "font":"Helvetica"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 12,
+        "fields": {
+            "typeface": "3",
+            "font":"Amatic-SC"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 13,
+        "fields": {
+            "typeface": "3",
+            "font":"Caveat"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 14,
+        "fields": {
+            "typeface": "3",
+            "font":"Dancing-Script"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 15,
+        "fields": {
+            "typeface": "3",
+            "font":"Indie-Flower"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 16,
+        "fields": {
+            "typeface": "3",
+            "font":"Kalam"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 17,
+        "fields": {
+            "typeface": "4",
+            "font":"Inconsolata"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 18,
+        "fields": {
+            "typeface": "4",
+            "font":"Roboto-Mono"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 19,
+        "fields": {
+            "typeface": "4",
+            "font":"Source-Code-Pro"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 20,
+        "fields": {
+            "typeface": "4",
+            "font":"Courier-New"
+        }
+    },
+    {
+        "model": "settings.Fontdb",
+        "pk": 21,
+        "fields": {
+            "typeface": "4",
+            "font":"Monaco"
+        }
+    }
+]

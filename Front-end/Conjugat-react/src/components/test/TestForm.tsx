@@ -24,11 +24,11 @@ function TestForm({language, submit, test, handleChange, i, QuestionData, handle
             <div className="btn">
                 {i === QuestionData.length-1 ?
                 <div className="submit-btn">
-                    <input type="submit" className="strong-btn strong-gold-btn" value={getTranslation(testFormTranslations, language, 'Title1')} />
+                    <input type="submit" className="strong-btn strong-gold-btn" value={getTranslation(testFormTranslations, language, 'Text1')} />
                 </div>
                 :
                 <div className="submit-btn">
-                    <button type="button"  className="strong-btn strong-gold-btn" onClick={() =>handleNext(i)}>{getTranslation(testFormTranslations, language, 'Title2')}</button>
+                    <button type="button"  className="strong-btn strong-gold-btn" onClick={() =>handleNext(i)}>{getTranslation(testFormTranslations, language, 'Text2')}</button>
                 </div>
                 }
             </div>

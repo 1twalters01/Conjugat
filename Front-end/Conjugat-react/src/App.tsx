@@ -108,8 +108,8 @@ const router = createBrowserRouter(
       </Route>
 
       <Route path="test">
-        <Route path="/" element={<Suspense fallback=''><Test /></Suspense>} />
         <Route path="options" element={<Suspense fallback=''><TestOptions /></Suspense>} />
+        <Route path="" element={<Suspense fallback=''><Test /></Suspense>} />
         <Route path="results/:testID" element={<Suspense fallback=''><TestResults /></Suspense>} />
       </Route>
 
@@ -118,14 +118,13 @@ const router = createBrowserRouter(
 )
 
 import { Provider, useSelector } from "react-redux"
-import { RootState, store } from './redux/store';
+import { RootState, store } from "./redux/store"
 import { PersistGate } from "redux-persist/integration/react"
 import { persistStore } from "redux-persist"
 
 var persistor = persistStore(store)
 
 function App() {
-  const { language } = useSelector((state: RootState) => state.persistedReducer.language)
   const { headerFont } = useSelector((state: RootState) => state.persistedReducer.font)
   const { bodyFont } = useSelector((state: RootState) => state.persistedReducer.font)
   const { theme } = useSelector((state: RootState) => state.persistedReducer.theme)

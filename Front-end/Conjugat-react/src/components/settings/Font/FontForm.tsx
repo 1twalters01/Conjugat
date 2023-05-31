@@ -16,9 +16,9 @@ function FontForm({language}: {language:string}) {
     type TFetchedFonts = {
         "font": '',
         "typeface": ''
-    }[]
+    }
 
-    const [fetchedFonts, setfetchedFonts] = useState<TFetchedFonts>([])
+    const [fetchedFonts, setfetchedFonts] = useState<TFetchedFonts[]>([])
     const [typeface, setTypeface] = useState<string[]>([])
     const [FieldList, setFieldList] = useState<string[]>([])
     const [FieldList2, setFieldList2] = useState<string[]>([])
@@ -42,12 +42,24 @@ function FontForm({language}: {language:string}) {
     }, [])
 
     const updateFieldlist = async () => {
-        const fontHolder: string[] = []
-        
-        fetchedFonts.map((font, i) => (font.typeface in fetchedFonts) ?
-            fontHolder.push(font["font"]) :
-            fontHolder.push()
-        )
+        // for (var font in fetchedFonts.font) {
+        //     if 
+        // }
+
+        console.log(fetchedFonts.typeface[2], 'hi')
+        console.log(typeface)
+
+        const fontHolder = fetchedFonts.font.filter(checkTypeface)
+
+        function checkTypeface(fetchedFont:TFetchedFonts, i:number) {
+            console.log(fetchedFont, i)
+            console.log(fetchedFonts.typeface[i], typeface)
+            if (typeface.includes(fetchedFonts.typeface[i])) {
+                return fetchedFont
+            }
+        }
+
+        console.log(fontHolder, 'yoo')
         setFieldList(fontHolder)
     }
 

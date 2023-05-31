@@ -1,5 +1,6 @@
 @use '../abstract/fonts' as *;
 
+// Serif
 .Merriweather{
     font-family: $Merriweather;
 }
@@ -16,7 +17,7 @@
     font-family: $Georgia;
 }
 
-
+// Sans Serif
 .Lato{
     font-family: $Lato;
 }
@@ -36,7 +37,7 @@
     font-family: $Helvetica
 }
 
-
+// Handwriting
 .Amatic-SC{
     font-family: $Amatic-SC;
 }
@@ -53,7 +54,7 @@
     font-family: $Kalam;
 }
 
-
+// Monotypes
 .Inconsolata{
     font-family: $Inconsolata;
 }

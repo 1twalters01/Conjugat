@@ -6,20 +6,26 @@ class Theme(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     choices = (("Light", "Light"), ("Dark", "Dark"))
     theme = models.CharField(max_length=255, default='Light', choices=choices)
+    def __str__(self):
+        return self.theme
 
 # Language
 class Language(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     choices = (("English", "English"), ("French", "French"), ("Italian", "Italian"), ("Portuguese", "Portuguese"), ("Spanish", "Spanish"))
     language = models.CharField(max_length=255, default='English', choices=choices)
+    def __str__(self):
+        return self.language
 
 # Typography
 class Typeface(models.Model):
-    typeface = models.CharField(max_length=20, default='serif')
+    typeface = models.CharField(max_length=20)
+    def __str__(self):
+        return self.typeface
 
 class FontDB(models.Model):
     font = models.CharField(max_length=100)
-    typeface = models.ForeignKey(Typeface, on_delete=models.CASCADE, related_name='typeface')
+    typeface = models.ForeignKey(Typeface, on_delete=models.CASCADE, related_name='fontDB_typeface')
 
 class Font(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -31,3 +37,5 @@ class TwoFactorAuth(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     key = models.CharField(max_length=500)
     confirmed = models.BooleanField(default=False)
+    def __str__(self):
+        return self.confirmed
