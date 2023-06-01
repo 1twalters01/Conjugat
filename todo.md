@@ -22,8 +22,6 @@ Finish designing web pages, style and add colour to:
 6. Test
 * Test Options
 
-Add prefetching
-
 Create sitemap
 
 Remove any from types
@@ -35,6 +33,8 @@ Create timer mode
 Social system
 
 Fix twitter backend code
+
+Replace complex python code with rust
 
 Improve theme/colour naming conventions
 

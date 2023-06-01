@@ -75,6 +75,7 @@ function SubscribeForm({language, setDone, email, setEmail}: {language:string, s
                 
             <div className="select-spacer">
                 <SelectField
+                id="languageSelect"
                 labelText={getTranslation(subscribeFormTranslations, language, 'Select')}
                 field={languages}
                 changeField={changeLanguage}
