@@ -36,7 +36,9 @@ function FontForm({language}: {language:string}) {
         setfetchedFonts(res.data.fonts)
         setTypeface(res.data.typefaces)
         setHeaderTypefaces(res.data.typefaces)
+        setHeaderFont(res.data.headerFont)
         setBodyTypefaces(res.data.typefaces)
+        setBodyFont(res.data.bodyFont)
     }
 
     useEffect(() => {

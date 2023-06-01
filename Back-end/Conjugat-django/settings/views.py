@@ -158,7 +158,10 @@ class ReadFonts(APIView):
             for typeface in typefaces:
                 typefacesList.append(typeface.typeface)
 
-        return Response({"fonts":fontsList, "typefaces":typefacesList}, status=status.HTTP_200_OK)
+        Userfonts = Font.objects.get(user=request.user)
+        headerFont = Userfonts.headerFont.font
+        bodyFont = Userfonts.bodyFont.font
+        return Response({"fonts":fontsList, "typefaces":typefacesList, "headerFont":headerFont, "bodyFont":bodyFont}, status=status.HTTP_200_OK)
 
 class ChangeFont(APIView):
     permission_classes = (permissions.AllowAny,)
