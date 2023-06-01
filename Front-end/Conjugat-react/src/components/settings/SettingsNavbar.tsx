@@ -11,19 +11,19 @@ function SettingsNavbar({language}: {language:string}) {
             </div>
 
             <div className="settings">
-                <Link to='/test/' className="text-gold-link">{getTranslation(SettingsNavbarTranslation, language, 'Test')}</Link>
+                <h4><Link to='/test/' className="text-gold-link">{getTranslation(SettingsNavbarTranslation, language, 'Test')}</Link></h4>
             </div>
             
             <div className="newsletter">
-                <Link to='/newsletter/' className="text-gold-link">{getTranslation(SettingsNavbarTranslation, language, 'Newsletter')}</Link>
+                <h4><Link to='/newsletter/' className="text-gold-link">{getTranslation(SettingsNavbarTranslation, language, 'Newsletter')}</Link></h4>
             </div>
 
             <div className="settings">
-                <Link to='/settings/change-email/' className="text-gold-link">{getTranslation(SettingsNavbarTranslation, language, 'Settings')}</Link>
+                <h4><Link to='/settings/change-email/' className="text-gold-link">{getTranslation(SettingsNavbarTranslation, language, 'Settings')}</Link></h4>
             </div>
 
             <div className="Logout">
-                <Link to='/account/logout/' className="text-gold-link">{getTranslation(SettingsNavbarTranslation, language, 'Logout')}</Link>
+                <h4><Link to='/account/logout/' className="text-gold-link">{getTranslation(SettingsNavbarTranslation, language, 'Logout')}</Link></h4>
             </div>
         </div>
     )

@@ -148,16 +148,16 @@ class ReadFonts(APIView):
         except:
             fonts = None
         
-        fontsList = {"font": [], "typeface": []}
+        fontsList = []
         typefacesList = []
         if fonts:
             for font in fonts:
-                fontsList["font"].append(font.font)
-                fontsList["typeface"].append(font.typeface.typeface)
+                fontsList.append({"font":font.font, "typeface":font.typeface.typeface})
         typefaces = Typeface.objects.all()
         if typefaces:
             for typeface in typefaces:
                 typefacesList.append(typeface.typeface)
+
         return Response({"fonts":fontsList, "typefaces":typefacesList}, status=status.HTTP_200_OK)
 
 class ChangeFont(APIView):

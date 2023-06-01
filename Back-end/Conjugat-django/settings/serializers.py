@@ -604,21 +604,6 @@ class FontSerializer(serializers.Serializer):
             error = 'Invalid option'
             return error, False, status.HTTP_400_BAD_REQUEST
 
-        # print('passed1')
-        # validated_headerFont = self.validate_choice(headerFont)
-        # if validated_headerFont[1] == False:
-        #     return validated_headerFont[0], validated_headerFont[1], validated_headerFont[2]
-        
-        # print('passed2')
-        
-        # validated_bodyFont = self.validate_choice(bodyFont)
-        # if validated_bodyFont[1] == False:
-        #     return validated_bodyFont[0], validated_bodyFont[1], validated_bodyFont[2]
-        # print('passed3')
-
-        # Userfont.headerFont = FontDB.objects.get(font=headerFont)
-        # Userfont.bodyFont = FontDB.objects.get(font=bodyFont)
-
         Userfont.headerFont = headerFontDB
         Userfont.bodyFont = bodyFontDB
         Userfont.save()

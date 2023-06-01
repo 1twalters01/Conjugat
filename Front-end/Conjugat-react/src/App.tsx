@@ -138,10 +138,12 @@ function App() {
 
   return (
     <Provider store={store}>
-      <div className={`${theme} ${headerFont} ${bodyFont}`}>
-        <PersistGate persistor={persistor}>
-          <RouterProvider router={router} />
-        </PersistGate>
+      <div className={`${theme} ${bodyFont}`}>
+        <div className={`${headerFont}-header`}>
+          <PersistGate persistor={persistor}>
+            <RouterProvider router={router} />
+          </PersistGate>
+        </div>
       </div>
       {theme == 'Dark' ?
         <ToastContainer

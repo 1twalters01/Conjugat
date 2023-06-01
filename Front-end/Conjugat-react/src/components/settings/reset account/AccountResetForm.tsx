@@ -66,6 +66,7 @@ function AccountResetForm({ language, onDoneChange }: { language:string, onDoneC
             <form onSubmit={(e) => submit(e)}>
                 <div className="password-spacer">
                     <SelectField
+                    id = {'resetPasswordForm'}
                     labelText={getTranslation(AccountResetFormTranslations, language, 'Select')}
                     field={languages}
                     changeField={changeLanguage}

@@ -6,10 +6,10 @@ Finish designing web pages, style and add colour to:
 * Subscribe auth done
 * Unsubscribe auth done
 3. settings
-* Font
 * Mobile scss
 * Navbar SCSS
 * Reset account
+* Font
 * Themes
 * premium
 4. subscriptions
