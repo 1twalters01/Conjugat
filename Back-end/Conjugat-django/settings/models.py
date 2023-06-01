@@ -26,11 +26,13 @@ class Typeface(models.Model):
 class FontDB(models.Model):
     font = models.CharField(max_length=100)
     typeface = models.ForeignKey(Typeface, on_delete=models.CASCADE, related_name='fontDB_typeface')
+    def __str__(self):
+        return self.font
 
 class Font(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    headerFont = models.ForeignKey(FontDB, on_delete=models.CASCADE, related_name='header_font')
-    bodyFont = models.ForeignKey(FontDB, on_delete=models.CASCADE, related_name='body_font')
+    headerFont = models.ForeignKey(FontDB, on_delete=models.CASCADE, related_name='header_font', null=True)
+    bodyFont = models.ForeignKey(FontDB, on_delete=models.CASCADE, related_name='body_font', null=True)
 
 # 2FA
 class TwoFactorAuth(models.Model):

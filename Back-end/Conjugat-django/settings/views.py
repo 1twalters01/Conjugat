@@ -178,12 +178,12 @@ class ChangeFont(APIView):
     
     def post(self, request):
         data = request.data
-        validate_header_font = validate_header_font(data)
-        validate_body_font = validate_body_font(data)
-        if validate_header_font[0] == False:
-            return Response(data=validate_header_font[1], status=validate_header_font[2])
-        if validate_body_font[0] == False:
-            return Response(data=validate_body_font[1], status=validate_body_font[2])
+        validated_header_font = validate_header_font(data)
+        validated_body_font = validate_body_font(data)
+        if validated_header_font[0] == False:
+            return Response(data=validated_header_font[1], status=validated_header_font[2])
+        if validated_body_font[0] == False:
+            return Response(data=validated_body_font[1], status=validated_body_font[2])
 
         context = {'username': request.user}
         serializer = FontSerializer(data=data, context=context)

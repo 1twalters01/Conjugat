@@ -42,15 +42,7 @@ function FontForm({language}: {language:string}) {
     }, [])
 
     const updateFieldlist = async () => {
-        // for (var font in fetchedFonts.font) {
-        //     if 
-        // }
-
-        console.log(fetchedFonts.typeface[2], 'hi')
-        console.log(typeface)
-
         const fontHolder = fetchedFonts.font.filter(checkTypeface)
-
         function checkTypeface(fetchedFont:TFetchedFonts, i:number) {
             console.log(fetchedFont, i)
             console.log(fetchedFonts.typeface[i], typeface)
@@ -58,18 +50,18 @@ function FontForm({language}: {language:string}) {
                 return fetchedFont
             }
         }
-
-        console.log(fontHolder, 'yoo')
         setFieldList(fontHolder)
     }
 
     const updateFieldlist2 = async () => {
-        const fontHolder: string[] = []
-        
-        fetchedFonts.map((font, i) => (font.typeface in fetchedFonts) ?
-            fontHolder.push(font["font"]) :
-            fontHolder.push()
-        )
+        const fontHolder = fetchedFonts.font.filter(checkTypeface)
+        function checkTypeface(fetchedFont:TFetchedFonts, i:number) {
+            console.log(fetchedFont, i)
+            console.log(fetchedFonts.typeface[i], typeface)
+            if (typeface.includes(fetchedFonts.typeface[i])) {
+                return fetchedFont
+            }
+        }
         setFieldList2(fontHolder)
     }
 
@@ -77,8 +69,16 @@ function FontForm({language}: {language:string}) {
         updateFieldlist()
     }, [typeface])
 
+    useEffect(() =>{
+        updateFieldlist2()
+    }, [typeface])
+
     function changeHeaderFont(e:ChangeEvent<HTMLSelectElement>) {
         setHeaderFont(e.target.value)
+    }
+
+    function changeBodyFont(e:ChangeEvent<HTMLSelectElement>) {
+        setBodyFont(e.target.value)
     }
 
     function submit(e:FormEvent<HTMLFormElement>) {
@@ -120,7 +120,7 @@ function FontForm({language}: {language:string}) {
                     <SelectField
                     labelText={getTranslation(FontFormTranslations, language, 'Select')}
                     field={[bodyFont]}
-                    changeField={setBodyFont}
+                    changeField={changeBodyFont}
                     FieldList = {FieldList2}
                     FieldListValues = {FieldList2}
                     />

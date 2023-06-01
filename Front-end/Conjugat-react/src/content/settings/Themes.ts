@@ -33,8 +33,8 @@ export const translations = {
 
 export const ThemeFunctionalityTranslations = {
     'English': {
-        'Dark': 'Password',
-        'Light': 'Totp',
+        'Dark': 'Dark',
+        'Light': 'Light',
     },
     'French': {
         'Dark': 'Sombre',

@@ -568,7 +568,8 @@ class LanguageSerializer(serializers.Serializer):
 
 
 class FontSerializer(serializers.Serializer):
-    choice = serializers.CharField()
+    headerFont = serializers.CharField()
+    bodyFont = serializers.CharField()
     def validate_choice(self, choice):
         fonts = FontDB.objects.all()
         options = []
@@ -584,21 +585,44 @@ class FontSerializer(serializers.Serializer):
         headerFont = data['headerFont']
         bodyFont = data['bodyFont']
         req_username =  self.context['username']
+        print(FontDB.objects.get(font=headerFont))
 
-        font = Font.objects.get_or_create(user=req_username)[0]
+        try:
+            Userfont = Font.objects.get(user=req_username)
+        except:
+            Userfont = Font.objects.create(user=req_username)
 
-        validated_headerFont = self.validate_choice(headerFont, req_username)
-        if validated_headerFont[1] == False:
-            return validated_headerFont[0], validated_headerFont[1], validated_headerFont[2]
+        try:
+            headerFontDB = FontDB.objects.get(font=headerFont)
+        except:
+            error = 'Invalid option'
+            return error, False, status.HTTP_400_BAD_REQUEST
         
-        validated_bodyFont = self.validate_choice(bodyFont, req_username)
-        if validated_bodyFont[1] == False:
-            return validated_bodyFont[0], validated_bodyFont[1], validated_bodyFont[2]
+        try:
+            bodyFontDB = FontDB.objects.get(font=bodyFont)
+        except:
+            error = 'Invalid option'
+            return error, False, status.HTTP_400_BAD_REQUEST
+
+        # print('passed1')
+        # validated_headerFont = self.validate_choice(headerFont)
+        # if validated_headerFont[1] == False:
+        #     return validated_headerFont[0], validated_headerFont[1], validated_headerFont[2]
         
-        font.headerFont = headerFont
-        font.bodyFont = bodyFont
-        font.save()
-        response = {"headerFont":font.headerFont, "bodyFont":font.bodyFont}
+        # print('passed2')
+        
+        # validated_bodyFont = self.validate_choice(bodyFont)
+        # if validated_bodyFont[1] == False:
+        #     return validated_bodyFont[0], validated_bodyFont[1], validated_bodyFont[2]
+        # print('passed3')
+
+        # Userfont.headerFont = FontDB.objects.get(font=headerFont)
+        # Userfont.bodyFont = FontDB.objects.get(font=bodyFont)
+
+        Userfont.headerFont = headerFontDB
+        Userfont.bodyFont = bodyFontDB
+        Userfont.save()
+        response = {"headerFont":Userfont.headerFont.font, "bodyFont":Userfont.bodyFont.font}
         return response, True
 
 class TwoFactorAuthSerializer(serializers.Serializer):
