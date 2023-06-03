@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     'testFunctionality.apps.TestfunctionalityConfig',
     'django_cassandra_engine',
     'django_crontab',
+    'social.apps.SocialConfig',
 ]
 
 MIDDLEWARE = [
@@ -121,7 +122,6 @@ DATABASES = {
     'cassandra': {
          'ENGINE': 'django_cassandra_engine',
          'NAME': config('DB2_NAME'),
-        #  'TEST_NAME': 'test_db',
          'HOST': '127.0.0.1',
          'OPTIONS': {
              'replication': {
@@ -132,6 +132,9 @@ DATABASES = {
      }
 }
 CASSANDRA_FALLBACK_ORDER_BY_PYTHON = True
+
+# from gqlalchemy import Memgraph
+# memgraph = Memgraph(host='127.0.0.1', port=7687)
 
 CACHES = {
     "default": {

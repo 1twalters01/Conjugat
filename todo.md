@@ -16,21 +16,30 @@ Finish designing web pages, style and add colour to:
 * Process
 * Success
 5. Misc
+* navbar
 * Landing page
 * Home
 * Premium
 6. Test
 * Test Options
+* Landing page test
+
+Social system
+
+Messaging system
+
+Make themes detect if browser or app
+
+Create timer mode
+
+Battle mode - Random people and chosen person
+    - Elo system?
+
+Tournament system
 
 Create sitemap
 
 Remove any from types
-
-Update navbar css
-
-Create timer mode
-
-Social system
 
 Fix twitter backend code
 
@@ -79,14 +88,8 @@ Get real api keys for everything rather than test api keys
 
 Launch web app
 
-Battle mode - Random people and chosen person
-    - Elo system?
-
-
 # Long term goals
 Build the android app (kotlin)
-
-Make themes detect if browser or app
 
 Launch android app
 

@@ -28,6 +28,7 @@ The following functionality is complete:
 [Back-end](https://github.com/1twalters01/Conjugat/tree/main/Back-end/Conjugat-django/settings)
 [Front-end](https://github.com/1twalters01/Conjugat/tree/main/Front-end/Conjugat-react/src/pages/settings)
 * Change email, password and username for the user
+* Change fonts and themes
 * Close the account
 * See/edit your subscription status
 * Add/remove two factor authentication to your account
