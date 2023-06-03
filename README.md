@@ -119,6 +119,9 @@ I will use Cassandra to store time series data (the test results) as it is good 
 #### Redis
 Writing will still be done a lot, (whenever the user completes a test), and I intend to use Redis to store the day's write operations. Since it is a cache, it cannot save too much data so I will store past data in Cassandra. I will either use a chron-job to schedule backups to Cassandra daily, or asynchronously write to both Redis and Cassandra.
 
+#### Memgraph intended to be used
+I plan on using memgraph in the future, however I cannot download gqlalchemy until I build a better PC (currently using an intel pentium with integrated graphics). As such, I am forced to use postgres to model the social data, though I will migrate the data over once it is possible for me to do so.
+
 ### Front-end
 #### React (TypeScript) + Redux
 React was chosen because of its avant-garde, component-based feel. TypeScript was used as the typing system will detect many bugs that can get hidden when using regular JS. Many small reusable components mean that the look and feel of the site will be much more continuous throughout the entire application.

@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     'django_cassandra_engine',
     'django_crontab',
     'social.apps.SocialConfig',
+    'messages.apps.MessagesConfig',
 ]
 
 MIDDLEWARE = [
