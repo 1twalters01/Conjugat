@@ -72,6 +72,8 @@ INSTALLED_APPS = [
     'django_crontab',
     'social.apps.SocialConfig',
     'messages.apps.MessagesConfig',
+    'battle.apps.BattleConfig',
+    'tournament.apps.TournamentConfig',
 ]
 
 MIDDLEWARE = [
