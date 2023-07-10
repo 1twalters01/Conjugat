@@ -48,6 +48,8 @@ CSRF_TRUSTED_ORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
+    'channels',
     'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -109,8 +111,17 @@ TEMPLATES = [
     },
 ]
 
+ASGI_APPLICATION = 'conjugat.asgi.application'
 WSGI_APPLICATION = 'conjugat.wsgi.application'
 
+CHANNEL_LAYERS = {
+    'default':{
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [("127.0.0.1", 6379)],
+        }
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

@@ -21,7 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include('account.urls')),
     path('subscriptions/', include('subscription.urls')),
-    path('verbs/', include('verbs.urls')),
+    path('verbs/', include('verbs.urls', namespace='verbs_urlsf')),
     path('settings/', include('settings.urls')),
     path('newsletter/', include('newsletter.urls')),
+    path('messages/', include('messagesFunctionality.urls')),
 ]
