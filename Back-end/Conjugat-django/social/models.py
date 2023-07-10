@@ -21,10 +21,10 @@ from django.conf import settings
 #     followed_by_rank = models.IntegerField()
 
 class Social(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    following = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    following_created = models.DateTimeField(none=True, blank=True)
-    following_ended = models.DateTimeField(none=True, blank=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='social_user')
+    following = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='social_folling')
+    following_created = models.DateTimeField(blank=True)
+    following_ended = models.DateTimeField(blank=True)
     follower_rank = models.IntegerField()
     Message_number = models.IntegerField()
     last_message = models.DateTimeField()
@@ -35,7 +35,7 @@ class Social(models.Model):
     class Meta:
         unique_together = (('user','following'),)
         indexes = [
-        models.Index(fields=['follower_rank']),
+         models.Index(fields=['follower_rank']),
         ]
     def __str__(self):
         return f'{self.user} is following by {self.following}'

@@ -100,29 +100,29 @@ const TwoFactorAuth = lazy(() => TwoFactorAuthPromise);
 
 
 // const Subscriptions = lazy(() => import('./pages/subscriptions/Subscriptions'))
-const SubscriptionsPromise = import('./pages/newsletter/Unsubscribe');
+const SubscriptionsPromise = import('./pages/subscriptions/Subscriptions');
 const Subscriptions = lazy(() => SubscriptionsPromise);
 // const Cancelled = lazy(() => import('./pages/subscriptions/Cancelled'))
-const CancelledPromise = import('./pages/newsletter/Unsubscribe');
+const CancelledPromise = import('./pages/subscriptions/Cancelled');
 const Cancelled = lazy(() => CancelledPromise);
 // const Process = lazy(() => import('./pages/subscriptions/Process'))
-const ProcessPromise = import('./pages/newsletter/Unsubscribe');
+const ProcessPromise = import('./pages/subscriptions/Process');
 const Process = lazy(() => ProcessPromise);
 // const Success = lazy(() => import('./pages/subscriptions/Success'))
-const SuccessPromise = import('./pages/newsletter/Unsubscribe');
+const SuccessPromise = import('./pages/subscriptions/Success');
 const Success = lazy(() => SuccessPromise);
 
 // const Test = lazy(() => import('./pages/test/Test'))
-const TestPromise = import('./pages/newsletter/Unsubscribe');
+const TestPromise = import('./pages/test/Test');
 const Test = lazy(() => TestPromise);
 // const TestOptions = lazy(() => import('./pages/test/TestOptions'))
-const TestOptionsPromise = import('./pages/newsletter/Unsubscribe');
+const TestOptionsPromise = import('./pages/test/TestOptions');
 const TestOptions = lazy(() => TestOptionsPromise);
 // const TestResults = lazy(() => import('./pages/test/TestResults'))
-const TestResultsPromise = import('./pages/newsletter/Unsubscribe');
+const TestResultsPromise = import('./pages/test/TestResults');
 const TestResults = lazy(() => TestResultsPromise);
 
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 import './sass/app.scss'

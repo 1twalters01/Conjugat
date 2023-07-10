@@ -103,7 +103,8 @@ class VerbTest(APIView):
                 break
         
         try:
-            objects = RomanceMain.objects.filter(pk__in=object_pks) # Get list of conjugations tested
+            # Get list of conjugations tested
+            objects = RomanceMain.objects.filter(pk__in=object_pks)
         except:
             objects = None
         if not objects:
@@ -243,6 +244,7 @@ class VerbTestResults(APIView):
         for index, item in enumerate(test['status']):
             if len(results) == 0:
                 formated_json = {
+                    'Timer': timer,
                     'Language': test['languages'][index],
                     'Base': test['bases'][index],
                     'Tense':test['tenses'][index],

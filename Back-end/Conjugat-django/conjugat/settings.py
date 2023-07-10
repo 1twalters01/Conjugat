@@ -71,7 +71,7 @@ INSTALLED_APPS = [
     'django_cassandra_engine',
     'django_crontab',
     'social.apps.SocialConfig',
-    'messages.apps.MessagesConfig',
+    'messagesFunctionality.apps.MessagesfunctionalityConfig',
     'battle.apps.BattleConfig',
     'tournament.apps.TournamentConfig',
 ]
