@@ -1,0 +1,26 @@
+[
+    {
+    "model": "verbs.romancegroup",
+    "pk": 10,
+    "field": {
+        "language": "3",
+        "group": "er"
+    }
+    },
+    {
+    "model": "verbs.romancegroup",
+    "pk": 11,
+    "field": {
+        "language": "3",
+        "group": "ir"
+    }
+    },
+    {
+    "model": "verbs.romancegroup",
+    "pk": 12,
+    "field": {
+        "language": "3",
+        "group": "re"
+    }
+    }
+]

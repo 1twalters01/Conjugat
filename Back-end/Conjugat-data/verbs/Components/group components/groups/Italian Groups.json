@@ -1,0 +1,26 @@
+[
+    {
+    "model": "verbs.romancegroup",
+    "pk": 7,
+    "field": {
+        "language": "3",
+        "group": "are"
+    }
+    },
+    {
+    "model": "verbs.romancegroup",
+    "pk": 8,
+    "field": {
+        "language": "3",
+        "group": "ere"
+    }
+    },
+    {
+    "model": "verbs.romancegroup",
+    "pk": 9,
+    "field": {
+        "language": "3",
+        "group": "ire"
+    }
+    }
+]

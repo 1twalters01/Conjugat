@@ -1,5 +1,5 @@
 from django.core.cache import cache
-from .models import RomanceMain, RomanceTestResult, RomanceTestResult_by_user_and_language, RomanceTestResult_by_user_and_date
+from .models.sql import RomanceMain, RomanceTestResult, RomanceTestResult_by_user_and_language, RomanceTestResult_by_user_and_date
 from rest_framework import status, permissions
 from rest_framework.response import Response
 from rest_framework.views import APIView

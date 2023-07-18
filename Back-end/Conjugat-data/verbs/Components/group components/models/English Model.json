@@ -1,0 +1,36 @@
+https://conjugator.reverso.net/conjugation-rules-model-english.html
+
+[
+    {
+    "model": "verbs.romancemodel",
+    "pk": 1,
+    "field": {
+        "model": "",
+        "group": "",
+    }
+    },
+    {
+    "model": "verbs.romancemodel",
+    "pk": 1,
+    "field": {
+        "model": "",
+        "group": "",
+    }
+    },
+    {
+    "model": "verbs.romancemodel",
+    "pk": 1,
+    "field": {
+        "model": "",
+        "group": "",
+    }
+    },
+    {
+    "model": "verbs.romancemodel",
+    "pk": 1,
+    "field": {
+        "model": "",
+        "group": "",
+    }
+    }
+]
