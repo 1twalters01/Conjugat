@@ -8,7 +8,7 @@ class PaymentMethod(models.Model):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    method = models.ForeignKey(PaymentMethod, on_delete=models.CASCADE, related_name='userProfile_method', default=4)
+    method = models.ForeignKey(PaymentMethod, on_delete=models.CASCADE, related_name='userProfile_method', default=1)
     customer_id = models.CharField(max_length=500, blank=True, null=True)
     subscription_id = models.CharField(max_length=500, blank=True, null=True)
     subscribed = models.BooleanField(default=False)

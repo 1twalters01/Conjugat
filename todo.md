@@ -24,6 +24,8 @@ Finish designing web pages, style and add colour to:
 * Test Options
 * Landing page test
 
+Rewrite it in Rust *not all
+
 Social system
 
 Messaging system

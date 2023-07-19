@@ -76,7 +76,7 @@ class NewPaypalCustomer(APIView):
         if serializer.is_valid(raise_exception=True):
             response = serializer.create_paypal_customer(data)
             if response[1] == True:
-                return Response(data=response[0], status=status.HTTP_200_OK)
+                return Response(data=response[0], status=response[2])
             return Response({'error':response[0]}, status=response[2])
 
 class NewCoinbaseCustomer(APIView):
